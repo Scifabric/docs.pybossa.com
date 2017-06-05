@@ -1,0 +1,8 @@
+site_name: My Docs
+theme: 'material'
+# theme: 'readthedocs'
+markdown_extensions:
+    - admonition
+    - smarty
+    - wikilinks
+    # - urlize # requires: pip install git+https://github.com/r0wb0t/markdown-urlize.git
