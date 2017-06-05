@@ -22,6 +22,15 @@ pip install -r requirements.txt
 mkdocs serve
 ```
 
+## publish to gh-pages
+
+Instructions for [deploying in GitHub](http://www.mkdocs.org/user-guide/deploying-your-docs/):
+
+```bash
+mkdocs gh-deploy
+```
+
+
 ## TODO
 
 * [ ] - remove HTML
