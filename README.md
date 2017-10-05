@@ -26,3 +26,4 @@ Result is visible on
 * [ ] write admonition (like info) like described here <https://pythonhosted.org/Markdown/extensions/admonition.html>
 * [ ] Theming (maybe the sphinx theme can be reused?)
 * [ ] automatic gh pages publishing
+* [ ] replace existing docs
