@@ -303,3 +303,22 @@ This action cannot be undone, so be sure before proceeding.
 Only projects without results can be deleted.
 
 </div>
+
+Transfer project ownership
+--------------------------
+
+You can transfer the project ownership to another user in the PYBOSSA
+server.
+
+For changing the ownership, just add the email of the user that you want
+to make the new owner.
+
+<div class="admonition note">
+
+If your are not an admin of PYBOSSA you cannot undo this action, and you will
+
+:   not be able to modify/change settings of the project as you will not
+    be the owner anymore. Admins however can change the ownership
+    always.
+
+</div>

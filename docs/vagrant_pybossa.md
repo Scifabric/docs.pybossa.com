@@ -1,5 +1,5 @@
-Testing PYBOSSA with a Virtual Machine
-======================================
+Testing PYBOSSA with Vagrant
+============================
 
 [Vagrant](http://www.vagrantup.com/) is an open source solution that
 allows you to create and configure lightweight, reproducible, and

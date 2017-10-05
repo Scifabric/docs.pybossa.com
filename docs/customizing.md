@@ -713,6 +713,48 @@ This feature is disabled by default.
 
 </div>
 
+Making extra key/value pairs in info field public
+-------------------------------------------------
+
+By default PYBOSSA protects all the information the info field except
+for those values that are public like the url of the image of the
+project, the container where that picture is stored and a few extra.
+While this will be more than enough for most projects, sometimes, a
+server will need to expose more information publicly via the info field
+for the User and Project Domain Objects.
+
+Imagine that you want to give badges to users. You can store that
+information in the User domain object, within the info field in a field
+named *badges*. While this will work, the API will hide all that
+information except for the owner. Thus, it will be impossible to show
+user's badges to anonymous people.
+
+With projects it could be the same. You want to highlight some info to
+anyone, but hide everything else.
+
+As PYBOSSA hides everything by default, you can always turn on which
+other fields from the info field can be shown to anonymous users, making
+them public.
+
+<div class="admonition note">
+
+WARNING: be very careful. This is your responsibility, and it's not
+enabled by default. If you expose your own private data via this field,
+it's your own responsibility as this is not enabled by default in
+PYBOSSA.
+
+</div>
+
+If you want to make some key/values public, all you have to do is add to
+the settings\_local.py file the following config variables:
+
+    PROJECT_INFO_PUBLIC_FIELDS = ['key1', 'key2']
+    USER_INFO_PUBLIC_FIELDS = ['badges', 'key2', ...]
+    CATEGORY_INFO_PUBLIC_FIELDS = ['key1', 'key2']
+
+Add as many as you want, need. But please, be careful about which
+information you disclose.
+
 Adding your own templates
 -------------------------
 
@@ -786,6 +828,19 @@ However, if you don't need this feature, it can be disabled (as it is by
 default) with this configuration parameter:
 
     ACCOUNT_CONFIRMATION_DISABLED = True
+
+Two factor authentication on login
+----------------------------------
+
+If you need an extra layer of security for user authentication, PYBOSSA
+allows you to enable two factor authentication by setting this
+configuration value:
+
+    ENABLE_TWO_FACTOR_AUTH = True
+
+With this parameter set, after password verification users will receive
+a one-time code in their email, and will be redirected to a page where
+they can insert the code to complete the login process.
 
 Sending weekly email stats to project owners
 --------------------------------------------
@@ -1056,3 +1111,149 @@ another, we do not provide a template but some guidelines:
 
 For more info regarding Onesignal JS SDK, check their
 [documentation.](https://documentation.onesignal.com/docs/web-push-sdk)
+
+Ignore specific keys when exporting data in CSV format
+------------------------------------------------------
+
+Sometimes your PYBOSSA project saves information like GeoJSON within the
+tasks or task\_runs. This is a bad thing for the exporter, as it will
+try to flatten it. In such scenarios, you want to instruct PYBOSSA to
+ignore those keys, as they will be included in the JSON export files,
+and reduce all the overhead (as well as destroying the format due to the
+normalization).
+
+For ignoring a key (or a list of keys), just add the following config
+variable to your settings\_local.py file:
+
+    IGNORE_FLAT_KEYS = [ 'geojson', 'key1', ...]
+
+Disable task presenter check for pure JavaScript apps
+-----------------------------------------------------
+
+When you are using PYBOSSA native JSON support, you will not be building
+your project presenter within the PYBOSSA structure, but within the JS
+framework of your choice.
+
+In such a case, you would like to disable the check for the
+task\_presenter when publishing a project. If you need this, just add
+this flag to your settings\_local.py file:
+
+    DISABLE_TASK_PRESENTER = True
+
+Consent field for users
+-----------------------
+
+Sometimes you will need the users to click in a check box before
+creating an account to get the agreement for sending them email
+notifications or of any other type. By default PYBOSSA provides this
+flag, and it's set to False.
+
+Change in the theme (or your frontend) the label of the field to
+whatever you prefer: Terms of Service, Communications, etc. so you will
+be able to keep track of who has accepted/declined to get notifications
+from you.
+
+Custom Leaderboards
+-------------------
+
+By default PYBOSSA provides a unique leaderboard. This leaderboard is
+based on the number of task runs that a user has submitted, however, you
+may want more flexibility. For this reason, you can use use the
+"user".info field to store any other "badges" or values that you want to
+score your users.
+
+If your users have identified very complicated stuff, and you want to
+give points to them based on that, just use the info field and instruct
+PYBOSSA to create a leaderboard for you.
+
+<div class="admonition note">
+
+It is imoportant that this key,value pair is computed by you. You can
+
+:   use the API to update these values, so this will not be handled by
+    PYBOSSA but by yourself.
+
+</div>
+
+Imagine the score is named: foo, then, PYBOSSA will create for you a
+leaderboard using that key like this: edit the settings\_local.py file
+and add the following config variable:
+
+``` {.sourceCode .python}
+LEADERBOARDS = ['foo']
+```
+
+Then, you can access the specific leaderboard using the endpoint:
+/leaderboard/?info=foo
+
+As simple as that.
+
+<div class="admonition note">
+
+This feature relies on background jobs. Be sure that you are running
+them.
+
+</div>
+
+Unpublish inactive projects
+---------------------------
+
+PYBOSSA by default unpublishes projects that have not been active in the
+last 3 months. You can disable this feature by changing this config
+variable in your settings\_local.py file:
+
+``` {.sourceCode .python}
+UNPUBLISH_PROJECTS = False
+```
+
+LDAP integration
+----------------
+
+PYBOSSA can use LDAP for authenticating users. Basically, you will need
+to add a few config variables to the settings\_local.py file in order to
+make it work.
+
+PYBOSSA supports LDAP and OpenLDAP protocols, so you should be able to
+use any of them.
+
+<div class="admonition note">
+
+By enabling PYBOSSA LDAP integration, all other means for creating accounts and/or
+
+:   signin will be disabled.
+
+</div>
+
+### LDAP\_HOST
+
+This variable should have the IP or domain name of your LDAP server.
+
+### LDAP\_BASE\_DN
+
+This is the LDAP Base DN for your organization.
+
+### LDAP\_USERNAME
+
+This variable should have the admin account, so PYBOSSA can access the
+LDAP server and search for users.
+
+### LDAP\_PASSWORD
+
+The admin account password.
+
+### LDAP\_OBJECTS\_DN
+
+The DN.
+
+### LDAP\_OPENLDAP
+
+Set it to True if you are using it.
+
+### LDAT\_USER\_OBJECT\_FILTER
+
+This is really important. The filter that you write in here needs to be
+adapted to your institution, otherwise it will not work when
+authenticating and validating your users.
+
+Don't use the default configuration in the settings template. You will
+need to adapt it to your needs.

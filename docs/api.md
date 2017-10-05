@@ -138,6 +138,43 @@ Finally, you can get a list of users by doing:
 
     GET http://{pybossa-site-url}/api/user
 
+List of project of project IDs
+------------------------------
+
+In PYBOSSA most of the domain objects are related to a project.
+Therefore, you can query (or filter) a list of project IDs directly via
+the API to reduce the number of queries that you need to do. This is
+specially useful for Single Page Applications that only use the PYBOSSA
+JSON endpoints.
+
+For example, you can get all the tasks for a list of projects like this:
+
+    GET http://{pybossa-site-url}/api/task?project_id=[1,2,3]
+
+That filter will return tasks for project IDs 1, 2 and 3. The same can
+be done for task runs and blogposts.
+
+Created
+-------
+
+If you want, you can use the the domain attribute *created* to get items
+from the DB. Basically, you can specify a year, year-month,
+year-month-day to get all the values for those ranges. For example, if
+you want all the tasks that have been created in 2015, just use:
+
+    GET http://{pybossa-site-url}/api/task?created=2015&all=1
+
+If you want all the task runs from 2015-05:
+
+    GET http://{pybossa-site-url}/api/taskrun?created=2015-05&all=1
+
+You can for example get all the task runs that a user has submitted on a
+given day like this:
+
+    GET http://{pybossa-site-url}/api/taskrun?created=2015-05-03&user_id=3
+
+This filter works for any object that has the *created* attribute.
+
 Order by
 --------
 
@@ -150,7 +187,7 @@ If you want, you can order them in descending order:
 
     GET http://{pybossa-site-url}/api/task?orderby=id&desc=true
 
-Check all the attritbutes that you can use to order by in the [Domain
+Check all the attributes that you can use to order by in the [Domain
 Object section](http://docs.pybossa.com/en/latest/model.html).
 
 <div class="admonition note">
@@ -258,7 +295,7 @@ It is possible to limit the number of returned objects:
     GET http://{pybossa-site-url}/api/{domain-object}[?field1=value&limit=20]
 
 It is possible to access first level JSON keys within the **info** field
-of Projects, Tasks, Task Runs and Results:
+of Categories, Projects, Tasks, Task Runs and Results:
 
     GET http://{pybossa-site-url}/api/{domain-object}[?field1=value&info=foo::bar&limit=20]
 
@@ -307,7 +344,7 @@ objects enriched with the following two fields:
 Here you have an example of the expected output for an api call like
 this:
 
-    /api/task?project_id=1&info=name::ipsum%26bravo&fulltextsearch=1 
+    /api/task?project_id=1&info=name::ipsum%26bravo&fulltextsearch=1
 
 ``` {.sourceCode .python}
 [
@@ -374,6 +411,23 @@ If the search does not find anything, the server will return an empty JSON
 :   list \[\]
 
 </div>
+
+Excluding contributed tasks from GET queries
+--------------------------------------------
+
+For the Tasks endpoint, you can do also something else, which could be
+pretty handy for PYBOSSA projects that are built using only Javascript
+(Single Page Applications) and do not want to use the /newtask endpoint.
+
+Basically, you can use any of the previous filters for the /api/task
+endpoint and add the following argument: **participated=1** to remove
+from the results, the tasks that the user has participated in. In this
+way, you will be completely in charge of how the tasks are presented to
+your users. You will design how they will be delivered.
+
+This endpoint now accepts as well the **external\_uid** parameter, as by
+default it identifies authenticated users, as well as anonymouse users.
+If you are using the external UID, include it.
 
 Create
 ------
@@ -609,7 +663,7 @@ database but not to PYBOSSA. Then, once the user has completed the task
 you will be able to submit it like this:
 
     HEADERS Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOiIxMjM0NTY3ODkwIiwibmFtZSI6IkpvaG4gRG9lIiwiYWRtaW4iOnRydWV9.TJVA95OrM7E2cBab30RMHrHDcEfxjoYZgeFONFh7HgQ
-    POST http://{pybossa-site-url}/api/taskrun
+    POST http://{pybossa-site-url}/api/taskrun?external_uid=1xa
 
 <div class="admonition note">
 
@@ -903,7 +957,7 @@ headers. Use the following header: "X-CSRFToken".
 It returns a JSON object with the following information:
 
 -   **flash**: A success message, or error indicating if the request was
-    succesful.
+    successful.
 -   **form**: the form fields with the sent information. It contains the
     csrf token for validating the post, as well as an errors field in
     case that something is wrong.
@@ -1105,6 +1159,7 @@ Example of logged in user:
 {
     ...
     "user": {
+        "admin": false,
         "api_key": "aa3ee485-896d-488a-83f7-88a29bf45171",
         "confirmation_email_sent": false,
         "created": "2014-08-11T08:59:32.079599",
@@ -1277,7 +1332,7 @@ To send a valid POST request you need to pass the *csrf token* in the
 headers. Use the following header: "X-CSRFToken".
 
 As this endpoint supports **three** different forms, you must specify
-which form are you targetting adding an extra key: **btn**. The options
+which form are you targeting adding an extra key: **btn**. The options
 for this key are:
 
 -   **Profile**: to update the **form**. **Upload**: to update the
@@ -1294,7 +1349,7 @@ fail.
 It returns a JSON object with the following information:
 
 -   **flash**: A success message, or error indicating if the request was
-    succesful.
+    successful.
 -   **form**: the form fields with the sent information. It contains the
     csrf token for validating the post, as well as an errors field in
     case that something is wrong.
@@ -1655,6 +1710,7 @@ for logged in user JohnDoe:
   "n_volunteers": 1,
   "overall_progress": 0,
   "owner": {
+    "admin": false,
     "api_key": "akjhfd85-8afd6-48af-f7afg-kjhsfdlkjhf1",
     "confirmation_email_sent": false,
     "created": "2014-08-11T08:59:32.079599",
@@ -2111,7 +2167,8 @@ for another project where you are not the owner:
 
 ### Leaderboard
 
-**Endpoint: /leaderboard/**
+**Endpoint: /leaderboard/** **Endpoint:
+/leaderboard/window/&lt;int:window&gt;**
 
 *Allowed methods*: **GET**
 
@@ -2120,6 +2177,12 @@ for another project where you are not the owner:
 Shows you the top 20 contributors rank in a sorted leaderboard. If you
 are logged in you will also get the rank of yourself even when you are
 not visible on the top public leaderboard.
+
+By default the window is zero, adding the authenticated user to the
+bottom of the top 20, so the user can know the rank. If you want, you
+can use a window to show the previous and next users taking into account
+authenticated user rank. For example, you can get the previous 3 and
+next 3 accessing this URL: /leaderboard/window/3.
 
 -   **template**: Jinja2 template.
 -   **title**: the title for the endpoint.
@@ -2187,32 +2250,46 @@ Shows you PYBOSSA wide announcements
             "body": "test123",
             "created": "2017-05-31T15:23:44.858735",
             "id": 5,
+            "media_url": null,
+            "published": true,
             "title": "title123",
+            "updated": "2017-05-31T15:23:44.858735",
             "user_id": 4953
         },
         {
             "body": "new body",
             "created": "2017-05-31T15:23:28.477516",
             "id": 4,
+            "media_url": null,
+            "published": true,
             "title": "blogpost title",
+            "updated": "2017-05-31T15:23:28.477516",
             "user_id": 4953
         },
         {
             "body": "new body",
             "created": "2017-06-01T23:42:45.042010",
             "id": 7,
+            "media_url": null,
+            "published": true,
             "title": "blogpost title",
+            "updated": "2017-06-01T23:42:45.042010",
             "user_id": 4953
         },
         {
             "body": "new body",
             "created": "2017-06-01T23:45:11.612801",
             "id": 8,
+            "media_url": null,
+            "published": true,
             "title": "blogpost title",
+            "updated": "2017-06-01T23:45:11.612801",
             "user_id": 4953
         }
     ],
-    "template": ""
+    "csrf": "1504710446.52##6a7fakjsdhsdflkj",
+    "template": "admin/announcement.html",
+    "title": "Manage global Announcements"
 }
 ```
 
@@ -2238,34 +2315,46 @@ Shows you PYBOSSA wide announcements
             "body": "test123",
             "created": "2017-05-31T15:23:44.858735",
             "id": 5,
+            "media_url": null,
+            "published": true,
             "title": "title123",
+            "updated": "2017-05-31T15:23:44.858735",
             "user_id": 4953
         },
         {
             "body": "new body",
             "created": "2017-05-31T15:23:28.477516",
             "id": 4,
+            "media_url": null,
+            "published": true,
             "title": "blogpost title",
+            "updated": "2017-05-31T15:23:28.477516",
             "user_id": 4953
         },
         {
             "body": "new body",
             "created": "2017-06-01T23:42:45.042010",
             "id": 7,
+            "media_url": null,
+            "published": true,
             "title": "blogpost title",
+            "updated": "2017-06-01T23:42:45.042010",
             "user_id": 4953
         },
         {
             "body": "new body",
             "created": "2017-06-01T23:45:11.612801",
             "id": 8,
+            "media_url": null,
+            "published": true,
             "title": "blogpost title",
+            "updated": "2017-06-01T23:45:11.612801",
             "user_id": 4953
         }
     ],
-  "csrf": "1496394861.12##1bfcbb386bae5d1625c023a23b08865b4176579d",
-  "template": "",
-  "title": "Manage global Announcements"
+    "csrf": "1504710446.52##6a7fakjsdhsdflkj",
+    "template": "admin/announcement.html",
+    "title": "Manage global Announcements"
 }
 ```
 
@@ -2293,7 +2382,7 @@ Creates a new PYBOSSA wide announcement
     "errors": {},
     "title": null
   },
-  "template": "",
+  "template": "admin/new_announcement.html",
   "title": "Write a new post"
 }
 ```
@@ -2339,7 +2428,7 @@ Updates a PYBOSSA announcement
     "id": 4,
     "title": "test6"
   },
-  "template": "",
+  "template": "admin/new_announcement.html",
   "title": "Edit a post"
 }
 ```
@@ -3350,6 +3439,101 @@ Gives you the global stats of the PYBOSSA server.
 }
 ```
 
+### Project Category
+
+**Endpoint: /project/category/&lt;short\_name&gt;/**
+
+*Allowed methods*: **GET**
+
+**GET**
+
+Gives you the list of projects in a category.
+
+-   **pagination**: A pagination object for getting projects from this
+    category.
+-   **active\_cat**: Active category.
+-   **projects**: List of projects belonging to this category.
+-   **categories**: List of available categories in this server.
+-   **template**: The Jinja2 template that could be rendered.
+-   **title**: the title for the endpoint.
+
+**Example output**
+
+``` {.sourceCode .python}
+{
+  "active_cat": {
+    "created": null,
+    "description": "Social projects",
+    "id": 2,
+    "name": "Social",
+    "short_name": "social"
+  },
+  "categories": [
+    {
+      "created": null,
+      "description": "Featured projects",
+      "id": null,
+      "name": "Featured",
+      "short_name": "featured"
+    },
+    {
+      "created": null,
+      "description": "Social projects",
+      "id": 2,
+      "name": "Social",
+      "short_name": "social"
+    },
+    {
+      "created": "2013-06-18T11:13:44.789149",
+      "description": "Art projects",
+      "id": 3,
+      "name": "Art",
+      "short_name": "art"
+    },
+  ],
+  "pagination": {
+    "next": false,
+    "page": 1,
+    "per_page": 20,
+    "prev": false,
+    "total": 1
+  },
+  "projects": [
+    {
+      "created": "2014-02-22T15:09:23.691811",
+      "description": "Image pattern recognition",
+      "id": 1377,
+      "info": {
+        "container": "7",
+        "thumbnail": "58.png"
+      },
+      "last_activity": "2 weeks ago",
+      "last_activity_raw": "2017-01-31T09:18:28.450391",
+      "n_tasks": 169671,
+      "n_volunteers": 17499,
+      "name": "Name",
+      "overall_progress": 80,
+      "owner": "John Doe",
+      "short_name": "name",
+      "updated": "2017-01-31T09:18:28.491496"
+    },
+  ],
+  "template": "/projects/index.html",
+  "title": "Projects"
+}
+```
+
+<div class="admonition note">
+
+To override the default ranking you pass the **orderby** query parameter to
+
+:   sort projects by any of the attributes listed above, such as
+    *n\_volunteers* or *n\_tasks*. The **desc** query parameter can also
+    be added to sort in descending order. For example: GET
+    /project/category/&lt;short\_name&gt;/?orderby=n\_tasks&desc=True
+
+</div>
+
 ### Project Category Featured
 
 **Endpoint: /project/category/featured/**
@@ -3360,8 +3544,8 @@ Gives you the global stats of the PYBOSSA server.
 
 Gives you the list of featured projects.
 
--   **pagination**: A pagination object for getting new featured projets
-    from this category.
+-   **pagination**: A pagination object for getting new featured
+    projects from this category.
 -   **active\_cat**: Active category.
 -   **projects**: List of projects belonging to this category.
 -   **categories**: List of available categories in this server.
@@ -3433,6 +3617,17 @@ Gives you the list of featured projects.
   "title": "Projects"
 }
 ```
+
+<div class="admonition note">
+
+To override the default ranking you pass the **orderby** query parameter to
+
+:   sort projects by any of the attributes listed above, such as
+    *n\_volunteers* or *n\_tasks*. The **desc** query parameter can also
+    be added to sort in descending order. For example: GET
+    /project/category/featured/?orderby=n\_tasks&desc=True
+
+</div>
 
 ### Project Category Draft
 
@@ -3518,6 +3713,17 @@ Gives you the list of featured projects.
 }
 ```
 
+<div class="admonition note">
+
+To override the default ranking you pass the **orderby** query parameter to
+
+:   sort projects by any of the attributes listed above, such as
+    *n\_volunteers* or *n\_tasks*. The **desc** query parameter can also
+    be added to sort in descending order. For example: GET
+    /project/category/draft/?orderby=n\_tasks&desc=True
+
+</div>
+
 ### Project Creation
 
 **Endpoint: /project/new**
@@ -3565,7 +3771,7 @@ Gives you the list of posted blogs by the given project short name.
 -   **blogposts**: All the blog posts for the given project.
 -   **project**: Info about the project.
 
-The project and owner fields will have more information if the onwer of
+The project and owner fields will have more information if the owner of
 the project does the request, providing its private information like
 api\_key, password keys, etc. Otherwise it will be removed and only show
 public info.
@@ -3670,6 +3876,7 @@ template, otherwise it will load the template for you.
  "n_volunteers": 0,
  "overall_progress": 0,
  "owner": {
+   "admin": false,
    "api_key": "key",
    "confirmation_email_sent": false,
    "created": "2016-09-15T11:30:42.660450",
@@ -3758,6 +3965,7 @@ basic or **?template=iamge** for the image template.
  "n_volunteers": 0,
  "overall_progress": 0,
  "owner": {
+   "admin": false,
    "api_key": "key",
    "confirmation_email_sent": false,
    "created": "2016-09-15T11:30:42.660450",
@@ -3827,7 +4035,7 @@ the data fields found in the previous example, as it contains the
 information about the fields: specifically **editor** with the
 HTML/CSS/JS that you want to provide.
 
-If the post is successfull, you will get the following output:
+If the post is successful, you will get the following output:
 
 **Example output**
 
@@ -3861,6 +4069,7 @@ field.
   "n_tasks": 0,
   "overall_progress": 0,
   "owner": {
+    "admin": false,
     "api_key": "key",
     "confirmation_email_sent": false,
     "created": "2016-09-15T11:30:42.660450",
@@ -3969,6 +4178,7 @@ It returns a JSON object with the following information:
   "n_volunteers": 0,
   "overall_progress": 0,
   "owner": {
+    "admin": false,
     "api_key": "key",
     "confirmation_email_sent": false,
     "created": "2012-06-06T06:27:18.760254",
@@ -4046,7 +4256,7 @@ To send a valid POST request you need to pass the *csrf token* in the
 headers. Use the following header: "X-CSRFToken".
 
 As this endpoint supports **two** different forms, you must specify
-which form are you targetting adding an extra key: **btn**. The options
+which form are you targeting adding an extra key: **btn**. The options
 for this key are:
 
 > **Upload**: to update the **upload\_form**.
@@ -4263,6 +4473,7 @@ It returns a JSON object with the following information:
   "n_volunteers": 0,
   "overall_progress": 0,
   "owner": {
+    "admin": false,
     "api_key": "key",
     "confirmation_email_sent": false,
     "created": "2012-06-06T06:27:18.760254",

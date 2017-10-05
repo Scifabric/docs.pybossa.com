@@ -12,15 +12,15 @@ You need this guide if you want to
 
 Officially supported requirements:
 
-> -   Ubuntu 14.04 LTS
+> -   Ubuntu 16.04 LTS
 > -   Python &gt;= 2.7.6, &lt;3.0
-> -   PostgreSQL &gt;= 9.3
+> -   PostgreSQL &gt;= 9.5
 > -   Redis &gt;= 2.6
 > -   pip &gt;= 6.1
 
 It may also run with older software but we do not officially support it:
 
-> -   Ubuntu 12.04 LTS
+> -   Ubuntu 14.04 LTS
 > -   Python &gt;= 2.7.2, &lt;3.0
 > -   PostgreSQL &gt;= 9.3
 > -   Redis &gt;= 2.6
@@ -62,7 +62,7 @@ PYBOSSA uses [PostgreSQL](http://www.postgresql.org/) as the main
 database for storing all the data, and you the required steps for
 installing it are the following:
 
-    sudo apt-get install postgresql postgresql-server-dev-all libpq-dev python-psycopg2
+    sudo apt-get install postgresql postgresql-server-dev-all libpq-dev python-psycopg2 libsasl2-dev libldap2-dev libssl-dev
 
 ### Installing virtualenv (optional, but recommended)
 
@@ -97,7 +97,8 @@ Installing the required libraries for PYBOSSA is a step that will need
 to use some compilers and dev libraries in order to work. Thus, you will
 need to install the following packages:
 
-    sudo apt-get install python-dev build-essential libjpeg-dev libssl-dev swig libffi-dev dbus libdbus-1-dev libdbus-glib-1-dev
+    sudo apt-get install python-dev build-essential libjpeg-dev libssl-dev libffi-dev
+    sudo apt-get install dbus libdbus-1-dev libdbus-glib-1-dev libldap2-dev libsasl2-dev
 
 Then, you are ready to download the code and install the required
 libraries for running PYBOSSA.
