@@ -1,4 +1,4 @@
-# Test PYBOSSA docs in Markdown
+# PYBOSSA Docs in Markdown (BETA)
 
 Needs `pandoc` and install requirements.txt with pip.
 
