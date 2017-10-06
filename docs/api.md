@@ -517,13 +517,9 @@ this:
 
 That query will return 100 tasks for the user.
 
-<div class="admonition note">
-
-That's the maximum of tasks that a user can get at once. If you pass an argument of 200,
-
-:   PYBOSSA will convert it to 100.
-
-</div>
+!!! note
+    That's the maximum of tasks that a user can get at once. If you pass an argument of 200,
+    PYBOSSA will convert it to 100.
 
 You can also, use **offset** to get the next tasks, if you want,
 allowing you to preload:
@@ -586,13 +582,10 @@ will create for you a *secret key*. This secret key will be used by your
 phone app to authenticate all the requests and avoid other users to send
 data to your project via external user API.
 
-<div class="admonition note">
-
-We highly recommend using SSL on your server to secure all the process.
-You can use Let's Encrypt certificates for free. Check their
-[documentation.](https://certbot.eff.org/)
-
-</div>
+!!! note
+    We highly recommend using SSL on your server to secure all the process.
+    You can use Let's Encrypt certificates for free. Check their
+    [documentation.](https://certbot.eff.org/)
 
 Now your phone app will have to authenticate to the server to get tasks
 and post task runs.
@@ -618,12 +611,9 @@ you will be able to submit it like this:
     HEADERS Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOiIxMjM0NTY3ODkwIiwibmFtZSI6IkpvaG4gRG9lIiwiYWRtaW4iOnRydWV9.TJVA95OrM7E2cBab30RMHrHDcEfxjoYZgeFONFh7HgQ
     POST http://{pybossa-site-url}/api/taskrun?external_uid=1xa
 
-<div class="admonition note">
-
-The TaskRun object needs to have the external\_uid field filled with
-1xa.
-
-</div>
+!!! note
+    The TaskRun object needs to have the external\_uid field filled with
+    1xa.
 
 As simple as that!
 
@@ -683,7 +673,7 @@ Command line Example Usage of the API
 
 Create a Project object:
 
-``` {.sourceCode .bash}
+```bash
 curl -X POST -H "Content-Type:application/json" -s -d '{"name":"myproject", "info":{"xyz":1}}' 'http://localhost:5000/api/project?api_key=API-KEY'
 ```
 
@@ -694,13 +684,10 @@ The following endpoints of PYBOSSA server can be requested setting the
 header *Content-Type* to *application/json* so you can retrieve the data
 using JavaScript.
 
-<div class="admonition note">
-
-If a key has the value **null** is because, that view is not populating
-that specific field. However, that value should be retrieved in a
-different one. Please, see all the documentation.
-
-</div>
+!!! note
+    If a key has the value **null** is because, that view is not populating
+    that specific field. However, that value should be retrieved in a
+    different one. Please, see all the documentation.
 
 ### Account index
 
@@ -725,7 +712,7 @@ It returns a JSON object with the following information:
 
 **Example output**
 
-``` {.sourceCode .python}
+```json
 {
   "accounts": [
     {
@@ -791,7 +778,7 @@ It returns a JSON object with the following information:
 
 **Example output**
 
-``` {.sourceCode .python}
+```json
 {
   "form": {
     "confirm": null,
@@ -1292,12 +1279,9 @@ for this key are:
     **upload\_form**. **Password**: to update the **password\_form**.
     **External**: to update the **form** but only the external services.
 
-<div class="admonition note">
-
-Be sure to respect the Uppercase in the first letter, otherwise it will
-fail.
-
-</div>
+!!! note
+    Be sure to respect the Uppercase in the first letter, otherwise it will
+    fail.
 
 It returns a JSON object with the following information:
 
@@ -1362,20 +1346,16 @@ If there's an error in the form fields, you will get them in the
 }
 ```
 
-<div class="admonition note">
+!!! note
+    For updating the avatar is very important to not set the *Content-Type*. If you
+    are using jQuery, set it to False, so the file is handled properly.
 
-For updating the avatar is very important to not set the *Content-Type*. If you
+    The (x1,x2,y1,y2) are the coordinates for cutting the image and create
+    the avatar.
 
-:   are using jQuery, set it to False, so the file is handled properly.
-
-The (x1,x2,y1,y2) are the coordinates for cutting the image and create
-the avatar.
-
-(x1,y1) are the offset left of the cropped area and the offset top of
-the cropped area respectively; and (x2,y2) are the width and height of
-the crop.
-
-</div>
+    (x1,y1) are the offset left of the cropped area and the offset top of
+    the cropped area respectively; and (x2,y2) are the width and height of
+    the crop.
 
 ### Account reset password
 
@@ -2592,12 +2572,10 @@ following information:
 }
 ```
 
-<div class="admonition note">
+!!! note
+    You will need to use the /admin/users endpoint to get a list of users
+    for adding deleting from the admin group.
 
-You will need to use the /admin/users endpoint to get a list of users
-for adding deleting from the admin group.
-
-</div>
 
 ### Admin users del
 
@@ -2620,12 +2598,10 @@ the following information:
 }
 ```
 
-<div class="admonition note">
+!!! note
+    You will need to use the /admin/users endpoint to get a list of users
+    for adding deleting from the admin group.
 
-You will need to use the /admin/users endpoint to get a list of users
-for adding deleting from the admin group.
-
-</div>
 
 ### Admin categories
 
@@ -3480,16 +3456,13 @@ Gives you the list of projects in a category.
 }
 ```
 
-<div class="admonition note">
-
-To override the default ranking you pass the **orderby** query parameter to
-
-:   sort projects by any of the attributes listed above, such as
+!!! note
+    To override the default ranking you pass the **orderby** query parameter to
+    sort projects by any of the attributes listed above, such as
     *n\_volunteers* or *n\_tasks*. The **desc** query parameter can also
     be added to sort in descending order. For example: GET
     /project/category/&lt;short\_name&gt;/?orderby=n\_tasks&desc=True
 
-</div>
 
 ### Project Category Featured
 
@@ -3575,16 +3548,13 @@ Gives you the list of featured projects.
 }
 ```
 
-<div class="admonition note">
-
-To override the default ranking you pass the **orderby** query parameter to
-
-:   sort projects by any of the attributes listed above, such as
+!!! note
+    To override the default ranking you pass the **orderby** query parameter to
+    sort projects by any of the attributes listed above, such as
     *n\_volunteers* or *n\_tasks*. The **desc** query parameter can also
     be added to sort in descending order. For example: GET
     /project/category/featured/?orderby=n\_tasks&desc=True
 
-</div>
 
 ### Project Category Draft
 
@@ -3670,16 +3640,12 @@ Gives you the list of featured projects.
 }
 ```
 
-<div class="admonition note">
-
-To override the default ranking you pass the **orderby** query parameter to
-
-:   sort projects by any of the attributes listed above, such as
+!!! note
+    To override the default ranking you pass the **orderby** query parameter to
+    sort projects by any of the attributes listed above, such as
     *n\_volunteers* or *n\_tasks*. The **desc** query parameter can also
     be added to sort in descending order. For example: GET
     /project/category/draft/?orderby=n\_tasks&desc=True
-
-</div>
 
 ### Project Creation
 
@@ -4220,12 +4186,9 @@ for this key are:
 
 The other one does not need this extra key.
 
-<div class="admonition note">
-
-Be sure to respect the Uppercase in the first letter, otherwise it will
-fail.
-
-</div>
+!!! note
+    Be sure to respect the Uppercase in the first letter, otherwise it will
+    fail.
 
 It returns a JSON object with the following information:
 
@@ -4273,21 +4236,17 @@ If there's an error in the form fields, you will get them in the
 }
 ```
 
-<div class="admonition note">
+!!! note
+    For updating the avatar is very important to not set the *Content-Type*. If you
+    are using jQuery, set it to False, so the file is handled properly.
 
-For updating the avatar is very important to not set the *Content-Type*. If you
+    The (x1,x2,y1,y2) are the coordinates for cutting the image and create
+    the avatar.
 
-:   are using jQuery, set it to False, so the file is handled properly.
-
-The (x1,x2,y1,y2) are the coordinates for cutting the image and create
-the avatar.
-
-(x1,y1) are the offset left of the cropped area and the offset top of
-the cropped area respectively; and (x2,y2) are the width and height of
-the crop. And don't forget to add an extra key to the form-data: 'btn'
-with a value Upload to select this form.
-
-</div>
+    (x1,y1) are the offset left of the cropped area and the offset top of
+    the cropped area respectively; and (x2,y2) are the width and height of
+    the crop. And don't forget to add an extra key to the form-data: 'btn'
+    with a value Upload to select this form.
 
 ### Project reset secret key
 
