@@ -1,5 +1,5 @@
 site_name: PYBOSSA Documentation
-theme_dir: '../mkdocs-material-pybossa/material'
+theme: 'material'
 # theme: 'readthedocs'
 markdown_extensions:
     - admonition
