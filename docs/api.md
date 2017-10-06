@@ -190,47 +190,32 @@ If you want, you can order them in descending order:
 Check all the attributes that you can use to order by in the [Domain
 Object section](http://docs.pybossa.com/en/latest/model.html).
 
-<div class="admonition note">
-
-Please, notice that in order to keep users privacy, only their locale and
-
-:   nickname will be shared by default. Optionally, users can disable
+!!! note
+    Please, notice that in order to keep users privacy, only their locale and
+    nickname will be shared by default. Optionally, users can disable
     privacy mode in their settings. By doing so, also their fullname and
     account creation date will be visible for everyone through the API.
 
-</div>
-
-<div class="admonition note">
-
-By default PYBOSSA limits the list of items to 20. If you want to get more
-
-:   items, use the keyword **limit=N** with **N** being a number to get
+!!! note
+    By default PYBOSSA limits the list of items to 20. If you want to get more
+    items, use the keyword **limit=N** with **N** being a number to get
     that amount. There is a maximum of 100 to the **limit** keyword, so
     if you try to get more items at once it won't work.
 
-</div>
-
-<div class="admonition note">
-
-**DEPRECATED (see next Note for a better and faster solution)**
-
-:   You can use the keyword **offset=N** in any **GET** query to skip
+!!! note
+    **DEPRECATED (see next Note for a better and faster solution)**
+    You can use the keyword **offset=N** in any **GET** query to skip
     that many rows before beginning to get rows. If both **offset** and
     **limit** appear, then **offset** rows are skipped before starting
     to count the **limit** rows that are returned.
 
-</div>
 
-<div class="admonition note">
-
-You can paginate the results of any GET query using the last ID of the
-
-:   domain object that you have received and the parameter:
+!!! note
+    You can paginate the results of any GET query using the last ID of the
+    domain object that you have received and the parameter:
     **last\_id**. For example, to get the next 20 items after the last
     project ID that you've received you will write the query like this:
-    GET /api/project?last\_id={{last\_id}}.
-
-</div>
+    `GET /api/project?last\_id={{last\_id}}`.
 
 ### Related data
 
@@ -254,17 +239,13 @@ return only 20 objects, you can get more or less objects using the
 
     GET http://{pybossa-site-url}/api/{domain-object}/{id}[?api_key=API-KEY]
 
-<div class="admonition note">
-
-Some GET actions may require to authenticate & authorize the request. Use the
-
-:   ?api\_key argument to pass the **API-KEY**.
-
-</div>
+!!! note
+    Some GET actions may require to authenticate & authorize the request. Use the
+    `?api\_key` argument to pass the **API-KEY**.
 
 If the object is not found you will get a JSON object like this:
 
-``` {.sourceCode .js}
+```json
 {
     "status": "failed",
     "action": "GET",
@@ -346,7 +327,7 @@ this:
 
     /api/task?project_id=1&info=name::ipsum%26bravo&fulltextsearch=1
 
-``` {.sourceCode .python}
+```json
 [
   {
     "info": {
@@ -371,46 +352,30 @@ this:
 ]
 ```
 
-<div class="admonition note">
+!!! note
+    When you use the fulltextsearch API the results are always sorted by
+    rank, showing first the most relevant ones to your query.
 
-When you use the fulltextsearch API the results are always sorted by
-rank, showing first the most relevant ones to your query.
 
-</div>
+!!! note
+    We use PostgreSQL ts\_rank\_cd with the following configuration:
+    ts\_rank\_cd(textsearch, query, 4). For more details check the official
+    documentation of PostgreSQL.
 
-<div class="admonition note">
+!!! note
+    By default PYBOSSA uses English for the searches. You can customize this
+    behavior using any of the supported languages by PostgreSQL changing the
+    settings\_local.py config variable: *FULLTEXTSEARCH\_LANGUAGE* =
+    'spanish'.
 
-We use PostgreSQL ts\_rank\_cd with the following configuration:
-ts\_rank\_cd(textsearch, query, 4). For more details check the official
-documentation of PostgreSQL.
-
-</div>
-
-<div class="admonition note">
-
-By default PYBOSSA uses English for the searches. You can customize this
-behavior using any of the supported languages by PostgreSQL changing the
-settings\_local.py config variable: *FULLTEXTSEARCH\_LANGUAGE* =
-'spanish'.
-
-</div>
-
-<div class="admonition note">
-
-By default all GET queries return a maximum of 20 objects unless the
-
-:   **limit** keyword is used to get more: limit=50. However, a maximum
+!!! note
+    By default all GET queries return a maximum of 20 objects unless the
+    **limit** keyword is used to get more: limit=50. However, a maximum
     amount of 100 objects can be retrieved at once.
 
-</div>
-
-<div class="admonition note">
-
-If the search does not find anything, the server will return an empty JSON
-
-:   list \[\]
-
-</div>
+!!! note
+    If the search does not find anything, the server will return an empty JSON
+    list \[\]
 
 Excluding contributed tasks from GET queries
 --------------------------------------------
@@ -436,17 +401,13 @@ Create a domain object. Returns created domain object.:
 
     POST http://{pybossa-site-url}/api/{domain-object}[?api_key=API-KEY]
 
-<div class="admonition note">
-
-Some POST actions may require to authenticate & authorize the request. Use the
-
-:   ?api\_key argument to pass the **API-KEY**.
-
-</div>
+!!! note
+    Some POST actions may require to authenticate & authorize the request. Use the
+    `?api\_key` argument to pass the **API-KEY**.
 
 If an error occurs, the action will return a JSON object like this:
 
-``` {.sourceCode .js}
+```json
 {
     "status": "failed",
     "action": "POST",
@@ -466,17 +427,13 @@ Update a domain object:
 
     PUT http://{pybossa-site-url}/api/{domain-object}/{id}[?api_key=API-KEY]
 
-<div class="admonition note">
-
-Some PUT actions may require to authenticate & authorize the request. Use the
-
-:   ?api\_key argument to pass the **API-KEY**.
-
-</div>
+!!! note
+    Some PUT actions may require to authenticate & authorize the request. Use the
+    ?api\_key argument to pass the **API-KEY**.
 
 If an error occurs, the action will return a JSON object like this:
 
-``` {.sourceCode .js}
+```json
 {
     "status": "failed",
     "action": "PUT",
@@ -496,17 +453,13 @@ Delete a domain object:
 
     DELETE http://{pybossa-site-url}/api/{domain-object}/{id}[?api_key=API-KEY]
 
-<div class="admonition note">
-
-Some DELETE actions may require to authenticate & authorize the request. Use the
-
-:   ?api\_key argument to pass the **API-KEY**.
-
-</div>
+!!! note
+    Some DELETE actions may require to authenticate & authorize the request. Use the
+    `?api\_key` argument to pass the **API-KEY**.
 
 If an error occurs, the action will return a JSON object like this:
 
-``` {.sourceCode .js}
+```json
 {
     "status": "failed",
     "action": "DELETE",
