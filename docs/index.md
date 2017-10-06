@@ -34,3 +34,10 @@ Documentation
 -------------
 
 The documentation is organized as follows:
+
+ - [Testing PYBOSSA with Vagrant](vagrant_pybossa.md)
+ - [Installing your own PYBOSSA server](installing_pybossa.md)
+ - [Administrating PYBOSSA](admin.md)
+ - [Build with PYBOSSA](build_with_pybossa.md)
+ - [Contributing to PYBOSSA](contributing.md)
+ - [FAQ](faq.md)
