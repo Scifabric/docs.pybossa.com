@@ -13,5 +13,13 @@ extra:
       accent: '#00a889'
   font:
       text: 'Source Sans Pro'
+  social:
+    - type: 'github'
+      link: 'https://github.com/Scifabric'
+    - type: 'twitter'
+      link: 'https://twitter.com/Scifabric'
 repo_name: 'Scifabric/pybossa'
 repo_url: 'https://github.com/Scifabric/pybossa'
+google_analytics:
+  - 'UA-49052879-1'
+  - 'auto'
