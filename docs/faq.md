@@ -1,17 +1,12 @@
-Frequently Asked Questions
-==========================
+# Frequently Asked Questions
 
-<div class="admonition note">
-
-If you do not find your question in this section, please send it to us
-
-:   directly to *info AT pybossa DOT com*. We will try to help you and
+!!! info
+    If you do not find your question in this section, please send it to us
+    directly to *info AT scfabric DOT com*. We will try to help you and
     add your question to the FAQ.
 
-</div>
 
-Users
------
+## Users
 
 ### Do I need to create an account to participate in the project?
 
@@ -19,8 +14,7 @@ It depends. The owners of the projects can disable anonymous
 contributions (usually due to privacy issues with the data), forcing you
 to create an account if you want to contribute to that specific project.
 
-Projects
---------
+## Projects
 
 ### How can I create a project?
 
@@ -73,10 +67,9 @@ upload your file to a file server like DropBox, copy the public link and
 paste it in the importer section. PYBOSSA also supports Google Drive
 Spreadsheets, see csv-import section for further details.
 
-My data is in a Google Doc Spreadsheet, can I import the data into my
-project?
---------------------------------------------------------------------------Yes,
-you can. PYBOSSA supports the Google Drive Spreadsheets, so make it
+### My data is in a Google Doc Spreadsheet, can I import the data into my project?
+
+Yes, you can. PYBOSSA supports the Google Drive Spreadsheets, so make it
 public, copy the link and use that link to import it the Google Drive
 importer section. See csv-import section for further details.
 
@@ -101,8 +94,7 @@ The task presenter is the web project that will load the tasks of your
 project and present them to the user. It is an HTML + JavaScript
 project. See the task-presenter section for further details.
 
-PYBOSSA
--------
+## PYBOSSA
 
 ### Does PYBOSSA have an API?
 
@@ -124,8 +116,7 @@ transcription, etc. Check the official [Git
 repository](http://github.com/Scifabric/) for all the available
 projects.
 
-Support
--------
+## Support
 
 PYBOSSA is free and open source, that means that anyone can create a
 project and benefit from the endless features that PYBOSSA has to offer,
