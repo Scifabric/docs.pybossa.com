@@ -5,6 +5,7 @@ markdown_extensions:
     - admonition
     - smarty
     - wikilinks
+    - codehilite(linenums=true)
     # - urlize # requires: pip install git+https://github.com/r0wb0t/markdown-urlize.git
 site_favicon: 'images/favicon.icon'
 extra:
