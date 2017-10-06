@@ -1,5 +1,4 @@
-Welcome to PYBOSSA's documentation
-==================================
+# Welcome to PYBOSSA's documentation
 
 PYBOSSA is our technology, used for the development of platforms and
 data collection within collaborative environments, analysis and data
@@ -23,8 +22,7 @@ S3, Twitter, Youtube, Google Spreadsheets, Flickr, Raspberry Pi, etc.
 Through all these integrations PYBOSSA allows data capture for further
 analysis made by users in a transparent and easy way.
 
-Supporting PYBOSSA
-------------------
+# Supporting PYBOSSA
 
 PYBOSSA is an open source project. Its ongoing development is made
 possible thanks to the support by these awesome
