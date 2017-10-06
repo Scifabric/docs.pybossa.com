@@ -1,5 +1,4 @@
-Deploying PYBOSSA with nginx and uwsgi
-======================================
+# Deploying PYBOSSA with nginx and uwsgi
 
 PYBOSSA is a python web application built using the Flask
 micro-framework.
@@ -11,15 +10,14 @@ PYBOSSA please follow only install.
 
 Pre-requisites:
 
-> -   nginx
-> -   uwsgi
-> -   supervisord
-> -   Redis and sentinel as service (with supervisord)
-> -   RQ-Scheduler and RQ-Worker as service (with supervisord)
-> -   PYBOSSA as service (with supervisord)
+- nginx
+- uwsgi
+- supervisord
+- Redis and sentinel as service (with supervisord)
+- RQ-Scheduler and RQ-Worker as service (with supervisord)
+- PYBOSSA as service (with supervisord)
 
-First steps
------------
+## First steps
 
 If you have not done already: Please create a new user account, e.g.
 pybossa (a non root at best) which will run the PYBOSSA instance. You
@@ -27,22 +25,23 @@ then have to follow the instructions from install first to get a
 runnable PYBOSSA. After you've done that please continue with this
 guide.
 
-Installing nginx and uwsgi
---------------------------
+## Installing nginx and uwsgi
 
 You have to install nginx and uwsgi in your server machine. In a
 Debian/Ubuntu machine you can install them running the following
 commands:
-
-    sudo apt-get install nginx
+``` bash
+sudo apt-get install nginx
+```
 
 in the (virtualenv-)installation directory of pybossa you need to
 install uwsgi:
 
-    pip install -U uwsgi
+``` bash
+pip install -U uwsgi
+```
 
-Configuring nginx and uwsgi for PYBOSSA
----------------------------------------
+## Configuring nginx and uwsgi for PYBOSSA
 
 We assume you only want to run PYBOSSA on your nginx webserver. If you
 want to run also other services on the same server you need to modify
@@ -51,27 +50,29 @@ the nginx config files!
 You have to copy and adapt the following files from your local PYBOSSA
 installation:
 
-> -   contrib/nginx/pybossa
-> -   contrib/pybossa.ini
+- contrib/nginx/pybossa
+- contrib/pybossa.ini
 
 The PYBOSSA virtual host file (**contrib/nginx/pybossa**) has the
 following directives:
 
-    location / { try_files $uri @pybossa; }
+```
+location / { try_files $uri @pybossa; }
 
-    location @pybossa {
-        include uwsgi_params;
-        uwsgi_pass unix:/tmp/pybossa.sock;
-    }
+location @pybossa {
+    include uwsgi_params;
+    uwsgi_pass unix:/tmp/pybossa.sock;
+}
 
-    location  /static {
+location  /static {
 
-                # change that to your pybossa static directory
-                alias /home/Scifabric/pybossa/pybossa/themes/default/static;
+            # change that to your pybossa static directory
+            alias /home/Scifabric/pybossa/pybossa/themes/default/static;
 
-                autoindex on;
-                expires max;
-            }
+            autoindex on;
+            expires max;
+        }
+```
 
 You can specify a user and group from your machine with lower privileges
 in order to improve the security of the site. You can also use the
@@ -80,23 +81,29 @@ www-data user and group name.
 Once you have adapted the PATH in the alias in that file, copy it into
 the folder:
 
-    sudo cp contrib/nginx/pybossa /etc/nginx/sites-available/.
+``` bash
+sudo cp contrib/nginx/pybossa /etc/nginx/sites-available/.
+```
 
-please delete the default config in sites-enabled (do not worry there is
+Please delete the default config in sites-enabled (do not worry there is
 a backup):
 
-    sudo rm /etc/nginx/sites-enabled/default
+``` bash
+sudo rm /etc/nginx/sites-enabled/default
+```
 
 Enable the PYBOSSA site:
+``` bash
+sudo ln -s /etc/nginx/sites-available/pybossa /etc/nginx/sites-enabled/pybossa
+```
 
-    sudo ln -s /etc/nginx/sites-available/pybossa /etc/nginx/sites-enabled/pybossa
 
 And restart the server:
+``` bash
+sudo service nginx restart
+``` 
 
-    sudo service nginx restart
-
-Creating the pybossa.ini file for uwsgi
----------------------------------------
+## Creating the pybossa.ini file for uwsgi
 
 You have to copy the **pybossa.ini.template** file to pybossa.ini in
 your PYBOSSA installation and adapt the paths to match your
@@ -104,126 +111,146 @@ configuration!
 
 The content of this file is the following:
 
-    [uwsgi]
-    socket = /tmp/pybossa.sock
-    chmod-socket = 666
-    chdir = /home/pybossa/pybossa
-    pythonpath = ..
-    virtualenv = /home/pybossa/pybossa/env
-    module = run:app
-    cpu-affinity = 1
-    processes = 2
-    threads = 2
-    stats = /tmp/pybossa-stats.sock
-    buffer-size = 65535
+``` python
+[uwsgi]
+socket = /tmp/pybossa.sock
+chmod-socket = 666
+chdir = /home/pybossa/pybossa
+pythonpath = ..
+virtualenv = /home/pybossa/pybossa/env
+module = run:app
+cpu-affinity = 1
+processes = 2
+threads = 2
+stats = /tmp/pybossa-stats.sock
+buffer-size = 65535
+```
 
-Install supervisord
--------------------
+## Install supervisord
 
 Supervisord is used to let PYBOSSA and its RQ system run as Daemon in
 the background. It shares some of the same goals of programs like
 launchd, daemontools, and runit.
 
 Install it:
+``` bash
+sudo apt-get install supervisor
+```
 
-    sudo apt-get install supervisor
-
-Configure Redis and sentinel as service with supervisord
---------------------------------------------------------
+## Configure Redis and sentinel as service with supervisord
 
 First stop redis service and all running redis instances with:
 
-    sudo service redis-server stop
-    killall redis-server
+``` bash
+sudo service redis-server stop
+killall redis-server
+```
 
 We want to run redis and sentinel with supervisord because supervisord
 is more reliable when redis crashes (which can happen when you have too
 less memory). So we disable redis-server daemon service with:
 
-    sudo rm /etc/init.d/redis-server
+``` bash
+sudo rm /etc/init.d/redis-server
+```
+
 
 Go to your pybossa installation directory and copy following files:
 
-    sudo cp contrib/supervisor/redis-server.conf /etc/supervisor/conf.d/
-    sudo cp contrib/supervisor/redis-sentinel.conf /etc/supervisor/conf.d/
-    sudo cp contrib/redis-supervisor/redis.conf /etc/redis/
-    sudo cp contrib/redis-supervisor/sentinel.conf /etc/redis/
-    sudo chown redis:redis /etc/redis/redis.conf
-    sudo chown redis:redis /etc/redis/sentinel.conf
+``` bash
+sudo cp contrib/supervisor/redis-server.conf /etc/supervisor/conf.d/
+sudo cp contrib/supervisor/redis-sentinel.conf /etc/supervisor/conf.d/
+sudo cp contrib/redis-supervisor/redis.conf /etc/redis/
+sudo cp contrib/redis-supervisor/sentinel.conf /etc/redis/
+sudo chown redis:redis /etc/redis/redis.conf
+sudo chown redis:redis /etc/redis/sentinel.conf
+```
 
 Now we restart supervisord (please do a full stop and start as
 described):
 
-    sudo service supervisor stop
-    sudo service supervisor start
+``` bash
+sudo service supervisor stop
+sudo service supervisor start
+```
 
 To verify install you can list all redis processes and you should see a
 redis-server at port 6379 and redis-sentinel at port 26379:
 
-    ps aux | grep redis
+``` bash
+ps aux | grep redis
+```
 
 This two services will no run whenever the server is running (even after
 reboot).
 
-Configure RQ-Scheduler and -Worker to run with supervisord
-----------------------------------------------------------
+## Configure RQ-Scheduler and -Worker to run with supervisord
 
 You need to adjust the paths and user account in this two config files
 according to your installation! Then copy them to supervisor (do not
 forget to edit them):
 
-    sudo cp contrib/supervisor/rq-scheduler.conf.template /etc/supervisor/conf.d/rq-scheduler.conf
-    sudo cp contrib/supervisor/rq-worker.conf.template /etc/supervisor/conf.d/rq-worker.conf
+``` bash
+sudo cp contrib/supervisor/rq-scheduler.conf.template /etc/supervisor/conf.d/rq-scheduler.conf
+sudo cp contrib/supervisor/rq-worker.conf.template /etc/supervisor/conf.d/rq-worker.conf
+```
 
 Restart supervisor fully:
-
-    sudo service supervisor stop
-    sudo service supervisor start
+``` bash
+sudo service supervisor stop
+sudo service supervisor start
+```
 
 Verify service running. You should see a rqworker and rqscheduler
 instance in console:
 
-    ps aux | grep rq
+``` bash
+ps aux | grep rq
+```
 
-Setup PYBOSSA itself
---------------------
+## Setup PYBOSSA itself
 
 This steps are recommended to do when you run PYBOSSA in nginx. Open
-your **settings\_local.py** in your PYBOSSA installation and uncomment
+your **settings_local.py** in your PYBOSSA installation and uncomment
 or delete the two lines with **HOST** and **PORT**, e.g.:
 
-    # HOST = '0.0.0.0'
-    # PORT = 12000
+``` python
+# HOST = '0.0.0.0'
+# PORT = 12000
+```
 
 After that specify the full server URL where your PYBOSSA is reachable,
 e.g.:
 
-    SERVER_NAME = mypybossa.com
-    PORT = 80
+``` python
+SERVER_NAME = mypybossa.com
+PORT = 80
+```
 
-Let PYBOSSA run as service
---------------------------
+## Let PYBOSSA run as service
 
 Finally we need to let pybossa run as service. Adjust again the paths
 and user name in this file and copy it to supervisor config directory:
 
-    sudo cp contrib/supervisor/pybossa.conf.template /etc/supervisor/conf.d/pybossa.conf
+``` bash
+sudo cp contrib/supervisor/pybossa.conf.template /etc/supervisor/conf.d/pybossa.conf
+```
 
 Edit now the file and adjust paths & user name.
 
 Restart supervisor fully:
-
-    sudo service supervisor stop
-    sudo service supervisor start
+``` bash
+sudo service supervisor stop
+sudo service supervisor start
+```
 
 You should now have a running PYBOSSA production ready webserver on your
 nginx. Open your browser and check your configured domain
 <http://example.com>.
 
-Congratulations! :)
+Congratulations! :smile:
 
-How to update PYBOSSA service
------------------------------
+## How to update PYBOSSA service
 
 Upgrading and updating PYBOSSA as service works the same as for a
 standalone version. Please follow instructions on install. However a few
@@ -231,19 +258,20 @@ extra steps are required after you updated.
 
 You need to restart all supervisor controlled services after updating:
 
-    sudo supervisorctl restart rq-scheduler
-    sudo supervisorctl restart rq-worker
-    sudo supervisorctl restart pybossa
+``` bash
+sudo supervisorctl restart rq-scheduler
+sudo supervisorctl restart rq-worker
+sudo supervisorctl restart pybossa
+```
 
-Logs of PYBOSSA services
-------------------------
+## Logs of PYBOSSA services
 
 You can find logs of all PYBOSSA services in this directory:
+``` bash
+cd /var/log/supervisor
+```
 
-    cd /var/log/supervisor
-
-Last words about Security and Scaling
--------------------------------------
+## Last words about Security and Scaling
 
 This guide does not cover how to secure your PYBOSSA installation. As
 every web server you have to make it secure (like e.g. strong passwords,
@@ -256,9 +284,5 @@ balancers in between.
 
 If you need a secure and/or scalable PYBOSSA installation please contact
 us. We will be glad to help you and we can even do all the hosting,
-customization, administration and installation for you when you want for
-a small fee.
-
-Contact address:
-
-<info@pybossa.com>
+customization, administration and installation for you. Check our 
+[pricing page](https://scifabric.com/pricing/) and get in touch.
