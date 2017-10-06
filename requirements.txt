@@ -1,2 +1,4 @@
 mkdocs
 -e git://github.com/Scifabric/mkdocs-material-pybossa.git#egg=mkdocs-material
+pygments
+pymdown-extensions
