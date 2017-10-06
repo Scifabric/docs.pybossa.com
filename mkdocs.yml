@@ -20,6 +20,7 @@ extra:
       link: 'https://twitter.com/Scifabric'
 repo_name: 'Scifabric/pybossa'
 repo_url: 'https://github.com/Scifabric/pybossa'
+copyright: 'Copyright © 2017 <a href="https://scifabric.com">Scifabric</a>'
 google_analytics:
   - 'UA-49052879-1'
   - 'auto'
