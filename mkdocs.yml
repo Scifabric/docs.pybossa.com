@@ -1,8 +1,17 @@
-site_name: My Docs
-theme: 'material'
+site_name: PYBOSSA Documentation
+theme_dir: '../mkdocs-material-pybossa/material'
 # theme: 'readthedocs'
 markdown_extensions:
     - admonition
     - smarty
     - wikilinks
     # - urlize # requires: pip install git+https://github.com/r0wb0t/markdown-urlize.git
+site_favicon: 'images/favicon.icon'
+extra:
+  palette:
+      primary: '#087da1'
+      accent: '#00a889'
+  font:
+      text: 'Source Sans Pro'
+repo_name: 'Scifabric/pybossa'
+repo_url: 'https://github.com/Scifabric/pybossa'

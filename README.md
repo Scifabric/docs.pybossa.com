@@ -1,6 +1,6 @@
 # PYBOSSA Docs in Markdown (BETA)
 
-Needs `pandoc` and install requirements.txt with pip.
+Needs `pandoc` and install requirements.txt with pip. Also, it needs the [mkdocs-material-pybossa](https://github.com/Scifabric/mkdocs-material-pybossa) theme. 
 
 ## preview docs locally
 
