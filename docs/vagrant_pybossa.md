@@ -1,5 +1,4 @@
-Testing PYBOSSA with Vagrant
-============================
+# Testing PYBOSSA with Vagrant
 
 [Vagrant](http://www.vagrantup.com/) is an open source solution that
 allows you to create and configure lightweight, reproducible, and
@@ -19,42 +18,41 @@ sand-box!).
 Additionally several cloud companies have integration with Vagrant, so
 deploying a PYBOSSA server is really simple using this method.
 
-<div class="admonition note">
+!!! note
+    The virtual machine and server are configured with a **very basic
+    security** set of rules (passwords, secrets, firewall, etc.). Therefore,
+    *if you are going to use this method to deploy a PYBOSSA production
+    server* **it is your responsibility to secure the system properly**.
 
-The virtual machine and server are configured with a **very basic
-security** set of rules (passwords, secrets, firewall, etc.). Therefore,
-*if you are going to use this method to deploy a PYBOSSA production
-server* **it is your responsibility to secure the system properly**.
 
-</div>
-
-Setting up PYBOSSA with Vagrant
--------------------------------
+## Setting up PYBOSSA with Vagrant
 
 In order to start using Vagrant and PYBOSSA all you have to do is
 installing the following open source software:
 
-1.  [VirtualBox](https://www.virtualbox.org/) (min version 4.2.10)
-2.  [Vagrant](http://www.vagrantup.com/) (min version 1.2.1)
+1. [VirtualBox](https://www.virtualbox.org/) (min version 4.2.10)
+2. [Vagrant](http://www.vagrantup.com/) (min version 1.2.1)
 
-<div class="admonition note">
+!!! note
+    [Vagrant](http://www.vagrantup.com/) and [VirtualBox](https://www.virtualbox.org/) works in Windows, GNU/Linux and Mac OS X, so you can try and run
+    PYBOSSA without problems!
 
-[Vagrant](http://www.vagrantup.com/) and [VirtualBox](https://www.virtualbox.org/) works in Windows, GNU/Linux and Mac OS X, so you can try and run
 
-:   PYBOSSA without problems!
-
-</div>
 
 Clone the PYBOSSA git repository (be sure to install git in your
 machine!):
 
-    $ git clone --recursive https://github.com/Scifabric/pybossa.git
+``` bash
+git clone --recursive https://github.com/Scifabric/pybossa.git
+```
 
 Once the source code has been downloaded, all you have to do to start
 your PYBOSSA development environment is typing the following:
 
-    $ cd pybossa
-    $ vagrant up
+``` bash
+cd pybossa
+vagrant up
+```
 
 The system will download a Virtual Machine, install all the required
 libraries for PYBOSSA and set up the system for you inside the Virtual
@@ -66,34 +64,29 @@ Virtual Machine. Hence, if you add a new feature to the system, you will
 be able to test it right away (this feature is pretty handy for
 workshop, hackfests, etc.).
 
-Running the PYBOSSA server
---------------------------
+## Running the PYBOSSA server
 
 Now that all the libraries and dependencies have been installed, you can
 lunch the PYBOSSA development server:
 
-    $ vagrant ssh
-    $ python run.py
+``` bash
+vagrant ssh
+python run.py
+```
 
-<div class="admonition note">
-
-Virtualenv (located in /home/vagrant/pybossa-env) is always activated on
-login.
-
-</div>
+!!! note
+    Virtualenv (located in /home/vagrant/pybossa-env) is always activated on
+    login.
 
 Now all you have to do is open the following URL in your web browser:
 
     http://127.0.0.1:5000
 
-And you are done! Happy Hacking!
+And you are done! Happy Hacking :nerd:!
 
-<div class="admonition note">
-
-PYBOSSA needs a RQ worker process. It is running by default permanently
-in the background in the VM and is controlled by supervisor. Optional is
-also the RQ scheduler process for speeding up tasks like ZIP creation.
-This process is off by default now. If you are developing on RQ worker
-you want to restart or disable it with supervisorctl.
-
-</div>
+!!! note
+    PYBOSSA needs a RQ worker process. It is running by default permanently
+    in the background in the VM and is controlled by supervisor. Optional is
+    also the RQ scheduler process for speeding up tasks like ZIP creation.
+    This process is off by default now. If you are developing on RQ worker
+    you want to restart or disable it with supervisorctl.
