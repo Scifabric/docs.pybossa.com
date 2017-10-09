@@ -20,7 +20,7 @@ for that specific object within the API. If the object has some parents,
 you will find the relations in the **links** list. For example, for a
 Task Run you will get something like this:
 
-``` {.sourceCode .javascript}
+```json
 {
 "info": 65,
 "user_id": null,
@@ -71,7 +71,7 @@ throttle your requests without problems:
 We recommend to use the Python package **requests** for interacting with
 PYBOSSA, as it is really simple to check those values:
 
-``` {.sourceCode .python}
+```python
 import requests
 import time
 
@@ -806,7 +806,7 @@ It returns a JSON object with the following information:
 
 **Example output**
 
-``` {.sourceCode .python}
+```json
 {
     "next":"/about"
 }
@@ -815,7 +815,7 @@ It returns a JSON object with the following information:
 If there's an error in the form fields, you will get them in the
 **form.errors** key:
 
-``` {.sourceCode .python}
+```json
 {
   "form": {
     "confirm": "daniel",
@@ -843,7 +843,7 @@ account validation result when all input data is correct. Note: Keep in
 mind that account is not created fully until the user confirmed his
 email.
 
-``` {.sourceCode .python}
+```json
 {
   "status": "sent",
   "template": "account/account_validation.html",
@@ -870,7 +870,7 @@ It returns a JSON object with the following information:
 
 **Example output**
 
-``` {.sourceCode .python}
+```json
 {
   "auth": {
     "facebook": true,
@@ -904,7 +904,7 @@ It returns a JSON object with the following information:
 
 **Example output**
 
-``` {.sourceCode .python}
+```json
 {
   "auth": {
     "facebook": true,
@@ -931,7 +931,7 @@ It returns a JSON object with the following information:
 
 If the login is successful, then, you will get something like this:
 
-``` {.sourceCode .python}
+```json
 {
   "flash": "Welcome back John Doe",
   "next": "/",
@@ -967,7 +967,7 @@ It returns a JSON object with the following information:
 
 **Example output**
 
-``` {.sourceCode .python}
+```json
 {
   "form": {
     "csrf": "token,"
@@ -992,7 +992,7 @@ It returns a JSON object with the following information:
 
 **Example output**
 
-``` {.sourceCode .python}
+```json
 {
   "flash": [
     "We don't have this email in our records. You may have signed up with a different email or used Twitter, Facebook, or Google to sign-in"
@@ -1009,7 +1009,7 @@ It returns a JSON object with the following information:
 If there's an error in the form fields, you will get them in the
 **form.errors** key:
 
-``` {.sourceCode .python}
+```json
 {
   "flash": "Something went wrong, please correct the errors on the form",
   "form": {
@@ -1048,7 +1048,7 @@ only get public viewable information. If you are logged in you will also
 get private information in the user field. Sample output of public
 information:
 
-``` {.sourceCode .python}
+```json
 {
     "projects_contrib": [
         {
@@ -1095,7 +1095,7 @@ information:
 
 Example of logged in user:
 
-``` {.sourceCode .python}
+```json
 {
     ...
     "user": {
@@ -1137,7 +1137,7 @@ the following example output
 
 **Example output**
 
-``` {.sourceCode .python}
+```json
 {
   "next": "/account/signin",
   "status": "not_signed_in"
@@ -1162,7 +1162,7 @@ following information:
 
 **Example output**
 
-``` {.sourceCode .python}
+```json
 {
   "projects_draft": [
     {
@@ -1228,7 +1228,7 @@ It returns a JSON object with the following information:
 
 **Example output**
 
-``` {.sourceCode .python}
+```json
 {
   "flash": null,
   "form": {
@@ -1293,7 +1293,7 @@ It returns a JSON object with the following information:
 
 **Example output**
 
-``` {.sourceCode .python}
+```json
 {
   "flash": "Your profile has been updated!",
   "next": "/account/pruebaadfadfa/update",
@@ -1304,7 +1304,7 @@ It returns a JSON object with the following information:
 If there's an error in the form fields, you will get them in the
 **form.errors** key:
 
-``` {.sourceCode .python}
+```json
 {
   "flash": "Please correct the errors",
   "form": {
@@ -1378,7 +1378,7 @@ It returns a JSON object with the following information:
 
 **Example output**
 
-``` {.sourceCode .python}
+```json
 {
   "form": {
     "confirm": null,
@@ -1404,11 +1404,11 @@ It returns a JSON object with the following information:
 
 **Example output**
 
-``` {.sourceCode .python}
+```json
 {
-    u'status': u'success',
-    u'flash': u'You reset your password successfully!',
-    u'next': u'/'
+    "status": "success",
+    "flash": "You reset your password successfully!",
+    "next": "/"
 }
 ```
 
@@ -1426,7 +1426,7 @@ It returns a JSON object with the following information:
 
 **Example output**
 
-``` {.sourceCode .python}
+```json
 {
     "form":
         {
@@ -1449,11 +1449,11 @@ It returns a JSON object with the following information:
 
 **Example output**
 
-``` {.sourceCode .python}
+```json
 {
-    u'status': u'success',
-    u'flash': u'New API-KEY generated',
-    u'next': u'/account/<user>'
+    "status": "success",
+    "flash": "New API-KEY generated",
+    "next": "/account/<user>"
 }
 ```
 
@@ -1473,7 +1473,7 @@ It returns a JSON object with the following information:
 
 **Example output**
 
-``` {.sourceCode .python}
+```json
 {
     "template": "account/newsletter.html",
     "title": "Subscribe to our Newsletter",
@@ -1486,7 +1486,7 @@ with the following argument: *subscribe=true*
 
 **Example output**
 
-``` {.sourceCode .python}
+```json
 {
     "flash": "You are subscribed to our newsletter",
     "status": "success",
@@ -1512,7 +1512,7 @@ with the following information:
 
 **Example output**
 
-``` {.sourceCode .python}
+```json
 {
     "flash": 'Ane email has been sent to validate your e-mail address.',
     'status': 'info',
@@ -1539,7 +1539,7 @@ It returns a JSON object with the following information:
 
 **Example output**
 
-``` {.sourceCode .python}
+```json
 {
   "categories": [
     {
@@ -1634,7 +1634,7 @@ only public available information for the owner and the project itself.
 
 for logged in user JohnDoe:
 
-``` {.sourceCode .python}
+```json
 {
   "last_activity": "2015-01-21T12:01:41.209270",
   "n_completed_tasks": 0,
@@ -1699,7 +1699,7 @@ for logged in user JohnDoe:
 
 Anonymous and other user output:
 
-``` {.sourceCode .python}
+```json
 {
   "last_activity": "2015-01-21T12:01:41.209270",
   "n_completed_tasks": 0,
@@ -1804,7 +1804,7 @@ information and project information.
 
 for anonymous user or when you are not the project owner:
 
-``` {.sourceCode .python}
+```json
 {
   "last_activity": "2015-01-21T12:01:41.209270",
   "n_completed_tasks": 0,
@@ -1886,7 +1886,7 @@ only public available information for the owner and the project itself.
 
 **Example output** Statistics are existing in this output:
 
-``` {.sourceCode .python}
+```json
 {
   "avg_contrib_time": 0,
   "n_completed_tasks": 2,
@@ -1982,7 +1982,7 @@ only public available information for the owner and the project itself.
 
 for another project where you are not the owner:
 
-``` {.sourceCode .python}
+```json
 {
   "autoimporter_enabled": true,
   "last_activity": "2017-03-02T21:00:33.627277",
@@ -2057,7 +2057,7 @@ only public available information for the owner and the project itself.
 
 for another project where you are not the owner:
 
-``` {.sourceCode .python}
+```json
 {
   "owner": {
     "created": "2014-08-11T08:59:32.079599",
@@ -2125,7 +2125,7 @@ next 3 accessing this URL: /leaderboard/window/3.
 
 for logged in user JohnDoe (normally not visible in public leaderboard):
 
-``` {.sourceCode .python}
+```json
 {
     "template": "/stats/index.html",
     "title": "Community Leaderboard",
@@ -2176,7 +2176,7 @@ Shows you PYBOSSA wide announcements
 
 **Example output**
 
-``` {.sourceCode .python}
+```json
 {
     "announcements": [
         {
@@ -2241,7 +2241,7 @@ Shows you PYBOSSA wide announcements
 
 **Example output**
 
-``` {.sourceCode .python}
+```json
 {
     "announcements": [
         {
@@ -2307,7 +2307,7 @@ Creates a new PYBOSSA wide announcement
 
 **Example output**
 
-``` {.sourceCode .python}
+```json
 {
   "form": {
     "body": null,
@@ -2330,7 +2330,7 @@ get a 200 http code and following output:
 
 **Example output**
 
-``` {.sourceCode .python}
+```json
 {
   "flash": "<i class=\"icon-ok\"></i> Annnouncement created!",
   "next": "/admin/announcement",
@@ -2354,7 +2354,7 @@ Updates a PYBOSSA announcement
 
 **Example output**
 
-``` {.sourceCode .python}
+```json
 {
   "form": {
     "body": "test6",
@@ -2378,7 +2378,7 @@ get a 200 http code and following output:
 
 **Example output**
 
-``` {.sourceCode .python}
+```json
 {
   "flash": "<i class=\"icon-ok\"></i> Announcement updated!",
   "next": "/admin/announcement",
@@ -2403,7 +2403,7 @@ following output:
 
 **Example output**
 
-``` {.sourceCode .python}
+```json
 {
   "flash": "<i class=\"icon-ok\"></i> Announcement deleted!",
   "next": "/admin/announcement",
@@ -2428,7 +2428,7 @@ It returns a JSON object with the following information:
 
 **Example output**
 
-``` {.sourceCode .python}
+```json
 {
   "form": {
     "csrf": "token",
@@ -2484,7 +2484,7 @@ It returns a JSON object with the following information:
 
 **Example output**
 
-``` {.sourceCode .python}
+```json
 {
   "form": {
     "csrf": "token",
@@ -2566,9 +2566,9 @@ following information:
 
 **Example output**
 
-``` {.sourceCode .python}
+```json
 {
-  "next": '/admin/users',
+  "next": "/admin/users",
 }
 ```
 
@@ -2592,9 +2592,9 @@ the following information:
 
 **Example output**
 
-``` {.sourceCode .python}
+```json
 {
-  "next": '/admin/users',
+  "next": "/admin/users",
 }
 ```
 
@@ -2621,7 +2621,7 @@ following information:
 
 **Example output**
 
-``` {.sourceCode .python}
+```json
 {
   "categories": [
     {
@@ -2668,7 +2668,7 @@ data.
 
 **Example output**
 
-``` {.sourceCode .python}
+```json
 {
   "categories": [
     {
@@ -2726,7 +2726,7 @@ to do a POST and delete it.
 
 **Example output**
 
-``` {.sourceCode .python}
+```json
 {
   "category": {
     "created": "2017-01-24T13:08:09.873071",
@@ -2754,7 +2754,7 @@ to do a POST and delete it.
 
 **Example output**
 
-``` {.sourceCode .python}
+```json
 {
   "flash": "Category deleted",
   "next": "/admin/categories",
@@ -2778,7 +2778,7 @@ to do a POST and update it.
 
 **Example output**
 
-``` {.sourceCode .python}
+```json
 {
   "category": {
     "created": "2017-01-24T13:08:09.873071",
@@ -2810,7 +2810,7 @@ previous action to update it.
 
 **Example output**
 
-``` {.sourceCode .python}
+```json
 {
   "flash": "Category updated",
   "next": "/admin/categories",
@@ -2851,7 +2851,7 @@ update the data, as this data is only updated every 24 hours.
 
 **Example output**
 
-``` {.sourceCode .python}
+```json
 {
   "active_anon_last_week": {
     "labels": [
@@ -3004,7 +3004,7 @@ Gives you all featured projects on PYBOSSA.
 
 **Example output**
 
-``` {.sourceCode .python}
+```json
 {
   "categories": [
     {
@@ -3091,7 +3091,7 @@ headers. Use the following header: "X-CSRFToken".
 
 On Success it will give you the project information
 
-``` {.sourceCode .python}
+```json
 {
   "info": {
     "task_presenter": "...",
@@ -3118,7 +3118,7 @@ On Success it will give you the project information
 
 If a project is already featured:
 
-``` {.sourceCode .python}
+```json
 {
   "code": 400,
   "description": "CSRF token missing or incorrect.",
@@ -3137,7 +3137,7 @@ headers. Use the following header: "X-CSRFToken".
 
 On Success it will give you the project information
 
-``` {.sourceCode .python}
+```json
 {
   "info": {
     "task_presenter": "...",
@@ -3164,7 +3164,7 @@ On Success it will give you the project information
 
 If a project is already unfeatured:
 
-``` {.sourceCode .python}
+```json
 {
   "status_code": 415,
   "error": "Project.id 1069 is not featured"
@@ -3188,7 +3188,7 @@ Gives you the API help for your PYBOSSA
 
 **Example output**
 
-``` {.sourceCode .python}
+```json
 {
   "project_id": 1104,
   "template": "help/privacy.html",
@@ -3212,7 +3212,7 @@ Gives you the privacy policy for your PYBOSSA
 
 **Example output**
 
-``` {.sourceCode .python}
+```json
 {
   "content": "<html><body><p>privacy policy here</p></body></html>"
   "template": "help/privacy.html",
@@ -3236,7 +3236,7 @@ Gives you the cookie policy for your PYBOSSA
 
 **Example output**
 
-``` {.sourceCode .python}
+```json
 {
   "content": "<html><body><p>cookie policy here</p></body></html>"
   "template": "help/cookies_policy.html",
@@ -3260,7 +3260,7 @@ Gives you the terms of use for your PYBOSSA
 
 **Example output**
 
-``` {.sourceCode .python}
+```json
 {
   "content": "<html><body><p>Terms of use text</p></body></html>"
   "template": "help/tos.html",
@@ -3294,7 +3294,7 @@ Gives you the global stats of the PYBOSSA server.
 
 **Example output**
 
-``` {.sourceCode .python}
+```json
 {
   "locs": "[]",
   "projects": {
@@ -3392,7 +3392,7 @@ Gives you the list of projects in a category.
 
 **Example output**
 
-``` {.sourceCode .python}
+```json
 {
   "active_cat": {
     "created": null,
@@ -3484,7 +3484,7 @@ Gives you the list of featured projects.
 
 **Example output**
 
-``` {.sourceCode .python}
+```json
 {
   "active_cat": {
     "created": null,
@@ -3576,7 +3576,7 @@ Gives you the list of featured projects.
 
 **Example output**
 
-``` {.sourceCode .python}
+```json
 {
   "active_cat": {
     "created": null,
@@ -3665,7 +3665,7 @@ Gives you the list of required fields in the form to create a project.
 
 **Example output**
 
-``` {.sourceCode .python}
+```json
 {
   "errors": false,
   "form": {
@@ -3701,7 +3701,7 @@ public info.
 
 **Example public output**
 
-``` {.sourceCode .python}
+```json
 {
   "blogposts": [
     {
@@ -3789,7 +3789,7 @@ template, otherwise it will load the template for you.
 
 **Example output**
 
-``` {.sourceCode .python}
+```json
 {
  "flash": "<strong>Note</strong> You will need to upload the tasks using the<a href=\"/project/asdf123/tasks/import\"> CSV importer</a> or download the project bundle and run the <strong>createTasks.py</strong> script in your computer",
  "last_activity": null,
@@ -3871,7 +3871,7 @@ basic or **?template=iamge** for the image template.
 
 **Example output**
 
-``` {.sourceCode .python}
+```json
 {
  "errors": false,
  "flash": "Your code will be <em>automagically</em> rendered in                       the <strong>preview section</strong>. Click in the                       preview button!",
@@ -3962,7 +3962,7 @@ If the post is successful, you will get the following output:
 
 **Example output**
 
-``` {.sourceCode .python}
+```json
 {
   "flash": "<i class=\"icon-ok\"></i> Task presenter added!",
   "next": "/project/asdf123/tasks/",
@@ -3985,7 +3985,7 @@ field.
 
 **Example output**
 
-``` {.sourceCode .python}
+```json
 {
   "csrf": "token",
   "last_activity": null,
@@ -4049,7 +4049,7 @@ headers. Use the following header: "X-CSRFToken".
 
 **Example output**
 
-``` {.sourceCode .python}
+```json
 {
   "flash": "Project deleted!",
   "next": "/account/pruebaadfadfa/",
@@ -4078,7 +4078,7 @@ It returns a JSON object with the following information:
 
 **Example output**
 
-``` {.sourceCode .python}
+```json
 {
   "form": {
     "allow_anonymous_contributors": false,
@@ -4200,7 +4200,7 @@ It returns a JSON object with the following information:
 
 **Example output**
 
-``` {.sourceCode .python}
+```json
 {
   "flash": "Your profile has been updated!",
   "next": "/account/pruebaadfadfa/update",
@@ -4211,7 +4211,7 @@ It returns a JSON object with the following information:
 If there's an error in the form fields, you will get them in the
 **form.errors** key:
 
-``` {.sourceCode .python}
+```json
 {
   "flash": "Please correct the errors",
   "form": {
@@ -4262,7 +4262,7 @@ endpont **/project/&lt;short\_name&gt;/update**.
 
 **Example output**
 
-``` {.sourceCode .python}
+```json
 {
   "flash": "New secret key generated",
   "next": "/project/flickrproject2/update",
@@ -4292,7 +4292,7 @@ endpont **/project/&lt;short\_name&gt;/update**.
 
 **Example output**
 
-``` {.sourceCode .python}
+```json
 {
   "n_completed_tasks": 0,
   "n_tasks": 1,
@@ -4370,7 +4370,7 @@ It returns a JSON object with the following information:
 
 **Example output**
 
-``` {.sourceCode .python}
+```json
 {
   "available_importers": [
     "projects/tasks/epicollect.html",
@@ -4480,7 +4480,7 @@ It returns a JSON object with the following information:
 
 **Example output**
 
-``` {.sourceCode .python}
+```json
 {
   "flash": "Tasks imported",
   "next": "/project/<short_name>/tasks/",
@@ -4503,7 +4503,7 @@ It returns a JSON object with the following information:
 
 **Example output**
 
-``` {.sourceCode .python}
+```json
 {
   "owner": {
     "created": "2014-02-13T15:28:08.420187",
