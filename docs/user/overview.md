@@ -48,7 +48,7 @@ to:
 
 
 Another alternative is to use your Twitter, Facebook and Google sign in
-methods, (if the server has enabled them, see the [documentation](customizing.md)).
+methods, (if the server has enabled them, see the [documentation](../customizing.md)).
 
 ![PYBOSSA sign in methods](http://i.imgur.com/GxhfjGL.png)
 
@@ -840,4 +840,4 @@ run the following command:
 ``` bash
 pbs --server server --api-key yourkey create_project 
 ```
-Please, read the section [pbs](user/pbs.md) for more details.
+Please, read the section [pbs](pbs.md) for more details.
