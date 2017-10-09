@@ -1,48 +1,40 @@
-Using the command line
-======================
+# Using the command line
 
 In this section we'll learn how we can use the command line to interact
 with our project in a PYBOSSA server, using the command line tool:
 **pbs**.
 
-pbs
----
+## pbs
 
 **pbs** is a very simple command line interface to a PYBOSSA server. It
 allows you to create projects, add tasks (from a CSV or JSON file) with
 a nice progress bar, delete them and update the project templates
 (tutorial, task\_presenter, and descriptions) all from the command line.
 
-Installation
-------------
+### Installation
 
 pbs is available in Pypi, so you can install the software with pip:
 
-``` {.sourceCode .bash}
+``` bash
 pip install pybossa-pbs
 ```
 
-<div class="admonition note">
-
-We recommend to use virtual environments to install new Python libraries
-
-:   and packages, so please, before installing the pbs command line tool
+!!! note
+    We recommend to use virtual environments to install new Python libraries
+    and packages, so please, before installing the pbs command line tool
     consider using a virtual environment.
-
-</div>
 
 If you have all the dependencies, the package will be installed and you
 will be able to use it from the command line. The command is: **pbs**.
 
-Configuring pbs
----------------
+### Configuring pbs
 
 By default, pbs does not need a config file, however you will have to
 specify for every command the server and your API key in order to add
 tasks, create a project, etc, etc. For specifying the server and API key
 that you want to use, all you have to do is pass it as an argument:
 
-``` {.sourceCode .bash}
+``` bash
 pbs --server http://server.com --api-key yourkey subcommand
 ```
 
@@ -55,14 +47,14 @@ working with.
 To create the config file, all you have to do is creating a
 **.pybossa.cfg** file in your home folder:
 
-``` {.sourceCode .bash}
+``` bash
 cd ~
 vim .pybossa.cfg
 ```
 
 The file should have the following structure:
 
-``` {.sourceCode .python}
+``` python
 [default]
 server: http://theserver.com
 apikey: yourkey
@@ -71,7 +63,7 @@ apikey: yourkey
 If you are working with more servers, add another section below it. For
 example:
 
-``` {.sourceCode .python}
+``` python
 [default]
 server: http://theserver.com
 apikey: yourkey
@@ -85,19 +77,18 @@ By default pbs will use the credentials of the default section, so you
 don't have to type anything to use those values. However, if you want to
 do actions in the other server, all you have to do is the following:
 
-``` {.sourceCode .bash}
+``` bash
 pbs --credentials crowdcrafting --help
 ```
 
 That command will use the values of the crowdcrafting section.
 
-Creating a project
-------------------
+## Creating a project
 
 Creating a project is very simple. All you have to do is create a file
 named **project.json** with the following fields:
 
-``` {.sourceCode .js}
+``` javascript
 {
     "name": "Flickr Person Finder",
     "short_name": "flickrperson",
@@ -110,103 +101,96 @@ If you use the name **project.json** you will not have to pass the file
 name via an argument, as it's the named used by default. Once you have
 the file created, run the following command:
 
-``` {.sourceCode .bash}
+``` bash
 pbs create_project
 ```
 
 That command should create the project. If you want to see all the
 available options, please check the **--help** command:
 
-``` {.sourceCode .bash}
+``` bash
 pbs create_project --help
 ```
 
-Adding tasks to a project
--------------------------
+## Adding tasks to a project
 
 Adding tasks is very simple. You can have your tasks in two formats:
 
-> -   JSON
-> -   CSV
+- JSON
+- CSV
+- Excel
+- PO file
 
 Therefore, adding tasks to your project is as simple as this command:
 
-``` {.sourceCode .bash}
+``` bash 
 pbs add_tasks --tasks-file tasks_file.json
 ```
 
 If you want to see all the available options, please check the
 **--help** command:
 
-<div class="admonition note">
+!!! note
+    By default PYBOSSA servers use a rate limit for avoiding abuse of the
+    API. For this reason, you can only do usually 300 requests per every 15
+    minutes. If you are going to add more than 300 tasks, pbs will detect it
+    and warn you, auto-enabling the throttling for you to respect the
+    limits. Please, see rate-limiting for more details.
 
-By default PYBOSSA servers use a rate limit for avoiding abuse of the
-API. For this reason, you can only do usually 300 requests per every 15
-minutes. If you are going to add more than 300 tasks, pbs will detect it
-and warn you, auto-enabling the throttling for you to respect the
-limits. Please, see rate-limiting for more details.
-
-</div>
-
-``` {.sourceCode .bash}
+``` bash
 pbs add_tasks --help
 ```
 
-Updating project templates
---------------------------
+## Updating project templates
 
 Now that you have added tasks, you can work in your templates. All you
 have to do to add/update the templates to your project is running the
 following command:
 
-``` {.sourceCode .bash}
+``` bash
 pbs update_project
 ```
 
 That command needs to have in the same folder where you are running it,
 the following files:
 
-> -   template.html
-> -   results.html
-> -   long\_description.md
-> -   tutorial.html
+- template.html
+- results.html
+- long_description.md
+- tutorial.html
 
 If you want to use another template, you can via arguments:
 
-``` {.sourceCode .bash}
+``` .bash
 pbs update_project --template /tmp/template.html
 ```
 
 If you want to see all the available options, please check the
 **--help** command:
 
-``` {.sourceCode .bash}
+``` bash
 pbs update_project --help
 ```
 
-Deleting tasks from a project
------------------------------
+## Deleting tasks from a project
 
 If you need it, you can delete all the tasks from your project, or only
 one using its task.id. For deleting all the tasks, all you've to do is
 run the following command:
 
-``` {.sourceCode .bash}
+``` bash
 pbs delete_tasks
 ```
 
 This command will confirm that you want to delete all the tasks and
-associated task\_runs.
+associated task_runs.
 
 If you want to see all the available options, please check the
 **--help** command:
 
-``` {.sourceCode .bash}
+``` bash
 pbs delete_tasks --help
 ```
 
-<div class="admonition note">
-
-**Only tasks that are not associated with a result will be deleted.**
-
-</div>
+!!! warning
+    Only tasks that are not associated with a result will be deleted.

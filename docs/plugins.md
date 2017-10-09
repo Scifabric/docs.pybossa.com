@@ -1,12 +1,10 @@
-Writing plugins for a PYBOSSA server
-====================================
+# Writing plugins for a PYBOSSA server
 
 PYBOSSA has a plugin system that allows you to write your own custom
 features and add them to a running PYBOSSA server without the need of
 touching the server code. For instance, you could create a new endpoint
 for an admin dashboard (with new views, templates, etc.) or build a new
-scheduler like in [this
-example](https://github.com/Scifabric/random-scheduler).
+scheduler like in [this example](https://github.com/Scifabric/random-scheduler).
 
 The PYBOSSA plugin system is powered by
 [Flask-plugins](https://github.com/sh4nks/flask-plugins)
@@ -25,14 +23,16 @@ The least you need to include in that folder is the following:
 flask.ext.plugins.Plugin. On the other hand, info.json needs to follow
 the schema:
 
-    {
-        "identifier": "identifier",
-        "name": "PluginClass",
-        "author": "you@yourdomain.com",
-        "license": "AGPLv3",
-        "description": "whatever",
-        "version": "0.0.1"
-    }
+``` json
+{
+    "identifier": "identifier",
+    "name": "PluginClass",
+    "author": "you@yourdomain.com",
+    "license": "AGPLv3",
+    "description": "whatever",
+    "version": "0.0.1"
+}
+```
 
 You could also create a more sofisticated plugin, including your own
 templates, models, forms... everything you need:

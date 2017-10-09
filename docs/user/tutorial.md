@@ -1,5 +1,4 @@
-Project Tutorial
-================
+# Project Tutorial
 
 This tutorial is based in the demo project **Flickr Person** ([source
 code](https://github.com/Scifabric/app-flickrperson)) provided with
@@ -9,25 +8,22 @@ photo?* The possible answers are: *Yes, No* and *I don't know*.
 
 The demo project Flickr Person has two main components:
 
-> -   The task-creator a Python script that creates the tasks in
->     PYBOSSA, and
-> -   the task-presenter: an HTML + Javascript structure that will show
->     the tasks to the users and save their answers.
+- The task-creator a Python script that creates the tasks in
+  PYBOSSA, and
+- the task-presenter: an HTML + Javascript structure that will show
+  the tasks to the users and save their answers.
 
 This tutorial uses the PYBOSSA pbs command line tool.
 
-Setting Things Up
------------------
+## Setting Things Up
 
 In order to run the tutorial, you will need to create an account in a
 PYBOSSA server. The PYBOSSA server could be running in your computer or
 in a third party server.
 
-<div class="admonition note">
-
-You can use <http://crowdcrafting.org> for testing.
-
-</div>
+!!! note
+    You can use our Scifabric's free PYBOSSA server [Crowdcrafting](https://crowdcrafting.org)
+    for testing.
 
 When you create an account, you will have access to your profile by
 clicking on your name, and then in the **My Settings** option.
@@ -35,80 +31,69 @@ clicking on your name, and then in the **My Settings** option.
 Then, you will be able to copy the [API-KEY that has been generated for
 you](http://crowdcrafting.org/account/profile)
 
-| .. image:: <http://i.imgur.com/JcxciZc.png> |
+![image](http://i.imgur.com/JcxciZc.png)
 
 This **API-KEY** allows you to create the project in PYBOSSA (only
 authenticated users can create projects and tasks, while everyone can
 collaborate solving the tasks).
 
-<div class="admonition note">
-
-The Flickr Person Finder demo project uses pbs
-
-:   that need to be installed in your system before proceeding. For this
+!!! note
+    The Flickr Person Finder demo project uses pbs
+    that need to be installed in your system before proceeding. For this
     reason, we recommend you to configure a
     [virtualenv](http://pypi.python.org/pypi/virtualenv) for the project
     as it will create an isolated Python environment in a folder,
     helping you to manage different dependencies and versions without
     having to deal with root permissions in your computer.
 
-[virtualenv](http://pypi.python.org/pypi/virtualenv) creates an
-environment that has its own installation directories, that doesn't
-share libraries with other virtualenv environments (and optionally
-doesn't access the globally installed libraries either).
+    [virtualenv](http://pypi.python.org/pypi/virtualenv) creates an
+    environment that has its own installation directories, that doesn't
+    share libraries with other virtualenv environments (and optionally
+    doesn't access the globally installed libraries either).
+    
+    You can install the software if you want at the system level if you have
+    root privileges, however this may lead to broken dependencies in the OS
+    for all your Python packages, so if possible, use only the
+    [virtualenv](http://pypi.python.org/pypi/virtualenv) solution.
 
-You can install the software if you want at the system level if you have
-root privileges, however this may lead to broken dependencies in the OS
-for all your Python packages, so if possible, use only the
-[virtualenv](http://pypi.python.org/pypi/virtualenv) solution.
 
-</div>
+!!! note
+    Flickr Person Finder uses the **pbs** command line tool which simplifies
+    a lot accessing the PYBOSSA API endpoints. Therefore, you will need to
+    install the *pybossa-pbs* with [pip --a python installer
+    packager](http://pypi.python.org/pypi/pip):
+    
+    `#!bash pip install pybossa-pbs`
+    
 
-<div class="admonition note">
+    If you need to install **pip** in your system, check [the official
+    documentation.](http://www.pip-installer.org/en/latest/installing.html)
 
-Flickr Person Finder uses the **pbs** command line tool which simplifies
-a lot accessing the PYBOSSA API endpoints. Therefore, you will need to
-install the *pybossa-pbs* with [pip --a python installer
-packager](http://pypi.python.org/pypi/pip):
 
-    $ pip install pybossa-pbs
-
-</div>
-
-<div class="admonition note">
-
-If you need to install **pip** in your system, check [the official
-documentation.](http://www.pip-installer.org/en/latest/installing.html)
-
-</div>
-
-Creating the Project
---------------------
+## Creating the Project
 
 There are two possible methos for creating a project:
 
-> -   web-interface: click in your user name, and you will see a section
->     named **projects** list. In that section you will be able to
->     create a project using the web interface.
-> -   api-interface: using the **pbs** command line tool.
+- web-interface: click in your user name, and you will see a section
+  named **projects** list. In that section you will be able to
+  create a project using the web interface.
+- api-interface: using the **pbs** command line tool.
 
 For this tutorial we are going to use the second option, the ../api via
 the PYBOSSA pbs command line tool for interacting with the API.
 
 For creating the project, you will need to parameters
 
-> -   the URL of the PYBOSSA server, and
-> -   an API-KEY to authenticate you in the PYBOSSA server.
+- the URL of the PYBOSSA server, and
+- an API-KEY to authenticate you in the PYBOSSA server.
 
 The following section gives more details about how to use the script.
 
-<div class="admonition note">
+!!! note
 
-If you are running a PYBOSSA server locally, you can omit the URL parameter
+    If you are running a PYBOSSA server locally, you can omit the URL parameter
+    as by default it uses the URL <http://localhost:5000>
 
-:   as by default it uses the URL <http://localhost:5000>
-
-</div>
 
 ### Cloning the Flickr Person Finder source code
 
@@ -128,21 +113,20 @@ concepts that you will need for cloning the demo project repository.
 If you prefer to skip the course and take it in a later stage, the
 commands that you need to clone the repository are:
 
-``` {.sourceCode .bash}
+```bash
 git clone git://github.com/Scifabric/app-flickrperson.git
 ```
 
 After running that command a new folder named **app-flickrperson** will
 be created from where you run the command.
 
-Configuring the name, short name, thumbnail, etc.
--------------------------------------------------
+### Configuring the name, short name, thumbnail, etc.
 
 The Flickr Person Finder provides a file called:
 [project.json](https://github.com/Scifabric/app-flickrperson/blob/master/project.json)
 that has the following content:
 
-``` {.sourceCode .js}
+```javascript
 {
     "name": "Flickr Person Finder",
     "short_name": "flickrperson",
@@ -150,17 +134,15 @@ that has the following content:
 }
 ```
 
-You will need to modify the **name** and **short\_name** fields in order
+You will need to modify the **name** and **short_name** fields in order
 to create a project in crowdcrafting.org, as there is already a project
 registered with those values. Otherwise, you can keep the same values.
 
-<div class="admonition note">
+!!! note
+    The **name** and **short_name** of the project **must be unique**!
+    Otherwise you will get an error (IntegrityError) when creating the
+    project.
 
-The **name** and **short\_name** of the project **must be unique**!
-Otherwise you will get an error (IntegrityError) when creating the
-project.
-
-</div>
 
 You can re-use the other fields if you want. **Description** will be the
 text shown in the project listing page. It's important that you try to
@@ -169,7 +151,7 @@ have a short description that explains what your project does.
 Now that we have the **project.json** file ready, we can create the
 project:
 
-``` {.sourceCode .bash}
+``` bash
 pbs --server server --apikey key create_project
 ```
 
@@ -177,25 +159,20 @@ This command will read the values in the file **project.json** and it
 will use them to create an empty project in the PYBOSSA server of your
 choice.
 
-<div class="admonition note">
+!!! note
 
-You can save some typing if you create a config file for pbs. Please,
-check the pbs page for more details.
-
-</div>
+    You can save some typing if you create a config file for pbs. Please,
+    check the pbs page for more details.
 
 If you want to check if the project exists, just open your web browser,
-and type in the folling URL:
+and type in the folling URL http://server/project/short_name
 
-    http://server/project/short_name
-
-Where **short\_name** is the value of the key with the same name in the
+Where **short_name** is the value of the key with the same name in the
 file: **project.json**. You sould get a project page, with not so much
 information, as we only have created it. Let's add some tasks to the
 project.
 
-Adding tasks to the project
----------------------------
+### Adding tasks to the project
 
 Now that we have the project created, we can add some tasks to our
 project. PYBOSSA will deliver the tasks for the users (authenticated and
@@ -209,8 +186,8 @@ processed by the volunteers. Usually it will be a link to a media file
 While PYBOSSA internally uses JSON for storing the data, you can add
 tasks to your project using two different formats:
 
-    * CSV: a comma separated spreadsheet
-    * JSON: a lightweight data-interchange format.
+* CSV: a comma separated spreadsheet
+* JSON: a lightweight data-interchange format.
 
 The demo project comes with a CSV sample file, that has the following
 structure:
@@ -218,44 +195,38 @@ structure:
     question, url_m, link, url_b
     Do you see a human face in this photo?, http://srv/img_m.jpg, http://srv/img, http://srv/img_b.jp
 
-Additionally there is a script named: **get\_images.py** that will
+Additionally there is a script named: **get_images.py** that will
 contact Flickr, get the latest published photos to this web service, and
-save them in JSON format as a file (flickr\_tasks.json), with the same
+save them in JSON format as a file (flickr_tasks.json), with the same
 structure as the CSV file (the keys are the same):
 
-``` {.sourceCode .js}
+``` javascript
 { 'link': 'http://www.flickr.com/photos/teleyinex/2945647308/',
   'url_m': 'http://farm4.staticflickr.com/3208/2945647308_f048cc1633_m.jpg', 
   'url_b': 'http://farm4.staticflickr.com/3208/2945647308_f048cc1633_b.jpg' }
 ```
 
-<div class="admonition note">
+!!! note
+    Flickr creates from the original image different cropped versions of the
+    image. It uses a pattern to distinguish them: **_m** for medium size,
+    and **_b** for the big ones. There are more options, so if you need
+    more help in this matter, check the official [Flickr
+    documentation](http://www.flickr.com/services/api/).
 
-Flickr creates from the original image different cropped versions of the
-image. It uses a pattern to distinguish them: **\_m** for medium size,
-and **\_b** for the big ones. There are more options, so if you need
-more help in this matter, check the official [Flickr
-documentation](http://www.flickr.com/services/api/).
 
-</div>
+    All those keys will be saved into the task field **info** of the task
+    model.
 
-All those keys will be saved into the task field **info** of the task
-model.
 
-<div class="admonition note">
+From now own, the tutorial assumes that you have configured your pbs installation 
+with a .pybossa.cfg file. Please, see [pbs for more information](user/pbs.md).
 
-From now own, the tutorial assumes that you have configured your pbs
-
-:   installation with a .pybossa.cfg file. Please, see pbs for more
-    information.
-
-</div>
 
 As we have a CSV file with some tasks, let's use it for adding some
 tasks to our project. For adding tasks in CSV format all you have to do
 is the following:
 
-``` {.sourceCode .bash}
+``` bash
 pbs add_tasks --tasks-file flickr_tasks.csv
 ```
 
@@ -263,18 +234,18 @@ After running this program, you will see a progress bar that will let
 you know when all the tasks will be added to your project.
 
 Finally, we'll also add some tasks in JSON format using the
-**get\_images.py** script, that will generate for us the
-**flickr\_tasks.json** file with the last 20 published photos in Flickr.
+**get_images.py** script, that will generate for us the
+**flickr_tasks.json** file with the last 20 published photos in Flickr.
 First, we need to create the tasks file:
 
-``` {.sourceCode .bash}
+``` bash
 python get_images.py
 ```
 
-This will create the file: **flickr\_tasks.json**. Now, let's add them
+This will create the file: **flickr_tasks.json**. Now, let's add them
 to our project:
 
-``` {.sourceCode .bash}
+``` bash
 pbs add_tasks --tasks-file flickr_tasks.json
 ```
 
@@ -282,17 +253,16 @@ Done! Again, a progress bar will show us how long it takes to add all
 the tasks. Once it's completed, we can actually move to the next step on
 the tutorial: presenting the tasks to the volunteers.
 
-<div class="admonition note">
+!!! note
 
-You can check all the available options for the command line with the
+    You can check all the available options for the command line with the
+    **--help** argument.
 
-:   **--help** argument.
-
-</div>
 
 If something goes wrong, you should an error message similar to the
 following one:
 
+``` json
     ERROR:root:pbclient.create_project
     {
         "action": "POST",
@@ -302,18 +272,17 @@ following one:
         "status_code": 415,
         "target": "project"
     }
+```
 
 The error message will have the information regarding the problems it
 has found when using the API.
 
-<div class="admonition note">
+!!! note
 
-Since version 2.0.1 PYBOSSA enforces API Rate Limiting, so you might exceed
-
-:   the number of allowed requests, getting a 429 error. Please see
+    Since version 2.0.1 PYBOSSA enforces API Rate Limiting, so you might exceed
+    the number of allowed requests, getting a 429 error. Please see
     rate-limiting section.
 
-</div>
 
 Number of answers or task runs per task
 ---------------------------------------
@@ -333,11 +302,11 @@ when you will analyze it, you can specify it with the pbs command. For
 example, in order to reduce the number of users that will analyze each
 task to ten, run the following:
 
-``` {.sourceCode .bash}
+``` bash
 pbs add_tasks --tasks-file file --redundancy 10
 ```
 
-In this case the **n\_answers** field will make task-scheduler to try
+In this case the **n_answers** field will make task-scheduler to try
 and obtain 10 different answers from different users for each task in
 the file.
 
@@ -355,7 +324,7 @@ modify the priority of the new created task and deliver it first.
 If you have a new batch of tasks that need to be processed before all
 the available ones, you can do it with pbs. Run the following command:
 
-``` {.sourceCode .bash}
+``` bash
 pbs add_tasks --tasks-file file --priority 1
 ```
 
@@ -377,13 +346,10 @@ In this tutorial, Flickr Person uses a basic HTML skeleton and the
 tasks into the HTML template, and take actions based on the users's
 answers.
 
-<div class="admonition note">
-
-</div>
-
-> When a task is submitted by an authenticated user, the task will save
-> his user\_id. For anonymous users the submitted task will only have
-> the user IP address.
+!!! note
+    When a task is submitted by an authenticated user, the task will save
+    his user_id. For anonymous users the submitted task will only have
+    the user IP address.
 
 ### 1. The HTML Skeleton
 
@@ -392,14 +358,14 @@ The
 **template.html** has the skeleton to show the tasks. The file has three
 sections or &lt;div&gt;:
 
-> -   **&lt;div&gt; for the warnings actions**. When the user saves an
->     answer, a success feedback message is shown to the user. There is
->     also an error one for the failures.
-> -   **&lt;div&gt; for the Flickr image**. This div will be populated
->     with the task photo URL and LINK data.
-> -   **&lt;div&gt; for the Questions & Answer buttons**. There are
->     three buttons with the possible answers: *Yes*, *No*, and *I don't
->     know*.
+- **&lt;div&gt; for the warnings actions**. When the user saves an
+  answer, a success feedback message is shown to the user. There is
+  also an error one for the failures.
+- **&lt;div&gt; for the Flickr image**. This div will be populated
+  with the task photo URL and LINK data.
+- **&lt;div&gt; for the Questions & Answer buttons**. There are
+  three buttons with the possible answers: *Yes*, *No*, and *I don't
+  know*.
 
 By default, the PYBOSSA framework loads for every task the PYBOSSA.JS
 library, so you don't have to include it in your template.
@@ -412,29 +378,23 @@ This template file will be used by the pbs command line tool to add the
 task presenter to the project. You can add it running the following
 command:
 
-``` {.sourceCode .bash}
+``` bash
 pbs update_project
 ```
 
-<div class="admonition note">
+!!! note
 
-You can also edit the HTML skeleton using the web interface. Once the
-
-:   project has been created in PYBOSSA you will see a button that
+    You can also edit the HTML skeleton using the web interface. Once the
+    project has been created in PYBOSSA you will see a button that
     allows you to edit the skeleton using a WYSIWYG editor.
-
-</div>
 
 In PYBOSSA every project has a **presenter** endpoint:
 
-> -   <http://PYBOSSA-SERVER/project/SLUG/newtask>
+- <http://PYBOSSA-SERVER/project/SLUG/newtask>
 
-<div class="admonition note">
-
-The **slug** is the short name for the project, in this case
-**flickrperson**.
-
-</div>
+!!! note
+    The **slug** is the short name for the project, in this case
+    **flickrperson**.
 
 Loading the above endpoint will load the skeleton and trigger the
 JavaScript functions to get a task from the PYBOSSA server and populate
@@ -452,7 +412,7 @@ beginning you will find a big div that will be used to show some
 messages to the user about the success of an action, for instance that
 an answer has been saved or that a new task is being loaded:
 
-``` {.sourceCode .html}
+``` html
 <div class="row">
   <!-- Success and Error Messages for the user --> 
   <div class="span6 offset2" style="height:50px">
@@ -489,7 +449,7 @@ and the submission buttons for the user.
 First it creates a row that will have two columns (in Bootstrap a row
 can have 12 columns), so we will populate a structure like this:
 
-``` {.sourceCode .html}
+``` html
 <div class="row skeleton">
     <!-- First column for showing the question, submission buttons and user
     progress -->
@@ -505,7 +465,7 @@ don't know, and obviously the user progress for the user, so he can know
 how many tasks he has completed and how many are left. The code is the
 following:
 
-``` {.sourceCode .html}
+``` html
 <div class="span6 "><!-- Start of Question and Submission DIV (column) -->
     <h1 id="question">Question</h1> <!-- The question will be loaded here -->
     <div id="answer"> <!-- Start DIV for the submission buttons -->
@@ -541,7 +501,7 @@ following:
 Then we will add the code for showing the photos. This second column
 will be much simpler:
 
-``` {.sourceCode .html}
+``` html
 <div class="span6"><!-- Start of Photo DIV (columnt) -->
     <a id="photo-link" href="#">
         <img id="photo" src="http://img339.imageshack.us/img339/9017/loadingo.png" style="max-width=100%">
@@ -556,7 +516,7 @@ task is getting loaded.
 The second section of the skeleton, if we join the previous snippets of
 code will be like this:
 
-``` {.sourceCode .html}
+``` html
 <div class="row skeleton"> <!-- Start Skeleton Row-->
     <div class="span6 "><!-- Start of Question and Submission DIV (column) -->
         <h1 id="question">Question</h1> <!-- The question will be loaded here -->
@@ -616,16 +576,16 @@ to been overridden with some logic, as each project will have a
 different need, i.e. some projects will be loading other type of data in
 a different skeleton:
 
-> -   pybossa.taskLoaded(function(task, deferred){});
-> -   pybossa.presentTask(function(task, deferred){});
+- pybossa.taskLoaded(function(task, deferred){});
+- pybossa.presentTask(function(task, deferred){});
 
 The **pybossa.taskLoaded** method will be in charge of adding new
 **&lt;img/&gt;** objects to the DOM once they have been loaded from
 Flickr (the URL is provided by the task object in the field
-task.info.url\_b), and resolve the deferred object, so another task for
+task.info.url_b), and resolve the deferred object, so another task for
 the current user can be pre-loaded. The code is the following:
 
-``` {.sourceCode .js}
+``` javascript
 pybossa.taskLoaded(function(task, deferred) {
     if ( !$.isEmptyObject(task) ) {
         // load image from flickr
@@ -647,7 +607,7 @@ pybossa.taskLoaded(function(task, deferred) {
 The **pybossa.presentTask** method will be called when a task has been
 obtained from the server:
 
-``` {.sourceCode .js}
+``` javascript
 { question: project.description,
   task: { 
           id: value,
@@ -680,7 +640,7 @@ this approach to load in the background the next task for the user while
 the volunteer is solving the current one. Once the answer has been saved
 in the server, we resolve the deferred:
 
-``` {.sourceCode .javascript}
+``` javascript
 pybossa.presentTask(function(task, deferred) {
     if ( !$.isEmptyObject(task) ) {
         loadUserProgress();
@@ -719,7 +679,7 @@ It is important to note that in this method we bind the *on-click*
 action for the *Yes*, *No* and *I don't know* buttons to call the above
 snippet:
 
-``` {.sourceCode .javascript}
+``` javascript
 $('.btn-answer').off('click').on('click', function(evt) {
     var answer = $(evt.target).attr("value");
     if (typeof answer != 'undefined') {
@@ -746,7 +706,7 @@ Finally, the pybossa.presentTask calls a method named
 **loadUserProgress**. This method is in charge of getting the user
 progress of the user and update the progress bar accordingly:
 
-``` {.sourceCode .javascript}
+``` javascript
 function loadUserProgress() {
     pybossa.userProgress('flickrperson').done(function(data){
         var pct = Math.round((data.done*100)/data.total);
@@ -766,7 +726,7 @@ giving an idea of progress while the contribute to the project.
 
 Finally, we only need in our code to tell pybossa.js to run our project:
 
-``` {.sourceCode .javascript}
+``` javascript
 pybossa.run('flickrperson')
 ```
 
@@ -784,7 +744,7 @@ or not in the image (you only see one hand and nothing else).
 In order to submit and save the answer from the user, we will use again
 the [PYBOSSA.JS library](http://pybossajs.rtfd.org). In this case:
 
-``` {.sourceCode .javascript}
+``` javascript
 pybossa.saveTask( taskid, answer )
 ```
 
@@ -797,7 +757,7 @@ The method allows us to give a successful pop-up feedback for the user,
 so you can use the following structure to warn the user and tell him
 that his answer has been successfully saved:
 
-``` {.sourceCode .javascript}
+``` javascript
 pybossa.saveTask( taskid, answer ).done(
   function( data ) {
       // Show the feedback div
@@ -815,7 +775,7 @@ re-create the project and its tasks. In order to update the template,
 you only have to modify the file *template.html* and run the following
 command:
 
-``` {.sourceCode .bash}
+``` bash
 pbs update_project
 ```
 
@@ -855,7 +815,7 @@ project has one.
 Adding a tutorial is really simple: you only have to create a file named
 **tutorial.html** and load the content of the file using pbs:
 
-``` {.sourceCode .bash}
+``` bash
 pbs update_project
 ```
 
@@ -898,7 +858,7 @@ answer for classifying pictures of animals). In this case, you can do
 the following (using the popular Python requests library, but you can
 use any other programming language):
 
-``` {.sourceCode .python}
+``` python
 import requests
 url = 'https://server/api/helpingpoint?api_key=YOURKEY'
 # Upload a picture
@@ -926,7 +886,7 @@ this, you can access their locale via Javascript in a very easy way, as
 we've placed it in a hidden 'div' node so you can access it just like
 this:
 
-``` {.sourceCode .javascript}
+``` javascript
 var userLocale = document.getElementById('PYBOSSA_USER_LOCALE').textContent.trim();
 ```
 
@@ -934,22 +894,19 @@ The way you use it after that is up to you. But let's see an example of
 how you can use it to make a tutorial that automatically shows the
 strings in the locale of the user.
 
-<div class="admonition note">
-
-Anonymous users will be only shown with **en** language by default. This
-
-:   feature only works for authenticated users that choose their own
+!!! note
+    Anonymous users will be only shown with **en** language by default. This
+    feature only works for authenticated users that choose their own
     locale in their account. You can however, load the translated
     strings using the browser preferred language.
 
-</div>
 
 First of all, check the *tutorial.html file*. You will see it consists
 on some HTML plus some Javascript inside a &lt;script&gt; tag to handle
 the different steps of the tutorial. Here you have a snippet of HTML
 tutorial file:
 
-``` {.sourceCode .html}
+``` html
 <div class="row">
     <div class="col-md-12">
         <div id="modal" class="modal hide fade">
@@ -992,7 +949,7 @@ corresponds to the abreviated name of the locale ('en' for English, 'es'
 for Spanish, etc.), and translate the inner text of it, but leave all
 the HTML the same in every version (tags, ids, classes, etc.) like:
 
-``` {.sourceCode .html}
+``` html
 <div id='es' class="row">
    Your translated version of the HTML goes here, but only change the text,
    NOT the HTML tags, IDs or classes.
@@ -1003,7 +960,7 @@ Finally, in the Javascript section of the tutorial, you will need to add
 some extra code to enable multilingual tutorials. Thus, modify the
 javascript from:
 
-``` {.sourceCode .javascript}
+``` javascript
 var step = -1;
 function showStep(action) {
     $("#" + step).hide();
@@ -1033,7 +990,7 @@ $("#modal").modal('show');
 
 To:
 
-``` {.sourceCode .javascript}
+``` javascript
 var languages = ['en', 'es']
 $(document).ready(function(){
     var userLocale = document.getElementById('PYBOSSA_USER_LOCALE').textContent.trim();
@@ -1084,7 +1041,7 @@ only the tutorial that fits his locale settings is shown.
 Another option for translating your project to different languages is
 using a JSON object like this:
 
-``` {.sourceCode .javascript}
+``` javascript
 messages = {"en": 
                {"welcome": "Hello World!,
                 "bye": "Good bye!"
@@ -1102,7 +1059,7 @@ to load the proper strings translated to your users.
 The logic is very simple. With the following code you grab the language
 that should be loaded for the current user:
 
-``` {.sourceCode .javascript}
+``` javascript
 var userLocale = document.getElementById('PYBOSSA_USER_LOCALE').textContent.trim();
 ```
 
@@ -1110,7 +1067,7 @@ Now, use userLocale to load the strings. For example, for
 *template.html* and the Flickrperson demo project, you will find the
 following code at the start of the script:
 
-``` {.sourceCode .javascript}
+``` javascript
 // Default language
 var userLocale = "en";
 // Translations
@@ -1170,14 +1127,13 @@ First, we define the default locale, "en" for English. Then, we create a
 messages dictionary with all the ids that we want to translate. Finally,
 we add the languages that we want to support.
 
-<div class="admonition note">
+!!! note
 
-PYBOSSA will give you only the following 3 locale settings: "en", "es"
-and "fr" as PYBOSSA is only translated to those languages. If you want
-to add another language, please, help us to translate PYBOSSA (see
-translating).
+    PYBOSSA will give you only the following 3 locale settings: "en", "es"
+    and "fr" as PYBOSSA is only translated to those languages. If you want
+    to add another language, please, help us to translate PYBOSSA (see
+    translating).
 
-</div>
 
 As you can see, it's quite simple as you can share the messages object
 with your volunteers, so you can get many more translations for your
@@ -1187,7 +1143,7 @@ Finally, we need to actually load those translated strings into the
 template. For doing this step, all we've to do is adding the following
 code to our *template.html* file at the function pybossa.presentTask:
 
-``` {.sourceCode .javascript}
+``` javascript
 pybossa.presentTask(function(task, deferred) {
     if ( !$.isEmptyObject(task) ) {
         loadUserProgress();
@@ -1207,7 +1163,7 @@ description) of the project, so the users can know what this project is
 about.
 
 If you check the source code, you will see that there is a file named
-*long\_description.md*. This file has a long description of the project,
+*long_description.md*. This file has a long description of the project,
 explaining different aspects of it.
 
 This information is not mandatory, however it will be very useful for
@@ -1221,10 +1177,10 @@ The long description will be shown in the project home page:
     http://crowdcrafting.org/project/flickrperson
 
 If you want to modify the description you have two options, edit it via
-the web interface, or modify locally the *long\_description.md* file and
+the web interface, or modify locally the *long_description.md* file and
 run pbs to update it:
 
-``` {.sourceCode .bash}
+``` bash
 pbs update_project
 ```
 
@@ -1280,7 +1236,7 @@ the body of the blogpost. In this case, you can do the following (using
 the popular Python requests library, but you can use any other
 programming language):
 
-``` {.sourceCode .python}
+``` python
 import requests
 url = 'https://server/api/blogpost?api_key=YOURKEY'
 # Upload a picture
@@ -1319,12 +1275,12 @@ You will find a simple interface that will allow you to export the Tasks
 and Task Runs to [JSON](http://en.wikipedia.org/wiki/JSON) and
 [CSV](http://en.wikipedia.org/wiki/Comma-separated_values) formats:
 
-| .. image:: <http://i.imgur.com/m5gDyjU.png> :width: 100% |
+![image](http://i.imgur.com/m5gDyjU.png)
 
 The previous methods will export all the tasks and task runs, **even if
 they are not completed**. When a task has been completed, in other
 words, when a task has collected the number of answers specified by the
-task (**n\_answers** = 30 by default), a **brown button** with the text
+task (**n_answers** = 30 by default), a **brown button** with the text
 **Download results** will pop up, and if you click it all the answers
 for the given task will be shown in JSON format.
 
@@ -1335,12 +1291,12 @@ You can check which tasks are completed, going to the project URL:
 And clicking in the **Tasks** link in the **left local navigation**, and
 then click in the **Browse** box:
 
-| .. image:: <http://i.imgur.com/nauht7l.png> :width: 100% |
+![image](http://i.imgur.com/nauht7l.png)
 
 Then you will see which tasks are completed, and which ones you can
 download in [JSON](http://en.wikipedia.org/wiki/JSON) format:
 
-| .. image:: <http://i.imgur.com/pf5O5Tr.png> |
+![image](http://i.imgur.com/pf5O5Tr.png)
 
 You could download the results also using the API. For example, you
 could write a small script that gets the list of tasks that have been
@@ -1348,35 +1304,31 @@ completed using this url:
 
     GET http://PYBOSSA-SERVER/api/task?state=completed
 
-<div class="admonition note">
+!!! note
 
-If your project has more than 20 tasks, then you will need to use the
-
-:   **offset** and **limit** parameters to get the next tasks, as by
+    If your project has more than 20 tasks, then you will need to use the
+    **offset** and **limit** parameters to get the next tasks, as by
     default PYBOSSA API only returns the first 20 items.
-
-</div>
 
 Once you have obtained the list of completed tasks, your script could
 start requesting the collected answers for the given tasks:
 
     GET http://PYBOSSA-SERVER/api/taskrun?task_id=TASK-ID
 
-<div class="admonition note">
+!!! note
 
-If your project is collecting more than 20 answers per task, then you
-will need to use the **offset** and **limit** parameters to get the next
-task runs, as by default PYBOSSA API only returns the first 20 items.
-That way you will be able to get all the submitted answers by the
-volunteers for the given task.
+    If your project is collecting more than 20 answers per task, then you
+    will need to use the **offset** and **limit** parameters to get the next
+    task runs, as by default PYBOSSA API only returns the first 20 items.
+    That way you will be able to get all the submitted answers by the
+    volunteers for the given task.
 
-</div>
 
 ### Exporting the task and task runs in JSON
 
 For the [JSON](http://en.wikipedia.org/wiki/JSON) format, you will get
 all the output as a file that your browser will download, named:
-short\_name\_tasks.json for the tasks, and short\_name\_task\_runs.json
+short_name_tasks.json for the tasks, and short_name_task_runs.json
 for the task runs.
 
 ### Exporting the task and task runs to a CSV file
@@ -1401,7 +1353,7 @@ account in the supported CKAN server, check your profile and copy the
 API-KEY. Then, open your PYBOSSA account page, edit it and paste the key
 in the section **External Services**.
 
-| .. image:: <http://i.imgur.com/xOezl6C.png> |
+![image](http://i.imgur.com/xOezl6C.png)
 
 Then, you will be able to actually export the data to the CKAN server
 and host it there.
@@ -1422,7 +1374,7 @@ sends the answer, the server marks the task as completed, and it creates
 a result for the given task associating the answers, the task and the
 project:
 
-``` {.sourceCode .js}
+``` javascript
 {"id": 1,
  "project_id": 1,
  "task_id": 1,
@@ -1432,11 +1384,11 @@ project:
 
 As in other PYBOSSA domain objects, a result has a JSON field named
 **info** that allows you to store the **final result** for that task
-using the task\_runs 1, 2, 3, 4, 5. Imagine that the five volunteers
+using the task_runs 1, 2, 3, 4, 5. Imagine that the five volunteers
 answered: yes, then as you are the project owner you could update the
 info field with that value:
 
-``` {.sourceCode .js}
+``` javascript
 {"id": 1,
  "project_id": 1,
  "task_id": 1,
@@ -1461,6 +1413,6 @@ Since v1.1.3, PYBOSSA records a timestamp, for every task run, of the
 instant a volunteer requests a task to contribute to it. This is stored
 in the "created" attribute of the Task Runs.
 
-This allows, together with the "finish\_time" attribute, to know how
+This allows, together with the "finish_time" attribute, to know how
 much time the volunteer has spent completing the task: (time spent =
-finish\_time - created)
+finish_time - created)
