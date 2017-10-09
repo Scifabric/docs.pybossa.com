@@ -2,6 +2,8 @@ site_name: PYBOSSA Documentation
 theme: 'material'
 # theme: 'readthedocs'
 markdown_extensions:
+    - toc:
+        permalink: True
     - admonition
     - smarty
     - wikilinks
