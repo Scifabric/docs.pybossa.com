@@ -219,7 +219,7 @@ structure as the CSV file (the keys are the same):
 
 
 From now own, the tutorial assumes that you have configured your pbs installation 
-with a .pybossa.cfg file. Please, see [pbs for more information](user/pbs.md).
+with a .pybossa.cfg file. Please, see [pbs for more information](pbs.md).
 
 
 As we have a CSV file with some tasks, let's use it for adding some
