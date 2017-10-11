@@ -1,15 +1,23 @@
-# PYBOSSA Docs in Markdown (BETA)
+[![Scifabric](https://img.shields.io/badge/made%20by-scifabric-blue.svg)](https://scifabric.com/) [![Build Status](https://travis-ci.org/Scifabric/pybossa.svg?branch=master)](https://travis-ci.org/Scifabric/pybossa) [![Join the chat at https://gitter.im/Scifabric/pybossa](https://badges.gitter.im/Scifabric/pybossa.svg)](https://gitter.im/Scifabric/pybossa?utm_source=badge&utm_medium=badge&utm_campaign=pr-badge&utm_content=badge) [![Scifabric's Patreon](https://img.shields.io/badge/support%20us%20on-patreon-orange.svg)](https://www.patreon.com/bePatron?u=4979179)
 
-Needs `pandoc` and install requirements.txt with pip. Also, it needs the [mkdocs-material-pybossa](https://github.com/Scifabric/mkdocs-material-pybossa) theme. 
+# PYBOSSA Documentation
 
-## preview docs locally
+## [docs.pybossa.com](http://docs.pybossa.com)
+
+## Writing / Development instructions
+
+Needs `pandoc` on the system and install with `pip install -U -r requirements.txt`
+
+### preview docs locally
 
 ```bash
 # preview mkdocs
 mkdocs serve
 ```
 
-## publish to gh-pages
+### Manual publish to gh-pages
+
+Deployment is done automatically once on master.
 
 Instructions for [deploying in GitHub](http://www.mkdocs.org/user-guide/deploying-your-docs/):
 
@@ -17,13 +25,9 @@ Instructions for [deploying in GitHub](http://www.mkdocs.org/user-guide/deployin
 mkdocs gh-deploy
 ```
 
-Result is visible on  
-<https://scifabric.github.io/docs.pybossa.com/>
+## Copyright / License
 
-## TODO
+Copyright 2017 [Scifabric LTD](https://scifabric.com).
 
-* [ ] remove HTML
-* [ ] write admonition (like info) like described here <https://pythonhosted.org/Markdown/extensions/admonition.html>
-* [ ] Theming (maybe the sphinx theme can be reused?)
-* [ ] automatic gh pages publishing
-* [ ] replace existing docs
+Documentation and media is under a Creative Commons Attribution License version
+3.
