@@ -1,0 +1,17 @@
+sudo: false
+dist: trusty
+group: edge
+language: python
+python:
+- '2.7'
+before_install:
+- sudo pip install -r requirements.txt
+script:
+- mkdocs build --clean
+deploy:
+  provider: pages
+  skip_cleanup: true
+  github_token: $GITHUB_TOKEN
+  local_dir: site/
+  on:
+    branch: master
