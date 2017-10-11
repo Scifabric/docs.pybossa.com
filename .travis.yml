@@ -22,5 +22,6 @@ before_install:
        && printf "%s\n" \
             "Host github.com" \
             "  IdentityFile $SSH_FILE" \
+            "  PasswordAuthentication	no" \
             "  LogLevel ERROR" >> ~/.ssh/config
 script: bash ./travisdeploy.sh
