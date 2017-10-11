@@ -14,4 +14,4 @@ deploy:
   github_token: $GITHUB_TOKEN
   local_dir: site/
   on:
-    branch: travis-deploy2
+    branch: master
