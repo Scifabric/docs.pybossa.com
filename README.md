@@ -2,7 +2,7 @@
 
 # PYBOSSA Documentation
 
-## [docs.pybossa.com](http://docs.pybossa.com)
+**[docs.pybossa.com](http://docs.pybossa.com)**
 
 ## Writing / Development instructions
 
