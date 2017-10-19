@@ -43,9 +43,9 @@ google_analytics:
 pages:
   - Home: 'index.md'
   - Install your own PYBOSSA server: 
-      - 'Getting started': 'installing_pybossa.md'
+      - 'Getting started': 'gettingstarted.md'
+      - 'Installing the server': 'install.md'
       - 'Testing PYBOSSA with Vagrant': 'vagrant_pybossa.md'
-      - 'Installing PYBOSSA by hand': 'install.md'
       - 'Deploying PYBOSSA with Nginx and uWsgi': 'nginx.md'
       - 'Configuring PYBOSSA': 'customizing.md'
       - 'Administrating PYBOSSA': 'admin.md'

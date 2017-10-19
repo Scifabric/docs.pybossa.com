@@ -1,31 +1,4 @@
-# Installing PYBOSSA by hand
-
-PYBOSSA is a python web application built using the Flask
-micro-framework.
-
-You need this guide if you want to
-
-- Create a PYBOSSA for development or testing purposes
-- First step to create a production ready PYBOSSA. Second step for
-  that is nginx.
-
-Officially supported requirements:
-
-- Ubuntu 16.04 LTS
-- Python >= 2.7.6, <3.0
-- PostgreSQL >= 9.5
-- Redis >= 2.6
-- pip >= 6.1
-
-It may also run with older software but we do not officially support it:
-
-- Ubuntu 14.04 LTS
-- Python >= 2.7.2, <3.0
-- PostgreSQL >= 9.3
-- Redis >= 2.6
-- pip >= 6.1
-
-## Setting things up
+# Setting things up
 
 Before proceeding to install PYBOSSA you will need to configure some
 other applications and libraries in your system. In this page, you will
@@ -35,7 +8,7 @@ Support](https://wiki.ubuntu.com/LTS) version available at the moment:
 
 - [Ubuntu 14.04 LTS](http://www.ubuntu.com/download/server)
 
-### Installing git - a distributed version control system
+## Installing git - a distributed version control system
 
 PYBOSSA uses the [git](http://git-scm.com/) distributed version control
 system for handling the PYBOSSA server source code as well as the
@@ -51,7 +24,7 @@ In order to install the software, all you have to do is:
 sudo apt-get install git-core
 ```
 
-### Installing the PostgreSQL database
+## Installing the PostgreSQL database
 
 [PostgreSQL](http://www.postgresql.org/) is a powerful, open source
 object-relational database system. It has more than 15 years of active
@@ -66,7 +39,7 @@ installing it are the following:
 sudo apt-get install postgresql postgresql-server-dev-all libpq-dev python-psycopg2 libsasl2-dev libldap2-dev libssl-dev
 ```
 
-### Installing virtualenv (optional, but recommended)
+## Installing virtualenv (optional, but recommended)
 
 We recommend to install PYBOSSA using a
 [virtualenv](http://pypi.python.org/pypi/virtualenv) as it will create a
@@ -95,7 +68,7 @@ After installing the software, now you will be able to create
 independent virtual environments for the PYBOSSA installation as well as
 for the template projects (see user/tutorial).
 
-### Installing the PYBOSSA Python requirements
+## Installing the PYBOSSA Python requirements
 
 Installing the required libraries for PYBOSSA is a step that will need
 to use some compilers and dev libraries in order to work. Thus, you will
@@ -199,7 +172,7 @@ instances:
 - **Redis-sentinel**: as a sentinel node, to configure the master and
   slave Redis nodes.
 
-#### Server
+### Server
 
 If you have installed the server via your distribution package system,
 then, the server will be running already. If this is not the case, check
@@ -216,7 +189,7 @@ and run it. The default values should be fine.
     start scripts. You only have to copy that file to /etc/init.d/ and
     adapt it to your needs.
 
-#### Sentinel
+### Sentinel
 
 Redis can be run in sentinel mode with the **--sentinel** arg, or by its
 own command named: redis-sentinel. This will vary from your distribution
@@ -255,7 +228,7 @@ redis-server contrib/sentinel.conf --sentinel
 
 ## Speeding up the site
 
-#### Enabling the cache
+### Enabling the cache
 
 PYBOSSA comes with a Cache system that it is enabled by default. PYBOSSA
 uses a [Redis](http://redis.io/) server to cache some objects like
@@ -294,7 +267,7 @@ Then start the server, and nothing will be cached.
     but it is really easy and well documented in the official
     [Redis](http://redis.io/) site.
 
-#### Running asynchronous tasks in the background
+### Running asynchronous tasks in the background
 
 PYBOSSA uses the Python libraries [RQ](http://python-rq.org/) and
 [RQScheduler](https://github.com/ui/rq-scheduler) to allow slow or
@@ -423,7 +396,7 @@ git pull origin master
     If you are using the [virtualenv](http://pypi.python.org/pypi/virtualenv) be sure to activate it before running the
     [Alembic](http://pypi.python.org/pypi/alembic) upgrade command.
 
-### Migrating Your Old DB Records
+## Migrating Your Old DB Records
 
 In versions prior to v0.2.3, HTML was supported as the default option
 for the 'long_description' field in projects. In new versions of
