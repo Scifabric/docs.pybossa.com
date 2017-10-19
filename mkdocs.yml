@@ -42,15 +42,6 @@ google_analytics:
   - 'auto'
 pages:
   - Home: 'index.md'
-  - Build with PYBOSSA:
-      - 'Getting started': 'build_with_pybossa.md'
-      - 'Quickstart: Creating a project': 'user/overview.md'
-      - 'Using the command line': 'user/pbs.md'
-      - 'Project tutorial': 'user/tutorial.md'
-      - 'Configuring the project': 'user/project_settings.md'
-      - 'RESTful API': 'api.md'
-      - 'Domain model': 'model.md'
-  - Administrating PYBOSSA : 'admin.md'
   - Install your own PYBOSSA server: 
       - 'Getting started': 'installing_pybossa.md'
       - 'Testing PYBOSSA with Vagrant': 'vagrant_pybossa.md'
@@ -60,6 +51,15 @@ pages:
       - 'Administrating PYBOSSA': 'admin.md'
       - 'Translating PYBOSSA': 'translating.md'
       - 'Writing plugins for PYBOSSA': 'plugins.md'
+  - Administrating PYBOSSA : 'admin.md'
+  - Build with PYBOSSA:
+      - 'Getting started': 'build_with_pybossa.md'
+      - 'Quickstart: Creating a project': 'user/overview.md'
+      - 'Using the command line': 'user/pbs.md'
+      - 'Project tutorial': 'user/tutorial.md'
+      - 'Configuring the project': 'user/project_settings.md'
+      - 'RESTful API': 'api.md'
+      - 'Domain model': 'model.md'
   - Testing PYBOSSA with Vagrant: 'vagrant_pybossa.md'
   - Contributing to PYBOSSA: 'contributing.md'
   - FAQ: 'faq.md'
