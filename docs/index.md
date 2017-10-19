@@ -29,15 +29,3 @@ possible thanks to the support by these awesome
 [backers](https://github.com/Scifabric/pybossa/blob/master/BACKERS.md).
 If you'd like to join them, check out [Scifabric's Patreon
 campaign](https://www.patreon.com/scifabric).
-
-Documentation
--------------
-
-The documentation is organized as follows:
-
- - [Testing PYBOSSA with Vagrant](vagrant_pybossa.md)
- - [Installing your own PYBOSSA server](installing_pybossa.md)
- - [Administrating PYBOSSA](admin.md)
- - [Build with PYBOSSA](build_with_pybossa.md)
- - [Contributing to PYBOSSA](contributing.md)
- - [FAQ](faq.md)
