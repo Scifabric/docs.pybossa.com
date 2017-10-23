@@ -50,6 +50,7 @@ pages:
       - 'Administrating PYBOSSA': 'admin.md'
       - 'Testing PYBOSSA with Vagrant': 'vagrant_pybossa.md'
   - Building a project:
+      - 'Overview': 'overview.md'
       - 'Getting started': 'build_with_pybossa.md'
       - 'Quickstart: Creating a project': 'user/overview.md'
       - 'Using the command line': 'user/pbs.md'

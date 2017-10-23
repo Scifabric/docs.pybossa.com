@@ -1,4 +1,4 @@
-# PYBOSSA Overview
+# Overview
 
 PYBOSSA is an open source platform that allows you to create web
 microtasking projects where volunteers could participate using their own
@@ -146,13 +146,3 @@ The template projects provide the:
 We recommend you to read the user/tutorial as it gives *a step by step*
 guide about how you can create a project, write the Task Creator and
 Presenter from scratch using the [Flickr Person Finder](https://github.com/Scifabric/app-flickrperson) template project.
-
-## BOSSA Original Architecture
-
-PYBOSSA derives from the original [BOSSA](http://bossa.berkeley.edu/)
-implementation. The following are some useful references to that
-original implementation:
-
-- http://boinc.berkeley.edu/trac/wiki/BossaImplementation
-- BOSSA Reference: http://boinc.berkeley.edu/trac/wiki/BossaReference
-

@@ -116,6 +116,16 @@ transcription, etc. Check the official [Git
 repository](http://github.com/Scifabric/) for all the available
 projects.
 
+## Did you get inspired by BOSSA?
+
+PYBOSSA derives from the original [BOSSA](http://bossa.berkeley.edu/)
+implementation. The following are some useful references to that
+original implementation:
+
+- http://boinc.berkeley.edu/trac/wiki/BossaImplementation
+- BOSSA Reference: http://boinc.berkeley.edu/trac/wiki/BossaReference
+
+
 ## Support
 
 PYBOSSA is free and open source, that means that anyone can create a

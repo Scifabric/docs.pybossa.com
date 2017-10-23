@@ -12,6 +12,6 @@ The following sections have some useful information to get you started:
  - [Quickstart: Creating a PYBOSSA project](user/overview.md)
  - [Using PYBOSSA from the command line](user/pbs.md)
  - [Step by step tutorial about PYBOSSA](user/tutorial.md)
- - [Configuring the project](user/projet_settings.md)
+ - [Configuring the project](user/project_settings.md)
  - [PYBOSSA API](api.md)
  - [Domain model](model.md)
