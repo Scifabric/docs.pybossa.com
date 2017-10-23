@@ -1204,7 +1204,7 @@ The DN.
 
 Set it to True if you are using it.
 
-### LDAT_USER_OBJECT_FILTER
+### LDAP_USER_OBJECT_FILTER
 
 This is really important. The filter that you write in here needs to be
 adapted to your institution, otherwise it will not work when
@@ -1212,3 +1212,13 @@ authenticating and validating your users.
 
 Don't use the default configuration in the settings template. You will
 need to adapt it to your needs.
+
+### LDAP_USER_FILTER_FIELD
+
+If you use a different field in the previous configuration, update the 
+LDAP_USER_FILTER_FIELD. It's important to reflect which key are you using
+within your LDAP server to uniquely identify your users.
+
+### LDAP_PYBOSSA_FIELDS
+
+Use this configuration variable to match/link PYBOSSA fields to LDAP fields.
