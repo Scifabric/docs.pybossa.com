@@ -79,7 +79,7 @@ users in very different ways.
 
 ![image](http://i.imgur.com/CmIylfr.png)
 
-#### Default or Depth First
+### Default or Depth First
 
 The Default task scheduler (also known as Depth First) has the following
 features:
@@ -111,7 +111,7 @@ From the point of view of the project, the scheduler will be trying to
 complete (get all the answers requested by the task-redundancy value)
 all the tasks as soon as possible.
 
-#### Depth First All
+### Depth First All
 
 The Depth First All scheduler has the following features:
 
@@ -144,7 +144,7 @@ all the tasks as soon as possible allowing new users to participated in
 completed tasks as well.
 
 
-#### Breadth First
+### Breadth First
 
 The Breadth First scheduler has the following features:
 
@@ -166,36 +166,8 @@ obtain as soon as possible an answer for all the available tasks.
     number of task runs, returning always first the tasks with less number
     of task runs for the user.
 
-#### Random
 
-The Random scheduler has the following features:
-
-1. It sends a task randomly to the users.
-2. A user (authenticated or anonymous) can receive the same task two or
-   more times in a row.
-3. It ignores the task-redundancy value, so tasks will be never marked
-   as *completed*.
-
-In summary, from the point of view of a user (authenticated or
-anonymous) the system will be sending tasks randomly as the user could
-receive in a row the same task several times.
-
-From the point of view of the project, the scheduler will be sending
-tasks randomly.
-
-!!! note
-    By using this scheduler, you may end up with some tasks that receive only
-    a few answers. If you want to avoid this issue, change to the other
-    two schedulers.
-
-!!! note
-    This scheduler is not enabled by default, as it comes as a plugin and its main
-    purpose is to show how you can create your own scheduler using the
-    plugin infrastructure. We do not recommend to use it in any
-    production system, as users can participate several times in the
-    same task, making the statistical analysis useless.
-
-### Task Priority
+## Task Priority
 
 PYBOSSA allows you to prioritize the tasks, or in other words, which
 tasks should be delivered first to the volunteers.
@@ -217,7 +189,7 @@ given user. In case that two or more tasks have the same priority value,
 the first task that will be delivered will be the one with the lower
 Task.ID value.
 
-### Task Redundancy
+## Task Redundancy
 
 The Task Redundancy is a feature that will allow you to analyze
 statistically the results that your project are getting for each of its
@@ -242,7 +214,7 @@ respectively Yes and No, you will not know the correct answer for the
 task. By increasing the redundancy value to 5 (or even bigger) you will
 be able to run a statistical analysis more accurately.
 
-### Delete Tasks
+## Delete Tasks
 
 This section will allow you to complete remove all the Tasks and
 associated Task Runs (answers) of your project.
