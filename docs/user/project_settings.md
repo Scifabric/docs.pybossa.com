@@ -111,6 +111,39 @@ From the point of view of the project, the scheduler will be trying to
 complete (get all the answers requested by the task-redundancy value)
 all the tasks as soon as possible.
 
+#### Depth First All
+
+The Depth First All scheduler has the following features:
+
+1. It sends the tasks in the order that were created, first in first
+   out.
+2. Users (anonymous and authenticated) will only be allowed to
+   participate once in the same task. Once a user has submitted a Task
+   Run (or answer) for a given task, the scheduler will never send that
+   task to the same user.
+3. It does not respect the task state. In
+   other words, if a task has a redundancy value of 3, the task will be
+   always sent even when those 3 answers have been submitted. Once the 3
+   answers have been collected, the task will be marked as *completed*
+   and it will be sent again to new users.
+4. When a user has submitted a Task Run for a given task, the scheduler
+   will send to the same user the next task.
+5. This scheduler allows the usage of **orderby** and **desc**
+   arguments via the *api/projectID/newtask* endpoint.
+
+In summary, from the point of view of a user (authenticated or
+anonymous) the system will be sending the project tasks in the order
+they were created. If the user tries to reload a task that he or she
+already participated, the system will detect it, and warn the user
+giving the option to try with another task (the scheduler will search
+for the proper task for the given user).
+
+From the point of view of the project, the scheduler will be trying to
+complete (get all the answers requested by the task-redundancy value)
+all the tasks as soon as possible allowing new users to participated in
+completed tasks as well.
+
+
 #### Breadth First
 
 The Breadth First scheduler has the following features:
