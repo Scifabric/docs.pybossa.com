@@ -21,6 +21,11 @@ The **Settings** page will give you the following options:
 4. project-blog: if you click this button, you will be able to write a
    new blog post to be shared with the volunteers.
 
+## Official support
+
+If you need help configuring your PYBOSSA server, [contact us](https://scifabric.com/pricing/).
+We offer official support and we would love to work with your PYBOSSA server.
+
 ## Edit the project details
 
 In this section you can change the following parameters of your project:
