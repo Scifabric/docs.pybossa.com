@@ -1,156 +1,125 @@
-Administrating PYBOSSA
-======================
+# Administrating PYBOSSA
 
-PYBOSSA has three type of users: anonymous, authenticated and
-administrators. By default the first created user in a PYBOSSA server
+PYBOSSA provides an admin section where administrators will be able to see a dashboard with global statistics, manage the background jobs, featured projects, categories, administrators, and users.
+
+## Roles
+
+PYBOSSA has four type of users: anonymous, authenticated, pro and administrators. By default the first created user in a PYBOSSA server
 will become an administrator and manage the site with full privileges.
 
-And admin user will be able to access the admin page by clicking in the
-user name and then in the link *Admin site*.
+And admin user will be able to access the admin page by clicking on the username and then in the link *Admin site*.
 
 ![image](http://i.imgur.com/5YWAJ8E.png)
 
-Administrators can manage different areas of the server:
+Administrators have full privileges on the server. They can modify anything within the server. Especially, they will be able to handle the following areas of the server:
 
-> 1.  Background jobs
-> 2.  Featured projects
-> 3.  Categories
-> 4.  Administrators
-> 5.  Users
+1.  Background jobs.
+2.  Featured projects.
+3.  Categories.
+4.  Administrators.
+5.  Users.
 
 ![image](http://i.imgur.com/cfUF6K2.png%0A%20:width:100%)
 
-<div class="admonition note">
+Admins can also modify all projects. An admin can hide a project, update its task presenter, add new tasks, delete tasks or results. In other words, it can modify any aspect of any project within the server.
 
-Admins can also modify all projects, and also see which projects are marked
+### Adding new administrators
+In the admin area you will see a specific card for managing the administrators. In this card, you will be able to search by username to add new administrators. Also, you will see the list of current admins. From there, you will be able to remove them by clicking on the remove button below each username. 
 
-:   as **Draft**: projects that do not have at least one task and a
-    task-presenter to allow other volunteers to participate.
+![image](http://i.imgur.com/WSwNFxy.png%0A%20:width:100%)
 
-</div>
+### Adding pro users
+This feature is not available at the moment.  However, you can add a pro user within your server by modifying the user field **pro** via SQL.
 
-<div class="admonition note">
+## Dashboard
+This card provides an overview of the PYBOSSA server within the last seven days. 
 
-In the users option, admins will be able
+The dashboard is updated every 24 hours via the background jobs. These jobs are scheduled in the *low* queue.
 
-:   to obtain a list of all registered users in the PYBOSSA system, in
-    either json or csv formats.
+### Active users
+It provides the total number of active users (registered) as well as a graph showing the number of users active per day.
 
-</div>
+### Active anonymous users
+It provides the total number of active anonymous users (registered) as well as a graph showing the number of them active per day.
 
-<div class="admonition note">
+### Draft projects
+It gives you a list of draft projects created within the last seven days.  It also provides the total number of this type of projects.
 
-In addition, admins can access an extension called [RQ dashboard](https://github.com/nvie/rq-dashboard) from where to
+PYBOSSA considers a project to be in draft mode when it does not have a task and a task presenter.
 
-:   monitor all the background jobs and even cancel them or retry failed
-    ones.
+### Published projects
+It gives you a list of published projects published within the last seven days.  It also provides the total number of this type of projects.
 
-</div>
+PYBOSSA considers a project to be published when it does have at least a task and a task presenter.
 
-Featured Projects
------------------
+### Updated projects
+It gives you a list of updated projects within the last seven days.  It also provides the total number of this type of projects.
 
-In this section, admins can add/remove projects to the front page of the
-site.
+PYBOSSA considers a project to be updated when anything related to it has been updated: a new blog post, new tasks, new task runs, edits on the task presenter, etc.
+
+### New tasks
+It provides the total number of new tasks created in the PYBOSSA server as well as a chart showing how many each day were created.
+
+### New answers (or task runs)
+It provides the total number of new answers (task runs) created in the PYBOSSA server as well as a chart showing how many each day were created.
+
+### New users
+It provides the total number of new registered users within the last seven days. It also includes a chart showing how many new users each day registered.
+
+### Returning users
+This chart shows how many users have contributed at least a task to a project, two, three, four, five, six and seven days in a row.
+
+This statistic shows how many users you have in the system that contribute a lot and come back every day to contribute to your projects.
+
+### Recent activity feed
+This section shows the action of the PYBOSSA system in real time. You will be able to see the last 20 events of the system regarding new registrations, when a task has been completed, or a new blog post has been published.
+
+## Background jobs
+This section allows you to see if any of your jobs and workers are performing well. Just take a look at them from time to time. In recent versions of PYBOSSA when a job fails more than three times in a row, you will get notified. Check this [section](customizing.md#background-jobs-error-notifications) for more information.
+
+## Featured Projects
+In this section, admins can add/remove projects to the front page of the site.
 
 ![image](http://i.imgur.com/K9deWZo.png%0A%20:width:100%)
 
-You will see a "Add to Featured" link to add a a project to featured
-front page or a "Remove from Featured" to remove it.
+You will see an "Add to Featured" link to add a project to the featured front page or a "Remove from Featured" to remove it.
 
-Categories
-----------
+## Categories
 
-PYBOSSA provides by default two type of categories:
+PYBOSSA provides by default two categories:
 
 1.  **Thinking**: for projects where the users can use their skills to
-    solve a problem (i.e. image or sound pattern recognition).
+    solve a problem (i.e., image or sound pattern recognition).
 2.  **Sensing**: for projects where the users can help gathering data
     using tools like [EpiCollect](http://plus.epicollect.net) and then
     analyze the data in the PYBOSSA server.
 
-Admins can add as many categories as they want, just type then and its
-description and click in the green button labeled: Add category.
+Admins can add as many categories as they want, just type then and its description and click on the green button labeled: Add category.
 
-![image](http://i.imgur.com/FlTowJ7.png){width="100%"}
+![image](http://i.imgur.com/FlTowJ7.png)
 
-<div class="admonition note">
+!!! note
+    You cannot delete a category if it has one or more projects associated with it. You can, however, rename the category or remove it when all the associated projects are not linked to the given category.
 
-You cannot delete a category if it has one or more projects associated
+## Project's Audit log
 
-:   with it. You can however rename the category or delete it when all
-    the associated projects are not linked to the given category.
+When a project is created, deleted or updated, the system registers its actions on the server. Admins will have access to all the logged activities in every project page, in a section named **Audit log**.
 
-</div>
-
-Administrators
---------------
-
-In this section an administrator will be able to add/remove users to the
-admin role. Basically, you can search by user name -nick name- and add
-them to the admin group.
-
-![image](http://i.imgur.com/WSwNFxy.png%0A%20:width:100%)
-
-As with the categories section, a green button will allow you to add the
-user to the admin group, while a red button will be shown to remove the
-user from the admin group.
-
-Audit log
----------
-
-When a project is created, deleted or updated, the system registers its
-actions in the server. Admins will have access to all the logged actions
-in every project page, in a section named **Audit log**.
-
-![image](http://i.imgur.com/BjcJQW7.png){width="100%"}
+![image](http://i.imgur.com/BjcJQW7.png)
 
 The section will let you know the following information:
 
 -   **When**: when the action was taken.
 -   **Action**: which action was taken: 'created', 'updated', or
-    'deleted'.
+    'deleted.'
 -   **Source**: if it was done the action via the API or the WEB
     interface.
--   **Attribute**: which attribute of the project has been changed.
--   **Who**: the user who took the action.
+-   **Attribute**: which attributes of the project has been changed.
+-   **Who**: the user who took action.
 -   **Old value**: the previous value before the action.
 -   **New value**: the new value after the action.
 
-<div class="admonition note">
+!!! note:
+    Only admins and users marked as *pro* can see the audit log.
 
-Only admins and users marked as *pro* can see the audit log.
 
-</div>
-
-Dashboard
----------
-
-The dashboard allows you to see what's going on in your PYBOSSA server.
-
-![image](http://i.imgur.com/TmB0dx2.png)
-
-<div class="admonition note">
-
-This feature requires PostgreSQL &gt;= 9.3. Please upgrade as soon as possible your
-
-:   server to have this feature.
-
-</div>
-
-The dashboard shows the following information for the last 7 days:
-
--   **Active users**: Number of users that have contributed at least 1
-    task\_run in the last 7 days.
--   **Active anonymous users**: Number of anonymous users that have
-    contributed at least 1 task\_run in the last 7 days.
--   **New projects**: Projects created in the last 7 days.
--   **Updated projects**: Updated projects in the last 7 days.
--   **Updated projects**: Updated projects in the last 7 days.
--   **New users**: Number of new users registered in the last 7 days.
--   **Number of returning users**: Number of returning users in the last
-    7 days classified by number of days coming back.
--   **Recent activity feed**: Last events in real time of the server.
-
-The dashboard is updated every 24 hours via the background jobs. These
-jobs are scheduled in the *low* queue.
