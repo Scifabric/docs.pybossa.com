@@ -754,7 +754,7 @@ Then, this will enable you to use a new Jinja2 filter for  authenticating PYBOSS
 {% endif %}
 ```
 
-Also, if you are building a Single Page Application, you can use our API endpoint: *api/disqus/sso* to get the credentials and authenticate the users within your javascript. Check the [endpoint information Disqus-API](/api.md#disqus-single-sign-on-sso).
+Also, if you are building a Single Page Application, you can use our API endpoint: *api/disqus/sso* to get the credentials and authenticate the users within your javascript. Check the [endpoint information Disqus-API](../build/api.md#disqus-single-sign-on-sso).
 
 ## Background jobs timeout
 
