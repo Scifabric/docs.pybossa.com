@@ -48,7 +48,7 @@ to:
 
 
 Another alternative is to use your Twitter, Facebook and Google sign in
-methods, (if the server has enabled them, see the [documentation](../customizing.md)).
+methods, (if the server has enabled them, see the [documentation](../installation/configuration.md)).
 
 ![PYBOSSA sign in methods](http://i.imgur.com/GxhfjGL.png)
 

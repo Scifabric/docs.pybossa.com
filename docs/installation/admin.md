@@ -75,7 +75,7 @@ This statistic shows how many users you have in the system that contribute a lot
 This section shows the action of the PYBOSSA system in real time. You will be able to see the last 20 events of the system regarding new registrations, when a task has been completed, or a new blog post has been published.
 
 ## Background jobs
-This section allows you to see if any of your jobs and workers are performing well. Just take a look at them from time to time. In recent versions of PYBOSSA when a job fails more than three times in a row, you will get notified. Check this [section](customizing.md#background-jobs-error-notifications) for more information.
+This section allows you to see if any of your jobs and workers are performing well. Just take a look at them from time to time. In recent versions of PYBOSSA when a job fails more than three times in a row, you will get notified. Check this [section](configuration.md#background-jobs-error-notifications) for more information.
 
 ## Featured Projects
 In this section, admins can add/remove projects to the front page of the site.

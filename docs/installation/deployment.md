@@ -16,7 +16,7 @@ Pre-requisites:
 
 ## First steps
 
-First things first, be sure that you have followed the [installation guide](install.md) before starting the deployment. We highly recommend installing PYBOSSA under a regular user (without any privileges) to run the PYBOSSA technology. We will refer to this user as *pybossa*.
+First things first, be sure that you have followed the [installation guide](guide.md) before starting the deployment. We highly recommend installing PYBOSSA under a regular user (without any privileges) to run the PYBOSSA technology. We will refer to this user as *pybossa*.
 
 ## Installing nginx and uwsgi
 
@@ -228,7 +228,7 @@ Congratulations! :smile:
 
 ## How to update the PYBOSSA service
 
-Upgrading and updating PYBOSSA as service works the same as for the standalone version. Please follow instructions on the [installation instructions](install.md). Once you have upgraded the code, you will need to restart all supervisor controlled services to get the changes:
+Upgrading and updating PYBOSSA as service works the same as for the standalone version. Please follow instructions on the [installation instructions](guide.md). Once you have upgraded the code, you will need to restart all supervisor controlled services to get the changes:
 
 ``` bash
 sudo supervisorctl restart rq-scheduler
