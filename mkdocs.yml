@@ -51,7 +51,6 @@ pages:
       - 'Testing PYBOSSA with Vagrant': 'installation/vagrant.md'
   - Building a project:
       - 'Introduction': 'build/intro.md'
-      - 'Getting started': 'build/guide.md'
       - 'Quickstart: Creating a project': 'build/overview.md'
       - 'Using the command line': 'build/pbs.md'
       - 'Project tutorial': 'build/tutorial.md'
