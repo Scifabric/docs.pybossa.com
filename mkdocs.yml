@@ -56,7 +56,7 @@ pages:
       - 'Tutorial': 'build/tutorial.md'
       - 'Configuring the project': 'build/project_settings.md'
       - 'Domain model': 'build/model.md'
-  - 'RESTful API': 
+  - 'API': 
       - 'Introduction': 'api/intro.md'
       - 'CRUD': 'api/crud.md'
       - 'Full text search': 'api/fulltextsearch.md'
@@ -69,6 +69,7 @@ pages:
           - 'Favorites': 'api/task/favorites.md'
           - 'Excluding contributed': 'api/task/participated.md'
           - 'Requesting a task': 'api/task/newtask.md'
+          - 'External user ID': 'api/task/external.md'
       - 'User':
            - 'Intro': 'api/user/intro.md'
            - 'Account': 'api/user/account.md'
