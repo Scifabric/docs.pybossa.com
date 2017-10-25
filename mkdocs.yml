@@ -56,15 +56,14 @@ pages:
       - 'Tutorial': 'build/tutorial.md'
       - 'Configuring the project': 'build/project_settings.md'
       - 'Domain model': 'build/model.md'
-  - 'API': 
+  - API: 
       - 'Introduction': 'api/intro.md'
       - 'CRUD': 'api/crud.md'
       - 'Full text search': 'api/fulltextsearch.md'
-      - 'Single Sign On': 'api/sso.md'
+      - 'Disqus Single Sign On': 'api/sso.md'
       - 'Projects':
           - 'Intro': 'api/project/project.md'
           - 'Statistics': 'api/project/statistics.md'
-          - 'Categories': 'api/project/categories.md'
       - 'Tasks':
           - 'Favorites': 'api/task/favorites.md'
           - 'Excluding contributed': 'api/task/participated.md'

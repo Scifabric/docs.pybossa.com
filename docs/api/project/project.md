@@ -1,5 +1,5 @@
-## List of project IDs
-
+## RESTful API
+### Filtering data related to several project IDs
 In PYBOSSA most of the domain objects are related to a project.
 Therefore, you can query (or filter) a list of project IDs directly via
 the API to reduce the number of queries that you need to do. This is
@@ -12,8 +12,8 @@ For example, you can get all the tasks for a list of projects like this:
 That filter will return tasks for project IDs 1, 2 and 3. The same can
 be done for task runs and blog posts.
 
-
-### Project Creation
+## PYBOSSA endpoints
+### Project creation
 
 **Endpoint: /project/new**
 
@@ -47,7 +47,7 @@ Gives you the list of required fields in the form to create a project.
 }
 ```
 
-### Project Blog list
+### Project blog list
 
 **Endpoint: /project/&lt;short\_name&gt;/blog**
 
@@ -62,7 +62,7 @@ Gives you the list of posted blogs by the given project short name.
 
 The project and owner fields will have more information if the owner of
 the project does the request, providing its private information like
-api\_key, password keys, etc. Otherwise it will be removed and only show
+api\_key, password keys, etc. Otherwise, it will be removed and only show
 public info.
 
 **Example public output**
@@ -125,7 +125,7 @@ public info.
 }
 ```
 
-### Project Task Presenter Editor
+### Project task presenter editor
 
 **Endpoint: /project/&lt;short\_name&gt;/tasks/taskpresentereditor**
 
@@ -134,14 +134,12 @@ public info.
 **GET**
 
 This endpoint allows you to get the list of available templates for the
-current project. This will only happen when the project has an empty
-template, otherwise it will load the template for you.
+current project. This will only happen when the project has an empty template, otherwise, it will load the template for you.
 
 -   **template**: The Jinja2 template that could be rendered.
 -   **title**: the title for the endpoint.
 -   **presenters**: List of available templates (in HTML format). The
-    name of them without the '.html' will be the argument for the
-    endpoint.
+    name of them without the '.html' will be the argument for the endpoint.
 -   **last\_activit**: last activity of the project.
 -   **n\_task\_runs**: number of task runs.
 -   **n\_tasks**: number of tasks.
@@ -231,9 +229,7 @@ template, otherwise it will load the template for you.
 
 > }
 
-If you want to preload the template from one of the available prenters,
-you have to pass the following argument: **?template=basic** for the
-basic or **?template=iamge** for the image template.
+If you want to preload the template from one of the available prenters, you have to pass the following argument: **?template=basic** for the basic or **?template=iamge** for the image template. 
 
 **Example output**
 
@@ -313,15 +309,11 @@ basic or **?template=iamge** for the image template.
 > }
 
 Then, you can use that template, or if you prefer you can do a POST
-directly without that information. As in any other request involving a
-POST you will need the CSRFToken to validate it.
+directly without that information. As in any other request involving a POST you will need the CSRFToken to validate it.
 
 **POST**
 
-To send a valid POST request you need to pass the *csrf token* in the
-headers. Use the following header: "X-CSRFToken". You will have to POST
-the data fields found in the previous example, as it contains the
-information about the fields: specifically **editor** with the
+To send a valid POST request, you need to pass the *csrf token* in the headers. Use the following header: "X-CSRFToken". You will have to POST the data fields found in the previous example, as it contains the information about the fields: specifically **editor** with the
 HTML/CSS/JS that you want to provide.
 
 If the post is successful, you will get the following output:
@@ -336,7 +328,7 @@ If the post is successful, you will get the following output:
 }
 ```
 
-### Project Delete
+### Project delete
 
 **Endpoint: /project/&lt;short\_name&gt;/delete**
 
@@ -434,8 +426,7 @@ headers. Use the following header: "X-CSRFToken".
 It returns a JSON object with the following information:
 
 -   **form**: the form fields that need to be sent for updating the
-    project. It contains the csrf token for validating the post, as well
-    as an errors field in case that something is wrong.
+    project. It contains the csrf token for validating the post, as well as an errors field in case that something is wrong.
 -   **upload\_form**: the form fields that need to be sent for updating
     the project's avatar. It contains the csrf token for validating the
     post, as well as an errors field in case that something is wrong.
@@ -541,8 +532,7 @@ It returns a JSON object with the following information:
 
 **POST**
 
-To send a valid POST request you need to pass the *csrf token* in the
-headers. Use the following header: "X-CSRFToken".
+To send a valid POST request, you need to pass the *csrf token* in the headers. Use the following header: "X-CSRFToken."
 
 As this endpoint supports **two** different forms, you must specify
 which form are you targeting adding an extra key: **btn**. The options
@@ -553,16 +543,14 @@ for this key are:
 The other one does not need this extra key.
 
 !!! note
-    Be sure to respect the Uppercase in the first letter, otherwise it will
-    fail.
+    Be sure to respect the Uppercase in the first letter. Otherwise, it will fail.
 
 It returns a JSON object with the following information:
 
 -   **flash**: A success message, or error indicating if the request was
-    succesful.
+    successful.
 -   **form**: the form fields with the sent information. It contains the
-    csrf token for validating the post, as well as an errors field in
-    case that something is wrong.
+    csrf token for validating the post, as well as an errors field in    the case that something is wrong.
 
 **Example output**
 
@@ -603,16 +591,12 @@ If there's an error in the form fields, you will get them in the
 ```
 
 !!! note
-    For updating the avatar is very important to not set the *Content-Type*. If you
-    are using jQuery, set it to False, so the file is handled properly.
+    For updating the avatar is very important to not set the *Content-Type*. If you  are using jQuery, set it to False, so the file is handled properly.
 
     The (x1,x2,y1,y2) are the coordinates for cutting the image and create
     the avatar.
 
-    (x1,y1) are the offset left of the cropped area and the offset top of
-    the cropped area respectively; and (x2,y2) are the width and height of
-    the crop. And don't forget to add an extra key to the form-data: 'btn'
-    with a value Upload to select this form.
+    (x1,y1) are the offset left of the cropped area and the offset top of the cropped area respectively; and (x2,y2) are the width and height of the crop. And don't forget to add an extra key to the form-data: 'btn' with a value Upload to select this form.
 
 ### Project reset secret key
 
@@ -622,9 +606,9 @@ If there's an error in the form fields, you will get them in the
 
 Resets the secret key of a project.
 
-To send a valid POST request you need to pass the *csrf token* in the
+To send a valid POST request, you need to pass the *csrf token* in the
 headers. Use the following header: "X-CSRFToken" retrieved from the GET
-endpont **/project/&lt;short\_name&gt;/update**.
+endpoint **/project/&lt;short\_name&gt;/update**.
 
 **Example output**
 
@@ -728,8 +712,7 @@ It returns a JSON object with the following information:
 
 -   **available\_importers**: A list of available importers for the
     server. To use one of the items, you have to add to the endpoint the
-    following argument: *?type=name* where name is the string that you
-    will find in the list of importers in the format:
+    following argument: *?type=name* where the name is the string that you will find in the list of importers in the format:
     *projects/tasks/name.html*.
 -   **template**: The Jinja2 template that could be rendered.
 -   **title**: The title for the view.
@@ -836,13 +819,12 @@ for that importer.
 
 **POST**
 
-To send a valid POST request you need to pass the *csrf token* in the
-headers. Use the following header: "X-CSRFToken".
+To send a valid POST request, you need to pass the *csrf token* in the headers. Use the following header: "X-CSRFToken."
 
 It returns a JSON object with the following information:
 
 -   **flash**: A success message, or error indicating if the request was
-    succesful.
+    successful.
 
 **Example output**
 
@@ -921,8 +903,7 @@ It returns a JSON object with the following information:
 
 Shows project information and owner information.
 
-If you are not the owner of the project or anonymous then you will get
-only public available information for the owner and the project itself.
+If you are not the owner of the project or anonymous, then you will get only available public information for the owner and the project itself.
 
 -   **last\_activity**: Last activity on the project.
 -   **n\_completed\_tasks**: Number of completed tasks.
@@ -1063,9 +1044,8 @@ Anonymous and other user output:
 **GET**
 
 Shows project information and owner information. Only works for
-authenticated users for their own projects (or admins). Anonymous users
-will get a 302 to login page. Logged in users with access rights will
-get a 403 when it's not their own project.
+authenticated users for their projects (or admins). Anonymous users
+will get a 302 to the login page. Logged in users with access rights will get a 403 when it's not their project.
 
 -   **last\_activity**: Last activity on the project.
 -   **n\_completed\_tasks**: Number of completed tasks.
@@ -1090,7 +1070,7 @@ The example output matches **/project/&lt;short\_name&gt;/**
 **GET**
 
 Shows information about a project results template. If the logged in
-user is the owner of the project you will get more detailed owner
+user is the owner of the project you will get a more detailed owner
 information and project information.
 
 -   **last\_activity**: Last activity on the project.
@@ -1108,7 +1088,7 @@ information and project information.
 
 **Example output**
 
-for anonymous user or when you are not the project owner:
+For an anonymous user or when you are not the project owner:
 
 ```json
 {
@@ -1171,8 +1151,7 @@ for anonymous user or when you are not the project owner:
 
 Shows project statistics if available.
 
-If you are not the owner of the project or anonymous then you will get
-only public available information for the owner and the project itself.
+If you are not the owner of the project or anonymous, then you will get only available public information for the owner and the project itself.
 
 -   **avg\_contrib\_time**: Average contribution time (NOT existing when
     no statistics there!).
@@ -1268,8 +1247,8 @@ only public available information for the owner and the project itself.
 
 Shows project tasks.
 
-If you are not the owner of the project or anonymous then you will get
-only public available information for the owner and the project itself.
+If you are not the owner of the project or anonymous, then you will get
+only available public information for the owner and the project itself.
 
 -   **autoimporter\_enabled**: If autoimporter is enabled.
 -   **last\_activity**: Last activity.
@@ -1351,8 +1330,8 @@ for another project where you are not the owner:
 
 Shows a project task based on id.
 
-If you are not the owner of the project or anonymous then you will get
-only public available information for the owner and the project itself.
+If you are not the owner of the project or anonymous, then you will get
+only available public information for the owner and the project itself.
 
 -   **owner**: Owner user information
 -   **project**: Project information.
@@ -1404,4 +1383,270 @@ for another project where you are not the owner:
 }
 ```
 
+### Project Category
 
+**Endpoint: /project/category/&lt;short\_name&gt;/**
+
+*Allowed methods*: **GET**
+
+**GET**
+
+Gives you the list of projects in a category.
+
+-   **pagination**: A pagination object for getting projects from this
+    category.
+-   **active\_cat**: Active category.
+-   **projects**: List of projects belonging to this category.
+-   **categories**: List of available categories in this server.
+-   **template**: The Jinja2 template that could be rendered.
+-   **title**: the title for the endpoint.
+
+**Example output**
+
+```json
+{
+  "active_cat": {
+    "created": null,
+    "description": "Social projects",
+    "id": 2,
+    "name": "Social",
+    "short_name": "social"
+  },
+  "categories": [
+    {
+      "created": null,
+      "description": "Featured projects",
+      "id": null,
+      "name": "Featured",
+      "short_name": "featured"
+    },
+    {
+      "created": null,
+      "description": "Social projects",
+      "id": 2,
+      "name": "Social",
+      "short_name": "social"
+    },
+    {
+      "created": "2013-06-18T11:13:44.789149",
+      "description": "Art projects",
+      "id": 3,
+      "name": "Art",
+      "short_name": "art"
+    },
+  ],
+  "pagination": {
+    "next": false,
+    "page": 1,
+    "per_page": 20,
+    "prev": false,
+    "total": 1
+  },
+  "projects": [
+    {
+      "created": "2014-02-22T15:09:23.691811",
+      "description": "Image pattern recognition",
+      "id": 1377,
+      "info": {
+        "container": "7",
+        "thumbnail": "58.png"
+      },
+      "last_activity": "2 weeks ago",
+      "last_activity_raw": "2017-01-31T09:18:28.450391",
+      "n_tasks": 169671,
+      "n_volunteers": 17499,
+      "name": "Name",
+      "overall_progress": 80,
+      "owner": "John Doe",
+      "short_name": "name",
+      "updated": "2017-01-31T09:18:28.491496"
+    },
+  ],
+  "template": "/projects/index.html",
+  "title": "Projects"
+}
+```
+
+!!! note
+    To override the default ranking you pass the **orderby** query parameter to sort projects by any of the attributes listed above, such as  *n\_volunteers* or *n\_tasks*. The **desc** query parameter can also be added to sort in descending order. For example: GET
+    /project/category/&lt;short\_name&gt;/?orderby=n\_tasks&desc=True
+
+
+### Project Category Featured
+
+**Endpoint: /project/category/featured/**
+
+*Allowed methods*: **GET**
+
+**GET**
+
+Gives you the list of featured projects.
+
+-   **pagination**: A pagination object for getting new featured
+    projects from this category.
+-   **active\_cat**: Active category.
+-   **projects**: List of projects belonging to this category.
+-   **categories**: List of available categories in this server.
+-   **template**: The Jinja2 template that could be rendered.
+-   **title**: the title for the endpoint.
+
+**Example output**
+
+```json
+{
+  "active_cat": {
+    "created": null,
+    "description": "Featured projects",
+    "id": null,
+    "name": "Featured",
+    "short_name": "featured"
+  },
+  "categories": [
+    {
+      "created": null,
+      "description": "Featured projects",
+      "id": null,
+      "name": "Featured",
+      "short_name": "featured"
+    },
+    {
+      "created": null,
+      "description": "Social projects",
+      "id": 2,
+      "name": "Social",
+      "short_name": "social"
+    },
+    {
+      "created": "2013-06-18T11:13:44.789149",
+      "description": "Art projects",
+      "id": 3,
+      "name": "Art",
+      "short_name": "art"
+    },
+  ],
+  "pagination": {
+    "next": false,
+    "page": 1,
+    "per_page": 20,
+    "prev": false,
+    "total": 1
+  },
+  "projects": [
+    {
+      "created": "2014-02-22T15:09:23.691811",
+      "description": "Image pattern recognition",
+      "id": 1377,
+      "info": {
+        "container": "7",
+        "thumbnail": "58.png"
+      },
+      "last_activity": "2 weeks ago",
+      "last_activity_raw": "2017-01-31T09:18:28.450391",
+      "n_tasks": 169671,
+      "n_volunteers": 17499,
+      "name": "Name",
+      "overall_progress": 80,
+      "owner": "John Doe",
+      "short_name": "name",
+      "updated": "2017-01-31T09:18:28.491496"
+    },
+  ],
+  "template": "/projects/index.html",
+  "title": "Projects"
+}
+```
+
+!!! note
+    To override the default ranking, you pass the **orderby** query parameter to sort projects by any of the attributes listed above, such as *n\_volunteers* or *n\_tasks*. The **desc** query parameter can also be added to sort in descending order. For example: GET
+    /project/category/featured/?orderby=n\_tasks&desc=True
+
+
+### Project Category Draft
+
+**Endpoint: /project/category/draft/**
+
+*Allowed methods*: **GET**
+
+**GET**
+
+Gives you the list of featured projects.
+
+-   **pagination**: A pagination object for getting new draft projets
+    from this category.
+-   **active\_cat**: Active category.
+-   **projects**: List of projects belonging to this category.
+-   **categories**: List of available categories in this server.
+-   **template**: The Jinja2 template that could be rendered.
+-   **title**: the title for the endpoint.
+
+**Example output**
+
+```json
+{
+  "active_cat": {
+    "created": null,
+    "description": "Draft projects",
+    "id": null,
+    "name": "Draft",
+    "short_name": "draft"
+  },
+  "categories": [
+    {
+      "created": null,
+      "description": "Draft projects",
+      "id": null,
+      "name": "Draft",
+      "short_name": "draft"
+    },
+    {
+      "created": null,
+      "description": "Social projects",
+      "id": 2,
+      "name": "Social",
+      "short_name": "social"
+    },
+    {
+      "created": "2013-06-18T11:13:44.789149",
+      "description": "Art projects",
+      "id": 3,
+      "name": "Art",
+      "short_name": "art"
+    },
+  ],
+  "pagination": {
+    "next": false,
+    "page": 1,
+    "per_page": 20,
+    "prev": false,
+    "total": 1
+  },
+  "projects": [
+    {
+      "created": "2014-02-22T15:09:23.691811",
+      "description": "Draft 1",
+      "id": 17,
+      "info": {
+        "container": "7",
+        "thumbnail": "58.png"
+      },
+      "last_activity": "2 weeks ago",
+      "last_activity_raw": "2017-01-31T09:18:28.450391",
+      "n_tasks": 0,
+      "n_volunteers": 0,
+      "name": "Name",
+      "overall_progress": 0,
+      "owner": "John Doe",
+      "short_name": "name",
+      "updated": "2017-01-31T09:18:28.491496"
+    },
+  ],
+  "template": "/projects/index.html",
+  "title": "Projects"
+}
+```
+
+!!! note
+    To override the default ranking, you pass the **orderby** query parameter to
+    sort projects by any of the attributes listed above, such as
+    *n\_volunteers* or *n\_tasks*. The **desc** query parameter can also be added to sort in descending order. For example: GET
+    /project/category/draft/?orderby=n\_tasks&desc=True
