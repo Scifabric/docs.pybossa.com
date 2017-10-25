@@ -1,19 +1,4 @@
-## RESTful API
-### Filtering data related to several project IDs
-In PYBOSSA most of the domain objects are related to a project.
-Therefore, you can query (or filter) a list of project IDs directly via
-the API to reduce the number of queries that you need to do. This is
-especially useful for Single Page Applications that only use the PYBOSSA JSON endpoints.
-
-For example, you can get all the tasks for a list of projects like this:
-
-    GET http://{pybossa-site-url}/api/task?project_id=[1,2,3]
-
-That filter will return tasks for project IDs 1, 2 and 3. The same can
-be done for task runs and blog posts.
-
-## PYBOSSA endpoints
-### Project creation
+## Project creation
 
 **Endpoint: /project/new**
 
@@ -47,7 +32,7 @@ Gives you the list of required fields in the form to create a project.
 }
 ```
 
-### Project blog list
+## Project blog list
 
 **Endpoint: /project/&lt;short\_name&gt;/blog**
 
@@ -125,7 +110,7 @@ public info.
 }
 ```
 
-### Project task presenter editor
+## Project task presenter editor
 
 **Endpoint: /project/&lt;short\_name&gt;/tasks/taskpresentereditor**
 
@@ -328,7 +313,7 @@ If the post is successful, you will get the following output:
 }
 ```
 
-### Project delete
+## Project delete
 
 **Endpoint: /project/&lt;short\_name&gt;/delete**
 
@@ -415,7 +400,7 @@ headers. Use the following header: "X-CSRFToken".
 }
 ```
 
-### Project update
+## Project update
 
 **Endpoint: /project/&lt;short\_name&gt;/update**
 
@@ -598,7 +583,7 @@ If there's an error in the form fields, you will get them in the
 
     (x1,y1) are the offset left of the cropped area and the offset top of the cropped area respectively; and (x2,y2) are the width and height of the crop. And don't forget to add an extra key to the form-data: 'btn' with a value Upload to select this form.
 
-### Project reset secret key
+## Project reset secret key
 
 **Endpoint: /project/&lt;short\_name&gt;/resetsecretkey**
 
@@ -620,7 +605,7 @@ endpoint **/project/&lt;short\_name&gt;/update**.
 }
 ```
 
-### Project tasks browse
+## Project tasks browse
 
 **Endpoint: /project/&lt;short\_name&gt;/tasks/browse/** **Endpoint:
 /project/&lt;short\_name&gt;/tasks/browse/&lt;int:page&gt;**
@@ -700,7 +685,7 @@ endpoint **/project/&lt;short\_name&gt;/update**.
 }
 ```
 
-### Project tasks import
+## Project tasks import
 
 **Endpoint: /project/&lt;short\_name&gt;/tasks/import**
 
@@ -836,7 +821,7 @@ It returns a JSON object with the following information:
 }
 ```
 
-### Project tutorial
+## Project tutorial
 
 **Endpoint: /project/&lt;short\_name&gt;/tutorial**
 
@@ -893,7 +878,7 @@ It returns a JSON object with the following information:
   "title": "Project: myproject"
 }
 ```
-### Project shortname
+## Project shortname
 
 **Endpoint: /project/&lt;short\_name&gt;/**
 
@@ -1035,7 +1020,7 @@ Anonymous and other user output:
 }
 ```
 
-### Project settings
+## Project settings
 
 **Endpoint: /project/&lt;short\_name&gt;/settings**
 
@@ -1061,7 +1046,7 @@ will get a 302 to the login page. Logged in users with access rights will get a 
 
 The example output matches **/project/&lt;short\_name&gt;/**
 
-### Project results
+## Project results
 
 **Endpoint: /project/&lt;short\_name&gt;/results**
 
@@ -1141,7 +1126,7 @@ For an anonymous user or when you are not the project owner:
 }
 ```
 
-### Project stats
+## Project stats
 
 **Endpoint: /project/&lt;short\_name&gt;/stats**
 
@@ -1237,7 +1222,7 @@ If you are not the owner of the project or anonymous, then you will get only ava
 }
 ```
 
-### Project tasks
+## Project tasks
 
 **Endpoint: /project/&lt;short\_name&gt;/tasks**
 
@@ -1320,7 +1305,7 @@ for another project where you are not the owner:
 }
 ```
 
-### Project task id
+## Project task id
 
 **Endpoint: /project/&lt;short\_name&gt;/task/&lt;int:task\_id&gt;**
 
@@ -1383,7 +1368,7 @@ for another project where you are not the owner:
 }
 ```
 
-### Project Category
+## Project Category
 
 **Endpoint: /project/category/&lt;short\_name&gt;/**
 
@@ -1472,7 +1457,7 @@ Gives you the list of projects in a category.
     /project/category/&lt;short\_name&gt;/?orderby=n\_tasks&desc=True
 
 
-### Project Category Featured
+## Project Category Featured
 
 **Endpoint: /project/category/featured/**
 
@@ -1561,7 +1546,7 @@ Gives you the list of featured projects.
     /project/category/featured/?orderby=n\_tasks&desc=True
 
 
-### Project Category Draft
+## Project Category Draft
 
 **Endpoint: /project/category/draft/**
 

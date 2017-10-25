@@ -62,8 +62,11 @@ pages:
       - 'Full text search': 'api/fulltextsearch.md'
       - 'Disqus Single Sign On': 'api/sso.md'
       - 'Projects':
-          - 'Intro': 'api/project/project.md'
-          - 'Statistics': 'api/project/statistics.md'
+          - 'RESTful API':
+             - 'Filtering data to several project IDs': 'api/project/filtering.md'
+             - 'Statistics': 'api/project/statistics.md'
+          - 'PYBOSSA endpoints':
+            - 'Options': 'api/project/project.md'
       - 'Tasks':
           - 'RESTful API':
             - 'Favorites': 'api/task/favorites.md'
@@ -71,18 +74,33 @@ pages:
             - 'Requesting a task': 'api/task/newtask.md'
             - 'External user ID': 'api/task/external.md'
       - 'User':
-           - 'Intro': 'api/user/intro.md'
-           - 'Account': 'api/user/account.md'
-           - 'Admins': 'api/user/admin.md'
-      - 'Leaderboard': 'api/leaderboard.md'
-      - 'Home page': 'api/home.md'
-      - 'Announcement': 'api/announcement.md'
-      - 'Categories': 'api/categories.md'
+          - 'RESTful API':
+             - 'Intro': 'api/user/intro.md'
+          - 'PYBOSSA endpoints':
+             - 'Account': 'api/user/account.md'
+             - 'Admins': 'api/user/admin.md'
+      - 'Leaderboard': 
+         - 'PYBOSSA endpoints': 
+             - 'Methods': 'api/leaderboard.md'
+      - 'Home page': 
+         - 'PYBOSSA endpoints': 
+             - Methods: 'api/home.md'
+      - 'Announcement': 
+            - 'PYBOSSA endpoints':
+                - Methods: 'api/announcement.md'
+      - 'Categories': 
+            - 'PYBOSSA endpoints': 
+                - Methods: 'api/categories.md'
       - 'Administration':
-          - 'Dashboard': 'api/admin/dashboard.md'
-          - 'Featured projects': 'api/admin/featured.md'
-      - 'Help': 'api/help.md'
-      - 'Server stats': 'api/stats.md'
+         - 'PYBOSSA endpoints': 
+            - 'Dashboard': 'api/admin/dashboard.md'
+            - 'Featured projects': 'api/admin/featured.md'
+      - 'Help': 
+         - 'PYBOSSA endpoints': 
+            - 'Methods': 'api/help.md'
+      - 'Server stats': 
+         - 'PYBOSSA endpoints': 
+            - Methods: 'api/stats.md'
   - Testing PYBOSSA with Vagrant: 'installation/vagrant.md'
   - Contributing:
       - 'General':  'contributing.md'
