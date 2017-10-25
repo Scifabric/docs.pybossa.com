@@ -53,7 +53,7 @@ pages:
       - 'Introduction': 'build/intro.md'
       - 'Quickstart: Creating a project': 'build/overview.md'
       - 'Using the command line': 'build/pbs.md'
-      - 'Project tutorial': 'build/tutorial.md'
+      - 'Tutorial': 'build/tutorial.md'
       - 'Configuring the project': 'build/project_settings.md'
       - 'RESTful API': 'build/api.md'
       - 'Domain model': 'build/model.md'
