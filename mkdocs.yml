@@ -55,8 +55,33 @@ pages:
       - 'Using the command line': 'build/pbs.md'
       - 'Tutorial': 'build/tutorial.md'
       - 'Configuring the project': 'build/project_settings.md'
-      - 'RESTful API': 'build/api.md'
       - 'Domain model': 'build/model.md'
+  - 'RESTful API': 
+      - 'Introduction': 'api/intro.md'
+      - 'CRUD': 'api/crud.md'
+      - 'Full text search': 'api/fulltextsearch.md'
+      - 'Single Sign On': 'api/sso.md'
+      - 'Projects':
+          - 'Intro': 'api/project/project.md'
+          - 'Statistics': 'api/project/statistics.md'
+          - 'Categories': 'api/project/categories.md'
+      - 'Tasks':
+          - 'Favorites': 'api/task/favorites.md'
+          - 'Excluding contributed': 'api/task/participated.md'
+          - 'Requesting a task': 'api/task/newtask.md'
+      - 'User':
+           - 'Intro': 'api/user/intro.md'
+           - 'Account': 'api/user/account.md'
+           - 'Admins': 'api/user/admin.md'
+      - 'Leaderboard': 'api/leaderboard.md'
+      - 'Home page': 'api/home.md'
+      - 'Announcement': 'api/announcement.md'
+      - 'Categories': 'api/categories.md'
+      - 'Administration':
+          - 'Dashboard': 'api/admin/dashboard.md'
+          - 'Featured projects': 'api/admin/featured.md'
+      - 'Help': 'api/help.md'
+      - 'Server stats': 'api/stats.md'
   - Testing PYBOSSA with Vagrant: 'installation/vagrant.md'
   - Contributing:
       - 'General':  'contributing.md'
