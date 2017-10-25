@@ -21,7 +21,7 @@ Authorization Header like this:
     HEADERS Authorization: project.secret_key
     GET http://{pybossa-site-url}/api/auth/project/short_name/token
 
-That request will return a JWT token for you. With that token, you will be able to start requesting tasks for your user base passing again an authorization header. Imagine a user from your database is identified like this: '1xa':
+That request will return a JWT token for you. With that token, you will be able to start requesting tasks for your user base passing an authorization header again. Imagine a user from your database is identified like this: '1xa':
 
     HEADERS Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOiIxMjM0NTY3ODkwIiwibmFtZSI6IkpvaG4gRG9lIiwiYWRtaW4iOnRydWV9.TJVA95OrM7E2cBab30RMHrHDcEfxjoYZgeFONFh7HgQ
     GET http://{pybossa-site-url}/api/{project.id}/newtask?external_uid=1xa

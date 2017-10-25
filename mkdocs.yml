@@ -65,10 +65,11 @@ pages:
           - 'Intro': 'api/project/project.md'
           - 'Statistics': 'api/project/statistics.md'
       - 'Tasks':
-          - 'Favorites': 'api/task/favorites.md'
-          - 'Excluding contributed': 'api/task/participated.md'
-          - 'Requesting a task': 'api/task/newtask.md'
-          - 'External user ID': 'api/task/external.md'
+          - 'RESTful API':
+            - 'Favorites': 'api/task/favorites.md'
+            - 'Excluding contributed tasks': 'api/task/participated.md'
+            - 'Requesting a task': 'api/task/newtask.md'
+            - 'External user ID': 'api/task/external.md'
       - 'User':
            - 'Intro': 'api/user/intro.md'
            - 'Account': 'api/user/account.md'
