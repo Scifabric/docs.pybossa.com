@@ -57,7 +57,7 @@ Once you have an account, click in **create the ** link of the navigation bar. A
 ![PYBOSSA Create link](http://i.imgur.com/Js4YgVg.png)
 
 !!! note
-    PYBOSSA usually provides two Project Categories by default: *thinking* and *sensing*. The *thinking* category represents the standard PYBOSSA project where users contribute helping with their skills. *Sensing* category refers to projects that are using volunter sensing tools like EpiCollect or Raspberry Pi with PYBOSSA for gathering data.
+    PYBOSSA usually provides two Project Categories by default: *thinking* and *sensing*. The *thinking* category represents the standard PYBOSSA project where users contribute helping with their skills. *Sensing* category refers to projects that are using volunteer sensing tools like EpiCollect or Raspberry Pi with PYBOSSA for gathering data.
 
 Once you have filled all the fields, click in the **Create the project** button, and you will have created your first project :thumbsup:
 
@@ -132,14 +132,14 @@ Additionally, you can re-use the templates by downloading the CSV files from Goo
 [EpiCollect](http://plus.epicollect.net) provides a web tool for the
 generation of forms for many kinds of mobile data collection projects.
 
-Data can be collected using multiple mobile phones running either the Android Operating system or the iPhone (using the EpiCollect mobile app) and all data can be synchronized from the phones and viewed centrally (using Google Maps) via the Project website or directly on the phones.
+Data can be collected using multiple mobile phones running either the Android Operating system or the iPhone (using the EpiCollect mobile app), and all data can be synchronized from the phones and viewed centrally (using Google Maps) via the Project website or directly on the phones.
 
 EpiCollect can help you to recollect data samples according to a form that could include multimedia like photos. Moreover, EpiCollect can geolocate the data sample as it supports the built-in GPS that all modern smartphones have.
 
 For example, you can create an EpiCollect project where the form will ask the user to take a picture of a lake, geo-locate it automatically via the built-in smartphone GPS and upload the image to the EpiCollect server. If the user does not have Internet access at that moment, the user will be able to synchronize the data afterward, i.e., when the user has access to an Internet WIFI hotspot.
 
 PYBOSSA can automatically import data from a public EpiCollect Plus project that you own or that it is publicly available on the
-web site. Then you will be able to validate, analyze, etc. the data that has been obtained via EpiCollect.
+website. Then you will be able to validate, analyze, etc. the data that has been obtained via EpiCollect.
 
 If you want to import the data points submitted to a **public**
 EpiCollect project, you will have to follow the next steps:
@@ -170,8 +170,8 @@ used in the task presenter):
 
 - title: the title of the photograph, as it appears on Flickr.
 - URL: the URL to the raw .jpg image, in its original size.
-- url_b: the url to the image, 'big sized.
-- url_m: the url to the image, 'medium' sized.
+- url_b: the URL to the image, 'big sized.
+- url_m: the URL to the image, 'medium' sized.
 - link: a link to the photo page on Flickr (not to the raw image).
 
 You can import tasks from a Flickr photo set (a.k.a. album) in either of the following ways: using your Flickr account, or by typing the album ID.
@@ -252,7 +252,7 @@ For using this importer, just follow these are the steps:
 2. Then click on the **Import Tasks** button, and select the **Dropbox importer**.
 3. Click on the "Choose from Dropbox" icon. You will be asked your    Dropbox account credentials. Then select as many files as you want:
     ![Image](http://i.imgur.com/dsgM0Tg.png)
-4. You can repeat step 3 as many times as you want, and more files will be added to your import. Then, click on "Import".
+4. You can repeat step 3 as many times as you want, and more files will be added to your import. Then, click on "Import."
 
 ### Importing the tasks from a Twitter account or search result
 
@@ -298,7 +298,7 @@ So, to import tasks with the Twitter importer, do as follows:
 2. Then click on the **Import Tasks** button, and select the **Twitter importer**:
 3. You can provide your own Twitter credentials and make API requests on behalf of them, or use the credentials provided by us. (The later only allows to import the number of tweets returned by a single Twitter API call, which is 100 for searches and 200 for user
    timelines.)
-4. Fill in the two fields you will find in the form. The first one is the source of your tweets. If you want them to be imported from a user account, then write it with the "@" symbol, like "@PYBOSSA". If you just want to import tweets containing a word on them (or a #hashtag), then type it there. The second field is for you to specify how many tweets you want to import. You can import as many as you want!
+4. Fill in the two fields you will find in the form. The first one is the source of your tweets. If you want them to be imported from a user account, then write it with the "@" symbol, like "@PYBOSSA." If you just want to import tweets containing a word on them (or a #hashtag), then type it there. The second field is for you to specify how many tweets you want to import. You can import as many as you want!
 
 Finally, click on the "Import" button, and you are done:
 
@@ -345,10 +345,9 @@ For video files (.mp4, .m4v, .ogg, .ogv, .webm and .avi extensions):
 The tasks created with the S3 importer are ready to be used with the
 template project presenters available in PYBOSSA, as they include the described fields.
 
-Thus, importing your images from S3 will allow you to use immediately the image pattern recognition template with them; importing videos, audio files or PDFs with the S3 importer will also grant you to use the presenter templates for video pattern recognition, sound pattern recognition or documents transcription, respectively, with no additional modifications and have them working right away (as long as the files have any of the mentioned file extensions, of course).
+Thus, importing your images from S3 will allow you to use the image pattern recognition template with them immediately. If you import videos, audio files or PDFs  you will also be able to use the presenter templates for video pattern recognition, sound pattern recognition or documents transcription, respectively, with no additional modifications and have them working right away (as long as the files have any of the mentioned file extensions, of course).
 
-Importing from an S3 bucket requires that the bucket visibility is set
-to *public* so its content can be seen and listed by PYBOSSA. To make a bucket public, go to your AWS management console and select the S3 service. Then select the bucket you want to make public and click on "Properties." Click on "Add more Permissions" and add a new one with "Grantee: Everyone" and the "List" checkbox selected, like in the following image:
+Importing from an S3 bucket requires that the bucket visibility is set to *public* so its content can be seen and listed by PYBOSSA. To make a bucket public, go to your AWS management console and select the S3 service. Then select the bucket you want to make public and click on "Properties." Click on "Add more Permissions" and add a new one with "Grantee: Everyone" and the "List" checkbox selected, like in the following image:
 
 ![Image](http://i.imgur.com/FuN9XAS.png)
 
@@ -391,10 +390,10 @@ The tasks created with the Youtube importer are ready to be used with the youtub
 ### Flushing all the tasks
 
 The project settings gives you an option to automatically **delete all
-the tasks and associated task runs** from your project.
+the tasks and associated task volunteer** from your project.
 
 !!! danger
-    This action cannot be un-done, so please, be sure that you want to actually, delete all the tasks.
+    This action cannot be undone, so please, be sure that you want to actually, delete all the tasks.
 
 
 !!! warning
@@ -402,7 +401,7 @@ the tasks and associated task runs** from your project.
 
 
 If you are sure that you want to flush all the tasks and task runs for
-your project, go to the project page (http://server/project/slug/tasks/) and click in the **Settings** option of the left local navigation menu:
+your project, go to the project page (http://server/project/slug/tasks/) and click on the **Settings** option of the left local navigation menu:
 
 ![image](http://i.imgur.com/nauht7l.png)
 
@@ -412,7 +411,7 @@ Then, you will see that there is a subsection called: **Task Settings** and a bu
 
 As you can see, a **red warning alert** is shown, warning you that if
 you click on the **yes** button, you will be deleting not only the
-project tasks, but also the answers (task runs) that you have
+project tasks but also the answers (task runs) that you have
 recollected for your project. Be sure before proceeding that you want to delete all the tasks. After clicking on the **yes** button, you will see that all the tasks have been flushed.
 
 ### Creating the Task Presenter
@@ -427,14 +426,14 @@ be already on the page of your project, however, if you are not, you only need t
 !!! note
     You need to be logged in. Otherwise, you will not be able to modify the project.
 
-Another way of accessing your project (or projects) is clicking on your *username* (at the navbar) and select the *My Projects* item from the drop down menu. From there you will be able to manage your projects:
+Another way of accessing your project (or projects) is clicking on your *username* (at the navbar) and select the *My Projects* item from the but it menu. From there you will be able to manage your projects:
 
 ![image](http://i.imgur.com/3S497Ct.png)
 
 ![image](http://i.imgur.com/9sO21Zd.png)
 
 Once you have chosen your project, you can add a task-presenter by
-clicking on the **Tasks** local navigation link, and then clickickin on  the button named **Editor** under the **Task Presenter** box.
+clicking on the **Tasks** local navigation link, and then clicking on the button named **Editor** under the **Task Presenter** box.
 
 ![image](http://i.imgur.com/nauht7l.png)
 
@@ -453,7 +452,7 @@ like your task-presenter.
 
 ![imae](http://i.imgur.com/DsDDBia.png)
 
-We recommend reading the [Step by step tutorial](tutorial.md) as you will understand how to create the task presenter, which is basically adding some HTML skeleton to load the task data, input fields to get the answer from the users, and some JavaScript to make it work.
+We recommend reading the [Step by step tutorial](tutorial.md) as you will understand how to create the task presenter, which explains how you can add some HTML skeleton to load the task data, input fields to get the answer from the users, and some JavaScript to make it work.
 
 ### Publishing the project
 
@@ -553,7 +552,7 @@ Finder projects provides a template for the task-creator that can be
 re-used without any problems (check the createTasks.py script).
 
 !!! note 
-    **The API request has to be authenticated and authorized**. You can get an API-KEY creating an account on the server, and checking the API-KEY created for your user, check the profile account (click on your user name) and copy the field **API-KEY**.
+    **The API request has to be authenticated and authorized**. You can get an API-KEY creating an account on the server, and check the API-KEY created for your user, check the profile account (click on your username) and copy the field **API-KEY**.
 
     This API-KEY should be passed as a POST argument like this with the previous data:
 
@@ -568,7 +567,7 @@ task-presenter for the project.
 ### Creating the Task Presenter
 
 The task-presenter is usually a template of HTML and JavaScript that will present the tasks to the users, and save the answers in the
-database. The [Flickr Person demo project](http://github.com/Scifabric/app-flickersperson) provides a template which has a <div/> to load the input files, in this case the photo, and another <div/> to load the action buttons that the users will be able to press to answer the question and save it in the database. Please, check the [tutorial](tutorial.md) for more details about the task-presenter.
+database. The [Flickr Person demo project](http://github.com/Scifabric/app-flickersperson) provides a template which has a <div/> to load the input files, in this case, the photo, and another <div/> to load the action buttons that the users will be able to press to answer the question and save it in the database. Please, check the [tutorial](tutorial.md) for more details about the task-presenter.
 
 As we will be using the API for creating the task presenter, we will have to create an HTML file in our computer, read it from a
 a script, and post it into PYBOSSA using the API.
@@ -578,7 +577,7 @@ locally with your editor, or using the PYBOSSA interface (see
 previous section).
 
 !!! note
-    **The API request has to be authenticated and authorized**. You can get an API-KEY creating an account on the server, and checking the API-KEY created for your user, check the profile account (click on your user name) and copy the field **API-KEY**.
+    **The API request has to be authenticated and authorized**. You can get an API-KEY creating an account on the server, and check the API-KEY created for your user, check the profile account (click on your user name) and copy the field **API-KEY**.
     
     This API-KEY should be passed as a POST argument like this with the previous data: [POST] <http://domain/api/project/?api_key=API-KEY>
 
@@ -594,4 +593,4 @@ run the following command:
 ``` bash
 pbs --server server --api-key yourkey create_project 
 ```
-Please, read the section [pbs](pbs.md) for more details.
+Please, read the [pbs section](pbs.md) for more details.
