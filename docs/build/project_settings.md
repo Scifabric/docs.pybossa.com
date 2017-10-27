@@ -226,6 +226,18 @@ In case that you want to remove the project and all its tasks, results and task 
 !!! info
     Only projects without results can be deleted.
 
+## Adding co-owners to your project
+
+Job creators have the ability to add co-owners to jobs that they create. The co-owner will be able to view/edit the task presenter code on a job, as well as change the task settings and upload tasks. To do this, go to
+settings ->  manage co-owners
+
+Once there, you are able to type in the username of the person that you want to add as a co-owner, click on Search, and then click on “Add Co-Owner”.
+
+![image](http://i.imgur.com/E2sHdTw.png)
+
+The new co-owner will appear in the project co-owners list. Project co-owners (with the exception of the original project creator) can also be removed from here.
+
+![image](http://i.imgur.com/OA5OtIS.png)
 
 ## Transfer project ownership
 
