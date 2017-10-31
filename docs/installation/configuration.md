@@ -20,6 +20,33 @@ PYBOSSA includes a flag to enable a debug toolbar that can give you more insight
 ENABLE_DEBUG_TOOLBAR = True
 ```
 
+## Profiling
+
+PYBOSSA installs [Flask-Profiler](https://github.com/muatik/flask-profiler), an extension that allows you to know which endpoints are being called, and how much time it
+takes for them to process each request. You can enable it by setting this config variable in the settings_local.py file:
+
+``` python
+FLASK_PROFILER = {
+    "enabled": True,
+    "storage": {
+        "engine": "sqlite"
+    },
+    "basicAuth":{
+        "enabled": True,
+        "username": "admin",
+        "password": "admin"
+    },
+    "ignore": [
+	    "^/static/.*"
+	]
+}
+```
+
+Now you can access the profiling page: http://server/flask-profiler/. 
+
+!!! warning
+    Be sure to use a strong password to protect this view as well as HTTPS.
+
 ## Host and Port
 
 The [HOST](https://github.com/Scifabric/pybossa/blob/master/settings_local.py.tmpl#L22) and [PORT](https://github.com/Scifabric/pybossa/blob/master/settings_local.py.tmpl#L23) config variables can be used to force the server to listen on specific addresses of your server, as well as at a given port. Usually, you will only need to uncomment the [HOST](https://github.com/Scifabric/pybossa/blob/master/settings_local.py.tmpl#L22) variable to listen on all the network interfaces.
