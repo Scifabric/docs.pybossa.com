@@ -293,6 +293,16 @@ There is an example of the **ANNOUNCEMENT** variable in the
 !!! note
     You can use a mix of messages at the same time without problems, so, for example, you can display a message for Admins and Owners at the same time.
 
+## Disable email notifications
+
+When a PYBOSSA project publishes a blog post, users will get an email (and webpush notification if it is enabled) with the update.
+
+You can disable this behavior with the following flag:
+
+``` python
+DISABLE_EMAIL_NOTIFICATIONS = True
+```
+
 ## Cache
 
 By default PYBOSSA uses Redis to cache a lot of data in order to serve it as fast as possible. PYBOSSA comes with a default set of timeouts for different views that you can change or modify to your own taste. All you have to do is modify the following variables in your settings file:
