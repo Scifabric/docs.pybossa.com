@@ -852,6 +852,19 @@ variable to your settings_local.py file:
 IGNORE_FLAT_KEYS = [ 'geojson', 'key1', ...]
 ``` 
 
+## Specify a new root key instead of info for CSV exporter
+
+Sometimes you need to change the root key for the CSV exporter. This usually happens, when you have to store one ore more answers within the same info object. For this reason, you can instruct PYBOSSA to use that key instead of *info* for flattening the data:
+
+``` python
+TASK_CSV_EXPORT_INFO_KEY = 'key'
+TASK_RUN_CSV_EXPORT_INFO_KEY = 'key2'
+RESULT_CSV_EXPORT_INFO_KEY = 'key3'
+``` 
+
+In this way, if key, key2 or key3 have an array or list of dictionaries, PYBOSSA will iterate over them, flat them, and then generate the CSV for you.
+
+
 ## Disable task presenter check for pure JavaScript apps
 
 When you are using PYBOSSA native JSON support, you will not be building your project presenter within the PYBOSSA structure, but within the JS framework of your choice.
