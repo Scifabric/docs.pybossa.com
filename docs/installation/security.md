@@ -45,7 +45,7 @@ PYBOSSA includes the following fields in a GET API call:
 
 From info, everything is public for users that are anonymous or are not the owner of the announcement.
 
-## Blogpost
+### Blogpost
 PYBOSSA includes the following fields in a GET API call:
 
 * created
@@ -61,7 +61,7 @@ PYBOSSA includes the following fields in a GET API call:
 
 From info, everything is public for users that are anonymous or are not the owner of the blogpost.
 
-## Category
+### Category
 PYBOSSA includes the following fields in a GET API call:
 
 * description
@@ -73,7 +73,7 @@ PYBOSSA includes the following fields in a GET API call:
 
 From info, everything is public for users that are anonymous or are not the owner of the category.
 
-## Helpingmaterial
+### Helpingmaterial
 PYBOSSA includes the following fields in a GET API call:
 
 * created
@@ -84,7 +84,7 @@ PYBOSSA includes the following fields in a GET API call:
 
 From info, everything is public for users that are anonymous or are not the owner of the helpingmaterial.
 
-## Project
+### Project
 PYBOSSA includes the following fields in a GET API call:
 
 * id
@@ -124,10 +124,10 @@ Any other key will be private except for the owner or an admin. If you want to a
 PROJECT_INFO_PUBLIC_FIELDS = ['key1', 'key2', .., 'keyN']
 ```
 
-## User
+### User
 PYBOSSA includes the following fields in a GET API call:
 
-*created
+* created
 * name
 * fullname
 * info
