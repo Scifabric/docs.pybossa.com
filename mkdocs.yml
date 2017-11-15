@@ -49,6 +49,7 @@ pages:
       - 'Deploying PYBOSSA with Nginx and uWsgi': 'installation/deployment.md'
       - 'Administrating PYBOSSA': 'installation/admin.md'
       - 'Testing PYBOSSA with Vagrant': 'installation/vagrant.md'
+      - 'Security': 'installation/security.md'
   - Building a project:
       - 'Introduction': 'build/intro.md'
       - 'Quickstart: Creating a project': 'build/overview.md'
