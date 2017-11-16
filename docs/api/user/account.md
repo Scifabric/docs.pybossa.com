@@ -657,7 +657,9 @@ If there's an error in the form fields, you will get them in the
 
 !!! note
     For updating the avatar is very important to not set the *Content-Type*. If you
-    are using jQuery, set it to False, so the file is handled properly.
+    are using jQuery, set it to False, so the file is handled properly. To still
+    recieve a JSON response you can add the response_format=json query
+    paramater to your request.
 
     The (x1,x2,y1,y2) are the coordinates for cutting the image and create
     the avatar.

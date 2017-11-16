@@ -214,7 +214,7 @@ current project. This will only happen when the project has an empty template, o
 
 > }
 
-If you want to preload the template from one of the available prenters, you have to pass the following argument: **?template=basic** for the basic or **?template=iamge** for the image template. 
+If you want to preload the template from one of the available prenters, you have to pass the following argument: **?template=basic** for the basic or **?template=iamge** for the image template.
 
 **Example output**
 
@@ -576,7 +576,10 @@ If there's an error in the form fields, you will get them in the
 ```
 
 !!! note
-    For updating the avatar is very important to not set the *Content-Type*. If you  are using jQuery, set it to False, so the file is handled properly.
+    For updating the avatar is very important to not set the *Content-Type*. If
+    you  are using jQuery, set it to False, so the file is handled properly.
+    To still recieve a JSON response you can add the response_format=json query
+    paramater to your request.
 
     The (x1,x2,y1,y2) are the coordinates for cutting the image and create
     the avatar.
