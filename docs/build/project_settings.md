@@ -247,3 +247,11 @@ For changing the ownership, just add the email of the user that you want to make
 
 !!! note
     If you are not an admin of PYBOSSA, you cannot undo this action, and you will not be able to modify/change settings of the project as you will not be the owner anymore. Admins, however, can change the ownership always.
+
+## Generate project report
+
+You can generate project report in csv form that provides consolidated status of your project. This report has project and user statistics sections. Project section lists information on project id, project short name, total tasks in project, time when first and last task was submitted and average time spent on each task in minutes. User statistics section lists information on contributors id, name, full name, total tasks completed, percentage of tasks completed and time when first and last task submission were submitted by the contributor.
+
+The report can be generated from "Export Project Report" option under project settings page.
+
+![image](http://i.imgur.com/ovpLW4e.png)
