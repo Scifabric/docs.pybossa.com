@@ -22,7 +22,7 @@ markdown_extensions:
     - pymdownx.superfences
     - pymdownx.tasklist(custom_checkbox=true)
     - pymdownx.tilde
-site_favicon: 'images/favicon.icon'
+site_favicon: 'images/favicon.ico'
 extra:
   palette:
       primary: '#087da1'
