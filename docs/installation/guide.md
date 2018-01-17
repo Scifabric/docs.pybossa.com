@@ -305,7 +305,7 @@ Open in your web browser the following URL: [http://localhost:5000](http://local
 And if you see the following home page, then, your installation has been
 completed:
 
-![image](http://i.imgur.com/hPtgo6S.png)
+![image](https://i.imgur.com/hPtgo6S.png)
 
 ## Updating PYBOSSA
 

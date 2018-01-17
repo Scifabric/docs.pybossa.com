@@ -21,7 +21,7 @@ Once you have a PYBOSSA account, you will have access to your profile by clickin
 
 If you are using Scifabric's Crowdcrafting server, the API-KEY would be available [here](http://crowdcrafting.org/account/profile).
 
-![image](http://i.imgur.com/JcxciZc.png)
+![image](https://i.imgur.com/JcxciZc.png)
 
 This **API-KEY** will identify and authenticate you via the PYBOSSA API. It will allow you to create a project, add tasks, update the project, etc. As you will be the owner of the project, only you will be able to perform these actions, but anyone will be able to participate in your project.
 
@@ -52,7 +52,7 @@ Therefore, for creating the project, you will need two parameters:
 Now that we know where are we going to create the project (the server URL) and that we have an API key,  we can download the source code of the project. To get the code, we will clone the [Flickr
 Person Finder Repository](http://github.com/Scifabric/app-flickrperson). This step will download all the code and scripts to your computer.
 
-![image](http://i.imgur.com/CYPnPft.png)
+![image](https://i.imgur.com/CYPnPft.png)
 
 To clone the code, we will use Git. Git is a free and open source distributed version control system designed to handle everything from small to very large projects with speed and efficiency. Git is easy to learn and has a tiny footprint with lightning fast performance.
 
@@ -1018,7 +1018,7 @@ in your web-browser:
 
 You will find an interface that will allow you to export the Tasks, Task Runs and Results to [JSON](http://en.wikipedia.org/wiki/JSON) and [CSV](http://en.wikipedia.org/wiki/Comma-separated_values) formats:
 
-![image](http://i.imgur.com/m5gDyjU.png)
+![image](https://i.imgur.com/m5gDyjU.png)
 
 The previous methods will export all the tasks, results and task runs, **even if they are not completed**. When a task has been completed, in other words, when a task has collected the number of answers specified by the task (**n_answers** = 30 by default), a **brown button** with the text **Download results** will pop up, and if you click it all the answers for the given task will be shown in JSON format.
 
@@ -1029,11 +1029,11 @@ You can check which tasks are completed, in the following URL:
 And clicking on the **Tasks** link in the **left local navigation**, and
 then click in the **Browse** box:
 
-![image](http://i.imgur.com/nauht7l.png)
+![image](https://i.imgur.com/nauht7l.png)
 
 Then you will see which tasks are completed, and which ones you can download in [JSON](http://en.wikipedia.org/wiki/JSON) format:
 
-![image](http://i.imgur.com/pf5O5Tr.png)
+![image](https://i.imgur.com/pf5O5Tr.png)
 
 You could download the results also using the API. For example, you
 could write a small script that gets the list of tasks that have been
@@ -1075,7 +1075,7 @@ associated with your account, otherwise, you will not be able to export the data
 Adding the CKAN API-KEY is simple. You only need to create an
 account in the supported CKAN server, check your profile and copy the API-KEY. Then, open your PYBOSSA account page, edit it and paste the key in the section **External Services**.
 
-![image](http://i.imgur.com/xOezl6C.png)
+![image](https://i.imgur.com/xOezl6C.png)
 
 Then, you will be able to export the data to the CKAN server
 and host it there.

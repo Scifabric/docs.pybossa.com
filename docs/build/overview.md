@@ -37,11 +37,11 @@ to:
 
 You can create an account filling a form.
 
-![PYBOSSA Register](http://i.imgur.com/MMnUQr7.png)
+![PYBOSSA Register](https://i.imgur.com/MMnUQr7.png)
 
 If PYBOSSA has Twiter, Facebook or Google authentication methods enabled, you will be able to create an account using them. See the [documentation](../installation/configuration.md) for more information about these alternatives.
 
-![PYBOSSA sign-in methods](http://i.imgur.com/GxhfjGL.png)
+![PYBOSSA sign-in methods](https://i.imgur.com/GxhfjGL.png)
 
 #### Creating the project 
 Once you have an account, click in **create the ** link of the navigation bar. After clicking on the previous link, you will have to fill in a    form with the fundamental information to create your project:
@@ -54,7 +54,7 @@ Once you have an account, click in **create the ** link of the navigation bar. A
         developer, the researcher group or institutions involved in the
         project, etc.
 
-![PYBOSSA Create link](http://i.imgur.com/Js4YgVg.png)
+![PYBOSSA Create link](https://i.imgur.com/Js4YgVg.png)
 
 !!! note
     PYBOSSA usually provides two Project Categories by default: *thinking* and *sensing*. The *thinking* category represents the standard PYBOSSA project where users contribute helping with their skills. *Sensing* category refers to projects that are using volunteer sensing tools like EpiCollect or Raspberry Pi with PYBOSSA for gathering data.
@@ -72,7 +72,7 @@ After creating the project, you should be redirected to the **Settings'**  proje
 !!! note
     Also, you will be able to select and upload a **image** from your local computer to set it as the project image throughout the server.
 
-![PYBOSSA Project Update page](http://i.imgur.com/UbSOAcZ.png)
+![PYBOSSA Project Update page](https://i.imgur.com/UbSOAcZ.png)
 
 ### Importing the tasks via the built-in CSV Task Importer
 
@@ -82,16 +82,16 @@ Tasks can be imported from different services like Dropbox or Amazon S3 via the 
 2. Click in the **Tasks** section -on the left side local navigation
    menu:
 
-![Image](http://i.imgur.com/nauht7l.png)
+![Image](https://i.imgur.com/nauht7l.png)
 
 3. And click again on the **Import Tasks** card. After clicking on it, you will see several options. The first ones are for using the different kinds of importers supported by PYBOSSA: Amazon S3, Twitter, Dropbox, Flickr, Youtube, Google Spreadsheet, CSV URL, and EpiCollect Plus.
 
-![Image](http://i.imgur.com/eWBxSyS.png)
+![Image](https://i.imgur.com/eWBxSyS.png)
 
 For example, the Flickr importer will allow importing a Flickr album by typing its ID or if you have an account, by logging into Flickr and
 showing your public (and creative commons licensed) albums:
 
-![Image](http://i.imgur.com/lF9LJVO.jpg) 
+![Image](https://i.imgur.com/lF9LJVO.jpg) 
 
 Select one of the albums, click import and all the pictures will be
 imported as tasks for your PYBOSSA project. As simple as that :ok_hand:.
@@ -109,7 +109,7 @@ In the Task Importer section, you'll also find other pre-loaded Google Spreadshe
 to learn how to create your spreadsheets and import data for image,
 sound, video, pdf mining and mapping projects.
 
-![Image](http://i.imgur.com/eGwKDpB.png)
+![Image](https://i.imgur.com/eGwKDpB.png)
 
 By using these templates, you'll be able to learn the structure of the
 tasks, and directly re-use the task-presenter templates that know the
@@ -151,7 +151,7 @@ EpiCollect project, you will have to follow the next steps:
 3. And click on the **Import Tasks** button. After clicking on it you
    will see several different options.
 4. Click on the **Use an EpiCollect Project** one. 
-    ![image](http://i.imgur.com/A50La7O.png)
+    ![image](https://i.imgur.com/A50La7O.png)
 5. Then, type the **name of the EpiCollect project** and the name of the **form** that you want to import and click on the import button.
 
 All the data points should be imported now in your project.
@@ -194,11 +194,11 @@ These are the steps:
    importer**.
 3. Type the ID of the Flickr set you want to import the photos from, then click on the import button.
 
-![Image](http://i.imgur.com/UZRBj8y.png)
+![Image](https://i.imgur.com/UZRBj8y.png)
 
 If you cannot find the ID or don't know which one it is, just browse to the Flickr photo set and check the URL. Can you see that last long number right at the end of it? That's what you're looking for!
 
-![Imge](http://i.imgur.com/h6qNDX2.png)
+![Imge](https://i.imgur.com/h6qNDX2.png)
 
 Just like with the other importers, each task will be created only once, even if you import twice from the same Flickr set (unless you add new photos to it, of course!).
 
@@ -251,7 +251,7 @@ For using this importer, just follow these are the steps:
 1. Navigate to your project's page and click in the **Tasks** section.
 2. Then click on the **Import Tasks** button, and select the **Dropbox importer**.
 3. Click on the "Choose from Dropbox" icon. You will be asked your    Dropbox account credentials. Then select as many files as you want:
-    ![Image](http://i.imgur.com/dsgM0Tg.png)
+    ![Image](https://i.imgur.com/dsgM0Tg.png)
 4. You can repeat step 3 as many times as you want, and more files will be added to your import. Then, click on "Import."
 
 ### Importing the tasks from a Twitter account or search result
@@ -302,7 +302,7 @@ So, to import tasks with the Twitter importer, do as follows:
 
 Finally, click on the "Import" button, and you are done:
 
-![Image](http://i.imgur.com/l5PG2WX.png)
+![Image](https://i.imgur.com/l5PG2WX.png)
 
 ## Importing tasks from an Amazon S3 bucket
 
@@ -349,7 +349,7 @@ Thus, importing your images from S3 will allow you to use the image pattern reco
 
 Importing from an S3 bucket requires that the bucket visibility is set to *public* so its content can be seen and listed by PYBOSSA. To make a bucket public, go to your AWS management console and select the S3 service. Then select the bucket you want to make public and click on "Properties." Click on "Add more Permissions" and add a new one with "Grantee: Everyone" and the "List" checkbox selected, like in the following image:
 
-![Image](http://i.imgur.com/FuN9XAS.png)
+![Image](https://i.imgur.com/FuN9XAS.png)
 
 You may also need to enable CORS in the bucket. In the same menu as above, click on "Edit CORS Configuration" and configure it. You can
 learn more [here](http://docs.aws.amazon.com/AmazonS3/latest/dev/cors.html).
@@ -360,7 +360,7 @@ content and select the files. Then click on "Actions" and select "Make
 Public". Your files will now be visible for everyone, including a
 PYBOSSA server.
 
-![image](http://i.imgur.com/AHBVQCk.png)
+![image](https://i.imgur.com/AHBVQCk.png)
 
 Once your S3 bucket is ready, you can follow these steps to import tasks from it:
 
@@ -369,7 +369,7 @@ Once your S3 bucket is ready, you can follow these steps to import tasks from it
    importer**.
 3. Type the name of the bucket from which you will be importing your tasks and click on "Search in the bucket." If you followed the steps above and your bucket is public, you will see a list of the items it contains. Select as many as you want:
 
-    ![image](http://i.imgur.com/6RAMqd9.png)
+    ![image](https://i.imgur.com/6RAMqd9.png)
 
 4. When you're ready, click on "Import."
 
@@ -403,11 +403,11 @@ the tasks and associated task volunteer** from your project.
 If you are sure that you want to flush all the tasks and task runs for
 your project, go to the project page (http://server/project/slug/tasks/) and click on the **Settings** option of the left local navigation menu:
 
-![image](http://i.imgur.com/nauht7l.png)
+![image](https://i.imgur.com/nauht7l.png)
 
 Then, you will see that there is a subsection called: **Task Settings** and a button with the label: **Delete the tasks**. Click on that button and a new page will be shown:
 
-![image](http://i.imgur.com/DKPV6dc.png)
+![image](https://i.imgur.com/DKPV6dc.png)
 
 As you can see, a **red warning alert** is shown, warning you that if
 you click on the **yes** button, you will be deleting not only the
@@ -428,29 +428,29 @@ be already on the page of your project, however, if you are not, you only need t
 
 Another way of accessing your project (or projects) is clicking on your *username* (at the navbar) and select the *My Projects* item from the but it menu. From there you will be able to manage your projects:
 
-![image](http://i.imgur.com/3S497Ct.png)
+![image](https://i.imgur.com/3S497Ct.png)
 
-![image](http://i.imgur.com/9sO21Zd.png)
+![image](https://i.imgur.com/9sO21Zd.png)
 
 Once you have chosen your project, you can add a task-presenter by
 clicking on the **Tasks** local navigation link, and then clicking on the button named **Editor** under the **Task Presenter** box.
 
-![image](http://i.imgur.com/nauht7l.png)
+![image](https://i.imgur.com/nauht7l.png)
 
 After clicking this button, a new web page will be shown where you
 can choose a template to start coding your project, so you don't have to start from scratch.
 
-![image](http://i.imgur.com/psC5m6Q.png)
+![image](https://i.imgur.com/psC5m6Q.png)
 
 After choosing one of the templates, you will be able to adapt it to fit
 your project needs in a web text editor.
 
-![image](http://i.imgur.com/g9gAvWw.png)
+![image](https://i.imgur.com/g9gAvWw.png)
 
 Click on the **Preview button** to get an idea of how it will look
 like your task-presenter.
 
-![imae](http://i.imgur.com/DsDDBia.png)
+![imae](https://i.imgur.com/DsDDBia.png)
 
 We recommend reading the [Step by step tutorial](tutorial.md) as you will understand how to create the task presenter, which explains how you can add some HTML skeleton to load the task data, input fields to get the answer from the users, and some JavaScript to make it work.
 
@@ -460,7 +460,7 @@ After completing the previous three steps, your project will be almost ready. Th
 
 When your project is a draft, you can contribute to it, and the answers (task runs) and results will be stored in the database so you can have access to them (and test the webhooks solution if you want to do real-time analysis). However, in the moment of publishing the project all the task runs and results (as well as the webhooks log entries) will be flushed, so don't be afraid and try it as much as you can until you are sure that everything works as expected. Once you think the project is ready for the world to see it, just click on the Publish button:
 
-![image](http://i.imgur.com/A7m4aa6.png)
+![image](https://i.imgur.com/A7m4aa6.png)
 
 !!! note
     Publishing a project *cannot* be undone, so please double check everything before taking the step.

@@ -3,7 +3,7 @@
 If you are the owner of a project, you can configure it using the web
 interface. When you are the owner (or an administrator), a new link in the left local navigation bar of the project will appear with the name **Settings**.
 
-![image](http://i.imgur.com/6l91cyV.png)
+![image](https://i.imgur.com/6l91cyV.png)
 
 The **Settings** page will give you the following options:
 
@@ -43,13 +43,13 @@ In this section you can change the following parameters of your project:
   your local computer to set it as the project image throughout the
   server.
 
-![image](http://i.imgur.com/ZbPoM3f.png)
+![image](https://i.imgur.com/ZbPoM3f.png)
 
 ## Task Settings
 
 The *Task Settings* is only accessible for the project owner and server administrators. The page can be reached via the **Settings** menu, but also from the **Tasks** link in the left local navigation bar.
 
-![imge](http://i.imgur.com/HsZvKBy.png)
+![imge](https://i.imgur.com/HsZvKBy.png)
 
 The page shows four different blocks:
 
@@ -65,7 +65,7 @@ The page shows four different blocks:
 
 PYBOSSA provides different task schedulers that will send tasks to the users in very different ways.
 
-![image](http://i.imgur.com/CmIylfr.png)
+![image](https://i.imgur.com/CmIylfr.png)
 
 #### Default or Depth First
 
@@ -145,7 +145,7 @@ obtain as soon as possible an answer for all the available tasks.
 PYBOSSA allows you to prioritize the tasks, or in other words, which
 tasks should be delivered first to the volunteers.
 
-![image](http://i.imgur.com/drWV1re.png)
+![image](https://i.imgur.com/drWV1re.png)
 
 !!! warning
     Task Priority is only respected by the default scheduler.
@@ -172,7 +172,7 @@ statistically.
 This page will allow you to change the default value, 30, to whatever
 you like between a minimum of 1 or a maximum of 10000 answers per task. We recommend to have at use at least three answers per task. Otherwise, you will not be able to run a proper analysis on a given task if two users answer differently.
 
-![image](http://i.imgur.com/VaEI5GK.png)
+![image](https://i.imgur.com/VaEI5GK.png)
 
 For example, imagine that the goal of the task is to answer if you see a human in a picture, and the available answers are Yes and No. If you set up the redundancy value to 2, and two different users answer
 respectively Yes, and No, you will not know the correct answer for the task. By increasing the redundancy value to 5 (or even bigger), you will be able to run a statistical analysis more accurately.
@@ -182,7 +182,7 @@ respectively Yes, and No, you will not know the correct answer for the task. By 
 This section will allow you to complete remove all the Tasks and
 associated Task Runs (answers) of your project.
 
-![image](http://i.imgur.com/JS4J5D0.png)
+![image](https://i.imgur.com/JS4J5D0.png)
 
 !!! note
     This step cannot be undone, once you delete all the tasks and associated task runs they will be lost forever.
@@ -200,11 +200,11 @@ feature, which allows to schedule a background job that will
 automatically import tasks every 24 hours. This option is accessible
 from the **Tasks** link in the left local navigation bar:
 
-![image](http://i.imgur.com/HCuQDLJ.png)
+![image](https://i.imgur.com/HCuQDLJ.png)
 
 Tasks can be imported using any of the PYBOSSA built-in importers, such as csv-import and epicollect-import. To set up an autoimporter, please refer to the instructions for [CSV importer](overview.md#importing-the-tasks-via-the-built-in-csv-task-importer), [EpiCollect+ importer](overview.md#importing-the-tasks-from-an-epicollect-plus-public-project), [Flickr importer](overview.md#importing-the-tasks-from-a-flickr-photo-set) or [Twitter importer](overview.md#importing-the-tasks-from-a-twitter-account-or-search-result), as the procedure is the same:
 
-![image](http://i.imgur.com/iaJHMtY.png)
+![image](https://i.imgur.com/iaJHMtY.png)
 
 The only difference is that the tasks won't be imported only once, but regularly, as explained. However, the same behavior should be expected, so auto-importing a CSV file that does not change will result in no new tasks being imported.
 
@@ -218,7 +218,7 @@ Once an auto importer has been set up, it can also be canceled anytime. Just del
 
 In case that you want to remove the project and all its tasks, results and task runs, use this section to delete the project.
 
-![image](http://i.imgur.com/JFAQHu0.png)
+![image](https://i.imgur.com/JFAQHu0.png)
 
 !!! warning
     This action cannot be undone. Be sure before proceeding.
@@ -233,11 +233,11 @@ settings ->  manage co-owners
 
 Once there, you are able to type in the username of the person that you want to add as a co-owner, click on Search, and then click on “Add Co-Owner”.
 
-![image](http://i.imgur.com/E2sHdTw.png)
+![image](https://i.imgur.com/E2sHdTw.png)
 
 The new co-owner will appear in the project co-owners list. Project co-owners (with the exception of the original project creator) can also be removed from here.
 
-![image](http://i.imgur.com/OA5OtIS.png)
+![image](https://i.imgur.com/OA5OtIS.png)
 
 ## Transfer project ownership
 
@@ -254,4 +254,4 @@ You can generate project report in csv form that provides consolidated status of
 
 The report can be generated from "Export Project Report" option under project settings page.
 
-![image](http://i.imgur.com/ovpLW4e.png)
+![image](https://i.imgur.com/ovpLW4e.png)

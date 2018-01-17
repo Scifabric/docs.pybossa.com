@@ -514,7 +514,7 @@ following pages:
 
 Anonymous and authenticated will see a warning message like this:
 
-![image](http://i.imgur.com/a1aqSCC.png)
+![image](https://i.imgur.com/a1aqSCC.png)
 
 Additionally, the footer and front page top users will be removed with links to all these pages. If your project needs this type of protection you can enable it by changing the following config variable in your **settings_local.py** file from:
 

@@ -157,7 +157,7 @@ You can run it like this:
 
 And the output will be similar to this:
 
-![GIF of pbs in action](http://i.imgur.com/QoYC4oV.gif)
+![GIF of pbs in action](https://i.imgur.com/QoYC4oV.gif)
 
 
 !!! tip "Using webpack and PBS"

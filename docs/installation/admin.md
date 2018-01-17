@@ -9,7 +9,7 @@ will become an administrator and manage the site with full privileges.
 
 And admin user will be able to access the admin page by clicking on the username and then in the link *Admin site*.
 
-![image](http://i.imgur.com/5YWAJ8E.png)
+![image](https://i.imgur.com/5YWAJ8E.png)
 
 Administrators have full privileges on the server. They can modify anything within the server. Especially, they will be able to handle the following areas of the server:
 
@@ -19,14 +19,14 @@ Administrators have full privileges on the server. They can modify anything with
 4.  Administrators.
 5.  Users.
 
-![image](http://i.imgur.com/cfUF6K2.png%0A%20:width:100%)
+![image](https://i.imgur.com/cfUF6K2.png%0A%20:width:100%)
 
 Admins can also modify all projects. An admin can hide a project, update its task presenter, add new tasks, delete tasks or results. In other words, it can modify any aspect of any project within the server.
 
 ### Adding new administrators
 In the admin area you will see a specific card for managing the administrators. In this card, you will be able to search by username to add new administrators. Also, you will see the list of current admins. From there, you will be able to remove them by clicking on the remove button below each username. 
 
-![image](http://i.imgur.com/WSwNFxy.png%0A%20:width:100%)
+![image](https://i.imgur.com/WSwNFxy.png%0A%20:width:100%)
 
 ### Adding pro users
 This feature is not available at the moment.  However, you can add a pro user within your server by modifying the user field **pro** via SQL.
@@ -80,7 +80,7 @@ This section allows you to see if any of your jobs and workers are performing we
 ## Featured Projects
 In this section, admins can add/remove projects to the front page of the site.
 
-![image](http://i.imgur.com/K9deWZo.png%0A%20:width:100%)
+![image](https://i.imgur.com/K9deWZo.png%0A%20:width:100%)
 
 You will see an "Add to Featured" link to add a project to the featured front page or a "Remove from Featured" to remove it.
 
@@ -96,7 +96,7 @@ PYBOSSA provides by default two categories:
 
 Admins can add as many categories as they want, just type then and its description and click on the green button labeled: Add category.
 
-![image](http://i.imgur.com/FlTowJ7.png)
+![image](https://i.imgur.com/FlTowJ7.png)
 
 !!! note
     You cannot delete a category if it has one or more projects associated with it. You can, however, rename the category or remove it when all the associated projects are not linked to the given category.
@@ -105,7 +105,7 @@ Admins can add as many categories as they want, just type then and its descripti
 
 When a project is created, deleted or updated, the system registers its actions on the server. Admins will have access to all the logged activities in every project page, in a section named **Audit log**.
 
-![image](http://i.imgur.com/BjcJQW7.png)
+![image](https://i.imgur.com/BjcJQW7.png)
 
 The section will let you know the following information:
 
