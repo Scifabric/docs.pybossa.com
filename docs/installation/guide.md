@@ -312,8 +312,8 @@ completed:
 ### Updating PYBOSSA core and migrating the database table structure
 
 Sometimes, the PYBOSSA developers add a new column or table to the PYBOSSA server, forcing you to carry out a **migration** of the
-database. PYBOSSA uses [Alembic]http://pypi.python.org/pypi/alembic) for performing the migrations, so in case that your production server needs to upgrade the DB structure to a new version, all you have to do is to:
-``` bash 
+database. PYBOSSA uses [Alembic](http://pypi.python.org/pypi/alembic) for performing the migrations, so in case that your production server needs to upgrade the DB structure to a new version, all you have to do is to:
+```bash
 git pull origin master
 pip install -U pip
 pip install -U -r requirements.txt
