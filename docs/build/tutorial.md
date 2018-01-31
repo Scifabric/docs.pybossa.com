@@ -94,7 +94,7 @@ Now that we have the **project.json** file ready, we can create the
 project:
 
 ``` bash
-pbs --server server --apikey key create_project
+pbs --server server --api-key key create_project
 ```
 
 This command will read the values from the **project.json** file and use them to create a draft project in the PYBOSSA server of your
