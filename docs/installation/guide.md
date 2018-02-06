@@ -309,6 +309,16 @@ completed:
 
 ## Updating PYBOSSA
 
+PYBOSSA v2.9.0 starts using JSONB data type format within the PostgreSQL database. The upgrade should not break anything,
+but be aware that all the materalized views will need to be dropped. This is required because some of these views use
+the info field and we cannot migrate to JSONB without recreating them.
+
+Thus, be sure to take a full backup before upgrading of your database. Then, delete all your materialized views that create a conflict (by default
+PYBOSSA handles the basic ones, but if you have created your own leaderboards, this will not be handled by the script). 
+
+Run the migration (see next section) and re-create your materialized views. Most of these views are automatically handled by the background
+jobs, so all of them should be recreated by the system without your intervention.
+
 ### Updating PYBOSSA core and migrating the database table structure
 
 Sometimes, the PYBOSSA developers add a new column or table to the PYBOSSA server, forcing you to carry out a **migration** of the
