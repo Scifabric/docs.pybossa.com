@@ -72,6 +72,11 @@ You can now search like this:
 You specify the JSON path and the values, and the system will return those that meet
 that criteria. This new feature allows you to filter nested data without any problems.
 
+If you are not storing a dictionary, {}, in the info field, you will need to quote your
+string, so the sytem can handle it properly. If you are storing a number, instead of a
+string, then you should use '"9"' double quotes. This applies to integers and floats.
+
+
 ### Your data first
 
 The API understands who is requesting the data. When you are using your API key to authenticate your calls, the system will return only your data. For instance, if you request all the projects, you will only get **your projects** and the rest (owned by other users will be hidden).  You can get access to all the projects, tasks, and task runs (the whole database) using the parameter: **all=1**.
