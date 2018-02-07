@@ -39,6 +39,8 @@ It is possible to limit the number of returned objects:
 
     GET http://{pybossa-site-url}/api/{domain-object}[?field1=value&limit=20]
 
+### Filtering info keys for PYBOSSA versions up to v2.8.X
+
 It is possible to access first level JSON keys within the **info** field
 of Categories, Projects, Tasks, Task Runs and Results:
 
@@ -55,6 +57,20 @@ For adding more keys:
 
 These parameters will be ANDs, so, it will return objects that have
 those keys with and **and** operator.
+
+### Filtering info keys for PYBOSSA >= 2.9.1 (or master branch)
+
+Since version v2.9.0, PYBOSSA stores JSON data as JSONB within the database.
+
+This feature allows us to use new queries, like path searching via the API.
+
+You can now search like this:
+
+    info={"key1": value}
+    info={"key1": [{"key2": value}]}
+
+You specify the JSON path and the values, and the system will return those that meet
+that criteria. This new feature allows you to filter nested data without any problems.
 
 ### Your data first
 
