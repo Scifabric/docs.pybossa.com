@@ -205,6 +205,9 @@ Just like with the other importers, each task will be created only once, even if
 !!! note
     You will need to make sure that every photo belonging to the set has the visibility set to public, so the PYBOSSA server can then access and present them to the volunteers of your project.
 
+!!! note
+    For enabling the Flickr importer, check this [section](/installation/configuration/#enabling-the-flickr-task-importer).
+
 
 ### Importing the tasks from a Dropbox account
 
@@ -253,6 +256,10 @@ For using this importer, just follow these are the steps:
 3. Click on the "Choose from Dropbox" icon. You will be asked your    Dropbox account credentials. Then select as many files as you want:
     ![Image](https://i.imgur.com/dsgM0Tg.png)
 4. You can repeat step 3 as many times as you want, and more files will be added to your import. Then, click on "Import."
+
+
+!!! note
+    For enabling the Dropbox importer, check this [section](/installation/configuration/#enabling-the-dropbox-task-importer).
 
 ### Importing the tasks from a Twitter account or search result
 
@@ -303,6 +310,11 @@ So, to import tasks with the Twitter importer, do as follows:
 Finally, click on the "Import" button, and you are done:
 
 ![Image](https://i.imgur.com/l5PG2WX.png)
+
+
+!!! note
+    For enabling the Twitter importer, check this [section](/installation/configuration/#enabling-the-twitter-task-importer).
+
 
 ## Importing tasks from an Amazon S3 bucket
 
@@ -386,6 +398,10 @@ When importing the video, the importer parses all videos information and creates
 - oembed: embeddable code for the (old) PYBOSSA video templates.
 
 The tasks created with the Youtube importer are ready to be used with the youtube and video templates.
+
+!!! note
+    For enabling the Youtube importer, check this [section](/installation/configuration/#enabling-the-youtubes-task-importer).
+
 
 ### Flushing all the tasks
 
