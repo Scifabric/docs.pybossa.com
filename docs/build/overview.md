@@ -43,6 +43,14 @@ If PYBOSSA has Twiter, Facebook or Google authentication methods enabled, you wi
 
 ![PYBOSSA sign-in methods](https://i.imgur.com/GxhfjGL.png)
 
+You can also set preferences for language, location, area of expertise(termed as user type) and set metadata for the account. For this, pybossa server need to be configured with new settings; sample for same can be obtained from pybossa/settings_upref_mdata.py.tmpl. Rename settings_upref_mdata.py.tmpl to settings_upref_mdata.py and copy it under folder containing settings_local.py. With this, contents of settings_upref_mdata.py will be available on account filling form.
+
+![PYBOSSA Register with preferences and metadata](https://i.imgur.com/81rAu2m.png)
+
+User preference/metedata set for the account can viewed and modified under account profile page.
+
+![PYBOSSA profile with preferences and metadata](https://i.imgur.com/K5BausZ.png)
+
 #### Creating the project 
 Once you have an account, click in **create the ** link of the navigation bar. After clicking on the previous link, you will have to fill in a    form with the fundamental information to create your project:
     1.  **Name**: the full name of your project, i.e., *Flickr Person
