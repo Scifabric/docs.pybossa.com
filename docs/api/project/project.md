@@ -717,7 +717,8 @@ It returns a JSON object with the following information:
     "projects/tasks/youtube.html",
     "projects/tasks/gdocs.html",
     "projects/tasks/dropbox.html",
-    "projects/tasks/flickr.html"
+    "projects/tasks/flickr.html",
+    "projects/tasks/iiif.html"
   ],
   "form": null,
   "loading_text": "Importing tasks, this may take a while, wait...",

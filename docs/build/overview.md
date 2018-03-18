@@ -31,7 +31,7 @@ Creating a project using the web interface involves four steps:
 ### Creating the project
 
 To create a project using the web interface you have
-to: 
+to:
 
 #### Create a PYBOSSA account
 
@@ -51,7 +51,7 @@ User preference/metedata set for the account can viewed and modified under accou
 
 ![PYBOSSA profile with preferences and metadata](https://i.imgur.com/K5BausZ.png)
 
-#### Creating the project 
+#### Creating the project
 Once you have an account, click in **create the ** link of the navigation bar. After clicking on the previous link, you will have to fill in a    form with the fundamental information to create your project:
     1.  **Name**: the full name of your project, i.e., *Flickr Person
         Finder*.
@@ -84,7 +84,7 @@ After creating the project, you should be redirected to the **Settings'**  proje
 
 ### Importing the tasks via the built-in CSV Task Importer
 
-Tasks can be imported from different services like Dropbox or Amazon S3 via the importers. To use one, just do the following:  
+Tasks can be imported from different services like Dropbox or Amazon S3 via the importers. To use one, just do the following:
 1. Navigate to your project's page (you can directly access it using
    the *slug* project name: <http://server/project/slug>).
 2. Click in the **Tasks** section -on the left side local navigation
@@ -92,14 +92,14 @@ Tasks can be imported from different services like Dropbox or Amazon S3 via the 
 
 ![Image](https://i.imgur.com/nauht7l.png)
 
-3. And click again on the **Import Tasks** card. After clicking on it, you will see several options. The first ones are for using the different kinds of importers supported by PYBOSSA: Amazon S3, Twitter, Dropbox, Flickr, Youtube, Google Spreadsheet, CSV URL, and EpiCollect Plus.
+3. And click again on the **Import Tasks** card. After clicking on it, you will see several options. The first ones are for using the different kinds of importers supported by PYBOSSA: Amazon S3, Twitter, Dropbox, Flickr, Youtube, Google Spreadsheet, CSV URL, IIIF, and EpiCollect Plus.
 
 ![Image](https://i.imgur.com/eWBxSyS.png)
 
 For example, the Flickr importer will allow importing a Flickr album by typing its ID or if you have an account, by logging into Flickr and
 showing your public (and creative commons licensed) albums:
 
-![Image](https://i.imgur.com/lF9LJVO.jpg) 
+![Image](https://i.imgur.com/lF9LJVO.jpg)
 
 Select one of the albums, click import and all the pictures will be
 imported as tasks for your PYBOSSA project. As simple as that :ok_hand:.
@@ -158,7 +158,7 @@ EpiCollect project, you will have to follow the next steps:
    menu.
 3. And click on the **Import Tasks** button. After clicking on it you
    will see several different options.
-4. Click on the **Use an EpiCollect Project** one. 
+4. Click on the **Use an EpiCollect Project** one.
     ![image](https://i.imgur.com/A50La7O.png)
 5. Then, type the **name of the EpiCollect project** and the name of the **form** that you want to import and click on the import button.
 
@@ -301,7 +301,7 @@ info field:
 - user_screen_name: the screen name (or 'handle') of the author of
   the tweet.
 
-For more information, please refer to the [Twitter](https://dev.twitter.com) documentation. 
+For more information, please refer to the [Twitter](https://dev.twitter.com) documentation.
 
 !!! warning
     When importing tweets from a search, retweets will be ignored!
@@ -409,6 +409,18 @@ The tasks created with the Youtube importer are ready to be used with the youtub
 
 !!! note
     For enabling the Youtube importer, check this [section](/installation/configuration/#enabling-the-youtubes-task-importer).
+
+### Importing the tasks from a IIIF manifest
+
+The [International Image Interoperability Framework (IIIF)](http://iiif.io/) is a protocol for standardized image retrieval created by a community of the world's leading research libraries, major national libraries and not-for-profit image repositories in an effort to collaboratively produce an interoperable technology and community framework for image delivery.
+
+Content made available via the [IIIF Presentation API](http://iiif.io/api/presentation) can be imported into PyBossa by passing the URI of a manifest.
+
+Here are the steps to import:
+
+1. Navigate to your project's page and click in the **Tasks** section.
+2. Then click on the **Import Tasks** button, and select the **IIIF importer**.
+3. Type the URI of the IIIF manifest that you want to import from, then click on the import button.
 
 
 ### Flushing all the tasks
@@ -548,7 +560,7 @@ to a project that you own.
 For PYBOSSA all the tasks are JSON objects with a field named **info** where the owners of the project can add any JSON object that will represent a task for their project. For example, using again the [Flickr Person demo project](http://github.com/Scifabric/app-flickrperson) template, we need to create a JSON object that should have the link to the photo that we want to identify:
 
 ``` python
-info = dict (link=photo['link'], 
+info = dict (link=photo['link'],
              url=photo['url_m'],
              question='Do you see a human face in this photo?')
 data = dict (project_id=project_id,
@@ -575,7 +587,7 @@ These steps are usually coded in a script. The Flickr Person
 Finder projects provides a template for the task-creator that can be
 re-used without any problems (check the createTasks.py script).
 
-!!! note 
+!!! note
     **The API request has to be authenticated and authorized**. You can get an API-KEY creating an account on the server, and check the API-KEY created for your user, check the profile account (click on your username) and copy the field **API-KEY**.
 
     This API-KEY should be passed as a POST argument like this with the previous data:
@@ -602,7 +614,7 @@ previous section).
 
 !!! note
     **The API request has to be authenticated and authorized**. You can get an API-KEY creating an account on the server, and check the API-KEY created for your user, check the profile account (click on your user name) and copy the field **API-KEY**.
-    
+
     This API-KEY should be passed as a POST argument like this with the previous data: [POST] <http://domain/api/project/?api_key=API-KEY>
 
 ### Using PYBOSSA API from the command line
@@ -615,6 +627,6 @@ Creating a project is as simple as creating a project.json file and then
 run the following command:
 
 ``` bash
-pbs --server server --api-key yourkey create_project 
+pbs --server server --api-key yourkey create_project
 ```
 Please, read the [pbs section](pbs.md) for more details.
