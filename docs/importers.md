@@ -11,7 +11,7 @@ public interface:
 
 importer_id is the name of the importer; any of the supported
 importers: 'csv', 'gdocs', 'epicollect', 'flickr', 'dropbox', 'twitter',
-'s3' and 'youtube'.
+'s3', 'youtube' and 'iiif.
 
 `#!python tasks()` should generate a list of tasks.
 
