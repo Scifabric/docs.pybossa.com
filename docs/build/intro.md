@@ -44,7 +44,7 @@ Projects can be easily created using two approaches:
 
 - **Using the Web interface**: where you can create a project, write
   the *Task Presenter* and upload the tasks using the *simplified
-  built-in Task Importers* (get tasks from Flickr, Amazon S3, Dropbox, Youtube, Twitter, CSV or Google Spreadsheets); or
+  built-in Task Importers* (get tasks from Flickr, Amazon S3, Dropbox, Youtube, Twitter, CSV, Google Spreadsheets a IIIF manifest); or
 - **Using the** API: where you will be able to create the project,
   write the *Task Presenter*. For importing the tasks, you can use the Task  Importer of your project, use [our command line tool](pbs.md), or if you prefer it to create a specific script that will use the PYBOSSA API for this part using your preferred programming language.
 
@@ -61,6 +61,7 @@ Creating a project is simple. You fill in some data via the web interface, and t
 - EpiCollect+: to import form data from mobile phones with geolocalized information like images.
 - Dropbox: to import pictures, videos, audios or PDFs.
 - Flickr: to import pictures.
+- IIIF manifests: to import images (and in future, video or audio).
 
 !!! tip
      If you need an importer, please, add a [Github Issue](https://github.com/Scifabric/pybossa) in our repository so we can implement it.
