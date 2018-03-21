@@ -414,14 +414,15 @@ The tasks created with the Youtube importer are ready to be used with the youtub
 
 The [International Image Interoperability Framework (IIIF)](http://iiif.io/) is a protocol for standardized image retrieval created by a community of the world's leading research libraries, major national libraries and not-for-profit image repositories in an effort to collaboratively produce an interoperable technology and community framework for image delivery.
 
-Content made available via the [IIIF Presentation API](http://iiif.io/api/presentation) can be imported into PyBossa by passing the URI of a manifest.
+Content made available via the [IIIF Presentation API](http://iiif.io/api/presentation) can be imported into PyBossa by passing the URI of a manifest. All images for all canvases defined in the first sequence of the manifest will be imported. In practice, this means that all images will be imported in their default order and each image used to generate a single task.
+
+Each task will include a reference to the canvas ID, the manifest ID, the tile source for the image and URIs to request different sizes of the image from the [IIIF Image API](http://iiif.io/api/image).
 
 Here are the steps to import:
 
 1. Navigate to your project's page and click in the **Tasks** section.
 2. Then click on the **Import Tasks** button, and select the **IIIF importer**.
 3. Type the URI of the IIIF manifest that you want to import from, then click on the import button.
-
 
 ### Flushing all the tasks
 
