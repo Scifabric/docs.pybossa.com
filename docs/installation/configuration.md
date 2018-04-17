@@ -455,7 +455,12 @@ And the **_gcs_form.html** will be like this:
 
 After these steps, your site will be indexed by Google, and Google Custom Search will be working, providing for your users a search tool.
 
-## Adding web maps for project statistics
+## Adding web maps for project statistics (deprecated since v2.9.3)
+
+!!! note
+    PYBOSSA does not support this feature anymore since version v2.9.3 as now
+    it anonymizes the IPs (following GDPR EU law), so these maps don't make sense anymore.
+    For more info, check the [GDPR](/gdpr) section.
 
 PYBOSSA creates for each project a statistics page, where the creators of the project and the volunteers can check the top 5 anonymous and authenticated users, an estimation of time about when all the tasks will be completed, etc.
 
