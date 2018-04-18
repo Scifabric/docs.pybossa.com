@@ -107,4 +107,5 @@ pages:
       - 'General':  'contributing.md'
       - 'Translating PYBOSSA': 'translating.md'
       - 'Writing plugins': 'plugins.md'
+  - GDPR: 'gdpr.md'
   - FAQ: 'faq.md'
