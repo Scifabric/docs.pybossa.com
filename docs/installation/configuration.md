@@ -58,6 +58,18 @@ PYBOSSA uses the [Flask Sessions](http://flask.pocoo.org/docs/quickstart/#sessio
 Therefore, **it is essential that you create a new SECRET and
 SECRET_KEY keys for your server and keep them private**. Please, check the [Flask Sessions](http://flask.pocoo.org/docs/quickstart/#sessions) documentation for instructions on how to create proper secret keys.
 
+## Ensuring Anonymous IPs
+
+PYBOSSA uses CryptoPAn to anoymize the user's IPs when they participate as anonymous users. This is a feature that's mandatory, and you will have to create
+a KEY for it, specially this one:
+
+``` python
+CRYPTOPAN_KEY = '32-char-str-for-AES-key-and-pad.'
+```
+
+!!! warning
+    Be sure to use a strong key to protect your user IPs.
+
 ## Database username and password
 
 PYBOSSA uses the [SQLAlchemy](http://www.sqlalchemy.org/) SQL toolkit to access the DB. In the settings file, you only need to modify the name of the user, password and database name, so it fits your needs in the field SQLALCHEMY_DATABASE_URI:
