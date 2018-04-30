@@ -34,3 +34,13 @@ your stored IPs. PYBOSSA provides a script for doing this task:
 
 !!! note
     We highly recommend to do a backup before running the upgrade and the migration of the DB.
+
+
+Next, you will have to unsubscribe all your users from project updates. PYBOSSA has a DB migration
+for achiving it. Just run the following command:
+
+```bash
+  alembic upgrade head
+```
+
+This will ensure that all your users are unsubscribed, and they can now subscribe if they want.
