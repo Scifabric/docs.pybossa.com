@@ -831,4 +831,24 @@ with the following information:
 }
 ```
 
+### Delete account
 
+**Endpoint: /account/<name>/delete**
+
+*Allowed methods*: **GET**
+
+**GET**
+
+If you send a GET request to this endpoint, PYBOSSA will enequeue a job to delete the user account.
+
+!!! note
+    You should build a confirmation check before hitting this enpoint, as this action cannot be undone.
+
+**Example output**
+
+```json
+{
+    "template": None
+    'job': 'enqueued'
+}
+```
