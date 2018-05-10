@@ -21,6 +21,24 @@ have been anonymized.
 
 We use the following [Python module](https://github.com/keiichishima/yacryptopan) to perform this task.
 
+
+## Forget me (or delete your account)
+
+PYBOSSA now allows any user (without a project) to delete its own account. This action cannot be undone.
+
+When a user deletes its account, PYBOSSA will do the following actions:
+
+* Anonymize your task runs. Your user_id will be removed and for each task run PYBOSSA generates a fake IP, so it's impossible to know what have you sent to the server.
+* If the server is using Mailchimp integration, delete the user from the Mailchimp list in case the user subscribed to it.
+* Delete all personal data from the server (DB).
+* Send an email to the user and the administrators of the server, so the user knows that everything has been deleted.
+
+!!! note
+    If the server is using DISQUS SSO, PYBOSSA will include a line in the email explaining that as (10 of May 2018) 
+    DISQUS does not provide an API method to delete the user account. Therefore, PYBOSSA informs the user that he/she
+    will have to delete their account from DISQUS.
+
+
 ### Migrating from a PYBOSSA server version < v2.9.3
 
 If you server is running a version smaller than v2.9.3 then, you will need to upgrade
