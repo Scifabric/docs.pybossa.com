@@ -38,6 +38,22 @@ When a user deletes its account, PYBOSSA will do the following actions:
     DISQUS does not provide an API method to delete the user account. Therefore, PYBOSSA informs the user that he/she
     will have to delete their account from DISQUS.
 
+## Export your own data
+
+From your personal PYBOSSA account you will be able to export the following data in list of zip files:
+
+* All your personal data.
+* All your projects created by you.
+* All your contributions (task runs).
+
+PYBOSSA will create a ZIP file and send an email with links to your email. Those links will be only valid
+for 3 days (the default configuration) and after that they will be removed.
+
+The ZIP files have your data in JSON format, so you can view it with any text editor as this is a standard format.
+
+## See all my data
+
+You can get all your data first, so you can see it with any text editor in any platform. 
 
 ### Migrating from a PYBOSSA server version < v2.9.3
 
