@@ -831,7 +831,7 @@ with the following information:
 }
 ```
 
-### Delete account
+### Account delete
 
 **Endpoint: /account/<name>/delete**
 
@@ -850,5 +850,25 @@ If you send a GET request to this endpoint, PYBOSSA will enequeue a job to delet
 {
     "template": None
     'job': 'enqueued'
+}
+```
+
+### Account export
+
+**Endpoint: /account/<name>/export**
+
+*Allowed methods*: **GET**
+
+**GET**
+
+If you send a GET request to this endpoint, PYBOSSA will enequeue a job to create zip files for the <user> with his/her personal data.
+
+**Example output**
+
+```json
+{
+    "flash": "GDPR export started",
+    "next": "/account/user2/",
+    "status": "success"
 }
 ```
