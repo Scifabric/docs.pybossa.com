@@ -1,8 +1,10 @@
 # GDPR
 
-As of the 25 of May 2018, every European project has to be GDPR compliant [GDPR law](https://www.eugdpr.org/).
+As you probably know, as of the 25 of May 2018 a new data protection law comes into place in the European Union called 
+General Data Protection Regulation (GDPR) impacting how businesses collect and process data
+[GDPR law](https://www.eugdpr.org/).
 
-Below we explain how PYBOSSA meets the requested requirements to be GDPR compliant.
+Below we explain how PYBOSSA meets the requested requirements to be fully GDPR compliant.
 
 ## Anonymous contributor IPs
 
@@ -11,24 +13,23 @@ PYBOSSA has two types of users:
 * Authenticated, and
 * Anonymous
 
-For Anonymous Users, PYBOSSA has used always their IP address to identify them, however as they don't have an
-account, we can´t know who is the user behind that IP. In order to improve this security, PYBOSSA (v2.9.3) 
-encodes the IP address using the technique [Cryptography-based  Prefix-preserving Anonymization](https://www.cc.gatech.edu/computing/Telecomm/projects/cryptopan/) to
-ensure that all IPs are anonymous.
+PYBOSSA has always used IP addresses to identify ANONYMOUS USERS, however as these don't have an account, 
+we can´t know who is the user behind the IP. In order to improve this security, PYBOSSA (v2.9.3) 
+encodes the IP address using the technique [Cryptography-based  Prefix-preserving Anonymization](https://www.cc.gatech.edu/computing/Telecomm/projects/cryptopan/) to ensure that all IPs are anonymous.
 
-Therefore when downloading results or a project task run, you won´t get the real user IP as all of them have 
+Therefore when downloading results or a project task run, one won´t get the real user IP as all of them have 
 been made anonymous.
 
-We use the following [Python module](https://github.com/keiichishima/yacryptopan) to perform this task.
+We use the following [Python module](https://github.com/keiichishima/yacryptopan) to complete this task.
 
 
 ## Forget me (or delete your account)
 
-PYBOSSA now allows any user (without a project) to delete his/her own account. This action cannot be undone.
+PYBOSSA now allows users (without a project) to delete their accounts. This action cannot be undone.
 
-When users deletes their account, PYBOSSA will:
+When users delete their accounts, PYBOSSA will:
 
-* Anonymize their task runs. The user_id will be removed, and for each task run PYBOSSA will generates a fake IP address, so that it is not possible to know what users have sent to the server.
+* Anonymize their task runs. The user_id will be removed, and for each task run PYBOSSA will generates a fake IP address, so that it is not possible to know what is it that users have sent to the server.
 * If the server is using Mailchimp integration, PYBOSSA will delete the user from the Mailchimp list sholuld the user subscribed to it.
 * Delete all personal data from the server (DB).
 * Email to the user and the server administrator so that the user knows everything has been deleted.
