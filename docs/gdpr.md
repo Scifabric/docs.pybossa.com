@@ -55,6 +55,16 @@ These ZIP files have your data in JSON format, so you can view it with any text 
 
 You can get all your data first, so you can see it with any text editor in any platform. 
 
+
+## Restrict processing
+
+If you don't want to delete your account, but you want to restrict processing you can do that from your
+user's profile page. Just go to your settings, hit the update link and there check the *restrict processing* checkbox.
+
+This will ensure that no one access your data, not even the admins. By checking that box, you will be completely removed
+from the user API (only you can access your account under your ID), your User is not going to be part of the api USER filtering,
+you are not included in any leaderboard (including top 5 users for projects, and active users in the last 24 hours).
+
 ### Migrating from a PYBOSSA server version < v2.9.3
 
 If your server is running a version smaller than v2.9.3 you will need to upgrade the 
