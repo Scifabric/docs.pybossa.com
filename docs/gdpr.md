@@ -75,6 +75,33 @@ your stored IPs. PYBOSSA provides a script for doing this task:
   python cli.py anonymize_ips
 ```
 
+If you have custom leaderboards, then, you will have to drop those materialized views by hand. Why?
+Because we're adding a new column to them. If you only use the default leaderboard, everything should
+work as expected. To delete your materialized views for your leaderboards, just run this command within
+the DB:
+
+``` sql
+  drop materialized view users_rank_{your_name};
+```
+
+Replace the {} text with your names, and you will be fine. This will not delete any data, as the materialized
+views will be recreated by the jobs in the next tick. If you need them recreated now, just open a terminal and
+run the following command:
+
+```python
+from run import create_app
+from pybossa.leadeboard.jobs import leaderboard
+
+app = create_app(False)
+
+with app.app_context():
+   leaderboard(info='your_name')
+   leaderboard(info='your_second')
+   ...
+   leaderboard(info='your_n')
+```
+
+That will recreate the views for you, and you will be ready to use them.
 
 !!! note
     We strongly recommend you to do a backup before running the upgrade and the migration of the DB.
