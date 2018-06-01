@@ -47,6 +47,23 @@ project, and automatically all the task and associated task runs will be
 deleted (**note**: this cannot be undone!). Check the project-delete
 section for further details.
 
+### If I've installed the server, can I run a script to reset a project?
+
+Yes, you can. You will have to access the server, and then run the command
+
+``` python
+   python cli.py clean_project ProjectID SkipTasks
+```
+
+.. note:
+   By default, if you run this command it will return all the tasks,
+   task_runs, results and reset all the statistics for that project. 
+   BE CAREFUL.
+
+Pass ProjectID to delete everything, or tell the command to skip deleting
+the tasks, so you can keep them, and update the stats accordingly.
+
+
 ### Do you provide any statistics about the users for my project?
 
 Yes, every project has its own statistics page that shows information
