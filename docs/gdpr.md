@@ -12,7 +12,7 @@ PYBOSSA has two types of users:
 * Anonymous
 
 For Anonymous Users, PYBOSSA has used always their IP address to identify them, however as they don't have an
-account, we can´t know who is the user behind that IP. In order to improve this security, PYBOSSA (v2.9.4) 
+account, we can´t know who is the user behind that IP. In order to improve this security, PYBOSSA (v2.9.5) 
 encodes the IP address using the technique [Cryptography-based  Prefix-preserving Anonymization](https://www.cc.gatech.edu/computing/Telecomm/projects/cryptopan/) to
 ensure that all IPs are anonymous.
 
@@ -33,7 +33,7 @@ When users deletes their account, PYBOSSA will:
 * Delete all personal data from the server (DB).
 * Email to the user and the server administrator so that the user knows everything has been deleted.
 
-!!! NB:
+!!! note:
     If the server is using DISQUS SSO, PYBOSSA will note in the removal confirmation email that 
     - as of the 10th of May 2018, DISQUS does not provide an API method to delete the user account. 
     Therefore, PYBOSSA will inform the user that he/she will have to delete their DISQUS account.
@@ -65,9 +65,9 @@ This will ensure that no one access your data, not even the admins. By checking 
 from the user API (only you can access your account under your ID), your User is not going to be part of the api USER filtering,
 you are not included in any leaderboard (including top 5 users for projects, and active users in the last 24 hours).
 
-### Migrating from a PYBOSSA server version < v2.9.4
+### Migrating from a PYBOSSA server version < v2.9.5
 
-If your server is running a version smaller than v2.9.4 you will need to upgrade the 
+If your server is running a version smaller than v2.9.5 you will need to upgrade the 
 server to the latest version in order to be GDPR compliant. You then have to anonymize
 your stored IPs. PYBOSSA provides a script for doing this task:
 
