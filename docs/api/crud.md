@@ -27,7 +27,7 @@ Any other error will return the same object but with the proper status code and 
 
 ## Filtering the data
 
-You can get a list of domain objects by its fields. You will use the objects attributes to filter the query, as it will return only objects matching it: 
+You can get a list of domain objects by its fields. You will use the objects attributes to filter the query, as it will return only objects matching it:
 
     GET http://pybossa-site-url/api/{domain-object}[?domain-object-field=value]
 
@@ -155,12 +155,12 @@ Object section](https://github.com/Scifabric/pybossa/tree/master/pybossa/model).
 
 By default, PYBOSSA limits the list of items to 20. If you want to get more items, use the keyword **limit=N** with **N** being a number to get that amount. There is a maximum of 100 to the **limit** keyword, so if you try to get more items at once, it won't work.
 
-## Pagination 
+## Pagination
 You can paginate the results of any GET query using the last ID of the domain object that you have received and the parameter:     **last_id**. For example, to get the next 20 items after the last   project ID that you've received, you will write the query like this:
 
     `GET /api/project?last_id=N.
 
-!!! info "Pagination with offset and limit" 
+!!! info "Pagination with offset and limit"
     **DEPRECATED (see next Note for a better and faster solution)**  You can use the keyword **offset=N** in any **GET** query to skip that many rows before beginning to get rows. If both **offset** and **limit** appear, then **offset** rows are skipped before starting to count the **limit** rows that are returned.
 
 ## Related data
@@ -173,6 +173,13 @@ associated Task.
 
 Projects do not have this feature, as it will be too expensive for the
 API.
+
+## Project stats
+
+For Projects, you can get the associated statistics using the argument: *stats=True*.
+
+This will add the statistics, such as overall progress, number of tasks etc.,
+against the `stats` key for each project.
 
 ## Create
 
