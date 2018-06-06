@@ -1,6 +1,3 @@
-Project Statistics
-------------------
-
 You can list project statistics, such as number of tasks, volunteers and overall progress via:
 
     GET /api/projectstats
@@ -15,3 +12,8 @@ To include additional hour stats, day stats and user stats for the past 2 weeks,
 
 These additional statistics will be included in the **info** field of each object returned.
 
+!!! tip "Tip"
+
+    These statistics can also be retrieved by adding the argument `stats=True`
+    to requests made to the `/api/project` endpoint. In this case they will be
+    added against a `stats` key returned with each Project.
