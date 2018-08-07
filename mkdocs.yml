@@ -56,6 +56,7 @@ pages:
       - 'Using the command line': 'build/pbs.md'
       - 'Tutorial': 'build/tutorial.md'
       - 'Configuring the project': 'build/project_settings.md'
+      - 'Real time data analysis': 'build/webhooks.md'
       - 'Domain model': 'build/model.md'
   - API: 
       - 'Introduction': 'api/intro.md'

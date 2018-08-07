@@ -7,15 +7,15 @@ interface. When you are the owner (or an administrator), a new link in the left 
 
 The **Settings** page will give you the following options:
 
-1. project-details: here you will be able to change the name of the
+1. **Project details**: here you will be able to change the name of the
    project, the description, icon, etc.
-2. task-settings: this button will open the task-settings page where
+2. **Task settings**: this button will open the task-settings page where
    you will be able to configure the tasks' scheduler, change the tasks' priority, modify the tasks' redundancy and delete the tasks and its associated task runs (also known as answers).
-3. project-delete: if you click this button you will be able to remove the project from the system entirely. A big warning message will be shown before allowing you to delete the project.
-4. project-blog: if you click this button, you will be able to write a
+3. **Project delete**: if you click this button you will be able to remove the project from the system entirely. A big warning message will be shown before allowing you to delete the project.
+4. **Project blog**: if you click this button, you will be able to write a
    new blog post to be shared with the volunteers.
 
-??? tip "Official support"
+!!! tip "Official support"
     If you need help configuring your PYBOSSA server, [contact us](https://scifabric.com/pricing/). We offer official support, and we would love to work with your PYBOSSA server.
 
 ## Edit the project details
@@ -39,6 +39,7 @@ In this section you can change the following parameters of your project:
   allow to do it. If you leave it blank, then no password will protect your project!
 - **Category**: Select a category that fits your project. categories
   are added and managed by the server administrators.
+- **Webhook**: Write here the URL of the server that will handle the [real-time data analysis](webhooks.md) of this project's tasks.
 - Also, you will be able to select and upload a **image** from
   your local computer to set it as the project image throughout the
   server.
