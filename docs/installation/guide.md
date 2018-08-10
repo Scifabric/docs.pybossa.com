@@ -202,7 +202,7 @@ redis-server contrib/sentinel.conf --sentinel
 
 ## Speeding up the site
 
-PYBOSSA comes with a cache system that *it is disabled by default*. PYBOSSA uses the [Redis](http://redis.io/) server to cache some objects like projects, statistics, etc. The system uses the [Sentinel](http://redis.io/topics/sentinel) feature of [Redis](http://redis.io/), so you can have several master/slave nodes configured with [Sentinel](http://redis.io/topics/sentinel), and your PYBOSSA server will use them "automagically."
+PYBOSSA comes with a cache system that *is disabled by default*. PYBOSSA uses the [Redis](http://redis.io/) server to cache some objects like projects, statistics, etc. The system uses the [Sentinel](http://redis.io/topics/sentinel) feature of [Redis](http://redis.io/), so you can have several master/slave nodes configured with [Sentinel](http://redis.io/topics/sentinel), and your PYBOSSA server will use them "automagically."
 
 ### Enabling the cache
 
