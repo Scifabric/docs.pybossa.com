@@ -16,6 +16,7 @@ A domain object can be:
 * Result,
 * Blog post,
 * Announcement,
+* Helpingmaterial,
 * User, and
 * Category.
 
