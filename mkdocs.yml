@@ -81,10 +81,10 @@ pages:
       - 'User':
           - 'RESTful API':
              - 'Intro': 'api/user/intro.md'
+             - 'Project progress': 'api/user/progress.md'
           - 'PYBOSSA endpoints':
              - 'Account': 'api/user/account.md'
              - 'Admins': 'api/user/admin.md'
-             - 'Project progress': 'api/user/progress.md'
       - 'Helping materials':
           - 'RESTful API':
               - 'Attaching files': 'api/helpingmaterial/intro.md'
