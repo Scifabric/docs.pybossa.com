@@ -84,7 +84,7 @@ pages:
           - 'PYBOSSA endpoints':
              - 'Account': 'api/user/account.md'
              - 'Admins': 'api/user/admin.md'
-             - 'Project progress': '/api/user/progress.md'
+             - 'Project progress': 'api/user/progress.md'
       - 'Helping materials':
           - 'RESTful API':
               - 'Attaching files': 'api/helpingmaterial/intro.md'
