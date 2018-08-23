@@ -678,7 +678,7 @@ this endpoint:
 
     http://server/project/tutorial
 
-### Advance tutorial
+### Advance tutorial (helping materials)
 
 While the previous solution works for most of the projects, your project might need something special: visual clues so users can easily identify sounds, patterns, etc. easily. The default tutorial does not allow you to curate/create a list of helping materials that could be used directly in the presenter to explain how for example you can identify cancer cells, or specific species of animals.
 

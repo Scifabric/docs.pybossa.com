@@ -989,3 +989,17 @@ LDAP_USER_FILTER_FIELD. It's important to reflect which key are you using within
 ### LDAP_PYBOSSA_FIELDS
 
 Use this configuration variable to match/link PYBOSSA fields to LDAP fields.
+
+## Uploading files to PYBOSSA
+
+PYBOSSA has a generic uploader that will check for valid extensions, avoiding for example that a user could upload a video, as only
+images are allowed. 
+
+### ALLOWED_EXTENSIONS
+
+Use this configuration variable, to specify which types of files will you allow in your server. By default, the following extensions
+are enabled:
+
+``` python
+ALLOWED_EXTENSIONS = ['js', 'css', 'png', 'jpg', 'jpeg', 'gif', 'zip']
+```

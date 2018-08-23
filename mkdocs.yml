@@ -75,12 +75,22 @@ pages:
             - 'Excluding contributed tasks': 'api/task/participated.md'
             - 'Requesting a task': 'api/task/newtask.md'
             - 'External user ID': 'api/task/external.md'
+      - 'TaskRuns':
+          - 'RESTful API':
+              - 'Attaching files': 'api/taskrun/intro.md'
       - 'User':
           - 'RESTful API':
              - 'Intro': 'api/user/intro.md'
+             - 'Project progress': 'api/user/progress.md'
           - 'PYBOSSA endpoints':
              - 'Account': 'api/user/account.md'
              - 'Admins': 'api/user/admin.md'
+      - 'Helping materials':
+          - 'RESTful API':
+              - 'Attaching files': 'api/helpingmaterial/intro.md'
+      - 'Blog posts':
+          - 'RESTful API':
+              - 'Attaching files': 'api/blogpost/intro.md'
       - 'Leaderboard': 
          - 'PYBOSSA endpoints': 
              - 'Methods': 'api/leaderboard.md'
