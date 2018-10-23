@@ -141,6 +141,30 @@ obtain as soon as possible an answer for all the available tasks.
     number of task runs, returning always first the tasks with less number of task runs for the user.
 
 
+## Lock 
+
+The Lock scheduler has the following features:
+
+1. It sends the tasks in the order that were created, first in first
+   out.
+2. When a task has been sent, the task will be locked for the user (anonymous or registered) that requested it for 60 minutes.
+
+3. If another user request a task, it will be sent a different task that has not being locked.
+
+In summary, from the point of view of a user (authenticated or
+anonymous) the system will be sending the project's tasks in order. She will not find any difference from other schedulers.
+
+From the point of view of the project, the scheduler will be trying to
+send different tasks to users, spreading the users within all available tasks of the project.
+
+!!! note
+    This scheduler does not allow you to request more than 2 tasks at a time to avoid people locking many tasks at once.
+
+!!! note
+    This scheduler could be interesting when you hold a workshop and you want everyone participating in a different task
+    at the same time.
+
+
 ## Task Priority
 
 PYBOSSA allows you to prioritize the tasks, or in other words, which

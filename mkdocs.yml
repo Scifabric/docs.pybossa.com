@@ -2,14 +2,17 @@ site_name: PYBOSSA Documentation
 theme: 'material'
 # theme: 'readthedocs'
 markdown_extensions:
-    - toc(permalink=true)
+    - toc:
+        permalink: True
     - admonition
     - smarty
     - wikilinks
-    - codehilite(linenums=true)
+    - codehilite:
+        linenums: True
     # - urlize # requires: pip install git+https://github.com/r0wb0t/markdown-urlize.git
     - pymdownx.arithmatex
-    - pymdownx.betterem(smart_enable=all)
+    - pymdownx.betterem:
+        smart_enable: all
     - pymdownx.caret
     - pymdownx.critic
     - pymdownx.details
@@ -20,7 +23,8 @@ markdown_extensions:
     - pymdownx.mark
     - pymdownx.smartsymbols
     - pymdownx.superfences
-    - pymdownx.tasklist(custom_checkbox=true)
+    - pymdownx.tasklist:
+        custom_checkbox: True
     - pymdownx.tilde
 site_favicon: 'images/favicon.ico'
 extra:
