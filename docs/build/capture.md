@@ -8,7 +8,17 @@ With PYBOSA 2.10.0 you can ask the crowd to submit any type of data via the API
 
 ## Configuring data capturing
 
-PYBOSSA has this feature enabled by default, so you don't have to do anything special.
+PYBOSSA has this feature enabled by default for the following extensions:
+
+``` json
+['js', 'css', 'png', 'jpg', 'jpeg', 'gif', 'zip']
+```
+
+You can simply force a different set of extensions by using this config variable:
+
+``` python
+ALLOWED_EXTENSIONS = ['mp4', 'wav']
+```
 
 ## Sending files within the taskrun
 
