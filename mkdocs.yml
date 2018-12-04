@@ -61,6 +61,7 @@ pages:
       - 'Tutorial': 'build/tutorial.md'
       - 'Configuring the project': 'build/project_settings.md'
       - 'Real time data analysis': 'build/webhooks.md'
+      - 'Data capturing: image, video or audio': 'build/capture.md'
       - 'Domain model': 'build/model.md'
   - API: 
       - 'Introduction': 'api/intro.md'
