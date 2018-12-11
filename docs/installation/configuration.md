@@ -997,7 +997,7 @@ images are allowed.
 
 ### ALLOWED_EXTENSIONS
 
-Use this configuration variable, to specify which types of files will you allow in your server. By default, the following extensions
+Use this configuration variable, to specify which types of files will you allow in your server to be uploaded via the API. By default, the following extensions
 are enabled:
 
 ``` python
