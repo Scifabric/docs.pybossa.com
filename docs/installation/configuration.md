@@ -102,6 +102,29 @@ PYBOSSA users, posting a link with a signed key that will be verified by the ser
 
 By default, PYBOSSA has the API endpoints configured with **Access-Control-Allow-Origin:**\*. However, you can change it to whatever you want via the config file. Take a look at the official documentation for [Flask-CORS](http://flask-cors.readthedocs.io/en/latest/) for all the available options.
 
+### Fine tuning CORS
+
+You can fine tune the CORS of PYBOSSA:
+
+```python
+CORS_RESOURCES = {
+    r"/api/*": 
+        {
+            "origins": "*",
+            "allow_headers": 
+                [
+                'Content-Type',
+                'Authorization'
+                ],
+            "max_age": 21600
+        }
+}
+```
+
+
+!!! note
+    You can customize as much as you want CORS. Check the [official documentation](https://flask-cors.readthedocs.io/en/latest/).
+
 ## Modifying the Brand name
 
 You can configure your project with a different name, instead of the
@@ -346,6 +369,52 @@ If you want to disable the cache, you only have to export the following env vari
 
 ``` python
 PYBOSSA_REDIS_CACHE_DISABLED='1'
+```
+
+## Redis configuration
+
+You can configure how you connect to Redis via the following config variables.
+
+### Redis python prefix
+
+```python
+REDIS_KEYPREFIX = 'pybossa_cache'
+```
+
+### Redis Sentinel
+
+Specify where the Redis sentinel is listening.
+
+```python
+REDIS_SENTINEL = [('localhost', 26379)]
+```
+
+### Redis master
+
+Specify the name of the master node.
+
+```python
+REDIS_MASTER = 'mymaster'
+```
+
+### Redis DB
+
+Specify the DB.
+
+```python
+REDIS_DB = 0
+```
+
+### Redis Socket timeout
+
+```python
+REDIS_SOCKET_TIMEOUT = 0.1
+```
+
+### Redis retry on timeout
+
+```python
+REDIS_RETRY_ON_TIMEOUT = True
 ```
 
 ## Rate limit for the API
@@ -929,6 +998,13 @@ As simple as that.
 !!! note
     This feature relies on background jobs. Be sure that you are running them.
 
+### Default number of users for the leaderboard
+
+You can specify the default number of users shown in the leaderboard. By default we show the top 20 users.
+
+```
+LEADERBOARD = 20
+```
 
 ## Unpublish inactive projects
 
@@ -1002,4 +1078,39 @@ are enabled:
 
 ``` python
 ALLOWED_EXTENSIONS = ['js', 'css', 'png', 'jpg', 'jpeg', 'gif', 'zip']
+```
+
+## SPAM protection
+
+You can blacklist disposable email accounts by listing them in the SPAM config. Just add them like this:
+
+``` python
+SPAM = ['spam.com', 'fake.es']
+```
+
+## Failed Jobs
+
+Sometimes background jobs fail. For example, an email is rejected. By default
+PYBOSSA retries 3 times, before marking them as failed. You can customize it.
+
+```python
+FAILED_JOBS_RETRIES = 3
+```
+
+## Fulltext search language
+
+PYBOSSA uses PostgreSQL fulltex search support. Thus, you can instruct PYBOSSA
+to use only a given language to do it properly:
+
+```python
+FULLTEXTSEARCH_LANGUAGE = 'english'
+```
+
+## Absolute links to Avatars
+
+If you are building a Single Page Application or a Universal App, you will need to
+get absolute paths to the avatars. Use the following config:
+
+```python
+AVATAR_ABSOLUTE = True
 ```
