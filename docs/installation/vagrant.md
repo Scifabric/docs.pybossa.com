@@ -44,6 +44,13 @@ your local copy of PYBOSSA will be automatically populated to the
 Virtual Machine. Hence, if you add a new feature to the system, you will be able to test it right away (this feature is pretty handy for
 workshops, hackfests, etc.).
 
+
+!!! note
+    If you don't have enough space in your hard disk, Vagrant will fail to set up the virtual machine. For solving this issue
+    just, modify the VirtualBox path to point to a partition or disk that has enough space. You can then manually change it with
+    this command: VBoxManage setproperty machinefolder to/new/path
+
+
 ## Running the PYBOSSA server
 
 Now that all the libraries and dependencies have been installed, you can lunch the PYBOSSA development server:
