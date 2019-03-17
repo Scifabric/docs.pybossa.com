@@ -1140,6 +1140,7 @@ For deleting the accounts, PYBOSSA uses the the same method as if the user
 requested it herself. The action anonymizes the user's contributions, and
 deletes all her personal data.
 
+
 !!! note
-   PYBOSSA will not delete users with the restrict flag set to true (to respect
-   GDPR) as well as if they have projects.
+    PYBOSSA will not delete users with the restrict flag set to true (to respect
+    GDPR) as well as if they have projects.
