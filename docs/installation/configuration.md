@@ -1114,3 +1114,33 @@ get absolute paths to the avatars. Use the following config:
 ```python
 AVATAR_ABSOLUTE = True
 ```
+
+## Delete inactive accounts
+
+PYBOSSA will delete inactive accounts after a period of time. For this purpose,
+PYBOSSA uses two different background jobs, one for warning users about the
+action, and another one to delete them.
+
+The warning job is run on a monthly basis, while the deletion is done on a
+bi-monthly basis.
+
+You can customize the the time period that you consider to warn users as well as
+to delete them. For these purposes you can use the following two variables:
+
+```python
+USER_INACTIVE_NOTIFICATION = 5
+USER_INACTIVE_DELETE = 6
+``` 
+
+Thus, after 5 months of not contributing a single task run, the user will get an
+email warning her about the deletion. Then, the next month if the user has not
+sent a task run, the account will be deleted.
+
+For deleting the accounts, PYBOSSA uses the the same method as if the user
+requested it herself. The action anonymizes the user's contributions, and
+deletes all her personal data.
+
+
+!!! note
+    PYBOSSA will not delete users with the restrict flag set to true (to respect
+    GDPR) as well as if they have projects.
