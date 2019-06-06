@@ -26,7 +26,8 @@ PYBOSSA can store any information within the **info** field of the following dom
 * Announcement.
 * Blogpost.
 * Category.
-* Helpingmaterial.
+* Helpingmaterial,
+* Page,
 * Project, and
 * User.
 
@@ -83,6 +84,18 @@ PYBOSSA includes the following fields in a GET API call:
 * priority
 
 From info, everything is public for users that are anonymous or are not the owner of the helpingmaterial.
+
+### Page
+PYBOSSA includes the following fields in a GET API call:
+
+* created
+* id
+* info
+* media_url
+* slug
+
+From info, everything is public for users that are anonymous or are not the owner of the page.
+
 
 ### Project
 PYBOSSA includes the following fields in a GET API call:

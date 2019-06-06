@@ -26,6 +26,8 @@ PYBOSSA has 5 main domain objects:
     - HasMany: TaskRuns
 - **HelpingMaterial**: media files for building advance tutorials
     - HasA: Project
+- **Page**: page layouts for building advance SPAs or Jamstack solutions
+    - HasA: Project
 - **User**: a user account
 - **Category**: a project category
     - HasMany: Projects
