@@ -93,6 +93,9 @@ pages:
       - 'Helping materials':
           - 'RESTful API':
               - 'Attaching files': 'api/helpingmaterial/intro.md'
+      - 'Pages':
+          - 'RESTful API':
+              - 'Info': 'api/page/intro.md'
       - 'Blog posts':
           - 'RESTful API':
               - 'Attaching files': 'api/blogpost/intro.md'
