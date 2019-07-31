@@ -182,7 +182,7 @@ Adding tasks is very simple. You can have your tasks in these formats:
 Therefore, adding tasks to your project is as simple as this command:
 
 ``` bash 
-pbs add_tasks --tasks-file tasks_file.json
+pbs add-tasks --tasks-file tasks_file.json
 ```
 
 If you want to see all the available options, please check the
@@ -192,7 +192,7 @@ If you want to see all the available options, please check the
     By default, PYBOSSA servers use a rate limit for avoiding abuse of the API. For this reason, you can only do usually 300 requests per every 15 minutes. If you are going to add more than 300 tasks, pbs will detect it and warn you, auto-enabling the throttling for you to respect the limits. Please, see [the rate-limiting section](api.md#rate-limiting) for more details.
 
 ``` bash
-pbs add_tasks --help
+pbs add-tasks --help
 ```
 
 
