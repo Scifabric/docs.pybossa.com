@@ -117,3 +117,19 @@ Go to your webhooks project section, and check the available options.
     PYBOSSA sends you a **rerun** argument when doing the POST if you use any of the previous options,
     so you can handle that specific case in your code. All you have to do is check for that argument in
     the POST.
+
+## Creating missing webhooks
+
+Sometimes, you might start your project without the webhooks solution in mind. This will lead to a project
+where you have several completed tasks, without any associated webhooks. This is because you didn't enabled the
+webhooks solution, and therefore PYBOSSA didn't created it for you.
+
+For those cases, you can use the cli.py script. It has a specific command that will allow you to create all
+the missing webhooks in one row. For doing it, all you need is your project ID and then run the following command:
+
+```bash
+python cli.py create_webhooks projectID
+```
+
+Then, from your project, enable the webhooks server, and you will only have to hit the button re-run all webhooks.
+This action, will enqueue all the webhooks and you will get your data analysis done!
