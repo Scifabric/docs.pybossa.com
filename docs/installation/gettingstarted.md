@@ -4,7 +4,7 @@ PYBOSSA is a python web server built using the Flask
 micro-framework. You will need the following **officially supported requirements**:
 
 - Ubuntu 16.04 LTS
-- Python >= 2.7.6, <3.0
+- Python >= 3.6
 - PostgreSQL >= 9.5
 - Redis >= 2.6
 - pip >= 6.1
@@ -19,8 +19,5 @@ so you should be able to install all of them without problems.
 ??? info "Dependencies not officially supported"
     It may also run with older software but we do not officially support it:
 
-    - Ubuntu 14.04 LTS
-    - Python >= 2.7.2, <3.0
-    - PostgreSQL >= 9.3
-    - Redis >= 2.6
-    - pip >= 6.1
+    - Python < 3.6
+    - PostgreSQL <= 9.3
