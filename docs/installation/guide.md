@@ -2,7 +2,7 @@
 
 Before proceeding to install PYBOSSA, you will need to configure some other applications and libraries in your system. In this page, you will get a step by step guide on how to install all the required packages and libraries for PYBOSSA using the latest [Ubuntu Server Long Term Support](https://wiki.ubuntu.com/LTS) version available at the moment:
 
-- [Ubuntu 16.04 LTS](http://www.ubuntu.com/download/server)
+- [Ubuntu 18.04 LTS](http://www.ubuntu.com/download/server)
 
 
 ??? Tip "PYBOSSA hosted servers"
