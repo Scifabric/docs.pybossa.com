@@ -1,0 +1,2114 @@
+
+<!DOCTYPE html>
+<html lang="en" class="no-js">
+  <head>
+    
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width,initial-scale=1">
+      <meta http-equiv="x-ua-compatible" content="ie=edge">
+      
+      
+      
+      
+        <meta name="lang:clipboard.copy" content="Copy to clipboard">
+      
+        <meta name="lang:clipboard.copied" content="Copied to clipboard">
+      
+        <meta name="lang:search.languages" content="">
+      
+        <meta name="lang:search.result.none" content="No matching documents">
+      
+        <meta name="lang:search.result.one" content="1 matching document">
+      
+        <meta name="lang:search.result.other" content="# matching documents">
+      
+        <meta name="lang:search.tokenizer" content="[\s\-]+">
+      
+      
+        <link rel="shortcut icon" href="../../images/favicon.ico">
+      
+      <meta name="generator" content="mkdocs-0.16.3, mkdocs-material-1.12.1">
+    
+    
+      
+        <title>Methods - PYBOSSA Documentation</title>
+      
+    
+    
+      <script src="../../assets/javascripts/modernizr-e826f8942a.js"></script>
+    
+    
+      <link rel="stylesheet" href="../../assets/stylesheets/application-6c39f5478a.css">
+      
+        <link rel="stylesheet" href="../../assets/stylesheets/application-23f75ab9c7.palette.css">
+      
+    
+    
+      
+        
+        
+        
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Source Sans Pro:300,400,400i,700|Roboto+Mono">
+        <style>body,input{font-family:"Source Sans Pro","Helvetica Neue",Helvetica,Arial,sans-serif}code,kbd,pre{font-family:"Roboto Mono","Courier New",Courier,monospace}</style>
+      
+      <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
+    
+    
+    
+  </head>
+  
+  
+  
+  
+    <body data-md-color-primary="#087da1" data-md-color-accent="#00a889">
+  
+    <svg class="md-svg">
+      <defs>
+        
+        
+          <svg xmlns="http://www.w3.org/2000/svg" width="416" height="448" viewBox="0 0 416 448" id="github"><path fill="currentColor" d="M160 304q0 10-3.125 20.5t-10.75 19T128 352t-18.125-8.5-10.75-19T96 304t3.125-20.5 10.75-19T128 256t18.125 8.5 10.75 19T160 304zm160 0q0 10-3.125 20.5t-10.75 19T288 352t-18.125-8.5-10.75-19T256 304t3.125-20.5 10.75-19T288 256t18.125 8.5 10.75 19T320 304zm40 0q0-30-17.25-51T296 232q-10.25 0-48.75 5.25Q229.5 240 208 240t-39.25-2.75Q130.75 232 120 232q-29.5 0-46.75 21T56 304q0 22 8 38.375t20.25 25.75 30.5 15 35 7.375 37.25 1.75h42q20.5 0 37.25-1.75t35-7.375 30.5-15 20.25-25.75T360 304zm56-44q0 51.75-15.25 82.75-9.5 19.25-26.375 33.25t-35.25 21.5-42.5 11.875-42.875 5.5T212 416q-19.5 0-35.5-.75t-36.875-3.125-38.125-7.5-34.25-12.875T37 371.5t-21.5-28.75Q0 312 0 260q0-59.25 34-99-6.75-20.5-6.75-42.5 0-29 12.75-54.5 27 0 47.5 9.875t47.25 30.875Q171.5 96 212 96q37 0 70 8 26.25-20.5 46.75-30.25T376 64q12.75 25.5 12.75 54.5 0 21.75-6.75 42 34 40 34 99.5z"/></svg>
+        
+      </defs>
+    </svg>
+    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="drawer">
+    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="search">
+    <label class="md-overlay" data-md-component="overlay" for="drawer"></label>
+    
+      <header class="md-header" data-md-component="header">
+  <nav class="md-header-nav md-grid">
+    <div class="md-flex">
+      <div class="md-flex__cell md-flex__cell--shrink">
+        <a href="../.." title="PYBOSSA Documentation" class="md-header-nav__button md-logo">
+          
+            <i class="md-icon md-icon--home"></i>
+          
+        </a>
+      </div>
+      <div class="md-flex__cell md-flex__cell--shrink">
+        <label class="md-icon md-icon--menu md-header-nav__button" for="drawer"></label>
+      </div>
+      <div class="md-flex__cell md-flex__cell--stretch">
+        <span class="md-flex__ellipsis md-header-nav__title">
+          
+            
+              
+                <span class="md-header-nav__parent">
+                  Categories
+                </span>
+              
+                <span class="md-header-nav__parent">
+                  PYBOSSA endpoints
+                </span>
+              
+            
+            Methods
+          
+        </span>
+      </div>
+      <div class="md-flex__cell md-flex__cell--shrink">
+        
+          <label class="md-icon md-icon--search md-header-nav__button" for="search"></label>
+          
+<div class="md-search" data-md-component="search" role="dialog">
+  <label class="md-search__overlay" for="search"></label>
+  <div class="md-search__inner">
+    <form class="md-search__form" name="search">
+      <input type="text" class="md-search__input" name="query" required placeholder="Search" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="query">
+      <label class="md-icon md-search__icon" for="search"></label>
+      <button type="reset" class="md-icon md-search__icon" data-md-component="reset">&#xE5CD;</button>
+    </form>
+    <div class="md-search__output">
+      <div class="md-search__scrollwrap" data-md-scrollfix>
+        <div class="md-search-result" data-md-component="result">
+          <div class="md-search-result__meta">
+            Type to start searching
+          </div>
+          <ol class="md-search-result__list"></ol>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+        
+      </div>
+      
+        <div class="md-flex__cell md-flex__cell--shrink">
+          <div class="md-header-nav__source">
+            
+
+
+  
+
+
+  <a href="https://github.com/Scifabric/pybossa" title="Go to repository" class="md-source" data-md-source="github">
+    
+      <div class="md-source__icon">
+        <svg viewBox="0 0 24 24" width="24" height="24">
+          <use xlink:href="#github" width="24" height="24"></use>
+        </svg>
+      </div>
+    
+    <div class="md-source__repository">
+      Scifabric/pybossa
+    </div>
+  </a>
+
+          </div>
+        </div>
+      
+    </div>
+  </nav>
+</header>
+    
+    <div class="md-container">
+      
+      
+      
+      <main class="md-main">
+        <div class="md-main__inner md-grid" data-md-component="container">
+          
+            
+              <div class="md-sidebar md-sidebar--primary" data-md-component="navigation">
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    <nav class="md-nav md-nav--primary" data-md-level="0">
+  <label class="md-nav__title md-nav__title--site" for="drawer">
+    <span class="md-nav__button md-logo">
+      
+        <i class="md-icon md-icon--home"></i>
+      
+    </span>
+    PYBOSSA Documentation
+  </label>
+  
+    <div class="md-nav__source">
+      
+
+
+  
+
+
+  <a href="https://github.com/Scifabric/pybossa" title="Go to repository" class="md-source" data-md-source="github">
+    
+      <div class="md-source__icon">
+        <svg viewBox="0 0 24 24" width="24" height="24">
+          <use xlink:href="#github" width="24" height="24"></use>
+        </svg>
+      </div>
+    
+    <div class="md-source__repository">
+      Scifabric/pybossa
+    </div>
+  </a>
+
+    </div>
+  
+  <ul class="md-nav__list" data-md-scrollfix>
+    
+      
+      
+      
+
+
+  <li class="md-nav__item">
+    <a href="../.." title="Home" class="md-nav__link">
+      Home
+    </a>
+  </li>
+
+    
+      
+      
+      
+
+
+  <li class="md-nav__item md-nav__item--nested">
+    
+      <input class="md-toggle md-nav__toggle" data-md-toggle="nav-2" type="checkbox" id="nav-2">
+    
+    <label class="md-nav__link" for="nav-2">
+      Installation
+    </label>
+    <nav class="md-nav" data-md-component="collapsible" data-md-level="1">
+      <label class="md-nav__title" for="nav-2">
+        Installation
+      </label>
+      <ul class="md-nav__list" data-md-scrollfix>
+        
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../installation/gettingstarted/" title="Getting started" class="md-nav__link">
+      Getting started
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../installation/guide/" title="Installing the server" class="md-nav__link">
+      Installing the server
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../installation/configuration/" title="Configuring PYBOSSA" class="md-nav__link">
+      Configuring PYBOSSA
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../installation/deployment/" title="Deploying PYBOSSA with Nginx and uWsgi" class="md-nav__link">
+      Deploying PYBOSSA with Nginx and uWsgi
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../installation/admin/" title="Administrating PYBOSSA" class="md-nav__link">
+      Administrating PYBOSSA
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../installation/vagrant/" title="Testing PYBOSSA with Vagrant" class="md-nav__link">
+      Testing PYBOSSA with Vagrant
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../installation/security/" title="Security" class="md-nav__link">
+      Security
+    </a>
+  </li>
+
+        
+      </ul>
+    </nav>
+  </li>
+
+    
+      
+      
+      
+
+
+  <li class="md-nav__item md-nav__item--nested">
+    
+      <input class="md-toggle md-nav__toggle" data-md-toggle="nav-3" type="checkbox" id="nav-3">
+    
+    <label class="md-nav__link" for="nav-3">
+      Building a project
+    </label>
+    <nav class="md-nav" data-md-component="collapsible" data-md-level="1">
+      <label class="md-nav__title" for="nav-3">
+        Building a project
+      </label>
+      <ul class="md-nav__list" data-md-scrollfix>
+        
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../build/intro/" title="Introduction" class="md-nav__link">
+      Introduction
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../build/overview/" title="Quickstart: Creating a project" class="md-nav__link">
+      Quickstart: Creating a project
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../build/pbs/" title="Using the command line" class="md-nav__link">
+      Using the command line
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../build/tutorial/" title="Tutorial" class="md-nav__link">
+      Tutorial
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../build/project_settings/" title="Configuring the project" class="md-nav__link">
+      Configuring the project
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../build/webhooks/" title="Real time data analysis" class="md-nav__link">
+      Real time data analysis
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../build/capture/" title="Data capturing: image, video or audio" class="md-nav__link">
+      Data capturing: image, video or audio
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../build/model/" title="Domain model" class="md-nav__link">
+      Domain model
+    </a>
+  </li>
+
+        
+      </ul>
+    </nav>
+  </li>
+
+    
+      
+      
+      
+
+  
+
+
+  <li class="md-nav__item md-nav__item--active md-nav__item--nested">
+    
+      <input class="md-toggle md-nav__toggle" data-md-toggle="nav-4" type="checkbox" id="nav-4" checked>
+    
+    <label class="md-nav__link" for="nav-4">
+      API
+    </label>
+    <nav class="md-nav" data-md-component="collapsible" data-md-level="1">
+      <label class="md-nav__title" for="nav-4">
+        API
+      </label>
+      <ul class="md-nav__list" data-md-scrollfix>
+        
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../intro/" title="Introduction" class="md-nav__link">
+      Introduction
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../crud/" title="CRUD" class="md-nav__link">
+      CRUD
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../fulltextsearch/" title="Full text search" class="md-nav__link">
+      Full text search
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../sso/" title="Disqus Single Sign On" class="md-nav__link">
+      Disqus Single Sign On
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item md-nav__item--nested">
+    
+      <input class="md-toggle md-nav__toggle" data-md-toggle="nav-4-5" type="checkbox" id="nav-4-5">
+    
+    <label class="md-nav__link" for="nav-4-5">
+      Projects
+    </label>
+    <nav class="md-nav" data-md-component="collapsible" data-md-level="2">
+      <label class="md-nav__title" for="nav-4-5">
+        Projects
+      </label>
+      <ul class="md-nav__list" data-md-scrollfix>
+        
+        
+          
+          
+          
+
+
+  <li class="md-nav__item md-nav__item--nested">
+    
+      <input class="md-toggle md-nav__toggle" data-md-toggle="nav-4-5-1" type="checkbox" id="nav-4-5-1">
+    
+    <label class="md-nav__link" for="nav-4-5-1">
+      RESTful API
+    </label>
+    <nav class="md-nav" data-md-component="collapsible" data-md-level="3">
+      <label class="md-nav__title" for="nav-4-5-1">
+        RESTful API
+      </label>
+      <ul class="md-nav__list" data-md-scrollfix>
+        
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../project/filtering/" title="Filtering data to several project IDs" class="md-nav__link">
+      Filtering data to several project IDs
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../project/statistics/" title="Statistics" class="md-nav__link">
+      Statistics
+    </a>
+  </li>
+
+        
+      </ul>
+    </nav>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item md-nav__item--nested">
+    
+      <input class="md-toggle md-nav__toggle" data-md-toggle="nav-4-5-2" type="checkbox" id="nav-4-5-2">
+    
+    <label class="md-nav__link" for="nav-4-5-2">
+      PYBOSSA endpoints
+    </label>
+    <nav class="md-nav" data-md-component="collapsible" data-md-level="3">
+      <label class="md-nav__title" for="nav-4-5-2">
+        PYBOSSA endpoints
+      </label>
+      <ul class="md-nav__list" data-md-scrollfix>
+        
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../project/project/" title="Options" class="md-nav__link">
+      Options
+    </a>
+  </li>
+
+        
+      </ul>
+    </nav>
+  </li>
+
+        
+      </ul>
+    </nav>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item md-nav__item--nested">
+    
+      <input class="md-toggle md-nav__toggle" data-md-toggle="nav-4-6" type="checkbox" id="nav-4-6">
+    
+    <label class="md-nav__link" for="nav-4-6">
+      Tasks
+    </label>
+    <nav class="md-nav" data-md-component="collapsible" data-md-level="2">
+      <label class="md-nav__title" for="nav-4-6">
+        Tasks
+      </label>
+      <ul class="md-nav__list" data-md-scrollfix>
+        
+        
+          
+          
+          
+
+
+  <li class="md-nav__item md-nav__item--nested">
+    
+      <input class="md-toggle md-nav__toggle" data-md-toggle="nav-4-6-1" type="checkbox" id="nav-4-6-1">
+    
+    <label class="md-nav__link" for="nav-4-6-1">
+      RESTful API
+    </label>
+    <nav class="md-nav" data-md-component="collapsible" data-md-level="3">
+      <label class="md-nav__title" for="nav-4-6-1">
+        RESTful API
+      </label>
+      <ul class="md-nav__list" data-md-scrollfix>
+        
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../task/favorites/" title="Favorites" class="md-nav__link">
+      Favorites
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../task/participated/" title="Excluding contributed tasks" class="md-nav__link">
+      Excluding contributed tasks
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../task/newtask/" title="Requesting a task" class="md-nav__link">
+      Requesting a task
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../task/external/" title="External user ID" class="md-nav__link">
+      External user ID
+    </a>
+  </li>
+
+        
+      </ul>
+    </nav>
+  </li>
+
+        
+      </ul>
+    </nav>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item md-nav__item--nested">
+    
+      <input class="md-toggle md-nav__toggle" data-md-toggle="nav-4-7" type="checkbox" id="nav-4-7">
+    
+    <label class="md-nav__link" for="nav-4-7">
+      TaskRuns
+    </label>
+    <nav class="md-nav" data-md-component="collapsible" data-md-level="2">
+      <label class="md-nav__title" for="nav-4-7">
+        TaskRuns
+      </label>
+      <ul class="md-nav__list" data-md-scrollfix>
+        
+        
+          
+          
+          
+
+
+  <li class="md-nav__item md-nav__item--nested">
+    
+      <input class="md-toggle md-nav__toggle" data-md-toggle="nav-4-7-1" type="checkbox" id="nav-4-7-1">
+    
+    <label class="md-nav__link" for="nav-4-7-1">
+      RESTful API
+    </label>
+    <nav class="md-nav" data-md-component="collapsible" data-md-level="3">
+      <label class="md-nav__title" for="nav-4-7-1">
+        RESTful API
+      </label>
+      <ul class="md-nav__list" data-md-scrollfix>
+        
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../taskrun/intro/" title="Attaching files" class="md-nav__link">
+      Attaching files
+    </a>
+  </li>
+
+        
+      </ul>
+    </nav>
+  </li>
+
+        
+      </ul>
+    </nav>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item md-nav__item--nested">
+    
+      <input class="md-toggle md-nav__toggle" data-md-toggle="nav-4-8" type="checkbox" id="nav-4-8">
+    
+    <label class="md-nav__link" for="nav-4-8">
+      User
+    </label>
+    <nav class="md-nav" data-md-component="collapsible" data-md-level="2">
+      <label class="md-nav__title" for="nav-4-8">
+        User
+      </label>
+      <ul class="md-nav__list" data-md-scrollfix>
+        
+        
+          
+          
+          
+
+
+  <li class="md-nav__item md-nav__item--nested">
+    
+      <input class="md-toggle md-nav__toggle" data-md-toggle="nav-4-8-1" type="checkbox" id="nav-4-8-1">
+    
+    <label class="md-nav__link" for="nav-4-8-1">
+      RESTful API
+    </label>
+    <nav class="md-nav" data-md-component="collapsible" data-md-level="3">
+      <label class="md-nav__title" for="nav-4-8-1">
+        RESTful API
+      </label>
+      <ul class="md-nav__list" data-md-scrollfix>
+        
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../user/intro/" title="Intro" class="md-nav__link">
+      Intro
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../user/progress/" title="Project progress" class="md-nav__link">
+      Project progress
+    </a>
+  </li>
+
+        
+      </ul>
+    </nav>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item md-nav__item--nested">
+    
+      <input class="md-toggle md-nav__toggle" data-md-toggle="nav-4-8-2" type="checkbox" id="nav-4-8-2">
+    
+    <label class="md-nav__link" for="nav-4-8-2">
+      PYBOSSA endpoints
+    </label>
+    <nav class="md-nav" data-md-component="collapsible" data-md-level="3">
+      <label class="md-nav__title" for="nav-4-8-2">
+        PYBOSSA endpoints
+      </label>
+      <ul class="md-nav__list" data-md-scrollfix>
+        
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../user/account/" title="Account" class="md-nav__link">
+      Account
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../user/admin/" title="Admins" class="md-nav__link">
+      Admins
+    </a>
+  </li>
+
+        
+      </ul>
+    </nav>
+  </li>
+
+        
+      </ul>
+    </nav>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item md-nav__item--nested">
+    
+      <input class="md-toggle md-nav__toggle" data-md-toggle="nav-4-9" type="checkbox" id="nav-4-9">
+    
+    <label class="md-nav__link" for="nav-4-9">
+      Helping materials
+    </label>
+    <nav class="md-nav" data-md-component="collapsible" data-md-level="2">
+      <label class="md-nav__title" for="nav-4-9">
+        Helping materials
+      </label>
+      <ul class="md-nav__list" data-md-scrollfix>
+        
+        
+          
+          
+          
+
+
+  <li class="md-nav__item md-nav__item--nested">
+    
+      <input class="md-toggle md-nav__toggle" data-md-toggle="nav-4-9-1" type="checkbox" id="nav-4-9-1">
+    
+    <label class="md-nav__link" for="nav-4-9-1">
+      RESTful API
+    </label>
+    <nav class="md-nav" data-md-component="collapsible" data-md-level="3">
+      <label class="md-nav__title" for="nav-4-9-1">
+        RESTful API
+      </label>
+      <ul class="md-nav__list" data-md-scrollfix>
+        
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../helpingmaterial/intro/" title="Attaching files" class="md-nav__link">
+      Attaching files
+    </a>
+  </li>
+
+        
+      </ul>
+    </nav>
+  </li>
+
+        
+      </ul>
+    </nav>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item md-nav__item--nested">
+    
+      <input class="md-toggle md-nav__toggle" data-md-toggle="nav-4-10" type="checkbox" id="nav-4-10">
+    
+    <label class="md-nav__link" for="nav-4-10">
+      Pages
+    </label>
+    <nav class="md-nav" data-md-component="collapsible" data-md-level="2">
+      <label class="md-nav__title" for="nav-4-10">
+        Pages
+      </label>
+      <ul class="md-nav__list" data-md-scrollfix>
+        
+        
+          
+          
+          
+
+
+  <li class="md-nav__item md-nav__item--nested">
+    
+      <input class="md-toggle md-nav__toggle" data-md-toggle="nav-4-10-1" type="checkbox" id="nav-4-10-1">
+    
+    <label class="md-nav__link" for="nav-4-10-1">
+      RESTful API
+    </label>
+    <nav class="md-nav" data-md-component="collapsible" data-md-level="3">
+      <label class="md-nav__title" for="nav-4-10-1">
+        RESTful API
+      </label>
+      <ul class="md-nav__list" data-md-scrollfix>
+        
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../page/intro/" title="Info" class="md-nav__link">
+      Info
+    </a>
+  </li>
+
+        
+      </ul>
+    </nav>
+  </li>
+
+        
+      </ul>
+    </nav>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item md-nav__item--nested">
+    
+      <input class="md-toggle md-nav__toggle" data-md-toggle="nav-4-11" type="checkbox" id="nav-4-11">
+    
+    <label class="md-nav__link" for="nav-4-11">
+      Blog posts
+    </label>
+    <nav class="md-nav" data-md-component="collapsible" data-md-level="2">
+      <label class="md-nav__title" for="nav-4-11">
+        Blog posts
+      </label>
+      <ul class="md-nav__list" data-md-scrollfix>
+        
+        
+          
+          
+          
+
+
+  <li class="md-nav__item md-nav__item--nested">
+    
+      <input class="md-toggle md-nav__toggle" data-md-toggle="nav-4-11-1" type="checkbox" id="nav-4-11-1">
+    
+    <label class="md-nav__link" for="nav-4-11-1">
+      RESTful API
+    </label>
+    <nav class="md-nav" data-md-component="collapsible" data-md-level="3">
+      <label class="md-nav__title" for="nav-4-11-1">
+        RESTful API
+      </label>
+      <ul class="md-nav__list" data-md-scrollfix>
+        
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../blogpost/intro/" title="Attaching files" class="md-nav__link">
+      Attaching files
+    </a>
+  </li>
+
+        
+      </ul>
+    </nav>
+  </li>
+
+        
+      </ul>
+    </nav>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item md-nav__item--nested">
+    
+      <input class="md-toggle md-nav__toggle" data-md-toggle="nav-4-12" type="checkbox" id="nav-4-12">
+    
+    <label class="md-nav__link" for="nav-4-12">
+      Leaderboard
+    </label>
+    <nav class="md-nav" data-md-component="collapsible" data-md-level="2">
+      <label class="md-nav__title" for="nav-4-12">
+        Leaderboard
+      </label>
+      <ul class="md-nav__list" data-md-scrollfix>
+        
+        
+          
+          
+          
+
+
+  <li class="md-nav__item md-nav__item--nested">
+    
+      <input class="md-toggle md-nav__toggle" data-md-toggle="nav-4-12-1" type="checkbox" id="nav-4-12-1">
+    
+    <label class="md-nav__link" for="nav-4-12-1">
+      PYBOSSA endpoints
+    </label>
+    <nav class="md-nav" data-md-component="collapsible" data-md-level="3">
+      <label class="md-nav__title" for="nav-4-12-1">
+        PYBOSSA endpoints
+      </label>
+      <ul class="md-nav__list" data-md-scrollfix>
+        
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../leaderboard/" title="Methods" class="md-nav__link">
+      Methods
+    </a>
+  </li>
+
+        
+      </ul>
+    </nav>
+  </li>
+
+        
+      </ul>
+    </nav>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item md-nav__item--nested">
+    
+      <input class="md-toggle md-nav__toggle" data-md-toggle="nav-4-13" type="checkbox" id="nav-4-13">
+    
+    <label class="md-nav__link" for="nav-4-13">
+      Home page
+    </label>
+    <nav class="md-nav" data-md-component="collapsible" data-md-level="2">
+      <label class="md-nav__title" for="nav-4-13">
+        Home page
+      </label>
+      <ul class="md-nav__list" data-md-scrollfix>
+        
+        
+          
+          
+          
+
+
+  <li class="md-nav__item md-nav__item--nested">
+    
+      <input class="md-toggle md-nav__toggle" data-md-toggle="nav-4-13-1" type="checkbox" id="nav-4-13-1">
+    
+    <label class="md-nav__link" for="nav-4-13-1">
+      PYBOSSA endpoints
+    </label>
+    <nav class="md-nav" data-md-component="collapsible" data-md-level="3">
+      <label class="md-nav__title" for="nav-4-13-1">
+        PYBOSSA endpoints
+      </label>
+      <ul class="md-nav__list" data-md-scrollfix>
+        
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../home/" title="Methods" class="md-nav__link">
+      Methods
+    </a>
+  </li>
+
+        
+      </ul>
+    </nav>
+  </li>
+
+        
+      </ul>
+    </nav>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item md-nav__item--nested">
+    
+      <input class="md-toggle md-nav__toggle" data-md-toggle="nav-4-14" type="checkbox" id="nav-4-14">
+    
+    <label class="md-nav__link" for="nav-4-14">
+      Announcement
+    </label>
+    <nav class="md-nav" data-md-component="collapsible" data-md-level="2">
+      <label class="md-nav__title" for="nav-4-14">
+        Announcement
+      </label>
+      <ul class="md-nav__list" data-md-scrollfix>
+        
+        
+          
+          
+          
+
+
+  <li class="md-nav__item md-nav__item--nested">
+    
+      <input class="md-toggle md-nav__toggle" data-md-toggle="nav-4-14-1" type="checkbox" id="nav-4-14-1">
+    
+    <label class="md-nav__link" for="nav-4-14-1">
+      PYBOSSA endpoints
+    </label>
+    <nav class="md-nav" data-md-component="collapsible" data-md-level="3">
+      <label class="md-nav__title" for="nav-4-14-1">
+        PYBOSSA endpoints
+      </label>
+      <ul class="md-nav__list" data-md-scrollfix>
+        
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../announcement/" title="Methods" class="md-nav__link">
+      Methods
+    </a>
+  </li>
+
+        
+      </ul>
+    </nav>
+  </li>
+
+        
+      </ul>
+    </nav>
+  </li>
+
+        
+          
+          
+          
+
+  
+
+
+  <li class="md-nav__item md-nav__item--active md-nav__item--nested">
+    
+      <input class="md-toggle md-nav__toggle" data-md-toggle="nav-4-15" type="checkbox" id="nav-4-15" checked>
+    
+    <label class="md-nav__link" for="nav-4-15">
+      Categories
+    </label>
+    <nav class="md-nav" data-md-component="collapsible" data-md-level="2">
+      <label class="md-nav__title" for="nav-4-15">
+        Categories
+      </label>
+      <ul class="md-nav__list" data-md-scrollfix>
+        
+        
+          
+          
+          
+
+  
+
+
+  <li class="md-nav__item md-nav__item--active md-nav__item--nested">
+    
+      <input class="md-toggle md-nav__toggle" data-md-toggle="nav-4-15-1" type="checkbox" id="nav-4-15-1" checked>
+    
+    <label class="md-nav__link" for="nav-4-15-1">
+      PYBOSSA endpoints
+    </label>
+    <nav class="md-nav" data-md-component="collapsible" data-md-level="3">
+      <label class="md-nav__title" for="nav-4-15-1">
+        PYBOSSA endpoints
+      </label>
+      <ul class="md-nav__list" data-md-scrollfix>
+        
+        
+          
+          
+          
+
+  
+
+
+  <li class="md-nav__item md-nav__item--active">
+    
+    <input class="md-toggle md-nav__toggle" data-md-toggle="toc" type="checkbox" id="toc">
+    
+    
+      <label class="md-nav__link md-nav__link--active" for="toc">
+        Methods
+      </label>
+    
+    <a href="./" title="Methods" class="md-nav__link md-nav__link--active">
+      Methods
+    </a>
+    
+      
+<nav class="md-nav md-nav--secondary">
+  
+  
+  
+    <label class="md-nav__title" for="toc">Table of contents</label>
+    <ul class="md-nav__list" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#admin-categories" title="Admin categories" class="md-nav__link">
+    Admin categories
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#admin-categories-delete" title="Admin categories delete" class="md-nav__link">
+    Admin categories delete
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#admin-categories-update" title="Admin categories update" class="md-nav__link">
+    Admin categories update
+  </a>
+  
+</li>
+      
+      
+      
+    </ul>
+  
+</nav>
+    
+  </li>
+
+        
+      </ul>
+    </nav>
+  </li>
+
+        
+      </ul>
+    </nav>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item md-nav__item--nested">
+    
+      <input class="md-toggle md-nav__toggle" data-md-toggle="nav-4-16" type="checkbox" id="nav-4-16">
+    
+    <label class="md-nav__link" for="nav-4-16">
+      Administration
+    </label>
+    <nav class="md-nav" data-md-component="collapsible" data-md-level="2">
+      <label class="md-nav__title" for="nav-4-16">
+        Administration
+      </label>
+      <ul class="md-nav__list" data-md-scrollfix>
+        
+        
+          
+          
+          
+
+
+  <li class="md-nav__item md-nav__item--nested">
+    
+      <input class="md-toggle md-nav__toggle" data-md-toggle="nav-4-16-1" type="checkbox" id="nav-4-16-1">
+    
+    <label class="md-nav__link" for="nav-4-16-1">
+      PYBOSSA endpoints
+    </label>
+    <nav class="md-nav" data-md-component="collapsible" data-md-level="3">
+      <label class="md-nav__title" for="nav-4-16-1">
+        PYBOSSA endpoints
+      </label>
+      <ul class="md-nav__list" data-md-scrollfix>
+        
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../admin/dashboard/" title="Dashboard" class="md-nav__link">
+      Dashboard
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../admin/featured/" title="Featured projects" class="md-nav__link">
+      Featured projects
+    </a>
+  </li>
+
+        
+      </ul>
+    </nav>
+  </li>
+
+        
+      </ul>
+    </nav>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item md-nav__item--nested">
+    
+      <input class="md-toggle md-nav__toggle" data-md-toggle="nav-4-17" type="checkbox" id="nav-4-17">
+    
+    <label class="md-nav__link" for="nav-4-17">
+      Help
+    </label>
+    <nav class="md-nav" data-md-component="collapsible" data-md-level="2">
+      <label class="md-nav__title" for="nav-4-17">
+        Help
+      </label>
+      <ul class="md-nav__list" data-md-scrollfix>
+        
+        
+          
+          
+          
+
+
+  <li class="md-nav__item md-nav__item--nested">
+    
+      <input class="md-toggle md-nav__toggle" data-md-toggle="nav-4-17-1" type="checkbox" id="nav-4-17-1">
+    
+    <label class="md-nav__link" for="nav-4-17-1">
+      PYBOSSA endpoints
+    </label>
+    <nav class="md-nav" data-md-component="collapsible" data-md-level="3">
+      <label class="md-nav__title" for="nav-4-17-1">
+        PYBOSSA endpoints
+      </label>
+      <ul class="md-nav__list" data-md-scrollfix>
+        
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../help/" title="Methods" class="md-nav__link">
+      Methods
+    </a>
+  </li>
+
+        
+      </ul>
+    </nav>
+  </li>
+
+        
+      </ul>
+    </nav>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item md-nav__item--nested">
+    
+      <input class="md-toggle md-nav__toggle" data-md-toggle="nav-4-18" type="checkbox" id="nav-4-18">
+    
+    <label class="md-nav__link" for="nav-4-18">
+      Server stats
+    </label>
+    <nav class="md-nav" data-md-component="collapsible" data-md-level="2">
+      <label class="md-nav__title" for="nav-4-18">
+        Server stats
+      </label>
+      <ul class="md-nav__list" data-md-scrollfix>
+        
+        
+          
+          
+          
+
+
+  <li class="md-nav__item md-nav__item--nested">
+    
+      <input class="md-toggle md-nav__toggle" data-md-toggle="nav-4-18-1" type="checkbox" id="nav-4-18-1">
+    
+    <label class="md-nav__link" for="nav-4-18-1">
+      PYBOSSA endpoints
+    </label>
+    <nav class="md-nav" data-md-component="collapsible" data-md-level="3">
+      <label class="md-nav__title" for="nav-4-18-1">
+        PYBOSSA endpoints
+      </label>
+      <ul class="md-nav__list" data-md-scrollfix>
+        
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../stats/" title="Methods" class="md-nav__link">
+      Methods
+    </a>
+  </li>
+
+        
+      </ul>
+    </nav>
+  </li>
+
+        
+      </ul>
+    </nav>
+  </li>
+
+        
+      </ul>
+    </nav>
+  </li>
+
+    
+      
+      
+      
+
+
+  <li class="md-nav__item">
+    <a href="../../installation/vagrant/" title="Testing PYBOSSA with Vagrant" class="md-nav__link">
+      Testing PYBOSSA with Vagrant
+    </a>
+  </li>
+
+    
+      
+      
+      
+
+
+  <li class="md-nav__item md-nav__item--nested">
+    
+      <input class="md-toggle md-nav__toggle" data-md-toggle="nav-6" type="checkbox" id="nav-6">
+    
+    <label class="md-nav__link" for="nav-6">
+      Contributing
+    </label>
+    <nav class="md-nav" data-md-component="collapsible" data-md-level="1">
+      <label class="md-nav__title" for="nav-6">
+        Contributing
+      </label>
+      <ul class="md-nav__list" data-md-scrollfix>
+        
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../contributing/" title="General" class="md-nav__link">
+      General
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../translating/" title="Translating PYBOSSA" class="md-nav__link">
+      Translating PYBOSSA
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../plugins/" title="Writing plugins" class="md-nav__link">
+      Writing plugins
+    </a>
+  </li>
+
+        
+      </ul>
+    </nav>
+  </li>
+
+    
+      
+      
+      
+
+
+  <li class="md-nav__item">
+    <a href="../../gdpr/" title="GDPR" class="md-nav__link">
+      GDPR
+    </a>
+  </li>
+
+    
+      
+      
+      
+
+
+  <li class="md-nav__item">
+    <a href="../../faq/" title="FAQ" class="md-nav__link">
+      FAQ
+    </a>
+  </li>
+
+    
+  </ul>
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+            
+              <div class="md-sidebar md-sidebar--secondary" data-md-component="toc">
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+<nav class="md-nav md-nav--secondary">
+  
+  
+  
+    <label class="md-nav__title" for="toc">Table of contents</label>
+    <ul class="md-nav__list" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#admin-categories" title="Admin categories" class="md-nav__link">
+    Admin categories
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#admin-categories-delete" title="Admin categories delete" class="md-nav__link">
+    Admin categories delete
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#admin-categories-update" title="Admin categories update" class="md-nav__link">
+    Admin categories update
+  </a>
+  
+</li>
+      
+      
+      
+    </ul>
+  
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+          
+          <div class="md-content">
+            <article class="md-content__inner md-typeset">
+              
+                
+                
+                  <h1>Methods</h1>
+                
+                <h3 id="admin-categories">Admin categories<a class="headerlink" href="#admin-categories" title="Permanent link">&para;</a></h3>
+<p><strong>Endpoint: /admin/categories</strong></p>
+<p><em>Allowed methods</em>: <strong>GET/POST</strong></p>
+<p><strong>GET</strong></p>
+<p>It lists all the available categories. It returns a JSON object with the
+following information:</p>
+<ul>
+<li><strong>categories</strong>: A list of categories.</li>
+<li><strong>form</strong>: A form with the CSRF key to add a new category.</li>
+<li><strong>n_projects_per_category</strong>: A dictionary with the number of
+    projects per category.</li>
+</ul>
+<p><strong>Example output</strong></p>
+<table class="codehilitetable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span> 1
+ 2
+ 3
+ 4
+ 5
+ 6
+ 7
+ 8
+ 9
+10
+11
+12
+13
+14
+15
+16
+17
+18
+19
+20
+21
+22
+23
+24
+25
+26
+27
+28
+29
+30
+31</pre></div></td><td class="code"><div class="codehilite"><pre><span></span><span class="p">{</span>
+  <span class="nt">&quot;categories&quot;</span><span class="p">:</span> <span class="p">[</span>
+    <span class="p">{</span>
+      <span class="nt">&quot;created&quot;</span><span class="p">:</span> <span class="kc">null</span><span class="p">,</span>
+      <span class="nt">&quot;description&quot;</span><span class="p">:</span> <span class="s2">&quot;Social projects&quot;</span><span class="p">,</span>
+      <span class="nt">&quot;id&quot;</span><span class="p">:</span> <span class="mi">2</span><span class="p">,</span>
+      <span class="nt">&quot;name&quot;</span><span class="p">:</span> <span class="s2">&quot;Social&quot;</span><span class="p">,</span>
+      <span class="nt">&quot;short_name&quot;</span><span class="p">:</span> <span class="s2">&quot;social&quot;</span>
+    <span class="p">},</span>
+    <span class="p">{</span>
+      <span class="nt">&quot;created&quot;</span><span class="p">:</span> <span class="s2">&quot;2013-06-18T11:13:44.789149&quot;</span><span class="p">,</span>
+      <span class="nt">&quot;description&quot;</span><span class="p">:</span> <span class="s2">&quot;Art projects&quot;</span><span class="p">,</span>
+      <span class="nt">&quot;id&quot;</span><span class="p">:</span> <span class="mi">3</span><span class="p">,</span>
+      <span class="nt">&quot;name&quot;</span><span class="p">:</span> <span class="s2">&quot;Art&quot;</span><span class="p">,</span>
+      <span class="nt">&quot;short_name&quot;</span><span class="p">:</span> <span class="s2">&quot;art&quot;</span>
+    <span class="p">},</span>
+  <span class="p">],</span>
+  <span class="nt">&quot;form&quot;</span><span class="p">:</span> <span class="p">{</span>
+    <span class="nt">&quot;csrf&quot;</span><span class="p">:</span> <span class="s2">&quot;token&quot;</span><span class="p">,</span>
+    <span class="nt">&quot;description&quot;</span><span class="p">:</span> <span class="kc">null</span><span class="p">,</span>
+    <span class="nt">&quot;errors&quot;</span><span class="p">:</span> <span class="p">{},</span>
+    <span class="nt">&quot;id&quot;</span><span class="p">:</span> <span class="kc">null</span><span class="p">,</span>
+    <span class="nt">&quot;name&quot;</span><span class="p">:</span> <span class="kc">null</span>
+  <span class="p">},</span>
+  <span class="nt">&quot;n_projects_per_category&quot;</span><span class="p">:</span> <span class="p">{</span>
+    <span class="nt">&quot;art&quot;</span><span class="p">:</span> <span class="mi">41</span><span class="p">,</span>
+    <span class="nt">&quot;social&quot;</span><span class="p">:</span> <span class="mi">182</span>
+  <span class="p">},</span>
+  <span class="nt">&quot;template&quot;</span><span class="p">:</span> <span class="s2">&quot;admin/categories.html&quot;</span><span class="p">,</span>
+  <span class="nt">&quot;title&quot;</span><span class="p">:</span> <span class="s2">&quot;Categories&quot;</span>
+<span class="p">}</span>
+</pre></div>
+</td></tr></table>
+
+<p><strong>POST</strong></p>
+<p>It returns the same output as before, but if the form is valid, it will
+return the new created Category. Use the CSRFToken for submitting the
+data.</p>
+<ul>
+<li><strong>categories</strong>: A list of categories.</li>
+<li><strong>form</strong>: A form with the CSRF key to add a new category.</li>
+<li><strong>n_projects_per_category</strong>: A dictionary with the number of
+    projects per category.</li>
+</ul>
+<p><strong>Example output</strong></p>
+<table class="codehilitetable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span> 1
+ 2
+ 3
+ 4
+ 5
+ 6
+ 7
+ 8
+ 9
+10
+11
+12
+13
+14
+15
+16
+17
+18
+19
+20
+21
+22
+23
+24
+25
+26
+27
+28
+29
+30
+31
+32
+33
+34
+35
+36
+37
+38
+39</pre></div></td><td class="code"><div class="codehilite"><pre><span></span><span class="p">{</span>
+  <span class="nt">&quot;categories&quot;</span><span class="p">:</span> <span class="p">[</span>
+    <span class="p">{</span>
+      <span class="nt">&quot;created&quot;</span><span class="p">:</span> <span class="kc">null</span><span class="p">,</span>
+      <span class="nt">&quot;description&quot;</span><span class="p">:</span> <span class="s2">&quot;Social projects&quot;</span><span class="p">,</span>
+      <span class="nt">&quot;id&quot;</span><span class="p">:</span> <span class="mi">2</span><span class="p">,</span>
+      <span class="nt">&quot;name&quot;</span><span class="p">:</span> <span class="s2">&quot;Social&quot;</span><span class="p">,</span>
+      <span class="nt">&quot;short_name&quot;</span><span class="p">:</span> <span class="s2">&quot;social&quot;</span>
+    <span class="p">},</span>
+    <span class="p">{</span>
+      <span class="nt">&quot;created&quot;</span><span class="p">:</span> <span class="s2">&quot;2013-06-18T11:13:44.789149&quot;</span><span class="p">,</span>
+      <span class="nt">&quot;description&quot;</span><span class="p">:</span> <span class="s2">&quot;Art projects&quot;</span><span class="p">,</span>
+      <span class="nt">&quot;id&quot;</span><span class="p">:</span> <span class="mi">3</span><span class="p">,</span>
+      <span class="nt">&quot;name&quot;</span><span class="p">:</span> <span class="s2">&quot;Art&quot;</span><span class="p">,</span>
+      <span class="nt">&quot;short_name&quot;</span><span class="p">:</span> <span class="s2">&quot;art&quot;</span>
+    <span class="p">},</span>
+    <span class="p">{</span>
+      <span class="nt">&quot;created&quot;</span><span class="p">:</span> <span class="s2">&quot;now&quot;</span><span class="p">,</span>
+      <span class="nt">&quot;description&quot;</span><span class="p">:</span> <span class="s2">&quot;new&quot;</span><span class="p">,</span>
+      <span class="nt">&quot;id&quot;</span><span class="p">:</span> <span class="mi">4</span><span class="p">,</span>
+      <span class="nt">&quot;name&quot;</span><span class="p">:</span> <span class="s2">&quot;new&quot;</span><span class="p">,</span>
+      <span class="nt">&quot;short_name&quot;</span><span class="p">:</span> <span class="s2">&quot;new&quot;</span>
+    <span class="p">},</span>
+
+  <span class="p">],</span>
+  <span class="nt">&quot;form&quot;</span><span class="p">:</span> <span class="p">{</span>
+    <span class="nt">&quot;csrf&quot;</span><span class="p">:</span> <span class="s2">&quot;token&quot;</span><span class="p">,</span>
+    <span class="nt">&quot;description&quot;</span><span class="p">:</span> <span class="s2">&quot;new&quot;</span><span class="p">,</span>
+    <span class="nt">&quot;errors&quot;</span><span class="p">:</span> <span class="p">{},</span>
+    <span class="nt">&quot;name&quot;</span><span class="p">:</span> <span class="s2">&quot;new&quot;</span>
+  <span class="p">},</span>
+  <span class="nt">&quot;n_projects_per_category&quot;</span><span class="p">:</span> <span class="p">{</span>
+    <span class="nt">&quot;art&quot;</span><span class="p">:</span> <span class="mi">41</span><span class="p">,</span>
+    <span class="nt">&quot;social&quot;</span><span class="p">:</span> <span class="mi">182</span><span class="p">,</span>
+    <span class="nt">&quot;new&quot;</span><span class="p">:</span> <span class="mi">0</span>
+  <span class="p">},</span>
+  <span class="nt">&quot;template&quot;</span><span class="p">:</span> <span class="s2">&quot;admin/categories.html&quot;</span><span class="p">,</span>
+  <span class="nt">&quot;title&quot;</span><span class="p">:</span> <span class="s2">&quot;Categories&quot;</span>
+<span class="p">}</span>
+</pre></div>
+</td></tr></table>
+
+<h3 id="admin-categories-delete">Admin categories delete<a class="headerlink" href="#admin-categories-delete" title="Permanent link">&para;</a></h3>
+<p><strong>Endpoint: /admin/categories/del/&lt;int:id&gt;</strong></p>
+<p><em>Allowed methods</em>: <strong>GET/POST</strong></p>
+<p><strong>GET</strong></p>
+<p>It shows the category that will be deleted. It gives you the CSRF token
+to do a POST and delete it.</p>
+<ul>
+<li><strong>category</strong>: The category to be deleted.</li>
+<li><strong>form</strong>: A form with the CSRF key to add a new category.</li>
+</ul>
+<p><strong>Example output</strong></p>
+<table class="codehilitetable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span> 1
+ 2
+ 3
+ 4
+ 5
+ 6
+ 7
+ 8
+ 9
+10
+11
+12
+13
+14</pre></div></td><td class="code"><div class="codehilite"><pre><span></span><span class="p">{</span>
+  <span class="nt">&quot;category&quot;</span><span class="p">:</span> <span class="p">{</span>
+    <span class="nt">&quot;created&quot;</span><span class="p">:</span> <span class="s2">&quot;2017-01-24T13:08:09.873071&quot;</span><span class="p">,</span>
+    <span class="nt">&quot;description&quot;</span><span class="p">:</span> <span class="s2">&quot;new&quot;</span><span class="p">,</span>
+    <span class="nt">&quot;id&quot;</span><span class="p">:</span> <span class="mi">9</span><span class="p">,</span>
+    <span class="nt">&quot;name&quot;</span><span class="p">:</span> <span class="s2">&quot;new&quot;</span><span class="p">,</span>
+    <span class="nt">&quot;short_name&quot;</span><span class="p">:</span> <span class="s2">&quot;new&quot;</span>
+  <span class="p">},</span>
+  <span class="nt">&quot;form&quot;</span><span class="p">:</span> <span class="p">{</span>
+    <span class="nt">&quot;csrf&quot;</span><span class="p">:</span> <span class="s2">&quot;token&quot;</span><span class="p">,</span>
+  <span class="p">},</span>
+  <span class="nt">&quot;template&quot;</span><span class="p">:</span> <span class="s2">&quot;admin/del_category.html&quot;</span><span class="p">,</span>
+  <span class="nt">&quot;title&quot;</span><span class="p">:</span> <span class="s2">&quot;Delete Category&quot;</span>
+<span class="p">}</span>
+</pre></div>
+</td></tr></table>
+
+<p><strong>POST</strong></p>
+<p>It shows the category that will be deleted. It gives you the CSRF token
+to do a POST and delete it.</p>
+<ul>
+<li><strong>flash</strong>: A human readable message about the action.</li>
+<li><strong>next</strong>: The next URL</li>
+<li><strong>status</strong>: The status of the POST.</li>
+</ul>
+<p><strong>Example output</strong></p>
+<table class="codehilitetable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span>1
+2
+3
+4
+5</pre></div></td><td class="code"><div class="codehilite"><pre><span></span><span class="p">{</span>
+  <span class="nt">&quot;flash&quot;</span><span class="p">:</span> <span class="s2">&quot;Category deleted&quot;</span><span class="p">,</span>
+  <span class="nt">&quot;next&quot;</span><span class="p">:</span> <span class="s2">&quot;/admin/categories&quot;</span><span class="p">,</span>
+  <span class="nt">&quot;status&quot;</span><span class="p">:</span> <span class="s2">&quot;success&quot;</span>
+<span class="p">}</span>
+</pre></div>
+</td></tr></table>
+
+<h3 id="admin-categories-update">Admin categories update<a class="headerlink" href="#admin-categories-update" title="Permanent link">&para;</a></h3>
+<p><strong>Endpoint: /admin/categories/update/&lt;int:id&gt;</strong></p>
+<p><em>Allowed methods</em>: <strong>GET/POST</strong></p>
+<p><strong>GET</strong></p>
+<p>It shows the category that will be updated. It gives you the CSRF token
+to do a POST and update it.</p>
+<ul>
+<li><strong>category</strong>: The category to be deleted.</li>
+<li><strong>form</strong>: A form with the CSRF key to add a new category.</li>
+</ul>
+<p><strong>Example output</strong></p>
+<table class="codehilitetable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span> 1
+ 2
+ 3
+ 4
+ 5
+ 6
+ 7
+ 8
+ 9
+10
+11
+12
+13
+14
+15
+16
+17
+18</pre></div></td><td class="code"><div class="codehilite"><pre><span></span><span class="p">{</span>
+  <span class="nt">&quot;category&quot;</span><span class="p">:</span> <span class="p">{</span>
+    <span class="nt">&quot;created&quot;</span><span class="p">:</span> <span class="s2">&quot;2017-01-24T13:08:09.873071&quot;</span><span class="p">,</span>
+    <span class="nt">&quot;description&quot;</span><span class="p">:</span> <span class="s2">&quot;new&quot;</span><span class="p">,</span>
+    <span class="nt">&quot;id&quot;</span><span class="p">:</span> <span class="mi">9</span><span class="p">,</span>
+    <span class="nt">&quot;name&quot;</span><span class="p">:</span> <span class="s2">&quot;new&quot;</span><span class="p">,</span>
+    <span class="nt">&quot;short_name&quot;</span><span class="p">:</span> <span class="s2">&quot;new&quot;</span>
+  <span class="p">},</span>
+  <span class="nt">&quot;form&quot;</span><span class="p">:</span> <span class="p">{</span>
+    <span class="nt">&quot;csrf&quot;</span><span class="p">:</span> <span class="s2">&quot;token&quot;</span><span class="p">,</span>
+    <span class="err">&#39;description&#39;:</span> <span class="err">&#39;new&#39;,</span>
+    <span class="err">&#39;errors&#39;:</span> <span class="err">{</span><span class="p">},</span>
+    <span class="err">&#39;id&#39;:</span> <span class="err">9,</span>
+    <span class="err">&#39;name&#39;:</span> <span class="err">&#39;new&#39;</span>
+  <span class="p">}</span><span class="err">,</span>
+  <span class="s2">&quot;template&quot;</span><span class="err">:</span> <span class="s2">&quot;admin/update_category.html&quot;</span><span class="err">,</span>
+  <span class="s2">&quot;title&quot;</span><span class="err">:</span> <span class="s2">&quot;Update Category&quot;</span>
+<span class="err">}</span>
+</pre></div>
+</td></tr></table>
+
+<p><strong>POST</strong></p>
+<p>It updates the category. Use the CSRF token and form fields from the
+previous action to update it.</p>
+<ul>
+<li><strong>flash</strong>: A human readable message about the action.</li>
+<li><strong>next</strong>: The next URL</li>
+<li><strong>status</strong>: The status of the POST.</li>
+</ul>
+<p><strong>Example output</strong></p>
+<table class="codehilitetable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span>1
+2
+3
+4
+5</pre></div></td><td class="code"><div class="codehilite"><pre><span></span><span class="p">{</span>
+  <span class="nt">&quot;flash&quot;</span><span class="p">:</span> <span class="s2">&quot;Category updated&quot;</span><span class="p">,</span>
+  <span class="nt">&quot;next&quot;</span><span class="p">:</span> <span class="s2">&quot;/admin/categories&quot;</span><span class="p">,</span>
+  <span class="nt">&quot;status&quot;</span><span class="p">:</span> <span class="s2">&quot;success&quot;</span>
+<span class="p">}</span>
+</pre></div>
+</td></tr></table>
+                
+                  
+                
+              
+              
+                
+              
+            </article>
+          </div>
+        </div>
+      </main>
+      
+        
+<footer class="md-footer">
+  
+    <div class="md-footer-nav">
+      <nav class="md-footer-nav__inner md-grid">
+        
+          <a href="../announcement/" title="Methods" class="md-flex md-footer-nav__link md-footer-nav__link--prev" rel="prev">
+            <div class="md-flex__cell md-flex__cell--shrink">
+              <i class="md-icon md-icon--arrow-back md-footer-nav__button"></i>
+            </div>
+            <div class="md-flex__cell md-flex__cell--stretch md-footer-nav__title">
+              <span class="md-flex__ellipsis">
+                <span class="md-footer-nav__direction">
+                  Previous
+                </span>
+                Methods
+              </span>
+            </div>
+          </a>
+        
+        
+          <a href="../admin/dashboard/" title="Dashboard" class="md-flex md-footer-nav__link md-footer-nav__link--next" rel="next">
+            <div class="md-flex__cell md-flex__cell--stretch md-footer-nav__title">
+              <span class="md-flex__ellipsis">
+                <span class="md-footer-nav__direction">
+                  Next
+                </span>
+                Dashboard
+              </span>
+            </div>
+            <div class="md-flex__cell md-flex__cell--shrink">
+              <i class="md-icon md-icon--arrow-forward md-footer-nav__button"></i>
+            </div>
+          </a>
+        
+      </nav>
+    </div>
+  
+  <div class="md-footer-meta md-typeset">
+    <div class="md-footer-meta__inner md-grid">
+      <div class="md-footer-copyright">
+        
+          <div class="md-footer-copyright__highlight">
+            Copyright © 2017 <a href="https://scifabric.com">Scifabric</a>
+          </div>
+        
+        powered by
+        <a href="http://www.mkdocs.org" title="MkDocs">MkDocs</a>
+        and
+        <a href="http://squidfunk.github.io/mkdocs-material/" title="Material for MkDocs">
+          Material for MkDocs</a>
+      </div>
+      
+        
+  <div class="md-footer-social">
+    
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    
+      <a href="https://github.com/Scifabric" class="md-footer-social__link fa fa-github"></a>
+    
+      <a href="https://twitter.com/Scifabric" class="md-footer-social__link fa fa-twitter"></a>
+    
+  </div>
+
+      
+    </div>
+  </div>
+</footer>
+      
+    </div>
+    
+      <script src="../../assets/javascripts/application-946997f430.js"></script>
+      
+      
+      <script>app.initialize({version:"0.16.3",url:{base:"../.."}})</script>
+      
+    
+    
+      
+      <script>!function(e,t,a,n,o,c,i){e.GoogleAnalyticsObject=o,e[o]=e[o]||function(){(e[o].q=e[o].q||[]).push(arguments)},e[o].l=1*new Date,c=t.createElement(a),i=t.getElementsByTagName(a)[0],c.async=1,c.src=n,i.parentNode.insertBefore(c,i)}(window,document,"script","https://www.google-analytics.com/analytics.js","ga"),ga("create","UA-49052879-1","auto"),ga("set","anonymizeIp",!0),ga("send","pageview");var links=document.getElementsByTagName("a");Array.prototype.map.call(links,function(e){e.host!=document.location.host&&e.addEventListener("click",function(){var t=e.getAttribute("data-md-action")||"follow";ga("send","event","outbound",t,e.href)})});var query=document.forms.search.query;query.addEventListener("blur",function(){if(this.value){var e=document.location.pathname;ga("send","pageview",e+"?q="+this.value)}})</script>
+      
+    
+  </body>
+</html>

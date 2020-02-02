@@ -1,0 +1,2262 @@
+
+<!DOCTYPE html>
+<html lang="en" class="no-js">
+  <head>
+    
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width,initial-scale=1">
+      <meta http-equiv="x-ua-compatible" content="ie=edge">
+      
+      
+      
+      
+        <meta name="lang:clipboard.copy" content="Copy to clipboard">
+      
+        <meta name="lang:clipboard.copied" content="Copied to clipboard">
+      
+        <meta name="lang:search.languages" content="">
+      
+        <meta name="lang:search.result.none" content="No matching documents">
+      
+        <meta name="lang:search.result.one" content="1 matching document">
+      
+        <meta name="lang:search.result.other" content="# matching documents">
+      
+        <meta name="lang:search.tokenizer" content="[\s\-]+">
+      
+      
+        <link rel="shortcut icon" href="../../images/favicon.ico">
+      
+      <meta name="generator" content="mkdocs-0.16.3, mkdocs-material-1.12.1">
+    
+    
+      
+        <title>Using the command line - PYBOSSA Documentation</title>
+      
+    
+    
+      <script src="../../assets/javascripts/modernizr-e826f8942a.js"></script>
+    
+    
+      <link rel="stylesheet" href="../../assets/stylesheets/application-6c39f5478a.css">
+      
+        <link rel="stylesheet" href="../../assets/stylesheets/application-23f75ab9c7.palette.css">
+      
+    
+    
+      
+        
+        
+        
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Source Sans Pro:300,400,400i,700|Roboto+Mono">
+        <style>body,input{font-family:"Source Sans Pro","Helvetica Neue",Helvetica,Arial,sans-serif}code,kbd,pre{font-family:"Roboto Mono","Courier New",Courier,monospace}</style>
+      
+      <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
+    
+    
+    
+  </head>
+  
+  
+  
+  
+    <body data-md-color-primary="#087da1" data-md-color-accent="#00a889">
+  
+    <svg class="md-svg">
+      <defs>
+        
+        
+          <svg xmlns="http://www.w3.org/2000/svg" width="416" height="448" viewBox="0 0 416 448" id="github"><path fill="currentColor" d="M160 304q0 10-3.125 20.5t-10.75 19T128 352t-18.125-8.5-10.75-19T96 304t3.125-20.5 10.75-19T128 256t18.125 8.5 10.75 19T160 304zm160 0q0 10-3.125 20.5t-10.75 19T288 352t-18.125-8.5-10.75-19T256 304t3.125-20.5 10.75-19T288 256t18.125 8.5 10.75 19T320 304zm40 0q0-30-17.25-51T296 232q-10.25 0-48.75 5.25Q229.5 240 208 240t-39.25-2.75Q130.75 232 120 232q-29.5 0-46.75 21T56 304q0 22 8 38.375t20.25 25.75 30.5 15 35 7.375 37.25 1.75h42q20.5 0 37.25-1.75t35-7.375 30.5-15 20.25-25.75T360 304zm56-44q0 51.75-15.25 82.75-9.5 19.25-26.375 33.25t-35.25 21.5-42.5 11.875-42.875 5.5T212 416q-19.5 0-35.5-.75t-36.875-3.125-38.125-7.5-34.25-12.875T37 371.5t-21.5-28.75Q0 312 0 260q0-59.25 34-99-6.75-20.5-6.75-42.5 0-29 12.75-54.5 27 0 47.5 9.875t47.25 30.875Q171.5 96 212 96q37 0 70 8 26.25-20.5 46.75-30.25T376 64q12.75 25.5 12.75 54.5 0 21.75-6.75 42 34 40 34 99.5z"/></svg>
+        
+      </defs>
+    </svg>
+    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="drawer">
+    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="search">
+    <label class="md-overlay" data-md-component="overlay" for="drawer"></label>
+    
+      <header class="md-header" data-md-component="header">
+  <nav class="md-header-nav md-grid">
+    <div class="md-flex">
+      <div class="md-flex__cell md-flex__cell--shrink">
+        <a href="../.." title="PYBOSSA Documentation" class="md-header-nav__button md-logo">
+          
+            <i class="md-icon md-icon--home"></i>
+          
+        </a>
+      </div>
+      <div class="md-flex__cell md-flex__cell--shrink">
+        <label class="md-icon md-icon--menu md-header-nav__button" for="drawer"></label>
+      </div>
+      <div class="md-flex__cell md-flex__cell--stretch">
+        <span class="md-flex__ellipsis md-header-nav__title">
+          
+            
+              
+                <span class="md-header-nav__parent">
+                  Building a project
+                </span>
+              
+            
+            Using the command line
+          
+        </span>
+      </div>
+      <div class="md-flex__cell md-flex__cell--shrink">
+        
+          <label class="md-icon md-icon--search md-header-nav__button" for="search"></label>
+          
+<div class="md-search" data-md-component="search" role="dialog">
+  <label class="md-search__overlay" for="search"></label>
+  <div class="md-search__inner">
+    <form class="md-search__form" name="search">
+      <input type="text" class="md-search__input" name="query" required placeholder="Search" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="query">
+      <label class="md-icon md-search__icon" for="search"></label>
+      <button type="reset" class="md-icon md-search__icon" data-md-component="reset">&#xE5CD;</button>
+    </form>
+    <div class="md-search__output">
+      <div class="md-search__scrollwrap" data-md-scrollfix>
+        <div class="md-search-result" data-md-component="result">
+          <div class="md-search-result__meta">
+            Type to start searching
+          </div>
+          <ol class="md-search-result__list"></ol>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+        
+      </div>
+      
+        <div class="md-flex__cell md-flex__cell--shrink">
+          <div class="md-header-nav__source">
+            
+
+
+  
+
+
+  <a href="https://github.com/Scifabric/pybossa" title="Go to repository" class="md-source" data-md-source="github">
+    
+      <div class="md-source__icon">
+        <svg viewBox="0 0 24 24" width="24" height="24">
+          <use xlink:href="#github" width="24" height="24"></use>
+        </svg>
+      </div>
+    
+    <div class="md-source__repository">
+      Scifabric/pybossa
+    </div>
+  </a>
+
+          </div>
+        </div>
+      
+    </div>
+  </nav>
+</header>
+    
+    <div class="md-container">
+      
+      
+      
+      <main class="md-main">
+        <div class="md-main__inner md-grid" data-md-component="container">
+          
+            
+              <div class="md-sidebar md-sidebar--primary" data-md-component="navigation">
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    <nav class="md-nav md-nav--primary" data-md-level="0">
+  <label class="md-nav__title md-nav__title--site" for="drawer">
+    <span class="md-nav__button md-logo">
+      
+        <i class="md-icon md-icon--home"></i>
+      
+    </span>
+    PYBOSSA Documentation
+  </label>
+  
+    <div class="md-nav__source">
+      
+
+
+  
+
+
+  <a href="https://github.com/Scifabric/pybossa" title="Go to repository" class="md-source" data-md-source="github">
+    
+      <div class="md-source__icon">
+        <svg viewBox="0 0 24 24" width="24" height="24">
+          <use xlink:href="#github" width="24" height="24"></use>
+        </svg>
+      </div>
+    
+    <div class="md-source__repository">
+      Scifabric/pybossa
+    </div>
+  </a>
+
+    </div>
+  
+  <ul class="md-nav__list" data-md-scrollfix>
+    
+      
+      
+      
+
+
+  <li class="md-nav__item">
+    <a href="../.." title="Home" class="md-nav__link">
+      Home
+    </a>
+  </li>
+
+    
+      
+      
+      
+
+
+  <li class="md-nav__item md-nav__item--nested">
+    
+      <input class="md-toggle md-nav__toggle" data-md-toggle="nav-2" type="checkbox" id="nav-2">
+    
+    <label class="md-nav__link" for="nav-2">
+      Installation
+    </label>
+    <nav class="md-nav" data-md-component="collapsible" data-md-level="1">
+      <label class="md-nav__title" for="nav-2">
+        Installation
+      </label>
+      <ul class="md-nav__list" data-md-scrollfix>
+        
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../installation/gettingstarted/" title="Getting started" class="md-nav__link">
+      Getting started
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../installation/guide/" title="Installing the server" class="md-nav__link">
+      Installing the server
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../installation/configuration/" title="Configuring PYBOSSA" class="md-nav__link">
+      Configuring PYBOSSA
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../installation/deployment/" title="Deploying PYBOSSA with Nginx and uWsgi" class="md-nav__link">
+      Deploying PYBOSSA with Nginx and uWsgi
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../installation/admin/" title="Administrating PYBOSSA" class="md-nav__link">
+      Administrating PYBOSSA
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../installation/vagrant/" title="Testing PYBOSSA with Vagrant" class="md-nav__link">
+      Testing PYBOSSA with Vagrant
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../installation/security/" title="Security" class="md-nav__link">
+      Security
+    </a>
+  </li>
+
+        
+      </ul>
+    </nav>
+  </li>
+
+    
+      
+      
+      
+
+  
+
+
+  <li class="md-nav__item md-nav__item--active md-nav__item--nested">
+    
+      <input class="md-toggle md-nav__toggle" data-md-toggle="nav-3" type="checkbox" id="nav-3" checked>
+    
+    <label class="md-nav__link" for="nav-3">
+      Building a project
+    </label>
+    <nav class="md-nav" data-md-component="collapsible" data-md-level="1">
+      <label class="md-nav__title" for="nav-3">
+        Building a project
+      </label>
+      <ul class="md-nav__list" data-md-scrollfix>
+        
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../intro/" title="Introduction" class="md-nav__link">
+      Introduction
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../overview/" title="Quickstart: Creating a project" class="md-nav__link">
+      Quickstart: Creating a project
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+  
+
+
+  <li class="md-nav__item md-nav__item--active">
+    
+    <input class="md-toggle md-nav__toggle" data-md-toggle="toc" type="checkbox" id="toc">
+    
+      
+    
+    
+      <label class="md-nav__link md-nav__link--active" for="toc">
+        Using the command line
+      </label>
+    
+    <a href="./" title="Using the command line" class="md-nav__link md-nav__link--active">
+      Using the command line
+    </a>
+    
+      
+<nav class="md-nav md-nav--secondary">
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="toc">Table of contents</label>
+    <ul class="md-nav__list" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#pbs" title="PBS" class="md-nav__link">
+    PBS
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#installation" title="Installation" class="md-nav__link">
+    Installation
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#configuring-pbs" title="Configuring PBS" class="md-nav__link">
+    Configuring PBS
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#project" title="Project" class="md-nav__link">
+    Project
+  </a>
+  
+    <nav class="md-nav">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#creating-a-project" title="Creating a project" class="md-nav__link">
+    Creating a project
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#updating-templates" title="Updating templates" class="md-nav__link">
+    Updating templates
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#using-an-external-javascript-file" title="Using an external JavaScript file" class="md-nav__link">
+    Using an external JavaScript file
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#auto-updating-while-developing-a-pybossa-project" title="Auto-updating while developing a PYBOSSA project" class="md-nav__link">
+    Auto-updating while developing a PYBOSSA project
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#tasks" title="Tasks" class="md-nav__link">
+    Tasks
+  </a>
+  
+    <nav class="md-nav">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#adding-tasks-to-a-project" title="Adding tasks to a project" class="md-nav__link">
+    Adding tasks to a project
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#updating-tasks-redundancy-from-a-project" title="Updating tasks redundancy from a project" class="md-nav__link">
+    Updating tasks redundancy from a project
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#deleting-tasks-from-a-project" title="Deleting tasks from a project" class="md-nav__link">
+    Deleting tasks from a project
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#getting-out-of-the-api-context" title="Getting out of the API context" class="md-nav__link">
+    Getting out of the API context
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#helping-materials" title="Helping Materials" class="md-nav__link">
+    Helping Materials
+  </a>
+  
+    <nav class="md-nav">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#adding-helping-materials-to-a-project" title="Adding helping materials to a project" class="md-nav__link">
+    Adding helping materials to a project
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+      
+      
+    </ul>
+  
+</nav>
+    
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../tutorial/" title="Tutorial" class="md-nav__link">
+      Tutorial
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../project_settings/" title="Configuring the project" class="md-nav__link">
+      Configuring the project
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../webhooks/" title="Real time data analysis" class="md-nav__link">
+      Real time data analysis
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../capture/" title="Data capturing: image, video or audio" class="md-nav__link">
+      Data capturing: image, video or audio
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../model/" title="Domain model" class="md-nav__link">
+      Domain model
+    </a>
+  </li>
+
+        
+      </ul>
+    </nav>
+  </li>
+
+    
+      
+      
+      
+
+
+  <li class="md-nav__item md-nav__item--nested">
+    
+      <input class="md-toggle md-nav__toggle" data-md-toggle="nav-4" type="checkbox" id="nav-4">
+    
+    <label class="md-nav__link" for="nav-4">
+      API
+    </label>
+    <nav class="md-nav" data-md-component="collapsible" data-md-level="1">
+      <label class="md-nav__title" for="nav-4">
+        API
+      </label>
+      <ul class="md-nav__list" data-md-scrollfix>
+        
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../api/intro/" title="Introduction" class="md-nav__link">
+      Introduction
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../api/crud/" title="CRUD" class="md-nav__link">
+      CRUD
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../api/fulltextsearch/" title="Full text search" class="md-nav__link">
+      Full text search
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../api/sso/" title="Disqus Single Sign On" class="md-nav__link">
+      Disqus Single Sign On
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item md-nav__item--nested">
+    
+      <input class="md-toggle md-nav__toggle" data-md-toggle="nav-4-5" type="checkbox" id="nav-4-5">
+    
+    <label class="md-nav__link" for="nav-4-5">
+      Projects
+    </label>
+    <nav class="md-nav" data-md-component="collapsible" data-md-level="2">
+      <label class="md-nav__title" for="nav-4-5">
+        Projects
+      </label>
+      <ul class="md-nav__list" data-md-scrollfix>
+        
+        
+          
+          
+          
+
+
+  <li class="md-nav__item md-nav__item--nested">
+    
+      <input class="md-toggle md-nav__toggle" data-md-toggle="nav-4-5-1" type="checkbox" id="nav-4-5-1">
+    
+    <label class="md-nav__link" for="nav-4-5-1">
+      RESTful API
+    </label>
+    <nav class="md-nav" data-md-component="collapsible" data-md-level="3">
+      <label class="md-nav__title" for="nav-4-5-1">
+        RESTful API
+      </label>
+      <ul class="md-nav__list" data-md-scrollfix>
+        
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../api/project/filtering/" title="Filtering data to several project IDs" class="md-nav__link">
+      Filtering data to several project IDs
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../api/project/statistics/" title="Statistics" class="md-nav__link">
+      Statistics
+    </a>
+  </li>
+
+        
+      </ul>
+    </nav>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item md-nav__item--nested">
+    
+      <input class="md-toggle md-nav__toggle" data-md-toggle="nav-4-5-2" type="checkbox" id="nav-4-5-2">
+    
+    <label class="md-nav__link" for="nav-4-5-2">
+      PYBOSSA endpoints
+    </label>
+    <nav class="md-nav" data-md-component="collapsible" data-md-level="3">
+      <label class="md-nav__title" for="nav-4-5-2">
+        PYBOSSA endpoints
+      </label>
+      <ul class="md-nav__list" data-md-scrollfix>
+        
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../api/project/project/" title="Options" class="md-nav__link">
+      Options
+    </a>
+  </li>
+
+        
+      </ul>
+    </nav>
+  </li>
+
+        
+      </ul>
+    </nav>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item md-nav__item--nested">
+    
+      <input class="md-toggle md-nav__toggle" data-md-toggle="nav-4-6" type="checkbox" id="nav-4-6">
+    
+    <label class="md-nav__link" for="nav-4-6">
+      Tasks
+    </label>
+    <nav class="md-nav" data-md-component="collapsible" data-md-level="2">
+      <label class="md-nav__title" for="nav-4-6">
+        Tasks
+      </label>
+      <ul class="md-nav__list" data-md-scrollfix>
+        
+        
+          
+          
+          
+
+
+  <li class="md-nav__item md-nav__item--nested">
+    
+      <input class="md-toggle md-nav__toggle" data-md-toggle="nav-4-6-1" type="checkbox" id="nav-4-6-1">
+    
+    <label class="md-nav__link" for="nav-4-6-1">
+      RESTful API
+    </label>
+    <nav class="md-nav" data-md-component="collapsible" data-md-level="3">
+      <label class="md-nav__title" for="nav-4-6-1">
+        RESTful API
+      </label>
+      <ul class="md-nav__list" data-md-scrollfix>
+        
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../api/task/favorites/" title="Favorites" class="md-nav__link">
+      Favorites
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../api/task/participated/" title="Excluding contributed tasks" class="md-nav__link">
+      Excluding contributed tasks
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../api/task/newtask/" title="Requesting a task" class="md-nav__link">
+      Requesting a task
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../api/task/external/" title="External user ID" class="md-nav__link">
+      External user ID
+    </a>
+  </li>
+
+        
+      </ul>
+    </nav>
+  </li>
+
+        
+      </ul>
+    </nav>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item md-nav__item--nested">
+    
+      <input class="md-toggle md-nav__toggle" data-md-toggle="nav-4-7" type="checkbox" id="nav-4-7">
+    
+    <label class="md-nav__link" for="nav-4-7">
+      TaskRuns
+    </label>
+    <nav class="md-nav" data-md-component="collapsible" data-md-level="2">
+      <label class="md-nav__title" for="nav-4-7">
+        TaskRuns
+      </label>
+      <ul class="md-nav__list" data-md-scrollfix>
+        
+        
+          
+          
+          
+
+
+  <li class="md-nav__item md-nav__item--nested">
+    
+      <input class="md-toggle md-nav__toggle" data-md-toggle="nav-4-7-1" type="checkbox" id="nav-4-7-1">
+    
+    <label class="md-nav__link" for="nav-4-7-1">
+      RESTful API
+    </label>
+    <nav class="md-nav" data-md-component="collapsible" data-md-level="3">
+      <label class="md-nav__title" for="nav-4-7-1">
+        RESTful API
+      </label>
+      <ul class="md-nav__list" data-md-scrollfix>
+        
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../api/taskrun/intro/" title="Attaching files" class="md-nav__link">
+      Attaching files
+    </a>
+  </li>
+
+        
+      </ul>
+    </nav>
+  </li>
+
+        
+      </ul>
+    </nav>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item md-nav__item--nested">
+    
+      <input class="md-toggle md-nav__toggle" data-md-toggle="nav-4-8" type="checkbox" id="nav-4-8">
+    
+    <label class="md-nav__link" for="nav-4-8">
+      User
+    </label>
+    <nav class="md-nav" data-md-component="collapsible" data-md-level="2">
+      <label class="md-nav__title" for="nav-4-8">
+        User
+      </label>
+      <ul class="md-nav__list" data-md-scrollfix>
+        
+        
+          
+          
+          
+
+
+  <li class="md-nav__item md-nav__item--nested">
+    
+      <input class="md-toggle md-nav__toggle" data-md-toggle="nav-4-8-1" type="checkbox" id="nav-4-8-1">
+    
+    <label class="md-nav__link" for="nav-4-8-1">
+      RESTful API
+    </label>
+    <nav class="md-nav" data-md-component="collapsible" data-md-level="3">
+      <label class="md-nav__title" for="nav-4-8-1">
+        RESTful API
+      </label>
+      <ul class="md-nav__list" data-md-scrollfix>
+        
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../api/user/intro/" title="Intro" class="md-nav__link">
+      Intro
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../api/user/progress/" title="Project progress" class="md-nav__link">
+      Project progress
+    </a>
+  </li>
+
+        
+      </ul>
+    </nav>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item md-nav__item--nested">
+    
+      <input class="md-toggle md-nav__toggle" data-md-toggle="nav-4-8-2" type="checkbox" id="nav-4-8-2">
+    
+    <label class="md-nav__link" for="nav-4-8-2">
+      PYBOSSA endpoints
+    </label>
+    <nav class="md-nav" data-md-component="collapsible" data-md-level="3">
+      <label class="md-nav__title" for="nav-4-8-2">
+        PYBOSSA endpoints
+      </label>
+      <ul class="md-nav__list" data-md-scrollfix>
+        
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../api/user/account/" title="Account" class="md-nav__link">
+      Account
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../api/user/admin/" title="Admins" class="md-nav__link">
+      Admins
+    </a>
+  </li>
+
+        
+      </ul>
+    </nav>
+  </li>
+
+        
+      </ul>
+    </nav>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item md-nav__item--nested">
+    
+      <input class="md-toggle md-nav__toggle" data-md-toggle="nav-4-9" type="checkbox" id="nav-4-9">
+    
+    <label class="md-nav__link" for="nav-4-9">
+      Helping materials
+    </label>
+    <nav class="md-nav" data-md-component="collapsible" data-md-level="2">
+      <label class="md-nav__title" for="nav-4-9">
+        Helping materials
+      </label>
+      <ul class="md-nav__list" data-md-scrollfix>
+        
+        
+          
+          
+          
+
+
+  <li class="md-nav__item md-nav__item--nested">
+    
+      <input class="md-toggle md-nav__toggle" data-md-toggle="nav-4-9-1" type="checkbox" id="nav-4-9-1">
+    
+    <label class="md-nav__link" for="nav-4-9-1">
+      RESTful API
+    </label>
+    <nav class="md-nav" data-md-component="collapsible" data-md-level="3">
+      <label class="md-nav__title" for="nav-4-9-1">
+        RESTful API
+      </label>
+      <ul class="md-nav__list" data-md-scrollfix>
+        
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../api/helpingmaterial/intro/" title="Attaching files" class="md-nav__link">
+      Attaching files
+    </a>
+  </li>
+
+        
+      </ul>
+    </nav>
+  </li>
+
+        
+      </ul>
+    </nav>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item md-nav__item--nested">
+    
+      <input class="md-toggle md-nav__toggle" data-md-toggle="nav-4-10" type="checkbox" id="nav-4-10">
+    
+    <label class="md-nav__link" for="nav-4-10">
+      Pages
+    </label>
+    <nav class="md-nav" data-md-component="collapsible" data-md-level="2">
+      <label class="md-nav__title" for="nav-4-10">
+        Pages
+      </label>
+      <ul class="md-nav__list" data-md-scrollfix>
+        
+        
+          
+          
+          
+
+
+  <li class="md-nav__item md-nav__item--nested">
+    
+      <input class="md-toggle md-nav__toggle" data-md-toggle="nav-4-10-1" type="checkbox" id="nav-4-10-1">
+    
+    <label class="md-nav__link" for="nav-4-10-1">
+      RESTful API
+    </label>
+    <nav class="md-nav" data-md-component="collapsible" data-md-level="3">
+      <label class="md-nav__title" for="nav-4-10-1">
+        RESTful API
+      </label>
+      <ul class="md-nav__list" data-md-scrollfix>
+        
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../api/page/intro/" title="Info" class="md-nav__link">
+      Info
+    </a>
+  </li>
+
+        
+      </ul>
+    </nav>
+  </li>
+
+        
+      </ul>
+    </nav>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item md-nav__item--nested">
+    
+      <input class="md-toggle md-nav__toggle" data-md-toggle="nav-4-11" type="checkbox" id="nav-4-11">
+    
+    <label class="md-nav__link" for="nav-4-11">
+      Blog posts
+    </label>
+    <nav class="md-nav" data-md-component="collapsible" data-md-level="2">
+      <label class="md-nav__title" for="nav-4-11">
+        Blog posts
+      </label>
+      <ul class="md-nav__list" data-md-scrollfix>
+        
+        
+          
+          
+          
+
+
+  <li class="md-nav__item md-nav__item--nested">
+    
+      <input class="md-toggle md-nav__toggle" data-md-toggle="nav-4-11-1" type="checkbox" id="nav-4-11-1">
+    
+    <label class="md-nav__link" for="nav-4-11-1">
+      RESTful API
+    </label>
+    <nav class="md-nav" data-md-component="collapsible" data-md-level="3">
+      <label class="md-nav__title" for="nav-4-11-1">
+        RESTful API
+      </label>
+      <ul class="md-nav__list" data-md-scrollfix>
+        
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../api/blogpost/intro/" title="Attaching files" class="md-nav__link">
+      Attaching files
+    </a>
+  </li>
+
+        
+      </ul>
+    </nav>
+  </li>
+
+        
+      </ul>
+    </nav>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item md-nav__item--nested">
+    
+      <input class="md-toggle md-nav__toggle" data-md-toggle="nav-4-12" type="checkbox" id="nav-4-12">
+    
+    <label class="md-nav__link" for="nav-4-12">
+      Leaderboard
+    </label>
+    <nav class="md-nav" data-md-component="collapsible" data-md-level="2">
+      <label class="md-nav__title" for="nav-4-12">
+        Leaderboard
+      </label>
+      <ul class="md-nav__list" data-md-scrollfix>
+        
+        
+          
+          
+          
+
+
+  <li class="md-nav__item md-nav__item--nested">
+    
+      <input class="md-toggle md-nav__toggle" data-md-toggle="nav-4-12-1" type="checkbox" id="nav-4-12-1">
+    
+    <label class="md-nav__link" for="nav-4-12-1">
+      PYBOSSA endpoints
+    </label>
+    <nav class="md-nav" data-md-component="collapsible" data-md-level="3">
+      <label class="md-nav__title" for="nav-4-12-1">
+        PYBOSSA endpoints
+      </label>
+      <ul class="md-nav__list" data-md-scrollfix>
+        
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../api/leaderboard/" title="Methods" class="md-nav__link">
+      Methods
+    </a>
+  </li>
+
+        
+      </ul>
+    </nav>
+  </li>
+
+        
+      </ul>
+    </nav>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item md-nav__item--nested">
+    
+      <input class="md-toggle md-nav__toggle" data-md-toggle="nav-4-13" type="checkbox" id="nav-4-13">
+    
+    <label class="md-nav__link" for="nav-4-13">
+      Home page
+    </label>
+    <nav class="md-nav" data-md-component="collapsible" data-md-level="2">
+      <label class="md-nav__title" for="nav-4-13">
+        Home page
+      </label>
+      <ul class="md-nav__list" data-md-scrollfix>
+        
+        
+          
+          
+          
+
+
+  <li class="md-nav__item md-nav__item--nested">
+    
+      <input class="md-toggle md-nav__toggle" data-md-toggle="nav-4-13-1" type="checkbox" id="nav-4-13-1">
+    
+    <label class="md-nav__link" for="nav-4-13-1">
+      PYBOSSA endpoints
+    </label>
+    <nav class="md-nav" data-md-component="collapsible" data-md-level="3">
+      <label class="md-nav__title" for="nav-4-13-1">
+        PYBOSSA endpoints
+      </label>
+      <ul class="md-nav__list" data-md-scrollfix>
+        
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../api/home/" title="Methods" class="md-nav__link">
+      Methods
+    </a>
+  </li>
+
+        
+      </ul>
+    </nav>
+  </li>
+
+        
+      </ul>
+    </nav>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item md-nav__item--nested">
+    
+      <input class="md-toggle md-nav__toggle" data-md-toggle="nav-4-14" type="checkbox" id="nav-4-14">
+    
+    <label class="md-nav__link" for="nav-4-14">
+      Announcement
+    </label>
+    <nav class="md-nav" data-md-component="collapsible" data-md-level="2">
+      <label class="md-nav__title" for="nav-4-14">
+        Announcement
+      </label>
+      <ul class="md-nav__list" data-md-scrollfix>
+        
+        
+          
+          
+          
+
+
+  <li class="md-nav__item md-nav__item--nested">
+    
+      <input class="md-toggle md-nav__toggle" data-md-toggle="nav-4-14-1" type="checkbox" id="nav-4-14-1">
+    
+    <label class="md-nav__link" for="nav-4-14-1">
+      PYBOSSA endpoints
+    </label>
+    <nav class="md-nav" data-md-component="collapsible" data-md-level="3">
+      <label class="md-nav__title" for="nav-4-14-1">
+        PYBOSSA endpoints
+      </label>
+      <ul class="md-nav__list" data-md-scrollfix>
+        
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../api/announcement/" title="Methods" class="md-nav__link">
+      Methods
+    </a>
+  </li>
+
+        
+      </ul>
+    </nav>
+  </li>
+
+        
+      </ul>
+    </nav>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item md-nav__item--nested">
+    
+      <input class="md-toggle md-nav__toggle" data-md-toggle="nav-4-15" type="checkbox" id="nav-4-15">
+    
+    <label class="md-nav__link" for="nav-4-15">
+      Categories
+    </label>
+    <nav class="md-nav" data-md-component="collapsible" data-md-level="2">
+      <label class="md-nav__title" for="nav-4-15">
+        Categories
+      </label>
+      <ul class="md-nav__list" data-md-scrollfix>
+        
+        
+          
+          
+          
+
+
+  <li class="md-nav__item md-nav__item--nested">
+    
+      <input class="md-toggle md-nav__toggle" data-md-toggle="nav-4-15-1" type="checkbox" id="nav-4-15-1">
+    
+    <label class="md-nav__link" for="nav-4-15-1">
+      PYBOSSA endpoints
+    </label>
+    <nav class="md-nav" data-md-component="collapsible" data-md-level="3">
+      <label class="md-nav__title" for="nav-4-15-1">
+        PYBOSSA endpoints
+      </label>
+      <ul class="md-nav__list" data-md-scrollfix>
+        
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../api/categories/" title="Methods" class="md-nav__link">
+      Methods
+    </a>
+  </li>
+
+        
+      </ul>
+    </nav>
+  </li>
+
+        
+      </ul>
+    </nav>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item md-nav__item--nested">
+    
+      <input class="md-toggle md-nav__toggle" data-md-toggle="nav-4-16" type="checkbox" id="nav-4-16">
+    
+    <label class="md-nav__link" for="nav-4-16">
+      Administration
+    </label>
+    <nav class="md-nav" data-md-component="collapsible" data-md-level="2">
+      <label class="md-nav__title" for="nav-4-16">
+        Administration
+      </label>
+      <ul class="md-nav__list" data-md-scrollfix>
+        
+        
+          
+          
+          
+
+
+  <li class="md-nav__item md-nav__item--nested">
+    
+      <input class="md-toggle md-nav__toggle" data-md-toggle="nav-4-16-1" type="checkbox" id="nav-4-16-1">
+    
+    <label class="md-nav__link" for="nav-4-16-1">
+      PYBOSSA endpoints
+    </label>
+    <nav class="md-nav" data-md-component="collapsible" data-md-level="3">
+      <label class="md-nav__title" for="nav-4-16-1">
+        PYBOSSA endpoints
+      </label>
+      <ul class="md-nav__list" data-md-scrollfix>
+        
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../api/admin/dashboard/" title="Dashboard" class="md-nav__link">
+      Dashboard
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../api/admin/featured/" title="Featured projects" class="md-nav__link">
+      Featured projects
+    </a>
+  </li>
+
+        
+      </ul>
+    </nav>
+  </li>
+
+        
+      </ul>
+    </nav>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item md-nav__item--nested">
+    
+      <input class="md-toggle md-nav__toggle" data-md-toggle="nav-4-17" type="checkbox" id="nav-4-17">
+    
+    <label class="md-nav__link" for="nav-4-17">
+      Help
+    </label>
+    <nav class="md-nav" data-md-component="collapsible" data-md-level="2">
+      <label class="md-nav__title" for="nav-4-17">
+        Help
+      </label>
+      <ul class="md-nav__list" data-md-scrollfix>
+        
+        
+          
+          
+          
+
+
+  <li class="md-nav__item md-nav__item--nested">
+    
+      <input class="md-toggle md-nav__toggle" data-md-toggle="nav-4-17-1" type="checkbox" id="nav-4-17-1">
+    
+    <label class="md-nav__link" for="nav-4-17-1">
+      PYBOSSA endpoints
+    </label>
+    <nav class="md-nav" data-md-component="collapsible" data-md-level="3">
+      <label class="md-nav__title" for="nav-4-17-1">
+        PYBOSSA endpoints
+      </label>
+      <ul class="md-nav__list" data-md-scrollfix>
+        
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../api/help/" title="Methods" class="md-nav__link">
+      Methods
+    </a>
+  </li>
+
+        
+      </ul>
+    </nav>
+  </li>
+
+        
+      </ul>
+    </nav>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item md-nav__item--nested">
+    
+      <input class="md-toggle md-nav__toggle" data-md-toggle="nav-4-18" type="checkbox" id="nav-4-18">
+    
+    <label class="md-nav__link" for="nav-4-18">
+      Server stats
+    </label>
+    <nav class="md-nav" data-md-component="collapsible" data-md-level="2">
+      <label class="md-nav__title" for="nav-4-18">
+        Server stats
+      </label>
+      <ul class="md-nav__list" data-md-scrollfix>
+        
+        
+          
+          
+          
+
+
+  <li class="md-nav__item md-nav__item--nested">
+    
+      <input class="md-toggle md-nav__toggle" data-md-toggle="nav-4-18-1" type="checkbox" id="nav-4-18-1">
+    
+    <label class="md-nav__link" for="nav-4-18-1">
+      PYBOSSA endpoints
+    </label>
+    <nav class="md-nav" data-md-component="collapsible" data-md-level="3">
+      <label class="md-nav__title" for="nav-4-18-1">
+        PYBOSSA endpoints
+      </label>
+      <ul class="md-nav__list" data-md-scrollfix>
+        
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../api/stats/" title="Methods" class="md-nav__link">
+      Methods
+    </a>
+  </li>
+
+        
+      </ul>
+    </nav>
+  </li>
+
+        
+      </ul>
+    </nav>
+  </li>
+
+        
+      </ul>
+    </nav>
+  </li>
+
+    
+      
+      
+      
+
+
+  <li class="md-nav__item">
+    <a href="../../installation/vagrant/" title="Testing PYBOSSA with Vagrant" class="md-nav__link">
+      Testing PYBOSSA with Vagrant
+    </a>
+  </li>
+
+    
+      
+      
+      
+
+
+  <li class="md-nav__item md-nav__item--nested">
+    
+      <input class="md-toggle md-nav__toggle" data-md-toggle="nav-6" type="checkbox" id="nav-6">
+    
+    <label class="md-nav__link" for="nav-6">
+      Contributing
+    </label>
+    <nav class="md-nav" data-md-component="collapsible" data-md-level="1">
+      <label class="md-nav__title" for="nav-6">
+        Contributing
+      </label>
+      <ul class="md-nav__list" data-md-scrollfix>
+        
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../contributing/" title="General" class="md-nav__link">
+      General
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../translating/" title="Translating PYBOSSA" class="md-nav__link">
+      Translating PYBOSSA
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../plugins/" title="Writing plugins" class="md-nav__link">
+      Writing plugins
+    </a>
+  </li>
+
+        
+      </ul>
+    </nav>
+  </li>
+
+    
+      
+      
+      
+
+
+  <li class="md-nav__item">
+    <a href="../../gdpr/" title="GDPR" class="md-nav__link">
+      GDPR
+    </a>
+  </li>
+
+    
+      
+      
+      
+
+
+  <li class="md-nav__item">
+    <a href="../../faq/" title="FAQ" class="md-nav__link">
+      FAQ
+    </a>
+  </li>
+
+    
+  </ul>
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+            
+              <div class="md-sidebar md-sidebar--secondary" data-md-component="toc">
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+<nav class="md-nav md-nav--secondary">
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="toc">Table of contents</label>
+    <ul class="md-nav__list" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#pbs" title="PBS" class="md-nav__link">
+    PBS
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#installation" title="Installation" class="md-nav__link">
+    Installation
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#configuring-pbs" title="Configuring PBS" class="md-nav__link">
+    Configuring PBS
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#project" title="Project" class="md-nav__link">
+    Project
+  </a>
+  
+    <nav class="md-nav">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#creating-a-project" title="Creating a project" class="md-nav__link">
+    Creating a project
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#updating-templates" title="Updating templates" class="md-nav__link">
+    Updating templates
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#using-an-external-javascript-file" title="Using an external JavaScript file" class="md-nav__link">
+    Using an external JavaScript file
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#auto-updating-while-developing-a-pybossa-project" title="Auto-updating while developing a PYBOSSA project" class="md-nav__link">
+    Auto-updating while developing a PYBOSSA project
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#tasks" title="Tasks" class="md-nav__link">
+    Tasks
+  </a>
+  
+    <nav class="md-nav">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#adding-tasks-to-a-project" title="Adding tasks to a project" class="md-nav__link">
+    Adding tasks to a project
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#updating-tasks-redundancy-from-a-project" title="Updating tasks redundancy from a project" class="md-nav__link">
+    Updating tasks redundancy from a project
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#deleting-tasks-from-a-project" title="Deleting tasks from a project" class="md-nav__link">
+    Deleting tasks from a project
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#getting-out-of-the-api-context" title="Getting out of the API context" class="md-nav__link">
+    Getting out of the API context
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#helping-materials" title="Helping Materials" class="md-nav__link">
+    Helping Materials
+  </a>
+  
+    <nav class="md-nav">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#adding-helping-materials-to-a-project" title="Adding helping materials to a project" class="md-nav__link">
+    Adding helping materials to a project
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+      
+      
+    </ul>
+  
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+          
+          <div class="md-content">
+            <article class="md-content__inner md-typeset">
+              
+                
+                
+                <h1 id="using-the-command-line">Using the command line<a class="headerlink" href="#using-the-command-line" title="Permanent link">&para;</a></h1>
+<p>In this section we&rsquo;ll learn how we can use the command line to interact with our project in a PYBOSSA server, using the command line tool: <strong>PBS</strong> built by Scifabric.</p>
+<h2 id="pbs">PBS<a class="headerlink" href="#pbs" title="Permanent link">&para;</a></h2>
+<p><strong>PBS</strong> is a simple command line interface to a PYBOSSA server. The command allows you to:</p>
+<ul>
+<li>create projects, </li>
+<li>add tasks from a CSV, Excel or JSON file, </li>
+<li>show progress when adding tasks</li>
+<li>delete tasks,</li>
+<li>updated redundancy for tasks, </li>
+<li>and update the project templates.</li>
+</ul>
+<h2 id="installation">Installation<a class="headerlink" href="#installation" title="Permanent link">&para;</a></h2>
+<p>PBS is available in Pypi so that you can install the software with pip:</p>
+<table class="codehilitetable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span>1</pre></div></td><td class="code"><div class="codehilite"><pre><span></span>pip install pybossa-pbs
+</pre></div>
+</td></tr></table>
+
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>We recommend to use virtual environments to install new Python libraries and packages, so please, before installing the PBS command line tool consider using a virtual environment.</p>
+</div>
+<p>If you have all the dependencies, the package will be installed, and you will be able to use it from the command line. The command is <strong>pbs</strong>.</p>
+<h2 id="configuring-pbs">Configuring PBS<a class="headerlink" href="#configuring-pbs" title="Permanent link">&para;</a></h2>
+<p>By default, PBS does not need a config file. However, you will have to specify for every command the server and your API key to add tasks, create a project, etc. For determining the server and API key
+that you want to use, all you have to do is pass it as an argument:</p>
+<table class="codehilitetable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span>1</pre></div></td><td class="code"><div class="codehilite"><pre><span></span>pbs --server http://server.com --api-key yourkey subcommand
+</pre></div>
+</td></tr></table>
+
+<p>If you work with two or more servers, then, remembering all the keys, and server URLs could be problematic, as well as you will be leaving a trace in your BASH history file. For this reason, pbs has a
+configuration file where you can add all the servers that you are
+working with.</p>
+<p>To create the config file, all you have to do is creating a
+<strong>.pybossa.cfg</strong> file in your home folder:</p>
+<table class="codehilitetable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span>1
+2</pre></div></td><td class="code"><div class="codehilite"><pre><span></span><span class="nb">cd</span> ~
+vim .pybossa.cfg
+</pre></div>
+</td></tr></table>
+
+<p>The file should have the following structure:</p>
+<table class="codehilitetable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span>1
+2
+3</pre></div></td><td class="code"><div class="codehilite"><pre><span></span><span class="p">[</span><span class="n">default</span><span class="p">]</span>
+<span class="n">server</span><span class="p">:</span> <span class="n">http</span><span class="p">:</span><span class="o">//</span><span class="n">theserver</span><span class="o">.</span><span class="n">com</span>
+<span class="n">apikey</span><span class="p">:</span> <span class="n">yourkey</span>
+</pre></div>
+</td></tr></table>
+
+<p>If you are working with more servers, add another section below it. For example:</p>
+<table class="codehilitetable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span>1
+2
+3
+4
+5
+6
+7</pre></div></td><td class="code"><div class="codehilite"><pre><span></span><span class="p">[</span><span class="n">default</span><span class="p">]</span>
+<span class="n">server</span><span class="p">:</span> <span class="n">http</span><span class="p">:</span><span class="o">//</span><span class="n">theserver</span><span class="o">.</span><span class="n">com</span>
+<span class="n">apikey</span><span class="p">:</span> <span class="n">yourkey</span>
+
+<span class="p">[</span><span class="n">crowdcrafting</span><span class="p">]</span>
+<span class="n">server</span><span class="p">:</span> <span class="n">http</span><span class="p">:</span><span class="o">//</span><span class="n">crowdcrafting</span><span class="o">.</span><span class="n">org</span>
+<span class="n">apikey</span><span class="p">:</span> <span class="n">yourkeyincrowdcrafting</span>
+</pre></div>
+</td></tr></table>
+
+<p>By default, pbs will use the credentials of the default section, so you don&rsquo;t have to type anything to use those values. However, if you want to do actions on another server, all you have to do is the following:</p>
+<table class="codehilitetable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span>1</pre></div></td><td class="code"><div class="codehilite"><pre><span></span>pbs --credentials crowdcrafting --help
+</pre></div>
+</td></tr></table>
+
+<p>That command will use the values of the crowdcrafting section.</p>
+<h2 id="project">Project<a class="headerlink" href="#project" title="Permanent link">&para;</a></h2>
+<p>This section shows how you can handle a project using PBS.</p>
+<h3 id="creating-a-project">Creating a project<a class="headerlink" href="#creating-a-project" title="Permanent link">&para;</a></h3>
+<p>Creating a project is very simple. All you have to do is create a file
+named <strong>project.json</strong> with the following fields:</p>
+<table class="codehilitetable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span>1
+2
+3
+4
+5</pre></div></td><td class="code"><div class="codehilite"><pre><span></span><span class="p">{</span>
+    <span class="s2">&quot;name&quot;</span><span class="o">:</span> <span class="s2">&quot;Flickr Person Finder&quot;</span><span class="p">,</span>
+    <span class="s2">&quot;short_name&quot;</span><span class="o">:</span> <span class="s2">&quot;flickrperson&quot;</span><span class="p">,</span>
+    <span class="s2">&quot;description&quot;</span><span class="o">:</span> <span class="s2">&quot;Image pattern recognition&quot;</span>
+<span class="p">}</span>
+</pre></div>
+</td></tr></table>
+
+<p>If you use the name <strong>project.json</strong> you will not have to pass the file
+name via an argument, as it&rsquo;s the name used by default. Once you have the file created, run the following command:</p>
+<table class="codehilitetable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span>1</pre></div></td><td class="code"><div class="codehilite"><pre><span></span>pbs create_project
+</pre></div>
+</td></tr></table>
+
+<p>That command should create the project. If you want to see all the
+available options, please check the <strong>&ndash;help</strong> command:</p>
+<table class="codehilitetable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span>1</pre></div></td><td class="code"><div class="codehilite"><pre><span></span>pbs create_project --help
+</pre></div>
+</td></tr></table>
+
+<h3 id="updating-templates">Updating templates<a class="headerlink" href="#updating-templates" title="Permanent link">&para;</a></h3>
+<p>Now that you have added tasks, you can work in your templates. All you have to do to add/update the templates of your project is running the following command:</p>
+<table class="codehilitetable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span>1</pre></div></td><td class="code"><div class="codehilite"><pre><span></span>pbs update_project
+</pre></div>
+</td></tr></table>
+
+<p>That command needs to have in the same folder where you are running it, the following files:</p>
+<ul>
+<li>template.html</li>
+<li>results.html</li>
+<li>long_description.md</li>
+<li>tutorial.html</li>
+</ul>
+<p>If you want to use another template, just use these arguments:</p>
+<table class="codehilitetable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span>1</pre></div></td><td class="code"><div class="codehilite"><pre><span></span>pbs update_project --template /tmp/template.html
+</pre></div>
+</td></tr></table>
+
+<p>If you want to see all the available options, please check the
+<strong>&ndash;help</strong> command:</p>
+<table class="codehilitetable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span>1</pre></div></td><td class="code"><div class="codehilite"><pre><span></span>pbs update_project --help
+</pre></div>
+</td></tr></table>
+
+<h3 id="using-an-external-javascript-file">Using an external JavaScript file<a class="headerlink" href="#using-an-external-javascript-file" title="Permanent link">&para;</a></h3>
+<p>Since PBS &gt;= 2.3.0, PBS will check for an external JavaScript file named <em>bundle.js</em> or <em>bundle.min.js</em>. If any of those files exist, then, they will be added at the bottom of your template (like you have been doing so far with your projects).</p>
+<p>This solution allows you to use for example webpack plus babel to transpile your code, minimize it and add it to your PYBOSSA project.</p>
+<p>To use this solution, just transpile to a file named bundle.js or bundle.min.js.</p>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>If there&rsquo;s a minified version of the file, bundle.min.js, that file will always be used instead of bundle.js. </p>
+</div>
+<h3 id="auto-updating-while-developing-a-pybossa-project">Auto-updating while developing a PYBOSSA project<a class="headerlink" href="#auto-updating-while-developing-a-pybossa-project" title="Permanent link">&para;</a></h3>
+<p>At some point, you will end up running lots of PBS update_project commands, as you will be using your chosen editor for fixing CSS, HTML or JavaScript. For these scenarios, PBS comes with a handy flag: <strong>&ndash;watch</strong>. This argument will tell PBS to run the update_project command automatically when bundle.js, bundle.min.js, template.html, tutorial.html or long_description.md are modified in the file system. As simple as that.</p>
+<p>You can run it like this:</p>
+<table class="codehilitetable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span>1</pre></div></td><td class="code"><div class="codehilite"><pre><span></span>    pbs update_project --watch
+</pre></div>
+</td></tr></table>
+
+<p>And the output will be similar to this:</p>
+<p><img alt="GIF of pbs in action" src="https://i.imgur.com/QoYC4oV.gif" /></p>
+<div class="admonition tip">
+<p class="admonition-title">Using webpack and PBS</p>
+<p>This also works with bundle.js files. Thus, you can have webpack transpiling automatically your code, and PBS will update your project with the new code. Cheers <img alt="🍻" class="emojione" src="https://cdnjs.cloudflare.com/ajax/libs/emojione/2.2.7/assets/svg/1f37b.svg" title=":beers:" /></p>
+</div>
+<h2 id="tasks">Tasks<a class="headerlink" href="#tasks" title="Permanent link">&para;</a></h2>
+<p>This section shows how you can handle project&rsquo;s tasks.</p>
+<h3 id="adding-tasks-to-a-project">Adding tasks to a project<a class="headerlink" href="#adding-tasks-to-a-project" title="Permanent link">&para;</a></h3>
+<p>Adding tasks is very simple. You can have your tasks in these formats:</p>
+<ul>
+<li>JSON</li>
+<li>CSV</li>
+<li>Excel (xlsx from 2010. It imports the first sheet)</li>
+<li>PO (any po file that you want to translate)</li>
+<li>PROPERTIES (any PROPERTIES file that you want to translate)</li>
+</ul>
+<p>Therefore, adding tasks to your project is as simple as this command:</p>
+<table class="codehilitetable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span>1</pre></div></td><td class="code"><div class="codehilite"><pre><span></span>pbs add_tasks --tasks-file tasks_file.json
+</pre></div>
+</td></tr></table>
+
+<p>If you want to see all the available options, please check the
+<strong>&ndash;help</strong> command:</p>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>By default, PYBOSSA servers use a rate limit for avoiding abuse of the API. For this reason, you can only do usually 300 requests per every 15 minutes. If you are going to add more than 300 tasks, pbs will detect it and warn you, auto-enabling the throttling for you to respect the limits. Please, see <a href="api.md#rate-limiting">the rate-limiting section</a> for more details.</p>
+</div>
+<table class="codehilitetable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span>1</pre></div></td><td class="code"><div class="codehilite"><pre><span></span>pbs add_tasks --help
+</pre></div>
+</td></tr></table>
+
+<h3 id="updating-tasks-redundancy-from-a-project">Updating tasks redundancy from a project<a class="headerlink" href="#updating-tasks-redundancy-from-a-project" title="Permanent link">&para;</a></h3>
+<p>If you need it, you can update the redundancy of a task using its ID or all the tasks skipping the ID. For example, to update the redundancy of one task to 5:</p>
+<table class="codehilitetable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span>1</pre></div></td><td class="code"><div class="codehilite"><pre><span></span>    pbs update-task-redundancy --task-id <span class="m">34234</span> --redundancy <span class="m">5</span>
+</pre></div>
+</td></tr></table>
+
+<p>To update all of them:</p>
+<table class="codehilitetable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span>1</pre></div></td><td class="code"><div class="codehilite"><pre><span></span>    pbs update-task-redundancy --redundancy <span class="m">5</span>
+</pre></div>
+</td></tr></table>
+
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>Without the <strong>&ndash;redundancy</strong> argument it will revert the redundancy to the default value: 30.</p>
+</div>
+<p>This last command will confirm that you want to update all the tasks.</p>
+<p>If you want to see all the available options, please check the <strong>&ndash;help</strong> command:</p>
+<table class="codehilitetable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span>1</pre></div></td><td class="code"><div class="codehilite"><pre><span></span>    pbs update-task-redundancy --help
+</pre></div>
+</td></tr></table>
+
+<h3 id="deleting-tasks-from-a-project">Deleting tasks from a project<a class="headerlink" href="#deleting-tasks-from-a-project" title="Permanent link">&para;</a></h3>
+<p>If you need it, you can delete all the tasks from your project, or only one using its task.id. For removing all the tasks, all you&rsquo;ve to do is
+run the following command:</p>
+<table class="codehilitetable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span>1</pre></div></td><td class="code"><div class="codehilite"><pre><span></span>pbs delete_tasks
+</pre></div>
+</td></tr></table>
+
+<p>This command will confirm that you want to delete all the tasks and
+associated task_runs.</p>
+<p>If you want to see all the available options, please check the
+<strong>&ndash;help</strong> command:</p>
+<table class="codehilitetable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span>1</pre></div></td><td class="code"><div class="codehilite"><pre><span></span>pbs delete_tasks --help
+</pre></div>
+</td></tr></table>
+
+<div class="admonition warning">
+<p class="admonition-title">Warning</p>
+<p>Only tasks that are not associated with a result will be deleted.</p>
+</div>
+<h3 id="getting-out-of-the-api-context">Getting out of the API context<a class="headerlink" href="#getting-out-of-the-api-context" title="Permanent link">&para;</a></h3>
+<p>PYBOSSA by default returns first your projects, meaning that if you want to work on a project that you don&rsquo;t own, it will return an error as the project will not be found. For solving this issue you have two options:</p>
+<ul>
+<li>In the config file, by adding a new flag: all:1</li>
+<li>On the command line, passing the &ndash;all=1 flag</li>
+</ul>
+<h2 id="helping-materials">Helping Materials<a class="headerlink" href="#helping-materials" title="Permanent link">&para;</a></h2>
+<p>This section shows how you can handle project&rsquo;s helping materials.</p>
+<h3 id="adding-helping-materials-to-a-project">Adding helping materials to a project<a class="headerlink" href="#adding-helping-materials-to-a-project" title="Permanent link">&para;</a></h3>
+<p>Adding helping materials is very simple. You can have your materials in three formats:</p>
+<ul>
+<li>JSON</li>
+<li>Excel (xlsx from 2010. It imports the first sheet)</li>
+<li>CSV</li>
+</ul>
+<p>Therefore, adding helping materials to your project is as simple as this command:</p>
+<table class="codehilitetable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span>1
+2</pre></div></td><td class="code"><div class="codehilite"><pre><span></span>    pbs add_helpingmaterials
+    --helping-materials-lfile file.xlsx --helping-type xlsx
+</pre></div>
+</td></tr></table>
+
+<p>If you want to see all the available options, please check the <strong>&ndash;help</strong> command:</p>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>By default, PYBOSSA servers use a rate limit for avoiding abuse of the API. For this reason, you can only do usually 300 requests per every 15 minutes. If you are going to add more than 300 tasks, pbs will detect it and warn you, auto-enabling the throttling for you to respect the limits.</p>
+</div>
+<div class="admonition tip">
+<p class="admonition-title">Tip</p>
+<p>PYBOSSA helping materials allow you to upload media files like videos, images, or sounds to support your project tutorials. The command line PBS will check for a column in your file with the name <em>file_path</em> so it can upload it first to the server. Please, be sure that the file (or files) path is reachable from the helping materials file.</p>
+</div>
+<table class="codehilitetable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span>1</pre></div></td><td class="code"><div class="codehilite"><pre><span></span>    pbs add_helpingmaterials --help
+</pre></div>
+</td></tr></table>
+                
+                  
+                
+              
+              
+                
+              
+            </article>
+          </div>
+        </div>
+      </main>
+      
+        
+<footer class="md-footer">
+  
+    <div class="md-footer-nav">
+      <nav class="md-footer-nav__inner md-grid">
+        
+          <a href="../overview/" title="Quickstart: Creating a project" class="md-flex md-footer-nav__link md-footer-nav__link--prev" rel="prev">
+            <div class="md-flex__cell md-flex__cell--shrink">
+              <i class="md-icon md-icon--arrow-back md-footer-nav__button"></i>
+            </div>
+            <div class="md-flex__cell md-flex__cell--stretch md-footer-nav__title">
+              <span class="md-flex__ellipsis">
+                <span class="md-footer-nav__direction">
+                  Previous
+                </span>
+                Quickstart: Creating a project
+              </span>
+            </div>
+          </a>
+        
+        
+          <a href="../tutorial/" title="Tutorial" class="md-flex md-footer-nav__link md-footer-nav__link--next" rel="next">
+            <div class="md-flex__cell md-flex__cell--stretch md-footer-nav__title">
+              <span class="md-flex__ellipsis">
+                <span class="md-footer-nav__direction">
+                  Next
+                </span>
+                Tutorial
+              </span>
+            </div>
+            <div class="md-flex__cell md-flex__cell--shrink">
+              <i class="md-icon md-icon--arrow-forward md-footer-nav__button"></i>
+            </div>
+          </a>
+        
+      </nav>
+    </div>
+  
+  <div class="md-footer-meta md-typeset">
+    <div class="md-footer-meta__inner md-grid">
+      <div class="md-footer-copyright">
+        
+          <div class="md-footer-copyright__highlight">
+            Copyright © 2017 <a href="https://scifabric.com">Scifabric</a>
+          </div>
+        
+        powered by
+        <a href="http://www.mkdocs.org" title="MkDocs">MkDocs</a>
+        and
+        <a href="http://squidfunk.github.io/mkdocs-material/" title="Material for MkDocs">
+          Material for MkDocs</a>
+      </div>
+      
+        
+  <div class="md-footer-social">
+    
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    
+      <a href="https://github.com/Scifabric" class="md-footer-social__link fa fa-github"></a>
+    
+      <a href="https://twitter.com/Scifabric" class="md-footer-social__link fa fa-twitter"></a>
+    
+  </div>
+
+      
+    </div>
+  </div>
+</footer>
+      
+    </div>
+    
+      <script src="../../assets/javascripts/application-946997f430.js"></script>
+      
+      
+      <script>app.initialize({version:"0.16.3",url:{base:"../.."}})</script>
+      
+    
+    
+      
+      <script>!function(e,t,a,n,o,c,i){e.GoogleAnalyticsObject=o,e[o]=e[o]||function(){(e[o].q=e[o].q||[]).push(arguments)},e[o].l=1*new Date,c=t.createElement(a),i=t.getElementsByTagName(a)[0],c.async=1,c.src=n,i.parentNode.insertBefore(c,i)}(window,document,"script","https://www.google-analytics.com/analytics.js","ga"),ga("create","UA-49052879-1","auto"),ga("set","anonymizeIp",!0),ga("send","pageview");var links=document.getElementsByTagName("a");Array.prototype.map.call(links,function(e){e.host!=document.location.host&&e.addEventListener("click",function(){var t=e.getAttribute("data-md-action")||"follow";ga("send","event","outbound",t,e.href)})});var query=document.forms.search.query;query.addEventListener("blur",function(){if(this.value){var e=document.location.pathname;ga("send","pageview",e+"?q="+this.value)}})</script>
+      
+    
+  </body>
+</html>

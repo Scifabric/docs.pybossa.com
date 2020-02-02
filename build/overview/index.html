@@ -1,0 +1,2639 @@
+
+<!DOCTYPE html>
+<html lang="en" class="no-js">
+  <head>
+    
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width,initial-scale=1">
+      <meta http-equiv="x-ua-compatible" content="ie=edge">
+      
+      
+      
+      
+        <meta name="lang:clipboard.copy" content="Copy to clipboard">
+      
+        <meta name="lang:clipboard.copied" content="Copied to clipboard">
+      
+        <meta name="lang:search.languages" content="">
+      
+        <meta name="lang:search.result.none" content="No matching documents">
+      
+        <meta name="lang:search.result.one" content="1 matching document">
+      
+        <meta name="lang:search.result.other" content="# matching documents">
+      
+        <meta name="lang:search.tokenizer" content="[\s\-]+">
+      
+      
+        <link rel="shortcut icon" href="../../images/favicon.ico">
+      
+      <meta name="generator" content="mkdocs-0.16.3, mkdocs-material-1.12.1">
+    
+    
+      
+        <title>Quickstart: Creating a project - PYBOSSA Documentation</title>
+      
+    
+    
+      <script src="../../assets/javascripts/modernizr-e826f8942a.js"></script>
+    
+    
+      <link rel="stylesheet" href="../../assets/stylesheets/application-6c39f5478a.css">
+      
+        <link rel="stylesheet" href="../../assets/stylesheets/application-23f75ab9c7.palette.css">
+      
+    
+    
+      
+        
+        
+        
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Source Sans Pro:300,400,400i,700|Roboto+Mono">
+        <style>body,input{font-family:"Source Sans Pro","Helvetica Neue",Helvetica,Arial,sans-serif}code,kbd,pre{font-family:"Roboto Mono","Courier New",Courier,monospace}</style>
+      
+      <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
+    
+    
+    
+  </head>
+  
+  
+  
+  
+    <body data-md-color-primary="#087da1" data-md-color-accent="#00a889">
+  
+    <svg class="md-svg">
+      <defs>
+        
+        
+          <svg xmlns="http://www.w3.org/2000/svg" width="416" height="448" viewBox="0 0 416 448" id="github"><path fill="currentColor" d="M160 304q0 10-3.125 20.5t-10.75 19T128 352t-18.125-8.5-10.75-19T96 304t3.125-20.5 10.75-19T128 256t18.125 8.5 10.75 19T160 304zm160 0q0 10-3.125 20.5t-10.75 19T288 352t-18.125-8.5-10.75-19T256 304t3.125-20.5 10.75-19T288 256t18.125 8.5 10.75 19T320 304zm40 0q0-30-17.25-51T296 232q-10.25 0-48.75 5.25Q229.5 240 208 240t-39.25-2.75Q130.75 232 120 232q-29.5 0-46.75 21T56 304q0 22 8 38.375t20.25 25.75 30.5 15 35 7.375 37.25 1.75h42q20.5 0 37.25-1.75t35-7.375 30.5-15 20.25-25.75T360 304zm56-44q0 51.75-15.25 82.75-9.5 19.25-26.375 33.25t-35.25 21.5-42.5 11.875-42.875 5.5T212 416q-19.5 0-35.5-.75t-36.875-3.125-38.125-7.5-34.25-12.875T37 371.5t-21.5-28.75Q0 312 0 260q0-59.25 34-99-6.75-20.5-6.75-42.5 0-29 12.75-54.5 27 0 47.5 9.875t47.25 30.875Q171.5 96 212 96q37 0 70 8 26.25-20.5 46.75-30.25T376 64q12.75 25.5 12.75 54.5 0 21.75-6.75 42 34 40 34 99.5z"/></svg>
+        
+      </defs>
+    </svg>
+    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="drawer">
+    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="search">
+    <label class="md-overlay" data-md-component="overlay" for="drawer"></label>
+    
+      <header class="md-header" data-md-component="header">
+  <nav class="md-header-nav md-grid">
+    <div class="md-flex">
+      <div class="md-flex__cell md-flex__cell--shrink">
+        <a href="../.." title="PYBOSSA Documentation" class="md-header-nav__button md-logo">
+          
+            <i class="md-icon md-icon--home"></i>
+          
+        </a>
+      </div>
+      <div class="md-flex__cell md-flex__cell--shrink">
+        <label class="md-icon md-icon--menu md-header-nav__button" for="drawer"></label>
+      </div>
+      <div class="md-flex__cell md-flex__cell--stretch">
+        <span class="md-flex__ellipsis md-header-nav__title">
+          
+            
+              
+                <span class="md-header-nav__parent">
+                  Building a project
+                </span>
+              
+            
+            Quickstart: Creating a project
+          
+        </span>
+      </div>
+      <div class="md-flex__cell md-flex__cell--shrink">
+        
+          <label class="md-icon md-icon--search md-header-nav__button" for="search"></label>
+          
+<div class="md-search" data-md-component="search" role="dialog">
+  <label class="md-search__overlay" for="search"></label>
+  <div class="md-search__inner">
+    <form class="md-search__form" name="search">
+      <input type="text" class="md-search__input" name="query" required placeholder="Search" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="query">
+      <label class="md-icon md-search__icon" for="search"></label>
+      <button type="reset" class="md-icon md-search__icon" data-md-component="reset">&#xE5CD;</button>
+    </form>
+    <div class="md-search__output">
+      <div class="md-search__scrollwrap" data-md-scrollfix>
+        <div class="md-search-result" data-md-component="result">
+          <div class="md-search-result__meta">
+            Type to start searching
+          </div>
+          <ol class="md-search-result__list"></ol>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+        
+      </div>
+      
+        <div class="md-flex__cell md-flex__cell--shrink">
+          <div class="md-header-nav__source">
+            
+
+
+  
+
+
+  <a href="https://github.com/Scifabric/pybossa" title="Go to repository" class="md-source" data-md-source="github">
+    
+      <div class="md-source__icon">
+        <svg viewBox="0 0 24 24" width="24" height="24">
+          <use xlink:href="#github" width="24" height="24"></use>
+        </svg>
+      </div>
+    
+    <div class="md-source__repository">
+      Scifabric/pybossa
+    </div>
+  </a>
+
+          </div>
+        </div>
+      
+    </div>
+  </nav>
+</header>
+    
+    <div class="md-container">
+      
+      
+      
+      <main class="md-main">
+        <div class="md-main__inner md-grid" data-md-component="container">
+          
+            
+              <div class="md-sidebar md-sidebar--primary" data-md-component="navigation">
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    <nav class="md-nav md-nav--primary" data-md-level="0">
+  <label class="md-nav__title md-nav__title--site" for="drawer">
+    <span class="md-nav__button md-logo">
+      
+        <i class="md-icon md-icon--home"></i>
+      
+    </span>
+    PYBOSSA Documentation
+  </label>
+  
+    <div class="md-nav__source">
+      
+
+
+  
+
+
+  <a href="https://github.com/Scifabric/pybossa" title="Go to repository" class="md-source" data-md-source="github">
+    
+      <div class="md-source__icon">
+        <svg viewBox="0 0 24 24" width="24" height="24">
+          <use xlink:href="#github" width="24" height="24"></use>
+        </svg>
+      </div>
+    
+    <div class="md-source__repository">
+      Scifabric/pybossa
+    </div>
+  </a>
+
+    </div>
+  
+  <ul class="md-nav__list" data-md-scrollfix>
+    
+      
+      
+      
+
+
+  <li class="md-nav__item">
+    <a href="../.." title="Home" class="md-nav__link">
+      Home
+    </a>
+  </li>
+
+    
+      
+      
+      
+
+
+  <li class="md-nav__item md-nav__item--nested">
+    
+      <input class="md-toggle md-nav__toggle" data-md-toggle="nav-2" type="checkbox" id="nav-2">
+    
+    <label class="md-nav__link" for="nav-2">
+      Installation
+    </label>
+    <nav class="md-nav" data-md-component="collapsible" data-md-level="1">
+      <label class="md-nav__title" for="nav-2">
+        Installation
+      </label>
+      <ul class="md-nav__list" data-md-scrollfix>
+        
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../installation/gettingstarted/" title="Getting started" class="md-nav__link">
+      Getting started
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../installation/guide/" title="Installing the server" class="md-nav__link">
+      Installing the server
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../installation/configuration/" title="Configuring PYBOSSA" class="md-nav__link">
+      Configuring PYBOSSA
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../installation/deployment/" title="Deploying PYBOSSA with Nginx and uWsgi" class="md-nav__link">
+      Deploying PYBOSSA with Nginx and uWsgi
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../installation/admin/" title="Administrating PYBOSSA" class="md-nav__link">
+      Administrating PYBOSSA
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../installation/vagrant/" title="Testing PYBOSSA with Vagrant" class="md-nav__link">
+      Testing PYBOSSA with Vagrant
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../installation/security/" title="Security" class="md-nav__link">
+      Security
+    </a>
+  </li>
+
+        
+      </ul>
+    </nav>
+  </li>
+
+    
+      
+      
+      
+
+  
+
+
+  <li class="md-nav__item md-nav__item--active md-nav__item--nested">
+    
+      <input class="md-toggle md-nav__toggle" data-md-toggle="nav-3" type="checkbox" id="nav-3" checked>
+    
+    <label class="md-nav__link" for="nav-3">
+      Building a project
+    </label>
+    <nav class="md-nav" data-md-component="collapsible" data-md-level="1">
+      <label class="md-nav__title" for="nav-3">
+        Building a project
+      </label>
+      <ul class="md-nav__list" data-md-scrollfix>
+        
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../intro/" title="Introduction" class="md-nav__link">
+      Introduction
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+  
+
+
+  <li class="md-nav__item md-nav__item--active">
+    
+    <input class="md-toggle md-nav__toggle" data-md-toggle="toc" type="checkbox" id="toc">
+    
+      
+    
+    
+      <label class="md-nav__link md-nav__link--active" for="toc">
+        Quickstart: Creating a project
+      </label>
+    
+    <a href="./" title="Quickstart: Creating a project" class="md-nav__link md-nav__link--active">
+      Quickstart: Creating a project
+    </a>
+    
+      
+<nav class="md-nav md-nav--secondary">
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="toc">Table of contents</label>
+    <ul class="md-nav__list" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#using-the-web-interface" title="Using the Web Interface" class="md-nav__link">
+    Using the Web Interface
+  </a>
+  
+    <nav class="md-nav">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#creating-the-project" title="Creating the project" class="md-nav__link">
+    Creating the project
+  </a>
+  
+    <nav class="md-nav">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#create-a-pybossa-account" title="Create a PYBOSSA account" class="md-nav__link">
+    Create a PYBOSSA account
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#creating-the-project_1" title="Creating the project" class="md-nav__link">
+    Creating the project
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#importing-the-tasks-via-the-built-in-csv-task-importer" title="Importing the tasks via the built-in CSV Task Importer" class="md-nav__link">
+    Importing the tasks via the built-in CSV Task Importer
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#importing-the-tasks-from-an-epicollect-plus-public-project" title="Importing the tasks from an EpiCollect Plus Public Project" class="md-nav__link">
+    Importing the tasks from an EpiCollect Plus Public Project
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#importing-the-tasks-from-a-flickr-photo-set" title="Importing the tasks from a Flickr photo set" class="md-nav__link">
+    Importing the tasks from a Flickr photo set
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#importing-the-tasks-from-a-dropbox-account" title="Importing the tasks from a Dropbox account" class="md-nav__link">
+    Importing the tasks from a Dropbox account
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#importing-the-tasks-from-a-twitter-account-or-search-result" title="Importing the tasks from a Twitter account or search result" class="md-nav__link">
+    Importing the tasks from a Twitter account or search result
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#importing-tasks-from-an-amazon-s3-bucket" title="Importing tasks from an Amazon S3 bucket" class="md-nav__link">
+    Importing tasks from an Amazon S3 bucket
+  </a>
+  
+    <nav class="md-nav">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#importing-the-tasks-from-youtube" title="Importing the tasks from Youtube" class="md-nav__link">
+    Importing the tasks from Youtube
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#importing-the-tasks-from-a-iiif-manifest" title="Importing the tasks from a IIIF manifest" class="md-nav__link">
+    Importing the tasks from a IIIF manifest
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#flushing-all-the-tasks" title="Flushing all the tasks" class="md-nav__link">
+    Flushing all the tasks
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#creating-the-task-presenter" title="Creating the Task Presenter" class="md-nav__link">
+    Creating the Task Presenter
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#publishing-the-project" title="Publishing the project" class="md-nav__link">
+    Publishing the project
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#using-the-api" title="Using the API" class="md-nav__link">
+    Using the API
+  </a>
+  
+    <nav class="md-nav">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#creating-the-project_2" title="Creating the project" class="md-nav__link">
+    Creating the project
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#adding-tasks" title="Adding tasks" class="md-nav__link">
+    Adding tasks
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#creating-the-task-presenter_1" title="Creating the Task Presenter" class="md-nav__link">
+    Creating the Task Presenter
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#using-pybossa-api-from-the-command-line" title="Using PYBOSSA API from the command line" class="md-nav__link">
+    Using PYBOSSA API from the command line
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+      
+      
+    </ul>
+  
+</nav>
+    
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../pbs/" title="Using the command line" class="md-nav__link">
+      Using the command line
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../tutorial/" title="Tutorial" class="md-nav__link">
+      Tutorial
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../project_settings/" title="Configuring the project" class="md-nav__link">
+      Configuring the project
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../webhooks/" title="Real time data analysis" class="md-nav__link">
+      Real time data analysis
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../capture/" title="Data capturing: image, video or audio" class="md-nav__link">
+      Data capturing: image, video or audio
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../model/" title="Domain model" class="md-nav__link">
+      Domain model
+    </a>
+  </li>
+
+        
+      </ul>
+    </nav>
+  </li>
+
+    
+      
+      
+      
+
+
+  <li class="md-nav__item md-nav__item--nested">
+    
+      <input class="md-toggle md-nav__toggle" data-md-toggle="nav-4" type="checkbox" id="nav-4">
+    
+    <label class="md-nav__link" for="nav-4">
+      API
+    </label>
+    <nav class="md-nav" data-md-component="collapsible" data-md-level="1">
+      <label class="md-nav__title" for="nav-4">
+        API
+      </label>
+      <ul class="md-nav__list" data-md-scrollfix>
+        
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../api/intro/" title="Introduction" class="md-nav__link">
+      Introduction
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../api/crud/" title="CRUD" class="md-nav__link">
+      CRUD
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../api/fulltextsearch/" title="Full text search" class="md-nav__link">
+      Full text search
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../api/sso/" title="Disqus Single Sign On" class="md-nav__link">
+      Disqus Single Sign On
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item md-nav__item--nested">
+    
+      <input class="md-toggle md-nav__toggle" data-md-toggle="nav-4-5" type="checkbox" id="nav-4-5">
+    
+    <label class="md-nav__link" for="nav-4-5">
+      Projects
+    </label>
+    <nav class="md-nav" data-md-component="collapsible" data-md-level="2">
+      <label class="md-nav__title" for="nav-4-5">
+        Projects
+      </label>
+      <ul class="md-nav__list" data-md-scrollfix>
+        
+        
+          
+          
+          
+
+
+  <li class="md-nav__item md-nav__item--nested">
+    
+      <input class="md-toggle md-nav__toggle" data-md-toggle="nav-4-5-1" type="checkbox" id="nav-4-5-1">
+    
+    <label class="md-nav__link" for="nav-4-5-1">
+      RESTful API
+    </label>
+    <nav class="md-nav" data-md-component="collapsible" data-md-level="3">
+      <label class="md-nav__title" for="nav-4-5-1">
+        RESTful API
+      </label>
+      <ul class="md-nav__list" data-md-scrollfix>
+        
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../api/project/filtering/" title="Filtering data to several project IDs" class="md-nav__link">
+      Filtering data to several project IDs
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../api/project/statistics/" title="Statistics" class="md-nav__link">
+      Statistics
+    </a>
+  </li>
+
+        
+      </ul>
+    </nav>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item md-nav__item--nested">
+    
+      <input class="md-toggle md-nav__toggle" data-md-toggle="nav-4-5-2" type="checkbox" id="nav-4-5-2">
+    
+    <label class="md-nav__link" for="nav-4-5-2">
+      PYBOSSA endpoints
+    </label>
+    <nav class="md-nav" data-md-component="collapsible" data-md-level="3">
+      <label class="md-nav__title" for="nav-4-5-2">
+        PYBOSSA endpoints
+      </label>
+      <ul class="md-nav__list" data-md-scrollfix>
+        
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../api/project/project/" title="Options" class="md-nav__link">
+      Options
+    </a>
+  </li>
+
+        
+      </ul>
+    </nav>
+  </li>
+
+        
+      </ul>
+    </nav>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item md-nav__item--nested">
+    
+      <input class="md-toggle md-nav__toggle" data-md-toggle="nav-4-6" type="checkbox" id="nav-4-6">
+    
+    <label class="md-nav__link" for="nav-4-6">
+      Tasks
+    </label>
+    <nav class="md-nav" data-md-component="collapsible" data-md-level="2">
+      <label class="md-nav__title" for="nav-4-6">
+        Tasks
+      </label>
+      <ul class="md-nav__list" data-md-scrollfix>
+        
+        
+          
+          
+          
+
+
+  <li class="md-nav__item md-nav__item--nested">
+    
+      <input class="md-toggle md-nav__toggle" data-md-toggle="nav-4-6-1" type="checkbox" id="nav-4-6-1">
+    
+    <label class="md-nav__link" for="nav-4-6-1">
+      RESTful API
+    </label>
+    <nav class="md-nav" data-md-component="collapsible" data-md-level="3">
+      <label class="md-nav__title" for="nav-4-6-1">
+        RESTful API
+      </label>
+      <ul class="md-nav__list" data-md-scrollfix>
+        
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../api/task/favorites/" title="Favorites" class="md-nav__link">
+      Favorites
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../api/task/participated/" title="Excluding contributed tasks" class="md-nav__link">
+      Excluding contributed tasks
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../api/task/newtask/" title="Requesting a task" class="md-nav__link">
+      Requesting a task
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../api/task/external/" title="External user ID" class="md-nav__link">
+      External user ID
+    </a>
+  </li>
+
+        
+      </ul>
+    </nav>
+  </li>
+
+        
+      </ul>
+    </nav>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item md-nav__item--nested">
+    
+      <input class="md-toggle md-nav__toggle" data-md-toggle="nav-4-7" type="checkbox" id="nav-4-7">
+    
+    <label class="md-nav__link" for="nav-4-7">
+      TaskRuns
+    </label>
+    <nav class="md-nav" data-md-component="collapsible" data-md-level="2">
+      <label class="md-nav__title" for="nav-4-7">
+        TaskRuns
+      </label>
+      <ul class="md-nav__list" data-md-scrollfix>
+        
+        
+          
+          
+          
+
+
+  <li class="md-nav__item md-nav__item--nested">
+    
+      <input class="md-toggle md-nav__toggle" data-md-toggle="nav-4-7-1" type="checkbox" id="nav-4-7-1">
+    
+    <label class="md-nav__link" for="nav-4-7-1">
+      RESTful API
+    </label>
+    <nav class="md-nav" data-md-component="collapsible" data-md-level="3">
+      <label class="md-nav__title" for="nav-4-7-1">
+        RESTful API
+      </label>
+      <ul class="md-nav__list" data-md-scrollfix>
+        
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../api/taskrun/intro/" title="Attaching files" class="md-nav__link">
+      Attaching files
+    </a>
+  </li>
+
+        
+      </ul>
+    </nav>
+  </li>
+
+        
+      </ul>
+    </nav>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item md-nav__item--nested">
+    
+      <input class="md-toggle md-nav__toggle" data-md-toggle="nav-4-8" type="checkbox" id="nav-4-8">
+    
+    <label class="md-nav__link" for="nav-4-8">
+      User
+    </label>
+    <nav class="md-nav" data-md-component="collapsible" data-md-level="2">
+      <label class="md-nav__title" for="nav-4-8">
+        User
+      </label>
+      <ul class="md-nav__list" data-md-scrollfix>
+        
+        
+          
+          
+          
+
+
+  <li class="md-nav__item md-nav__item--nested">
+    
+      <input class="md-toggle md-nav__toggle" data-md-toggle="nav-4-8-1" type="checkbox" id="nav-4-8-1">
+    
+    <label class="md-nav__link" for="nav-4-8-1">
+      RESTful API
+    </label>
+    <nav class="md-nav" data-md-component="collapsible" data-md-level="3">
+      <label class="md-nav__title" for="nav-4-8-1">
+        RESTful API
+      </label>
+      <ul class="md-nav__list" data-md-scrollfix>
+        
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../api/user/intro/" title="Intro" class="md-nav__link">
+      Intro
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../api/user/progress/" title="Project progress" class="md-nav__link">
+      Project progress
+    </a>
+  </li>
+
+        
+      </ul>
+    </nav>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item md-nav__item--nested">
+    
+      <input class="md-toggle md-nav__toggle" data-md-toggle="nav-4-8-2" type="checkbox" id="nav-4-8-2">
+    
+    <label class="md-nav__link" for="nav-4-8-2">
+      PYBOSSA endpoints
+    </label>
+    <nav class="md-nav" data-md-component="collapsible" data-md-level="3">
+      <label class="md-nav__title" for="nav-4-8-2">
+        PYBOSSA endpoints
+      </label>
+      <ul class="md-nav__list" data-md-scrollfix>
+        
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../api/user/account/" title="Account" class="md-nav__link">
+      Account
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../api/user/admin/" title="Admins" class="md-nav__link">
+      Admins
+    </a>
+  </li>
+
+        
+      </ul>
+    </nav>
+  </li>
+
+        
+      </ul>
+    </nav>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item md-nav__item--nested">
+    
+      <input class="md-toggle md-nav__toggle" data-md-toggle="nav-4-9" type="checkbox" id="nav-4-9">
+    
+    <label class="md-nav__link" for="nav-4-9">
+      Helping materials
+    </label>
+    <nav class="md-nav" data-md-component="collapsible" data-md-level="2">
+      <label class="md-nav__title" for="nav-4-9">
+        Helping materials
+      </label>
+      <ul class="md-nav__list" data-md-scrollfix>
+        
+        
+          
+          
+          
+
+
+  <li class="md-nav__item md-nav__item--nested">
+    
+      <input class="md-toggle md-nav__toggle" data-md-toggle="nav-4-9-1" type="checkbox" id="nav-4-9-1">
+    
+    <label class="md-nav__link" for="nav-4-9-1">
+      RESTful API
+    </label>
+    <nav class="md-nav" data-md-component="collapsible" data-md-level="3">
+      <label class="md-nav__title" for="nav-4-9-1">
+        RESTful API
+      </label>
+      <ul class="md-nav__list" data-md-scrollfix>
+        
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../api/helpingmaterial/intro/" title="Attaching files" class="md-nav__link">
+      Attaching files
+    </a>
+  </li>
+
+        
+      </ul>
+    </nav>
+  </li>
+
+        
+      </ul>
+    </nav>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item md-nav__item--nested">
+    
+      <input class="md-toggle md-nav__toggle" data-md-toggle="nav-4-10" type="checkbox" id="nav-4-10">
+    
+    <label class="md-nav__link" for="nav-4-10">
+      Pages
+    </label>
+    <nav class="md-nav" data-md-component="collapsible" data-md-level="2">
+      <label class="md-nav__title" for="nav-4-10">
+        Pages
+      </label>
+      <ul class="md-nav__list" data-md-scrollfix>
+        
+        
+          
+          
+          
+
+
+  <li class="md-nav__item md-nav__item--nested">
+    
+      <input class="md-toggle md-nav__toggle" data-md-toggle="nav-4-10-1" type="checkbox" id="nav-4-10-1">
+    
+    <label class="md-nav__link" for="nav-4-10-1">
+      RESTful API
+    </label>
+    <nav class="md-nav" data-md-component="collapsible" data-md-level="3">
+      <label class="md-nav__title" for="nav-4-10-1">
+        RESTful API
+      </label>
+      <ul class="md-nav__list" data-md-scrollfix>
+        
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../api/page/intro/" title="Info" class="md-nav__link">
+      Info
+    </a>
+  </li>
+
+        
+      </ul>
+    </nav>
+  </li>
+
+        
+      </ul>
+    </nav>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item md-nav__item--nested">
+    
+      <input class="md-toggle md-nav__toggle" data-md-toggle="nav-4-11" type="checkbox" id="nav-4-11">
+    
+    <label class="md-nav__link" for="nav-4-11">
+      Blog posts
+    </label>
+    <nav class="md-nav" data-md-component="collapsible" data-md-level="2">
+      <label class="md-nav__title" for="nav-4-11">
+        Blog posts
+      </label>
+      <ul class="md-nav__list" data-md-scrollfix>
+        
+        
+          
+          
+          
+
+
+  <li class="md-nav__item md-nav__item--nested">
+    
+      <input class="md-toggle md-nav__toggle" data-md-toggle="nav-4-11-1" type="checkbox" id="nav-4-11-1">
+    
+    <label class="md-nav__link" for="nav-4-11-1">
+      RESTful API
+    </label>
+    <nav class="md-nav" data-md-component="collapsible" data-md-level="3">
+      <label class="md-nav__title" for="nav-4-11-1">
+        RESTful API
+      </label>
+      <ul class="md-nav__list" data-md-scrollfix>
+        
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../api/blogpost/intro/" title="Attaching files" class="md-nav__link">
+      Attaching files
+    </a>
+  </li>
+
+        
+      </ul>
+    </nav>
+  </li>
+
+        
+      </ul>
+    </nav>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item md-nav__item--nested">
+    
+      <input class="md-toggle md-nav__toggle" data-md-toggle="nav-4-12" type="checkbox" id="nav-4-12">
+    
+    <label class="md-nav__link" for="nav-4-12">
+      Leaderboard
+    </label>
+    <nav class="md-nav" data-md-component="collapsible" data-md-level="2">
+      <label class="md-nav__title" for="nav-4-12">
+        Leaderboard
+      </label>
+      <ul class="md-nav__list" data-md-scrollfix>
+        
+        
+          
+          
+          
+
+
+  <li class="md-nav__item md-nav__item--nested">
+    
+      <input class="md-toggle md-nav__toggle" data-md-toggle="nav-4-12-1" type="checkbox" id="nav-4-12-1">
+    
+    <label class="md-nav__link" for="nav-4-12-1">
+      PYBOSSA endpoints
+    </label>
+    <nav class="md-nav" data-md-component="collapsible" data-md-level="3">
+      <label class="md-nav__title" for="nav-4-12-1">
+        PYBOSSA endpoints
+      </label>
+      <ul class="md-nav__list" data-md-scrollfix>
+        
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../api/leaderboard/" title="Methods" class="md-nav__link">
+      Methods
+    </a>
+  </li>
+
+        
+      </ul>
+    </nav>
+  </li>
+
+        
+      </ul>
+    </nav>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item md-nav__item--nested">
+    
+      <input class="md-toggle md-nav__toggle" data-md-toggle="nav-4-13" type="checkbox" id="nav-4-13">
+    
+    <label class="md-nav__link" for="nav-4-13">
+      Home page
+    </label>
+    <nav class="md-nav" data-md-component="collapsible" data-md-level="2">
+      <label class="md-nav__title" for="nav-4-13">
+        Home page
+      </label>
+      <ul class="md-nav__list" data-md-scrollfix>
+        
+        
+          
+          
+          
+
+
+  <li class="md-nav__item md-nav__item--nested">
+    
+      <input class="md-toggle md-nav__toggle" data-md-toggle="nav-4-13-1" type="checkbox" id="nav-4-13-1">
+    
+    <label class="md-nav__link" for="nav-4-13-1">
+      PYBOSSA endpoints
+    </label>
+    <nav class="md-nav" data-md-component="collapsible" data-md-level="3">
+      <label class="md-nav__title" for="nav-4-13-1">
+        PYBOSSA endpoints
+      </label>
+      <ul class="md-nav__list" data-md-scrollfix>
+        
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../api/home/" title="Methods" class="md-nav__link">
+      Methods
+    </a>
+  </li>
+
+        
+      </ul>
+    </nav>
+  </li>
+
+        
+      </ul>
+    </nav>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item md-nav__item--nested">
+    
+      <input class="md-toggle md-nav__toggle" data-md-toggle="nav-4-14" type="checkbox" id="nav-4-14">
+    
+    <label class="md-nav__link" for="nav-4-14">
+      Announcement
+    </label>
+    <nav class="md-nav" data-md-component="collapsible" data-md-level="2">
+      <label class="md-nav__title" for="nav-4-14">
+        Announcement
+      </label>
+      <ul class="md-nav__list" data-md-scrollfix>
+        
+        
+          
+          
+          
+
+
+  <li class="md-nav__item md-nav__item--nested">
+    
+      <input class="md-toggle md-nav__toggle" data-md-toggle="nav-4-14-1" type="checkbox" id="nav-4-14-1">
+    
+    <label class="md-nav__link" for="nav-4-14-1">
+      PYBOSSA endpoints
+    </label>
+    <nav class="md-nav" data-md-component="collapsible" data-md-level="3">
+      <label class="md-nav__title" for="nav-4-14-1">
+        PYBOSSA endpoints
+      </label>
+      <ul class="md-nav__list" data-md-scrollfix>
+        
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../api/announcement/" title="Methods" class="md-nav__link">
+      Methods
+    </a>
+  </li>
+
+        
+      </ul>
+    </nav>
+  </li>
+
+        
+      </ul>
+    </nav>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item md-nav__item--nested">
+    
+      <input class="md-toggle md-nav__toggle" data-md-toggle="nav-4-15" type="checkbox" id="nav-4-15">
+    
+    <label class="md-nav__link" for="nav-4-15">
+      Categories
+    </label>
+    <nav class="md-nav" data-md-component="collapsible" data-md-level="2">
+      <label class="md-nav__title" for="nav-4-15">
+        Categories
+      </label>
+      <ul class="md-nav__list" data-md-scrollfix>
+        
+        
+          
+          
+          
+
+
+  <li class="md-nav__item md-nav__item--nested">
+    
+      <input class="md-toggle md-nav__toggle" data-md-toggle="nav-4-15-1" type="checkbox" id="nav-4-15-1">
+    
+    <label class="md-nav__link" for="nav-4-15-1">
+      PYBOSSA endpoints
+    </label>
+    <nav class="md-nav" data-md-component="collapsible" data-md-level="3">
+      <label class="md-nav__title" for="nav-4-15-1">
+        PYBOSSA endpoints
+      </label>
+      <ul class="md-nav__list" data-md-scrollfix>
+        
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../api/categories/" title="Methods" class="md-nav__link">
+      Methods
+    </a>
+  </li>
+
+        
+      </ul>
+    </nav>
+  </li>
+
+        
+      </ul>
+    </nav>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item md-nav__item--nested">
+    
+      <input class="md-toggle md-nav__toggle" data-md-toggle="nav-4-16" type="checkbox" id="nav-4-16">
+    
+    <label class="md-nav__link" for="nav-4-16">
+      Administration
+    </label>
+    <nav class="md-nav" data-md-component="collapsible" data-md-level="2">
+      <label class="md-nav__title" for="nav-4-16">
+        Administration
+      </label>
+      <ul class="md-nav__list" data-md-scrollfix>
+        
+        
+          
+          
+          
+
+
+  <li class="md-nav__item md-nav__item--nested">
+    
+      <input class="md-toggle md-nav__toggle" data-md-toggle="nav-4-16-1" type="checkbox" id="nav-4-16-1">
+    
+    <label class="md-nav__link" for="nav-4-16-1">
+      PYBOSSA endpoints
+    </label>
+    <nav class="md-nav" data-md-component="collapsible" data-md-level="3">
+      <label class="md-nav__title" for="nav-4-16-1">
+        PYBOSSA endpoints
+      </label>
+      <ul class="md-nav__list" data-md-scrollfix>
+        
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../api/admin/dashboard/" title="Dashboard" class="md-nav__link">
+      Dashboard
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../api/admin/featured/" title="Featured projects" class="md-nav__link">
+      Featured projects
+    </a>
+  </li>
+
+        
+      </ul>
+    </nav>
+  </li>
+
+        
+      </ul>
+    </nav>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item md-nav__item--nested">
+    
+      <input class="md-toggle md-nav__toggle" data-md-toggle="nav-4-17" type="checkbox" id="nav-4-17">
+    
+    <label class="md-nav__link" for="nav-4-17">
+      Help
+    </label>
+    <nav class="md-nav" data-md-component="collapsible" data-md-level="2">
+      <label class="md-nav__title" for="nav-4-17">
+        Help
+      </label>
+      <ul class="md-nav__list" data-md-scrollfix>
+        
+        
+          
+          
+          
+
+
+  <li class="md-nav__item md-nav__item--nested">
+    
+      <input class="md-toggle md-nav__toggle" data-md-toggle="nav-4-17-1" type="checkbox" id="nav-4-17-1">
+    
+    <label class="md-nav__link" for="nav-4-17-1">
+      PYBOSSA endpoints
+    </label>
+    <nav class="md-nav" data-md-component="collapsible" data-md-level="3">
+      <label class="md-nav__title" for="nav-4-17-1">
+        PYBOSSA endpoints
+      </label>
+      <ul class="md-nav__list" data-md-scrollfix>
+        
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../api/help/" title="Methods" class="md-nav__link">
+      Methods
+    </a>
+  </li>
+
+        
+      </ul>
+    </nav>
+  </li>
+
+        
+      </ul>
+    </nav>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item md-nav__item--nested">
+    
+      <input class="md-toggle md-nav__toggle" data-md-toggle="nav-4-18" type="checkbox" id="nav-4-18">
+    
+    <label class="md-nav__link" for="nav-4-18">
+      Server stats
+    </label>
+    <nav class="md-nav" data-md-component="collapsible" data-md-level="2">
+      <label class="md-nav__title" for="nav-4-18">
+        Server stats
+      </label>
+      <ul class="md-nav__list" data-md-scrollfix>
+        
+        
+          
+          
+          
+
+
+  <li class="md-nav__item md-nav__item--nested">
+    
+      <input class="md-toggle md-nav__toggle" data-md-toggle="nav-4-18-1" type="checkbox" id="nav-4-18-1">
+    
+    <label class="md-nav__link" for="nav-4-18-1">
+      PYBOSSA endpoints
+    </label>
+    <nav class="md-nav" data-md-component="collapsible" data-md-level="3">
+      <label class="md-nav__title" for="nav-4-18-1">
+        PYBOSSA endpoints
+      </label>
+      <ul class="md-nav__list" data-md-scrollfix>
+        
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../api/stats/" title="Methods" class="md-nav__link">
+      Methods
+    </a>
+  </li>
+
+        
+      </ul>
+    </nav>
+  </li>
+
+        
+      </ul>
+    </nav>
+  </li>
+
+        
+      </ul>
+    </nav>
+  </li>
+
+    
+      
+      
+      
+
+
+  <li class="md-nav__item">
+    <a href="../../installation/vagrant/" title="Testing PYBOSSA with Vagrant" class="md-nav__link">
+      Testing PYBOSSA with Vagrant
+    </a>
+  </li>
+
+    
+      
+      
+      
+
+
+  <li class="md-nav__item md-nav__item--nested">
+    
+      <input class="md-toggle md-nav__toggle" data-md-toggle="nav-6" type="checkbox" id="nav-6">
+    
+    <label class="md-nav__link" for="nav-6">
+      Contributing
+    </label>
+    <nav class="md-nav" data-md-component="collapsible" data-md-level="1">
+      <label class="md-nav__title" for="nav-6">
+        Contributing
+      </label>
+      <ul class="md-nav__list" data-md-scrollfix>
+        
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../contributing/" title="General" class="md-nav__link">
+      General
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../translating/" title="Translating PYBOSSA" class="md-nav__link">
+      Translating PYBOSSA
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../plugins/" title="Writing plugins" class="md-nav__link">
+      Writing plugins
+    </a>
+  </li>
+
+        
+      </ul>
+    </nav>
+  </li>
+
+    
+      
+      
+      
+
+
+  <li class="md-nav__item">
+    <a href="../../gdpr/" title="GDPR" class="md-nav__link">
+      GDPR
+    </a>
+  </li>
+
+    
+      
+      
+      
+
+
+  <li class="md-nav__item">
+    <a href="../../faq/" title="FAQ" class="md-nav__link">
+      FAQ
+    </a>
+  </li>
+
+    
+  </ul>
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+            
+              <div class="md-sidebar md-sidebar--secondary" data-md-component="toc">
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+<nav class="md-nav md-nav--secondary">
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="toc">Table of contents</label>
+    <ul class="md-nav__list" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#using-the-web-interface" title="Using the Web Interface" class="md-nav__link">
+    Using the Web Interface
+  </a>
+  
+    <nav class="md-nav">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#creating-the-project" title="Creating the project" class="md-nav__link">
+    Creating the project
+  </a>
+  
+    <nav class="md-nav">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#create-a-pybossa-account" title="Create a PYBOSSA account" class="md-nav__link">
+    Create a PYBOSSA account
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#creating-the-project_1" title="Creating the project" class="md-nav__link">
+    Creating the project
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#importing-the-tasks-via-the-built-in-csv-task-importer" title="Importing the tasks via the built-in CSV Task Importer" class="md-nav__link">
+    Importing the tasks via the built-in CSV Task Importer
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#importing-the-tasks-from-an-epicollect-plus-public-project" title="Importing the tasks from an EpiCollect Plus Public Project" class="md-nav__link">
+    Importing the tasks from an EpiCollect Plus Public Project
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#importing-the-tasks-from-a-flickr-photo-set" title="Importing the tasks from a Flickr photo set" class="md-nav__link">
+    Importing the tasks from a Flickr photo set
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#importing-the-tasks-from-a-dropbox-account" title="Importing the tasks from a Dropbox account" class="md-nav__link">
+    Importing the tasks from a Dropbox account
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#importing-the-tasks-from-a-twitter-account-or-search-result" title="Importing the tasks from a Twitter account or search result" class="md-nav__link">
+    Importing the tasks from a Twitter account or search result
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#importing-tasks-from-an-amazon-s3-bucket" title="Importing tasks from an Amazon S3 bucket" class="md-nav__link">
+    Importing tasks from an Amazon S3 bucket
+  </a>
+  
+    <nav class="md-nav">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#importing-the-tasks-from-youtube" title="Importing the tasks from Youtube" class="md-nav__link">
+    Importing the tasks from Youtube
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#importing-the-tasks-from-a-iiif-manifest" title="Importing the tasks from a IIIF manifest" class="md-nav__link">
+    Importing the tasks from a IIIF manifest
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#flushing-all-the-tasks" title="Flushing all the tasks" class="md-nav__link">
+    Flushing all the tasks
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#creating-the-task-presenter" title="Creating the Task Presenter" class="md-nav__link">
+    Creating the Task Presenter
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#publishing-the-project" title="Publishing the project" class="md-nav__link">
+    Publishing the project
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#using-the-api" title="Using the API" class="md-nav__link">
+    Using the API
+  </a>
+  
+    <nav class="md-nav">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#creating-the-project_2" title="Creating the project" class="md-nav__link">
+    Creating the project
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#adding-tasks" title="Adding tasks" class="md-nav__link">
+    Adding tasks
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#creating-the-task-presenter_1" title="Creating the Task Presenter" class="md-nav__link">
+    Creating the Task Presenter
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#using-pybossa-api-from-the-command-line" title="Using PYBOSSA API from the command line" class="md-nav__link">
+    Using PYBOSSA API from the command line
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+      
+      
+    </ul>
+  
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+          
+          <div class="md-content">
+            <article class="md-content__inner md-typeset">
+              
+                
+                
+                <h1 id="quickstart-creating-a-project">Quickstart: Creating a Project<a class="headerlink" href="#quickstart-creating-a-project" title="Permanent link">&para;</a></h1>
+<p>This is a short guide on how you can create a PYBOSSA project. You may wish to start with the <a href="../tutorial/">step by step tutorial</a>; which walks through creating a simple photo classification project if you want to understand all the details about how a project works.</p>
+<p>First of all, we have to create a project for the project. To create a project, you will have to provide the following information:</p>
+<ol>
+<li><strong>Name</strong>,</li>
+<li><strong>Short name</strong> or <strong>slug</strong>, and</li>
+<li><strong>Description</strong></li>
+</ol>
+<p>The <strong>slug</strong> or <strong>short name</strong> is a shortcut for accessing the project
+via the web (short URLs like this <a href="http://domain.com/project/slug">http://domain.com/project/slug</a>).</p>
+<p>The <strong>description</strong> is a short sentence that will be used to describe
+your project (think about it as a Tweet long description).</p>
+<p>A project can be created using two different methods:</p>
+<ul>
+<li>web interface, or</li>
+<li>API interface.</li>
+</ul>
+<h2 id="using-the-web-interface">Using the Web Interface<a class="headerlink" href="#using-the-web-interface" title="Permanent link">&para;</a></h2>
+<p>Creating a project using the web interface involves four steps:</p>
+<ol>
+<li>Building the project,</li>
+<li>Import the tasks using one of the available <a href="../intro/#adding-tasks-to-a-project">task importers</a>,</li>
+<li>Write the task-presenter for the users, and</li>
+<li>Publish the project.</li>
+</ol>
+<h3 id="creating-the-project">Creating the project<a class="headerlink" href="#creating-the-project" title="Permanent link">&para;</a></h3>
+<p>To create a project using the web interface you have
+to:</p>
+<h4 id="create-a-pybossa-account">Create a PYBOSSA account<a class="headerlink" href="#create-a-pybossa-account" title="Permanent link">&para;</a></h4>
+<p>You can create an account filling a form.</p>
+<p><img alt="PYBOSSA Register" src="https://i.imgur.com/MMnUQr7.png" /></p>
+<p>If PYBOSSA has Twiter, Facebook or Google authentication methods enabled, you will be able to create an account using them. See the <a href="../../installation/configuration/">documentation</a> for more information about these alternatives.</p>
+<p><img alt="PYBOSSA sign-in methods" src="https://i.imgur.com/GxhfjGL.png" /></p>
+<p>You can also set preferences for language, location, area of expertise(termed as user type) and set metadata for the account. For this, pybossa server need to be configured with new settings; sample for same can be obtained from pybossa/settings_upref_mdata.py.tmpl. Rename settings_upref_mdata.py.tmpl to settings_upref_mdata.py and copy it under folder containing settings_local.py. With this, contents of settings_upref_mdata.py will be available on account filling form.</p>
+<p><img alt="PYBOSSA Register with preferences and metadata" src="https://i.imgur.com/81rAu2m.png" /></p>
+<p>User preference/metedata set for the account can viewed and modified under account profile page.</p>
+<p><img alt="PYBOSSA profile with preferences and metadata" src="https://i.imgur.com/K5BausZ.png" /></p>
+<h4 id="creating-the-project_1">Creating the project<a class="headerlink" href="#creating-the-project_1" title="Permanent link">&para;</a></h4>
+<p>Once you have an account, click in <strong>create the ** link of the navigation bar. After clicking on the previous link, you will have to fill in a    form with the fundamental information to create your project:
+    1.  **Name</strong>: the full name of your project, i.e., <em>Flickr Person
+        Finder</em>.
+    2.  <strong>Short Name</strong>: the <em>slug</em> or short name used in the URL for         accessing your project, i.e., <em>flickrperson</em>.
+    3.  <strong>Long Description</strong>: A <em>long</em> description where you can use
+        Markdown to format the description of your project. This field
+        is usually used to provide information about the project, the
+        developer, the researcher group or institutions involved in the
+        project, etc.</p>
+<p><img alt="PYBOSSA Create link" src="https://i.imgur.com/Js4YgVg.png" /></p>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>PYBOSSA usually provides two Project Categories by default: <em>thinking</em> and <em>sensing</em>. The <em>thinking</em> category represents the standard PYBOSSA project where users contribute helping with their skills. <em>Sensing</em> category refers to projects that are using volunteer sensing tools like EpiCollect or Raspberry Pi with PYBOSSA for gathering data.</p>
+</div>
+<p>Once you have filled all the fields, click in the <strong>Create the project</strong> button, and you will have created your first project <img alt="👍" class="emojione" src="https://cdnjs.cloudflare.com/ajax/libs/emojione/2.2.7/assets/svg/1f44d.svg" title=":thumbsup:" /></p>
+<p>After creating the project, you should be redirected to the <strong>Settings&rsquo;</strong>  project page, where you will be able to customize your project by adding some extra information or changing some settings. There, you will find a form with the same fields as in the previous step (just in case you&rsquo;ve changed your mind and wanted to change any of them) plus the following:</p>
+<ul>
+<li><strong>Description</strong>: A <strong>short</strong> description of the project, e.g., <em>A    project to classify cancer cells</em>. By default, this field is automatically populated with the information that you provided in the <strong>Long description</strong> field.</li>
+<li><strong>Allow Anonymous Contributors</strong>: By default, anonymous and authenticated users can participate in all the projects. However, you can change it only to allow authenticated volunteers to participate.</li>
+<li><strong>Password</strong>: If you want to control who can access your project, you can set a password here to share with those you allow to do it. If you leave it blank, then no password will protect your project.</li>
+<li><strong>Category</strong>: Select a category that fits your project. Categories
+   are added and managed by the server administrators.</li>
+</ul>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>Also, you will be able to select and upload a <strong>image</strong> from your local computer to set it as the project image throughout the server.</p>
+</div>
+<p><img alt="PYBOSSA Project Update page" src="https://i.imgur.com/UbSOAcZ.png" /></p>
+<h3 id="importing-the-tasks-via-the-built-in-csv-task-importer">Importing the tasks via the built-in CSV Task Importer<a class="headerlink" href="#importing-the-tasks-via-the-built-in-csv-task-importer" title="Permanent link">&para;</a></h3>
+<p>Tasks can be imported from different services like Dropbox or Amazon S3 via the importers. To use one, just do the following:
+1. Navigate to your project&rsquo;s page (you can directly access it using
+   the <em>slug</em> project name: <a href="http://server/project/slug">http://server/project/slug</a>).
+2. Click in the <strong>Tasks</strong> section -on the left side local navigation
+   menu:</p>
+<p><img alt="Image" src="https://i.imgur.com/nauht7l.png" /></p>
+<ol>
+<li>And click again on the <strong>Import Tasks</strong> card. After clicking on it, you will see several options. The first ones are for using the different kinds of importers supported by PYBOSSA: Amazon S3, Twitter, Dropbox, Flickr, Youtube, Google Spreadsheet, CSV URL, IIIF, and EpiCollect Plus.</li>
+</ol>
+<p><img alt="Image" src="https://i.imgur.com/eWBxSyS.png" /></p>
+<p>For example, the Flickr importer will allow importing a Flickr album by typing its ID or if you have an account, by logging into Flickr and
+showing your public (and creative commons licensed) albums:</p>
+<p><img alt="Image" src="https://i.imgur.com/lF9LJVO.jpg" /></p>
+<p>Select one of the albums, click import and all the pictures will be
+imported as tasks for your PYBOSSA project. As simple as that <img alt="👌" class="emojione" src="https://cdnjs.cloudflare.com/ajax/libs/emojione/2.2.7/assets/svg/1f44c.svg" title=":ok_hand:" />.</p>
+<p>The other importers are very similar. In most cases, you&rsquo;ll provide a URL to the resource, like for the CSV and Google Spreadsheet importer, while the Dropbox, Amazon S3, Twitter, Youtube, and EpiCollect Plus importers will have a friendly interface to import data automagically for you.</p>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>If you&rsquo;re trying to import from a Google Spreadsheet, ensure the file is accessible to everyone via the Share option, choosing: &ldquo;Public on the web - Anyone on the Internet can find and view.&rdquo;</p>
+</div>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>Your spreadsheet/CSV file must contain a header row. All the fields in the CSV will be serialized to JSON and stored in the <strong>info</strong> field. If your field name is one of <strong>state</strong>, <strong>quorum</strong>, <strong>calibration</strong>,    <strong>priority_0</strong>, or <strong>n_answers</strong>, it will be saved in the respective     columns. Your spreadsheet must be visible to the public or everyone with an URL.</p>
+</div>
+<p>In the Task Importer section, you&rsquo;ll also find other pre-loaded Google Spreadsheets URLs. Those templates are examples that you can use
+to learn how to create your spreadsheets and import data for image,
+sound, video, pdf mining and mapping projects.</p>
+<p><img alt="Image" src="https://i.imgur.com/eGwKDpB.png" /></p>
+<p>By using these templates, you&rsquo;ll be able to learn the structure of the
+tasks, and directly re-use the task-presenter templates that know the
+structure (name of the columns) for presenting the task.</p>
+<p>Additionally, you can re-use the templates by downloading the CSV files from Google Docs, or even copying them to your own Google Drive account (click in <em>File</em> <img alt="➡️" class="emojione" src="https://cdnjs.cloudflare.com/ajax/libs/emojione/2.2.7/assets/svg/27a1.svg" title=":arrow_right:" /> <em>Make a copy</em> in the Google Doc Spreadsheet). Scifabric provides the following templates:</p>
+<ul>
+<li><a href="https://docs.google.com/spreadsheet/ccc?key=0AsNlt0WgPAHwdHFEN29mZUF0czJWMUhIejF6dWZXdkE&amp;usp=sharing#gid=0">Image Pattern Recognition</a></li>
+<li><a href="https://docs.google.com/spreadsheet/ccc?key=0AsNlt0WgPAHwdEczcWduOXRUb1JUc1VGMmJtc2xXaXc#gid=0">Sound Pattern Recognition</a></li>
+<li><a href="https://docs.google.com/spreadsheet/ccc?key=0AsNlt0WgPAHwdGZ2UGhxSTJjQl9YNVhfUVhGRUdoRWc#gid=0">Video Pattern Recognition</a></li>
+<li><a href="https://docs.google.com/spreadsheet/ccc?key=0AsNlt0WgPAHwdGZnbjdwcnhKRVNlN1dGXy0tTnNWWXc&amp;usp=sharing">Geo-coding</a>
+  and</li>
+<li><a href="https://docs.google.com/spreadsheet/ccc?key=0AsNlt0WgPAHwdEVVamc0R0hrcjlGdXRaUXlqRXlJMEE&amp;usp=sharing">PDF transcription</a>.</li>
+</ul>
+<div class="admonition tip">
+<p class="admonition-title">Tip</p>
+<p>If you import the same URL again, only new records will be added to the project.</p>
+</div>
+<h3 id="importing-the-tasks-from-an-epicollect-plus-public-project">Importing the tasks from an EpiCollect Plus Public Project<a class="headerlink" href="#importing-the-tasks-from-an-epicollect-plus-public-project" title="Permanent link">&para;</a></h3>
+<p><a href="http://plus.epicollect.net">EpiCollect</a> provides a web tool for the
+generation of forms for many kinds of mobile data collection projects.</p>
+<p>Data can be collected using multiple mobile phones running either the Android Operating system or the iPhone (using the EpiCollect mobile app), and all data can be synchronized from the phones and viewed centrally (using Google Maps) via the Project website or directly on the phones.</p>
+<p>EpiCollect can help you to recollect data samples according to a form that could include multimedia like photos. Moreover, EpiCollect can geolocate the data sample as it supports the built-in GPS that all modern smartphones have.</p>
+<p>For example, you can create an EpiCollect project where the form will ask the user to take a picture of a lake, geo-locate it automatically via the built-in smartphone GPS and upload the image to the EpiCollect server. If the user does not have Internet access at that moment, the user will be able to synchronize the data afterward, i.e., when the user has access to an Internet WIFI hotspot.</p>
+<p>PYBOSSA can automatically import data from a public EpiCollect Plus project that you own or that it is publicly available on the
+website. Then you will be able to validate, analyze, etc. the data that has been obtained via EpiCollect.</p>
+<p>If you want to import the data points submitted to a <strong>public</strong>
+EpiCollect project, you will have to follow the next steps:</p>
+<ol>
+<li>Navigate to your project&rsquo;s page (you can directly access it using
+   the <em>slug</em> project name: <a href="http://server/project/slug">http://server/project/slug</a>).</li>
+<li>Click in the <strong>Tasks</strong> section -on the left side local navigation
+   menu.</li>
+<li>And click on the <strong>Import Tasks</strong> button. After clicking on it you
+   will see several different options.</li>
+<li>Click on the <strong>Use an EpiCollect Project</strong> one.
+    <img alt="image" src="https://i.imgur.com/A50La7O.png" /></li>
+<li>Then, type the <strong>name of the EpiCollect project</strong> and the name of the <strong>form</strong> that you want to import and click on the import button.</li>
+</ol>
+<p>All the data points should be imported now in your project.</p>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>EpiCollect projects will be gathering data mostly all the time, for this reason, if you import again the same EpiCollect project, only  <strong>new data points</strong> will be imported. This feature will allow you to easily add new data points to the PYBOSSA project without having to do anything special.</p>
+</div>
+<h3 id="importing-the-tasks-from-a-flickr-photo-set">Importing the tasks from a Flickr photo set<a class="headerlink" href="#importing-the-tasks-from-a-flickr-photo-set" title="Permanent link">&para;</a></h3>
+<p>PYBOSSA also allows importing tasks for projects based on images (like image pattern recognition ones) directly from a <a href="https://www.flickr.com/">Flickr</a> [set]<a href="https://www.flickr.com/help/photos/#150321191">https://www.flickr.com/help/photos/#150321191</a>) (also called
+album).</p>
+<p>When importing tasks from a Flickr set, a new task will be created for each of the photos in the specified set. The tasks will include the
+following data about each picture (which will be later available to be
+used in the task presenter):</p>
+<ul>
+<li>title: the title of the photograph, as it appears on Flickr.</li>
+<li>URL: the URL to the raw .jpg image, in its original size.</li>
+<li>url_b: the URL to the image, &lsquo;big sized.</li>
+<li>url_m: the URL to the image, &lsquo;medium&rsquo; sized.</li>
+<li>link: a link to the photo page on Flickr (not to the raw image).</li>
+</ul>
+<p>You can import tasks from a Flickr photo set (a.k.a. album) in either of the following ways: using your Flickr account, or by typing the album ID.</p>
+<p>The easiest one is to give the PYBOSSA server permission to access your Flickr list of albums. To do so, you&rsquo;ll have to log in to your Flickr
+account by clicking the &ldquo;Log in Flickr&rdquo; button. Then you&rsquo;ll be
+redirected to Flickr, where you will be asked if you want to allow
+PYBOSSA to access your Flickr information. If you say yes, then you&rsquo;ll be again redirected to PYBOSSA, and you&rsquo;ll see all of your albums. Choose one of them and then click the &ldquo;Import&rdquo; button to get all the photos created as tasks for your project.</p>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>Next time you try to import photos using the Flickr importer, you&rsquo;ll see the albums for your account again. If you don&rsquo;t want PYBOSSA to access them anymore, or just want to use another Flickr account, then click &ldquo;Revoke access.&rdquo;</p>
+</div>
+<p>Another option to import from a Flickr album is by specifying the ID of the set (collection) directly. This option is a bit more advanced, but  it allows you to import from a photo set that you don&rsquo;t own (although, it will have to be public. Also check the rights of the photos on it!). Another advantage is that you don&rsquo;t need to log in to Flickr, so you don&rsquo;t even need to have a Flickr account.</p>
+<p>These are the steps:</p>
+<ol>
+<li>Navigate to your project&rsquo;s page and click in the <strong>Tasks</strong> section.</li>
+<li>Then click on the <strong>Import Tasks</strong> button, and select the <strong>Flickr
+   importer</strong>.</li>
+<li>Type the ID of the Flickr set you want to import the photos from, then click on the import button.</li>
+</ol>
+<p><img alt="Image" src="https://i.imgur.com/UZRBj8y.png" /></p>
+<p>If you cannot find the ID or don&rsquo;t know which one it is, just browse to the Flickr photo set and check the URL. Can you see that last long number right at the end of it? That&rsquo;s what you&rsquo;re looking for!</p>
+<p><img alt="Imge" src="https://i.imgur.com/h6qNDX2.png" /></p>
+<p>Just like with the other importers, each task will be created only once, even if you import twice from the same Flickr set (unless you add new photos to it, of course!).</p>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>You will need to make sure that every photo belonging to the set has the visibility set to public, so the PYBOSSA server can then access and present them to the volunteers of your project.</p>
+</div>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>For enabling the Flickr importer, check this <a href="../../installation/configuration/#enabling-the-flickr-task-importer">section</a>.</p>
+</div>
+<h3 id="importing-the-tasks-from-a-dropbox-account">Importing the tasks from a Dropbox account<a class="headerlink" href="#importing-the-tasks-from-a-dropbox-account" title="Permanent link">&para;</a></h3>
+<p>You can import tasks from arbitrary data hosted on a Dropbox account with the Dropbox importer. When you import tasks in this way, the following information will be added to the info field of each task, available later to be used in the task presenter of the project:</p>
+<ul>
+<li>filename: just it, the name of the file you&rsquo;re importing as a task.</li>
+<li>link: the link to the Dropbox page showing the file.</li>
+<li>link_raw: the link to the raw file served by Dropbox. This is the
+  one you&rsquo;ll have to use if you want to direct link to the file from
+  the presenter (e.g., for using an image in a <img> tag, you&rsquo;d
+  do: <img src=task.info.link_raw>).</li>
+</ul>
+<p>In addition to this generic information, the Dropbox importer will also recognize some files by their extension and will attach some extra information to them.</p>
+<p>For pdf files (.pdf extension), the following fields will be obtained
+too:</p>
+<ul>
+<li>pdf_url: direct link to the raw pdf file, with CORS support.</li>
+</ul>
+<p>For image files (.png, jpg, .jpeg and .gif extensions) the following
+data will be available:</p>
+<ul>
+<li>url_m: the same as link_raw</li>
+<li>url_b: the same as link_raw</li>
+<li>title: the same as the filename</li>
+</ul>
+<p>For audio files (.mp4, .m4a, .mp3, .ogg, .oga, .webm and .wav
+extensions):</p>
+<ul>
+<li>audio_url: raw link to the audio file, which can be used inside an
+  HTML 5 &lt;audio&gt; tag and supports CORS.</li>
+</ul>
+<p>For video files (.mp4, .m4v, .ogg, .ogv, .webm and .avi extensions):</p>
+<ul>
+<li>audio_url: raw link to the video file, which can be used inside an
+  HTML 5 &lt;video&gt; tag and supports CORS.</li>
+</ul>
+<p>The tasks created with the Dropbox importer are ready to be used with the template project presenters available in PYBOSSA, as they include the described fields.</p>
+<p>Thus, importing your images from Dropbox will allow you to use the image pattern recognition template with them immediately. If you import videos, audio files or PDFs  you will also be able to use the presenter templates for video pattern recognition, sound pattern recognition or documents transcription, respectively, with no additional modifications and have them working right away (as long as the files have any of the mentioned file extensions, of course).</p>
+<p>For using this importer, just follow these are the steps:</p>
+<ol>
+<li>Navigate to your project&rsquo;s page and click in the <strong>Tasks</strong> section.</li>
+<li>Then click on the <strong>Import Tasks</strong> button, and select the <strong>Dropbox importer</strong>.</li>
+<li>Click on the &ldquo;Choose from Dropbox&rdquo; icon. You will be asked your    Dropbox account credentials. Then select as many files as you want:
+    <img alt="Image" src="https://i.imgur.com/dsgM0Tg.png" /></li>
+<li>You can repeat step 3 as many times as you want, and more files will be added to your import. Then, click on &ldquo;Import.&rdquo;</li>
+</ol>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>For enabling the Dropbox importer, check this <a href="../../installation/configuration/#enabling-the-dropbox-task-importer">section</a>.</p>
+</div>
+<h3 id="importing-the-tasks-from-a-twitter-account-or-search-result">Importing the tasks from a Twitter account or search result<a class="headerlink" href="#importing-the-tasks-from-a-twitter-account-or-search-result" title="Permanent link">&para;</a></h3>
+<p>Another option for importing tasks is using the built-in Twitter
+importer. It allows importing tweets as tasks from either a specified
+Twitter user account, or from the results returned from a search to the Twitter search API.</p>
+<p>Tasks imported with it will have the tweet data attached to their info field, and can later be used from within the task presenter. This data
+is a direct transcription of the data returned by the Twitter API, in
+particular a <a href="https://dev.twitter.com/overview/api/tweets">Tweet</a>
+object.</p>
+<p>Please notice that the values returned by the Twitter API may vary.
+However, the following fields are guaranteed to be always included in the info field of the tasks:</p>
+<ul>
+<li>created_at: the date and time the tweet was published.</li>
+<li>favorite_count: number of times the tweet has been marked as
+  &lsquo;favorite.&rsquo;</li>
+<li>retweet_count: number of times the tweet has been retweeted.</li>
+<li>coordinates: geographic coordinates of the place the tweet was published.
+  from. Note that this is not always available for every tweet.</li>
+<li>tweet_id: the internal ID handled by Twitter to identify this
+  tweet.</li>
+<li>user: an <a href="https://dev.twitter.com/overview/api/users">object</a> with
+  information about the tweet author, as returned by the Twitter API.</li>
+<li>text: the actual content of the tweet.</li>
+</ul>
+<p>Also, an extra field &ldquo;user_screen_name&rdquo; has been added to the
+info field:</p>
+<ul>
+<li>user_screen_name: the screen name (or &lsquo;handle&rsquo;) of the author of
+  the tweet.</li>
+</ul>
+<p>For more information, please refer to the <a href="https://dev.twitter.com">Twitter</a> documentation.</p>
+<div class="admonition warning">
+<p class="admonition-title">Warning</p>
+<p>When importing tweets from a search, retweets will be ignored!</p>
+</div>
+<p>So, to import tasks with the Twitter importer, do as follows:</p>
+<ol>
+<li>Navigate to your project&rsquo;s page and click in the <strong>Tasks</strong> section.</li>
+<li>Then click on the <strong>Import Tasks</strong> button, and select the <strong>Twitter importer</strong>:</li>
+<li>You can provide your own Twitter credentials and make API requests on behalf of them, or use the credentials provided by us. (The later only allows to import the number of tweets returned by a single Twitter API call, which is 100 for searches and 200 for user
+   timelines.)</li>
+<li>Fill in the two fields you will find in the form. The first one is the source of your tweets. If you want them to be imported from a user account, then write it with the &ldquo;@&rdquo; symbol, like &ldquo;@PYBOSSA.&rdquo; If you just want to import tweets containing a word on them (or a #hashtag), then type it there. The second field is for you to specify how many tweets you want to import. You can import as many as you want!</li>
+</ol>
+<p>Finally, click on the &ldquo;Import&rdquo; button, and you are done:</p>
+<p><img alt="Image" src="https://i.imgur.com/l5PG2WX.png" /></p>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>For enabling the Twitter importer, check this <a href="../../installation/configuration/#enabling-the-twitter-task-importer">section</a>.</p>
+</div>
+<h2 id="importing-tasks-from-an-amazon-s3-bucket">Importing tasks from an Amazon S3 bucket<a class="headerlink" href="#importing-tasks-from-an-amazon-s3-bucket" title="Permanent link">&para;</a></h2>
+<p>Tasks can be imported from data hosted on the Amazon S3 service.
+Similarly to the Dropbox importer, these tasks can use different kind of data, like images, videos, audios, PDF files, etc. hosted on any S3
+bucket.</p>
+<p>The S3 importer will work pretty much the same as the Dropbox one. When using it, the created tasks will contain the following data in the info field:</p>
+<ul>
+<li>filename: just it, the name of the file you&rsquo;re importing as a task.</li>
+<li>link: the link to the raw file served from Amazon S3.</li>
+<li>URL: same as the above.</li>
+</ul>
+<p>In addition to this generic information, the S3 importer will also
+recognize some files by their extension and will attach some extra information to them.</p>
+<p>For pdf files (.pdf extension), the following field will be obtained
+too:</p>
+<ul>
+<li>pdf_url: direct link to the raw pdf file.</li>
+</ul>
+<p>For image files (.png, jpg, .jpeg and .gif extensions) the following
+data will be available:</p>
+<ul>
+<li>url_m: the same as the link.</li>
+<li>url_b: the same as the link.</li>
+<li>title: the same as the filename.</li>
+</ul>
+<p>For audio files (.mp4, .m4a, .mp3, .ogg, .oga, .webm and .wav
+extensions):</p>
+<ul>
+<li>audio_url: raw link to the audio file, which can be used inside an
+  HTML 5 <audio/> tag.</li>
+</ul>
+<p>For video files (.mp4, .m4v, .ogg, .ogv, .webm and .avi extensions):</p>
+<ul>
+<li>audio_url: raw link to the video file, which can be used inside an
+  HTML 5 <video/> tag.</li>
+</ul>
+<p>The tasks created with the S3 importer are ready to be used with the
+template project presenters available in PYBOSSA, as they include the described fields.</p>
+<p>Thus, importing your images from S3 will allow you to use the image pattern recognition template with them immediately. If you import videos, audio files or PDFs  you will also be able to use the presenter templates for video pattern recognition, sound pattern recognition or documents transcription, respectively, with no additional modifications and have them working right away (as long as the files have any of the mentioned file extensions, of course).</p>
+<p>Importing from an S3 bucket requires that the bucket visibility is set to <em>public</em> so its content can be seen and listed by PYBOSSA. To make a bucket public, go to your AWS management console and select the S3 service. Then select the bucket you want to make public and click on &ldquo;Properties.&rdquo; Click on &ldquo;Add more Permissions&rdquo; and add a new one with &ldquo;Grantee: Everyone&rdquo; and the &ldquo;List&rdquo; checkbox selected, like in the following image:</p>
+<p><img alt="Image" src="https://i.imgur.com/FuN9XAS.png" /></p>
+<p>You may also need to enable CORS in the bucket. In the same menu as above, click on &ldquo;Edit CORS Configuration&rdquo; and configure it. You can
+learn more <a href="http://docs.aws.amazon.com/AmazonS3/latest/dev/cors.html">here</a>.</p>
+<p>Finally, you need to make sure that every file inside the bucket that
+you want to use in a task has a <em>public</em> link too. Go to the bucket
+content and select the files. Then click on &ldquo;Actions&rdquo; and select &ldquo;Make
+Public&rdquo;. Your files will now be visible for everyone, including a
+PYBOSSA server.</p>
+<p><img alt="image" src="https://i.imgur.com/AHBVQCk.png" /></p>
+<p>Once your S3 bucket is ready, you can follow these steps to import tasks from it:</p>
+<ol>
+<li>Navigate to your project&rsquo;s page and click in the <strong>Tasks</strong> section.</li>
+<li>Then click on the <strong>Import Tasks</strong> button, and select the <strong>S3
+   importer</strong>.</li>
+<li>
+<p>Type the name of the bucket from which you will be importing your tasks and click on &ldquo;Search in the bucket.&rdquo; If you followed the steps above and your bucket is public, you will see a list of the items it contains. Select as many as you want:</p>
+<p><img alt="image" src="https://i.imgur.com/6RAMqd9.png" /></p>
+</li>
+<li>
+<p>When you&rsquo;re ready, click on &ldquo;Import.&rdquo;</p>
+</li>
+</ol>
+<h3 id="importing-the-tasks-from-youtube">Importing the tasks from Youtube<a class="headerlink" href="#importing-the-tasks-from-youtube" title="Permanent link">&para;</a></h3>
+<p>Tasks can be imported from Youtube. Currently, the importer supports importing from Youtube with:</p>
+<ul>
+<li>Playlists</li>
+</ul>
+<p>When importing the video, the importer parses all videos information and creates tasks with info fields:</p>
+<ul>
+<li>video_url: the URL of the youtube video which can be embedded in
+  the task form.</li>
+<li>oembed: embeddable code for the (old) PYBOSSA video templates.</li>
+</ul>
+<p>The tasks created with the Youtube importer are ready to be used with the youtube and video templates.</p>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>For enabling the Youtube importer, check this <a href="../../installation/configuration/#enabling-the-youtubes-task-importer">section</a>.</p>
+</div>
+<h3 id="importing-the-tasks-from-a-iiif-manifest">Importing the tasks from a IIIF manifest<a class="headerlink" href="#importing-the-tasks-from-a-iiif-manifest" title="Permanent link">&para;</a></h3>
+<p>The <a href="http://iiif.io/">International Image Interoperability Framework (IIIF)</a> is a protocol for standardized image retrieval created by a community of the world&rsquo;s leading research libraries, major national libraries and not-for-profit image repositories in an effort to collaboratively produce an interoperable technology and community framework for image delivery.</p>
+<p>Content made available via the <a href="http://iiif.io/api/presentation">IIIF Presentation API</a> can be imported into PyBossa by passing the URI of a manifest. All images for all canvases defined in the first sequence of the manifest will be imported. In practice, this means that all images will be imported in their default order and each image used to generate a single task.</p>
+<p>Each task will include a reference to the canvas ID, the manifest ID, the tile source for the image and URIs to request different sizes of the image from the <a href="http://iiif.io/api/image">IIIF Image API</a>.</p>
+<p>Here are the steps to import:</p>
+<ol>
+<li>Navigate to your project&rsquo;s page and click in the <strong>Tasks</strong> section.</li>
+<li>Then click on the <strong>Import Tasks</strong> button, and select the <strong>IIIF importer</strong>.</li>
+<li>Type the URI of the IIIF manifest that you want to import from, then click on the import button.</li>
+</ol>
+<h3 id="flushing-all-the-tasks">Flushing all the tasks<a class="headerlink" href="#flushing-all-the-tasks" title="Permanent link">&para;</a></h3>
+<p>The project settings gives you an option to automatically <strong>delete all
+the tasks and associated task volunteer</strong> from your project.</p>
+<div class="admonition danger">
+<p class="admonition-title">Danger</p>
+<p>This action cannot be undone, so please, be sure that you want to actually, delete all the tasks.</p>
+</div>
+<div class="admonition warning">
+<p class="admonition-title">Warning</p>
+<p>This action will only allow you to delete tasks that are not associated with a result. When a result is created, that task and its task runs cannot be deleted so the volunteers can always have access to their contributions.</p>
+</div>
+<p>If you are sure that you want to flush all the tasks and task runs for
+your project, go to the project page (http://server/project/slug/tasks/) and click on the <strong>Settings</strong> option of the left local navigation menu:</p>
+<p><img alt="image" src="https://i.imgur.com/nauht7l.png" /></p>
+<p>Then, you will see that there is a subsection called: <strong>Task Settings</strong> and a button with the label: <strong>Delete the tasks</strong>. Click on that button and a new page will be shown:</p>
+<p><img alt="image" src="https://i.imgur.com/DKPV6dc.png" /></p>
+<p>As you can see, a <strong>red warning alert</strong> is shown, warning you that if
+you click on the <strong>yes</strong> button, you will be deleting not only the
+project tasks but also the answers (task runs) that you have
+recollected for your project. Be sure before proceeding that you want to delete all the tasks. After clicking on the <strong>yes</strong> button, you will see that all the tasks have been flushed.</p>
+<h3 id="creating-the-task-presenter">Creating the Task Presenter<a class="headerlink" href="#creating-the-task-presenter" title="Permanent link">&para;</a></h3>
+<p>Once you have the project and you have imported some tasks, you can start working with the task-presenter, which will be the web project that will get the tasks of your project, present them to the volunteer and save the answers provided by the users.</p>
+<p>If you have followed all the steps described in this section, you will
+be already on the page of your project, however, if you are not, you only need to access your project URL to work with your project. If  your project <em>slug</em> or <em>short name</em> is <em>flickrperson</em> you will be able to access the project managing options in this URL:</p>
+<table class="codehilitetable"><tr><td class="linenos"><div class="linenodiv"><pre>1</pre></div></td><td class="code"><div class="codehilite"><pre><span></span><span class="c">http://PYBOSSA-SERVER/project/flickrperson</span>
+</pre></div>
+</td></tr></table>
+
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>You need to be logged in. Otherwise, you will not be able to modify the project.</p>
+</div>
+<p>Another way of accessing your project (or projects) is clicking on your <em>username</em> (at the navbar) and select the <em>My Projects</em> item from the but it menu. From there you will be able to manage your projects:</p>
+<p><img alt="image" src="https://i.imgur.com/3S497Ct.png" /></p>
+<p><img alt="image" src="https://i.imgur.com/9sO21Zd.png" /></p>
+<p>Once you have chosen your project, you can add a task-presenter by
+clicking on the <strong>Tasks</strong> local navigation link, and then clicking on the button named <strong>Editor</strong> under the <strong>Task Presenter</strong> box.</p>
+<p><img alt="image" src="https://i.imgur.com/nauht7l.png" /></p>
+<p>After clicking this button, a new web page will be shown where you
+can choose a template to start coding your project, so you don&rsquo;t have to start from scratch.</p>
+<p><img alt="image" src="https://i.imgur.com/psC5m6Q.png" /></p>
+<p>After choosing one of the templates, you will be able to adapt it to fit
+your project needs in a web text editor.</p>
+<p><img alt="image" src="https://i.imgur.com/g9gAvWw.png" /></p>
+<p>Click on the <strong>Preview button</strong> to get an idea of how it will look
+like your task-presenter.</p>
+<p><img alt="imae" src="https://i.imgur.com/DsDDBia.png" /></p>
+<p>We recommend reading the <a href="../tutorial/">Step by step tutorial</a> as you will understand how to create the task presenter, which explains how you can add some HTML skeleton to load the task data, input fields to get the answer from the users, and some JavaScript to make it work.</p>
+<h3 id="publishing-the-project">Publishing the project<a class="headerlink" href="#publishing-the-project" title="Permanent link">&para;</a></h3>
+<p>After completing the previous three steps, your project will be almost ready. The final step is to publish it, because now it will still be a draft, and it will be hidden to everyone but you (and admins).</p>
+<p>When your project is a draft, you can contribute to it, and the answers (task runs) and results will be stored in the database so you can have access to them (and test the webhooks solution if you want to do real-time analysis). However, in the moment of publishing the project all the task runs and results (as well as the webhooks log entries) will be flushed, so don&rsquo;t be afraid and try it as much as you can until you are sure that everything works as expected. Once you think the project is ready for the world to see it, just click on the Publish button:</p>
+<p><img alt="image" src="https://i.imgur.com/A7m4aa6.png" /></p>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>Publishing a project <em>cannot</em> be undone, so please double check everything before taking the step.</p>
+</div>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>You can allow other users to give you feedback and let them try and see your project before it has been published. To do it so, just protect it with a password, and people will be able to access it (as long as they have the password, of course).</p>
+</div>
+<p>After publishing it, you will be able to access your project using the
+slug, or under your account in the <em>Published</em> projects section.</p>
+<p>Also, results will begin to be created every time a task is completed.
+Enjoy!</p>
+<h2 id="using-the-api">Using the API<a class="headerlink" href="#using-the-api" title="Permanent link">&para;</a></h2>
+<p>Creating a project using the API involves these steps:</p>
+<ol>
+<li>Create the project,</li>
+<li>Create the tasks for the project, and</li>
+<li>Create the task-presenter for the users.</li>
+<li>Publish it. This needs to be done via the web interface.</li>
+</ol>
+<h3 id="creating-the-project_2">Creating the project<a class="headerlink" href="#creating-the-project_2" title="Permanent link">&para;</a></h3>
+<p>You can create a project via the API URL <strong>/api/project</strong> with a POST request (See <a href="api.md">api</a>).</p>
+<p>You have to provide the following information about the project and
+convert it to a JSON object (the actual values are taken from the
+<a href="http://github.com/Scifabric/app-flickrperson">Flickr Person demo project</a>):</p>
+<table class="codehilitetable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span>1
+2
+3
+4
+5
+6</pre></div></td><td class="code"><div class="codehilite"><pre><span></span><span class="err">name</span> <span class="err">=</span> <span class="err">u&#39;Flickr</span> <span class="err">Person</span> <span class="err">Finder&#39;</span>
+<span class="err">short_name</span> <span class="err">=</span> <span class="err">u&#39;FlickrPerson&#39;</span>
+<span class="err">description</span> <span class="err">=</span> <span class="err">u&#39;Do</span> <span class="err">you</span> <span class="err">see</span> <span class="err">a</span> <span class="err">human</span> <span class="err">in</span> <span class="err">this</span> <span class="err">photo?&#39;</span>
+<span class="err">info</span> <span class="err">=</span> <span class="p">{</span> <span class="err">&#39;task_presenter&#39;:</span> <span class="err">u&#39;&lt;div&gt;</span> <span class="err">Skeleton</span> <span class="err">for</span> <span class="err">the</span> <span class="err">tasks&lt;/div&gt;&#39;</span> <span class="p">}</span>
+<span class="err">data</span> <span class="err">=</span> <span class="err">dict(name</span> <span class="err">=</span> <span class="err">name,</span> <span class="err">short_name</span> <span class="err">=</span> <span class="err">short_name,</span> <span class="err">description</span> <span class="err">=</span> <span class="err">description,</span> <span class="err">info</span> <span class="err">=</span> <span class="err">info,</span> <span class="err">hidden</span> <span class="err">=</span> <span class="mi">0</span><span class="err">)</span>
+<span class="err">data</span> <span class="err">=</span> <span class="err">json.dumps(data)</span>
+</pre></div>
+</td></tr></table>
+
+<p>Flickr Person Finder, which is a <strong>demo template</strong> that <strong>you can
+re-use</strong> to create your own project, simplifies this step by using a
+simple file named <strong>project.json</strong>:</p>
+<table class="codehilitetable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span>1
+2
+3
+4
+5</pre></div></td><td class="code"><div class="codehilite"><pre><span></span><span class="p">{</span>
+<span class="s2">&quot;name&quot;</span><span class="o">:</span> <span class="s2">&quot;Flickr Person Finder&quot;</span><span class="p">,</span>
+<span class="s2">&quot;short_name&quot;</span><span class="o">:</span> <span class="s2">&quot;flickrperson&quot;</span><span class="p">,</span>
+<span class="s2">&quot;description&quot;</span><span class="o">:</span> <span class="s2">&quot;Image pattern recognition&quot;</span><span class="p">,</span>
+<span class="p">}</span>
+</pre></div>
+</td></tr></table>
+
+<p>The file provides the basic configuration for your project.</p>
+<h3 id="adding-tasks">Adding tasks<a class="headerlink" href="#adding-tasks" title="Permanent link">&para;</a></h3>
+<p>As in all the previous steps, we are going to create a JSON object and
+POST it using the following API URL <strong>/api/task</strong> to add tasks
+to a project that you own.</p>
+<p>For PYBOSSA all the tasks are JSON objects with a field named <strong>info</strong> where the owners of the project can add any JSON object that will represent a task for their project. For example, using again the <a href="http://github.com/Scifabric/app-flickrperson">Flickr Person demo project</a> template, we need to create a JSON object that should have the link to the photo that we want to identify:</p>
+<table class="codehilitetable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span>1
+2
+3
+4
+5
+6
+7
+8
+9</pre></div></td><td class="code"><div class="codehilite"><pre><span></span><span class="n">info</span> <span class="o">=</span> <span class="nb">dict</span> <span class="p">(</span><span class="n">link</span><span class="o">=</span><span class="n">photo</span><span class="p">[</span><span class="s1">&#39;link&#39;</span><span class="p">],</span>
+             <span class="n">url</span><span class="o">=</span><span class="n">photo</span><span class="p">[</span><span class="s1">&#39;url_m&#39;</span><span class="p">],</span>
+             <span class="n">question</span><span class="o">=</span><span class="s1">&#39;Do you see a human face in this photo?&#39;</span><span class="p">)</span>
+<span class="n">data</span> <span class="o">=</span> <span class="nb">dict</span> <span class="p">(</span><span class="n">project_id</span><span class="o">=</span><span class="n">project_id</span><span class="p">,</span>
+             <span class="n">state</span><span class="o">=</span><span class="mi">0</span><span class="p">,</span>
+             <span class="n">info</span><span class="o">=</span><span class="n">info</span><span class="p">,</span>
+             <span class="n">calibration</span><span class="o">=</span><span class="mi">0</span><span class="p">,</span>
+             <span class="n">priority_0</span><span class="o">=</span><span class="mi">0</span><span class="p">)</span>
+<span class="n">data</span> <span class="o">=</span> <span class="n">json</span><span class="o">.</span><span class="n">dumps</span><span class="p">(</span><span class="n">data</span><span class="p">)</span>
+</pre></div>
+</td></tr></table>
+
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>&lsquo;url_m&rsquo; is a pattern to describe the URL to the <strong>m</strong> medium size of the photo used by Flickr. It can be whatever you want, but as we are using Flickr, we use the same patterns for storing the data.</p>
+</div>
+<p>The most important field for the task is the <strong>info</strong> one. This field
+will be used to store a JSON object with the required data for the task. As <a href="https://github.com/Scifabric/app-flickrperson">Flickr Person</a> is trying to figure out if there is a human or not in a photo, the provided information is:</p>
+<ol>
+<li>the Flickr web page posting the photo, and</li>
+<li>the direct URL to the image, the <img src> value.</li>
+</ol>
+<p>The <strong>info</strong> field is a free-form field that can be populated with any
+structure. If your project needs more fields, you can add them and use the format that best fits your needs.</p>
+<p>These steps are usually coded in a script. The Flickr Person
+Finder projects provides a template for the task-creator that can be
+re-used without any problems (check the createTasks.py script).</p>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p><strong>The API request has to be authenticated and authorized</strong>. You can get an API-KEY creating an account on the server, and check the API-KEY created for your user, check the profile account (click on your username) and copy the field <strong>API-KEY</strong>.</p>
+<p>This API-KEY should be passed as a POST argument like this with the previous data:</p>
+<p>[POST] <a href="http://domain/api/task/?api_key=API-KEY">http://domain/api/task/?api_key=API-KEY</a></p>
+</div>
+<p>One of the benefits of using the API is that you can create tasks
+polling other web services like Flickr, where you can use an
+API. Once we have created the tasks, we will need to create the
+task-presenter for the project.</p>
+<h3 id="creating-the-task-presenter_1">Creating the Task Presenter<a class="headerlink" href="#creating-the-task-presenter_1" title="Permanent link">&para;</a></h3>
+<p>The task-presenter is usually a template of HTML and JavaScript that will present the tasks to the users, and save the answers in the
+database. The <a href="http://github.com/Scifabric/app-flickersperson">Flickr Person demo project</a> provides a template which has a <div/> to load the input files, in this case, the photo, and another <div/> to load the action buttons that the users will be able to press to answer the question and save it in the database. Please, check the <a href="../tutorial/">tutorial</a> for more details about the task-presenter.</p>
+<p>As we will be using the API for creating the task presenter, we will have to create an HTML file in our computer, read it from a
+a script, and post it into PYBOSSA using the API.</p>
+<p>Once the presenter has been posted to the project, you can edit it
+locally with your editor, or using the PYBOSSA interface (see
+previous section).</p>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p><strong>The API request has to be authenticated and authorized</strong>. You can get an API-KEY creating an account on the server, and check the API-KEY created for your user, check the profile account (click on your user name) and copy the field <strong>API-KEY</strong>.</p>
+<p>This API-KEY should be passed as a POST argument like this with the previous data: [POST] <a href="http://domain/api/project/?api_key=API-KEY">http://domain/api/project/?api_key=API-KEY</a></p>
+</div>
+<h3 id="using-pybossa-api-from-the-command-line">Using PYBOSSA API from the command line<a class="headerlink" href="#using-pybossa-api-from-the-command-line" title="Permanent link">&para;</a></h3>
+<p>While you can use your preferred programming language to access the API, we recommend you to use the <a href="https://github.com/Scifabric/pbs">PYBOSSA PBS command line
+tool</a> as it simplifies the usage of
+PYBOSSA for any given project.</p>
+<p>Creating a project is as simple as creating a project.json file and then
+run the following command:</p>
+<p><table class="codehilitetable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span>1</pre></div></td><td class="code"><div class="codehilite"><pre><span></span>pbs --server server --api-key yourkey create_project
+</pre></div>
+</td></tr></table>
+Please, read the <a href="../pbs/">pbs section</a> for more details.</p>
+                
+                  
+                
+              
+              
+                
+              
+            </article>
+          </div>
+        </div>
+      </main>
+      
+        
+<footer class="md-footer">
+  
+    <div class="md-footer-nav">
+      <nav class="md-footer-nav__inner md-grid">
+        
+          <a href="../intro/" title="Introduction" class="md-flex md-footer-nav__link md-footer-nav__link--prev" rel="prev">
+            <div class="md-flex__cell md-flex__cell--shrink">
+              <i class="md-icon md-icon--arrow-back md-footer-nav__button"></i>
+            </div>
+            <div class="md-flex__cell md-flex__cell--stretch md-footer-nav__title">
+              <span class="md-flex__ellipsis">
+                <span class="md-footer-nav__direction">
+                  Previous
+                </span>
+                Introduction
+              </span>
+            </div>
+          </a>
+        
+        
+          <a href="../pbs/" title="Using the command line" class="md-flex md-footer-nav__link md-footer-nav__link--next" rel="next">
+            <div class="md-flex__cell md-flex__cell--stretch md-footer-nav__title">
+              <span class="md-flex__ellipsis">
+                <span class="md-footer-nav__direction">
+                  Next
+                </span>
+                Using the command line
+              </span>
+            </div>
+            <div class="md-flex__cell md-flex__cell--shrink">
+              <i class="md-icon md-icon--arrow-forward md-footer-nav__button"></i>
+            </div>
+          </a>
+        
+      </nav>
+    </div>
+  
+  <div class="md-footer-meta md-typeset">
+    <div class="md-footer-meta__inner md-grid">
+      <div class="md-footer-copyright">
+        
+          <div class="md-footer-copyright__highlight">
+            Copyright © 2017 <a href="https://scifabric.com">Scifabric</a>
+          </div>
+        
+        powered by
+        <a href="http://www.mkdocs.org" title="MkDocs">MkDocs</a>
+        and
+        <a href="http://squidfunk.github.io/mkdocs-material/" title="Material for MkDocs">
+          Material for MkDocs</a>
+      </div>
+      
+        
+  <div class="md-footer-social">
+    
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    
+      <a href="https://github.com/Scifabric" class="md-footer-social__link fa fa-github"></a>
+    
+      <a href="https://twitter.com/Scifabric" class="md-footer-social__link fa fa-twitter"></a>
+    
+  </div>
+
+      
+    </div>
+  </div>
+</footer>
+      
+    </div>
+    
+      <script src="../../assets/javascripts/application-946997f430.js"></script>
+      
+      
+      <script>app.initialize({version:"0.16.3",url:{base:"../.."}})</script>
+      
+    
+    
+      
+      <script>!function(e,t,a,n,o,c,i){e.GoogleAnalyticsObject=o,e[o]=e[o]||function(){(e[o].q=e[o].q||[]).push(arguments)},e[o].l=1*new Date,c=t.createElement(a),i=t.getElementsByTagName(a)[0],c.async=1,c.src=n,i.parentNode.insertBefore(c,i)}(window,document,"script","https://www.google-analytics.com/analytics.js","ga"),ga("create","UA-49052879-1","auto"),ga("set","anonymizeIp",!0),ga("send","pageview");var links=document.getElementsByTagName("a");Array.prototype.map.call(links,function(e){e.host!=document.location.host&&e.addEventListener("click",function(){var t=e.getAttribute("data-md-action")||"follow";ga("send","event","outbound",t,e.href)})});var query=document.forms.search.query;query.addEventListener("blur",function(){if(this.value){var e=document.location.pathname;ga("send","pageview",e+"?q="+this.value)}})</script>
+      
+    
+  </body>
+</html>

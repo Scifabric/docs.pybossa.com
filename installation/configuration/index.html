@@ -1,0 +1,4259 @@
+
+<!DOCTYPE html>
+<html lang="en" class="no-js">
+  <head>
+    
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width,initial-scale=1">
+      <meta http-equiv="x-ua-compatible" content="ie=edge">
+      
+      
+      
+      
+        <meta name="lang:clipboard.copy" content="Copy to clipboard">
+      
+        <meta name="lang:clipboard.copied" content="Copied to clipboard">
+      
+        <meta name="lang:search.languages" content="">
+      
+        <meta name="lang:search.result.none" content="No matching documents">
+      
+        <meta name="lang:search.result.one" content="1 matching document">
+      
+        <meta name="lang:search.result.other" content="# matching documents">
+      
+        <meta name="lang:search.tokenizer" content="[\s\-]+">
+      
+      
+        <link rel="shortcut icon" href="../../images/favicon.ico">
+      
+      <meta name="generator" content="mkdocs-0.16.3, mkdocs-material-1.12.1">
+    
+    
+      
+        <title>Configuring PYBOSSA - PYBOSSA Documentation</title>
+      
+    
+    
+      <script src="../../assets/javascripts/modernizr-e826f8942a.js"></script>
+    
+    
+      <link rel="stylesheet" href="../../assets/stylesheets/application-6c39f5478a.css">
+      
+        <link rel="stylesheet" href="../../assets/stylesheets/application-23f75ab9c7.palette.css">
+      
+    
+    
+      
+        
+        
+        
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Source Sans Pro:300,400,400i,700|Roboto+Mono">
+        <style>body,input{font-family:"Source Sans Pro","Helvetica Neue",Helvetica,Arial,sans-serif}code,kbd,pre{font-family:"Roboto Mono","Courier New",Courier,monospace}</style>
+      
+      <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
+    
+    
+    
+  </head>
+  
+  
+  
+  
+    <body data-md-color-primary="#087da1" data-md-color-accent="#00a889">
+  
+    <svg class="md-svg">
+      <defs>
+        
+        
+          <svg xmlns="http://www.w3.org/2000/svg" width="416" height="448" viewBox="0 0 416 448" id="github"><path fill="currentColor" d="M160 304q0 10-3.125 20.5t-10.75 19T128 352t-18.125-8.5-10.75-19T96 304t3.125-20.5 10.75-19T128 256t18.125 8.5 10.75 19T160 304zm160 0q0 10-3.125 20.5t-10.75 19T288 352t-18.125-8.5-10.75-19T256 304t3.125-20.5 10.75-19T288 256t18.125 8.5 10.75 19T320 304zm40 0q0-30-17.25-51T296 232q-10.25 0-48.75 5.25Q229.5 240 208 240t-39.25-2.75Q130.75 232 120 232q-29.5 0-46.75 21T56 304q0 22 8 38.375t20.25 25.75 30.5 15 35 7.375 37.25 1.75h42q20.5 0 37.25-1.75t35-7.375 30.5-15 20.25-25.75T360 304zm56-44q0 51.75-15.25 82.75-9.5 19.25-26.375 33.25t-35.25 21.5-42.5 11.875-42.875 5.5T212 416q-19.5 0-35.5-.75t-36.875-3.125-38.125-7.5-34.25-12.875T37 371.5t-21.5-28.75Q0 312 0 260q0-59.25 34-99-6.75-20.5-6.75-42.5 0-29 12.75-54.5 27 0 47.5 9.875t47.25 30.875Q171.5 96 212 96q37 0 70 8 26.25-20.5 46.75-30.25T376 64q12.75 25.5 12.75 54.5 0 21.75-6.75 42 34 40 34 99.5z"/></svg>
+        
+      </defs>
+    </svg>
+    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="drawer">
+    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="search">
+    <label class="md-overlay" data-md-component="overlay" for="drawer"></label>
+    
+      <header class="md-header" data-md-component="header">
+  <nav class="md-header-nav md-grid">
+    <div class="md-flex">
+      <div class="md-flex__cell md-flex__cell--shrink">
+        <a href="../.." title="PYBOSSA Documentation" class="md-header-nav__button md-logo">
+          
+            <i class="md-icon md-icon--home"></i>
+          
+        </a>
+      </div>
+      <div class="md-flex__cell md-flex__cell--shrink">
+        <label class="md-icon md-icon--menu md-header-nav__button" for="drawer"></label>
+      </div>
+      <div class="md-flex__cell md-flex__cell--stretch">
+        <span class="md-flex__ellipsis md-header-nav__title">
+          
+            
+              
+                <span class="md-header-nav__parent">
+                  Installation
+                </span>
+              
+            
+            Configuring PYBOSSA
+          
+        </span>
+      </div>
+      <div class="md-flex__cell md-flex__cell--shrink">
+        
+          <label class="md-icon md-icon--search md-header-nav__button" for="search"></label>
+          
+<div class="md-search" data-md-component="search" role="dialog">
+  <label class="md-search__overlay" for="search"></label>
+  <div class="md-search__inner">
+    <form class="md-search__form" name="search">
+      <input type="text" class="md-search__input" name="query" required placeholder="Search" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="query">
+      <label class="md-icon md-search__icon" for="search"></label>
+      <button type="reset" class="md-icon md-search__icon" data-md-component="reset">&#xE5CD;</button>
+    </form>
+    <div class="md-search__output">
+      <div class="md-search__scrollwrap" data-md-scrollfix>
+        <div class="md-search-result" data-md-component="result">
+          <div class="md-search-result__meta">
+            Type to start searching
+          </div>
+          <ol class="md-search-result__list"></ol>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+        
+      </div>
+      
+        <div class="md-flex__cell md-flex__cell--shrink">
+          <div class="md-header-nav__source">
+            
+
+
+  
+
+
+  <a href="https://github.com/Scifabric/pybossa" title="Go to repository" class="md-source" data-md-source="github">
+    
+      <div class="md-source__icon">
+        <svg viewBox="0 0 24 24" width="24" height="24">
+          <use xlink:href="#github" width="24" height="24"></use>
+        </svg>
+      </div>
+    
+    <div class="md-source__repository">
+      Scifabric/pybossa
+    </div>
+  </a>
+
+          </div>
+        </div>
+      
+    </div>
+  </nav>
+</header>
+    
+    <div class="md-container">
+      
+      
+      
+      <main class="md-main">
+        <div class="md-main__inner md-grid" data-md-component="container">
+          
+            
+              <div class="md-sidebar md-sidebar--primary" data-md-component="navigation">
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    <nav class="md-nav md-nav--primary" data-md-level="0">
+  <label class="md-nav__title md-nav__title--site" for="drawer">
+    <span class="md-nav__button md-logo">
+      
+        <i class="md-icon md-icon--home"></i>
+      
+    </span>
+    PYBOSSA Documentation
+  </label>
+  
+    <div class="md-nav__source">
+      
+
+
+  
+
+
+  <a href="https://github.com/Scifabric/pybossa" title="Go to repository" class="md-source" data-md-source="github">
+    
+      <div class="md-source__icon">
+        <svg viewBox="0 0 24 24" width="24" height="24">
+          <use xlink:href="#github" width="24" height="24"></use>
+        </svg>
+      </div>
+    
+    <div class="md-source__repository">
+      Scifabric/pybossa
+    </div>
+  </a>
+
+    </div>
+  
+  <ul class="md-nav__list" data-md-scrollfix>
+    
+      
+      
+      
+
+
+  <li class="md-nav__item">
+    <a href="../.." title="Home" class="md-nav__link">
+      Home
+    </a>
+  </li>
+
+    
+      
+      
+      
+
+  
+
+
+  <li class="md-nav__item md-nav__item--active md-nav__item--nested">
+    
+      <input class="md-toggle md-nav__toggle" data-md-toggle="nav-2" type="checkbox" id="nav-2" checked>
+    
+    <label class="md-nav__link" for="nav-2">
+      Installation
+    </label>
+    <nav class="md-nav" data-md-component="collapsible" data-md-level="1">
+      <label class="md-nav__title" for="nav-2">
+        Installation
+      </label>
+      <ul class="md-nav__list" data-md-scrollfix>
+        
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../gettingstarted/" title="Getting started" class="md-nav__link">
+      Getting started
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../guide/" title="Installing the server" class="md-nav__link">
+      Installing the server
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+  
+
+
+  <li class="md-nav__item md-nav__item--active">
+    
+    <input class="md-toggle md-nav__toggle" data-md-toggle="toc" type="checkbox" id="toc">
+    
+      
+    
+    
+      <label class="md-nav__link md-nav__link--active" for="toc">
+        Configuring PYBOSSA
+      </label>
+    
+    <a href="./" title="Configuring PYBOSSA" class="md-nav__link md-nav__link--active">
+      Configuring PYBOSSA
+    </a>
+    
+      
+<nav class="md-nav md-nav--secondary">
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="toc">Table of contents</label>
+    <ul class="md-nav__list" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#official-support" title="Official support" class="md-nav__link">
+    Official support
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#debug-mode" title="Debug mode" class="md-nav__link">
+    Debug mode
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#debug-toolbar" title="Debug Toolbar" class="md-nav__link">
+    Debug Toolbar
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#profiling" title="Profiling" class="md-nav__link">
+    Profiling
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#host-and-port" title="Host and Port" class="md-nav__link">
+    Host and Port
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#securing-the-server" title="Securing the server" class="md-nav__link">
+    Securing the server
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#ensuring-anonymous-ips" title="Ensuring Anonymous IPs" class="md-nav__link">
+    Ensuring Anonymous IPs
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#database-username-and-password" title="Database username and password" class="md-nav__link">
+    Database username and password
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#load-balancing-sql-queries" title="Load balancing SQL Queries" class="md-nav__link">
+    Load balancing SQL Queries
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#its-dangerous-so-better-sign-this" title="It's dangerous, so better sign this" class="md-nav__link">
+    It's dangerous, so better sign this
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#cors-configuration" title="CORS configuration" class="md-nav__link">
+    CORS configuration
+  </a>
+  
+    <nav class="md-nav">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#fine-tuning-cors" title="Fine tuning CORS" class="md-nav__link">
+    Fine tuning CORS
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#modifying-the-brand-name" title="Modifying the Brand name" class="md-nav__link">
+    Modifying the Brand name
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#adding-a-logo" title="Adding a Logo" class="md-nav__link">
+    Adding a Logo
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#multiple-languages" title="Multiple languages" class="md-nav__link">
+    Multiple languages
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#creating-a-theme" title="Creating a theme" class="md-nav__link">
+    Creating a theme
+  </a>
+  
+    <nav class="md-nav">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#using-sass-and-minifying-javascript" title="Using SASS and minifying JavaScript" class="md-nav__link">
+    Using SASS and minifying JavaScript
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#results-page" title="Results page" class="md-nav__link">
+    Results page
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#adding-your-contact-information" title="Adding your Contact Information" class="md-nav__link">
+    Adding your Contact Information
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#terms-of-use" title="Terms of Use" class="md-nav__link">
+    Terms of Use
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#adding-help-page" title="Adding Help page" class="md-nav__link">
+    Adding Help page
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#enabling-twitter-facebook-and-google-authentication" title="Enabling Twitter, Facebook and Google authentication" class="md-nav__link">
+    Enabling Twitter, Facebook and Google authentication
+  </a>
+  
+    <nav class="md-nav">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#twitter" title="Twitter" class="md-nav__link">
+    Twitter
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#facebook" title="Facebook" class="md-nav__link">
+    Facebook
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#google" title="Google" class="md-nav__link">
+    Google
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#receiving-e-mails-with-errors" title="Receiving e-mails with errors" class="md-nav__link">
+    Receiving e-mails with errors
+  </a>
+  
+    <nav class="md-nav">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#background-jobs-error-notifications" title="Background jobs error notifications" class="md-nav__link">
+    Background jobs error notifications
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#enabling-logging" title="Enabling Logging" class="md-nav__link">
+    Enabling Logging
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#mail-setup" title="Mail Setup" class="md-nav__link">
+    Mail Setup
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#global-announcements-for-the-users" title="Global Announcements for the users" class="md-nav__link">
+    Global Announcements for the users
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#disable-email-notifications" title="Disable email notifications" class="md-nav__link">
+    Disable email notifications
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#cache" title="Cache" class="md-nav__link">
+    Cache
+  </a>
+  
+    <nav class="md-nav">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#disabling-the-cache" title="Disabling the Cache" class="md-nav__link">
+    Disabling the Cache
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#redis-configuration" title="Redis configuration" class="md-nav__link">
+    Redis configuration
+  </a>
+  
+    <nav class="md-nav">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#redis-python-prefix" title="Redis python prefix" class="md-nav__link">
+    Redis python prefix
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#redis-sentinel" title="Redis Sentinel" class="md-nav__link">
+    Redis Sentinel
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#redis-master" title="Redis master" class="md-nav__link">
+    Redis master
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#redis-db" title="Redis DB" class="md-nav__link">
+    Redis DB
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#redis-socket-timeout" title="Redis Socket timeout" class="md-nav__link">
+    Redis Socket timeout
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#redis-retry-on-timeout" title="Redis retry on timeout" class="md-nav__link">
+    Redis retry on timeout
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#rate-limit-for-the-api" title="Rate limit for the API" class="md-nav__link">
+    Rate limit for the API
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#configuring-upload-method" title="Configuring upload method" class="md-nav__link">
+    Configuring upload method
+  </a>
+  
+    <nav class="md-nav">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#local-uploader" title="Local Uploader" class="md-nav__link">
+    Local Uploader
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#rackspace-cloud-files" title="Rackspace Cloud Files" class="md-nav__link">
+    Rackspace Cloud Files
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#customizing-the-layout-and-frontpage-text" title="Customizing the Layout and FrontPage text" class="md-nav__link">
+    Customizing the Layout and FrontPage text
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#tracking-the-server-with-google-analytics" title="Tracking the server with Google Analytics" class="md-nav__link">
+    Tracking the server with Google Analytics
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#adding-a-search-box-google-custom-search" title="Adding a Search box: Google Custom Search" class="md-nav__link">
+    Adding a Search box: Google Custom Search
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#adding-web-maps-for-project-statistics-deprecated-since-v295" title="Adding web maps for project statistics (deprecated since v2.9.5)" class="md-nav__link">
+    Adding web maps for project statistics (deprecated since v2.9.5)
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#using-your-terms-of-use" title="Using your Terms of Use" class="md-nav__link">
+    Using your Terms of Use
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#using-your-cookies-policy" title="Using your Cookies Policy" class="md-nav__link">
+    Using your Cookies Policy
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#using-your-privacy-policy" title="Using your Privacy Policy" class="md-nav__link">
+    Using your Privacy Policy
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#exporting-data-to-a-ckan-server" title="Exporting data to a CKAN server" class="md-nav__link">
+    Exporting data to a CKAN server
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#enforce-privacy-mode" title="Enforce Privacy mode" class="md-nav__link">
+    Enforce Privacy mode
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#making-extra-keyvalue-pairs-in-info-field-public" title="Making extra key/value pairs in info field public" class="md-nav__link">
+    Making extra key/value pairs in info field public
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#adding-custom-project-templates" title="Adding custom project templates" class="md-nav__link">
+    Adding custom project templates
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#setting-an-expiration-time-for-project-passwords" title="Setting an expiration time for project passwords" class="md-nav__link">
+    Setting an expiration time for project passwords
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#validation-of-new-user-accounts" title="Validation of new user accounts" class="md-nav__link">
+    Validation of new user accounts
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#two-factor-authentication-on-login" title="Two-factor authentication on login" class="md-nav__link">
+    Two-factor authentication on login
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#sending-weekly-email-stats-to-project-owners" title="Sending weekly email stats to project owners" class="md-nav__link">
+    Sending weekly email stats to project owners
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#newsletters-with-mailchimp" title="Newsletters with Mailchimp" class="md-nav__link">
+    Newsletters with Mailchimp
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#enabling-the-flickr-task-importer" title="Enabling the Flickr Task importer" class="md-nav__link">
+    Enabling the Flickr Task importer
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#enabling-the-dropbox-task-importer" title="Enabling the Dropbox Task importer" class="md-nav__link">
+    Enabling the Dropbox Task importer
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#enabling-the-twitter-task-importer" title="Enabling the Twitter Task importer" class="md-nav__link">
+    Enabling the Twitter Task importer
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#enabling-the-youtubes-task-importer" title="Enabling the Youtube's Task importer" class="md-nav__link">
+    Enabling the Youtube's Task importer
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#enabling-server-sent-events" title="Enabling Server-Sent Events" class="md-nav__link">
+    Enabling Server-Sent Events
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#latest-news-from-pybossa" title="Latest news from PYBOSSA" class="md-nav__link">
+    Latest news from PYBOSSA
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#enabling-pro-user-features" title="Enabling pro user features" class="md-nav__link">
+    Enabling pro user features
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#strict-slashes" title="Strict Slashes" class="md-nav__link">
+    Strict Slashes
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#forums" title="Forums" class="md-nav__link">
+    Forums
+  </a>
+  
+    <nav class="md-nav">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#disqus-single-sign-on-sso" title="Disqus Single Sign-On (SSO)" class="md-nav__link">
+    Disqus Single Sign-On (SSO)
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#background-jobs-timeout" title="Background jobs timeout" class="md-nav__link">
+    Background jobs timeout
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#web-push-notifications" title="Web Push notifications" class="md-nav__link">
+    Web Push notifications
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#ignore-specific-keys-when-exporting-data-in-csv-format" title="Ignore specific keys when exporting data in CSV format" class="md-nav__link">
+    Ignore specific keys when exporting data in CSV format
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#specify-a-new-root-key-instead-of-info-for-csv-exporter" title="Specify a new root key instead of info for CSV exporter" class="md-nav__link">
+    Specify a new root key instead of info for CSV exporter
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#disable-task-presenter-check-for-pure-javascript-apps" title="Disable task presenter check for pure JavaScript apps" class="md-nav__link">
+    Disable task presenter check for pure JavaScript apps
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#consent-field-for-users" title="Consent field for users" class="md-nav__link">
+    Consent field for users
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#custom-leaderboards" title="Custom Leaderboards" class="md-nav__link">
+    Custom Leaderboards
+  </a>
+  
+    <nav class="md-nav">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#default-number-of-users-for-the-leaderboard" title="Default number of users for the leaderboard" class="md-nav__link">
+    Default number of users for the leaderboard
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#unpublish-inactive-projects" title="Unpublish inactive projects" class="md-nav__link">
+    Unpublish inactive projects
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#ldap-integration" title="LDAP integration" class="md-nav__link">
+    LDAP integration
+  </a>
+  
+    <nav class="md-nav">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#ldap_host" title="LDAP_HOST" class="md-nav__link">
+    LDAP_HOST
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#ldap_base_dn" title="LDAP_BASE_DN" class="md-nav__link">
+    LDAP_BASE_DN
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#ldap_username" title="LDAP_USERNAME" class="md-nav__link">
+    LDAP_USERNAME
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#ldap_password" title="LDAP_PASSWORD" class="md-nav__link">
+    LDAP_PASSWORD
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#ldap_objects_dn" title="LDAP_OBJECTS_DN" class="md-nav__link">
+    LDAP_OBJECTS_DN
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#ldap_openldap" title="LDAP_OPENLDAP" class="md-nav__link">
+    LDAP_OPENLDAP
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#ldap_user_object_filter" title="LDAP_USER_OBJECT_FILTER" class="md-nav__link">
+    LDAP_USER_OBJECT_FILTER
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#ldap_user_filter_field" title="LDAP_USER_FILTER_FIELD" class="md-nav__link">
+    LDAP_USER_FILTER_FIELD
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#ldap_pybossa_fields" title="LDAP_PYBOSSA_FIELDS" class="md-nav__link">
+    LDAP_PYBOSSA_FIELDS
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#uploading-files-to-pybossa" title="Uploading files to PYBOSSA" class="md-nav__link">
+    Uploading files to PYBOSSA
+  </a>
+  
+    <nav class="md-nav">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#allowed_extensions" title="ALLOWED_EXTENSIONS" class="md-nav__link">
+    ALLOWED_EXTENSIONS
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#spam-protection" title="SPAM protection" class="md-nav__link">
+    SPAM protection
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#failed-jobs" title="Failed Jobs" class="md-nav__link">
+    Failed Jobs
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#fulltext-search-language" title="Fulltext search language" class="md-nav__link">
+    Fulltext search language
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#absolute-links-to-avatars" title="Absolute links to Avatars" class="md-nav__link">
+    Absolute links to Avatars
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#delete-inactive-accounts" title="Delete inactive accounts" class="md-nav__link">
+    Delete inactive accounts
+  </a>
+  
+</li>
+      
+      
+      
+    </ul>
+  
+</nav>
+    
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../deployment/" title="Deploying PYBOSSA with Nginx and uWsgi" class="md-nav__link">
+      Deploying PYBOSSA with Nginx and uWsgi
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../admin/" title="Administrating PYBOSSA" class="md-nav__link">
+      Administrating PYBOSSA
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../vagrant/" title="Testing PYBOSSA with Vagrant" class="md-nav__link">
+      Testing PYBOSSA with Vagrant
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../security/" title="Security" class="md-nav__link">
+      Security
+    </a>
+  </li>
+
+        
+      </ul>
+    </nav>
+  </li>
+
+    
+      
+      
+      
+
+
+  <li class="md-nav__item md-nav__item--nested">
+    
+      <input class="md-toggle md-nav__toggle" data-md-toggle="nav-3" type="checkbox" id="nav-3">
+    
+    <label class="md-nav__link" for="nav-3">
+      Building a project
+    </label>
+    <nav class="md-nav" data-md-component="collapsible" data-md-level="1">
+      <label class="md-nav__title" for="nav-3">
+        Building a project
+      </label>
+      <ul class="md-nav__list" data-md-scrollfix>
+        
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../build/intro/" title="Introduction" class="md-nav__link">
+      Introduction
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../build/overview/" title="Quickstart: Creating a project" class="md-nav__link">
+      Quickstart: Creating a project
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../build/pbs/" title="Using the command line" class="md-nav__link">
+      Using the command line
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../build/tutorial/" title="Tutorial" class="md-nav__link">
+      Tutorial
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../build/project_settings/" title="Configuring the project" class="md-nav__link">
+      Configuring the project
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../build/webhooks/" title="Real time data analysis" class="md-nav__link">
+      Real time data analysis
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../build/capture/" title="Data capturing: image, video or audio" class="md-nav__link">
+      Data capturing: image, video or audio
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../build/model/" title="Domain model" class="md-nav__link">
+      Domain model
+    </a>
+  </li>
+
+        
+      </ul>
+    </nav>
+  </li>
+
+    
+      
+      
+      
+
+
+  <li class="md-nav__item md-nav__item--nested">
+    
+      <input class="md-toggle md-nav__toggle" data-md-toggle="nav-4" type="checkbox" id="nav-4">
+    
+    <label class="md-nav__link" for="nav-4">
+      API
+    </label>
+    <nav class="md-nav" data-md-component="collapsible" data-md-level="1">
+      <label class="md-nav__title" for="nav-4">
+        API
+      </label>
+      <ul class="md-nav__list" data-md-scrollfix>
+        
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../api/intro/" title="Introduction" class="md-nav__link">
+      Introduction
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../api/crud/" title="CRUD" class="md-nav__link">
+      CRUD
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../api/fulltextsearch/" title="Full text search" class="md-nav__link">
+      Full text search
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../api/sso/" title="Disqus Single Sign On" class="md-nav__link">
+      Disqus Single Sign On
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item md-nav__item--nested">
+    
+      <input class="md-toggle md-nav__toggle" data-md-toggle="nav-4-5" type="checkbox" id="nav-4-5">
+    
+    <label class="md-nav__link" for="nav-4-5">
+      Projects
+    </label>
+    <nav class="md-nav" data-md-component="collapsible" data-md-level="2">
+      <label class="md-nav__title" for="nav-4-5">
+        Projects
+      </label>
+      <ul class="md-nav__list" data-md-scrollfix>
+        
+        
+          
+          
+          
+
+
+  <li class="md-nav__item md-nav__item--nested">
+    
+      <input class="md-toggle md-nav__toggle" data-md-toggle="nav-4-5-1" type="checkbox" id="nav-4-5-1">
+    
+    <label class="md-nav__link" for="nav-4-5-1">
+      RESTful API
+    </label>
+    <nav class="md-nav" data-md-component="collapsible" data-md-level="3">
+      <label class="md-nav__title" for="nav-4-5-1">
+        RESTful API
+      </label>
+      <ul class="md-nav__list" data-md-scrollfix>
+        
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../api/project/filtering/" title="Filtering data to several project IDs" class="md-nav__link">
+      Filtering data to several project IDs
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../api/project/statistics/" title="Statistics" class="md-nav__link">
+      Statistics
+    </a>
+  </li>
+
+        
+      </ul>
+    </nav>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item md-nav__item--nested">
+    
+      <input class="md-toggle md-nav__toggle" data-md-toggle="nav-4-5-2" type="checkbox" id="nav-4-5-2">
+    
+    <label class="md-nav__link" for="nav-4-5-2">
+      PYBOSSA endpoints
+    </label>
+    <nav class="md-nav" data-md-component="collapsible" data-md-level="3">
+      <label class="md-nav__title" for="nav-4-5-2">
+        PYBOSSA endpoints
+      </label>
+      <ul class="md-nav__list" data-md-scrollfix>
+        
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../api/project/project/" title="Options" class="md-nav__link">
+      Options
+    </a>
+  </li>
+
+        
+      </ul>
+    </nav>
+  </li>
+
+        
+      </ul>
+    </nav>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item md-nav__item--nested">
+    
+      <input class="md-toggle md-nav__toggle" data-md-toggle="nav-4-6" type="checkbox" id="nav-4-6">
+    
+    <label class="md-nav__link" for="nav-4-6">
+      Tasks
+    </label>
+    <nav class="md-nav" data-md-component="collapsible" data-md-level="2">
+      <label class="md-nav__title" for="nav-4-6">
+        Tasks
+      </label>
+      <ul class="md-nav__list" data-md-scrollfix>
+        
+        
+          
+          
+          
+
+
+  <li class="md-nav__item md-nav__item--nested">
+    
+      <input class="md-toggle md-nav__toggle" data-md-toggle="nav-4-6-1" type="checkbox" id="nav-4-6-1">
+    
+    <label class="md-nav__link" for="nav-4-6-1">
+      RESTful API
+    </label>
+    <nav class="md-nav" data-md-component="collapsible" data-md-level="3">
+      <label class="md-nav__title" for="nav-4-6-1">
+        RESTful API
+      </label>
+      <ul class="md-nav__list" data-md-scrollfix>
+        
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../api/task/favorites/" title="Favorites" class="md-nav__link">
+      Favorites
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../api/task/participated/" title="Excluding contributed tasks" class="md-nav__link">
+      Excluding contributed tasks
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../api/task/newtask/" title="Requesting a task" class="md-nav__link">
+      Requesting a task
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../api/task/external/" title="External user ID" class="md-nav__link">
+      External user ID
+    </a>
+  </li>
+
+        
+      </ul>
+    </nav>
+  </li>
+
+        
+      </ul>
+    </nav>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item md-nav__item--nested">
+    
+      <input class="md-toggle md-nav__toggle" data-md-toggle="nav-4-7" type="checkbox" id="nav-4-7">
+    
+    <label class="md-nav__link" for="nav-4-7">
+      TaskRuns
+    </label>
+    <nav class="md-nav" data-md-component="collapsible" data-md-level="2">
+      <label class="md-nav__title" for="nav-4-7">
+        TaskRuns
+      </label>
+      <ul class="md-nav__list" data-md-scrollfix>
+        
+        
+          
+          
+          
+
+
+  <li class="md-nav__item md-nav__item--nested">
+    
+      <input class="md-toggle md-nav__toggle" data-md-toggle="nav-4-7-1" type="checkbox" id="nav-4-7-1">
+    
+    <label class="md-nav__link" for="nav-4-7-1">
+      RESTful API
+    </label>
+    <nav class="md-nav" data-md-component="collapsible" data-md-level="3">
+      <label class="md-nav__title" for="nav-4-7-1">
+        RESTful API
+      </label>
+      <ul class="md-nav__list" data-md-scrollfix>
+        
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../api/taskrun/intro/" title="Attaching files" class="md-nav__link">
+      Attaching files
+    </a>
+  </li>
+
+        
+      </ul>
+    </nav>
+  </li>
+
+        
+      </ul>
+    </nav>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item md-nav__item--nested">
+    
+      <input class="md-toggle md-nav__toggle" data-md-toggle="nav-4-8" type="checkbox" id="nav-4-8">
+    
+    <label class="md-nav__link" for="nav-4-8">
+      User
+    </label>
+    <nav class="md-nav" data-md-component="collapsible" data-md-level="2">
+      <label class="md-nav__title" for="nav-4-8">
+        User
+      </label>
+      <ul class="md-nav__list" data-md-scrollfix>
+        
+        
+          
+          
+          
+
+
+  <li class="md-nav__item md-nav__item--nested">
+    
+      <input class="md-toggle md-nav__toggle" data-md-toggle="nav-4-8-1" type="checkbox" id="nav-4-8-1">
+    
+    <label class="md-nav__link" for="nav-4-8-1">
+      RESTful API
+    </label>
+    <nav class="md-nav" data-md-component="collapsible" data-md-level="3">
+      <label class="md-nav__title" for="nav-4-8-1">
+        RESTful API
+      </label>
+      <ul class="md-nav__list" data-md-scrollfix>
+        
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../api/user/intro/" title="Intro" class="md-nav__link">
+      Intro
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../api/user/progress/" title="Project progress" class="md-nav__link">
+      Project progress
+    </a>
+  </li>
+
+        
+      </ul>
+    </nav>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item md-nav__item--nested">
+    
+      <input class="md-toggle md-nav__toggle" data-md-toggle="nav-4-8-2" type="checkbox" id="nav-4-8-2">
+    
+    <label class="md-nav__link" for="nav-4-8-2">
+      PYBOSSA endpoints
+    </label>
+    <nav class="md-nav" data-md-component="collapsible" data-md-level="3">
+      <label class="md-nav__title" for="nav-4-8-2">
+        PYBOSSA endpoints
+      </label>
+      <ul class="md-nav__list" data-md-scrollfix>
+        
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../api/user/account/" title="Account" class="md-nav__link">
+      Account
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../api/user/admin/" title="Admins" class="md-nav__link">
+      Admins
+    </a>
+  </li>
+
+        
+      </ul>
+    </nav>
+  </li>
+
+        
+      </ul>
+    </nav>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item md-nav__item--nested">
+    
+      <input class="md-toggle md-nav__toggle" data-md-toggle="nav-4-9" type="checkbox" id="nav-4-9">
+    
+    <label class="md-nav__link" for="nav-4-9">
+      Helping materials
+    </label>
+    <nav class="md-nav" data-md-component="collapsible" data-md-level="2">
+      <label class="md-nav__title" for="nav-4-9">
+        Helping materials
+      </label>
+      <ul class="md-nav__list" data-md-scrollfix>
+        
+        
+          
+          
+          
+
+
+  <li class="md-nav__item md-nav__item--nested">
+    
+      <input class="md-toggle md-nav__toggle" data-md-toggle="nav-4-9-1" type="checkbox" id="nav-4-9-1">
+    
+    <label class="md-nav__link" for="nav-4-9-1">
+      RESTful API
+    </label>
+    <nav class="md-nav" data-md-component="collapsible" data-md-level="3">
+      <label class="md-nav__title" for="nav-4-9-1">
+        RESTful API
+      </label>
+      <ul class="md-nav__list" data-md-scrollfix>
+        
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../api/helpingmaterial/intro/" title="Attaching files" class="md-nav__link">
+      Attaching files
+    </a>
+  </li>
+
+        
+      </ul>
+    </nav>
+  </li>
+
+        
+      </ul>
+    </nav>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item md-nav__item--nested">
+    
+      <input class="md-toggle md-nav__toggle" data-md-toggle="nav-4-10" type="checkbox" id="nav-4-10">
+    
+    <label class="md-nav__link" for="nav-4-10">
+      Pages
+    </label>
+    <nav class="md-nav" data-md-component="collapsible" data-md-level="2">
+      <label class="md-nav__title" for="nav-4-10">
+        Pages
+      </label>
+      <ul class="md-nav__list" data-md-scrollfix>
+        
+        
+          
+          
+          
+
+
+  <li class="md-nav__item md-nav__item--nested">
+    
+      <input class="md-toggle md-nav__toggle" data-md-toggle="nav-4-10-1" type="checkbox" id="nav-4-10-1">
+    
+    <label class="md-nav__link" for="nav-4-10-1">
+      RESTful API
+    </label>
+    <nav class="md-nav" data-md-component="collapsible" data-md-level="3">
+      <label class="md-nav__title" for="nav-4-10-1">
+        RESTful API
+      </label>
+      <ul class="md-nav__list" data-md-scrollfix>
+        
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../api/page/intro/" title="Info" class="md-nav__link">
+      Info
+    </a>
+  </li>
+
+        
+      </ul>
+    </nav>
+  </li>
+
+        
+      </ul>
+    </nav>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item md-nav__item--nested">
+    
+      <input class="md-toggle md-nav__toggle" data-md-toggle="nav-4-11" type="checkbox" id="nav-4-11">
+    
+    <label class="md-nav__link" for="nav-4-11">
+      Blog posts
+    </label>
+    <nav class="md-nav" data-md-component="collapsible" data-md-level="2">
+      <label class="md-nav__title" for="nav-4-11">
+        Blog posts
+      </label>
+      <ul class="md-nav__list" data-md-scrollfix>
+        
+        
+          
+          
+          
+
+
+  <li class="md-nav__item md-nav__item--nested">
+    
+      <input class="md-toggle md-nav__toggle" data-md-toggle="nav-4-11-1" type="checkbox" id="nav-4-11-1">
+    
+    <label class="md-nav__link" for="nav-4-11-1">
+      RESTful API
+    </label>
+    <nav class="md-nav" data-md-component="collapsible" data-md-level="3">
+      <label class="md-nav__title" for="nav-4-11-1">
+        RESTful API
+      </label>
+      <ul class="md-nav__list" data-md-scrollfix>
+        
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../api/blogpost/intro/" title="Attaching files" class="md-nav__link">
+      Attaching files
+    </a>
+  </li>
+
+        
+      </ul>
+    </nav>
+  </li>
+
+        
+      </ul>
+    </nav>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item md-nav__item--nested">
+    
+      <input class="md-toggle md-nav__toggle" data-md-toggle="nav-4-12" type="checkbox" id="nav-4-12">
+    
+    <label class="md-nav__link" for="nav-4-12">
+      Leaderboard
+    </label>
+    <nav class="md-nav" data-md-component="collapsible" data-md-level="2">
+      <label class="md-nav__title" for="nav-4-12">
+        Leaderboard
+      </label>
+      <ul class="md-nav__list" data-md-scrollfix>
+        
+        
+          
+          
+          
+
+
+  <li class="md-nav__item md-nav__item--nested">
+    
+      <input class="md-toggle md-nav__toggle" data-md-toggle="nav-4-12-1" type="checkbox" id="nav-4-12-1">
+    
+    <label class="md-nav__link" for="nav-4-12-1">
+      PYBOSSA endpoints
+    </label>
+    <nav class="md-nav" data-md-component="collapsible" data-md-level="3">
+      <label class="md-nav__title" for="nav-4-12-1">
+        PYBOSSA endpoints
+      </label>
+      <ul class="md-nav__list" data-md-scrollfix>
+        
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../api/leaderboard/" title="Methods" class="md-nav__link">
+      Methods
+    </a>
+  </li>
+
+        
+      </ul>
+    </nav>
+  </li>
+
+        
+      </ul>
+    </nav>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item md-nav__item--nested">
+    
+      <input class="md-toggle md-nav__toggle" data-md-toggle="nav-4-13" type="checkbox" id="nav-4-13">
+    
+    <label class="md-nav__link" for="nav-4-13">
+      Home page
+    </label>
+    <nav class="md-nav" data-md-component="collapsible" data-md-level="2">
+      <label class="md-nav__title" for="nav-4-13">
+        Home page
+      </label>
+      <ul class="md-nav__list" data-md-scrollfix>
+        
+        
+          
+          
+          
+
+
+  <li class="md-nav__item md-nav__item--nested">
+    
+      <input class="md-toggle md-nav__toggle" data-md-toggle="nav-4-13-1" type="checkbox" id="nav-4-13-1">
+    
+    <label class="md-nav__link" for="nav-4-13-1">
+      PYBOSSA endpoints
+    </label>
+    <nav class="md-nav" data-md-component="collapsible" data-md-level="3">
+      <label class="md-nav__title" for="nav-4-13-1">
+        PYBOSSA endpoints
+      </label>
+      <ul class="md-nav__list" data-md-scrollfix>
+        
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../api/home/" title="Methods" class="md-nav__link">
+      Methods
+    </a>
+  </li>
+
+        
+      </ul>
+    </nav>
+  </li>
+
+        
+      </ul>
+    </nav>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item md-nav__item--nested">
+    
+      <input class="md-toggle md-nav__toggle" data-md-toggle="nav-4-14" type="checkbox" id="nav-4-14">
+    
+    <label class="md-nav__link" for="nav-4-14">
+      Announcement
+    </label>
+    <nav class="md-nav" data-md-component="collapsible" data-md-level="2">
+      <label class="md-nav__title" for="nav-4-14">
+        Announcement
+      </label>
+      <ul class="md-nav__list" data-md-scrollfix>
+        
+        
+          
+          
+          
+
+
+  <li class="md-nav__item md-nav__item--nested">
+    
+      <input class="md-toggle md-nav__toggle" data-md-toggle="nav-4-14-1" type="checkbox" id="nav-4-14-1">
+    
+    <label class="md-nav__link" for="nav-4-14-1">
+      PYBOSSA endpoints
+    </label>
+    <nav class="md-nav" data-md-component="collapsible" data-md-level="3">
+      <label class="md-nav__title" for="nav-4-14-1">
+        PYBOSSA endpoints
+      </label>
+      <ul class="md-nav__list" data-md-scrollfix>
+        
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../api/announcement/" title="Methods" class="md-nav__link">
+      Methods
+    </a>
+  </li>
+
+        
+      </ul>
+    </nav>
+  </li>
+
+        
+      </ul>
+    </nav>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item md-nav__item--nested">
+    
+      <input class="md-toggle md-nav__toggle" data-md-toggle="nav-4-15" type="checkbox" id="nav-4-15">
+    
+    <label class="md-nav__link" for="nav-4-15">
+      Categories
+    </label>
+    <nav class="md-nav" data-md-component="collapsible" data-md-level="2">
+      <label class="md-nav__title" for="nav-4-15">
+        Categories
+      </label>
+      <ul class="md-nav__list" data-md-scrollfix>
+        
+        
+          
+          
+          
+
+
+  <li class="md-nav__item md-nav__item--nested">
+    
+      <input class="md-toggle md-nav__toggle" data-md-toggle="nav-4-15-1" type="checkbox" id="nav-4-15-1">
+    
+    <label class="md-nav__link" for="nav-4-15-1">
+      PYBOSSA endpoints
+    </label>
+    <nav class="md-nav" data-md-component="collapsible" data-md-level="3">
+      <label class="md-nav__title" for="nav-4-15-1">
+        PYBOSSA endpoints
+      </label>
+      <ul class="md-nav__list" data-md-scrollfix>
+        
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../api/categories/" title="Methods" class="md-nav__link">
+      Methods
+    </a>
+  </li>
+
+        
+      </ul>
+    </nav>
+  </li>
+
+        
+      </ul>
+    </nav>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item md-nav__item--nested">
+    
+      <input class="md-toggle md-nav__toggle" data-md-toggle="nav-4-16" type="checkbox" id="nav-4-16">
+    
+    <label class="md-nav__link" for="nav-4-16">
+      Administration
+    </label>
+    <nav class="md-nav" data-md-component="collapsible" data-md-level="2">
+      <label class="md-nav__title" for="nav-4-16">
+        Administration
+      </label>
+      <ul class="md-nav__list" data-md-scrollfix>
+        
+        
+          
+          
+          
+
+
+  <li class="md-nav__item md-nav__item--nested">
+    
+      <input class="md-toggle md-nav__toggle" data-md-toggle="nav-4-16-1" type="checkbox" id="nav-4-16-1">
+    
+    <label class="md-nav__link" for="nav-4-16-1">
+      PYBOSSA endpoints
+    </label>
+    <nav class="md-nav" data-md-component="collapsible" data-md-level="3">
+      <label class="md-nav__title" for="nav-4-16-1">
+        PYBOSSA endpoints
+      </label>
+      <ul class="md-nav__list" data-md-scrollfix>
+        
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../api/admin/dashboard/" title="Dashboard" class="md-nav__link">
+      Dashboard
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../api/admin/featured/" title="Featured projects" class="md-nav__link">
+      Featured projects
+    </a>
+  </li>
+
+        
+      </ul>
+    </nav>
+  </li>
+
+        
+      </ul>
+    </nav>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item md-nav__item--nested">
+    
+      <input class="md-toggle md-nav__toggle" data-md-toggle="nav-4-17" type="checkbox" id="nav-4-17">
+    
+    <label class="md-nav__link" for="nav-4-17">
+      Help
+    </label>
+    <nav class="md-nav" data-md-component="collapsible" data-md-level="2">
+      <label class="md-nav__title" for="nav-4-17">
+        Help
+      </label>
+      <ul class="md-nav__list" data-md-scrollfix>
+        
+        
+          
+          
+          
+
+
+  <li class="md-nav__item md-nav__item--nested">
+    
+      <input class="md-toggle md-nav__toggle" data-md-toggle="nav-4-17-1" type="checkbox" id="nav-4-17-1">
+    
+    <label class="md-nav__link" for="nav-4-17-1">
+      PYBOSSA endpoints
+    </label>
+    <nav class="md-nav" data-md-component="collapsible" data-md-level="3">
+      <label class="md-nav__title" for="nav-4-17-1">
+        PYBOSSA endpoints
+      </label>
+      <ul class="md-nav__list" data-md-scrollfix>
+        
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../api/help/" title="Methods" class="md-nav__link">
+      Methods
+    </a>
+  </li>
+
+        
+      </ul>
+    </nav>
+  </li>
+
+        
+      </ul>
+    </nav>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item md-nav__item--nested">
+    
+      <input class="md-toggle md-nav__toggle" data-md-toggle="nav-4-18" type="checkbox" id="nav-4-18">
+    
+    <label class="md-nav__link" for="nav-4-18">
+      Server stats
+    </label>
+    <nav class="md-nav" data-md-component="collapsible" data-md-level="2">
+      <label class="md-nav__title" for="nav-4-18">
+        Server stats
+      </label>
+      <ul class="md-nav__list" data-md-scrollfix>
+        
+        
+          
+          
+          
+
+
+  <li class="md-nav__item md-nav__item--nested">
+    
+      <input class="md-toggle md-nav__toggle" data-md-toggle="nav-4-18-1" type="checkbox" id="nav-4-18-1">
+    
+    <label class="md-nav__link" for="nav-4-18-1">
+      PYBOSSA endpoints
+    </label>
+    <nav class="md-nav" data-md-component="collapsible" data-md-level="3">
+      <label class="md-nav__title" for="nav-4-18-1">
+        PYBOSSA endpoints
+      </label>
+      <ul class="md-nav__list" data-md-scrollfix>
+        
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../api/stats/" title="Methods" class="md-nav__link">
+      Methods
+    </a>
+  </li>
+
+        
+      </ul>
+    </nav>
+  </li>
+
+        
+      </ul>
+    </nav>
+  </li>
+
+        
+      </ul>
+    </nav>
+  </li>
+
+    
+      
+      
+      
+
+
+  <li class="md-nav__item">
+    <a href="../vagrant/" title="Testing PYBOSSA with Vagrant" class="md-nav__link">
+      Testing PYBOSSA with Vagrant
+    </a>
+  </li>
+
+    
+      
+      
+      
+
+
+  <li class="md-nav__item md-nav__item--nested">
+    
+      <input class="md-toggle md-nav__toggle" data-md-toggle="nav-6" type="checkbox" id="nav-6">
+    
+    <label class="md-nav__link" for="nav-6">
+      Contributing
+    </label>
+    <nav class="md-nav" data-md-component="collapsible" data-md-level="1">
+      <label class="md-nav__title" for="nav-6">
+        Contributing
+      </label>
+      <ul class="md-nav__list" data-md-scrollfix>
+        
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../contributing/" title="General" class="md-nav__link">
+      General
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../translating/" title="Translating PYBOSSA" class="md-nav__link">
+      Translating PYBOSSA
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../plugins/" title="Writing plugins" class="md-nav__link">
+      Writing plugins
+    </a>
+  </li>
+
+        
+      </ul>
+    </nav>
+  </li>
+
+    
+      
+      
+      
+
+
+  <li class="md-nav__item">
+    <a href="../../gdpr/" title="GDPR" class="md-nav__link">
+      GDPR
+    </a>
+  </li>
+
+    
+      
+      
+      
+
+
+  <li class="md-nav__item">
+    <a href="../../faq/" title="FAQ" class="md-nav__link">
+      FAQ
+    </a>
+  </li>
+
+    
+  </ul>
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+            
+              <div class="md-sidebar md-sidebar--secondary" data-md-component="toc">
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+<nav class="md-nav md-nav--secondary">
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="toc">Table of contents</label>
+    <ul class="md-nav__list" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#official-support" title="Official support" class="md-nav__link">
+    Official support
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#debug-mode" title="Debug mode" class="md-nav__link">
+    Debug mode
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#debug-toolbar" title="Debug Toolbar" class="md-nav__link">
+    Debug Toolbar
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#profiling" title="Profiling" class="md-nav__link">
+    Profiling
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#host-and-port" title="Host and Port" class="md-nav__link">
+    Host and Port
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#securing-the-server" title="Securing the server" class="md-nav__link">
+    Securing the server
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#ensuring-anonymous-ips" title="Ensuring Anonymous IPs" class="md-nav__link">
+    Ensuring Anonymous IPs
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#database-username-and-password" title="Database username and password" class="md-nav__link">
+    Database username and password
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#load-balancing-sql-queries" title="Load balancing SQL Queries" class="md-nav__link">
+    Load balancing SQL Queries
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#its-dangerous-so-better-sign-this" title="It's dangerous, so better sign this" class="md-nav__link">
+    It's dangerous, so better sign this
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#cors-configuration" title="CORS configuration" class="md-nav__link">
+    CORS configuration
+  </a>
+  
+    <nav class="md-nav">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#fine-tuning-cors" title="Fine tuning CORS" class="md-nav__link">
+    Fine tuning CORS
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#modifying-the-brand-name" title="Modifying the Brand name" class="md-nav__link">
+    Modifying the Brand name
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#adding-a-logo" title="Adding a Logo" class="md-nav__link">
+    Adding a Logo
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#multiple-languages" title="Multiple languages" class="md-nav__link">
+    Multiple languages
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#creating-a-theme" title="Creating a theme" class="md-nav__link">
+    Creating a theme
+  </a>
+  
+    <nav class="md-nav">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#using-sass-and-minifying-javascript" title="Using SASS and minifying JavaScript" class="md-nav__link">
+    Using SASS and minifying JavaScript
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#results-page" title="Results page" class="md-nav__link">
+    Results page
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#adding-your-contact-information" title="Adding your Contact Information" class="md-nav__link">
+    Adding your Contact Information
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#terms-of-use" title="Terms of Use" class="md-nav__link">
+    Terms of Use
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#adding-help-page" title="Adding Help page" class="md-nav__link">
+    Adding Help page
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#enabling-twitter-facebook-and-google-authentication" title="Enabling Twitter, Facebook and Google authentication" class="md-nav__link">
+    Enabling Twitter, Facebook and Google authentication
+  </a>
+  
+    <nav class="md-nav">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#twitter" title="Twitter" class="md-nav__link">
+    Twitter
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#facebook" title="Facebook" class="md-nav__link">
+    Facebook
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#google" title="Google" class="md-nav__link">
+    Google
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#receiving-e-mails-with-errors" title="Receiving e-mails with errors" class="md-nav__link">
+    Receiving e-mails with errors
+  </a>
+  
+    <nav class="md-nav">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#background-jobs-error-notifications" title="Background jobs error notifications" class="md-nav__link">
+    Background jobs error notifications
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#enabling-logging" title="Enabling Logging" class="md-nav__link">
+    Enabling Logging
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#mail-setup" title="Mail Setup" class="md-nav__link">
+    Mail Setup
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#global-announcements-for-the-users" title="Global Announcements for the users" class="md-nav__link">
+    Global Announcements for the users
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#disable-email-notifications" title="Disable email notifications" class="md-nav__link">
+    Disable email notifications
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#cache" title="Cache" class="md-nav__link">
+    Cache
+  </a>
+  
+    <nav class="md-nav">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#disabling-the-cache" title="Disabling the Cache" class="md-nav__link">
+    Disabling the Cache
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#redis-configuration" title="Redis configuration" class="md-nav__link">
+    Redis configuration
+  </a>
+  
+    <nav class="md-nav">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#redis-python-prefix" title="Redis python prefix" class="md-nav__link">
+    Redis python prefix
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#redis-sentinel" title="Redis Sentinel" class="md-nav__link">
+    Redis Sentinel
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#redis-master" title="Redis master" class="md-nav__link">
+    Redis master
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#redis-db" title="Redis DB" class="md-nav__link">
+    Redis DB
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#redis-socket-timeout" title="Redis Socket timeout" class="md-nav__link">
+    Redis Socket timeout
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#redis-retry-on-timeout" title="Redis retry on timeout" class="md-nav__link">
+    Redis retry on timeout
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#rate-limit-for-the-api" title="Rate limit for the API" class="md-nav__link">
+    Rate limit for the API
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#configuring-upload-method" title="Configuring upload method" class="md-nav__link">
+    Configuring upload method
+  </a>
+  
+    <nav class="md-nav">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#local-uploader" title="Local Uploader" class="md-nav__link">
+    Local Uploader
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#rackspace-cloud-files" title="Rackspace Cloud Files" class="md-nav__link">
+    Rackspace Cloud Files
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#customizing-the-layout-and-frontpage-text" title="Customizing the Layout and FrontPage text" class="md-nav__link">
+    Customizing the Layout and FrontPage text
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#tracking-the-server-with-google-analytics" title="Tracking the server with Google Analytics" class="md-nav__link">
+    Tracking the server with Google Analytics
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#adding-a-search-box-google-custom-search" title="Adding a Search box: Google Custom Search" class="md-nav__link">
+    Adding a Search box: Google Custom Search
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#adding-web-maps-for-project-statistics-deprecated-since-v295" title="Adding web maps for project statistics (deprecated since v2.9.5)" class="md-nav__link">
+    Adding web maps for project statistics (deprecated since v2.9.5)
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#using-your-terms-of-use" title="Using your Terms of Use" class="md-nav__link">
+    Using your Terms of Use
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#using-your-cookies-policy" title="Using your Cookies Policy" class="md-nav__link">
+    Using your Cookies Policy
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#using-your-privacy-policy" title="Using your Privacy Policy" class="md-nav__link">
+    Using your Privacy Policy
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#exporting-data-to-a-ckan-server" title="Exporting data to a CKAN server" class="md-nav__link">
+    Exporting data to a CKAN server
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#enforce-privacy-mode" title="Enforce Privacy mode" class="md-nav__link">
+    Enforce Privacy mode
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#making-extra-keyvalue-pairs-in-info-field-public" title="Making extra key/value pairs in info field public" class="md-nav__link">
+    Making extra key/value pairs in info field public
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#adding-custom-project-templates" title="Adding custom project templates" class="md-nav__link">
+    Adding custom project templates
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#setting-an-expiration-time-for-project-passwords" title="Setting an expiration time for project passwords" class="md-nav__link">
+    Setting an expiration time for project passwords
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#validation-of-new-user-accounts" title="Validation of new user accounts" class="md-nav__link">
+    Validation of new user accounts
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#two-factor-authentication-on-login" title="Two-factor authentication on login" class="md-nav__link">
+    Two-factor authentication on login
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#sending-weekly-email-stats-to-project-owners" title="Sending weekly email stats to project owners" class="md-nav__link">
+    Sending weekly email stats to project owners
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#newsletters-with-mailchimp" title="Newsletters with Mailchimp" class="md-nav__link">
+    Newsletters with Mailchimp
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#enabling-the-flickr-task-importer" title="Enabling the Flickr Task importer" class="md-nav__link">
+    Enabling the Flickr Task importer
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#enabling-the-dropbox-task-importer" title="Enabling the Dropbox Task importer" class="md-nav__link">
+    Enabling the Dropbox Task importer
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#enabling-the-twitter-task-importer" title="Enabling the Twitter Task importer" class="md-nav__link">
+    Enabling the Twitter Task importer
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#enabling-the-youtubes-task-importer" title="Enabling the Youtube's Task importer" class="md-nav__link">
+    Enabling the Youtube's Task importer
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#enabling-server-sent-events" title="Enabling Server-Sent Events" class="md-nav__link">
+    Enabling Server-Sent Events
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#latest-news-from-pybossa" title="Latest news from PYBOSSA" class="md-nav__link">
+    Latest news from PYBOSSA
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#enabling-pro-user-features" title="Enabling pro user features" class="md-nav__link">
+    Enabling pro user features
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#strict-slashes" title="Strict Slashes" class="md-nav__link">
+    Strict Slashes
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#forums" title="Forums" class="md-nav__link">
+    Forums
+  </a>
+  
+    <nav class="md-nav">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#disqus-single-sign-on-sso" title="Disqus Single Sign-On (SSO)" class="md-nav__link">
+    Disqus Single Sign-On (SSO)
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#background-jobs-timeout" title="Background jobs timeout" class="md-nav__link">
+    Background jobs timeout
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#web-push-notifications" title="Web Push notifications" class="md-nav__link">
+    Web Push notifications
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#ignore-specific-keys-when-exporting-data-in-csv-format" title="Ignore specific keys when exporting data in CSV format" class="md-nav__link">
+    Ignore specific keys when exporting data in CSV format
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#specify-a-new-root-key-instead-of-info-for-csv-exporter" title="Specify a new root key instead of info for CSV exporter" class="md-nav__link">
+    Specify a new root key instead of info for CSV exporter
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#disable-task-presenter-check-for-pure-javascript-apps" title="Disable task presenter check for pure JavaScript apps" class="md-nav__link">
+    Disable task presenter check for pure JavaScript apps
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#consent-field-for-users" title="Consent field for users" class="md-nav__link">
+    Consent field for users
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#custom-leaderboards" title="Custom Leaderboards" class="md-nav__link">
+    Custom Leaderboards
+  </a>
+  
+    <nav class="md-nav">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#default-number-of-users-for-the-leaderboard" title="Default number of users for the leaderboard" class="md-nav__link">
+    Default number of users for the leaderboard
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#unpublish-inactive-projects" title="Unpublish inactive projects" class="md-nav__link">
+    Unpublish inactive projects
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#ldap-integration" title="LDAP integration" class="md-nav__link">
+    LDAP integration
+  </a>
+  
+    <nav class="md-nav">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#ldap_host" title="LDAP_HOST" class="md-nav__link">
+    LDAP_HOST
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#ldap_base_dn" title="LDAP_BASE_DN" class="md-nav__link">
+    LDAP_BASE_DN
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#ldap_username" title="LDAP_USERNAME" class="md-nav__link">
+    LDAP_USERNAME
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#ldap_password" title="LDAP_PASSWORD" class="md-nav__link">
+    LDAP_PASSWORD
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#ldap_objects_dn" title="LDAP_OBJECTS_DN" class="md-nav__link">
+    LDAP_OBJECTS_DN
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#ldap_openldap" title="LDAP_OPENLDAP" class="md-nav__link">
+    LDAP_OPENLDAP
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#ldap_user_object_filter" title="LDAP_USER_OBJECT_FILTER" class="md-nav__link">
+    LDAP_USER_OBJECT_FILTER
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#ldap_user_filter_field" title="LDAP_USER_FILTER_FIELD" class="md-nav__link">
+    LDAP_USER_FILTER_FIELD
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#ldap_pybossa_fields" title="LDAP_PYBOSSA_FIELDS" class="md-nav__link">
+    LDAP_PYBOSSA_FIELDS
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#uploading-files-to-pybossa" title="Uploading files to PYBOSSA" class="md-nav__link">
+    Uploading files to PYBOSSA
+  </a>
+  
+    <nav class="md-nav">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#allowed_extensions" title="ALLOWED_EXTENSIONS" class="md-nav__link">
+    ALLOWED_EXTENSIONS
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#spam-protection" title="SPAM protection" class="md-nav__link">
+    SPAM protection
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#failed-jobs" title="Failed Jobs" class="md-nav__link">
+    Failed Jobs
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#fulltext-search-language" title="Fulltext search language" class="md-nav__link">
+    Fulltext search language
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#absolute-links-to-avatars" title="Absolute links to Avatars" class="md-nav__link">
+    Absolute links to Avatars
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#delete-inactive-accounts" title="Delete inactive accounts" class="md-nav__link">
+    Delete inactive accounts
+  </a>
+  
+</li>
+      
+      
+      
+    </ul>
+  
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+          
+          <div class="md-content">
+            <article class="md-content__inner md-typeset">
+              
+                
+                
+                <h1 id="configuring-pybossa">Configuring PYBOSSA<a class="headerlink" href="#configuring-pybossa" title="Permanent link">&para;</a></h1>
+<p>The PYBOSSA <a href="https://github.com/Scifabric/pybossa/blob/master/settings_local.py.tmpl">settings_local.py.tmpl</a> file has all the available configuration options for your server. This section, explains each of them and how you should/could use them on your server.</p>
+<h2 id="official-support">Official support<a class="headerlink" href="#official-support" title="Permanent link">&para;</a></h2>
+<p>If you need help configuring your PYBOSSA server, <a href="https://scifabric.com/pricing/">contact us</a>.
+We offer official support and we would love to work with your PYBOSSA server.</p>
+<h2 id="debug-mode">Debug mode<a class="headerlink" href="#debug-mode" title="Permanent link">&para;</a></h2>
+<p>The <a href="https://github.com/Scifabric/pybossa/blob/master/settings_local.py.tmpl#L19">DEBUG</a> mode is disabled by default in the configuration file, as this should be only used when you are running the server for development purposes. You should not enable this option unless you need to do some debugging in the PYBOSSA server.</p>
+<h2 id="debug-toolbar">Debug Toolbar<a class="headerlink" href="#debug-toolbar" title="Permanent link">&para;</a></h2>
+<p>PYBOSSA includes a flag to enable a debug toolbar that can give you more insights about the performance of PYBOSSA. We strongly recommend keeping the toolbar disabled in production environments, as it will slow down considerably all the execution of the code. However, if you are testing the server, feel free to enable it adding the following variable to the settings file:</p>
+<table class="codehilitetable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span>1</pre></div></td><td class="code"><div class="codehilite"><pre><span></span><span class="n">ENABLE_DEBUG_TOOLBAR</span> <span class="o">=</span> <span class="kc">True</span>
+</pre></div>
+</td></tr></table>
+
+<h2 id="profiling">Profiling<a class="headerlink" href="#profiling" title="Permanent link">&para;</a></h2>
+<p>PYBOSSA installs <a href="https://github.com/muatik/flask-profiler">Flask-Profiler</a>, an extension that allows you to know which endpoints are being called, and how much time it
+takes for them to process each request. You can enable it by setting this config variable in the settings_local.py file:</p>
+<table class="codehilitetable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span> 1
+ 2
+ 3
+ 4
+ 5
+ 6
+ 7
+ 8
+ 9
+10
+11
+12
+13
+14</pre></div></td><td class="code"><div class="codehilite"><pre><span></span><span class="n">FLASK_PROFILER</span> <span class="o">=</span> <span class="p">{</span>
+    <span class="s2">&quot;enabled&quot;</span><span class="p">:</span> <span class="kc">True</span><span class="p">,</span>
+    <span class="s2">&quot;storage&quot;</span><span class="p">:</span> <span class="p">{</span>
+        <span class="s2">&quot;engine&quot;</span><span class="p">:</span> <span class="s2">&quot;sqlite&quot;</span>
+    <span class="p">},</span>
+    <span class="s2">&quot;basicAuth&quot;</span><span class="p">:{</span>
+        <span class="s2">&quot;enabled&quot;</span><span class="p">:</span> <span class="kc">True</span><span class="p">,</span>
+        <span class="s2">&quot;username&quot;</span><span class="p">:</span> <span class="s2">&quot;admin&quot;</span><span class="p">,</span>
+        <span class="s2">&quot;password&quot;</span><span class="p">:</span> <span class="s2">&quot;admin&quot;</span>
+    <span class="p">},</span>
+    <span class="s2">&quot;ignore&quot;</span><span class="p">:</span> <span class="p">[</span>
+        <span class="s2">&quot;^/static/.*&quot;</span>
+    <span class="p">]</span>
+<span class="p">}</span>
+</pre></div>
+</td></tr></table>
+
+<p>Now you can access the profiling page: http://server/flask-profiler/. </p>
+<div class="admonition warning">
+<p class="admonition-title">Warning</p>
+<p>Be sure to use a strong password to protect this view as well as HTTPS.</p>
+</div>
+<h2 id="host-and-port">Host and Port<a class="headerlink" href="#host-and-port" title="Permanent link">&para;</a></h2>
+<p>The <a href="https://github.com/Scifabric/pybossa/blob/master/settings_local.py.tmpl#L22">HOST</a> and <a href="https://github.com/Scifabric/pybossa/blob/master/settings_local.py.tmpl#L23">PORT</a> config variables can be used to force the server to listen on specific addresses of your server, as well as at a given port. Usually, you will only need to uncomment the <a href="https://github.com/Scifabric/pybossa/blob/master/settings_local.py.tmpl#L22">HOST</a> variable to listen on all the network interfaces.</p>
+<h2 id="securing-the-server">Securing the server<a class="headerlink" href="#securing-the-server" title="Permanent link">&para;</a></h2>
+<p>PYBOSSA uses the <a href="http://flask.pocoo.org/docs/quickstart/#sessions">Flask Sessions</a> feature that signs the cookies cryptographically for storing information. This improves the security of the server, as the user could look at the contents of the cookie but not modify it, unless they know the <a href="https://github.com/Scifabric/pybossa/blob/master/settings_local.py.tmpl#L25">SECRET</a> and <a href="https://github.com/Scifabric/pybossa/blob/master/settings_local.py.tmpl#L26">SECRET_KEY</a>.</p>
+<p>Therefore, <strong>it is essential that you create a new SECRET and
+SECRET_KEY keys for your server and keep them private</strong>. Please, check the <a href="http://flask.pocoo.org/docs/quickstart/#sessions">Flask Sessions</a> documentation for instructions on how to create proper secret keys.</p>
+<h2 id="ensuring-anonymous-ips">Ensuring Anonymous IPs<a class="headerlink" href="#ensuring-anonymous-ips" title="Permanent link">&para;</a></h2>
+<p>PYBOSSA uses CryptoPAn to anoymize the user&rsquo;s IPs when they participate as anonymous users. This is a feature that&rsquo;s mandatory, and you will have to create
+a KEY for it, specially this one:</p>
+<table class="codehilitetable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span>1</pre></div></td><td class="code"><div class="codehilite"><pre><span></span><span class="n">CRYPTOPAN_KEY</span> <span class="o">=</span> <span class="s1">&#39;32-char-str-for-AES-key-and-pad.&#39;</span>
+</pre></div>
+</td></tr></table>
+
+<div class="admonition warning">
+<p class="admonition-title">Warning</p>
+<p>Be sure to use a strong key to protect your user IPs.</p>
+</div>
+<h2 id="database-username-and-password">Database username and password<a class="headerlink" href="#database-username-and-password" title="Permanent link">&para;</a></h2>
+<p>PYBOSSA uses the <a href="http://www.sqlalchemy.org/">SQLAlchemy</a> SQL toolkit to access the DB. In the settings file, you only need to modify the name of the user, password and database name, so it fits your needs in the field SQLALCHEMY_DATABASE_URI:</p>
+<table class="codehilitetable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span>1</pre></div></td><td class="code"><div class="codehilite"><pre><span></span><span class="n">SQLALCHEMY_DATABASE_URI</span> <span class="o">=</span> <span class="s1">&#39;postgresql://username:userpassword@localhost/databasename&#39;</span>
+</pre></div>
+</td></tr></table>
+
+<h2 id="load-balancing-sql-queries">Load balancing SQL Queries<a class="headerlink" href="#load-balancing-sql-queries" title="Permanent link">&para;</a></h2>
+<p>If you have a master/slave PostgreSQL setup, you can instruct PYBOSSA to use the slave node for load balancing queries between the master and slave node.</p>
+<p>For enabling this mode, all you have to do is adding to the
+settings_local.py config file the following:</p>
+<table class="codehilitetable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span>1
+2
+3</pre></div></td><td class="code"><div class="codehilite"><pre><span></span><span class="n">SQLALCHEMY_BINDS</span> <span class="o">=</span> <span class="p">{</span>
+    <span class="s1">&#39;slave&#39;</span><span class="p">:</span> <span class="s1">&#39;postgresql://user:password@server/pybossadb&#39;</span>
+<span class="p">}</span>
+</pre></div>
+</td></tr></table>
+
+<h2 id="its-dangerous-so-better-sign-this">It&rsquo;s dangerous, so better sign this<a class="headerlink" href="#its-dangerous-so-better-sign-this" title="Permanent link">&para;</a></h2>
+<p>PYBOSSA uses the <a href="http://pythonhosted.org/itsdangerous/">It&rsquo;s dangerous Python library</a> that allows you to send some data to untrusted environments but signing it. It uses a key that the server only knows and uses it for signing the data.</p>
+<p>This library is used to send the recovery password e-mails to your
+PYBOSSA users, posting a link with a signed key that will be verified by the server. Thus, <strong>it is vital that you create a secure and private key for it in your configuration file</strong>. To do it, just modify the <a href="https://github.com/Scifabric/pybossa/blob/master/settings_local.py.tmpl#L35">ITSDANGEROUSKEY</a> variable.</p>
+<h2 id="cors-configuration">CORS configuration<a class="headerlink" href="#cors-configuration" title="Permanent link">&para;</a></h2>
+<p>By default, PYBOSSA has the API endpoints configured with <strong>Access-Control-Allow-Origin:</strong>*. However, you can change it to whatever you want via the config file. Take a look at the official documentation for <a href="http://flask-cors.readthedocs.io/en/latest/">Flask-CORS</a> for all the available options.</p>
+<h3 id="fine-tuning-cors">Fine tuning CORS<a class="headerlink" href="#fine-tuning-cors" title="Permanent link">&para;</a></h3>
+<p>You can fine tune the CORS of PYBOSSA:</p>
+<table class="codehilitetable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span> 1
+ 2
+ 3
+ 4
+ 5
+ 6
+ 7
+ 8
+ 9
+10
+11
+12</pre></div></td><td class="code"><div class="codehilite"><pre><span></span><span class="n">CORS_RESOURCES</span> <span class="o">=</span> <span class="p">{</span>
+    <span class="sa">r</span><span class="s2">&quot;/api/*&quot;</span><span class="p">:</span> 
+        <span class="p">{</span>
+            <span class="s2">&quot;origins&quot;</span><span class="p">:</span> <span class="s2">&quot;*&quot;</span><span class="p">,</span>
+            <span class="s2">&quot;allow_headers&quot;</span><span class="p">:</span> 
+                <span class="p">[</span>
+                <span class="s1">&#39;Content-Type&#39;</span><span class="p">,</span>
+                <span class="s1">&#39;Authorization&#39;</span>
+                <span class="p">],</span>
+            <span class="s2">&quot;max_age&quot;</span><span class="p">:</span> <span class="mi">21600</span>
+        <span class="p">}</span>
+<span class="p">}</span>
+</pre></div>
+</td></tr></table>
+
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>You can customize as much as you want CORS. Check the <a href="https://flask-cors.readthedocs.io/en/latest/">official documentation</a>.</p>
+</div>
+<h2 id="modifying-the-brand-name">Modifying the Brand name<a class="headerlink" href="#modifying-the-brand-name" title="Permanent link">&para;</a></h2>
+<p>You can configure your project with a different name, instead of the
+default one: PYBOSSA. You only need to change the string <a href="https://github.com/Scifabric/pybossa/blob/master/settings_local.py.tmpl#L38">BRAND</a> to the name of your organization or project.</p>
+<h2 id="adding-a-logo">Adding a Logo<a class="headerlink" href="#adding-a-logo" title="Permanent link">&para;</a></h2>
+<p>By default, PYBOSSA does not provide a logo for the server side, so you will have to copy your logo into the folder: <strong>pybossa/pybossa/static/img</strong>. If the logo name is, <strong>my_brand.png</strong>, the <a href="https://github.com/Scifabric/pybossa/blob/master/settings_local.py.tmpl#L40">LOGO</a> variable should be updated with the name of the file.</p>
+<h2 id="multiple-languages">Multiple languages<a class="headerlink" href="#multiple-languages" title="Permanent link">&para;</a></h2>
+<p>By default PYBOSSA only speaks English. However, the default theme comes with a few translations (Spanish, French, Italian, Japanese, Greek and German).</p>
+<p>You can enable those translations (mostly user interface strings and
+actions) by doing the following: creating a symlink to the translations folders:</p>
+<table class="codehilitetable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span>1</pre></div></td><td class="code"><div class="codehilite"><pre><span></span>$ <span class="nb">cd</span> pybossa <span class="o">&amp;&amp;</span> ln -s themes/default/translations
+</pre></div>
+</td></tr></table>
+
+<p>This step will enable the default translations of PYBOSSA for your server. We recommend using these translations with the default theme. If you use your theme, the best thing is to do your translation, (see <a href="../../translating/">translating</a>), as you might want to name things differently on the templates.</p>
+<p>You can disable/enable different languages in your config file
+<strong>settings_local.py</strong>. For example, to remove French you can add this configuration to the settings file:</p>
+<table class="codehilitetable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span>1
+2</pre></div></td><td class="code"><div class="codehilite"><pre><span></span><span class="n">LOCALES</span> <span class="o">=</span> <span class="p">[(</span><span class="s1">&#39;en&#39;</span><span class="p">,</span> <span class="s1">&#39;English&#39;</span><span class="p">),</span> <span class="p">(</span><span class="s1">&#39;es&#39;</span><span class="p">,</span> <span class="sa">u</span><span class="s1">&#39;Español&#39;</span><span class="p">),</span>
+           <span class="p">(</span><span class="s1">&#39;it&#39;</span><span class="p">,</span> <span class="s1">&#39;Italiano&#39;</span><span class="p">),</span> <span class="p">(</span><span class="s1">&#39;ja&#39;</span><span class="p">,</span> <span class="sa">u</span><span class="s1">&#39;日本語&#39;</span><span class="p">)]</span>
+</pre></div>
+</td></tr></table>
+
+<p>Also, you can always specify a different default locale using the
+following snippet in the same settings file:</p>
+<table class="codehilitetable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span>1</pre></div></td><td class="code"><div class="codehilite"><pre><span></span><span class="n">DEFAULT_LOCALE</span> <span class="o">=</span> <span class="s1">&#39;es&#39;</span>
+</pre></div>
+</td></tr></table>
+
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>PYBOSSA tries first to match the user preferred language from their browser. This will work for anonymous users, while registered ones can specify the language they want using their user preferences.</p>
+</div>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>As an alternative way to allow anonymous users to <em>force</em> a different language, PYBOSSA looks for a cookie named <strong>language</strong> where it expects the key of any of the supported languages in the LOCALES list. You can use JavaScript to set it up.</p>
+</div>
+<h2 id="creating-a-theme">Creating a theme<a class="headerlink" href="#creating-a-theme" title="Permanent link">&para;</a></h2>
+<p>PYBOSSA supports themes. By default, it provides its theme that you can use, or if you prefer, you can adapt it to create yours. The default theme for PYBOSSA is available in the <a href="https://github.com/Scifabric/pybossa-default-theme">pybossa-default-theme repository</a>.</p>
+<p>To create your theme, all you have to do is to fork the default
+theme to your account, and then start modifying it. A theme has a simple structure:</p>
+<ul>
+<li>info.json: this file includes some information about the author,
+    license, and name.</li>
+<li>static: this folder has all the CSS, JavaScript, images, etc. In
+    other words, the static content.</li>
+<li>templates: this folder has the templates for PYBOSSA.</li>
+</ul>
+<p>Therefore, if you want to change the look and feel (i.e., colors of the
+top bar) all you have to do is to modify the styles.css file of the
+static folder. Or if you prefer, create your own.</p>
+<p>However, if you want to modify the structure, let&rsquo;s say you want to
+change the order of the elements of the navigation bar: the first item should be the about link, then you will have to modify the files included in the templates folder.</p>
+<p>As you can see, you will be able to give a full personality to your own PYBOSSA server without problems.</p>
+<h3 id="using-sass-and-minifying-javascript">Using SASS and minifying JavaScript<a class="headerlink" href="#using-sass-and-minifying-javascript" title="Permanent link">&para;</a></h3>
+<p>PYBOSSA supports SASS thanks to Flask-Assets. If you want to compile SASS or SCSS, just add to your theme static folder a new one named: sass. Then, you can request the compiled version from the templates like this:</p>
+<table class="codehilitetable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span>1
+2
+3
+4</pre></div></td><td class="code"><div class="codehilite"><pre><span></span>{% assets filters=&quot;libsass&quot;, output=&quot;css/gen/yourcss.min.css&quot;,
+          &quot;sass/yourcss.scss&quot;%}
+    <span class="p">&lt;</span><span class="nt">link</span> <span class="na">rel</span><span class="o">=</span><span class="s">&quot;stylesheet&quot;</span> <span class="na">type</span><span class="o">=</span><span class="s">&quot;text/css&quot;</span> <span class="na">href</span><span class="o">=</span><span class="s">&quot;{{ ASSET_URL }}&quot;</span><span class="p">&gt;</span>
+{% endassets %}
+</pre></div>
+</td></tr></table>
+
+<p>The same can be done for Javascript using the filter minjs:</p>
+<table class="codehilitetable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span>1
+2
+3
+4</pre></div></td><td class="code"><div class="codehilite"><pre><span></span>{% assets filters=&quot;jsmin&quot;, output=&quot;gen/packed.js&quot;,
+          &quot;common/jquery.js&quot;, &quot;site/base.js&quot;, &quot;site/widgets.js&quot; %}
+    <span class="p">&lt;</span><span class="nt">script</span> <span class="na">type</span><span class="o">=</span><span class="s">&quot;text/javascript&quot;</span> <span class="na">src</span><span class="o">=</span><span class="s">&quot;{{ ASSET_URL }}&quot;</span><span class="p">&gt;&lt;/</span><span class="nt">script</span><span class="p">&gt;</span>
+{% endassets %}
+</pre></div>
+</td></tr></table>
+
+<h2 id="results-page">Results page<a class="headerlink" href="#results-page" title="Permanent link">&para;</a></h2>
+<p>PYBOSSA allows you to present a results page for your server. Add a file named results.html to the home directory in the templates folder, and you&rsquo;ll be able to show results about your project from one place:</p>
+<table class="codehilitetable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span>1</pre></div></td><td class="code"><div class="codehilite"><pre><span></span><span class="err"> &lt;http://server/results&gt;</span>
+</pre></div>
+</td></tr></table>
+
+<h2 id="adding-your-contact-information">Adding your Contact Information<a class="headerlink" href="#adding-your-contact-information" title="Permanent link">&para;</a></h2>
+<p>By default, PYBOSSA provides e-mail, and a Twitter handle to show some contact information. If you want, you can change it to your e-mail and Twitter account. You can do it, modifying the following variables in the <strong>settings_local.py</strong> file:</p>
+<table class="codehilitetable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span>1
+2</pre></div></td><td class="code"><div class="codehilite"><pre><span></span><span class="n">CONTACT_EMAIL</span> <span class="o">=</span> <span class="s1">&#39;&lt;your@email.com&gt;&#39;</span>
+<span class="n">CONTACT_TWITTER</span> <span class="o">=</span> <span class="s1">&#39;yourtwitterhandle&#39;</span>
+</pre></div>
+</td></tr></table>
+
+<h2 id="terms-of-use">Terms of Use<a class="headerlink" href="#terms-of-use" title="Permanent link">&para;</a></h2>
+<p>You can change and modify the <a href="https://github.com/Scifabric/pybossa/blob/master/settings_local.py.tmpl#L43">TERMSOFUSE</a> for your server, by overriding the provided URL that we use by default. 
+You can also modify the license used for the data, just change the
+DATAUSE link to the open license that you want to use.</p>
+<h2 id="adding-help-page">Adding Help page<a class="headerlink" href="#adding-help-page" title="Permanent link">&para;</a></h2>
+<p>By default, PYBOSSA provides a help endpoint where you can have your FAQ or similar information for your users. However, it&rsquo;s empty, as each project is unique. For adding that information, create in the theme folder: templates/help/ a file named <strong>index.html</strong> and write your information in there. This will render the information under <a href="http://youserver.com/help/">http://youserver.com/help/</a></p>
+<h2 id="enabling-twitter-facebook-and-google-authentication">Enabling Twitter, Facebook and Google authentication<a class="headerlink" href="#enabling-twitter-facebook-and-google-authentication" title="Permanent link">&para;</a></h2>
+<p>PYBOSSA supports third-party authentication services like Twitter,
+Facebook and Google.</p>
+<h3 id="twitter">Twitter<a class="headerlink" href="#twitter" title="Permanent link">&para;</a></h3>
+<p>If you want to enable Twitter, you will need to create an application in <a href="https://dev.twitter.com/">Twitter</a> and copy and paste the <strong>Consumer key, and secret</strong> into the next variables and uncomment them:</p>
+<table class="codehilitetable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span>1
+2</pre></div></td><td class="code"><div class="codehilite"><pre><span></span><span class="n">TWITTER_CONSUMER_KEY</span> <span class="o">=</span> <span class="s1">&#39;yourkey&#39;</span>
+<span class="n">TWITTER_CONSUMER_SECRET</span> <span class="o">=</span> <span class="s1">&#39;yoursecret&#39;</span>
+</pre></div>
+</td></tr></table>
+
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>This will also enable the Twitter task importer.</p>
+</div>
+<h3 id="facebook">Facebook<a class="headerlink" href="#facebook" title="Permanent link">&para;</a></h3>
+<p>If you want to enable Facebook, you will need to create an application on <a href="https://developers.facebook.com/apps">Facebook</a> and copy and paste the <strong>app ID/API Key and secret</strong> into the next variables and uncomment them: </p>
+<table class="codehilitetable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span>1
+2</pre></div></td><td class="code"><div class="codehilite"><pre><span></span><span class="n">FACEBOOK_APP_ID</span> <span class="o">=</span> <span class="s1">&#39;yourappid&#39;</span>
+<span class="n">FACEBOOK_APP_SECRET</span> <span class="o">=</span> <span class="s1">&#39;yoursecret&#39;</span>
+</pre></div>
+</td></tr></table>
+
+<h3 id="google">Google<a class="headerlink" href="#google" title="Permanent link">&para;</a></h3>
+<p>If you want to enable Google, you will need to create an application in <a href="https://code.google.com/apis/console/">Google</a> and copy and paste the <strong>Client ID, and secret</strong> into the next variables and uncomment them:</p>
+<table class="codehilitetable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span>1
+2</pre></div></td><td class="code"><div class="codehilite"><pre><span></span><span class="n">GOOGLE_CLIENT_ID</span> <span class="o">=</span> <span class="s1">&#39;clientid&#39;</span>
+<span class="n">GOOGLE_CLIENT_SECRET</span> <span class="o">=</span> <span class="s1">&#39;secret&#39;</span>
+</pre></div>
+</td></tr></table>
+
+<h2 id="receiving-e-mails-with-errors">Receiving e-mails with errors<a class="headerlink" href="#receiving-e-mails-with-errors" title="Permanent link">&para;</a></h2>
+<p>If you want to receive an e-mail when an error occurs in the PYBOSSA server (webhooks, background jobs, etc.), uncomment the
+<a href="https://github.com/Scifabric/pybossa/blob/master/settings_local.py.tmpl#L64">ADMINS</a> config variable and add a list of e-mails.</p>
+<h3 id="background-jobs-error-notifications">Background jobs error notifications<a class="headerlink" href="#background-jobs-error-notifications" title="Permanent link">&para;</a></h3>
+<p>You can change the default behavior for receiving emails regarding failed background jobs. The two config variables are the following:</p>
+<table class="codehilitetable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span>1
+2</pre></div></td><td class="code"><div class="codehilite"><pre><span></span><span class="n">FAILED_JOBS_MAILS</span> <span class="o">=</span> <span class="mi">7</span>
+<span class="n">FAILED_JOBS_RETRIES</span> <span class="o">=</span> <span class="mi">3</span>
+</pre></div>
+</td></tr></table>
+
+<p>FAILED_JOBS_MAILS instructs the system to send you a reminder after seven days if you have not solved the issue with the background job.</p>
+<p>FAILED_JOBS_RETRIES instructs the system to retry the job N times. By default is 3.</p>
+<h2 id="enabling-logging">Enabling Logging<a class="headerlink" href="#enabling-logging" title="Permanent link">&para;</a></h2>
+<p>PYBOSSA can log errors to a <a href="https://github.com/Scifabric/pybossa/blob/master/settings_local.py.tmpl#L75">file</a> or to a <a href="https://github.com/Scifabric/pybossa/blob/master/settings_local.py.tmpl#L73">Sentry</a> server. If none of the above configurations are used, you will get the errors in the log file of the web server that you are using (i.e., in nginx the errors will be in /var/log/nginx/error.log).</p>
+<h2 id="mail-setup">Mail Setup<a class="headerlink" href="#mail-setup" title="Permanent link">&para;</a></h2>
+<p>PYBOSSA needs a mail server to validate new accounts, send
+e-mails for recovering passwords, etc. , so it is critical that you
+configure a server. Please, check the section <a href="https://github.com/Scifabric/pybossa/blob/master/settings_local.py.tmpl#L80">Mail setup</a> in the config file for setting it.</p>
+<h2 id="global-announcements-for-the-users">Global Announcements for the users<a class="headerlink" href="#global-announcements-for-the-users" title="Permanent link">&para;</a></h2>
+<p>Sometimes you will need to send a message to all your users while they are browsing the server. For example, a scheduled shutdown for installing new hardware or a database migration.</p>
+<p>PYBOSSA provides a general solution for these announcements via the <a href="https://github.com/Scifabric/pybossa/blob/master/settings_local.py.tmpl">settings_local.py.tmpl</a> configuration file. The announcement feature allows you to send messages to the following type of users:</p>
+<ul>
+<li><strong>Authenticated users</strong>, basically all the registered users in the
+    server.</li>
+<li><strong>Admin users</strong>, all the users that are admins/root on the server.</li>
+<li><strong>Project owners</strong>, all the users that have created one or more projects on the server.</li>
+</ul>
+<p>Therefore, let&rsquo;s say that you want to warn all your admins that a new configuration will be deployed in your system. In this case, all you have to do is to modify the <strong>ANNOUNCEMENT</strong> variable to display the message for the given type of users:</p>
+<table class="codehilitetable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span>1</pre></div></td><td class="code"><div class="codehilite"><pre><span></span><span class="n">ANNOUNCEMENT</span> <span class="o">=</span> <span class="p">{</span><span class="s1">&#39;root&#39;</span><span class="p">:</span> <span class="s1">&#39;Your secret message&#39;</span><span class="p">}</span>
+</pre></div>
+</td></tr></table>
+
+<p>There is an example of the <strong>ANNOUNCEMENT</strong> variable in the
+<a href="https://github.com/Scifabric/pybossa/blob/master/settings_local.py.tmpl">settings_local.py.tmpl</a> file, so you can quickly adapt it for your server. The announcement variable has a <strong>key</strong> and an associated <em>message*</em>. The supported keys are:</p>
+<ul>
+<li><strong>admin</strong>: for admin users.</li>
+<li><strong>user</strong>: for all the registered users (even admins).</li>
+<li><strong>owner</strong>: for all registered users that have one or more projects.</li>
+</ul>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>You can use a mix of messages at the same time without problems, so, for example, you can display a message for Admins and Owners at the same time.</p>
+</div>
+<h2 id="disable-email-notifications">Disable email notifications<a class="headerlink" href="#disable-email-notifications" title="Permanent link">&para;</a></h2>
+<p>When a PYBOSSA project publishes a blog post, users will get an email (and webpush notification if it is enabled) with the update.</p>
+<p>You can disable this behavior with the following flag:</p>
+<table class="codehilitetable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span>1</pre></div></td><td class="code"><div class="codehilite"><pre><span></span><span class="n">DISABLE_EMAIL_NOTIFICATIONS</span> <span class="o">=</span> <span class="kc">True</span>
+</pre></div>
+</td></tr></table>
+
+<h2 id="cache">Cache<a class="headerlink" href="#cache" title="Permanent link">&para;</a></h2>
+<p>By default PYBOSSA uses Redis to cache a lot of data in order to serve it as fast as possible. PYBOSSA comes with a default set of timeouts for different views that you can change or modify to your own taste. All you have to do is modify the following variables in your settings file:</p>
+<table class="codehilitetable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span> 1
+ 2
+ 3
+ 4
+ 5
+ 6
+ 7
+ 8
+ 9
+10
+11
+12
+13
+14
+15</pre></div></td><td class="code"><div class="codehilite"><pre><span></span><span class="c1"># Project cache</span>
+<span class="n">APP_TIMEOUT</span> <span class="o">=</span> <span class="mi">15</span> <span class="o">*</span> <span class="mi">60</span>
+<span class="n">REGISTERED_USERS_TIMEOUT</span> <span class="o">=</span> <span class="mi">15</span> <span class="o">*</span> <span class="mi">60</span>
+<span class="n">ANON_USERS_TIMEOUT</span> <span class="o">=</span> <span class="mi">5</span> <span class="o">*</span> <span class="mi">60</span> <span class="o">*</span> <span class="mi">60</span>
+<span class="n">STATS_FRONTPAGE_TIMEOUT</span> <span class="o">=</span> <span class="mi">12</span> <span class="o">*</span> <span class="mi">60</span> <span class="o">*</span> <span class="mi">60</span>
+<span class="n">STATS_APP_TIMEOUT</span> <span class="o">=</span> <span class="mi">12</span> <span class="o">*</span> <span class="mi">60</span> <span class="o">*</span> <span class="mi">60</span>
+<span class="n">STATS_DRAFT_TIMEOUT</span> <span class="o">=</span> <span class="mi">24</span> <span class="o">*</span> <span class="mi">60</span> <span class="o">*</span> <span class="mi">60</span>
+<span class="n">N_APPS_PER_CATEGORY_TIMEOUT</span> <span class="o">=</span> <span class="mi">60</span> <span class="o">*</span> <span class="mi">60</span>
+<span class="n">BROWSE_TASKS_TIMEOUT</span> <span class="o">=</span> <span class="mi">3</span> <span class="o">*</span> <span class="mi">60</span> <span class="o">*</span> <span class="mi">60</span>
+<span class="c1"># Category cache</span>
+<span class="n">CATEGORY_TIMEOUT</span> <span class="o">=</span> <span class="mi">24</span> <span class="o">*</span> <span class="mi">60</span> <span class="o">*</span> <span class="mi">60</span>
+<span class="c1"># User cache</span>
+<span class="n">USER_TIMEOUT</span> <span class="o">=</span> <span class="mi">15</span> <span class="o">*</span> <span class="mi">60</span>
+<span class="n">USER_TOP_TIMEOUT</span> <span class="o">=</span> <span class="mi">24</span> <span class="o">*</span> <span class="mi">60</span> <span class="o">*</span> <span class="mi">60</span>
+<span class="n">USER_TOTAL_TIMEOUT</span> <span class="o">=</span> <span class="mi">24</span> <span class="o">*</span> <span class="mi">60</span> <span class="o">*</span> <span class="mi">60</span>
+</pre></div>
+</td></tr></table>
+
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>Every value is in seconds, so bear in mind to multiply it by 60 to have minutes in the configuration values.</p>
+</div>
+<h3 id="disabling-the-cache">Disabling the Cache<a class="headerlink" href="#disabling-the-cache" title="Permanent link">&para;</a></h3>
+<p>If you want to disable the cache, you only have to export the following env variable:</p>
+<table class="codehilitetable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span>1</pre></div></td><td class="code"><div class="codehilite"><pre><span></span><span class="n">PYBOSSA_REDIS_CACHE_DISABLED</span><span class="o">=</span><span class="s1">&#39;1&#39;</span>
+</pre></div>
+</td></tr></table>
+
+<h2 id="redis-configuration">Redis configuration<a class="headerlink" href="#redis-configuration" title="Permanent link">&para;</a></h2>
+<p>You can configure how you connect to Redis via the following config variables.</p>
+<h3 id="redis-python-prefix">Redis python prefix<a class="headerlink" href="#redis-python-prefix" title="Permanent link">&para;</a></h3>
+<table class="codehilitetable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span>1</pre></div></td><td class="code"><div class="codehilite"><pre><span></span><span class="n">REDIS_KEYPREFIX</span> <span class="o">=</span> <span class="s1">&#39;pybossa_cache&#39;</span>
+</pre></div>
+</td></tr></table>
+
+<h3 id="redis-sentinel">Redis Sentinel<a class="headerlink" href="#redis-sentinel" title="Permanent link">&para;</a></h3>
+<p>Specify where the Redis sentinel is listening.</p>
+<table class="codehilitetable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span>1</pre></div></td><td class="code"><div class="codehilite"><pre><span></span><span class="n">REDIS_SENTINEL</span> <span class="o">=</span> <span class="p">[(</span><span class="s1">&#39;localhost&#39;</span><span class="p">,</span> <span class="mi">26379</span><span class="p">)]</span>
+</pre></div>
+</td></tr></table>
+
+<h3 id="redis-master">Redis master<a class="headerlink" href="#redis-master" title="Permanent link">&para;</a></h3>
+<p>Specify the name of the master node.</p>
+<table class="codehilitetable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span>1</pre></div></td><td class="code"><div class="codehilite"><pre><span></span><span class="n">REDIS_MASTER</span> <span class="o">=</span> <span class="s1">&#39;mymaster&#39;</span>
+</pre></div>
+</td></tr></table>
+
+<h3 id="redis-db">Redis DB<a class="headerlink" href="#redis-db" title="Permanent link">&para;</a></h3>
+<p>Specify the DB.</p>
+<table class="codehilitetable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span>1</pre></div></td><td class="code"><div class="codehilite"><pre><span></span><span class="n">REDIS_DB</span> <span class="o">=</span> <span class="mi">0</span>
+</pre></div>
+</td></tr></table>
+
+<h3 id="redis-socket-timeout">Redis Socket timeout<a class="headerlink" href="#redis-socket-timeout" title="Permanent link">&para;</a></h3>
+<table class="codehilitetable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span>1</pre></div></td><td class="code"><div class="codehilite"><pre><span></span><span class="n">REDIS_SOCKET_TIMEOUT</span> <span class="o">=</span> <span class="mf">0.1</span>
+</pre></div>
+</td></tr></table>
+
+<h3 id="redis-retry-on-timeout">Redis retry on timeout<a class="headerlink" href="#redis-retry-on-timeout" title="Permanent link">&para;</a></h3>
+<table class="codehilitetable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span>1</pre></div></td><td class="code"><div class="codehilite"><pre><span></span><span class="n">REDIS_RETRY_ON_TIMEOUT</span> <span class="o">=</span> <span class="kc">True</span>
+</pre></div>
+</td></tr></table>
+
+<h2 id="rate-limit-for-the-api">Rate limit for the API<a class="headerlink" href="#rate-limit-for-the-api" title="Permanent link">&para;</a></h2>
+<p>By default, PYBOSSA limits the usage of the API with the following
+values:</p>
+<table class="codehilitetable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span>1
+2</pre></div></td><td class="code"><div class="codehilite"><pre><span></span><span class="n">LIMIT</span> <span class="o">=</span> <span class="mi">300</span>
+<span class="n">PER</span> <span class="o">=</span> <span class="mi">15</span> <span class="o">*</span> <span class="mi">60</span>
+</pre></div>
+</td></tr></table>
+
+<p>Those values mean that when a user sends a request to an API endpoint, a window of 15 minutes is open, and during those 15 minutes the number of allowed requests to the same endpoint is 300. By adding these values to your settings_local.py file, you can adapt it to your own needs.</p>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>Please, be sure about what you are doing by modifying these values. This is the recommended configuration, so do not change it unless you are sure.</p>
+</div>
+<h2 id="configuring-upload-method">Configuring upload method<a class="headerlink" href="#configuring-upload-method" title="Permanent link">&para;</a></h2>
+<p>PYBOSSA by default allows you to upload avatars for users, icons for
+projects, etc. using the local file system of your server. While this is
+nice for small setups, when you need to add more nodes to serve the same content, this feature could become a problem. For this reason, PYBOSSA also supports cloud solutions to save the files and serve them from there correctly.</p>
+<h4 id="local-uploader">Local Uploader<a class="headerlink" href="#local-uploader" title="Permanent link">&para;</a></h4>
+<p>The local uploader is configured by default. We recommend having a separate folder for the assets, outside the pybossa folder. In any case, for enabling this method use the following the config settings:</p>
+<table class="codehilitetable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span>1
+2</pre></div></td><td class="code"><div class="codehilite"><pre><span></span><span class="n">UPLOAD_METHOD</span> <span class="o">=</span> <span class="s1">&#39;local&#39;</span>
+<span class="n">UPLOAD_FOLDER</span> <span class="o">=</span> <span class="s1">&#39;/absolute/path/to/your/folder/to/store/assets/&#39;</span>
+</pre></div>
+</td></tr></table>
+
+<h4 id="rackspace-cloud-files">Rackspace Cloud Files<a class="headerlink" href="#rackspace-cloud-files" title="Permanent link">&para;</a></h4>
+<p>PYBOSSA comes with support for Rackspace CloudFiles service, allowing you to grow the services horizontally. Supporting cloud-based system is as simple as having an account in Rackspace, and setting up the following config variables:</p>
+<table class="codehilitetable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span>1
+2
+3
+4</pre></div></td><td class="code"><div class="codehilite"><pre><span></span><span class="n">UPLOAD_METHOD</span> <span class="o">=</span> <span class="s1">&#39;rackspace&#39;</span>
+<span class="n">RACKSPACE_USERNAME</span> <span class="o">=</span> <span class="s1">&#39;username&#39;</span>
+<span class="n">RACKSPACE_API_KEY</span> <span class="o">=</span> <span class="s1">&#39;api_key&#39;</span>
+<span class="n">RACKSPACE_REGION</span> <span class="o">=</span> <span class="s1">&#39;region&#39;</span>
+</pre></div>
+</td></tr></table>
+
+<p>Once the server is started, it will authenticate against Rackspace and
+since that moment, your PYBOSSA server will save files in the cloud.</p>
+<h2 id="customizing-the-layout-and-frontpage-text">Customizing the Layout and FrontPage text<a class="headerlink" href="#customizing-the-layout-and-frontpage-text" title="Permanent link">&para;</a></h2>
+<p>PYBOSSA allows you to override two items:
+- <strong>Front Page Text</strong>
+- <strong>Footer</strong></p>
+<p>If you want to override those items, you have to create a folder named <strong>custom</strong> and place it in the <strong>template</strong> dir. Then for replacing:</p>
+<ul>
+<li><strong>The Front Page Text</strong>: create a file named.
+  <strong>front_page_text.html</strong> and write there some HTML.</li>
+<li><strong>The Footer</strong>: create a file named <strong>_footer.html</strong>, and write
+  some HTML.</li>
+</ul>
+<h2 id="tracking-the-server-with-google-analytics">Tracking the server with Google Analytics<a class="headerlink" href="#tracking-the-server-with-google-analytics" title="Permanent link">&para;</a></h2>
+<p>PYBOSSA provides an easy way to integrate Google Analytics with your PYBOSSA server. To enable it you only have to create a file with the name: <strong>_ga.html</strong> in the <strong>pybossa/template</strong> folder with the Google Tracking code. PYBOSSA will be including your Google Analytics tracking code on every page since that moment.</p>
+<p>The file <strong>_ga.html</strong> should contain something like this:</p>
+<table class="codehilitetable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span> 1
+ 2
+ 3
+ 4
+ 5
+ 6
+ 7
+ 8
+ 9
+10
+11</pre></div></td><td class="code"><div class="codehilite"><pre><span></span><span class="o">&lt;</span><span class="nx">script</span> <span class="nx">type</span><span class="o">=</span><span class="s2">&quot;text/javascript&quot;</span><span class="o">&gt;</span>
+  <span class="kd">var</span> <span class="nx">_gaq</span> <span class="o">=</span> <span class="nx">_gaq</span> <span class="o">||</span> <span class="p">[];</span>
+  <span class="nx">_gaq</span><span class="p">.</span><span class="nx">push</span><span class="p">([</span><span class="s1">&#39;_setAccount&#39;</span><span class="p">,</span> <span class="s1">&#39;UA-XXXXXXXX-X&#39;</span><span class="p">]);</span>
+  <span class="nx">_gaq</span><span class="p">.</span><span class="nx">push</span><span class="p">([</span><span class="s1">&#39;_trackPageview&#39;</span><span class="p">]);</span>
+
+  <span class="p">(</span><span class="kd">function</span><span class="p">()</span> <span class="p">{</span>
+    <span class="kd">var</span> <span class="nx">ga</span> <span class="o">=</span> <span class="nb">document</span><span class="p">.</span><span class="nx">createElement</span><span class="p">(</span><span class="s1">&#39;script&#39;</span><span class="p">);</span> <span class="nx">ga</span><span class="p">.</span><span class="nx">type</span> <span class="o">=</span> <span class="s1">&#39;text/javascript&#39;</span><span class="p">;</span> <span class="nx">ga</span><span class="p">.</span><span class="nx">async</span> <span class="o">=</span> <span class="kc">true</span><span class="p">;</span>
+    <span class="nx">ga</span><span class="p">.</span><span class="nx">src</span> <span class="o">=</span> <span class="p">(</span><span class="s1">&#39;https:&#39;</span> <span class="o">==</span> <span class="nb">document</span><span class="p">.</span><span class="nx">location</span><span class="p">.</span><span class="nx">protocol</span> <span class="o">?</span> <span class="s1">&#39;https://ssl&#39;</span> <span class="o">:</span> <span class="s1">&#39;http://www&#39;</span><span class="p">)</span> <span class="o">+</span> <span class="s1">&#39;.google-analytics.com/ga.js&#39;</span><span class="p">;</span>
+    <span class="kd">var</span> <span class="nx">s</span> <span class="o">=</span> <span class="nb">document</span><span class="p">.</span><span class="nx">getElementsByTagName</span><span class="p">(</span><span class="s1">&#39;script&#39;</span><span class="p">)[</span><span class="mi">0</span><span class="p">];</span> <span class="nx">s</span><span class="p">.</span><span class="nx">parentNode</span><span class="p">.</span><span class="nx">insertBefore</span><span class="p">(</span><span class="nx">ga</span><span class="p">,</span> <span class="nx">s</span><span class="p">);</span>
+  <span class="p">})();</span>
+<span class="o">&lt;</span><span class="err">/script&gt;</span>
+</pre></div>
+</td></tr></table>
+
+<h2 id="adding-a-search-box-google-custom-search">Adding a Search box: Google Custom Search<a class="headerlink" href="#adding-a-search-box-google-custom-search" title="Permanent link">&para;</a></h2>
+<p>PYBOSSA provides a simple way to search within the server pages: Google Custom Search. To enable it you will have to apply for a Google Custom Search API key and then follow the next steps:</p>
+<ul>
+<li>Copy the Google Custom Search <strong>script</strong> code</li>
+<li>Create a new file called <strong>_gcs.html</strong> in the templates folder</li>
+<li>Paste the previous snippet of code (be sure to delete the
+  <gcs:search></gcse:search>; line from it.</li>
+<li>Copy the <strong>_gcs_form.html.template</strong> as <strong>_gcs_form.html</strong> and
+  add your key in the input field <strong>cx</strong> (you will find a text like
+  XXXXX:YYYY where you should paste your key).</li>
+</ul>
+<p>The <strong>_gcs.html</strong> file will have something like this:</p>
+<table class="codehilitetable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span>1
+2
+3
+4
+5
+6
+7
+8
+9</pre></div></td><td class="code"><div class="codehilite"><pre><span></span><span class="p">&lt;</span><span class="nt">script</span><span class="p">&gt;</span>
+  <span class="p">(</span><span class="kd">function</span><span class="p">()</span> <span class="p">{</span>
+    <span class="kd">var</span> <span class="nx">cx</span> <span class="o">=</span> <span class="s1">&#39;XXXXX:YYYY&#39;</span><span class="p">;</span>
+    <span class="kd">var</span> <span class="nx">gcse</span> <span class="o">=</span> <span class="nb">document</span><span class="p">.</span><span class="nx">createElement</span><span class="p">(</span><span class="s1">&#39;script&#39;</span><span class="p">);</span> <span class="nx">gcse</span><span class="p">.</span><span class="nx">type</span> <span class="o">=</span> <span class="s1">&#39;text/javascript&#39;</span><span class="p">;</span> <span class="nx">gcse</span><span class="p">.</span><span class="nx">async</span> <span class="o">=</span> <span class="kc">true</span><span class="p">;</span>
+    <span class="nx">gcse</span><span class="p">.</span><span class="nx">src</span> <span class="o">=</span> <span class="p">(</span><span class="nb">document</span><span class="p">.</span><span class="nx">location</span><span class="p">.</span><span class="nx">protocol</span> <span class="o">==</span> <span class="s1">&#39;https:&#39;</span> <span class="o">?</span> <span class="s1">&#39;https:&#39;</span> <span class="o">:</span> <span class="s1">&#39;http:&#39;</span><span class="p">)</span> <span class="o">+</span>
+        <span class="s1">&#39;//www.google.com/cse/cse.js?cx=&#39;</span> <span class="o">+</span> <span class="nx">cx</span><span class="p">;</span>
+    <span class="kd">var</span> <span class="nx">s</span> <span class="o">=</span> <span class="nb">document</span><span class="p">.</span><span class="nx">getElementsByTagName</span><span class="p">(</span><span class="s1">&#39;script&#39;</span><span class="p">)[</span><span class="mi">0</span><span class="p">];</span> <span class="nx">s</span><span class="p">.</span><span class="nx">parentNode</span><span class="p">.</span><span class="nx">insertBefore</span><span class="p">(</span><span class="nx">gcse</span><span class="p">,</span> <span class="nx">s</span><span class="p">);</span>
+  <span class="p">})();</span>
+<span class="p">&lt;/</span><span class="nt">script</span><span class="p">&gt;</span>
+</pre></div>
+</td></tr></table>
+
+<p>And the <strong>_gcs_form.html</strong> will be like this:</p>
+<table class="codehilitetable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span>1
+2
+3
+4
+5
+6
+7
+8
+9</pre></div></td><td class="code"><div class="codehilite"><pre><span></span>    <span class="p">&lt;</span><span class="nt">form</span> <span class="na">class</span><span class="o">=</span><span class="s">&quot;navbar-form&quot;</span> <span class="na">style</span><span class="o">=</span><span class="s">&quot;padding-top:20px;&quot;</span> <span class="na">action</span><span class="o">=</span><span class="s">&quot;/search&quot;</span><span class="p">&gt;</span>
+          <span class="p">&lt;</span><span class="nt">input</span> <span class="na">type</span><span class="o">=</span><span class="s">&quot;hidden&quot;</span> <span class="na">name</span><span class="o">=</span><span class="s">&quot;cx&quot;</span> <span class="na">value</span><span class="o">=</span><span class="s">&quot;partner-pub-XXXXX:YYYYY&quot;</span><span class="p">/&gt;</span>
+          <span class="p">&lt;</span><span class="nt">input</span> <span class="na">type</span><span class="o">=</span><span class="s">&quot;hidden&quot;</span> <span class="na">name</span><span class="o">=</span><span class="s">&quot;cof&quot;</span> <span class="na">value</span><span class="o">=</span><span class="s">&quot;FORID:10&quot;</span> <span class="p">/&gt;</span>
+          <span class="p">&lt;</span><span class="nt">input</span> <span class="na">type</span><span class="o">=</span><span class="s">&quot;hidden&quot;</span> <span class="na">name</span><span class="o">=</span><span class="s">&quot;ie&quot;</span> <span class="na">value</span><span class="o">=</span><span class="s">&quot;ISO-8859-1&quot;</span> <span class="p">/&gt;</span>
+          <span class="p">&lt;</span><span class="nt">div</span> <span class="na">class</span><span class="o">=</span><span class="s">&quot;input-append&quot;</span><span class="p">&gt;</span>
+          <span class="p">&lt;</span><span class="nt">input</span> <span class="na">type</span><span class="o">=</span><span class="s">&quot;text&quot;</span> <span class="na">name</span><span class="o">=</span><span class="s">&quot;q&quot;</span> <span class="na">size</span><span class="o">=</span><span class="s">&quot;21&quot;</span> <span class="na">class</span><span class="o">=</span><span class="s">&quot;input-small&quot;</span> <span class="na">placeholder</span><span class="o">=</span><span class="s">&quot;Search&quot;</span>  <span class="p">/&gt;</span>
+          <span class="p">&lt;</span><span class="nt">span</span> <span class="na">class</span><span class="o">=</span><span class="s">&quot;add-on&quot;</span><span class="p">&gt;&lt;</span><span class="nt">i</span> <span class="na">class</span><span class="o">=</span><span class="s">&quot;icon-search&quot;</span> <span class="na">style</span><span class="o">=</span><span class="s">&quot;color:black&quot;</span><span class="p">&gt;&lt;/</span><span class="nt">i</span><span class="p">&gt;&lt;/</span><span class="nt">span</span><span class="p">&gt;</span>
+          <span class="p">&lt;/</span><span class="nt">div</span><span class="p">&gt;</span>
+    <span class="p">&lt;/</span><span class="nt">form</span><span class="p">&gt;</span>
+</pre></div>
+</td></tr></table>
+
+<p>After these steps, your site will be indexed by Google, and Google Custom Search will be working, providing for your users a search tool.</p>
+<h2 id="adding-web-maps-for-project-statistics-deprecated-since-v295">Adding web maps for project statistics (deprecated since v2.9.5)<a class="headerlink" href="#adding-web-maps-for-project-statistics-deprecated-since-v295" title="Permanent link">&para;</a></h2>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>PYBOSSA does not support this feature anymore since version v2.9.5 as now
+it anonymizes the IPs (following GDPR EU law), so these maps don&rsquo;t make sense anymore.
+For more info, check the <a href="../../gdpr">GDPR</a> section.</p>
+</div>
+<p>PYBOSSA creates for each project a statistics page, where the creators of the project and the volunteers can check the top 5 anonymous and authenticated users, an estimation of time about when all the tasks will be completed, etc.</p>
+<p>One exciting feature of the statistics page is that it can generate a
+web map showing the location of the anonymous volunteers that have been participating in the project. By default, the maps are disabled, because you will need to download the GeoLiteCity DAT file database that will be used for generating the maps.</p>
+<p><a href="http://dev.maxmind.com/geoip/geolite">GeoLite</a> is a free geolocalisation database from MaxMind that they release under a
+<a href="http://creativecommons.org/licenses/by-sa/3.0/">Creative Commons Attribution-ShareAlike 3.0 Uported
+License</a>. You can
+download the required file: GeoLite City from this <a href="http://geolite.maxmind.com/download/geoip/database/GeoLiteCity.dat.gz">page</a>.
+Once you have downloaded the file, all you have to do is to uncompress it and place it in the folder <strong>dat</strong> of the pybossa root folder.</p>
+<p>After copying the file, all you have to do to start creating the maps is
+to restart the server.</p>
+<h2 id="using-your-terms-of-use">Using your Terms of Use<a class="headerlink" href="#using-your-terms-of-use" title="Permanent link">&para;</a></h2>
+<p>PYBOSSA has a default Terms of Service page that you can customize it to fit your institutional needs. In the case that you do not want to use the default one, please, create a <strong>_tos.html</strong> file in the <strong>custom</strong> folder. You can re-use the template  <strong>help/_tos.html</strong> and adapt it (it is located in the <strong>template/help</strong> folder.</p>
+<h2 id="using-your-cookies-policy">Using your Cookies Policy<a class="headerlink" href="#using-your-cookies-policy" title="Permanent link">&para;</a></h2>
+<p>PYBOSSA has a default cookies policy page, but you can customize it to fit your institutional needs. In the case that you do not want to use the default one, please, create a <strong>_cookies_policy.html</strong> file in the <strong>custom</strong> folder. You can re-use the template <strong>help/_cookies_policy.html</strong> and adapt it (it is located in the
+<strong>template/help</strong> folder.</p>
+<h2 id="using-your-privacy-policy">Using your Privacy Policy<a class="headerlink" href="#using-your-privacy-policy" title="Permanent link">&para;</a></h2>
+<p>PYBOSSA has a blank privacy policy page. We recommend you to add one, so your users know how you are using their data. To add it, just create a file named <strong>_privacy_policy.html</strong> file in the <strong>custom</strong> folder.</p>
+<h2 id="exporting-data-to-a-ckan-server">Exporting data to a CKAN server<a class="headerlink" href="#exporting-data-to-a-ckan-server" title="Permanent link">&para;</a></h2>
+<p><a href="http://ckan.org">CKAN</a> is a powerful data management system that makes data accessible – by providing tools to streamline publishing, sharing, finding and using data. <a href="http://ckan.org">CKAN</a> is aimed at data publishers (national and regional governments, companies and
+organizations) wanting to make their data open and available.</p>
+<p>PYBOSSA can export project&rsquo;s data to a <a href="http://ckan.org">CKAN</a> server. To use this feature, you will need to add the following config variables to the settings_local.py file:</p>
+<table class="codehilitetable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span>1
+2
+3</pre></div></td><td class="code"><div class="codehilite"><pre><span></span><span class="c1"># CKAN URL for API calls</span>
+<span class="n">CKAN_NAME</span> <span class="o">=</span> <span class="s2">&quot;Demo CKAN server&quot;</span>
+<span class="n">CKAN_URL</span> <span class="o">=</span> <span class="s2">&quot;http://demo.ckan.org&quot;</span><span class="p">}</span>
+</pre></div>
+</td></tr></table>
+
+<p>As <a href="http://ckan.org">CKAN</a> is open source, you can install your own
+<a href="http://ckan.org">CKAN</a> server and configure it to host the data generated by your PYBOSSA projects quite quickly, making it the data repository for your projects. Another alternative is to use the <a href="http://datahub.io">the
+Data hub</a> service that it is a free CKAN service for hosting your data.</p>
+<h2 id="enforce-privacy-mode">Enforce Privacy mode<a class="headerlink" href="#enforce-privacy-mode" title="Permanent link">&para;</a></h2>
+<p>Some projects sometimes need a way to protect their contributors due to their nature. In these cases, where privacy is critical, PYBOSSA allows you to <strong>lock</strong> all the public pages related to the users and statistics about the site and projects. Specifically, 
+by enabling this mode, only administrators will be able to see the
+following pages: </p>
+<ul>
+<li>http://server/stats</li>
+<li>http://server/account/</li>
+<li>http://server/account/user/</li>
+<li>http://server/project/stats</li>
+</ul>
+<p>Anonymous and authenticated will see a warning message like this:</p>
+<p><img alt="image" src="https://i.imgur.com/a1aqSCC.png" /></p>
+<p>Additionally, the footer and front page top users will be removed with links to all these pages. If your project needs this type of protection you can enable it by changing the following config variable in your <strong>settings_local.py</strong> file from:</p>
+<table class="codehilitetable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span>1</pre></div></td><td class="code"><div class="codehilite"><pre><span></span><span class="n">ENFORCE_PRIVACY</span> <span class="o">=</span> <span class="kc">False</span>
+</pre></div>
+</td></tr></table>
+
+<p>To:</p>
+<table class="codehilitetable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span>1</pre></div></td><td class="code"><div class="codehilite"><pre><span></span><span class="n">ENFORCE_PRIVACY</span> <span class="o">=</span> <span class="kc">True</span>
+</pre></div>
+</td></tr></table>
+
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>This feature is disabled by default.</p>
+</div>
+<h2 id="making-extra-keyvalue-pairs-in-info-field-public">Making extra key/value pairs in info field public<a class="headerlink" href="#making-extra-keyvalue-pairs-in-info-field-public" title="Permanent link">&para;</a></h2>
+<p>By default, PYBOSSA protects all the information the info field except for those values that are public like the URL of the image of the project, the container where that picture is stored and a few extra. While this will be more than enough for most projects, sometimes, a server will need to expose more information publicly via the info field for the User and Project Domain Objects.</p>
+<p>Imagine that you want to give badges to users. You can store that
+information in the User domain object, within the info field in a field
+named <em>badges</em>. While this will work, the API will hide all that
+information except for the owner. Thus, it will be impossible to show
+user&rsquo;s badges to anonymous people.</p>
+<p>With projects, it could be the same. You want to highlight some info to anyone, but hide everything else.</p>
+<p>As PYBOSSA hides everything by default, you can always turn on which other fields from the info field can be shown to anonymous users, making them public.</p>
+<div class="admonition warning">
+<p class="admonition-title">Warning</p>
+<p>Be very careful. If you expose your private data via this field, it&rsquo;s your responsibility as this is disabled by default in PYBOSSA.</p>
+</div>
+<p>If you want to make some key/values public, all you have to do is add them to the settings_local.py file the following config variables:</p>
+<table class="codehilitetable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span>1
+2
+3</pre></div></td><td class="code"><div class="codehilite"><pre><span></span><span class="n">PROJECT_INFO_PUBLIC_FIELDS</span> <span class="o">=</span> <span class="p">[</span><span class="s1">&#39;key1&#39;</span><span class="p">,</span> <span class="s1">&#39;key2&#39;</span><span class="p">]</span>
+<span class="n">USER_INFO_PUBLIC_FIELDS</span> <span class="o">=</span> <span class="p">[</span><span class="s1">&#39;badges&#39;</span><span class="p">,</span> <span class="s1">&#39;key2&#39;</span><span class="p">,</span> <span class="o">...</span><span class="p">]</span>
+<span class="n">CATEGORY_INFO_PUBLIC_FIELDS</span> <span class="o">=</span> <span class="p">[</span><span class="s1">&#39;key1&#39;</span><span class="p">,</span> <span class="s1">&#39;key2&#39;</span><span class="p">]</span>
+</pre></div>
+</td></tr></table>
+
+<p>Add as many as you want/need. But please, be careful about which information you disclose.</p>
+<h2 id="adding-custom-project-templates">Adding custom project templates<a class="headerlink" href="#adding-custom-project-templates" title="Permanent link">&para;</a></h2>
+<p>PYBOSSA supports different types of templates that you can offer for
+every project. By default, PYBOSSA comes with the following templates:</p>
+<ul>
+<li><strong>Basic</strong>: the most basic template. It only has the necessary structure to develop your project.</li>
+<li><strong>Image</strong>: this template is for image pattern recognition.</li>
+<li><strong>Sound</strong>: similar to the image template, but for sound clips
+  hosted on SoundCloud.</li>
+<li><strong>Video</strong>: similar to the image template, but for video clips
+  hosted on Vimeo or Youtube.</li>
+<li><strong>Map</strong>: this template is for geocoding projects.</li>
+<li><strong>PDF</strong>: this template is for transcribing documents.</li>
+</ul>
+<p>If you want to add your templates or remove one, just create in the
+settings_local.py file a variable named <strong>PRESENTERS</strong> and add remove the ones you want:</p>
+<table class="codehilitetable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span>1</pre></div></td><td class="code"><div class="codehilite"><pre><span></span><span class="n">PRESENTERS</span> <span class="o">=</span> <span class="p">[</span><span class="s2">&quot;basic&quot;</span><span class="p">,</span> <span class="s2">&quot;image&quot;</span><span class="p">,</span> <span class="s2">&quot;sound&quot;</span><span class="p">,</span> <span class="s2">&quot;video&quot;</span><span class="p">,</span> <span class="s2">&quot;map&quot;</span><span class="p">,</span> <span class="s2">&quot;pdf&quot;</span><span class="p">,</span> <span class="s2">&quot;yourtemplate&quot;</span><span class="p">]</span>
+</pre></div>
+</td></tr></table>
+
+<p><strong>yourtemplate</strong> should be a template that you have to save in the theme folder: <strong>/templates/projects/snippets/</strong> with the same name. Check the other templates to use them as a base layer for your template.</p>
+<p>After adding the template, the server will start offering this new template to your users.</p>
+<p>In addition to the project templates themselves, you can add some test tasks for those projects so that the users can import them into their projects and start &ldquo;playing&rdquo; with them or taking their format as a starting point to create their own. These tasks can be imported from Google Docs spreadsheets, and you can add them, remove them, or modify the URLs of the spreadsheets changing the value of the variable <strong>TEMPLATE_TASKS</strong> in settings_local.py:</p>
+<table class="codehilitetable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span> 1
+ 2
+ 3
+ 4
+ 5
+ 6
+ 7
+ 8
+ 9
+10
+11</pre></div></td><td class="code"><div class="codehilite"><pre><span></span><span class="n">TEMPLATE_TASKS</span> <span class="o">=</span> <span class="p">{</span>
+    <span class="s1">&#39;image&#39;</span><span class="p">:</span>
+    <span class="s2">&quot;&lt;https://docs.google.com/spreadsheet/ccc?key=0AsNlt0WgPAHwdHFEN29mZUF0czJWMUhIejF6dWZXdkE&amp;usp=sharing&gt;&quot;</span><span class="p">,</span>
+    <span class="s1">&#39;sound&#39;</span><span class="p">:</span>
+    <span class="s2">&quot;&lt;https://docs.google.com/spreadsheet/ccc?key=0AsNlt0WgPAHwdEczcWduOXRUb1JUc1VGMmJtc2xXaXc&amp;usp=sharing&gt;&quot;</span><span class="p">,</span>
+    <span class="s1">&#39;video&#39;</span><span class="p">:</span>
+    <span class="s2">&quot;&lt;https://docs.google.com/spreadsheet/ccc?key=0AsNlt0WgPAHwdGZ2UGhxSTJjQl9YNVhfUVhGRUdoRWc&amp;usp=sharing&gt;&quot;</span><span class="p">,</span>
+    <span class="s1">&#39;map&#39;</span><span class="p">:</span>
+    <span class="s2">&quot;&lt;https://docs.google.com/spreadsheet/ccc?key=0AsNlt0WgPAHwdGZnbjdwcnhKRVNlN1dGXy0tTnNWWXc&amp;usp=sharing&gt;&quot;</span><span class="p">,</span>
+    <span class="s1">&#39;pdf&#39;</span><span class="p">:</span>
+    <span class="s2">&quot;&lt;https://docs.google.com/spreadsheet/ccc?key=0AsNlt0WgPAHwdEVVamc0R0hrcjlGdXRaUXlqRXlJMEE&amp;usp=sharing&gt;&quot;</span><span class="p">}</span>
+</pre></div>
+</td></tr></table>
+
+<h2 id="setting-an-expiration-time-for-project-passwords">Setting an expiration time for project passwords<a class="headerlink" href="#setting-an-expiration-time-for-project-passwords" title="Permanent link">&para;</a></h2>
+<p>PYBOSSA allows the owner of a project to set a password so that only people (both anonymous or authenticated) that know it can contribute. By entering this password, the user will have access to the project for a time specified by:</p>
+<p><table class="codehilitetable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span>1</pre></div></td><td class="code"><div class="codehilite"><pre><span></span><span class="n">PASSWD_COOKIE_TIMEOUT</span> <span class="o">=</span> <span class="mi">60</span> <span class="o">*</span> <span class="mi">30</span>
+</pre></div>
+</td></tr></table>
+This variable is configured by default to 30 minutes.</p>
+<h2 id="validation-of-new-user-accounts">Validation of new user accounts<a class="headerlink" href="#validation-of-new-user-accounts" title="Permanent link">&para;</a></h2>
+<p>Whenever a new user wants to sign up, PYBOSSA allows you to add some extra security steps to the process by asking the users to validate a real email account.</p>
+<p>However, if you don&rsquo;t need this feature, it can be disabled (as it is enabled by default) with this configuration parameter:</p>
+<table class="codehilitetable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span>1</pre></div></td><td class="code"><div class="codehilite"><pre><span></span><span class="n">ACCOUNT_CONFIRMATION_DISABLED</span> <span class="o">=</span> <span class="kc">True</span>
+</pre></div>
+</td></tr></table>
+
+<h2 id="two-factor-authentication-on-login">Two-factor authentication on login<a class="headerlink" href="#two-factor-authentication-on-login" title="Permanent link">&para;</a></h2>
+<p>If you need an extra layer of security for user authentication, PYBOSSA allows you to enable two-factor authentication by setting this configuration value:</p>
+<table class="codehilitetable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span>1</pre></div></td><td class="code"><div class="codehilite"><pre><span></span><span class="n">ENABLE_TWO_FACTOR_AUTH</span> <span class="o">=</span> <span class="kc">True</span>
+</pre></div>
+</td></tr></table>
+
+<p>With this parameter set, after password verification users will receive a one-time code in their email, and will be redirected to a page where they can insert the code to complete the login process.</p>
+<h2 id="sending-weekly-email-stats-to-project-owners">Sending weekly email stats to project owners<a class="headerlink" href="#sending-weekly-email-stats-to-project-owners" title="Permanent link">&para;</a></h2>
+<p>Project owners that have the pro-flag set to True can receive every week an update with the latest statistics about their projects in their email box.</p>
+<p>By default, this email is sent every Sunday. You can modify it in the
+settings file by changing it to another day:</p>
+<table class="codehilitetable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span>1</pre></div></td><td class="code"><div class="codehilite"><pre><span></span><span class="n">WEEKLY_UPDATE_STATS</span> <span class="o">=</span> <span class="s1">&#39;Tuesday&#39;</span>
+</pre></div>
+</td></tr></table>
+
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>For the moment the only way to toggle the pro-flag is via the database. It will be fixed in the future.</p>
+</div>
+<h2 id="newsletters-with-mailchimp">Newsletters with Mailchimp<a class="headerlink" href="#newsletters-with-mailchimp" title="Permanent link">&para;</a></h2>
+<p>PYBOSSA can show a subscription page to users when they create an
+account. By default is disabled.  You can enable it, revealing a page to recently registered users, to check if they want to subscribe or not.</p>
+<p>To support newsletters, you&rsquo;ll have to create an account in Mailchimp and get an API_KEY as well as a LIST_ID to add the users.</p>
+<p>Once you have those two items you can enable the newsletter subscription adding them to your settings_local.py file:</p>
+<table class="codehilitetable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span>1
+2</pre></div></td><td class="code"><div class="codehilite"><pre><span></span><span class="n">MAILCHIMP_API_KEY</span> <span class="o">=</span> <span class="s2">&quot;your-key&quot;</span>
+<span class="n">MAILCHIMP_LIST_ID</span> <span class="o">=</span> <span class="s2">&quot;your-list-id&quot;</span>
+</pre></div>
+</td></tr></table>
+
+<p>Restart the server, and you will be done. Now in your MailChimp account, you will be able to create campaigns and communicate with your registered and interested users.</p>
+<h2 id="enabling-the-flickr-task-importer">Enabling the Flickr Task importer<a class="headerlink" href="#enabling-the-flickr-task-importer" title="Permanent link">&para;</a></h2>
+<p>PYBOSSA has several different types of built-in importers. Users can use them to import tasks for their projects directly from the Web interface. However, using the Flickr one requires an API key and shared a secret from Flickr to communicate with the service.</p>
+<p>Once you have an API key, you&rsquo;ll have to add it to your settings_local.py file:</p>
+<table class="codehilitetable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span>1
+2</pre></div></td><td class="code"><div class="codehilite"><pre><span></span><span class="n">FLICKR_API_KEY</span> <span class="o">=</span> <span class="s2">&quot;your-key&quot;</span>
+<span class="n">FLICKR_SHARED_SECRET</span> <span class="o">=</span> <span class="s2">&quot;your-secret&quot;</span>
+</pre></div>
+</td></tr></table>
+
+<p>For more information on how to get a Flickr API key and shared secret, please refer to <a href="https://www.flickr.com/services/api/">Flickr API documentation</a>.</p>
+<h2 id="enabling-the-dropbox-task-importer">Enabling the Dropbox Task importer<a class="headerlink" href="#enabling-the-dropbox-task-importer" title="Permanent link">&para;</a></h2>
+<p>PYBOSSA also offers the Dropbox importer, which allows importing all kind of files from a Dropbox account directly. To use it,
+you&rsquo;ll need to register your PYBOSSA server as a Dropbox app, as
+explained <a href="https://www.dropbox.com/developers/dropins/chooser/js#setup">here</a>.</p>
+<p>Don&rsquo;t worry about the Javascript snippet part; we&rsquo;ve already handled that for you. Instead, get the App key you will be given and add it to
+your settings_local.py:</p>
+<table class="codehilitetable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span>1</pre></div></td><td class="code"><div class="codehilite"><pre><span></span><span class="n">DROPBOX_APP_KEY</span> <span class="o">=</span> <span class="s1">&#39;your-key&#39;</span>
+</pre></div>
+</td></tr></table>
+
+<h2 id="enabling-the-twitter-task-importer">Enabling the Twitter Task importer<a class="headerlink" href="#enabling-the-twitter-task-importer" title="Permanent link">&para;</a></h2>
+<p>If you already have enabled the Twitter authentication, then the Twitter task importer will be enabled too. Otherwise, you will need to create an application in <a href="https://dev.twitter.com/">Twitter</a> and copy and paste the <strong>Consumer key, and secret</strong> into the next variables and uncomment them:</p>
+<table class="codehilitetable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span>1
+2</pre></div></td><td class="code"><div class="codehilite"><pre><span></span><span class="n">TWITTER_CONSUMER_KEY</span> <span class="o">=</span> <span class="s1">&#39;key&#39;</span>
+<span class="n">TWITTER_CONSUMER_SECRET</span> <span class="o">=</span> <span class="s1">&#39;secret&#39;</span>
+</pre></div>
+</td></tr></table>
+
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>This will also enable PYBOSSA&rsquo;s Twitter login.</p>
+</div>
+<h2 id="enabling-the-youtubes-task-importer">Enabling the Youtube&rsquo;s Task importer<a class="headerlink" href="#enabling-the-youtubes-task-importer" title="Permanent link">&para;</a></h2>
+<p>The Youtube&rsquo;s task importer needs a Youtube server key which you need to create in the <a href="https://console.developers.google.com/">Google API Console</a> in YouTube Data API.</p>
+<p>Once you have an API key, you&rsquo;ll have to add it to your
+settings_local.py file:</p>
+<table class="codehilitetable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span>1</pre></div></td><td class="code"><div class="codehilite"><pre><span></span><span class="n">YOUTUBE_API_SERVER_KEY</span> <span class="o">=</span> <span class="s2">&quot;your-key&quot;</span>
+</pre></div>
+</td></tr></table>
+
+<p>For more information on how to get a Youtube server key, please refer to <a href="https://developers.google.com/youtube/registering_an_application#Create_API_Keys">the official documentation</a>.</p>
+<h2 id="enabling-server-sent-events">Enabling Server-Sent Events<a class="headerlink" href="#enabling-server-sent-events" title="Permanent link">&para;</a></h2>
+<p>Since PYBOSSA v1.1.0, PYBOSSA supports Server-Sent Events (SSE) in some views. This feature is powerful. However, it brings some issues with it: it needs to run PYBOSSA in asynchronous mode.</p>
+<p>As this is not a necessity, by default PYBOSSA has this feature
+disabled. PYBOSSA uses SSE to notify users about specific actions (i.e., the result of a webhook in real time).</p>
+<p>If you want to enable it, you will have to add to your settings_local.py:</p>
+<table class="codehilitetable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span>1</pre></div></td><td class="code"><div class="codehilite"><pre><span></span><span class="n">SSE</span> <span class="o">=</span> <span class="kc">True</span>
+</pre></div>
+</td></tr></table>
+
+<p>Also, you will need to configure uwsgi and nginx to support SSE events. This is not trivial, as there are several different scenarios, libraries, and options, so instead of recommending one solution, we invite you to read the <a href="http://uwsgi-docs.readthedocs.org/en/latest/Async.html">uwsgi documentation about it</a>, so you can take a decision based on your infrastructure and preferences.</p>
+<h2 id="latest-news-from-pybossa">Latest news from PYBOSSA<a class="headerlink" href="#latest-news-from-pybossa" title="Permanent link">&para;</a></h2>
+<p>Since v1.2.1 PYBOSSA gets the latest news of its new releases, as well as anything related to what Scifabric blogs about regarding the crowdsourcing world. You can add more items if you want, by just adding to your settings_local.py file new ATOM URLs:</p>
+<table class="codehilitetable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span>1</pre></div></td><td class="code"><div class="codehilite"><pre><span></span><span class="n">NEWS_URL</span> <span class="o">=</span> <span class="p">[</span><span class="s1">&#39;http:/http:///atomurl1&#39;</span><span class="p">,</span> <span class="s1">&#39;http://atomurl2&#39;</span><span class="p">,</span> <span class="o">...</span><span class="p">]</span>
+</pre></div>
+</td></tr></table>
+
+<h2 id="enabling-pro-user-features">Enabling pro user features<a class="headerlink" href="#enabling-pro-user-features" title="Permanent link">&para;</a></h2>
+<p>Since version v1.2.2 PYBOSSA, you can specify which features can be only available to pro users or everyone. To modify them, just locate them in the settings_local.py file. By default, they look
+like:</p>
+<table class="codehilitetable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span>1
+2
+3
+4
+5
+6
+7
+8
+9</pre></div></td><td class="code"><div class="codehilite"><pre><span></span><span class="n">PRO_FEATURES</span> <span class="o">=</span> <span class="p">{</span>
+    <span class="s1">&#39;auditlog&#39;</span><span class="p">:</span>              <span class="kc">True</span><span class="p">,</span>
+    <span class="s1">&#39;webhooks&#39;</span><span class="p">:</span>              <span class="kc">True</span><span class="p">,</span>
+    <span class="s1">&#39;updated_exports&#39;</span><span class="p">:</span>       <span class="kc">True</span><span class="p">,</span>
+    <span class="s1">&#39;notify_blog_updates&#39;</span><span class="p">:</span>   <span class="kc">True</span><span class="p">,</span>
+    <span class="s1">&#39;project_weekly_report&#39;</span><span class="p">:</span> <span class="kc">True</span><span class="p">,</span>
+    <span class="s1">&#39;autoimporter&#39;</span><span class="p">:</span>          <span class="kc">True</span><span class="p">,</span>
+    <span class="s1">&#39;better_stats&#39;</span><span class="p">:</span>          <span class="kc">True</span>
+<span class="p">}</span>
+</pre></div>
+</td></tr></table>
+
+<p>By choosing &ldquo;True&rdquo; on each of them, you are making that specific feature available only to pro users. On the other hand, selecting &ldquo;False&rdquo; makes them available to regular users as well.</p>
+<h2 id="strict-slashes">Strict Slashes<a class="headerlink" href="#strict-slashes" title="Permanent link">&para;</a></h2>
+<p>By default, PYBOSSA distinguishes between two types of URLs for its
+endpoints: with and without a trailing slash. In other words, if an endpoint is not declared within the code as accepting both options, 
+accessing the same endpoint with a trailing slash will return a 404.</p>
+<p>For example, the about endpoint:</p>
+<table class="codehilitetable"><tr><td class="linenos"><div class="linenodiv"><pre>1</pre></div></td><td class="code"><div class="codehilite"><pre><span></span><span class="err">GET /about</span>
+</pre></div>
+</td></tr></table>
+
+<p>Will return the page, but with the default configuration it will return
+a 404 if you add a trailing slash to it:</p>
+<table class="codehilitetable"><tr><td class="linenos"><div class="linenodiv"><pre>1</pre></div></td><td class="code"><div class="codehilite"><pre><span></span><span class="err">GET /about/</span>
+</pre></div>
+</td></tr></table>
+
+<p>To disable this behavior, enable the STRICT_SLASHES option and set it to False. That option will ensure that both endpoints work with and without the trailing slash.</p>
+<h2 id="forums">Forums<a class="headerlink" href="#forums" title="Permanent link">&para;</a></h2>
+<p>PYBOSSA does not provide its own forum. However, you can use Disqus and integrate it in your PYBOSSA server.</p>
+<h3 id="disqus-single-sign-on-sso">Disqus Single Sign-On (SSO)<a class="headerlink" href="#disqus-single-sign-on-sso" title="Permanent link">&para;</a></h3>
+<p>PYBOSSA supports Disqus SSO. However, it is disabled by default. You need to register a Disqus application (see their <a href="https://help.disqus.com/customer/portal/articles/236206">documentation</a>) and then update your settings_local.py file with the following two keys:</p>
+<table class="codehilitetable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span>1
+2</pre></div></td><td class="code"><div class="codehilite"><pre><span></span><span class="n">DISQUS_SECRET_KEY</span> <span class="o">=</span> <span class="s1">&#39;secret&#39;</span>
+<span class="n">DISQUS_PUBLIC_KEY</span> <span class="o">=</span> <span class="s1">&#39;publickey&#39;</span>
+</pre></div>
+</td></tr></table>
+
+<p>Then, this will enable you to use a new Jinja2 filter for  authenticating PYBOSSA users directly in their Disqus server. The filter is <em>disqus_sso</em>. You can use it like this:</p>
+<table class="codehilitetable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span>1
+2
+3
+4
+5</pre></div></td><td class="code"><div class="codehilite"><pre><span></span><span class="cp">{%</span> <span class="k">if</span> <span class="nv">current_user.is_authenticated</span><span class="o">()</span> <span class="cp">%}</span><span class="x"></span>
+<span class="cp">{{</span> <span class="nv">current_user</span> <span class="o">|</span> <span class="nf">disqus_sso</span> <span class="o">|</span> <span class="nf">safe</span> <span class="cp">}}</span><span class="x"></span>
+<span class="cp">{%</span> <span class="k">else</span> <span class="cp">%}</span><span class="x"></span>
+<span class="cp">{{</span> <span class="kp">None</span> <span class="o">|</span> <span class="nf">disqus_sso</span> <span class="o">|</span> <span class="nf">safe</span> <span class="cp">}}</span><span class="x"></span>
+<span class="cp">{%</span> <span class="k">endif</span> <span class="cp">%}</span><span class="x"></span>
+</pre></div>
+</td></tr></table>
+
+<p>Also, if you are building a Single Page Application, you can use our API endpoint: <em>api/disqus/sso</em> to get the credentials and authenticate the users within your javascript. Check the <a href="../build/api.md#disqus-single-sign-on-sso">endpoint information Disqus-API</a>.</p>
+<h2 id="background-jobs-timeout">Background jobs timeout<a class="headerlink" href="#background-jobs-timeout" title="Permanent link">&para;</a></h2>
+<p>By default PYBOSSA timeout for every job is 10 minutes. In principle, it should be fine, but each project and server is unique, so if you start
+seeing too many jobs failing because the job timed out, then, increase the value using these config variables:</p>
+<table class="codehilitetable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span>1
+2</pre></div></td><td class="code"><div class="codehilite"><pre><span></span><span class="n">MINUTE</span> <span class="o">=</span> <span class="mi">60</span>
+<span class="n">TIMEOUT</span> <span class="o">=</span> <span class="mi">20</span> <span class="o">*</span> <span class="mi">60</span>
+</pre></div>
+</td></tr></table>
+
+<h2 id="web-push-notifications">Web Push notifications<a class="headerlink" href="#web-push-notifications" title="Permanent link">&para;</a></h2>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>You need to have HTTPS enabled for your site. Otherwise, you will need to use a subdomain from onesignal.com to support this feature. If you cannot use HTTPS, we recommend to disable it.</p>
+</div>
+<p>PYBOSSA can send web push notifications to Google Chrome, Mozilla
+Firefox and Safari browsers.</p>
+<p>For supporting this feature, PYBOSSA uses the Onesignal.com service. You will need an account and create an app for your PYBOSSA server. Then follow their documentation to download the WebPush SDK and configure your PYBOSSA theme.</p>
+<p>For more info regarding Onesignal, check their <a href="https://documentation.onesignal.com/docs/web-push-setup">documentation.</a></p>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>You can host the SDK files in the static folder of your theme. However, you will need to modify your web server (Apache or Nginx) to serve those files as from the root of your server. If this is not done correctly, it will not work.</p>
+</div>
+<p>Once you have created the app in Onesignal, get the API KEY and APP ID. Then copy them and put it in your settings_local.py file:</p>
+<table class="codehilitetable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span>1
+2</pre></div></td><td class="code"><div class="codehilite"><pre><span></span><span class="n">ONESIGNAL_APP_ID</span> <span class="o">=</span> <span class="s1">&#39;app-id&#39;</span>
+<span class="n">ONESIGNAL_API_KEY</span> <span class="o">=</span> <span class="s1">&#39;app-key&#39;</span>
+</pre></div>
+</td></tr></table>
+
+<p>Restart the server, and add one background worker for the <em>webpush</em> queue. This queue will handle the creation of the apps, as well as sending the push notifications.</p>
+<p>Then you will need to update your PYBOSSA theme to allow your
+users to subscribe. As this could vary a lot from one project to
+another, we do not provide a template but some guidelines:</p>
+<ul>
+<li>Use the JS SDK to subscribe a user to a given project using the
+  <em>tags</em> option of Onesignal.</li>
+<li>PYBOSSA sends notifications using those tags thanks to the   <em>filters</em> option that allows us to segment traffic. PYBOSSA is
+  expecting the project.id as the tag key for segmenting.</li>
+<li>The JS SDK allows you to subscribe/unsubscribe a user to a given project (not only the whole server) with unique methods for adding tags and deleting them. This works independently if the user is authenticated or not.</li>
+</ul>
+<p>For more info regarding Onesignal JS SDK, check their <a href="https://documentation.onesignal.com/docs/web-push-sdk">documentation.</a></p>
+<h2 id="ignore-specific-keys-when-exporting-data-in-csv-format">Ignore specific keys when exporting data in CSV format<a class="headerlink" href="#ignore-specific-keys-when-exporting-data-in-csv-format" title="Permanent link">&para;</a></h2>
+<p>Sometimes your PYBOSSA project saves information like GeoJSON within the tasks or task_runs. This is a bad thing for the exporter, as it will try to flatten it. In such scenarios, you want to instruct PYBOSSA to ignore those keys, as they will be included in the JSON export files, and reduce all the overhead (as well as destroying the format due to the normalization).</p>
+<p>For ignoring a key (or a list of keys), just add the following config
+variable to your settings_local.py file:</p>
+<table class="codehilitetable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span>1</pre></div></td><td class="code"><div class="codehilite"><pre><span></span><span class="n">IGNORE_FLAT_KEYS</span> <span class="o">=</span> <span class="p">[</span> <span class="s1">&#39;geojson&#39;</span><span class="p">,</span> <span class="s1">&#39;key1&#39;</span><span class="p">,</span> <span class="o">...</span><span class="p">]</span>
+</pre></div>
+</td></tr></table>
+
+<h2 id="specify-a-new-root-key-instead-of-info-for-csv-exporter">Specify a new root key instead of info for CSV exporter<a class="headerlink" href="#specify-a-new-root-key-instead-of-info-for-csv-exporter" title="Permanent link">&para;</a></h2>
+<p>Sometimes you need to change the root key for the CSV exporter. This usually happens, when you have to store one ore more answers within the same info object. For this reason, you can instruct PYBOSSA to use that key instead of <em>info</em> for flattening the data:</p>
+<table class="codehilitetable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span>1
+2
+3</pre></div></td><td class="code"><div class="codehilite"><pre><span></span><span class="n">TASK_CSV_EXPORT_INFO_KEY</span> <span class="o">=</span> <span class="s1">&#39;key&#39;</span>
+<span class="n">TASK_RUN_CSV_EXPORT_INFO_KEY</span> <span class="o">=</span> <span class="s1">&#39;key2&#39;</span>
+<span class="n">RESULT_CSV_EXPORT_INFO_KEY</span> <span class="o">=</span> <span class="s1">&#39;key3&#39;</span>
+</pre></div>
+</td></tr></table>
+
+<p>In this way, if key, key2 or key3 have an array or list of dictionaries, PYBOSSA will iterate over them, flat them, and then generate the CSV for you.</p>
+<h2 id="disable-task-presenter-check-for-pure-javascript-apps">Disable task presenter check for pure JavaScript apps<a class="headerlink" href="#disable-task-presenter-check-for-pure-javascript-apps" title="Permanent link">&para;</a></h2>
+<p>When you are using PYBOSSA native JSON support, you will not be building your project presenter within the PYBOSSA structure, but within the JS framework of your choice.</p>
+<p>In such a case, you would like to disable the check for the task_presenter when publishing a project. If you need this, just add
+this flag to your settings_local.py file: </p>
+<table class="codehilitetable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span>1</pre></div></td><td class="code"><div class="codehilite"><pre><span></span><span class="n">DISABLE_TASK_PRESENTER</span> <span class="o">=</span> <span class="kc">True</span>
+</pre></div>
+</td></tr></table>
+
+<h2 id="consent-field-for-users">Consent field for users<a class="headerlink" href="#consent-field-for-users" title="Permanent link">&para;</a></h2>
+<p>Sometimes you will need the users to click on a checkbox before
+creating an account to get the agreement for sending them email
+notifications or of any other type. By default, PYBOSSA provides this
+flag, and it&rsquo;s set to False.</p>
+<p>Change in the theme (or your frontend) the label of the field to
+whatever you prefer: Terms of Service, Communications, etc. so you will be able to keep track of who has accepted/declined to get notifications from you.</p>
+<h2 id="custom-leaderboards">Custom Leaderboards<a class="headerlink" href="#custom-leaderboards" title="Permanent link">&para;</a></h2>
+<p>By default, PYBOSSA provides a unique leaderboard. This leaderboard is based on the number of task runs that a user has submitted. However, you may want more flexibility. For this reason, you can use use the &ldquo;user&rdquo;.info field to store any other &ldquo;badges&rdquo; or values that you want to score your users.</p>
+<p>If your users have identified very complicated stuff, and you want to
+give points to them based on that, just use the info field and instruct
+PYBOSSA to create a leaderboard for you.</p>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>It is essential that this key, projectsvalue pair is computed by you. You can use the API to update these values, so this will not be handled by PYBOSSA but by yourself.</p>
+</div>
+<p>Imagine the score is named: foo, then, PYBOSSA will create for you a leaderboard using that key like this: edit the settings_local.py file
+and add the following config variable:</p>
+<table class="codehilitetable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span>1</pre></div></td><td class="code"><div class="codehilite"><pre><span></span><span class="n">LEADERBOARDS</span> <span class="o">=</span> <span class="p">[</span><span class="s1">&#39;foo&#39;</span><span class="p">]</span>
+</pre></div>
+</td></tr></table>
+
+<p>Then, you can access the specific leaderboard using the endpoint:
+/leaderboard/?info=foo</p>
+<p>As simple as that.</p>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>This feature relies on background jobs. Be sure that you are running them.</p>
+</div>
+<h3 id="default-number-of-users-for-the-leaderboard">Default number of users for the leaderboard<a class="headerlink" href="#default-number-of-users-for-the-leaderboard" title="Permanent link">&para;</a></h3>
+<p>You can specify the default number of users shown in the leaderboard. By default we show the top 20 users.</p>
+<table class="codehilitetable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span>1</pre></div></td><td class="code"><div class="codehilite"><pre><span></span><span class="err">LEADERBOARD = 20</span>
+</pre></div>
+</td></tr></table>
+
+<h2 id="unpublish-inactive-projects">Unpublish inactive projects<a class="headerlink" href="#unpublish-inactive-projects" title="Permanent link">&para;</a></h2>
+<p>PYBOSSA by default unpublishes projects that have not been active in the last three months. You can disable this feature by changing this config variable in your settings_local.py file:</p>
+<table class="codehilitetable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span>1</pre></div></td><td class="code"><div class="codehilite"><pre><span></span><span class="n">UNPUBLISH_PROJECTS</span> <span class="o">=</span> <span class="kc">False</span>
+</pre></div>
+</td></tr></table>
+
+<h2 id="ldap-integration">LDAP integration<a class="headerlink" href="#ldap-integration" title="Permanent link">&para;</a></h2>
+<p>PYBOSSA can use LDAP for authenticating users. You will need to add a few config variables to the settings_local.py file to
+make it work.</p>
+<p>PYBOSSA supports LDAP and OpenLDAP protocols, so you should be able to use any of them.</p>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>By enabling PYBOSSA LDAP integration, all other means for creating accounts and sign in will be disabled.</p>
+</div>
+<h3 id="ldap_host">LDAP_HOST<a class="headerlink" href="#ldap_host" title="Permanent link">&para;</a></h3>
+<p>This variable should have the IP or domain name of your LDAP server.</p>
+<h3 id="ldap_base_dn">LDAP_BASE_DN<a class="headerlink" href="#ldap_base_dn" title="Permanent link">&para;</a></h3>
+<p>This is the LDAP Base DN for your organization.</p>
+<h3 id="ldap_username">LDAP_USERNAME<a class="headerlink" href="#ldap_username" title="Permanent link">&para;</a></h3>
+<p>This variable should have the admin account so that PYBOSSA can access the LDAP server and search for users.</p>
+<h3 id="ldap_password">LDAP_PASSWORD<a class="headerlink" href="#ldap_password" title="Permanent link">&para;</a></h3>
+<p>The admin account password.</p>
+<h3 id="ldap_objects_dn">LDAP_OBJECTS_DN<a class="headerlink" href="#ldap_objects_dn" title="Permanent link">&para;</a></h3>
+<p>The DN.</p>
+<h3 id="ldap_openldap">LDAP_OPENLDAP<a class="headerlink" href="#ldap_openldap" title="Permanent link">&para;</a></h3>
+<p>Set it to True if you are using it.</p>
+<h3 id="ldap_user_object_filter">LDAP_USER_OBJECT_FILTER<a class="headerlink" href="#ldap_user_object_filter" title="Permanent link">&para;</a></h3>
+<p>This is important. The filter that you write in here needs to be
+adapted to your institution, otherwise, it will not work when
+authenticating and validating your users.</p>
+<p>Don&rsquo;t use the default configuration in the settings template. You will
+need to adapt it to your needs.</p>
+<h3 id="ldap_user_filter_field">LDAP_USER_FILTER_FIELD<a class="headerlink" href="#ldap_user_filter_field" title="Permanent link">&para;</a></h3>
+<p>If you use a different field in the previous configuration, update the 
+LDAP_USER_FILTER_FIELD. It&rsquo;s important to reflect which key are you using within your LDAP server to identify your users uniquely.</p>
+<h3 id="ldap_pybossa_fields">LDAP_PYBOSSA_FIELDS<a class="headerlink" href="#ldap_pybossa_fields" title="Permanent link">&para;</a></h3>
+<p>Use this configuration variable to match/link PYBOSSA fields to LDAP fields.</p>
+<h2 id="uploading-files-to-pybossa">Uploading files to PYBOSSA<a class="headerlink" href="#uploading-files-to-pybossa" title="Permanent link">&para;</a></h2>
+<p>PYBOSSA has a generic uploader that will check for valid extensions, avoiding for example that a user could upload a video, as only
+images are allowed. </p>
+<h3 id="allowed_extensions">ALLOWED_EXTENSIONS<a class="headerlink" href="#allowed_extensions" title="Permanent link">&para;</a></h3>
+<p>Use this configuration variable, to specify which types of files will you allow in your server to be uploaded via the API. By default, the following extensions
+are enabled:</p>
+<table class="codehilitetable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span>1</pre></div></td><td class="code"><div class="codehilite"><pre><span></span><span class="n">ALLOWED_EXTENSIONS</span> <span class="o">=</span> <span class="p">[</span><span class="s1">&#39;js&#39;</span><span class="p">,</span> <span class="s1">&#39;css&#39;</span><span class="p">,</span> <span class="s1">&#39;png&#39;</span><span class="p">,</span> <span class="s1">&#39;jpg&#39;</span><span class="p">,</span> <span class="s1">&#39;jpeg&#39;</span><span class="p">,</span> <span class="s1">&#39;gif&#39;</span><span class="p">,</span> <span class="s1">&#39;zip&#39;</span><span class="p">]</span>
+</pre></div>
+</td></tr></table>
+
+<h2 id="spam-protection">SPAM protection<a class="headerlink" href="#spam-protection" title="Permanent link">&para;</a></h2>
+<p>You can blacklist disposable email accounts by listing them in the SPAM config. Just add them like this:</p>
+<table class="codehilitetable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span>1</pre></div></td><td class="code"><div class="codehilite"><pre><span></span><span class="n">SPAM</span> <span class="o">=</span> <span class="p">[</span><span class="s1">&#39;spam.com&#39;</span><span class="p">,</span> <span class="s1">&#39;fake.es&#39;</span><span class="p">]</span>
+</pre></div>
+</td></tr></table>
+
+<h2 id="failed-jobs">Failed Jobs<a class="headerlink" href="#failed-jobs" title="Permanent link">&para;</a></h2>
+<p>Sometimes background jobs fail. For example, an email is rejected. By default
+PYBOSSA retries 3 times, before marking them as failed. You can customize it.</p>
+<table class="codehilitetable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span>1</pre></div></td><td class="code"><div class="codehilite"><pre><span></span><span class="n">FAILED_JOBS_RETRIES</span> <span class="o">=</span> <span class="mi">3</span>
+</pre></div>
+</td></tr></table>
+
+<h2 id="fulltext-search-language">Fulltext search language<a class="headerlink" href="#fulltext-search-language" title="Permanent link">&para;</a></h2>
+<p>PYBOSSA uses PostgreSQL fulltex search support. Thus, you can instruct PYBOSSA
+to use only a given language to do it properly:</p>
+<table class="codehilitetable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span>1</pre></div></td><td class="code"><div class="codehilite"><pre><span></span><span class="n">FULLTEXTSEARCH_LANGUAGE</span> <span class="o">=</span> <span class="s1">&#39;english&#39;</span>
+</pre></div>
+</td></tr></table>
+
+<h2 id="absolute-links-to-avatars">Absolute links to Avatars<a class="headerlink" href="#absolute-links-to-avatars" title="Permanent link">&para;</a></h2>
+<p>If you are building a Single Page Application or a Universal App, you will need to
+get absolute paths to the avatars. Use the following config:</p>
+<table class="codehilitetable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span>1</pre></div></td><td class="code"><div class="codehilite"><pre><span></span><span class="n">AVATAR_ABSOLUTE</span> <span class="o">=</span> <span class="kc">True</span>
+</pre></div>
+</td></tr></table>
+
+<h2 id="delete-inactive-accounts">Delete inactive accounts<a class="headerlink" href="#delete-inactive-accounts" title="Permanent link">&para;</a></h2>
+<p>PYBOSSA will delete inactive accounts after a period of time. For this purpose,
+PYBOSSA uses two different background jobs, one for warning users about the
+action, and another one to delete them.</p>
+<p>The warning job is run on a monthly basis, while the deletion is done on a
+bi-monthly basis.</p>
+<p>You can customize the the time period that you consider to warn users as well as
+to delete them. For these purposes you can use the following two variables:</p>
+<table class="codehilitetable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span>1
+2</pre></div></td><td class="code"><div class="codehilite"><pre><span></span><span class="n">USER_INACTIVE_NOTIFICATION</span> <span class="o">=</span> <span class="mi">5</span>
+<span class="n">USER_INACTIVE_DELETE</span> <span class="o">=</span> <span class="mi">6</span>
+</pre></div>
+</td></tr></table>
+
+<p>Thus, after 5 months of not contributing a single task run, the user will get an
+email warning her about the deletion. Then, the next month if the user has not
+sent a task run, the account will be deleted.</p>
+<p>For deleting the accounts, PYBOSSA uses the the same method as if the user
+requested it herself. The action anonymizes the user&rsquo;s contributions, and
+deletes all her personal data.</p>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>PYBOSSA will not delete users with the restrict flag set to true (to respect
+GDPR) as well as if they have projects.</p>
+</div>
+                
+                  
+                
+              
+              
+                
+              
+            </article>
+          </div>
+        </div>
+      </main>
+      
+        
+<footer class="md-footer">
+  
+    <div class="md-footer-nav">
+      <nav class="md-footer-nav__inner md-grid">
+        
+          <a href="../guide/" title="Installing the server" class="md-flex md-footer-nav__link md-footer-nav__link--prev" rel="prev">
+            <div class="md-flex__cell md-flex__cell--shrink">
+              <i class="md-icon md-icon--arrow-back md-footer-nav__button"></i>
+            </div>
+            <div class="md-flex__cell md-flex__cell--stretch md-footer-nav__title">
+              <span class="md-flex__ellipsis">
+                <span class="md-footer-nav__direction">
+                  Previous
+                </span>
+                Installing the server
+              </span>
+            </div>
+          </a>
+        
+        
+          <a href="../deployment/" title="Deploying PYBOSSA with Nginx and uWsgi" class="md-flex md-footer-nav__link md-footer-nav__link--next" rel="next">
+            <div class="md-flex__cell md-flex__cell--stretch md-footer-nav__title">
+              <span class="md-flex__ellipsis">
+                <span class="md-footer-nav__direction">
+                  Next
+                </span>
+                Deploying PYBOSSA with Nginx and uWsgi
+              </span>
+            </div>
+            <div class="md-flex__cell md-flex__cell--shrink">
+              <i class="md-icon md-icon--arrow-forward md-footer-nav__button"></i>
+            </div>
+          </a>
+        
+      </nav>
+    </div>
+  
+  <div class="md-footer-meta md-typeset">
+    <div class="md-footer-meta__inner md-grid">
+      <div class="md-footer-copyright">
+        
+          <div class="md-footer-copyright__highlight">
+            Copyright © 2017 <a href="https://scifabric.com">Scifabric</a>
+          </div>
+        
+        powered by
+        <a href="http://www.mkdocs.org" title="MkDocs">MkDocs</a>
+        and
+        <a href="http://squidfunk.github.io/mkdocs-material/" title="Material for MkDocs">
+          Material for MkDocs</a>
+      </div>
+      
+        
+  <div class="md-footer-social">
+    
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    
+      <a href="https://github.com/Scifabric" class="md-footer-social__link fa fa-github"></a>
+    
+      <a href="https://twitter.com/Scifabric" class="md-footer-social__link fa fa-twitter"></a>
+    
+  </div>
+
+      
+    </div>
+  </div>
+</footer>
+      
+    </div>
+    
+      <script src="../../assets/javascripts/application-946997f430.js"></script>
+      
+      
+      <script>app.initialize({version:"0.16.3",url:{base:"../.."}})</script>
+      
+    
+    
+      
+      <script>!function(e,t,a,n,o,c,i){e.GoogleAnalyticsObject=o,e[o]=e[o]||function(){(e[o].q=e[o].q||[]).push(arguments)},e[o].l=1*new Date,c=t.createElement(a),i=t.getElementsByTagName(a)[0],c.async=1,c.src=n,i.parentNode.insertBefore(c,i)}(window,document,"script","https://www.google-analytics.com/analytics.js","ga"),ga("create","UA-49052879-1","auto"),ga("set","anonymizeIp",!0),ga("send","pageview");var links=document.getElementsByTagName("a");Array.prototype.map.call(links,function(e){e.host!=document.location.host&&e.addEventListener("click",function(){var t=e.getAttribute("data-md-action")||"follow";ga("send","event","outbound",t,e.href)})});var query=document.forms.search.query;query.addEventListener("blur",function(){if(this.value){var e=document.location.pathname;ga("send","pageview",e+"?q="+this.value)}})</script>
+      
+    
+  </body>
+</html>
