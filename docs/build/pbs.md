@@ -51,7 +51,7 @@ The file should have the following structure:
 
 ``` python
 [default]
-server: http://theserver.com
+server: https://theserver.com
 apikey: yourkey
 ```
 
@@ -59,21 +59,21 @@ If you are working with more servers, add another section below it. For example:
 
 ``` python
 [default]
-server: http://theserver.com
+server: https://theserver.com
 apikey: yourkey
 
-[crowdcrafting]
-server: http://crowdcrafting.org
-apikey: yourkeyincrowdcrafting
+[yourserver]
+server: https://yourserver.org
+apikey: yourkeyinyourserver.org
 ```
 
 By default, pbs will use the credentials of the default section, so you don't have to type anything to use those values. However, if you want to do actions on another server, all you have to do is the following:
 
 ``` bash
-pbs --credentials crowdcrafting --help
+pbs --credentials yourserver --help
 ```
 
-That command will use the values of the crowdcrafting section.
+That command will use the values of the yourserver section.
 
 ## Project
 

@@ -15,11 +15,9 @@ This tutorial uses the PYBOSSA [pbs command line tool](pbs.md) as it will show y
 ## Setting Things Up
 
 To run the tutorial, you will need to create an account in a
-PYBOSSA server. The PYBOSSA server could be running on your computer or in a third party server (pst, you can use Scifabric's [free PYBOSSA server Crowdcrafting](https://crowdcrafting.org)).
+PYBOSSA server. The PYBOSSA server could be running on your computer or in a third party server.
 
 Once you have a PYBOSSA account, you will have access to your profile by clicking on your name, and then on the **My Settings** section. There, you will find your API-KEY.
-
-If you are using Scifabric's Crowdcrafting server, the API-KEY would be available [here](http://crowdcrafting.org/account/profile).
 
 ![image](https://i.imgur.com/JcxciZc.png)
 
@@ -85,7 +83,7 @@ The Flickr Person Finder provides a file called [project.json](https://github.co
 This file, project.json identifies your project. It has its name, as well as a short description about it. As we are creating a new project, please, modify the **name** and **short_name** to make it yours.
 
 !!! warning
-    The **name** and **short_name** of the project **must be unique**! Otherwise, you will get an error (IntegrityError) when creating the project. This will happen if you use the Crowdcrafting server, as there's already a project with those values.
+    The **name** and **short_name** of the project **must be unique**! Otherwise, you will get an error (IntegrityError) when creating the project.
 
 
 **Description** will be the text shown in the project listing page. It's important that you try to have a short description that explains what your project does.
@@ -124,7 +122,7 @@ The file can be composed using Markdown or plain text.
 
 The long description will be shown on the project home page:
 
-    http://crowdcrafting.org/project/flickrperson
+    https://yourserver/project/flickrperson
 
 If you want to modify the description you have two options, edit it via the web interface, or change locally the *long_description.md* file and run pbs to update it:
 
@@ -742,7 +740,7 @@ First of all, check the *tutorial.html file*. You will see it consists on some H
                 <h3>Flickr Person Finder tutorial</h3>
             </div>
             <div id="0" class="modal-body" style="display:none">
-                <p><strong>Hi!</strong> This is a <strong>demo project</strong> that shows how you can do pattern recognition on pictures or images using the PYBOSSA framework in Crowdcrafting.org.
+                <p><strong>Hi!</strong> This is a <strong>demo project</strong> that shows how you can do pattern recognition on pictures or images using the PYBOSSA framework.
                </p>
             </div>
             <div id="1" class="modal-body" style="display:none">

@@ -14,7 +14,7 @@ PYBOSSA has two main components:
 The PYBOSSA server is a web server with a RESTful API that
 distributes tasks among volunteers using a simple API.
 
-For using this guide, you can try the PYBOSSA technology using our Scifabric's free PYBOSSA server [CrowdCrafting.org](http://crowdcrafting.org). You can start directly using this service without any cost, or if you prefer you can [hire one of our PYBOSSA server options] (https://scifabric.com/pricing/).
+You can start directly using this service without any cost (setting your own server), or if you prefer you can [hire one of our PYBOSSA server options] (https://scifabric.com/pricing/).
 
 ### Architecture
 
