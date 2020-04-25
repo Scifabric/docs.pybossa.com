@@ -1742,7 +1742,7 @@
 </ul>
 <h2 id="the-restful-api">The RESTful API<a class="headerlink" href="#the-restful-api" title="Permanent link">&para;</a></h2>
 <p>These endpoints use the PYBOSSA domain objects. It has the following structure:</p>
-<table class="codehilitetable"><tr><td class="linenos"><div class="linenodiv"><pre>1</pre></div></td><td class="code"><div class="codehilite"><pre><span></span><span class="c">http://server/api/{domainobject}[?arg1=value1&amp;arg2=value2...]</span>
+<table class="codehilitetable"><tr><td class="linenos"><div class="linenodiv"><pre>1</pre></div></td><td class="code"><div class="codehilite"><pre><span></span>http://server/api/{domainobject}[?arg1=value1&amp;arg2=value2...]
 </pre></div>
 </td></tr></table>
 
@@ -1760,7 +1760,7 @@
 </ul>
 <p>You can then access any of those items via the API, using its name in the {domainobject} section and querying its attributes. All these endpoints expect and return JSON.</p>
 <p>The RESTful API is located at:</p>
-<table class="codehilitetable"><tr><td class="linenos"><div class="linenodiv"><pre>1</pre></div></td><td class="code"><div class="codehilite"><pre><span></span><span class="c">http://{pybossa-site-url}/api</span>
+<table class="codehilitetable"><tr><td class="linenos"><div class="linenodiv"><pre>1</pre></div></td><td class="code"><div class="codehilite"><pre><span></span>http://{pybossa-site-url}/api
 </pre></div>
 </td></tr></table>
 
@@ -1770,7 +1770,7 @@
 included in the model to support <a href="http://en.wikipedia.org/wiki/HATEOAS">Hypermedia as the Engine of
 Application State</a> (also known as HATEOAS), so you can understand which are the relations between objects.</p>
 <p>All objects will return a field <strong>link</strong> which will be the absolute URL for that specific object within the API. If the object has some parents, you will find the relations in the <strong>links</strong> list. For example, for a Task Run you will get something like this:</p>
-<table class="codehilitetable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span> 1
+<table class="codehilitetable"><tr><td class="linenos"><div class="linenodiv"><pre> 1
  2
  3
  4
@@ -1828,7 +1828,7 @@ have parents.</p>
     resets in UTC epoch seconds</li>
 </ul>
 <p>We recommend using the Python package <strong>requests</strong> for interacting with PYBOSSA, as it is straightforward to check those values:</p>
-<table class="codehilitetable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span>1
+<table class="codehilitetable"><tr><td class="linenos"><div class="linenodiv"><pre>1
 2
 3
 4
@@ -1848,7 +1848,7 @@ have parents.</p>
 
 <h3 id="command-line-example-usage-of-the-api">Command line Example Usage of the API<a class="headerlink" href="#command-line-example-usage-of-the-api" title="Permanent link">&para;</a></h3>
 <p>Create a Project object:</p>
-<table class="codehilitetable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span>1</pre></div></td><td class="code"><div class="codehilite"><pre><span></span>curl -X POST -H <span class="s2">&quot;Content-Type:application/json&quot;</span> -s -d <span class="s1">&#39;{&quot;name&quot;:&quot;myproject&quot;, &quot;info&quot;:{&quot;xyz&quot;:1}}&#39;</span> <span class="s1">&#39;http://localhost:5000/api/project?api_key=API-KEY&#39;</span>
+<table class="codehilitetable"><tr><td class="linenos"><div class="linenodiv"><pre>1</pre></div></td><td class="code"><div class="codehilite"><pre><span></span>curl -X POST -H <span class="s2">&quot;Content-Type:application/json&quot;</span> -s -d <span class="s1">&#39;{&quot;name&quot;:&quot;myproject&quot;, &quot;info&quot;:{&quot;xyz&quot;:1}}&#39;</span> <span class="s1">&#39;http://localhost:5000/api/project?api_key=API-KEY&#39;</span>
 </pre></div>
 </td></tr></table>
 

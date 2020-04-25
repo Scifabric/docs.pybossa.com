@@ -1715,12 +1715,12 @@ installing the following open source software:</p>
 </div>
 <p>Clone the PYBOSSA git repository (be sure to install git in your
 machine!):</p>
-<table class="codehilitetable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span>1</pre></div></td><td class="code"><div class="codehilite"><pre><span></span>git clone --recursive https://github.com/Scifabric/pybossa.git
+<table class="codehilitetable"><tr><td class="linenos"><div class="linenodiv"><pre>1</pre></div></td><td class="code"><div class="codehilite"><pre><span></span>git clone --recursive https://github.com/Scifabric/pybossa.git
 </pre></div>
 </td></tr></table>
 
 <p>Once you have downloaded the source code, all you have to do to start your PYBOSSA development environment is typing the following in a terminal:</p>
-<table class="codehilitetable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span>1
+<table class="codehilitetable"><tr><td class="linenos"><div class="linenodiv"><pre>1
 2</pre></div></td><td class="code"><div class="codehilite"><pre><span></span><span class="nb">cd</span> pybossa
 vagrant up
 </pre></div>
@@ -1740,7 +1740,7 @@ this command: VBoxManage setproperty machinefolder to/new/path</p>
 </div>
 <h2 id="running-the-pybossa-server">Running the PYBOSSA server<a class="headerlink" href="#running-the-pybossa-server" title="Permanent link">&para;</a></h2>
 <p>Now that all the libraries and dependencies have been installed, you can lunch the PYBOSSA development server:</p>
-<table class="codehilitetable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span>1
+<table class="codehilitetable"><tr><td class="linenos"><div class="linenodiv"><pre>1
 2</pre></div></td><td class="code"><div class="codehilite"><pre><span></span>vagrant ssh
 python run.py
 </pre></div>
@@ -1751,7 +1751,7 @@ python run.py
 <p>Virtualenv (located in /home/vagrant/pybossa-env) is always activated on  login.</p>
 </div>
 <p>Now all you have to do is open the following URL in your web browser: <a href="http://127.0.0.1:5000">http://127.0.0.1:5000</a></p>
-<p>And you are done! Happy Hacking <img alt="🤓" class="emojione" src="https://cdnjs.cloudflare.com/ajax/libs/emojione/2.2.7/assets/svg/1f913.svg" title=":nerd:" />!</p>
+<p>And you are done! Happy Hacking <img alt="🤓" class="emojione" src="https://cdn.jsdelivr.net/emojione/assets/svg/1f913.svg" title=":nerd:" />!</p>
 <div class="admonition note">
 <p class="admonition-title">Note</p>
 <p>PYBOSSA needs a RQ worker process. It is running by default permanently in the background in the VM and is controlled by supervisor. Optional is also the RQ scheduler process for speeding up tasks like ZIP creation. This process is off by default now. If you are developing on RQ worker, you want to restart or disable it with supervisorctl.</p>

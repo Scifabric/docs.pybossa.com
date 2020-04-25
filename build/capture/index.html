@@ -1705,12 +1705,12 @@
 <p>With PYBOSA 2.10.0 you can ask the crowd to submit any type of data via the API</p>
 <h2 id="configuring-data-capturing">Configuring data capturing<a class="headerlink" href="#configuring-data-capturing" title="Permanent link">&para;</a></h2>
 <p>PYBOSSA has this feature enabled by default for the following extensions:</p>
-<table class="codehilitetable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span>1</pre></div></td><td class="code"><div class="codehilite"><pre><span></span><span class="p">[</span><span class="err">&#39;js&#39;</span><span class="p">,</span> <span class="err">&#39;css&#39;</span><span class="p">,</span> <span class="err">&#39;png&#39;</span><span class="p">,</span> <span class="err">&#39;jpg&#39;</span><span class="p">,</span> <span class="err">&#39;jpeg&#39;</span><span class="p">,</span> <span class="err">&#39;gif&#39;</span><span class="p">,</span> <span class="err">&#39;zip&#39;</span><span class="p">]</span>
+<table class="codehilitetable"><tr><td class="linenos"><div class="linenodiv"><pre>1</pre></div></td><td class="code"><div class="codehilite"><pre><span></span><span class="p">[</span><span class="err">&#39;js&#39;</span><span class="p">,</span> <span class="err">&#39;css&#39;</span><span class="p">,</span> <span class="err">&#39;png&#39;</span><span class="p">,</span> <span class="err">&#39;jpg&#39;</span><span class="p">,</span> <span class="err">&#39;jpeg&#39;</span><span class="p">,</span> <span class="err">&#39;gif&#39;</span><span class="p">,</span> <span class="err">&#39;zip&#39;</span><span class="p">]</span>
 </pre></div>
 </td></tr></table>
 
 <p>You can simply force a different set of extensions by using this config variable:</p>
-<table class="codehilitetable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span>1</pre></div></td><td class="code"><div class="codehilite"><pre><span></span><span class="n">ALLOWED_EXTENSIONS</span> <span class="o">=</span> <span class="p">[</span><span class="s1">&#39;mp4&#39;</span><span class="p">,</span> <span class="s1">&#39;wav&#39;</span><span class="p">]</span>
+<table class="codehilitetable"><tr><td class="linenos"><div class="linenodiv"><pre>1</pre></div></td><td class="code"><div class="codehilite"><pre><span></span><span class="n">ALLOWED_EXTENSIONS</span> <span class="o">=</span> <span class="p">[</span><span class="s1">&#39;mp4&#39;</span><span class="p">,</span> <span class="s1">&#39;wav&#39;</span><span class="p">]</span>
 </pre></div>
 </td></tr></table>
 
@@ -1718,7 +1718,7 @@
 <p>You can create a TaskRun with an image, video, PDF, audio (or any file) by doing a POST
 request with the following Content-Type: multipart/form-data.</p>
 <p>For example, in Python you could do it like this:</p>
-<p><table class="codehilitetable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span>1
+<p><table class="codehilitetable"><tr><td class="linenos"><div class="linenodiv"><pre>1
 2
 3
 4

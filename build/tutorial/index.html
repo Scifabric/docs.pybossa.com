@@ -2188,9 +2188,8 @@ code</a>) built by Scifabric for PYBOSSA. This demo is a simple microtasking pro
 <p>This tutorial uses the PYBOSSA <a href="../pbs/">pbs command line tool</a> as it will show you how you can handle your project from the command line like a pro.</p>
 <h2 id="setting-things-up">Setting Things Up<a class="headerlink" href="#setting-things-up" title="Permanent link">&para;</a></h2>
 <p>To run the tutorial, you will need to create an account in a
-PYBOSSA server. The PYBOSSA server could be running on your computer or in a third party server (pst, you can use Scifabric&rsquo;s <a href="https://crowdcrafting.org">free PYBOSSA server Crowdcrafting</a>).</p>
+PYBOSSA server. The PYBOSSA server could be running on your computer or in a third party server.</p>
 <p>Once you have a PYBOSSA account, you will have access to your profile by clicking on your name, and then on the <strong>My Settings</strong> section. There, you will find your API-KEY.</p>
-<p>If you are using Scifabric&rsquo;s Crowdcrafting server, the API-KEY would be available <a href="http://crowdcrafting.org/account/profile">here</a>.</p>
 <p><img alt="image" src="https://i.imgur.com/JcxciZc.png" /></p>
 <p>This <strong>API-KEY</strong> will identify and authenticate you via the PYBOSSA API. It will allow you to create a project, add tasks, update the project, etc. As you will be the owner of the project, only you will be able to perform these actions, but anyone will be able to participate in your project.</p>
 <div class="admonition note">
@@ -2225,14 +2224,14 @@ only 15 minutes!) where you will learn the basics, which are the main
 concepts that you will need for cloning the demo project repository.</p>
 <p>If you prefer to skip the course and take it in a later stage, the
 commands that you need to clone the repository are:</p>
-<table class="codehilitetable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span>1</pre></div></td><td class="code"><div class="codehilite"><pre><span></span>git clone git://github.com/Scifabric/app-flickrperson.git
+<table class="codehilitetable"><tr><td class="linenos"><div class="linenodiv"><pre>1</pre></div></td><td class="code"><div class="codehilite"><pre><span></span>git clone git://github.com/Scifabric/app-flickrperson.git
 </pre></div>
 </td></tr></table>
 
 <p>After running that command,  a new folder named <strong>app-flickrperson</strong> will be created from where you run the command.</p>
 <h3 id="configuring-the-name-short-name-thumbnail-etc">Configuring the name, short name, thumbnail, etc.<a class="headerlink" href="#configuring-the-name-short-name-thumbnail-etc" title="Permanent link">&para;</a></h3>
 <p>The Flickr Person Finder provides a file called <a href="https://github.com/Scifabric/app-flickrperson/blob/master/project.json">project.json</a> that has the following content:</p>
-<table class="codehilitetable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span>1
+<table class="codehilitetable"><tr><td class="linenos"><div class="linenodiv"><pre>1
 2
 3
 4
@@ -2247,12 +2246,12 @@ commands that you need to clone the repository are:</p>
 <p>This file, project.json identifies your project. It has its name, as well as a short description about it. As we are creating a new project, please, modify the <strong>name</strong> and <strong>short_name</strong> to make it yours.</p>
 <div class="admonition warning">
 <p class="admonition-title">Warning</p>
-<p>The <strong>name</strong> and <strong>short_name</strong> of the project <strong>must be unique</strong>! Otherwise, you will get an error (IntegrityError) when creating the project. This will happen if you use the Crowdcrafting server, as there&rsquo;s already a project with those values.</p>
+<p>The <strong>name</strong> and <strong>short_name</strong> of the project <strong>must be unique</strong>! Otherwise, you will get an error (IntegrityError) when creating the project.</p>
 </div>
 <p><strong>Description</strong> will be the text shown in the project listing page. It&rsquo;s important that you try to have a short description that explains what your project does.</p>
 <p>Now that we have the <strong>project.json</strong> file ready, we can create the
 project:</p>
-<table class="codehilitetable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span>1</pre></div></td><td class="code"><div class="codehilite"><pre><span></span>pbs --server server --api-key key create_project
+<table class="codehilitetable"><tr><td class="linenos"><div class="linenodiv"><pre>1</pre></div></td><td class="code"><div class="codehilite"><pre><span></span>pbs --server server --api-key key create_project
 </pre></div>
 </td></tr></table>
 
@@ -2275,12 +2274,12 @@ the users as they will get a bit more of information about the project
 goals.</p>
 <p>The file can be composed using Markdown or plain text.</p>
 <p>The long description will be shown on the project home page:</p>
-<table class="codehilitetable"><tr><td class="linenos"><div class="linenodiv"><pre>1</pre></div></td><td class="code"><div class="codehilite"><pre><span></span><span class="c">http://crowdcrafting.org/project/flickrperson</span>
+<table class="codehilitetable"><tr><td class="linenos"><div class="linenodiv"><pre>1</pre></div></td><td class="code"><div class="codehilite"><pre><span></span>https://yourserver/project/flickrperson
 </pre></div>
 </td></tr></table>
 
 <p>If you want to modify the description you have two options, edit it via the web interface, or change locally the <em>long_description.md</em> file and run pbs to update it:</p>
-<table class="codehilitetable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span>1</pre></div></td><td class="code"><div class="codehilite"><pre><span></span>pbs update_project
+<table class="codehilitetable"><tr><td class="linenos"><div class="linenodiv"><pre>1</pre></div></td><td class="code"><div class="codehilite"><pre><span></span>pbs update_project
 </pre></div>
 </td></tr></table>
 
@@ -2329,7 +2328,7 @@ anonymous ones) and store the submitted answers in the PYBOSSA database so that 
 contact Flickr, get the latest published photos to this web service, and
 save them in JSON format as a file (flickr_tasks.json), with the same
 structure as the CSV file (the keys are the same):</p>
-<table class="codehilitetable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span>1
+<table class="codehilitetable"><tr><td class="linenos"><div class="linenodiv"><pre>1
 2
 3</pre></div></td><td class="code"><div class="codehilite"><pre><span></span><span class="p">{</span> <span class="s1">&#39;link&#39;</span><span class="o">:</span> <span class="s1">&#39;http://www.flickr.com/photos/teleyinex/2945647308/&#39;</span><span class="p">,</span>
   <span class="s1">&#39;url_m&#39;</span><span class="o">:</span> <span class="s1">&#39;http://farm4.staticflickr.com/3208/2945647308_f048cc1633_m.jpg&#39;</span><span class="p">,</span> 
@@ -2343,19 +2342,19 @@ structure as the CSV file (the keys are the same):</p>
 </div>
 <p>As we have a CSV file with some tasks, let&rsquo;s use it for adding some
 tasks to your project. For adding tasks using the CSV file,  all you have to do is the following:</p>
-<table class="codehilitetable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span>1</pre></div></td><td class="code"><div class="codehilite"><pre><span></span>pbs add_tasks --tasks-file flickr_tasks.csv
+<table class="codehilitetable"><tr><td class="linenos"><div class="linenodiv"><pre>1</pre></div></td><td class="code"><div class="codehilite"><pre><span></span>pbs add_tasks --tasks-file flickr_tasks.csv
 </pre></div>
 </td></tr></table>
 
 <p>After running this command, you will see a progress bar that will let
 you know when all the tasks have been added to your project. This has been really easy, right? As you can see, adding tasks to a project is really straightforward if you have a CSV or Excel file. Each row will become a task in PYBOSSA, and you only have to run one command to get all of them into your project.</p>
 <p>As a bonus, let&rsquo;s also add some tasks using the <strong>get_images.py</strong> script. This script will contact Flickr, get the last 20 published photos, and then, save them in JSON format into a file called <strong>flickr_tasks.json</strong>.  By doing this, we are showing you how you can easily extract data from third-party services and import them into a PYBOSSA project. Thus, let&rsquo;s start by running the command and getting the tasks:</p>
-<table class="codehilitetable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span>1</pre></div></td><td class="code"><div class="codehilite"><pre><span></span>python get_images.py
+<table class="codehilitetable"><tr><td class="linenos"><div class="linenodiv"><pre>1</pre></div></td><td class="code"><div class="codehilite"><pre><span></span>python get_images.py
 </pre></div>
 </td></tr></table>
 
 <p>That command has created the file: <strong>flickr_tasks.json</strong>. Now, let&rsquo;s use it to add the pictures to our project:</p>
-<table class="codehilitetable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span>1</pre></div></td><td class="code"><div class="codehilite"><pre><span></span>pbs add_tasks --tasks-file flickr_tasks.json
+<table class="codehilitetable"><tr><td class="linenos"><div class="linenodiv"><pre>1</pre></div></td><td class="code"><div class="codehilite"><pre><span></span>pbs add_tasks --tasks-file flickr_tasks.json
 </pre></div>
 </td></tr></table>
 
@@ -2368,7 +2367,7 @@ and anonymous users) until 30 different task runs are obtained for each task. Th
 answer (task runs in PYBOSSA lingo) to the same task. PYBOSSA identifies anonymous users via their IP, while registered users via their PYBOSSA id.</p>
 <p>Why PYBOSSA uses a default value of 30? Well, because we are getting 30 observations for a task, and if the data is normal, at least 30 samples should be obtained to get that model. In any case, you can easily change this value for each, using the task settings section of your project (or via the API using the <a href="../pbs/#updating-tasks-redundancy-from-a-project">pbs</a> tool). </p>
 <p>If you want to improve the quality of the results for one task and get more confidence in the data when you will analyze it, you can modify the redundancy value with the pbs command. For example, to reduce the number of users that will analyze each task to ten, run the following command:</p>
-<table class="codehilitetable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span>1</pre></div></td><td class="code"><div class="codehilite"><pre><span></span>pbs add_tasks --tasks-file file --redundancy <span class="m">10</span>
+<table class="codehilitetable"><tr><td class="linenos"><div class="linenodiv"><pre>1</pre></div></td><td class="code"><div class="codehilite"><pre><span></span>pbs add_tasks --tasks-file file --redundancy <span class="m">10</span>
 </pre></div>
 </td></tr></table>
 
@@ -2378,7 +2377,7 @@ answer (task runs in PYBOSSA lingo) to the same task. PYBOSSA identifies anonymo
 <p>A task with a higher priority will be delivered first to the volunteers.
 Hence if you have a project where you need to analyze a task first due to an external event (a new data sample has been obtained), then you can modify the priority of the newly created task and deliver it first.</p>
 <p>If you have a new batch of tasks, instead of only a task, that needs to be processed before all the available ones, you can do it with pbs as well. Run the following command:</p>
-<table class="codehilitetable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span>1</pre></div></td><td class="code"><div class="codehilite"><pre><span></span>pbs add_tasks --tasks-file file --priority <span class="m">1</span>
+<table class="codehilitetable"><tr><td class="linenos"><div class="linenodiv"><pre>1</pre></div></td><td class="code"><div class="codehilite"><pre><span></span>pbs add_tasks --tasks-file file --priority <span class="m">1</span>
 </pre></div>
 </td></tr></table>
 
@@ -2413,7 +2412,7 @@ library, so you don&rsquo;t have to include it in your template.</p>
 <p>All you have to do is to add a script section where you will be loading
 the tasks and saving the answers from the users: <script></script>.</p>
 <p>This template file will be used by the pbs command line tool to add the task presenter to the project. You can add it running the following command:</p>
-<table class="codehilitetable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span>1</pre></div></td><td class="code"><div class="codehilite"><pre><span></span>pbs update_project
+<table class="codehilitetable"><tr><td class="linenos"><div class="linenodiv"><pre>1</pre></div></td><td class="code"><div class="codehilite"><pre><span></span>pbs update_project
 </pre></div>
 </td></tr></table>
 
@@ -2435,7 +2434,7 @@ JavaScript functions to get a task from the PYBOSSA server and populate it in th
 <p>For this tutorial, we have a very simple DOM. At the
 beginning you will find a big div that will be used to show some
 messages to the user about the success of an action, for instance, that an answer has been saved or that a new task is being loaded. Take a look:</p>
-<table class="codehilitetable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span> 1
+<table class="codehilitetable"><tr><td class="linenos"><div class="linenodiv"><pre> 1
  2
  3
  4
@@ -2496,7 +2495,7 @@ messages to the user about the success of an action, for instance, that an answe
 <p>Then we have the skeleton where we will be loading the Flickr photos, and the submission buttons for the user.</p>
 <p>First, it creates a row that will have two columns (in Bootstrap a row
 can have 12 columns), so we will populate a structure like this:</p>
-<table class="codehilitetable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span>1
+<table class="codehilitetable"><tr><td class="linenos"><div class="linenodiv"><pre>1
 2
 3
 4
@@ -2513,7 +2512,7 @@ can have 12 columns), so we will populate a structure like this:</p>
 </td></tr></table>
 
 <p>The content for the first column where we will be showing the question of the task, the submission buttons with the answers: yes, no, and I don&rsquo;t know, and obviously the user progress for the user, so he can know how many tasks he has completed and how many are left. The code is the following:</p>
-<table class="codehilitetable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span> 1
+<table class="codehilitetable"><tr><td class="linenos"><div class="linenodiv"><pre> 1
  2
  3
  4
@@ -2576,7 +2575,7 @@ can have 12 columns), so we will populate a structure like this:</p>
 </td></tr></table>
 
 <p>Then we will add the code for showing the photos. This second column will be much simpler:</p>
-<table class="codehilitetable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span>1
+<table class="codehilitetable"><tr><td class="linenos"><div class="linenodiv"><pre>1
 2
 3
 4
@@ -2592,7 +2591,7 @@ can have 12 columns), so we will populate a structure like this:</p>
 created previously, so we show an image while the first one from the
 task is getting loaded.</p>
 <p>The second section of the skeleton, if we join the previous snippets of code will be like this:</p>
-<table class="codehilitetable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span> 1
+<table class="codehilitetable"><tr><td class="linenos"><div class="linenodiv"><pre> 1
  2
  3
  4
@@ -2684,7 +2683,7 @@ Flickr and ask the volunteer an answer about them.</p>
 Flickr (the URL is provided by the task object in the field
 task.info.url_b), and resolve the deferred object, so another task for
 the current user can be pre-loaded. The code is the following:</p>
-<table class="codehilitetable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span> 1
+<table class="codehilitetable"><tr><td class="linenos"><div class="linenodiv"><pre> 1
  2
  3
  4
@@ -2719,7 +2718,7 @@ the current user can be pre-loaded. The code is the following:</p>
 </td></tr></table>
 
 <p>The <strong>pybossa.presentTask</strong> method will be called when a task has been obtained from the server:</p>
-<table class="codehilitetable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span> 1
+<table class="codehilitetable"><tr><td class="linenos"><div class="linenodiv"><pre> 1
  2
  3
  4
@@ -2747,9 +2746,8 @@ argument to the pybossa.presentTask method. First, we will need to check that we
 <em>skeleton</em>. In this demo project, we will update the
 question, adding the photo to the DOM, refreshing the user progress and add some actions to the submission buttons so we can save the answer of the volunteer.</p>
 <p>The PYBOSSA.JS library treats the user input as an &ldquo;async function.&rdquo;
-This is why the function gets a deferred object, as this object will be
-<em>resolved</em> when the user clicks on one of the possible answers. We use this approach to load in the background the next task for the user while the volunteer is solving the current one. Once the answer has been saved in the server, we resolve the deferred:</p>
-<table class="codehilitetable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span> 1
+This is why the function gets a deferred object, as this object will be<em>resolved</em> when the user clicks on one of the possible answers. We use this approach to load in the background the next task for the user while the volunteer is solving the current one. Once the answer has been saved in the server, we resolve the deferred:</p>
+<table class="codehilitetable"><tr><td class="linenos"><div class="linenodiv"><pre> 1
  2
  3
  4
@@ -2817,7 +2815,7 @@ This is why the function gets a deferred object, as this object will be
 
 <p>It is important to note that in this method we bind the <em>on-click</em>
 action for the <em>Yes</em>, <em>No</em> and <em>I don&rsquo;t know</em> buttons to call the above snippet:</p>
-<table class="codehilitetable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span> 1
+<table class="codehilitetable"><tr><td class="linenos"><div class="linenodiv"><pre> 1
  2
  3
  4
@@ -2857,7 +2855,7 @@ action for the <em>Yes</em>, <em>No</em> and <em>I don&rsquo;t know</em> buttons
 <p>Finally, the pybossa.presentTask calls a method named
 <strong>loadUserProgress</strong>. This method is in charge of getting the user
 the progress of the user and update the progress bar accordingly:</p>
-<table class="codehilitetable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span> 1
+<table class="codehilitetable"><tr><td class="linenos"><div class="linenodiv"><pre> 1
  2
  3
  4
@@ -2881,7 +2879,7 @@ the progress of the user and update the progress bar accordingly:</p>
 
 <p>You can update the code only to show the number of answers, or remove it entirely. However, the volunteers will benefit from this type of information as they will be able to know how many tasks they have to do, giving an idea of progress while they contribute to the project.</p>
 <p>Finally, we only need in our code to tell pybossa.js to run our project:</p>
-<table class="codehilitetable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span>1</pre></div></td><td class="code"><div class="codehilite"><pre><span></span><span class="nx">pybossa</span><span class="p">.</span><span class="nx">run</span><span class="p">(</span><span class="s1">&#39;flickrperson&#39;</span><span class="p">)</span>
+<table class="codehilitetable"><tr><td class="linenos"><div class="linenodiv"><pre>1</pre></div></td><td class="code"><div class="codehilite"><pre><span></span><span class="nx">pybossa</span><span class="p">.</span><span class="nx">run</span><span class="p">(</span><span class="s1">&#39;flickrperson&#39;</span><span class="p">)</span>
 </pre></div>
 </td></tr></table>
 
@@ -2891,13 +2889,13 @@ buttons: <strong>Yes</strong>, <strong>No</strong> or <strong>I don&rsquo;t know
 <p><em>Yes</em> and <em>No</em> save the answer in the DB with information about the task and the answer, while the button <em>I don&rsquo;t know</em> loads another task as sometimes the image is not available.</p>
 <p>To submit and save the answer from the user, we will use again
 the PYBOSSA.JS library. In this case:</p>
-<table class="codehilitetable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span>1</pre></div></td><td class="code"><div class="codehilite"><pre><span></span><span class="nx">pybossa</span><span class="p">.</span><span class="nx">saveTask</span><span class="p">(</span> <span class="nx">taskid</span><span class="p">,</span> <span class="nx">answer</span> <span class="p">)</span>
+<table class="codehilitetable"><tr><td class="linenos"><div class="linenodiv"><pre>1</pre></div></td><td class="code"><div class="codehilite"><pre><span></span><span class="nx">pybossa</span><span class="p">.</span><span class="nx">saveTask</span><span class="p">(</span> <span class="nx">taskid</span><span class="p">,</span> <span class="nx">answer</span> <span class="p">)</span>
 </pre></div>
 </td></tr></table>
 
 <p>The <em>pybossa.saveTask</em> method saves an answer for a given task. In the previous section, we show that in the pybossa.presentTask method the <em>task-id</em> can be obtained, as we will be passing the object to saveTask method.</p>
 <p>The method allows us to give a successful pop-up feedback for the user, so you can use the following structure to warn the user and tell him that his answer has been successfully saved:</p>
-<table class="codehilitetable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span>1
+<table class="codehilitetable"><tr><td class="linenos"><div class="linenodiv"><pre>1
 2
 3
 4
@@ -2927,7 +2925,7 @@ finish_time - created)</p>
 <h3 id="updating-the-template-for-all-the-tasks">Updating the template for all the tasks<a class="headerlink" href="#updating-the-template-for-all-the-tasks" title="Permanent link">&para;</a></h3>
 <p>It is possible to update the template of the project without having to re-create the project and its tasks. To update the template,
 you only have to modify the file <em>template.html</em> and run the following command:</p>
-<table class="codehilitetable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span>1</pre></div></td><td class="code"><div class="codehilite"><pre><span></span>pbs update_project
+<table class="codehilitetable"><tr><td class="linenos"><div class="linenodiv"><pre>1</pre></div></td><td class="code"><div class="codehilite"><pre><span></span>pbs update_project
 </pre></div>
 </td></tr></table>
 
@@ -2947,14 +2945,14 @@ project.</p>
 your project, so in that case, it will load the <strong>tutorial</strong>, if your project has one.</p>
 <p>Adding a tutorial is simple: you only have to create a file named
 <strong>tutorial.html</strong> and load the content of the file using pbs:</p>
-<table class="codehilitetable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span>1</pre></div></td><td class="code"><div class="codehilite"><pre><span></span>pbs update_project
+<table class="codehilitetable"><tr><td class="linenos"><div class="linenodiv"><pre>1</pre></div></td><td class="code"><div class="codehilite"><pre><span></span>pbs update_project
 </pre></div>
 </td></tr></table>
 
 <p>The tutorial could have whatever you like: videos, nice animations, etc. PYBOSSA will render for you the header and the footer, so you only have to focus on the content. You can copy the template.html file and use it as a draft of your tutorial or just include a video of yourself explaining why your project is important and how, as a volunteer, you can contribute.</p>
 <p>If your project has a tutorial, you can access it directly in
 this endpoint:</p>
-<table class="codehilitetable"><tr><td class="linenos"><div class="linenodiv"><pre>1</pre></div></td><td class="code"><div class="codehilite"><pre><span></span><span class="c">http://server/project/tutorial</span>
+<table class="codehilitetable"><tr><td class="linenos"><div class="linenodiv"><pre>1</pre></div></td><td class="code"><div class="codehilite"><pre><span></span>http://server/project/tutorial
 </pre></div>
 </td></tr></table>
 
@@ -2968,7 +2966,7 @@ materials: api/helpingmaterial.</p>
 answer for classifying pictures of animals). In this case, you can do
 the following (using the popular Python requests library, but you can
 use any other programming language):</p>
-<table class="codehilitetable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span> 1
+<table class="codehilitetable"><tr><td class="linenos"><div class="linenodiv"><pre> 1
  2
  3
  4
@@ -2997,13 +2995,14 @@ use any other programming language):</p>
 <p>You can add as many files as you want. Then, from any place you can
 query the helping material endpoint to retrieve the example/tutorial
 materials for helping your users.</p>
-<div class="admonition tip pbs and helping materials">
+<div class="admonition tip">
 <p class="admonition-title">Tip</p>
-<p>You can use PBS to add helping materials from an Excel or CSV file. Check the <a href="../pbs/#helping-materials">documentation</a>.</p>
 </div>
+<p>PBS and helping materials
+     You can use PBS to add helping materials from an Excel or CSV file. Check the <a href="../pbs/#helping-materials">documentation</a>.</p>
 <h2 id="providing-some-i18n-support">Providing some I18n support<a class="headerlink" href="#providing-some-i18n-support" title="Permanent link">&para;</a></h2>
 <p>Sometimes, you may want to provide the task interface in their language. To support this, you can access their locale via Javascript in an effortless way, as we&rsquo;ve placed the user locale in a hidden &lsquo;div&rsquo; node:</p>
-<table class="codehilitetable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span>1</pre></div></td><td class="code"><div class="codehilite"><pre><span></span><span class="kd">var</span> <span class="nx">userLocale</span> <span class="o">=</span> <span class="nb">document</span><span class="p">.</span><span class="nx">getElementById</span><span class="p">(</span><span class="s1">&#39;PYBOSSA_USER_LOCALE&#39;</span><span class="p">).</span><span class="nx">textContent</span><span class="p">.</span><span class="nx">trim</span><span class="p">();</span>
+<table class="codehilitetable"><tr><td class="linenos"><div class="linenodiv"><pre>1</pre></div></td><td class="code"><div class="codehilite"><pre><span></span><span class="kd">var</span> <span class="nx">userLocale</span> <span class="o">=</span> <span class="nb">document</span><span class="p">.</span><span class="nx">getElementById</span><span class="p">(</span><span class="s1">&#39;PYBOSSA_USER_LOCALE&#39;</span><span class="p">).</span><span class="nx">textContent</span><span class="p">.</span><span class="nx">trim</span><span class="p">();</span>
 </pre></div>
 </td></tr></table>
 
@@ -3015,7 +3014,7 @@ strings in the locale of the user.</p>
 <p>Anonymous users will be only shown with <strong>en</strong> language by default. This feature only works for authenticated users that choose their locale in their account. You can, however, load the translated strings using the browser preferred language.</p>
 </div>
 <p>First of all, check the <em>tutorial.html file</em>. You will see it consists on some HTML plus some Javascript inside a script tag to handle the different steps of the tutorial. Here you have a snippet of HTML tutorial file:</p>
-<table class="codehilitetable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span> 1
+<table class="codehilitetable"><tr><td class="linenos"><div class="linenodiv"><pre> 1
  2
  3
  4
@@ -3053,7 +3052,7 @@ strings in the locale of the user.</p>
                 <span class="p">&lt;</span><span class="nt">h3</span><span class="p">&gt;</span>Flickr Person Finder tutorial<span class="p">&lt;/</span><span class="nt">h3</span><span class="p">&gt;</span>
             <span class="p">&lt;/</span><span class="nt">div</span><span class="p">&gt;</span>
             <span class="p">&lt;</span><span class="nt">div</span> <span class="na">id</span><span class="o">=</span><span class="s">&quot;0&quot;</span> <span class="na">class</span><span class="o">=</span><span class="s">&quot;modal-body&quot;</span> <span class="na">style</span><span class="o">=</span><span class="s">&quot;display:none&quot;</span><span class="p">&gt;</span>
-                <span class="p">&lt;</span><span class="nt">p</span><span class="p">&gt;&lt;</span><span class="nt">strong</span><span class="p">&gt;</span>Hi!<span class="p">&lt;/</span><span class="nt">strong</span><span class="p">&gt;</span> This is a <span class="p">&lt;</span><span class="nt">strong</span><span class="p">&gt;</span>demo project<span class="p">&lt;/</span><span class="nt">strong</span><span class="p">&gt;</span> that shows how you can do pattern recognition on pictures or images using the PYBOSSA framework in Crowdcrafting.org.
+                <span class="p">&lt;</span><span class="nt">p</span><span class="p">&gt;&lt;</span><span class="nt">strong</span><span class="p">&gt;</span>Hi!<span class="p">&lt;/</span><span class="nt">strong</span><span class="p">&gt;</span> This is a <span class="p">&lt;</span><span class="nt">strong</span><span class="p">&gt;</span>demo project<span class="p">&lt;/</span><span class="nt">strong</span><span class="p">&gt;</span> that shows how you can do pattern recognition on pictures or images using the PYBOSSA framework.
                <span class="p">&lt;/</span><span class="nt">p</span><span class="p">&gt;</span>
             <span class="p">&lt;/</span><span class="nt">div</span><span class="p">&gt;</span>
             <span class="p">&lt;</span><span class="nt">div</span> <span class="na">id</span><span class="o">=</span><span class="s">&quot;1&quot;</span> <span class="na">class</span><span class="o">=</span><span class="s">&quot;modal-body&quot;</span> <span class="na">style</span><span class="o">=</span><span class="s">&quot;display:none&quot;</span><span class="p">&gt;</span>
@@ -3087,7 +3086,7 @@ languages you&rsquo;re planning to support.</p>
 corresponds to the name of the locale (&lsquo;en&rsquo; for English, &lsquo;es&rsquo;
 for Spanish, etc.), and translate the inner text of it, but leave all
 the HTML the same in every version (tags, ids, classes, etc.) like:</p>
-<table class="codehilitetable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span>1
+<table class="codehilitetable"><tr><td class="linenos"><div class="linenodiv"><pre>1
 2
 3
 4</pre></div></td><td class="code"><div class="codehilite"><pre><span></span><span class="p">&lt;</span><span class="nt">div</span> <span class="na">id</span><span class="o">=</span><span class="s">&#39;es&#39;</span> <span class="na">class</span><span class="o">=</span><span class="s">&quot;row&quot;</span><span class="p">&gt;</span>
@@ -3099,7 +3098,7 @@ the HTML the same in every version (tags, ids, classes, etc.) like:</p>
 
 <p>Finally, in the Javascript section of the tutorial, you will need to add some extra code to enable multilingual tutorials. Thus, modify the
 javascript from:</p>
-<table class="codehilitetable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span> 1
+<table class="codehilitetable"><tr><td class="linenos"><div class="linenodiv"><pre> 1
  2
  3
  4
@@ -3152,7 +3151,7 @@ javascript from:</p>
 </td></tr></table>
 
 <p>To:</p>
-<table class="codehilitetable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span> 1
+<table class="codehilitetable"><tr><td class="linenos"><div class="linenodiv"><pre> 1
  2
  3
  4
@@ -3234,7 +3233,7 @@ only the tutorial that fits his locale settings is shown.</p>
 <h3 id="another-method-to-support-i18n">Another method to support I18n<a class="headerlink" href="#another-method-to-support-i18n" title="Permanent link">&para;</a></h3>
 <p>Another option for translating your project to different languages is
 using a JSON object like this:</p>
-<table class="codehilitetable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span>1
+<table class="codehilitetable"><tr><td class="linenos"><div class="linenodiv"><pre>1
 2
 3
 4
@@ -3256,14 +3255,14 @@ using a JSON object like this:</p>
 
 <p>This object can be placed in the <em>tutorial.html</em> or <em>template.html</em> file to load the proper strings translated to your users.</p>
 <p>The logic is very simple. With the following code you grab the language that should be loaded for the current user:</p>
-<table class="codehilitetable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span>1</pre></div></td><td class="code"><div class="codehilite"><pre><span></span><span class="kd">var</span> <span class="nx">userLocale</span> <span class="o">=</span> <span class="nb">document</span><span class="p">.</span><span class="nx">getElementById</span><span class="p">(</span><span class="s1">&#39;PYBOSSA_USER_LOCALE&#39;</span><span class="p">).</span><span class="nx">textContent</span><span class="p">.</span><span class="nx">trim</span><span class="p">();</span>
+<table class="codehilitetable"><tr><td class="linenos"><div class="linenodiv"><pre>1</pre></div></td><td class="code"><div class="codehilite"><pre><span></span><span class="kd">var</span> <span class="nx">userLocale</span> <span class="o">=</span> <span class="nb">document</span><span class="p">.</span><span class="nx">getElementById</span><span class="p">(</span><span class="s1">&#39;PYBOSSA_USER_LOCALE&#39;</span><span class="p">).</span><span class="nx">textContent</span><span class="p">.</span><span class="nx">trim</span><span class="p">();</span>
 </pre></div>
 </td></tr></table>
 
 <p>Now, use userLocale to load the strings. For example, for
 <em>template.html</em> and the Flickrperson demo project, you will find the
 following code at the start of the script:</p>
-<table class="codehilitetable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span> 1
+<table class="codehilitetable"><tr><td class="linenos"><div class="linenodiv"><pre> 1
  2
  3
  4
@@ -3377,7 +3376,7 @@ messages dictionary with all the ids that we want to translate. Finally, we add 
 <p>Finally, we need actually to load those translated strings into the
 template. For doing this step, all we&rsquo;ve to do is adding the following
 code to our <em>template.html</em> file at the function pybossa.presentTask:</p>
-<table class="codehilitetable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span>1
+<table class="codehilitetable"><tr><td class="linenos"><div class="linenodiv"><pre>1
 2
 3
 4
@@ -3402,7 +3401,7 @@ them and delete them. The api endpoint allows you as well to upload a picture to
 <p>You can use this endpoint for uploading images via the endpoint using the multipart/form-data Content-Type.</p>
 <p>For example, imagine that you want to add a photo as a cover and then the body of the blogpost. In this case, you can do the following (using the popular Python requests library, but you can use any other
 programming language):</p>
-<table class="codehilitetable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span> 1
+<table class="codehilitetable"><tr><td class="linenos"><div class="linenodiv"><pre> 1
  2
  3
  4
@@ -3440,7 +3439,7 @@ programming language):</p>
 </ul>
 <p>For exporting the data, all you have to do is to visit the following URL
 in your web-browser:</p>
-<table class="codehilitetable"><tr><td class="linenos"><div class="linenodiv"><pre>1</pre></div></td><td class="code"><div class="codehilite"><pre><span></span><span class="c">http://PYBOSSA-SERVER/project/slug/tasks/export</span>
+<table class="codehilitetable"><tr><td class="linenos"><div class="linenodiv"><pre>1</pre></div></td><td class="code"><div class="codehilite"><pre><span></span>http://PYBOSSA-SERVER/project/slug/tasks/export
 </pre></div>
 </td></tr></table>
 
@@ -3448,7 +3447,7 @@ in your web-browser:</p>
 <p><img alt="image" src="https://i.imgur.com/m5gDyjU.png" /></p>
 <p>The previous methods will export all the tasks, results and task runs, <strong>even if they are not completed</strong>. When a task has been completed, in other words, when a task has collected the number of answers specified by the task (<strong>n_answers</strong> = 30 by default), a <strong>brown button</strong> with the text <strong>Download results</strong> will pop up, and if you click it all the answers for the given task will be shown in JSON format.</p>
 <p>You can check which tasks are completed, in the following URL:</p>
-<table class="codehilitetable"><tr><td class="linenos"><div class="linenodiv"><pre>1</pre></div></td><td class="code"><div class="codehilite"><pre><span></span><span class="c">http://PYBOSSA-SERVER/project/slug</span>
+<table class="codehilitetable"><tr><td class="linenos"><div class="linenodiv"><pre>1</pre></div></td><td class="code"><div class="codehilite"><pre><span></span>http://PYBOSSA-SERVER/project/slug
 </pre></div>
 </td></tr></table>
 
@@ -3460,7 +3459,7 @@ then click in the <strong>Browse</strong> box:</p>
 <p>You could download the results also using the API. For example, you
 could write a small script that gets the list of tasks that have been
 completed using this URL:</p>
-<table class="codehilitetable"><tr><td class="linenos"><div class="linenodiv"><pre>1</pre></div></td><td class="code"><div class="codehilite"><pre><span></span><span class="err">GET http://PYBOSSA-SERVER/api/task?state=completed</span>
+<table class="codehilitetable"><tr><td class="linenos"><div class="linenodiv"><pre>1</pre></div></td><td class="code"><div class="codehilite"><pre><span></span>GET http://PYBOSSA-SERVER/api/task?state=completed
 </pre></div>
 </td></tr></table>
 
@@ -3470,7 +3469,7 @@ completed using this URL:</p>
 </div>
 <p>Once you have obtained the list of completed tasks, your script could
 start requesting the collected answers for the given tasks:</p>
-<table class="codehilitetable"><tr><td class="linenos"><div class="linenodiv"><pre>1</pre></div></td><td class="code"><div class="codehilite"><pre><span></span><span class="err">GET http://PYBOSSA-SERVER/api/taskrun?task_id=TASK-ID</span>
+<table class="codehilitetable"><tr><td class="linenos"><div class="linenodiv"><pre>1</pre></div></td><td class="code"><div class="codehilite"><pre><span></span>GET http://PYBOSSA-SERVER/api/taskrun?task_id=TASK-ID
 </pre></div>
 </td></tr></table>
 
@@ -3498,7 +3497,7 @@ and host it there.</p>
 <p>For example, imagine your project is asking the following question in a set of images: &ldquo;Do you see a triangle in this picture?&rdquo; The possible
 answers are: yes and no.</p>
 <p>Your project has configured the task redundancy to 5, so five people will answer that question for a given image (or task). When the 5<sup>th</sup> person sends the answer, the server marks the task as completed, and it creates a result for the given task associating the answers, the task and the project:</p>
-<table class="codehilitetable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span>1
+<table class="codehilitetable"><tr><td class="linenos"><div class="linenodiv"><pre>1
 2
 3
 4
@@ -3514,7 +3513,7 @@ answers are: yes and no.</p>
 <strong>info</strong> that allows you to store the <strong>final result</strong> for that task
 using the task_runs 1, 2, 3, 4, 5. Imagine that the five volunteers
 answered: yes, then as you are the project owner you could update the info field with that value:</p>
-<table class="codehilitetable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span>1
+<table class="codehilitetable"><tr><td class="linenos"><div class="linenodiv"><pre>1
 2
 3
 4
@@ -3533,7 +3532,7 @@ your result project section using the API.</p>
 maps, WebGL, etc.</p>
 <h2 id="api-errors">API Errors<a class="headerlink" href="#api-errors" title="Permanent link">&para;</a></h2>
 <p>If something goes wrong, you should get an error message similar to the following one:</p>
-<table class="codehilitetable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span>1
+<table class="codehilitetable"><tr><td class="linenos"><div class="linenodiv"><pre>1
 2
 3
 4

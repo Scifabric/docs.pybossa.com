@@ -1931,7 +1931,7 @@
 </ul>
 <h2 id="installation">Installation<a class="headerlink" href="#installation" title="Permanent link">&para;</a></h2>
 <p>PBS is available in Pypi so that you can install the software with pip:</p>
-<table class="codehilitetable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span>1</pre></div></td><td class="code"><div class="codehilite"><pre><span></span>pip install pybossa-pbs
+<table class="codehilitetable"><tr><td class="linenos"><div class="linenodiv"><pre>1</pre></div></td><td class="code"><div class="codehilite"><pre><span></span>pip install pybossa-pbs
 </pre></div>
 </td></tr></table>
 
@@ -1943,7 +1943,7 @@
 <h2 id="configuring-pbs">Configuring PBS<a class="headerlink" href="#configuring-pbs" title="Permanent link">&para;</a></h2>
 <p>By default, PBS does not need a config file. However, you will have to specify for every command the server and your API key to add tasks, create a project, etc. For determining the server and API key
 that you want to use, all you have to do is pass it as an argument:</p>
-<table class="codehilitetable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span>1</pre></div></td><td class="code"><div class="codehilite"><pre><span></span>pbs --server http://server.com --api-key yourkey subcommand
+<table class="codehilitetable"><tr><td class="linenos"><div class="linenodiv"><pre>1</pre></div></td><td class="code"><div class="codehilite"><pre><span></span>pbs --server http://server.com --api-key yourkey subcommand
 </pre></div>
 </td></tr></table>
 
@@ -1952,50 +1952,50 @@ configuration file where you can add all the servers that you are
 working with.</p>
 <p>To create the config file, all you have to do is creating a
 <strong>.pybossa.cfg</strong> file in your home folder:</p>
-<table class="codehilitetable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span>1
+<table class="codehilitetable"><tr><td class="linenos"><div class="linenodiv"><pre>1
 2</pre></div></td><td class="code"><div class="codehilite"><pre><span></span><span class="nb">cd</span> ~
 vim .pybossa.cfg
 </pre></div>
 </td></tr></table>
 
 <p>The file should have the following structure:</p>
-<table class="codehilitetable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span>1
+<table class="codehilitetable"><tr><td class="linenos"><div class="linenodiv"><pre>1
 2
 3</pre></div></td><td class="code"><div class="codehilite"><pre><span></span><span class="p">[</span><span class="n">default</span><span class="p">]</span>
-<span class="n">server</span><span class="p">:</span> <span class="n">http</span><span class="p">:</span><span class="o">//</span><span class="n">theserver</span><span class="o">.</span><span class="n">com</span>
+<span class="n">server</span><span class="p">:</span> <span class="n">https</span><span class="p">:</span><span class="o">//</span><span class="n">theserver</span><span class="o">.</span><span class="n">com</span>
 <span class="n">apikey</span><span class="p">:</span> <span class="n">yourkey</span>
 </pre></div>
 </td></tr></table>
 
 <p>If you are working with more servers, add another section below it. For example:</p>
-<table class="codehilitetable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span>1
+<table class="codehilitetable"><tr><td class="linenos"><div class="linenodiv"><pre>1
 2
 3
 4
 5
 6
 7</pre></div></td><td class="code"><div class="codehilite"><pre><span></span><span class="p">[</span><span class="n">default</span><span class="p">]</span>
-<span class="n">server</span><span class="p">:</span> <span class="n">http</span><span class="p">:</span><span class="o">//</span><span class="n">theserver</span><span class="o">.</span><span class="n">com</span>
+<span class="n">server</span><span class="p">:</span> <span class="n">https</span><span class="p">:</span><span class="o">//</span><span class="n">theserver</span><span class="o">.</span><span class="n">com</span>
 <span class="n">apikey</span><span class="p">:</span> <span class="n">yourkey</span>
 
-<span class="p">[</span><span class="n">crowdcrafting</span><span class="p">]</span>
-<span class="n">server</span><span class="p">:</span> <span class="n">http</span><span class="p">:</span><span class="o">//</span><span class="n">crowdcrafting</span><span class="o">.</span><span class="n">org</span>
-<span class="n">apikey</span><span class="p">:</span> <span class="n">yourkeyincrowdcrafting</span>
+<span class="p">[</span><span class="n">yourserver</span><span class="p">]</span>
+<span class="n">server</span><span class="p">:</span> <span class="n">https</span><span class="p">:</span><span class="o">//</span><span class="n">yourserver</span><span class="o">.</span><span class="n">org</span>
+<span class="n">apikey</span><span class="p">:</span> <span class="n">yourkeyinyourserver</span><span class="o">.</span><span class="n">org</span>
 </pre></div>
 </td></tr></table>
 
 <p>By default, pbs will use the credentials of the default section, so you don&rsquo;t have to type anything to use those values. However, if you want to do actions on another server, all you have to do is the following:</p>
-<table class="codehilitetable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span>1</pre></div></td><td class="code"><div class="codehilite"><pre><span></span>pbs --credentials crowdcrafting --help
+<table class="codehilitetable"><tr><td class="linenos"><div class="linenodiv"><pre>1</pre></div></td><td class="code"><div class="codehilite"><pre><span></span>pbs --credentials yourserver --help
 </pre></div>
 </td></tr></table>
 
-<p>That command will use the values of the crowdcrafting section.</p>
+<p>That command will use the values of the yourserver section.</p>
 <h2 id="project">Project<a class="headerlink" href="#project" title="Permanent link">&para;</a></h2>
 <p>This section shows how you can handle a project using PBS.</p>
 <h3 id="creating-a-project">Creating a project<a class="headerlink" href="#creating-a-project" title="Permanent link">&para;</a></h3>
 <p>Creating a project is very simple. All you have to do is create a file
 named <strong>project.json</strong> with the following fields:</p>
-<table class="codehilitetable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span>1
+<table class="codehilitetable"><tr><td class="linenos"><div class="linenodiv"><pre>1
 2
 3
 4
@@ -2009,19 +2009,19 @@ named <strong>project.json</strong> with the following fields:</p>
 
 <p>If you use the name <strong>project.json</strong> you will not have to pass the file
 name via an argument, as it&rsquo;s the name used by default. Once you have the file created, run the following command:</p>
-<table class="codehilitetable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span>1</pre></div></td><td class="code"><div class="codehilite"><pre><span></span>pbs create_project
+<table class="codehilitetable"><tr><td class="linenos"><div class="linenodiv"><pre>1</pre></div></td><td class="code"><div class="codehilite"><pre><span></span>pbs create_project
 </pre></div>
 </td></tr></table>
 
 <p>That command should create the project. If you want to see all the
 available options, please check the <strong>&ndash;help</strong> command:</p>
-<table class="codehilitetable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span>1</pre></div></td><td class="code"><div class="codehilite"><pre><span></span>pbs create_project --help
+<table class="codehilitetable"><tr><td class="linenos"><div class="linenodiv"><pre>1</pre></div></td><td class="code"><div class="codehilite"><pre><span></span>pbs create_project --help
 </pre></div>
 </td></tr></table>
 
 <h3 id="updating-templates">Updating templates<a class="headerlink" href="#updating-templates" title="Permanent link">&para;</a></h3>
 <p>Now that you have added tasks, you can work in your templates. All you have to do to add/update the templates of your project is running the following command:</p>
-<table class="codehilitetable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span>1</pre></div></td><td class="code"><div class="codehilite"><pre><span></span>pbs update_project
+<table class="codehilitetable"><tr><td class="linenos"><div class="linenodiv"><pre>1</pre></div></td><td class="code"><div class="codehilite"><pre><span></span>pbs update_project
 </pre></div>
 </td></tr></table>
 
@@ -2033,13 +2033,13 @@ available options, please check the <strong>&ndash;help</strong> command:</p>
 <li>tutorial.html</li>
 </ul>
 <p>If you want to use another template, just use these arguments:</p>
-<table class="codehilitetable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span>1</pre></div></td><td class="code"><div class="codehilite"><pre><span></span>pbs update_project --template /tmp/template.html
+<table class="codehilitetable"><tr><td class="linenos"><div class="linenodiv"><pre>1</pre></div></td><td class="code"><div class="codehilite"><pre><span></span>pbs update_project --template /tmp/template.html
 </pre></div>
 </td></tr></table>
 
 <p>If you want to see all the available options, please check the
 <strong>&ndash;help</strong> command:</p>
-<table class="codehilitetable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span>1</pre></div></td><td class="code"><div class="codehilite"><pre><span></span>pbs update_project --help
+<table class="codehilitetable"><tr><td class="linenos"><div class="linenodiv"><pre>1</pre></div></td><td class="code"><div class="codehilite"><pre><span></span>pbs update_project --help
 </pre></div>
 </td></tr></table>
 
@@ -2054,7 +2054,7 @@ available options, please check the <strong>&ndash;help</strong> command:</p>
 <h3 id="auto-updating-while-developing-a-pybossa-project">Auto-updating while developing a PYBOSSA project<a class="headerlink" href="#auto-updating-while-developing-a-pybossa-project" title="Permanent link">&para;</a></h3>
 <p>At some point, you will end up running lots of PBS update_project commands, as you will be using your chosen editor for fixing CSS, HTML or JavaScript. For these scenarios, PBS comes with a handy flag: <strong>&ndash;watch</strong>. This argument will tell PBS to run the update_project command automatically when bundle.js, bundle.min.js, template.html, tutorial.html or long_description.md are modified in the file system. As simple as that.</p>
 <p>You can run it like this:</p>
-<table class="codehilitetable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span>1</pre></div></td><td class="code"><div class="codehilite"><pre><span></span>    pbs update_project --watch
+<table class="codehilitetable"><tr><td class="linenos"><div class="linenodiv"><pre>1</pre></div></td><td class="code"><div class="codehilite"><pre><span></span>    pbs update_project --watch
 </pre></div>
 </td></tr></table>
 
@@ -2062,7 +2062,7 @@ available options, please check the <strong>&ndash;help</strong> command:</p>
 <p><img alt="GIF of pbs in action" src="https://i.imgur.com/QoYC4oV.gif" /></p>
 <div class="admonition tip">
 <p class="admonition-title">Using webpack and PBS</p>
-<p>This also works with bundle.js files. Thus, you can have webpack transpiling automatically your code, and PBS will update your project with the new code. Cheers <img alt="🍻" class="emojione" src="https://cdnjs.cloudflare.com/ajax/libs/emojione/2.2.7/assets/svg/1f37b.svg" title=":beers:" /></p>
+<p>This also works with bundle.js files. Thus, you can have webpack transpiling automatically your code, and PBS will update your project with the new code. Cheers <img alt="🍻" class="emojione" src="https://cdn.jsdelivr.net/emojione/assets/svg/1f37b.svg" title=":beers:" /></p>
 </div>
 <h2 id="tasks">Tasks<a class="headerlink" href="#tasks" title="Permanent link">&para;</a></h2>
 <p>This section shows how you can handle project&rsquo;s tasks.</p>
@@ -2076,7 +2076,7 @@ available options, please check the <strong>&ndash;help</strong> command:</p>
 <li>PROPERTIES (any PROPERTIES file that you want to translate)</li>
 </ul>
 <p>Therefore, adding tasks to your project is as simple as this command:</p>
-<table class="codehilitetable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span>1</pre></div></td><td class="code"><div class="codehilite"><pre><span></span>pbs add_tasks --tasks-file tasks_file.json
+<table class="codehilitetable"><tr><td class="linenos"><div class="linenodiv"><pre>1</pre></div></td><td class="code"><div class="codehilite"><pre><span></span>pbs add_tasks --tasks-file tasks_file.json
 </pre></div>
 </td></tr></table>
 
@@ -2086,18 +2086,18 @@ available options, please check the <strong>&ndash;help</strong> command:</p>
 <p class="admonition-title">Note</p>
 <p>By default, PYBOSSA servers use a rate limit for avoiding abuse of the API. For this reason, you can only do usually 300 requests per every 15 minutes. If you are going to add more than 300 tasks, pbs will detect it and warn you, auto-enabling the throttling for you to respect the limits. Please, see <a href="api.md#rate-limiting">the rate-limiting section</a> for more details.</p>
 </div>
-<table class="codehilitetable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span>1</pre></div></td><td class="code"><div class="codehilite"><pre><span></span>pbs add_tasks --help
+<table class="codehilitetable"><tr><td class="linenos"><div class="linenodiv"><pre>1</pre></div></td><td class="code"><div class="codehilite"><pre><span></span>pbs add_tasks --help
 </pre></div>
 </td></tr></table>
 
 <h3 id="updating-tasks-redundancy-from-a-project">Updating tasks redundancy from a project<a class="headerlink" href="#updating-tasks-redundancy-from-a-project" title="Permanent link">&para;</a></h3>
 <p>If you need it, you can update the redundancy of a task using its ID or all the tasks skipping the ID. For example, to update the redundancy of one task to 5:</p>
-<table class="codehilitetable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span>1</pre></div></td><td class="code"><div class="codehilite"><pre><span></span>    pbs update-task-redundancy --task-id <span class="m">34234</span> --redundancy <span class="m">5</span>
+<table class="codehilitetable"><tr><td class="linenos"><div class="linenodiv"><pre>1</pre></div></td><td class="code"><div class="codehilite"><pre><span></span>    pbs update-task-redundancy --task-id <span class="m">34234</span> --redundancy <span class="m">5</span>
 </pre></div>
 </td></tr></table>
 
 <p>To update all of them:</p>
-<table class="codehilitetable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span>1</pre></div></td><td class="code"><div class="codehilite"><pre><span></span>    pbs update-task-redundancy --redundancy <span class="m">5</span>
+<table class="codehilitetable"><tr><td class="linenos"><div class="linenodiv"><pre>1</pre></div></td><td class="code"><div class="codehilite"><pre><span></span>    pbs update-task-redundancy --redundancy <span class="m">5</span>
 </pre></div>
 </td></tr></table>
 
@@ -2107,14 +2107,14 @@ available options, please check the <strong>&ndash;help</strong> command:</p>
 </div>
 <p>This last command will confirm that you want to update all the tasks.</p>
 <p>If you want to see all the available options, please check the <strong>&ndash;help</strong> command:</p>
-<table class="codehilitetable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span>1</pre></div></td><td class="code"><div class="codehilite"><pre><span></span>    pbs update-task-redundancy --help
+<table class="codehilitetable"><tr><td class="linenos"><div class="linenodiv"><pre>1</pre></div></td><td class="code"><div class="codehilite"><pre><span></span>    pbs update-task-redundancy --help
 </pre></div>
 </td></tr></table>
 
 <h3 id="deleting-tasks-from-a-project">Deleting tasks from a project<a class="headerlink" href="#deleting-tasks-from-a-project" title="Permanent link">&para;</a></h3>
 <p>If you need it, you can delete all the tasks from your project, or only one using its task.id. For removing all the tasks, all you&rsquo;ve to do is
 run the following command:</p>
-<table class="codehilitetable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span>1</pre></div></td><td class="code"><div class="codehilite"><pre><span></span>pbs delete_tasks
+<table class="codehilitetable"><tr><td class="linenos"><div class="linenodiv"><pre>1</pre></div></td><td class="code"><div class="codehilite"><pre><span></span>pbs delete_tasks
 </pre></div>
 </td></tr></table>
 
@@ -2122,7 +2122,7 @@ run the following command:</p>
 associated task_runs.</p>
 <p>If you want to see all the available options, please check the
 <strong>&ndash;help</strong> command:</p>
-<table class="codehilitetable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span>1</pre></div></td><td class="code"><div class="codehilite"><pre><span></span>pbs delete_tasks --help
+<table class="codehilitetable"><tr><td class="linenos"><div class="linenodiv"><pre>1</pre></div></td><td class="code"><div class="codehilite"><pre><span></span>pbs delete_tasks --help
 </pre></div>
 </td></tr></table>
 
@@ -2146,7 +2146,7 @@ associated task_runs.</p>
 <li>CSV</li>
 </ul>
 <p>Therefore, adding helping materials to your project is as simple as this command:</p>
-<table class="codehilitetable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span>1
+<table class="codehilitetable"><tr><td class="linenos"><div class="linenodiv"><pre>1
 2</pre></div></td><td class="code"><div class="codehilite"><pre><span></span>    pbs add_helpingmaterials
     --helping-materials-lfile file.xlsx --helping-type xlsx
 </pre></div>
@@ -2161,7 +2161,7 @@ associated task_runs.</p>
 <p class="admonition-title">Tip</p>
 <p>PYBOSSA helping materials allow you to upload media files like videos, images, or sounds to support your project tutorials. The command line PBS will check for a column in your file with the name <em>file_path</em> so it can upload it first to the server. Please, be sure that the file (or files) path is reachable from the helping materials file.</p>
 </div>
-<table class="codehilitetable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span>1</pre></div></td><td class="code"><div class="codehilite"><pre><span></span>    pbs add_helpingmaterials --help
+<table class="codehilitetable"><tr><td class="linenos"><div class="linenodiv"><pre>1</pre></div></td><td class="code"><div class="codehilite"><pre><span></span>    pbs add_helpingmaterials --help
 </pre></div>
 </td></tr></table>
                 

@@ -1765,13 +1765,13 @@ has in the info field a new field named <strong>extra</strong> where that inform
 <p>A user who has registered or signed in with any of the third parties
 supported by PYBOSSA (currently Twitter, Facebook, and Google) can
 request his own OAuth tokens by doing:</p>
-<table class="codehilitetable"><tr><td class="linenos"><div class="linenodiv"><pre>1</pre></div></td><td class="code"><div class="codehilite"><pre><span></span><span class="err">GET http://{pybossa-site-url}/api/token?api_key=API-KEY</span>
+<table class="codehilitetable"><tr><td class="linenos"><div class="linenodiv"><pre>1</pre></div></td><td class="code"><div class="codehilite"><pre><span></span>GET http://{pybossa-site-url}/api/token?api_key=API-KEY
 </pre></div>
 </td></tr></table>
 
 <p>Additionally, the user can specify any of the tokens if only its
 retrieval is desired:</p>
-<table class="codehilitetable"><tr><td class="linenos"><div class="linenodiv"><pre>1</pre></div></td><td class="code"><div class="codehilite"><pre><span></span><span class="err">GET http://{pybossa-site-url}/api/token/{provider}?api_key=API-KEY</span>
+<table class="codehilitetable"><tr><td class="linenos"><div class="linenodiv"><pre>1</pre></div></td><td class="code"><div class="codehilite"><pre><span></span>GET http://{pybossa-site-url}/api/token/{provider}?api_key=API-KEY
 </pre></div>
 </td></tr></table>
 

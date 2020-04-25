@@ -1659,15 +1659,15 @@ folder will be pybossa/pybossa/plugins.</p>
 <p>The least you need to include in that folder is the following:</p>
 <table class="codehilitetable"><tr><td class="linenos"><div class="linenodiv"><pre>1
 2
-3</pre></div></td><td class="code"><div class="codehilite"><pre><span></span><span class="err">your_plugin_folder</span>
-<span class="err">|-- info.json</span>
-<span class="err">|-- __init__.py</span>
+3</pre></div></td><td class="code"><div class="codehilite"><pre><span></span>your_plugin_folder
+|-- info.json
+|-- __init__.py
 </pre></div>
 </td></tr></table>
 
 <p>flask.ext.plugins.Plugin. On the other hand, info.json needs to follow
 the schema:</p>
-<table class="codehilitetable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span>1
+<table class="codehilitetable"><tr><td class="linenos"><div class="linenodiv"><pre>1
 2
 3
 4
@@ -1697,17 +1697,17 @@ templates, models, forms&hellip; everything you need:</p>
  8
  9
 10
-11</pre></div></td><td class="code"><div class="codehilite"><pre><span></span><span class="err">your_plugin_folder</span>
-<span class="err">|-- info.json                Contains the Plugin&#39;s metadata</span>
-<span class="err">|-- license.txt              The full license text of your plugin</span>
-<span class="err">|-- __init__.py              The plugin&#39;s main class is located here</span>
-<span class="err">|-- views.py</span>
-<span class="err">|-- models.py</span>
-<span class="err">|-- forms.py</span>
-<span class="err">|-- static</span>
-<span class="err">|   |-- style.css</span>
-<span class="err">|-- templates</span>
-<span class="err">    |-- myplugin.html</span>
+11</pre></div></td><td class="code"><div class="codehilite"><pre><span></span>your_plugin_folder
+|-- info.json                Contains the Plugin&#39;s metadata
+|-- license.txt              The full license text of your plugin
+|-- __init__.py              The plugin&#39;s main class is located here
+|-- views.py
+|-- models.py
+|-- forms.py
+|-- static
+|   |-- style.css
+|-- templates
+    |-- myplugin.html
 </pre></div>
 </td></tr></table>
 

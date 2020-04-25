@@ -1908,15 +1908,13 @@
 <ul>
 <li><a href="http://www.ubuntu.com/download/server">Ubuntu 18.04 LTS</a></li>
 </ul>
-<details class="tip"><summary>PYBOSSA hosted servers</summary><p>Checkout Scifabric&rsquo;s <a href="https://scifabric.com/pricing/">hosted PYBOSSA servers</a>.</p>
-</details>
-<h2 id="installing-git-a-distributed-version-control-system">Installing git - a distributed version control system<a class="headerlink" href="#installing-git-a-distributed-version-control-system" title="Permanent link">&para;</a></h2>
+<details class="tip"><summary>PYBOSSA hosted servers</summary><p>Checkout Scifabric&rsquo;s <a href="https://scifabric.com/pricing/">hosted PYBOSSA servers</a>.</p></details><h2 id="installing-git-a-distributed-version-control-system">Installing git - a distributed version control system<a class="headerlink" href="#installing-git-a-distributed-version-control-system" title="Permanent link">&para;</a></h2>
 <p>PYBOSSA uses the <a href="http://git-scm.com/">git</a> distributed version control
 system for handling the PYBOSSA server source code as well as the
 template projects.</p>
 <p><a href="http://git-scm.com/">Git</a> is a free and open source distributed version control system designed to handle everything from small to extensive projects with speed and efficiency.</p>
 <p>To install the software, all you have to do is:</p>
-<table class="codehilitetable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span>1</pre></div></td><td class="code"><div class="codehilite"><pre><span></span>sudo apt-get install git-core
+<table class="codehilitetable"><tr><td class="linenos"><div class="linenodiv"><pre>1</pre></div></td><td class="code"><div class="codehilite"><pre><span></span>sudo apt-get install git-core
 </pre></div>
 </td></tr></table>
 
@@ -1927,7 +1925,7 @@ development and a proven architecture that has earned it a strong
 reputation for reliability, data integrity, and correctness.</p>
 <p>PYBOSSA uses <a href="http://www.postgresql.org/">PostgreSQL</a> as the main
 database for storing all the data. To install it follow the next steps:</p>
-<table class="codehilitetable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span>1</pre></div></td><td class="code"><div class="codehilite"><pre><span></span>sudo apt-get install postgresql postgresql-server-dev-all libpq-dev python-psycopg2 libsasl2-dev libldap2-dev libssl-dev
+<table class="codehilitetable"><tr><td class="linenos"><div class="linenodiv"><pre>1</pre></div></td><td class="code"><div class="codehilite"><pre><span></span>sudo apt-get install postgresql postgresql-server-dev-all libpq-dev python-psycopg2 libsasl2-dev libldap2-dev libssl-dev
 </pre></div>
 </td></tr></table>
 
@@ -1944,14 +1942,14 @@ doesn&rsquo;t access the globally installed libraries either).</p>
 <p>You can install the software if you want at the system level if you have root privileges; however, this may lead to broken dependencies in the OS for all your Python packages, so if possible, avoid this solution and use the [virtualenv]<a href="http://pypi.python.org/pypi/virtualenv">http://pypi.python.org/pypi/virtualenv</a>) solution.</p>
 <p>Installing <a href="http://pypi.python.org/pypi/virtualenv">virtualenv</a> in the
 Ubuntu server:</p>
-<table class="codehilitetable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span>1</pre></div></td><td class="code"><div class="codehilite"><pre><span></span>sudo apt-get install python-virtualenv
+<table class="codehilitetable"><tr><td class="linenos"><div class="linenodiv"><pre>1</pre></div></td><td class="code"><div class="codehilite"><pre><span></span>sudo apt-get install python-virtualenv
 </pre></div>
 </td></tr></table>
 
 <p>After installing the software you will be able to create independent virtual environments for the PYBOSSA installation as well as for the template projects. </p>
 <h2 id="installing-the-pybossa-python-requirements">Installing the PYBOSSA Python requirements<a class="headerlink" href="#installing-the-pybossa-python-requirements" title="Permanent link">&para;</a></h2>
 <p>Installing the required libraries for PYBOSSA is a step that will need to use some compilers and dev libraries to work. Thus, you will need to install the following packages:</p>
-<table class="codehilitetable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span>1
+<table class="codehilitetable"><tr><td class="linenos"><div class="linenodiv"><pre>1
 2</pre></div></td><td class="code"><div class="codehilite"><pre><span></span>sudo apt-get install python-dev build-essential libjpeg-dev libssl-dev libffi-dev
 sudo apt-get install dbus libdbus-1-dev libdbus-glib-1-dev libldap2-dev libsasl2-dev
 </pre></div>
@@ -1965,7 +1963,7 @@ libraries for running PYBOSSA.</p>
 </div>
 <p>If you decide to use a <strong>virtualenv</strong> then, follow these steps (lines
 starting with <strong>#</strong> are comments):</p>
-<table class="codehilitetable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span> 1
+<table class="codehilitetable"><tr><td class="linenos"><div class="linenodiv"><pre> 1
  2
  3
  4
@@ -1991,7 +1989,7 @@ pip install -r requirements.txt
 
 <p>Otherwise, you should be able to install the libraries in your system
 like this:</p>
-<table class="codehilitetable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span>1
+<table class="codehilitetable"><tr><td class="linenos"><div class="linenodiv"><pre>1
 2
 3
 4
@@ -2019,7 +2017,7 @@ Nano</a> editor.</p>
 </div>
 <p>Create a settings file and enter your SQLAlchemy DB URI (you can also
 override default settings as needed):</p>
-<table class="codehilitetable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span>1
+<table class="codehilitetable"><tr><td class="linenos"><div class="linenodiv"><pre>1
 2
 3</pre></div></td><td class="code"><div class="codehilite"><pre><span></span>cp settings_local.py.tmpl settings_local.py
 <span class="c1"># now edit ...</span>
@@ -2035,7 +2033,7 @@ export PYBOSSA_SETTINGS=/my/config/file/somewhere.</p>
 </div>
 <p>Create the alembic config file and set the sqlalchemy url to point to
 your database:</p>
-<table class="codehilitetable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span>1
+<table class="codehilitetable"><tr><td class="linenos"><div class="linenodiv"><pre>1
 2</pre></div></td><td class="code"><div class="codehilite"><pre><span></span>    cp alembic.ini.template alembic.ini
     <span class="c1"># now set the sqlalchemy.url ...</span>
 </pre></div>
@@ -2046,7 +2044,7 @@ your database:</p>
 and speed up the site, but also for limiting the usage of the API
 requests.</p>
 <p>You can install the latest Redis version downloading the package directly from its official <a href="http://redis.io/">site</a> site. Since Ubuntu 14.04 you can also, use the internal package:</p>
-<table class="codehilitetable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span>1</pre></div></td><td class="code"><div class="codehilite"><pre><span></span>sudo apt-get install redis-server
+<table class="codehilitetable"><tr><td class="linenos"><div class="linenodiv"><pre>1</pre></div></td><td class="code"><div class="codehilite"><pre><span></span>sudo apt-get install redis-server
 </pre></div>
 </td></tr></table>
 
@@ -2077,19 +2075,19 @@ and run it. The default values should be OK.</p>
 slaves automagically.</p>
 <p>To run PYBOSSA, you will need first to configure a Sentinel node. Create a config file named <strong>sentinel.conf</strong> with something like
 this:</p>
-<table class="codehilitetable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span>1
+<table class="codehilitetable"><tr><td class="linenos"><div class="linenodiv"><pre>1
 2
 3
-4</pre></div></td><td class="code"><div class="codehilite"><pre><span></span><span class="err">sentinel monitor mymaster 127.0.0.1 6379 2</span>
-<span class="err">sentinel down-after-milliseconds mymaster 60000</span>
-<span class="err">sentinel failover-timeout mymaster 180000</span>
-<span class="err">sentinel parallel-syncs mymaster 1</span>
+4</pre></div></td><td class="code"><div class="codehilite"><pre><span></span>sentinel monitor mymaster 127.0.0.1 6379 2
+sentinel down-after-milliseconds mymaster 60000
+sentinel failover-timeout mymaster 180000
+sentinel parallel-syncs mymaster 1
 </pre></div>
 </td></tr></table>
 
 <p>In the contrib folder, you will find a file named <strong>sentinel.conf</strong> that
 should be enough to run the sentinel node. Thus, for running it:</p>
-<table class="codehilitetable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span>1</pre></div></td><td class="code"><div class="codehilite"><pre><span></span>redis-server contrib/sentinel.conf --sentinel
+<table class="codehilitetable"><tr><td class="linenos"><div class="linenodiv"><pre>1</pre></div></td><td class="code"><div class="codehilite"><pre><span></span>redis-server contrib/sentinel.conf --sentinel
 </pre></div>
 </td></tr></table>
 
@@ -2109,7 +2107,7 @@ should be enough to run the sentinel node. Thus, for running it:</p>
 <a href="http://redis.io/topics/sentinel">Sentinel</a>, please, read the official
 <a href="http://redis.io/topics/sentinel">documentation</a>.</p>
 <p>If you want to disable it, you can do it with an environment variable:</p>
-<table class="codehilitetable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span>1</pre></div></td><td class="code"><div class="codehilite"><pre><span></span><span class="n">export</span> <span class="n">PYBOSSA_REDIS_CACHE_DISABLED</span><span class="o">=</span><span class="s1">&#39;1&#39;</span>
+<table class="codehilitetable"><tr><td class="linenos"><div class="linenodiv"><pre>1</pre></div></td><td class="code"><div class="codehilite"><pre><span></span><span class="n">export</span> <span class="n">PYBOSSA_REDIS_CACHE_DISABLED</span><span class="o">=</span><span class="s1">&#39;1&#39;</span>
 </pre></div>
 </td></tr></table>
 
@@ -2127,12 +2125,12 @@ asynchronous way.</p>
 refreshment of the cache and notifications sent to users, while others, like the sending of emails, are created in real time, responding to events that may happen inside the PYBOSSA server (i.e. sending an email with a recovery password).</p>
 <p>To allow all this, you will need two additional Python processes to run in the background: the <strong>worker</strong> and the <strong>scheduler</strong>. The scheduler will create the periodic tasks while other tasks will be generated dynamically. The worker will process each of them.</p>
 <p>To run the scheduler, just run the following command in a terminal:</p>
-<table class="codehilitetable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span>1</pre></div></td><td class="code"><div class="codehilite"><pre><span></span>rqscheduler --host IP-of-your-redis-master-node
+<table class="codehilitetable"><tr><td class="linenos"><div class="linenodiv"><pre>1</pre></div></td><td class="code"><div class="codehilite"><pre><span></span>rqscheduler --host IP-of-your-redis-master-node
 </pre></div>
 </td></tr></table>
 
 <p>Similarly, to get the tasks done by the worker, run:</p>
-<table class="codehilitetable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span>1</pre></div></td><td class="code"><div class="codehilite"><pre><span></span>python app_context_rqworker.py scheduled_jobs super high medium low email maintenance
+<table class="codehilitetable"><tr><td class="linenos"><div class="linenodiv"><pre>1</pre></div></td><td class="code"><div class="codehilite"><pre><span></span>python app_context_rqworker.py scheduled_jobs super high medium low email maintenance
 </pre></div>
 </td></tr></table>
 
@@ -2144,13 +2142,13 @@ for simply running these processes with a single command.</p>
 </div>
 <h2 id="configuring-the-database">Configuring the DataBase<a class="headerlink" href="#configuring-the-database" title="Permanent link">&para;</a></h2>
 <p>You need first to add a user to your <a href="http://www.postgresql.org/">PostgreSQL</a> database:</p>
-<table class="codehilitetable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span>1
+<table class="codehilitetable"><tr><td class="linenos"><div class="linenodiv"><pre>1
 2</pre></div></td><td class="code"><div class="codehilite"><pre><span></span>sudo su postgres
 createuser -d -P pybossa
 </pre></div>
 </td></tr></table>
 
-<p>Use password <code class="codehilite"><span class="err">tester</span></code> when prompted.</p>
+<p>Use password <code class="codehilite">tester</code> when prompted.</p>
 <div class="admonition note">
 <p class="admonition-title">Note</p>
 <p>You should use the same username that you have used in the
@@ -2166,25 +2164,25 @@ settings_local.py and alembic.ini files.</p>
   (press the <strong>n</strong> key).</li>
 </ul>
 <p>And now, you can create the database:</p>
-<table class="codehilitetable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span>1</pre></div></td><td class="code"><div class="codehilite"><pre><span></span>createdb pybossa -O pybossa
+<table class="codehilitetable"><tr><td class="linenos"><div class="linenodiv"><pre>1</pre></div></td><td class="code"><div class="codehilite"><pre><span></span>createdb pybossa -O pybossa
 </pre></div>
 </td></tr></table>
 
 <p>Finally, exit the postgresql user:</p>
-<table class="codehilitetable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span>1</pre></div></td><td class="code"><div class="codehilite"><pre><span></span><span class="nb">exit</span>
+<table class="codehilitetable"><tr><td class="linenos"><div class="linenodiv"><pre>1</pre></div></td><td class="code"><div class="codehilite"><pre><span></span><span class="nb">exit</span>
 </pre></div>
 </td></tr></table>
 
 <p>Then, populate the database with its tables:</p>
-<table class="codehilitetable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span>1</pre></div></td><td class="code"><div class="codehilite"><pre><span></span>python cli.py db_create
+<table class="codehilitetable"><tr><td class="linenos"><div class="linenodiv"><pre>1</pre></div></td><td class="code"><div class="codehilite"><pre><span></span>python cli.py db_create
 </pre></div>
 </td></tr></table>
 
 <p>Run the web server:
-<table class="codehilitetable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span>1</pre></div></td><td class="code"><div class="codehilite"><pre><span></span>python run.py
+<table class="codehilitetable"><tr><td class="linenos"><div class="linenodiv"><pre>1</pre></div></td><td class="code"><div class="codehilite"><pre><span></span>python run.py
 </pre></div>
 </td></tr></table></p>
-<p>Open in your web browser the following URL: <a href="http://localhost:5000">http://localhost:5000</a></p>
+<p>Open in your web browser the following URL: <a href="http://localhost:5000"><a href="http://localhost:5000">http://localhost:5000</a></a></p>
 <p>And if you see the following home page, then, your installation has been
 completed:</p>
 <p><img alt="image" src="https://i.imgur.com/hPtgo6S.png" /></p>
@@ -2199,7 +2197,7 @@ jobs, so all of them should be recreated by the system without your intervention
 <h3 id="updating-pybossa-core-and-migrating-the-database-table-structure">Updating PYBOSSA core and migrating the database table structure<a class="headerlink" href="#updating-pybossa-core-and-migrating-the-database-table-structure" title="Permanent link">&para;</a></h3>
 <p>Sometimes, the PYBOSSA developers add a new column or table to the PYBOSSA server, forcing you to carry out a <strong>migration</strong> of the
 database. PYBOSSA uses <a href="http://pypi.python.org/pypi/alembic">Alembic</a> for performing the migrations, so in case that your production server needs to upgrade the DB structure to a new version, all you have to do is to:
-<table class="codehilitetable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span>1
+<table class="codehilitetable"><tr><td class="linenos"><div class="linenodiv"><pre>1
 2
 3
 4</pre></div></td><td class="code"><div class="codehilite"><pre><span></span>git pull origin master
@@ -2210,7 +2208,7 @@ alembic upgrade head
 </td></tr></table></p>
 <p>The first command will get you the latest source code. The second command updates the libraries. Finally, Alembic upgrades the database structure.</p>
 <p>Very occasionally, updates to the core system will also be required. For example, updating <a href="https://github.com/Scifabric/pybossa.js">pybossa.js</a> in your PYBOSSA theme. To update the default theme, you can do this:</p>
-<table class="codehilitetable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span>1
+<table class="codehilitetable"><tr><td class="linenos"><div class="linenodiv"><pre>1
 2</pre></div></td><td class="code"><div class="codehilite"><pre><span></span><span class="nb">cd</span> home/pybossa/pybossa/themes/default
 git pull origin master
 </pre></div>
@@ -2226,7 +2224,7 @@ git pull origin master
 <p>To avoid this, you can run a simple script to convert all the
 DB project&rsquo;s &lsquo;long_description&rsquo; field from HTML to Markdown, just by
 running the following commands:</p>
-<table class="codehilitetable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span>1
+<table class="codehilitetable"><tr><td class="linenos"><div class="linenodiv"><pre>1
 2
 3</pre></div></td><td class="code"><div class="codehilite"><pre><span></span>pip install -U pip
 pip install -U -r requirements.txt

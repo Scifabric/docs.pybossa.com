@@ -1883,7 +1883,7 @@
 <p>This section shows the CRUD methods (Create, Read, Update and Delete) that you can use using the RESTful API. These methods will not work with the rest of the PYBOSSA endpoints, as that only support GET and POST actions.</p>
 <h2 id="getting-data">Getting data<a class="headerlink" href="#getting-data" title="Permanent link">&para;</a></h2>
 <p>You can get a specific domain object by its id (by default any GET action will return only 20 objects, you can get more or fewer objects using the <strong>limit</strong> option):</p>
-<table class="codehilitetable"><tr><td class="linenos"><div class="linenodiv"><pre>1</pre></div></td><td class="code"><div class="codehilite"><pre><span></span><span class="err">GET http://{pybossa-site-url}/api/{domain-object}/{id}[?api_key=API-KEY]</span>
+<table class="codehilitetable"><tr><td class="linenos"><div class="linenodiv"><pre>1</pre></div></td><td class="code"><div class="codehilite"><pre><span></span>GET http://{pybossa-site-url}/api/{domain-object}/{id}[?api_key=API-KEY]
 </pre></div>
 </td></tr></table>
 
@@ -1892,7 +1892,7 @@
 <p>Some GET actions may require to authenticate &amp; authorize the request. Use the &ldquo;?api_key&rdquo; argument to pass the <strong>API-KEY</strong>.</p>
 </div>
 <p>If the object is not found you will get a JSON object like this:</p>
-<table class="codehilitetable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span>1
+<table class="codehilitetable"><tr><td class="linenos"><div class="linenodiv"><pre>1
 2
 3
 4
@@ -1913,35 +1913,35 @@
 <p>Any other error will return the same object but with the proper status code and error message.</p>
 <h2 id="filtering-the-data">Filtering the data<a class="headerlink" href="#filtering-the-data" title="Permanent link">&para;</a></h2>
 <p>You can get a list of domain objects by its fields. You will use the objects attributes to filter the query, as it will return only objects matching it:</p>
-<table class="codehilitetable"><tr><td class="linenos"><div class="linenodiv"><pre>1</pre></div></td><td class="code"><div class="codehilite"><pre><span></span><span class="err">GET http://pybossa-site-url/api/{domain-object}[?domain-object-field=value]</span>
+<table class="codehilitetable"><tr><td class="linenos"><div class="linenodiv"><pre>1</pre></div></td><td class="code"><div class="codehilite"><pre><span></span>GET http://pybossa-site-url/api/{domain-object}[?domain-object-field=value]
 </pre></div>
 </td></tr></table>
 
 <p>Multiple fields can be used separated by the <strong>&amp;</strong> symbol:</p>
-<table class="codehilitetable"><tr><td class="linenos"><div class="linenodiv"><pre>1</pre></div></td><td class="code"><div class="codehilite"><pre><span></span><span class="err">GET http://pybossa-site-url/api/{domain-object}[?field1=value&amp;field2=value2]</span>
+<table class="codehilitetable"><tr><td class="linenos"><div class="linenodiv"><pre>1</pre></div></td><td class="code"><div class="codehilite"><pre><span></span>GET http://pybossa-site-url/api/{domain-object}[?field1=value&amp;field2=value2]
 </pre></div>
 </td></tr></table>
 
 <p>It is possible to limit the number of returned objects:</p>
-<table class="codehilitetable"><tr><td class="linenos"><div class="linenodiv"><pre>1</pre></div></td><td class="code"><div class="codehilite"><pre><span></span><span class="err">GET http://{pybossa-site-url}/api/{domain-object}[?field1=value&amp;limit=20]</span>
+<table class="codehilitetable"><tr><td class="linenos"><div class="linenodiv"><pre>1</pre></div></td><td class="code"><div class="codehilite"><pre><span></span>GET http://{pybossa-site-url}/api/{domain-object}[?field1=value&amp;limit=20]
 </pre></div>
 </td></tr></table>
 
 <h3 id="filtering-info-keys-for-pybossa-versions-up-to-v28x">Filtering info keys for PYBOSSA versions up to v2.8.X<a class="headerlink" href="#filtering-info-keys-for-pybossa-versions-up-to-v28x" title="Permanent link">&para;</a></h3>
 <p>It is possible to access first level JSON keys within the <strong>info</strong> field
 of Categories, Projects, Tasks, Task Runs and Results:</p>
-<table class="codehilitetable"><tr><td class="linenos"><div class="linenodiv"><pre>1</pre></div></td><td class="code"><div class="codehilite"><pre><span></span><span class="err">GET http://{pybossa-site-url}/api/{domain-object}[?field1=value&amp;info=foo::bar&amp;limit=20]</span>
+<table class="codehilitetable"><tr><td class="linenos"><div class="linenodiv"><pre>1</pre></div></td><td class="code"><div class="codehilite"><pre><span></span>GET http://{pybossa-site-url}/api/{domain-object}[?field1=value&amp;info=foo::bar&amp;limit=20]
 </pre></div>
 </td></tr></table>
 
 <p>To search within the first level (nested keys are not supported), you
 have to use the following format:</p>
-<table class="codehilitetable"><tr><td class="linenos"><div class="linenodiv"><pre>1</pre></div></td><td class="code"><div class="codehilite"><pre><span></span><span class="err">info=key::value</span>
+<table class="codehilitetable"><tr><td class="linenos"><div class="linenodiv"><pre>1</pre></div></td><td class="code"><div class="codehilite"><pre><span></span>info=key::value
 </pre></div>
 </td></tr></table>
 
 <p>For adding more keys:</p>
-<table class="codehilitetable"><tr><td class="linenos"><div class="linenodiv"><pre>1</pre></div></td><td class="code"><div class="codehilite"><pre><span></span><span class="err">info=key1::value1|key2::value2|keyN::valueN</span>
+<table class="codehilitetable"><tr><td class="linenos"><div class="linenodiv"><pre>1</pre></div></td><td class="code"><div class="codehilite"><pre><span></span>info=key1::value1|key2::value2|keyN::valueN
 </pre></div>
 </td></tr></table>
 
@@ -1952,8 +1952,8 @@ those keys with and <strong>and</strong> operator.</p>
 <p>This feature allows us to use new queries, like path searching via the API.</p>
 <p>You can now search like this:</p>
 <table class="codehilitetable"><tr><td class="linenos"><div class="linenodiv"><pre>1
-2</pre></div></td><td class="code"><div class="codehilite"><pre><span></span><span class="err">info={&quot;key1&quot;: value}</span>
-<span class="err">info={&quot;key1&quot;: [{&quot;key2&quot;: value}]}</span>
+2</pre></div></td><td class="code"><div class="codehilite"><pre><span></span>info={&quot;key1&quot;: value}
+info={&quot;key1&quot;: [{&quot;key2&quot;: value}]}
 </pre></div>
 </td></tr></table>
 
@@ -1965,20 +1965,20 @@ string, then you should use &lsquo;&ldquo;9&rdquo;&rsquo; double quotes. This ap
 <h3 id="your-data-first">Your data first<a class="headerlink" href="#your-data-first" title="Permanent link">&para;</a></h3>
 <p>The API understands who is requesting the data. When you are using your API key to authenticate your calls, the system will return only your data. For instance, if you request all the projects, you will only get <strong>your projects</strong> and the rest (owned by other users will be hidden).  You can get access to all the projects, tasks, and task runs (the whole database) using the parameter: <strong>all=1</strong>.</p>
 <p>For example, if an anonymous user accesses the generic API endpoints like:</p>
-<table class="codehilitetable"><tr><td class="linenos"><div class="linenodiv"><pre>1</pre></div></td><td class="code"><div class="codehilite"><pre><span></span><span class="err">GET http://{pybossa-site-url}/api/project</span>
+<table class="codehilitetable"><tr><td class="linenos"><div class="linenodiv"><pre>1</pre></div></td><td class="code"><div class="codehilite"><pre><span></span>GET http://{pybossa-site-url}/api/project
 </pre></div>
 </td></tr></table>
 
 <p>It will return all the projects from the DB, ordering them by ID. If you
 access it like authenticating yourself:</p>
-<table class="codehilitetable"><tr><td class="linenos"><div class="linenodiv"><pre>1</pre></div></td><td class="code"><div class="codehilite"><pre><span></span><span class="err">GET http://{pybossa-site-url}/api/project?api_key=YOURKEY</span>
+<table class="codehilitetable"><tr><td class="linenos"><div class="linenodiv"><pre>1</pre></div></td><td class="code"><div class="codehilite"><pre><span></span>GET http://{pybossa-site-url}/api/project?api_key=YOURKEY
 </pre></div>
 </td></tr></table>
 
 <p>Then, you will get your projects. In other words, the
 projects that you own. If you don&rsquo;t have a project, but you want to
 explore the API then you can use the <strong>all=1</strong> argument:</p>
-<table class="codehilitetable"><tr><td class="linenos"><div class="linenodiv"><pre>1</pre></div></td><td class="code"><div class="codehilite"><pre><span></span><span class="err">GET http://{pybossa-site-url}/api/project?api_key=YOURKEY&amp;all=1</span>
+<table class="codehilitetable"><tr><td class="linenos"><div class="linenodiv"><pre>1</pre></div></td><td class="code"><div class="codehilite"><pre><span></span>GET http://{pybossa-site-url}/api/project?api_key=YOURKEY&amp;all=1
 </pre></div>
 </td></tr></table>
 
@@ -1986,60 +1986,60 @@ explore the API then you can use the <strong>all=1</strong> argument:</p>
 <p>For example, you can get a list of your Projects like this:</p>
 <table class="codehilitetable"><tr><td class="linenos"><div class="linenodiv"><pre>1
 2
-3</pre></div></td><td class="code"><div class="codehilite"><pre><span></span><span class="err">GET http://{pybossa-site-url}/api/project</span>
-<span class="err">GET http://{pybossa-site-url}/api/project?api_key=YOURKEY</span>
-<span class="err">GET http://{pybossa-site-url}/api/project?api_key=YOURKEY&amp;all=1</span>
+3</pre></div></td><td class="code"><div class="codehilite"><pre><span></span>GET http://{pybossa-site-url}/api/project
+GET http://{pybossa-site-url}/api/project?api_key=YOURKEY
+GET http://{pybossa-site-url}/api/project?api_key=YOURKEY&amp;all=1
 </pre></div>
 </td></tr></table>
 
 <p>Or a list of available Categories:</p>
-<table class="codehilitetable"><tr><td class="linenos"><div class="linenodiv"><pre>1</pre></div></td><td class="code"><div class="codehilite"><pre><span></span><span class="err">GET http://{pybossa-site-url}/api/category</span>
+<table class="codehilitetable"><tr><td class="linenos"><div class="linenodiv"><pre>1</pre></div></td><td class="code"><div class="codehilite"><pre><span></span>GET http://{pybossa-site-url}/api/category
 </pre></div>
 </td></tr></table>
 
 <p>Or a list of Tasks:</p>
 <table class="codehilitetable"><tr><td class="linenos"><div class="linenodiv"><pre>1
 2
-3</pre></div></td><td class="code"><div class="codehilite"><pre><span></span><span class="err">GET http://{pybossa-site-url}/api/task</span>
-<span class="err">GET http://{pybossa-site-url}/api/task?api_key=YOURKEY</span>
-<span class="err">GET http://{pybossa-site-url}/api/task?api_key=YOURKEY&amp;all=1</span>
+3</pre></div></td><td class="code"><div class="codehilite"><pre><span></span>GET http://{pybossa-site-url}/api/task
+GET http://{pybossa-site-url}/api/task?api_key=YOURKEY
+GET http://{pybossa-site-url}/api/task?api_key=YOURKEY&amp;all=1
 </pre></div>
 </td></tr></table>
 
 <p>For a list of TaskRuns use:</p>
 <table class="codehilitetable"><tr><td class="linenos"><div class="linenodiv"><pre>1
 2
-3</pre></div></td><td class="code"><div class="codehilite"><pre><span></span><span class="err">GET http://{pybossa-site-url}/api/taskrun</span>
-<span class="err">GET http://{pybossa-site-url}/api/taskrun?api_key=YOURKEY</span>
-<span class="err">GET http://{pybossa-site-url}/api/taskrun?api_key=YOURKEY&amp;all=1</span>
+3</pre></div></td><td class="code"><div class="codehilite"><pre><span></span>GET http://{pybossa-site-url}/api/taskrun
+GET http://{pybossa-site-url}/api/taskrun?api_key=YOURKEY
+GET http://{pybossa-site-url}/api/taskrun?api_key=YOURKEY&amp;all=1
 </pre></div>
 </td></tr></table>
 
 <h3 id="using-date-ranges">Using date ranges<a class="headerlink" href="#using-date-ranges" title="Permanent link">&para;</a></h3>
 <p>If you want, you can use the domain attribute <em>created</em> to get items from the DB. You can specify a year, year-month, year-month-day to get all the values for those ranges. For example, if you want all the tasks that have been created in 2015, just use:</p>
-<table class="codehilitetable"><tr><td class="linenos"><div class="linenodiv"><pre>1</pre></div></td><td class="code"><div class="codehilite"><pre><span></span><span class="err">GET http://{pybossa-site-url}/api/task?created=2015&amp;all=1</span>
+<table class="codehilitetable"><tr><td class="linenos"><div class="linenodiv"><pre>1</pre></div></td><td class="code"><div class="codehilite"><pre><span></span>GET http://{pybossa-site-url}/api/task?created=2015&amp;all=1
 </pre></div>
 </td></tr></table>
 
 <p>If you want all the task runs from 2015-05:</p>
-<table class="codehilitetable"><tr><td class="linenos"><div class="linenodiv"><pre>1</pre></div></td><td class="code"><div class="codehilite"><pre><span></span><span class="err">GET http://{pybossa-site-url}/api/taskrun?created=2015-05&amp;all=1</span>
+<table class="codehilitetable"><tr><td class="linenos"><div class="linenodiv"><pre>1</pre></div></td><td class="code"><div class="codehilite"><pre><span></span>GET http://{pybossa-site-url}/api/taskrun?created=2015-05&amp;all=1
 </pre></div>
 </td></tr></table>
 
 <p>You can, for example, get all the task runs that a user has submitted on a given day like this:</p>
-<table class="codehilitetable"><tr><td class="linenos"><div class="linenodiv"><pre>1</pre></div></td><td class="code"><div class="codehilite"><pre><span></span><span class="err">GET http://{pybossa-site-url}/api/taskrun?created=2015-05-03&amp;user_id=3</span>
+<table class="codehilitetable"><tr><td class="linenos"><div class="linenodiv"><pre>1</pre></div></td><td class="code"><div class="codehilite"><pre><span></span>GET http://{pybossa-site-url}/api/taskrun?created=2015-05-03&amp;user_id=3
 </pre></div>
 </td></tr></table>
 
 <p>This filter works for any object that has the <em>created</em> attribute.</p>
 <h2 id="order-by">Order by<a class="headerlink" href="#order-by" title="Permanent link">&para;</a></h2>
 <p>Any query can be ordered by an attribute of the domain object that you are querying. For example, you can get a list of tasks ordered by ID:</p>
-<table class="codehilitetable"><tr><td class="linenos"><div class="linenodiv"><pre>1</pre></div></td><td class="code"><div class="codehilite"><pre><span></span><span class="err">GET http://{pybossa-site-url}/api/task?orderby=id</span>
+<table class="codehilitetable"><tr><td class="linenos"><div class="linenodiv"><pre>1</pre></div></td><td class="code"><div class="codehilite"><pre><span></span>GET http://{pybossa-site-url}/api/task?orderby=id
 </pre></div>
 </td></tr></table>
 
 <p>If you want, you can order them in descending order:</p>
-<table class="codehilitetable"><tr><td class="linenos"><div class="linenodiv"><pre>1</pre></div></td><td class="code"><div class="codehilite"><pre><span></span><span class="err">GET http://{pybossa-site-url}/api/task?orderby=id&amp;desc=true</span>
+<table class="codehilitetable"><tr><td class="linenos"><div class="linenodiv"><pre>1</pre></div></td><td class="code"><div class="codehilite"><pre><span></span>GET http://{pybossa-site-url}/api/task?orderby=id&amp;desc=true
 </pre></div>
 </td></tr></table>
 
@@ -2053,7 +2053,7 @@ Object section</a>.</p>
 <p>By default, PYBOSSA limits the list of items to 20. If you want to get more items, use the keyword <strong>limit=N</strong> with <strong>N</strong> being a number to get that amount. There is a maximum of 100 to the <strong>limit</strong> keyword, so if you try to get more items at once, it won&rsquo;t work.</p>
 <h2 id="pagination">Pagination<a class="headerlink" href="#pagination" title="Permanent link">&para;</a></h2>
 <p>You can paginate the results of any GET query using the last ID of the domain object that you have received and the parameter:     <strong>last_id</strong>. For example, to get the next 20 items after the last   project ID that you&rsquo;ve received, you will write the query like this:</p>
-<table class="codehilitetable"><tr><td class="linenos"><div class="linenodiv"><pre>1</pre></div></td><td class="code"><div class="codehilite"><pre><span></span><span class="err">`GET /api/project?last_id=N.</span>
+<table class="codehilitetable"><tr><td class="linenos"><div class="linenodiv"><pre>1</pre></div></td><td class="code"><div class="codehilite"><pre><span></span>`GET /api/project?last_id=N.
 </pre></div>
 </td></tr></table>
 
@@ -2071,20 +2071,20 @@ API.</p>
 <h2 id="project-stats">Project stats<a class="headerlink" href="#project-stats" title="Permanent link">&para;</a></h2>
 <p>For Projects, you can get the associated statistics using the argument: <em>stats=True</em>.</p>
 <p>This will add the statistics, such as overall progress, number of tasks etc.,
-against the <code class="codehilite"><span class="err">stats</span></code> key for each project.</p>
+against the <code class="codehilite">stats</code> key for each project.</p>
 <h2 id="create">Create<a class="headerlink" href="#create" title="Permanent link">&para;</a></h2>
 <p>Create a domain object. Returns created domain object.:</p>
-<table class="codehilitetable"><tr><td class="linenos"><div class="linenodiv"><pre>1</pre></div></td><td class="code"><div class="codehilite"><pre><span></span><span class="err">POST http://{pybossa-site-url}/api/{domain-object}[?api_key=API-KEY]</span>
+<table class="codehilitetable"><tr><td class="linenos"><div class="linenodiv"><pre>1</pre></div></td><td class="code"><div class="codehilite"><pre><span></span>POST http://{pybossa-site-url}/api/{domain-object}[?api_key=API-KEY]
 </pre></div>
 </td></tr></table>
 
 <div class="admonition note">
 <p class="admonition-title">Note</p>
 <p>Some POST actions may require to authenticate &amp; authorize the request. Use the
-<code class="codehilite"><span class="err">?api_key</span></code> argument to pass the <strong>API-KEY</strong>.</p>
+<code class="codehilite">?api_key</code> argument to pass the <strong>API-KEY</strong>.</p>
 </div>
 <p>If an error occurs, the action will return a JSON object like this:</p>
-<table class="codehilitetable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span>1
+<table class="codehilitetable"><tr><td class="linenos"><div class="linenodiv"><pre>1
 2
 3
 4
@@ -2105,7 +2105,7 @@ against the <code class="codehilite"><span class="err">stats</span></code> key f
 <p>Where <strong>target</strong> will refer to a Project, Task or TaskRun object.</p>
 <h2 id="update">Update<a class="headerlink" href="#update" title="Permanent link">&para;</a></h2>
 <p>Update a domain object:</p>
-<table class="codehilitetable"><tr><td class="linenos"><div class="linenodiv"><pre>1</pre></div></td><td class="code"><div class="codehilite"><pre><span></span><span class="err">PUT http://{pybossa-site-url}/api/{domain-object}/{id}[?api_key=API-KEY]</span>
+<table class="codehilitetable"><tr><td class="linenos"><div class="linenodiv"><pre>1</pre></div></td><td class="code"><div class="codehilite"><pre><span></span>PUT http://{pybossa-site-url}/api/{domain-object}/{id}[?api_key=API-KEY]
 </pre></div>
 </td></tr></table>
 
@@ -2115,7 +2115,7 @@ against the <code class="codehilite"><span class="err">stats</span></code> key f
 ?api_key argument to pass the <strong>API-KEY</strong>.</p>
 </div>
 <p>If an error occurs, the action will return a JSON object like this:</p>
-<table class="codehilitetable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span>1
+<table class="codehilitetable"><tr><td class="linenos"><div class="linenodiv"><pre>1
 2
 3
 4
@@ -2136,17 +2136,17 @@ against the <code class="codehilite"><span class="err">stats</span></code> key f
 <p>Where <strong>target</strong> will refer to a project, Task or TaskRun object.</p>
 <h2 id="delete">Delete<a class="headerlink" href="#delete" title="Permanent link">&para;</a></h2>
 <p>Delete a domain object:</p>
-<table class="codehilitetable"><tr><td class="linenos"><div class="linenodiv"><pre>1</pre></div></td><td class="code"><div class="codehilite"><pre><span></span><span class="err">DELETE http://{pybossa-site-url}/api/{domain-object}/{id}[?api_key=API-KEY]</span>
+<table class="codehilitetable"><tr><td class="linenos"><div class="linenodiv"><pre>1</pre></div></td><td class="code"><div class="codehilite"><pre><span></span>DELETE http://{pybossa-site-url}/api/{domain-object}/{id}[?api_key=API-KEY]
 </pre></div>
 </td></tr></table>
 
 <div class="admonition note">
 <p class="admonition-title">Note</p>
 <p>Some DELETE actions may require to authenticate &amp; authorize the request. Use the
-<code class="codehilite"><span class="err">?api_key</span></code> argument to pass the <strong>API-KEY</strong>.</p>
+<code class="codehilite">?api_key</code> argument to pass the <strong>API-KEY</strong>.</p>
 </div>
 <p>If an error occurs, the action will return a JSON object like this:</p>
-<table class="codehilitetable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span>1
+<table class="codehilitetable"><tr><td class="linenos"><div class="linenodiv"><pre>1
 2
 3
 4

@@ -1786,10 +1786,12 @@ been made anonymous.</p>
 <li>Delete all personal data from the server (DB).</li>
 <li>Email to the user and the server administrator so that the user knows everything has been deleted.</li>
 </ul>
-<p>!!! note:
-    If the server is using DISQUS SSO, PYBOSSA will note in the removal confirmation email that 
-    - as of the 10<sup>th</sup> of May 2018, DISQUS does not provide an API method to delete the user account. 
-    Therefore, PYBOSSA will inform the user that he/she will have to delete their DISQUS account.</p>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>If the server is using DISQUS SSO, PYBOSSA will note in the removal confirmation email that 
+- as of the 10<sup>th</sup> of May 2018, DISQUS does not provide an API method to delete the user account. 
+Therefore, PYBOSSA will inform the user that he/she will have to delete their DISQUS account.</p>
+</div>
 <h2 id="export-your-own-data">Export your own data<a class="headerlink" href="#export-your-own-data" title="Permanent link">&para;</a></h2>
 <p>From your personal PYBOSSA account you will be able to export the following data in list of zip files:</p>
 <ul>
@@ -1812,7 +1814,7 @@ you are not included in any leaderboard (including top 5 users for projects, and
 <p>If your server is running a version smaller than v2.9.5 you will need to upgrade the 
 server to the latest version in order to be GDPR compliant. You then have to anonymize
 your stored IPs. PYBOSSA provides a script for doing this task:</p>
-<table class="codehilitetable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span>1</pre></div></td><td class="code"><div class="codehilite"><pre><span></span>  python cli.py anonymize_ips
+<table class="codehilitetable"><tr><td class="linenos"><div class="linenodiv"><pre>1</pre></div></td><td class="code"><div class="codehilite"><pre><span></span>  python cli.py anonymize_ips
 </pre></div>
 </td></tr></table>
 
@@ -1820,14 +1822,14 @@ your stored IPs. PYBOSSA provides a script for doing this task:</p>
 Because we&rsquo;re adding a new column to them. If you only use the default leaderboard, everything should
 work as expected. To delete your materialized views for your leaderboards, just run this command within
 the DB:</p>
-<table class="codehilitetable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span>1</pre></div></td><td class="code"><div class="codehilite"><pre><span></span>  <span class="k">drop</span> <span class="n">materialized</span> <span class="k">view</span> <span class="n">users_rank_</span><span class="err">{</span><span class="n">your_name</span><span class="err">}</span><span class="p">;</span>
+<table class="codehilitetable"><tr><td class="linenos"><div class="linenodiv"><pre>1</pre></div></td><td class="code"><div class="codehilite"><pre><span></span>  <span class="k">drop</span> <span class="n">materialized</span> <span class="k">view</span> <span class="n">users_rank_</span><span class="err">{</span><span class="n">your_name</span><span class="err">}</span><span class="p">;</span>
 </pre></div>
 </td></tr></table>
 
 <p>Replace the {} text with your names, and you will be fine. This will not delete any data, as the materialized
 views will be recreated by the jobs in the next tick. If you need them recreated now, just open a terminal and
 run the following command:</p>
-<table class="codehilitetable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span> 1
+<table class="codehilitetable"><tr><td class="linenos"><div class="linenodiv"><pre> 1
  2
  3
  4
@@ -1839,7 +1841,7 @@ run the following command:</p>
 10</pre></div></td><td class="code"><div class="codehilite"><pre><span></span><span class="kn">from</span> <span class="nn">run</span> <span class="kn">import</span> <span class="n">create_app</span>
 <span class="kn">from</span> <span class="nn">pybossa.leadeboard.jobs</span> <span class="kn">import</span> <span class="n">leaderboard</span>
 
-<span class="n">app</span> <span class="o">=</span> <span class="n">create_app</span><span class="p">(</span><span class="kc">False</span><span class="p">)</span>
+<span class="n">app</span> <span class="o">=</span> <span class="n">create_app</span><span class="p">(</span><span class="bp">False</span><span class="p">)</span>
 
 <span class="k">with</span> <span class="n">app</span><span class="o">.</span><span class="n">app_context</span><span class="p">():</span>
    <span class="n">leaderboard</span><span class="p">(</span><span class="n">info</span><span class="o">=</span><span class="s1">&#39;your_name&#39;</span><span class="p">)</span>
@@ -1856,7 +1858,7 @@ run the following command:</p>
 </div>
 <p>Lastly you will have to unsubscribe all your users from project updates. PYBOSSA has a DB migration
 for achiving it. Just run the following command:</p>
-<table class="codehilitetable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span>1</pre></div></td><td class="code"><div class="codehilite"><pre><span></span>  alembic upgrade head
+<table class="codehilitetable"><tr><td class="linenos"><div class="linenodiv"><pre>1</pre></div></td><td class="code"><div class="codehilite"><pre><span></span>  alembic upgrade head
 </pre></div>
 </td></tr></table>
 

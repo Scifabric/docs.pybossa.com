@@ -1773,7 +1773,7 @@ volunteers. For doing this task, you can do it offline, with our <a href="https:
 of the PYBOSSA webhooks feature.</p>
 <p>PYBOSSA webhooks is a notification system, that will send an HTTP POST request to another server of your
 choice, sending the following data:</p>
-<table class="codehilitetable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span>1
+<table class="codehilitetable"><tr><td class="linenos"><div class="linenodiv"><pre>1
 2
 3
 4
@@ -1808,7 +1808,7 @@ get the most voted option for an image pattern recognition project.</p>
 <h2 id="installation">Installation<a class="headerlink" href="#installation" title="Permanent link">&para;</a></h2>
 <p>To install the microservice all you need is to run the following command (we recommend
 you to use a virtual environment):</p>
-<table class="codehilitetable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span>1</pre></div></td><td class="code"><div class="codehilite"><pre><span></span>pip install -r requirements.txt
+<table class="codehilitetable"><tr><td class="linenos"><div class="linenodiv"><pre>1</pre></div></td><td class="code"><div class="codehilite"><pre><span></span>pip install -r requirements.txt
 </pre></div>
 </td></tr></table>
 
@@ -1831,7 +1831,7 @@ PYBOSSA results table.</p>
 <h2 id="running-the-microservice">Running the microservice<a class="headerlink" href="#running-the-microservice" title="Permanent link">&para;</a></h2>
 <p>Now that you&rsquo;ve the required libraries installed, running the server is as
 simple as this:</p>
-<table class="codehilitetable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span>1</pre></div></td><td class="code"><div class="codehilite"><pre><span></span>python app.py
+<table class="codehilitetable"><tr><td class="linenos"><div class="linenodiv"><pre>1</pre></div></td><td class="code"><div class="codehilite"><pre><span></span>python app.py
 </pre></div>
 </td></tr></table>
 
@@ -1854,7 +1854,7 @@ the name of your queue in the settings file. Check out the config variable:
 <h3 id="running-the-background-jobs">Running the background jobs<a class="headerlink" href="#running-the-background-jobs" title="Permanent link">&para;</a></h3>
 <p>Now that you have the project running background jobs, you need to process
 them. This is very simple, in another terminal run the following command:</p>
-<table class="codehilitetable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span>1</pre></div></td><td class="code"><div class="codehilite"><pre><span></span>rqworker mywebhooks
+<table class="codehilitetable"><tr><td class="linenos"><div class="linenodiv"><pre>1</pre></div></td><td class="code"><div class="codehilite"><pre><span></span>rqworker mywebhooks
 </pre></div>
 </td></tr></table>
 
@@ -1880,7 +1880,7 @@ where you have several completed tasks, without any associated webhooks. This is
 webhooks solution, and therefore PYBOSSA didn&rsquo;t created it for you.</p>
 <p>For those cases, you can use the cli.py script. It has a specific command that will allow you to create all
 the missing webhooks in one row. For doing it, all you need is your project ID and then run the following command:</p>
-<table class="codehilitetable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span>1</pre></div></td><td class="code"><div class="codehilite"><pre><span></span>python cli.py create_webhooks projectID
+<table class="codehilitetable"><tr><td class="linenos"><div class="linenodiv"><pre>1</pre></div></td><td class="code"><div class="codehilite"><pre><span></span>python cli.py create_webhooks projectID
 </pre></div>
 </td></tr></table>
 

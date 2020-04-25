@@ -1791,7 +1791,7 @@ Japanese.</p>
 <p>You can enable those translations (mostly user interface strings and
 actions) by doing the following: creating a symlink to the translations
 folders:</p>
-<table class="codehilitetable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span>1</pre></div></td><td class="code"><div class="codehilite"><pre><span></span>$ <span class="nb">cd</span> pybossa <span class="o">&amp;&amp;</span> ln -s themes/default/translations
+<table class="codehilitetable"><tr><td class="linenos"><div class="linenodiv"><pre>1</pre></div></td><td class="code"><div class="codehilite"><pre><span></span>$ <span class="nb">cd</span> pybossa <span class="o">&amp;&amp;</span> ln -s themes/default/translations
 </pre></div>
 </td></tr></table>
 
@@ -1800,14 +1800,14 @@ recommend to use these translations with the default theme.</p>
 <h2 id="adding-a-new-language">Adding a new language<a class="headerlink" href="#adding-a-new-language" title="Permanent link">&para;</a></h2>
 <p>If you want to translate PYBOSSA to your own language, lets say French,
 all you have to do is create a translation file with this command:</p>
-<table class="codehilitetable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span>1</pre></div></td><td class="code"><div class="codehilite"><pre><span></span>$ pybabel init -i messages.pot -d translations -l fr
+<table class="codehilitetable"><tr><td class="linenos"><div class="linenodiv"><pre>1</pre></div></td><td class="code"><div class="codehilite"><pre><span></span>$ pybabel init -i messages.pot -d translations -l fr
 </pre></div>
 </td></tr></table>
 
 <p>Then, open the file <strong>translations/fr/LC_MESSAGES/messages.po</strong> with
 any text editor and translate the English strings to French. For
 example, if you get this string:</p>
-<table class="codehilitetable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span>1
+<table class="codehilitetable"><tr><td class="linenos"><div class="linenodiv"><pre>1
 2
 3</pre></div></td><td class="code"><div class="codehilite"><pre><span></span><span class="c1">#: templates/_gcs_form.html:6 templates/admin/users.html:20</span>
 <span class="n">msgid</span> <span class="s2">&quot;Search&quot;</span>
@@ -1817,7 +1817,7 @@ example, if you get this string:</p>
 
 <p>All you have to do is to translate <strong>Search</strong> to its equivalent in
 French <strong>Rechercher</strong> and type in the msgstr section:</p>
-<table class="codehilitetable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span>1
+<table class="codehilitetable"><tr><td class="linenos"><div class="linenodiv"><pre>1
 2
 3</pre></div></td><td class="code"><div class="codehilite"><pre><span></span><span class="c1">#: templates/_gcs_form.html:6 templates/admin/users.html:20</span>
 <span class="n">msgid</span> <span class="s2">&quot;Search&quot;</span>
@@ -1827,7 +1827,7 @@ French <strong>Rechercher</strong> and type in the msgstr section:</p>
 
 <p>Once you have translated all the strings, all you have to do is compile
 the translation with this command:</p>
-<table class="codehilitetable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span>1</pre></div></td><td class="code"><div class="codehilite"><pre><span></span>$ pybabel compile -d translations
+<table class="codehilitetable"><tr><td class="linenos"><div class="linenodiv"><pre>1</pre></div></td><td class="code"><div class="codehilite"><pre><span></span>$ pybabel compile -d translations
 </pre></div>
 </td></tr></table>
 
@@ -1838,14 +1838,14 @@ Check for the LOCALES config variable and add your locale.</p>
 translate. In order to add the new strings (or update previous ones) you
 have to follow this 3 simple steps.</p>
 <h3 id="step-1-extract-new-strings-which-should-be-translated">Step 1, extract new strings which should be translated:<a class="headerlink" href="#step-1-extract-new-strings-which-should-be-translated" title="Permanent link">&para;</a></h3>
-<table class="codehilitetable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span>1
+<table class="codehilitetable"><tr><td class="linenos"><div class="linenodiv"><pre>1
 2</pre></div></td><td class="code"><div class="codehilite"><pre><span></span>$ <span class="nb">cd</span> pybossa
 $ pybabel extract . -F translations/../babel.cfg -k lazy_gettext -o translations/messages.pot
 </pre></div>
 </td></tr></table>
 
 <h3 id="step-2-update-existing-translation-files">Step 2, update existing translation files:<a class="headerlink" href="#step-2-update-existing-translation-files" title="Permanent link">&para;</a></h3>
-<table class="codehilitetable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span>1</pre></div></td><td class="code"><div class="codehilite"><pre><span></span>$ pybabel update -i translations/messages.pot -d translations
+<table class="codehilitetable"><tr><td class="linenos"><div class="linenodiv"><pre>1</pre></div></td><td class="code"><div class="codehilite"><pre><span></span>$ pybabel update -i translations/messages.pot -d translations
 </pre></div>
 </td></tr></table>
 
@@ -1856,7 +1856,7 @@ will get the word: <strong>fuzzy</strong> on top of the translation. Check all t
 <strong>fuzzy</strong> translations and fix them. When you are done, remove the line
 with the word <strong>fuzzy</strong> and re-compile the translations.</p>
 <h3 id="step-3-recompile-translation-files">Step 3, recompile translation files:<a class="headerlink" href="#step-3-recompile-translation-files" title="Permanent link">&para;</a></h3>
-<table class="codehilitetable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span>1</pre></div></td><td class="code"><div class="codehilite"><pre><span></span>$ pybabel compile -d translations
+<table class="codehilitetable"><tr><td class="linenos"><div class="linenodiv"><pre>1</pre></div></td><td class="code"><div class="codehilite"><pre><span></span>$ pybabel compile -d translations
 </pre></div>
 </td></tr></table>
 

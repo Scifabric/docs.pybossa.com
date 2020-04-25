@@ -1645,18 +1645,18 @@
                 <p>You can use the full-text search engine of PYBOSSA using the RESTful API. This feature is available for the <strong>info</strong> fields of the domain objects, as that&rsquo;s where you will be storing the information.</p>
 <p>PYBOSSA only searches within the first level keys (as seen before) of the JSON data stored in the info field. </p>
 <p>Full-text search is amazing because it means that the server will understand verbs, plurals, singulars, etc. By default, PYBOSSA uses English for the searches. You can customize this behavior using any of the supported languages by PostgreSQL changing the settings_local.py config variable: </p>
-<table class="codehilitetable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span>1</pre></div></td><td class="code"><div class="codehilite"><pre><span></span>   <span class="n">FULLTEXTSEARCH_LANGUAGE</span> <span class="o">=</span> <span class="s1">&#39;spanish&#39;</span><span class="o">.</span>
+<table class="codehilitetable"><tr><td class="linenos"><div class="linenodiv"><pre>1</pre></div></td><td class="code"><div class="codehilite"><pre><span></span>   <span class="n">FULLTEXTSEARCH_LANGUAGE</span> <span class="o">=</span> <span class="s1">&#39;spanish&#39;</span><span class="o">.</span>
 </pre></div>
 </td></tr></table>
 
 <p>If you want to search using this method, just add the following argument:</p>
-<table class="codehilitetable"><tr><td class="linenos"><div class="linenodiv"><pre>1</pre></div></td><td class="code"><div class="codehilite"><pre><span></span><span class="err">info=key1::value1&amp;fulltextsearch=1</span>
+<table class="codehilitetable"><tr><td class="linenos"><div class="linenodiv"><pre>1</pre></div></td><td class="code"><div class="codehilite"><pre><span></span>info=key1::value1&amp;fulltextsearch=1
 </pre></div>
 </td></tr></table>
 
 <p>That will return every object in the DB that has a key equal to key1 and contains he value the word value1.</p>
 <p>Another option could be the following:</p>
-<table class="codehilitetable"><tr><td class="linenos"><div class="linenodiv"><pre>1</pre></div></td><td class="code"><div class="codehilite"><pre><span></span><span class="err">info=key1::value1|key2:word1%26word2&amp;fulltextsearch=1</span>
+<table class="codehilitetable"><tr><td class="linenos"><div class="linenodiv"><pre>1</pre></div></td><td class="code"><div class="codehilite"><pre><span></span>info=key1::value1|key2:word1%26word2&amp;fulltextsearch=1
 </pre></div>
 </td></tr></table>
 
@@ -1671,11 +1671,11 @@ objects enriched with the following two fields:</p>
 </ul>
 <p>Here you have an example of the expected output for an api call like
 this:</p>
-<table class="codehilitetable"><tr><td class="linenos"><div class="linenodiv"><pre>1</pre></div></td><td class="code"><div class="codehilite"><pre><span></span><span class="err">/api/task?project_id=1&amp;info=name::ipsum%26bravo&amp;fulltextsearch=1</span>
+<table class="codehilitetable"><tr><td class="linenos"><div class="linenodiv"><pre>1</pre></div></td><td class="code"><div class="codehilite"><pre><span></span>/api/task?project_id=1&amp;info=name::ipsum%26bravo&amp;fulltextsearch=1
 </pre></div>
 </td></tr></table>
 
-<table class="codehilitetable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span> 1
+<table class="codehilitetable"><tr><td class="linenos"><div class="linenodiv"><pre> 1
  2
  3
  4

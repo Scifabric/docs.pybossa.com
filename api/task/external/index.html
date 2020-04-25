@@ -1697,29 +1697,28 @@
 <p>First, create a project. When you build a project in PYBOSSA, the system will create for you a <em>secret key</em>. This secret key will be used by your phone app to authenticate all the requests and avoid other users to send data to your project via external user API.</p>
 <div class="admonition note">
 <p class="admonition-title">Note</p>
-<p>We highly recommend using SSL on your server to secure all the process. You can use Let&rsquo;s Encrypt certificates for free. Check their
-<a href="https://certbot.eff.org/">documentation.</a></p>
+<p>We highly recommend using SSL on your server to secure all the process. You can use Let&rsquo;s Encrypt certificates for free. Check their<a href="https://certbot.eff.org/">documentation.</a></p>
 </div>
 <p>Now your phone app will have to authenticate to the server to get tasks and post task runs.</p>
 <p>To do it, all you have to do is to create an HTTP Request with an
 Authorization Header like this:</p>
 <table class="codehilitetable"><tr><td class="linenos"><div class="linenodiv"><pre>1
-2</pre></div></td><td class="code"><div class="codehilite"><pre><span></span><span class="err">HEADERS Authorization: project.secret_key</span>
-<span class="err">GET http://{pybossa-site-url}/api/auth/project/short_name/token</span>
+2</pre></div></td><td class="code"><div class="codehilite"><pre><span></span>HEADERS Authorization: project.secret_key
+GET http://{pybossa-site-url}/api/auth/project/short_name/token
 </pre></div>
 </td></tr></table>
 
 <p>That request will return a JWT token for you. With that token, you will be able to start requesting tasks for your user base passing an authorization header again. Imagine a user from your database is identified like this: &lsquo;1xa&rsquo;:</p>
 <table class="codehilitetable"><tr><td class="linenos"><div class="linenodiv"><pre>1
-2</pre></div></td><td class="code"><div class="codehilite"><pre><span></span><span class="err">HEADERS Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOiIxMjM0NTY3ODkwIiwibmFtZSI6IkpvaG4gRG9lIiwiYWRtaW4iOnRydWV9.TJVA95OrM7E2cBab30RMHrHDcEfxjoYZgeFONFh7HgQ</span>
-<span class="err">GET http://{pybossa-site-url}/api/{project.id}/newtask?external_uid=1xa</span>
+2</pre></div></td><td class="code"><div class="codehilite"><pre><span></span>HEADERS Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOiIxMjM0NTY3ODkwIiwibmFtZSI6IkpvaG4gRG9lIiwiYWRtaW4iOnRydWV9.TJVA95OrM7E2cBab30RMHrHDcEfxjoYZgeFONFh7HgQ
+GET http://{pybossa-site-url}/api/{project.id}/newtask?external_uid=1xa
 </pre></div>
 </td></tr></table>
 
 <p>That will return a task for the user ID 1xa that belongs to your database but not to PYBOSSA. Then, once the user has completed the task you will be able to submit it like this:</p>
 <table class="codehilitetable"><tr><td class="linenos"><div class="linenodiv"><pre>1
-2</pre></div></td><td class="code"><div class="codehilite"><pre><span></span><span class="err">HEADERS Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOiIxMjM0NTY3ODkwIiwibmFtZSI6IkpvaG4gRG9lIiwiYWRtaW4iOnRydWV9.TJVA95OrM7E2cBab30RMHrHDcEfxjoYZgeFONFh7HgQ</span>
-<span class="err">POST http://{pybossa-site-url}/api/taskrun?external_uid=1xa</span>
+2</pre></div></td><td class="code"><div class="codehilite"><pre><span></span>HEADERS Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOiIxMjM0NTY3ODkwIiwibmFtZSI6IkpvaG4gRG9lIiwiYWRtaW4iOnRydWV9.TJVA95OrM7E2cBab30RMHrHDcEfxjoYZgeFONFh7HgQ
+POST http://{pybossa-site-url}/api/taskrun?external_uid=1xa
 </pre></div>
 </td></tr></table>
 

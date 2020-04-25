@@ -3156,14 +3156,14 @@ We offer official support and we would love to work with your PYBOSSA server.</p
 <p>The <a href="https://github.com/Scifabric/pybossa/blob/master/settings_local.py.tmpl#L19">DEBUG</a> mode is disabled by default in the configuration file, as this should be only used when you are running the server for development purposes. You should not enable this option unless you need to do some debugging in the PYBOSSA server.</p>
 <h2 id="debug-toolbar">Debug Toolbar<a class="headerlink" href="#debug-toolbar" title="Permanent link">&para;</a></h2>
 <p>PYBOSSA includes a flag to enable a debug toolbar that can give you more insights about the performance of PYBOSSA. We strongly recommend keeping the toolbar disabled in production environments, as it will slow down considerably all the execution of the code. However, if you are testing the server, feel free to enable it adding the following variable to the settings file:</p>
-<table class="codehilitetable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span>1</pre></div></td><td class="code"><div class="codehilite"><pre><span></span><span class="n">ENABLE_DEBUG_TOOLBAR</span> <span class="o">=</span> <span class="kc">True</span>
+<table class="codehilitetable"><tr><td class="linenos"><div class="linenodiv"><pre>1</pre></div></td><td class="code"><div class="codehilite"><pre><span></span><span class="n">ENABLE_DEBUG_TOOLBAR</span> <span class="o">=</span> <span class="bp">True</span>
 </pre></div>
 </td></tr></table>
 
 <h2 id="profiling">Profiling<a class="headerlink" href="#profiling" title="Permanent link">&para;</a></h2>
 <p>PYBOSSA installs <a href="https://github.com/muatik/flask-profiler">Flask-Profiler</a>, an extension that allows you to know which endpoints are being called, and how much time it
 takes for them to process each request. You can enable it by setting this config variable in the settings_local.py file:</p>
-<table class="codehilitetable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span> 1
+<table class="codehilitetable"><tr><td class="linenos"><div class="linenodiv"><pre> 1
  2
  3
  4
@@ -3177,12 +3177,12 @@ takes for them to process each request. You can enable it by setting this config
 12
 13
 14</pre></div></td><td class="code"><div class="codehilite"><pre><span></span><span class="n">FLASK_PROFILER</span> <span class="o">=</span> <span class="p">{</span>
-    <span class="s2">&quot;enabled&quot;</span><span class="p">:</span> <span class="kc">True</span><span class="p">,</span>
+    <span class="s2">&quot;enabled&quot;</span><span class="p">:</span> <span class="bp">True</span><span class="p">,</span>
     <span class="s2">&quot;storage&quot;</span><span class="p">:</span> <span class="p">{</span>
         <span class="s2">&quot;engine&quot;</span><span class="p">:</span> <span class="s2">&quot;sqlite&quot;</span>
     <span class="p">},</span>
     <span class="s2">&quot;basicAuth&quot;</span><span class="p">:{</span>
-        <span class="s2">&quot;enabled&quot;</span><span class="p">:</span> <span class="kc">True</span><span class="p">,</span>
+        <span class="s2">&quot;enabled&quot;</span><span class="p">:</span> <span class="bp">True</span><span class="p">,</span>
         <span class="s2">&quot;username&quot;</span><span class="p">:</span> <span class="s2">&quot;admin&quot;</span><span class="p">,</span>
         <span class="s2">&quot;password&quot;</span><span class="p">:</span> <span class="s2">&quot;admin&quot;</span>
     <span class="p">},</span>
@@ -3207,7 +3207,7 @@ SECRET_KEY keys for your server and keep them private</strong>. Please, check th
 <h2 id="ensuring-anonymous-ips">Ensuring Anonymous IPs<a class="headerlink" href="#ensuring-anonymous-ips" title="Permanent link">&para;</a></h2>
 <p>PYBOSSA uses CryptoPAn to anoymize the user&rsquo;s IPs when they participate as anonymous users. This is a feature that&rsquo;s mandatory, and you will have to create
 a KEY for it, specially this one:</p>
-<table class="codehilitetable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span>1</pre></div></td><td class="code"><div class="codehilite"><pre><span></span><span class="n">CRYPTOPAN_KEY</span> <span class="o">=</span> <span class="s1">&#39;32-char-str-for-AES-key-and-pad.&#39;</span>
+<table class="codehilitetable"><tr><td class="linenos"><div class="linenodiv"><pre>1</pre></div></td><td class="code"><div class="codehilite"><pre><span></span><span class="n">CRYPTOPAN_KEY</span> <span class="o">=</span> <span class="s1">&#39;32-char-str-for-AES-key-and-pad.&#39;</span>
 </pre></div>
 </td></tr></table>
 
@@ -3217,7 +3217,7 @@ a KEY for it, specially this one:</p>
 </div>
 <h2 id="database-username-and-password">Database username and password<a class="headerlink" href="#database-username-and-password" title="Permanent link">&para;</a></h2>
 <p>PYBOSSA uses the <a href="http://www.sqlalchemy.org/">SQLAlchemy</a> SQL toolkit to access the DB. In the settings file, you only need to modify the name of the user, password and database name, so it fits your needs in the field SQLALCHEMY_DATABASE_URI:</p>
-<table class="codehilitetable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span>1</pre></div></td><td class="code"><div class="codehilite"><pre><span></span><span class="n">SQLALCHEMY_DATABASE_URI</span> <span class="o">=</span> <span class="s1">&#39;postgresql://username:userpassword@localhost/databasename&#39;</span>
+<table class="codehilitetable"><tr><td class="linenos"><div class="linenodiv"><pre>1</pre></div></td><td class="code"><div class="codehilite"><pre><span></span><span class="n">SQLALCHEMY_DATABASE_URI</span> <span class="o">=</span> <span class="s1">&#39;postgresql://username:userpassword@localhost/databasename&#39;</span>
 </pre></div>
 </td></tr></table>
 
@@ -3225,7 +3225,7 @@ a KEY for it, specially this one:</p>
 <p>If you have a master/slave PostgreSQL setup, you can instruct PYBOSSA to use the slave node for load balancing queries between the master and slave node.</p>
 <p>For enabling this mode, all you have to do is adding to the
 settings_local.py config file the following:</p>
-<table class="codehilitetable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span>1
+<table class="codehilitetable"><tr><td class="linenos"><div class="linenodiv"><pre>1
 2
 3</pre></div></td><td class="code"><div class="codehilite"><pre><span></span><span class="n">SQLALCHEMY_BINDS</span> <span class="o">=</span> <span class="p">{</span>
     <span class="s1">&#39;slave&#39;</span><span class="p">:</span> <span class="s1">&#39;postgresql://user:password@server/pybossadb&#39;</span>
@@ -3241,7 +3241,7 @@ PYBOSSA users, posting a link with a signed key that will be verified by the ser
 <p>By default, PYBOSSA has the API endpoints configured with <strong>Access-Control-Allow-Origin:</strong>*. However, you can change it to whatever you want via the config file. Take a look at the official documentation for <a href="http://flask-cors.readthedocs.io/en/latest/">Flask-CORS</a> for all the available options.</p>
 <h3 id="fine-tuning-cors">Fine tuning CORS<a class="headerlink" href="#fine-tuning-cors" title="Permanent link">&para;</a></h3>
 <p>You can fine tune the CORS of PYBOSSA:</p>
-<table class="codehilitetable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span> 1
+<table class="codehilitetable"><tr><td class="linenos"><div class="linenodiv"><pre> 1
  2
  3
  4
@@ -3280,14 +3280,14 @@ default one: PYBOSSA. You only need to change the string <a href="https://github
 <p>By default PYBOSSA only speaks English. However, the default theme comes with a few translations (Spanish, French, Italian, Japanese, Greek and German).</p>
 <p>You can enable those translations (mostly user interface strings and
 actions) by doing the following: creating a symlink to the translations folders:</p>
-<table class="codehilitetable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span>1</pre></div></td><td class="code"><div class="codehilite"><pre><span></span>$ <span class="nb">cd</span> pybossa <span class="o">&amp;&amp;</span> ln -s themes/default/translations
+<table class="codehilitetable"><tr><td class="linenos"><div class="linenodiv"><pre>1</pre></div></td><td class="code"><div class="codehilite"><pre><span></span>$ <span class="nb">cd</span> pybossa <span class="o">&amp;&amp;</span> ln -s themes/default/translations
 </pre></div>
 </td></tr></table>
 
 <p>This step will enable the default translations of PYBOSSA for your server. We recommend using these translations with the default theme. If you use your theme, the best thing is to do your translation, (see <a href="../../translating/">translating</a>), as you might want to name things differently on the templates.</p>
 <p>You can disable/enable different languages in your config file
 <strong>settings_local.py</strong>. For example, to remove French you can add this configuration to the settings file:</p>
-<table class="codehilitetable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span>1
+<table class="codehilitetable"><tr><td class="linenos"><div class="linenodiv"><pre>1
 2</pre></div></td><td class="code"><div class="codehilite"><pre><span></span><span class="n">LOCALES</span> <span class="o">=</span> <span class="p">[(</span><span class="s1">&#39;en&#39;</span><span class="p">,</span> <span class="s1">&#39;English&#39;</span><span class="p">),</span> <span class="p">(</span><span class="s1">&#39;es&#39;</span><span class="p">,</span> <span class="sa">u</span><span class="s1">&#39;Español&#39;</span><span class="p">),</span>
            <span class="p">(</span><span class="s1">&#39;it&#39;</span><span class="p">,</span> <span class="s1">&#39;Italiano&#39;</span><span class="p">),</span> <span class="p">(</span><span class="s1">&#39;ja&#39;</span><span class="p">,</span> <span class="sa">u</span><span class="s1">&#39;日本語&#39;</span><span class="p">)]</span>
 </pre></div>
@@ -3295,7 +3295,7 @@ actions) by doing the following: creating a symlink to the translations folders:
 
 <p>Also, you can always specify a different default locale using the
 following snippet in the same settings file:</p>
-<table class="codehilitetable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span>1</pre></div></td><td class="code"><div class="codehilite"><pre><span></span><span class="n">DEFAULT_LOCALE</span> <span class="o">=</span> <span class="s1">&#39;es&#39;</span>
+<table class="codehilitetable"><tr><td class="linenos"><div class="linenodiv"><pre>1</pre></div></td><td class="code"><div class="codehilite"><pre><span></span><span class="n">DEFAULT_LOCALE</span> <span class="o">=</span> <span class="s1">&#39;es&#39;</span>
 </pre></div>
 </td></tr></table>
 
@@ -3326,7 +3326,7 @@ change the order of the elements of the navigation bar: the first item should be
 <p>As you can see, you will be able to give a full personality to your own PYBOSSA server without problems.</p>
 <h3 id="using-sass-and-minifying-javascript">Using SASS and minifying JavaScript<a class="headerlink" href="#using-sass-and-minifying-javascript" title="Permanent link">&para;</a></h3>
 <p>PYBOSSA supports SASS thanks to Flask-Assets. If you want to compile SASS or SCSS, just add to your theme static folder a new one named: sass. Then, you can request the compiled version from the templates like this:</p>
-<table class="codehilitetable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span>1
+<table class="codehilitetable"><tr><td class="linenos"><div class="linenodiv"><pre>1
 2
 3
 4</pre></div></td><td class="code"><div class="codehilite"><pre><span></span>{% assets filters=&quot;libsass&quot;, output=&quot;css/gen/yourcss.min.css&quot;,
@@ -3337,7 +3337,7 @@ change the order of the elements of the navigation bar: the first item should be
 </td></tr></table>
 
 <p>The same can be done for Javascript using the filter minjs:</p>
-<table class="codehilitetable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span>1
+<table class="codehilitetable"><tr><td class="linenos"><div class="linenodiv"><pre>1
 2
 3
 4</pre></div></td><td class="code"><div class="codehilite"><pre><span></span>{% assets filters=&quot;jsmin&quot;, output=&quot;gen/packed.js&quot;,
@@ -3349,13 +3349,13 @@ change the order of the elements of the navigation bar: the first item should be
 
 <h2 id="results-page">Results page<a class="headerlink" href="#results-page" title="Permanent link">&para;</a></h2>
 <p>PYBOSSA allows you to present a results page for your server. Add a file named results.html to the home directory in the templates folder, and you&rsquo;ll be able to show results about your project from one place:</p>
-<table class="codehilitetable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span>1</pre></div></td><td class="code"><div class="codehilite"><pre><span></span><span class="err"> &lt;http://server/results&gt;</span>
+<table class="codehilitetable"><tr><td class="linenos"><div class="linenodiv"><pre>1</pre></div></td><td class="code"><div class="codehilite"><pre><span></span> &lt;http://server/results&gt;
 </pre></div>
 </td></tr></table>
 
 <h2 id="adding-your-contact-information">Adding your Contact Information<a class="headerlink" href="#adding-your-contact-information" title="Permanent link">&para;</a></h2>
 <p>By default, PYBOSSA provides e-mail, and a Twitter handle to show some contact information. If you want, you can change it to your e-mail and Twitter account. You can do it, modifying the following variables in the <strong>settings_local.py</strong> file:</p>
-<table class="codehilitetable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span>1
+<table class="codehilitetable"><tr><td class="linenos"><div class="linenodiv"><pre>1
 2</pre></div></td><td class="code"><div class="codehilite"><pre><span></span><span class="n">CONTACT_EMAIL</span> <span class="o">=</span> <span class="s1">&#39;&lt;your@email.com&gt;&#39;</span>
 <span class="n">CONTACT_TWITTER</span> <span class="o">=</span> <span class="s1">&#39;yourtwitterhandle&#39;</span>
 </pre></div>
@@ -3372,7 +3372,7 @@ DATAUSE link to the open license that you want to use.</p>
 Facebook and Google.</p>
 <h3 id="twitter">Twitter<a class="headerlink" href="#twitter" title="Permanent link">&para;</a></h3>
 <p>If you want to enable Twitter, you will need to create an application in <a href="https://dev.twitter.com/">Twitter</a> and copy and paste the <strong>Consumer key, and secret</strong> into the next variables and uncomment them:</p>
-<table class="codehilitetable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span>1
+<table class="codehilitetable"><tr><td class="linenos"><div class="linenodiv"><pre>1
 2</pre></div></td><td class="code"><div class="codehilite"><pre><span></span><span class="n">TWITTER_CONSUMER_KEY</span> <span class="o">=</span> <span class="s1">&#39;yourkey&#39;</span>
 <span class="n">TWITTER_CONSUMER_SECRET</span> <span class="o">=</span> <span class="s1">&#39;yoursecret&#39;</span>
 </pre></div>
@@ -3384,7 +3384,7 @@ Facebook and Google.</p>
 </div>
 <h3 id="facebook">Facebook<a class="headerlink" href="#facebook" title="Permanent link">&para;</a></h3>
 <p>If you want to enable Facebook, you will need to create an application on <a href="https://developers.facebook.com/apps">Facebook</a> and copy and paste the <strong>app ID/API Key and secret</strong> into the next variables and uncomment them: </p>
-<table class="codehilitetable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span>1
+<table class="codehilitetable"><tr><td class="linenos"><div class="linenodiv"><pre>1
 2</pre></div></td><td class="code"><div class="codehilite"><pre><span></span><span class="n">FACEBOOK_APP_ID</span> <span class="o">=</span> <span class="s1">&#39;yourappid&#39;</span>
 <span class="n">FACEBOOK_APP_SECRET</span> <span class="o">=</span> <span class="s1">&#39;yoursecret&#39;</span>
 </pre></div>
@@ -3392,7 +3392,7 @@ Facebook and Google.</p>
 
 <h3 id="google">Google<a class="headerlink" href="#google" title="Permanent link">&para;</a></h3>
 <p>If you want to enable Google, you will need to create an application in <a href="https://code.google.com/apis/console/">Google</a> and copy and paste the <strong>Client ID, and secret</strong> into the next variables and uncomment them:</p>
-<table class="codehilitetable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span>1
+<table class="codehilitetable"><tr><td class="linenos"><div class="linenodiv"><pre>1
 2</pre></div></td><td class="code"><div class="codehilite"><pre><span></span><span class="n">GOOGLE_CLIENT_ID</span> <span class="o">=</span> <span class="s1">&#39;clientid&#39;</span>
 <span class="n">GOOGLE_CLIENT_SECRET</span> <span class="o">=</span> <span class="s1">&#39;secret&#39;</span>
 </pre></div>
@@ -3403,7 +3403,7 @@ Facebook and Google.</p>
 <a href="https://github.com/Scifabric/pybossa/blob/master/settings_local.py.tmpl#L64">ADMINS</a> config variable and add a list of e-mails.</p>
 <h3 id="background-jobs-error-notifications">Background jobs error notifications<a class="headerlink" href="#background-jobs-error-notifications" title="Permanent link">&para;</a></h3>
 <p>You can change the default behavior for receiving emails regarding failed background jobs. The two config variables are the following:</p>
-<table class="codehilitetable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span>1
+<table class="codehilitetable"><tr><td class="linenos"><div class="linenodiv"><pre>1
 2</pre></div></td><td class="code"><div class="codehilite"><pre><span></span><span class="n">FAILED_JOBS_MAILS</span> <span class="o">=</span> <span class="mi">7</span>
 <span class="n">FAILED_JOBS_RETRIES</span> <span class="o">=</span> <span class="mi">3</span>
 </pre></div>
@@ -3427,7 +3427,7 @@ configure a server. Please, check the section <a href="https://github.com/Scifab
 <li><strong>Project owners</strong>, all the users that have created one or more projects on the server.</li>
 </ul>
 <p>Therefore, let&rsquo;s say that you want to warn all your admins that a new configuration will be deployed in your system. In this case, all you have to do is to modify the <strong>ANNOUNCEMENT</strong> variable to display the message for the given type of users:</p>
-<table class="codehilitetable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span>1</pre></div></td><td class="code"><div class="codehilite"><pre><span></span><span class="n">ANNOUNCEMENT</span> <span class="o">=</span> <span class="p">{</span><span class="s1">&#39;root&#39;</span><span class="p">:</span> <span class="s1">&#39;Your secret message&#39;</span><span class="p">}</span>
+<table class="codehilitetable"><tr><td class="linenos"><div class="linenodiv"><pre>1</pre></div></td><td class="code"><div class="codehilite"><pre><span></span><span class="n">ANNOUNCEMENT</span> <span class="o">=</span> <span class="p">{</span><span class="s1">&#39;root&#39;</span><span class="p">:</span> <span class="s1">&#39;Your secret message&#39;</span><span class="p">}</span>
 </pre></div>
 </td></tr></table>
 
@@ -3445,13 +3445,13 @@ configure a server. Please, check the section <a href="https://github.com/Scifab
 <h2 id="disable-email-notifications">Disable email notifications<a class="headerlink" href="#disable-email-notifications" title="Permanent link">&para;</a></h2>
 <p>When a PYBOSSA project publishes a blog post, users will get an email (and webpush notification if it is enabled) with the update.</p>
 <p>You can disable this behavior with the following flag:</p>
-<table class="codehilitetable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span>1</pre></div></td><td class="code"><div class="codehilite"><pre><span></span><span class="n">DISABLE_EMAIL_NOTIFICATIONS</span> <span class="o">=</span> <span class="kc">True</span>
+<table class="codehilitetable"><tr><td class="linenos"><div class="linenodiv"><pre>1</pre></div></td><td class="code"><div class="codehilite"><pre><span></span><span class="n">DISABLE_EMAIL_NOTIFICATIONS</span> <span class="o">=</span> <span class="bp">True</span>
 </pre></div>
 </td></tr></table>
 
 <h2 id="cache">Cache<a class="headerlink" href="#cache" title="Permanent link">&para;</a></h2>
 <p>By default PYBOSSA uses Redis to cache a lot of data in order to serve it as fast as possible. PYBOSSA comes with a default set of timeouts for different views that you can change or modify to your own taste. All you have to do is modify the following variables in your settings file:</p>
-<table class="codehilitetable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span> 1
+<table class="codehilitetable"><tr><td class="linenos"><div class="linenodiv"><pre> 1
  2
  3
  4
@@ -3489,49 +3489,49 @@ configure a server. Please, check the section <a href="https://github.com/Scifab
 </div>
 <h3 id="disabling-the-cache">Disabling the Cache<a class="headerlink" href="#disabling-the-cache" title="Permanent link">&para;</a></h3>
 <p>If you want to disable the cache, you only have to export the following env variable:</p>
-<table class="codehilitetable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span>1</pre></div></td><td class="code"><div class="codehilite"><pre><span></span><span class="n">PYBOSSA_REDIS_CACHE_DISABLED</span><span class="o">=</span><span class="s1">&#39;1&#39;</span>
+<table class="codehilitetable"><tr><td class="linenos"><div class="linenodiv"><pre>1</pre></div></td><td class="code"><div class="codehilite"><pre><span></span><span class="n">PYBOSSA_REDIS_CACHE_DISABLED</span><span class="o">=</span><span class="s1">&#39;1&#39;</span>
 </pre></div>
 </td></tr></table>
 
 <h2 id="redis-configuration">Redis configuration<a class="headerlink" href="#redis-configuration" title="Permanent link">&para;</a></h2>
 <p>You can configure how you connect to Redis via the following config variables.</p>
 <h3 id="redis-python-prefix">Redis python prefix<a class="headerlink" href="#redis-python-prefix" title="Permanent link">&para;</a></h3>
-<table class="codehilitetable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span>1</pre></div></td><td class="code"><div class="codehilite"><pre><span></span><span class="n">REDIS_KEYPREFIX</span> <span class="o">=</span> <span class="s1">&#39;pybossa_cache&#39;</span>
+<table class="codehilitetable"><tr><td class="linenos"><div class="linenodiv"><pre>1</pre></div></td><td class="code"><div class="codehilite"><pre><span></span><span class="n">REDIS_KEYPREFIX</span> <span class="o">=</span> <span class="s1">&#39;pybossa_cache&#39;</span>
 </pre></div>
 </td></tr></table>
 
 <h3 id="redis-sentinel">Redis Sentinel<a class="headerlink" href="#redis-sentinel" title="Permanent link">&para;</a></h3>
 <p>Specify where the Redis sentinel is listening.</p>
-<table class="codehilitetable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span>1</pre></div></td><td class="code"><div class="codehilite"><pre><span></span><span class="n">REDIS_SENTINEL</span> <span class="o">=</span> <span class="p">[(</span><span class="s1">&#39;localhost&#39;</span><span class="p">,</span> <span class="mi">26379</span><span class="p">)]</span>
+<table class="codehilitetable"><tr><td class="linenos"><div class="linenodiv"><pre>1</pre></div></td><td class="code"><div class="codehilite"><pre><span></span><span class="n">REDIS_SENTINEL</span> <span class="o">=</span> <span class="p">[(</span><span class="s1">&#39;localhost&#39;</span><span class="p">,</span> <span class="mi">26379</span><span class="p">)]</span>
 </pre></div>
 </td></tr></table>
 
 <h3 id="redis-master">Redis master<a class="headerlink" href="#redis-master" title="Permanent link">&para;</a></h3>
 <p>Specify the name of the master node.</p>
-<table class="codehilitetable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span>1</pre></div></td><td class="code"><div class="codehilite"><pre><span></span><span class="n">REDIS_MASTER</span> <span class="o">=</span> <span class="s1">&#39;mymaster&#39;</span>
+<table class="codehilitetable"><tr><td class="linenos"><div class="linenodiv"><pre>1</pre></div></td><td class="code"><div class="codehilite"><pre><span></span><span class="n">REDIS_MASTER</span> <span class="o">=</span> <span class="s1">&#39;mymaster&#39;</span>
 </pre></div>
 </td></tr></table>
 
 <h3 id="redis-db">Redis DB<a class="headerlink" href="#redis-db" title="Permanent link">&para;</a></h3>
 <p>Specify the DB.</p>
-<table class="codehilitetable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span>1</pre></div></td><td class="code"><div class="codehilite"><pre><span></span><span class="n">REDIS_DB</span> <span class="o">=</span> <span class="mi">0</span>
+<table class="codehilitetable"><tr><td class="linenos"><div class="linenodiv"><pre>1</pre></div></td><td class="code"><div class="codehilite"><pre><span></span><span class="n">REDIS_DB</span> <span class="o">=</span> <span class="mi">0</span>
 </pre></div>
 </td></tr></table>
 
 <h3 id="redis-socket-timeout">Redis Socket timeout<a class="headerlink" href="#redis-socket-timeout" title="Permanent link">&para;</a></h3>
-<table class="codehilitetable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span>1</pre></div></td><td class="code"><div class="codehilite"><pre><span></span><span class="n">REDIS_SOCKET_TIMEOUT</span> <span class="o">=</span> <span class="mf">0.1</span>
+<table class="codehilitetable"><tr><td class="linenos"><div class="linenodiv"><pre>1</pre></div></td><td class="code"><div class="codehilite"><pre><span></span><span class="n">REDIS_SOCKET_TIMEOUT</span> <span class="o">=</span> <span class="mf">0.1</span>
 </pre></div>
 </td></tr></table>
 
 <h3 id="redis-retry-on-timeout">Redis retry on timeout<a class="headerlink" href="#redis-retry-on-timeout" title="Permanent link">&para;</a></h3>
-<table class="codehilitetable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span>1</pre></div></td><td class="code"><div class="codehilite"><pre><span></span><span class="n">REDIS_RETRY_ON_TIMEOUT</span> <span class="o">=</span> <span class="kc">True</span>
+<table class="codehilitetable"><tr><td class="linenos"><div class="linenodiv"><pre>1</pre></div></td><td class="code"><div class="codehilite"><pre><span></span><span class="n">REDIS_RETRY_ON_TIMEOUT</span> <span class="o">=</span> <span class="bp">True</span>
 </pre></div>
 </td></tr></table>
 
 <h2 id="rate-limit-for-the-api">Rate limit for the API<a class="headerlink" href="#rate-limit-for-the-api" title="Permanent link">&para;</a></h2>
 <p>By default, PYBOSSA limits the usage of the API with the following
 values:</p>
-<table class="codehilitetable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span>1
+<table class="codehilitetable"><tr><td class="linenos"><div class="linenodiv"><pre>1
 2</pre></div></td><td class="code"><div class="codehilite"><pre><span></span><span class="n">LIMIT</span> <span class="o">=</span> <span class="mi">300</span>
 <span class="n">PER</span> <span class="o">=</span> <span class="mi">15</span> <span class="o">*</span> <span class="mi">60</span>
 </pre></div>
@@ -3548,7 +3548,7 @@ projects, etc. using the local file system of your server. While this is
 nice for small setups, when you need to add more nodes to serve the same content, this feature could become a problem. For this reason, PYBOSSA also supports cloud solutions to save the files and serve them from there correctly.</p>
 <h4 id="local-uploader">Local Uploader<a class="headerlink" href="#local-uploader" title="Permanent link">&para;</a></h4>
 <p>The local uploader is configured by default. We recommend having a separate folder for the assets, outside the pybossa folder. In any case, for enabling this method use the following the config settings:</p>
-<table class="codehilitetable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span>1
+<table class="codehilitetable"><tr><td class="linenos"><div class="linenodiv"><pre>1
 2</pre></div></td><td class="code"><div class="codehilite"><pre><span></span><span class="n">UPLOAD_METHOD</span> <span class="o">=</span> <span class="s1">&#39;local&#39;</span>
 <span class="n">UPLOAD_FOLDER</span> <span class="o">=</span> <span class="s1">&#39;/absolute/path/to/your/folder/to/store/assets/&#39;</span>
 </pre></div>
@@ -3556,7 +3556,7 @@ nice for small setups, when you need to add more nodes to serve the same content
 
 <h4 id="rackspace-cloud-files">Rackspace Cloud Files<a class="headerlink" href="#rackspace-cloud-files" title="Permanent link">&para;</a></h4>
 <p>PYBOSSA comes with support for Rackspace CloudFiles service, allowing you to grow the services horizontally. Supporting cloud-based system is as simple as having an account in Rackspace, and setting up the following config variables:</p>
-<table class="codehilitetable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span>1
+<table class="codehilitetable"><tr><td class="linenos"><div class="linenodiv"><pre>1
 2
 3
 4</pre></div></td><td class="code"><div class="codehilite"><pre><span></span><span class="n">UPLOAD_METHOD</span> <span class="o">=</span> <span class="s1">&#39;rackspace&#39;</span>
@@ -3582,7 +3582,7 @@ since that moment, your PYBOSSA server will save files in the cloud.</p>
 <h2 id="tracking-the-server-with-google-analytics">Tracking the server with Google Analytics<a class="headerlink" href="#tracking-the-server-with-google-analytics" title="Permanent link">&para;</a></h2>
 <p>PYBOSSA provides an easy way to integrate Google Analytics with your PYBOSSA server. To enable it you only have to create a file with the name: <strong>_ga.html</strong> in the <strong>pybossa/template</strong> folder with the Google Tracking code. PYBOSSA will be including your Google Analytics tracking code on every page since that moment.</p>
 <p>The file <strong>_ga.html</strong> should contain something like this:</p>
-<table class="codehilitetable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span> 1
+<table class="codehilitetable"><tr><td class="linenos"><div class="linenodiv"><pre> 1
  2
  3
  4
@@ -3618,7 +3618,7 @@ since that moment, your PYBOSSA server will save files in the cloud.</p>
   XXXXX:YYYY where you should paste your key).</li>
 </ul>
 <p>The <strong>_gcs.html</strong> file will have something like this:</p>
-<table class="codehilitetable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span>1
+<table class="codehilitetable"><tr><td class="linenos"><div class="linenodiv"><pre>1
 2
 3
 4
@@ -3639,7 +3639,7 @@ since that moment, your PYBOSSA server will save files in the cloud.</p>
 </td></tr></table>
 
 <p>And the <strong>_gcs_form.html</strong> will be like this:</p>
-<table class="codehilitetable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span>1
+<table class="codehilitetable"><tr><td class="linenos"><div class="linenodiv"><pre>1
 2
 3
 4
@@ -3688,7 +3688,7 @@ to restart the server.</p>
 <p><a href="http://ckan.org">CKAN</a> is a powerful data management system that makes data accessible – by providing tools to streamline publishing, sharing, finding and using data. <a href="http://ckan.org">CKAN</a> is aimed at data publishers (national and regional governments, companies and
 organizations) wanting to make their data open and available.</p>
 <p>PYBOSSA can export project&rsquo;s data to a <a href="http://ckan.org">CKAN</a> server. To use this feature, you will need to add the following config variables to the settings_local.py file:</p>
-<table class="codehilitetable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span>1
+<table class="codehilitetable"><tr><td class="linenos"><div class="linenodiv"><pre>1
 2
 3</pre></div></td><td class="code"><div class="codehilite"><pre><span></span><span class="c1"># CKAN URL for API calls</span>
 <span class="n">CKAN_NAME</span> <span class="o">=</span> <span class="s2">&quot;Demo CKAN server&quot;</span>
@@ -3712,12 +3712,12 @@ following pages: </p>
 <p>Anonymous and authenticated will see a warning message like this:</p>
 <p><img alt="image" src="https://i.imgur.com/a1aqSCC.png" /></p>
 <p>Additionally, the footer and front page top users will be removed with links to all these pages. If your project needs this type of protection you can enable it by changing the following config variable in your <strong>settings_local.py</strong> file from:</p>
-<table class="codehilitetable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span>1</pre></div></td><td class="code"><div class="codehilite"><pre><span></span><span class="n">ENFORCE_PRIVACY</span> <span class="o">=</span> <span class="kc">False</span>
+<table class="codehilitetable"><tr><td class="linenos"><div class="linenodiv"><pre>1</pre></div></td><td class="code"><div class="codehilite"><pre><span></span><span class="n">ENFORCE_PRIVACY</span> <span class="o">=</span> <span class="bp">False</span>
 </pre></div>
 </td></tr></table>
 
 <p>To:</p>
-<table class="codehilitetable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span>1</pre></div></td><td class="code"><div class="codehilite"><pre><span></span><span class="n">ENFORCE_PRIVACY</span> <span class="o">=</span> <span class="kc">True</span>
+<table class="codehilitetable"><tr><td class="linenos"><div class="linenodiv"><pre>1</pre></div></td><td class="code"><div class="codehilite"><pre><span></span><span class="n">ENFORCE_PRIVACY</span> <span class="o">=</span> <span class="bp">True</span>
 </pre></div>
 </td></tr></table>
 
@@ -3739,7 +3739,7 @@ user&rsquo;s badges to anonymous people.</p>
 <p>Be very careful. If you expose your private data via this field, it&rsquo;s your responsibility as this is disabled by default in PYBOSSA.</p>
 </div>
 <p>If you want to make some key/values public, all you have to do is add them to the settings_local.py file the following config variables:</p>
-<table class="codehilitetable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span>1
+<table class="codehilitetable"><tr><td class="linenos"><div class="linenodiv"><pre>1
 2
 3</pre></div></td><td class="code"><div class="codehilite"><pre><span></span><span class="n">PROJECT_INFO_PUBLIC_FIELDS</span> <span class="o">=</span> <span class="p">[</span><span class="s1">&#39;key1&#39;</span><span class="p">,</span> <span class="s1">&#39;key2&#39;</span><span class="p">]</span>
 <span class="n">USER_INFO_PUBLIC_FIELDS</span> <span class="o">=</span> <span class="p">[</span><span class="s1">&#39;badges&#39;</span><span class="p">,</span> <span class="s1">&#39;key2&#39;</span><span class="p">,</span> <span class="o">...</span><span class="p">]</span>
@@ -3763,14 +3763,14 @@ every project. By default, PYBOSSA comes with the following templates:</p>
 </ul>
 <p>If you want to add your templates or remove one, just create in the
 settings_local.py file a variable named <strong>PRESENTERS</strong> and add remove the ones you want:</p>
-<table class="codehilitetable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span>1</pre></div></td><td class="code"><div class="codehilite"><pre><span></span><span class="n">PRESENTERS</span> <span class="o">=</span> <span class="p">[</span><span class="s2">&quot;basic&quot;</span><span class="p">,</span> <span class="s2">&quot;image&quot;</span><span class="p">,</span> <span class="s2">&quot;sound&quot;</span><span class="p">,</span> <span class="s2">&quot;video&quot;</span><span class="p">,</span> <span class="s2">&quot;map&quot;</span><span class="p">,</span> <span class="s2">&quot;pdf&quot;</span><span class="p">,</span> <span class="s2">&quot;yourtemplate&quot;</span><span class="p">]</span>
+<table class="codehilitetable"><tr><td class="linenos"><div class="linenodiv"><pre>1</pre></div></td><td class="code"><div class="codehilite"><pre><span></span><span class="n">PRESENTERS</span> <span class="o">=</span> <span class="p">[</span><span class="s2">&quot;basic&quot;</span><span class="p">,</span> <span class="s2">&quot;image&quot;</span><span class="p">,</span> <span class="s2">&quot;sound&quot;</span><span class="p">,</span> <span class="s2">&quot;video&quot;</span><span class="p">,</span> <span class="s2">&quot;map&quot;</span><span class="p">,</span> <span class="s2">&quot;pdf&quot;</span><span class="p">,</span> <span class="s2">&quot;yourtemplate&quot;</span><span class="p">]</span>
 </pre></div>
 </td></tr></table>
 
 <p><strong>yourtemplate</strong> should be a template that you have to save in the theme folder: <strong>/templates/projects/snippets/</strong> with the same name. Check the other templates to use them as a base layer for your template.</p>
 <p>After adding the template, the server will start offering this new template to your users.</p>
 <p>In addition to the project templates themselves, you can add some test tasks for those projects so that the users can import them into their projects and start &ldquo;playing&rdquo; with them or taking their format as a starting point to create their own. These tasks can be imported from Google Docs spreadsheets, and you can add them, remove them, or modify the URLs of the spreadsheets changing the value of the variable <strong>TEMPLATE_TASKS</strong> in settings_local.py:</p>
-<table class="codehilitetable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span> 1
+<table class="codehilitetable"><tr><td class="linenos"><div class="linenodiv"><pre> 1
  2
  3
  4
@@ -3796,20 +3796,20 @@ settings_local.py file a variable named <strong>PRESENTERS</strong> and add remo
 
 <h2 id="setting-an-expiration-time-for-project-passwords">Setting an expiration time for project passwords<a class="headerlink" href="#setting-an-expiration-time-for-project-passwords" title="Permanent link">&para;</a></h2>
 <p>PYBOSSA allows the owner of a project to set a password so that only people (both anonymous or authenticated) that know it can contribute. By entering this password, the user will have access to the project for a time specified by:</p>
-<p><table class="codehilitetable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span>1</pre></div></td><td class="code"><div class="codehilite"><pre><span></span><span class="n">PASSWD_COOKIE_TIMEOUT</span> <span class="o">=</span> <span class="mi">60</span> <span class="o">*</span> <span class="mi">30</span>
+<p><table class="codehilitetable"><tr><td class="linenos"><div class="linenodiv"><pre>1</pre></div></td><td class="code"><div class="codehilite"><pre><span></span><span class="n">PASSWD_COOKIE_TIMEOUT</span> <span class="o">=</span> <span class="mi">60</span> <span class="o">*</span> <span class="mi">30</span>
 </pre></div>
 </td></tr></table>
 This variable is configured by default to 30 minutes.</p>
 <h2 id="validation-of-new-user-accounts">Validation of new user accounts<a class="headerlink" href="#validation-of-new-user-accounts" title="Permanent link">&para;</a></h2>
 <p>Whenever a new user wants to sign up, PYBOSSA allows you to add some extra security steps to the process by asking the users to validate a real email account.</p>
 <p>However, if you don&rsquo;t need this feature, it can be disabled (as it is enabled by default) with this configuration parameter:</p>
-<table class="codehilitetable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span>1</pre></div></td><td class="code"><div class="codehilite"><pre><span></span><span class="n">ACCOUNT_CONFIRMATION_DISABLED</span> <span class="o">=</span> <span class="kc">True</span>
+<table class="codehilitetable"><tr><td class="linenos"><div class="linenodiv"><pre>1</pre></div></td><td class="code"><div class="codehilite"><pre><span></span><span class="n">ACCOUNT_CONFIRMATION_DISABLED</span> <span class="o">=</span> <span class="bp">True</span>
 </pre></div>
 </td></tr></table>
 
 <h2 id="two-factor-authentication-on-login">Two-factor authentication on login<a class="headerlink" href="#two-factor-authentication-on-login" title="Permanent link">&para;</a></h2>
 <p>If you need an extra layer of security for user authentication, PYBOSSA allows you to enable two-factor authentication by setting this configuration value:</p>
-<table class="codehilitetable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span>1</pre></div></td><td class="code"><div class="codehilite"><pre><span></span><span class="n">ENABLE_TWO_FACTOR_AUTH</span> <span class="o">=</span> <span class="kc">True</span>
+<table class="codehilitetable"><tr><td class="linenos"><div class="linenodiv"><pre>1</pre></div></td><td class="code"><div class="codehilite"><pre><span></span><span class="n">ENABLE_TWO_FACTOR_AUTH</span> <span class="o">=</span> <span class="bp">True</span>
 </pre></div>
 </td></tr></table>
 
@@ -3818,7 +3818,7 @@ This variable is configured by default to 30 minutes.</p>
 <p>Project owners that have the pro-flag set to True can receive every week an update with the latest statistics about their projects in their email box.</p>
 <p>By default, this email is sent every Sunday. You can modify it in the
 settings file by changing it to another day:</p>
-<table class="codehilitetable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span>1</pre></div></td><td class="code"><div class="codehilite"><pre><span></span><span class="n">WEEKLY_UPDATE_STATS</span> <span class="o">=</span> <span class="s1">&#39;Tuesday&#39;</span>
+<table class="codehilitetable"><tr><td class="linenos"><div class="linenodiv"><pre>1</pre></div></td><td class="code"><div class="codehilite"><pre><span></span><span class="n">WEEKLY_UPDATE_STATS</span> <span class="o">=</span> <span class="s1">&#39;Tuesday&#39;</span>
 </pre></div>
 </td></tr></table>
 
@@ -3831,7 +3831,7 @@ settings file by changing it to another day:</p>
 account. By default is disabled.  You can enable it, revealing a page to recently registered users, to check if they want to subscribe or not.</p>
 <p>To support newsletters, you&rsquo;ll have to create an account in Mailchimp and get an API_KEY as well as a LIST_ID to add the users.</p>
 <p>Once you have those two items you can enable the newsletter subscription adding them to your settings_local.py file:</p>
-<table class="codehilitetable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span>1
+<table class="codehilitetable"><tr><td class="linenos"><div class="linenodiv"><pre>1
 2</pre></div></td><td class="code"><div class="codehilite"><pre><span></span><span class="n">MAILCHIMP_API_KEY</span> <span class="o">=</span> <span class="s2">&quot;your-key&quot;</span>
 <span class="n">MAILCHIMP_LIST_ID</span> <span class="o">=</span> <span class="s2">&quot;your-list-id&quot;</span>
 </pre></div>
@@ -3841,7 +3841,7 @@ account. By default is disabled.  You can enable it, revealing a page to recentl
 <h2 id="enabling-the-flickr-task-importer">Enabling the Flickr Task importer<a class="headerlink" href="#enabling-the-flickr-task-importer" title="Permanent link">&para;</a></h2>
 <p>PYBOSSA has several different types of built-in importers. Users can use them to import tasks for their projects directly from the Web interface. However, using the Flickr one requires an API key and shared a secret from Flickr to communicate with the service.</p>
 <p>Once you have an API key, you&rsquo;ll have to add it to your settings_local.py file:</p>
-<table class="codehilitetable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span>1
+<table class="codehilitetable"><tr><td class="linenos"><div class="linenodiv"><pre>1
 2</pre></div></td><td class="code"><div class="codehilite"><pre><span></span><span class="n">FLICKR_API_KEY</span> <span class="o">=</span> <span class="s2">&quot;your-key&quot;</span>
 <span class="n">FLICKR_SHARED_SECRET</span> <span class="o">=</span> <span class="s2">&quot;your-secret&quot;</span>
 </pre></div>
@@ -3854,13 +3854,13 @@ you&rsquo;ll need to register your PYBOSSA server as a Dropbox app, as
 explained <a href="https://www.dropbox.com/developers/dropins/chooser/js#setup">here</a>.</p>
 <p>Don&rsquo;t worry about the Javascript snippet part; we&rsquo;ve already handled that for you. Instead, get the App key you will be given and add it to
 your settings_local.py:</p>
-<table class="codehilitetable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span>1</pre></div></td><td class="code"><div class="codehilite"><pre><span></span><span class="n">DROPBOX_APP_KEY</span> <span class="o">=</span> <span class="s1">&#39;your-key&#39;</span>
+<table class="codehilitetable"><tr><td class="linenos"><div class="linenodiv"><pre>1</pre></div></td><td class="code"><div class="codehilite"><pre><span></span><span class="n">DROPBOX_APP_KEY</span> <span class="o">=</span> <span class="s1">&#39;your-key&#39;</span>
 </pre></div>
 </td></tr></table>
 
 <h2 id="enabling-the-twitter-task-importer">Enabling the Twitter Task importer<a class="headerlink" href="#enabling-the-twitter-task-importer" title="Permanent link">&para;</a></h2>
 <p>If you already have enabled the Twitter authentication, then the Twitter task importer will be enabled too. Otherwise, you will need to create an application in <a href="https://dev.twitter.com/">Twitter</a> and copy and paste the <strong>Consumer key, and secret</strong> into the next variables and uncomment them:</p>
-<table class="codehilitetable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span>1
+<table class="codehilitetable"><tr><td class="linenos"><div class="linenodiv"><pre>1
 2</pre></div></td><td class="code"><div class="codehilite"><pre><span></span><span class="n">TWITTER_CONSUMER_KEY</span> <span class="o">=</span> <span class="s1">&#39;key&#39;</span>
 <span class="n">TWITTER_CONSUMER_SECRET</span> <span class="o">=</span> <span class="s1">&#39;secret&#39;</span>
 </pre></div>
@@ -3874,7 +3874,7 @@ your settings_local.py:</p>
 <p>The Youtube&rsquo;s task importer needs a Youtube server key which you need to create in the <a href="https://console.developers.google.com/">Google API Console</a> in YouTube Data API.</p>
 <p>Once you have an API key, you&rsquo;ll have to add it to your
 settings_local.py file:</p>
-<table class="codehilitetable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span>1</pre></div></td><td class="code"><div class="codehilite"><pre><span></span><span class="n">YOUTUBE_API_SERVER_KEY</span> <span class="o">=</span> <span class="s2">&quot;your-key&quot;</span>
+<table class="codehilitetable"><tr><td class="linenos"><div class="linenodiv"><pre>1</pre></div></td><td class="code"><div class="codehilite"><pre><span></span><span class="n">YOUTUBE_API_SERVER_KEY</span> <span class="o">=</span> <span class="s2">&quot;your-key&quot;</span>
 </pre></div>
 </td></tr></table>
 
@@ -3884,21 +3884,21 @@ settings_local.py file:</p>
 <p>As this is not a necessity, by default PYBOSSA has this feature
 disabled. PYBOSSA uses SSE to notify users about specific actions (i.e., the result of a webhook in real time).</p>
 <p>If you want to enable it, you will have to add to your settings_local.py:</p>
-<table class="codehilitetable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span>1</pre></div></td><td class="code"><div class="codehilite"><pre><span></span><span class="n">SSE</span> <span class="o">=</span> <span class="kc">True</span>
+<table class="codehilitetable"><tr><td class="linenos"><div class="linenodiv"><pre>1</pre></div></td><td class="code"><div class="codehilite"><pre><span></span><span class="n">SSE</span> <span class="o">=</span> <span class="bp">True</span>
 </pre></div>
 </td></tr></table>
 
 <p>Also, you will need to configure uwsgi and nginx to support SSE events. This is not trivial, as there are several different scenarios, libraries, and options, so instead of recommending one solution, we invite you to read the <a href="http://uwsgi-docs.readthedocs.org/en/latest/Async.html">uwsgi documentation about it</a>, so you can take a decision based on your infrastructure and preferences.</p>
 <h2 id="latest-news-from-pybossa">Latest news from PYBOSSA<a class="headerlink" href="#latest-news-from-pybossa" title="Permanent link">&para;</a></h2>
 <p>Since v1.2.1 PYBOSSA gets the latest news of its new releases, as well as anything related to what Scifabric blogs about regarding the crowdsourcing world. You can add more items if you want, by just adding to your settings_local.py file new ATOM URLs:</p>
-<table class="codehilitetable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span>1</pre></div></td><td class="code"><div class="codehilite"><pre><span></span><span class="n">NEWS_URL</span> <span class="o">=</span> <span class="p">[</span><span class="s1">&#39;http:/http:///atomurl1&#39;</span><span class="p">,</span> <span class="s1">&#39;http://atomurl2&#39;</span><span class="p">,</span> <span class="o">...</span><span class="p">]</span>
+<table class="codehilitetable"><tr><td class="linenos"><div class="linenodiv"><pre>1</pre></div></td><td class="code"><div class="codehilite"><pre><span></span><span class="n">NEWS_URL</span> <span class="o">=</span> <span class="p">[</span><span class="s1">&#39;http:/http:///atomurl1&#39;</span><span class="p">,</span> <span class="s1">&#39;http://atomurl2&#39;</span><span class="p">,</span> <span class="o">...</span><span class="p">]</span>
 </pre></div>
 </td></tr></table>
 
 <h2 id="enabling-pro-user-features">Enabling pro user features<a class="headerlink" href="#enabling-pro-user-features" title="Permanent link">&para;</a></h2>
 <p>Since version v1.2.2 PYBOSSA, you can specify which features can be only available to pro users or everyone. To modify them, just locate them in the settings_local.py file. By default, they look
 like:</p>
-<table class="codehilitetable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span>1
+<table class="codehilitetable"><tr><td class="linenos"><div class="linenodiv"><pre>1
 2
 3
 4
@@ -3907,13 +3907,13 @@ like:</p>
 7
 8
 9</pre></div></td><td class="code"><div class="codehilite"><pre><span></span><span class="n">PRO_FEATURES</span> <span class="o">=</span> <span class="p">{</span>
-    <span class="s1">&#39;auditlog&#39;</span><span class="p">:</span>              <span class="kc">True</span><span class="p">,</span>
-    <span class="s1">&#39;webhooks&#39;</span><span class="p">:</span>              <span class="kc">True</span><span class="p">,</span>
-    <span class="s1">&#39;updated_exports&#39;</span><span class="p">:</span>       <span class="kc">True</span><span class="p">,</span>
-    <span class="s1">&#39;notify_blog_updates&#39;</span><span class="p">:</span>   <span class="kc">True</span><span class="p">,</span>
-    <span class="s1">&#39;project_weekly_report&#39;</span><span class="p">:</span> <span class="kc">True</span><span class="p">,</span>
-    <span class="s1">&#39;autoimporter&#39;</span><span class="p">:</span>          <span class="kc">True</span><span class="p">,</span>
-    <span class="s1">&#39;better_stats&#39;</span><span class="p">:</span>          <span class="kc">True</span>
+    <span class="s1">&#39;auditlog&#39;</span><span class="p">:</span>              <span class="bp">True</span><span class="p">,</span>
+    <span class="s1">&#39;webhooks&#39;</span><span class="p">:</span>              <span class="bp">True</span><span class="p">,</span>
+    <span class="s1">&#39;updated_exports&#39;</span><span class="p">:</span>       <span class="bp">True</span><span class="p">,</span>
+    <span class="s1">&#39;notify_blog_updates&#39;</span><span class="p">:</span>   <span class="bp">True</span><span class="p">,</span>
+    <span class="s1">&#39;project_weekly_report&#39;</span><span class="p">:</span> <span class="bp">True</span><span class="p">,</span>
+    <span class="s1">&#39;autoimporter&#39;</span><span class="p">:</span>          <span class="bp">True</span><span class="p">,</span>
+    <span class="s1">&#39;better_stats&#39;</span><span class="p">:</span>          <span class="bp">True</span>
 <span class="p">}</span>
 </pre></div>
 </td></tr></table>
@@ -3939,14 +3939,14 @@ a 404 if you add a trailing slash to it:</p>
 <p>PYBOSSA does not provide its own forum. However, you can use Disqus and integrate it in your PYBOSSA server.</p>
 <h3 id="disqus-single-sign-on-sso">Disqus Single Sign-On (SSO)<a class="headerlink" href="#disqus-single-sign-on-sso" title="Permanent link">&para;</a></h3>
 <p>PYBOSSA supports Disqus SSO. However, it is disabled by default. You need to register a Disqus application (see their <a href="https://help.disqus.com/customer/portal/articles/236206">documentation</a>) and then update your settings_local.py file with the following two keys:</p>
-<table class="codehilitetable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span>1
+<table class="codehilitetable"><tr><td class="linenos"><div class="linenodiv"><pre>1
 2</pre></div></td><td class="code"><div class="codehilite"><pre><span></span><span class="n">DISQUS_SECRET_KEY</span> <span class="o">=</span> <span class="s1">&#39;secret&#39;</span>
 <span class="n">DISQUS_PUBLIC_KEY</span> <span class="o">=</span> <span class="s1">&#39;publickey&#39;</span>
 </pre></div>
 </td></tr></table>
 
 <p>Then, this will enable you to use a new Jinja2 filter for  authenticating PYBOSSA users directly in their Disqus server. The filter is <em>disqus_sso</em>. You can use it like this:</p>
-<table class="codehilitetable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span>1
+<table class="codehilitetable"><tr><td class="linenos"><div class="linenodiv"><pre>1
 2
 3
 4
@@ -3962,7 +3962,7 @@ a 404 if you add a trailing slash to it:</p>
 <h2 id="background-jobs-timeout">Background jobs timeout<a class="headerlink" href="#background-jobs-timeout" title="Permanent link">&para;</a></h2>
 <p>By default PYBOSSA timeout for every job is 10 minutes. In principle, it should be fine, but each project and server is unique, so if you start
 seeing too many jobs failing because the job timed out, then, increase the value using these config variables:</p>
-<table class="codehilitetable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span>1
+<table class="codehilitetable"><tr><td class="linenos"><div class="linenodiv"><pre>1
 2</pre></div></td><td class="code"><div class="codehilite"><pre><span></span><span class="n">MINUTE</span> <span class="o">=</span> <span class="mi">60</span>
 <span class="n">TIMEOUT</span> <span class="o">=</span> <span class="mi">20</span> <span class="o">*</span> <span class="mi">60</span>
 </pre></div>
@@ -3982,7 +3982,7 @@ Firefox and Safari browsers.</p>
 <p>You can host the SDK files in the static folder of your theme. However, you will need to modify your web server (Apache or Nginx) to serve those files as from the root of your server. If this is not done correctly, it will not work.</p>
 </div>
 <p>Once you have created the app in Onesignal, get the API KEY and APP ID. Then copy them and put it in your settings_local.py file:</p>
-<table class="codehilitetable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span>1
+<table class="codehilitetable"><tr><td class="linenos"><div class="linenodiv"><pre>1
 2</pre></div></td><td class="code"><div class="codehilite"><pre><span></span><span class="n">ONESIGNAL_APP_ID</span> <span class="o">=</span> <span class="s1">&#39;app-id&#39;</span>
 <span class="n">ONESIGNAL_API_KEY</span> <span class="o">=</span> <span class="s1">&#39;app-key&#39;</span>
 </pre></div>
@@ -4004,13 +4004,13 @@ another, we do not provide a template but some guidelines:</p>
 <p>Sometimes your PYBOSSA project saves information like GeoJSON within the tasks or task_runs. This is a bad thing for the exporter, as it will try to flatten it. In such scenarios, you want to instruct PYBOSSA to ignore those keys, as they will be included in the JSON export files, and reduce all the overhead (as well as destroying the format due to the normalization).</p>
 <p>For ignoring a key (or a list of keys), just add the following config
 variable to your settings_local.py file:</p>
-<table class="codehilitetable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span>1</pre></div></td><td class="code"><div class="codehilite"><pre><span></span><span class="n">IGNORE_FLAT_KEYS</span> <span class="o">=</span> <span class="p">[</span> <span class="s1">&#39;geojson&#39;</span><span class="p">,</span> <span class="s1">&#39;key1&#39;</span><span class="p">,</span> <span class="o">...</span><span class="p">]</span>
+<table class="codehilitetable"><tr><td class="linenos"><div class="linenodiv"><pre>1</pre></div></td><td class="code"><div class="codehilite"><pre><span></span><span class="n">IGNORE_FLAT_KEYS</span> <span class="o">=</span> <span class="p">[</span> <span class="s1">&#39;geojson&#39;</span><span class="p">,</span> <span class="s1">&#39;key1&#39;</span><span class="p">,</span> <span class="o">...</span><span class="p">]</span>
 </pre></div>
 </td></tr></table>
 
 <h2 id="specify-a-new-root-key-instead-of-info-for-csv-exporter">Specify a new root key instead of info for CSV exporter<a class="headerlink" href="#specify-a-new-root-key-instead-of-info-for-csv-exporter" title="Permanent link">&para;</a></h2>
 <p>Sometimes you need to change the root key for the CSV exporter. This usually happens, when you have to store one ore more answers within the same info object. For this reason, you can instruct PYBOSSA to use that key instead of <em>info</em> for flattening the data:</p>
-<table class="codehilitetable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span>1
+<table class="codehilitetable"><tr><td class="linenos"><div class="linenodiv"><pre>1
 2
 3</pre></div></td><td class="code"><div class="codehilite"><pre><span></span><span class="n">TASK_CSV_EXPORT_INFO_KEY</span> <span class="o">=</span> <span class="s1">&#39;key&#39;</span>
 <span class="n">TASK_RUN_CSV_EXPORT_INFO_KEY</span> <span class="o">=</span> <span class="s1">&#39;key2&#39;</span>
@@ -4023,7 +4023,7 @@ variable to your settings_local.py file:</p>
 <p>When you are using PYBOSSA native JSON support, you will not be building your project presenter within the PYBOSSA structure, but within the JS framework of your choice.</p>
 <p>In such a case, you would like to disable the check for the task_presenter when publishing a project. If you need this, just add
 this flag to your settings_local.py file: </p>
-<table class="codehilitetable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span>1</pre></div></td><td class="code"><div class="codehilite"><pre><span></span><span class="n">DISABLE_TASK_PRESENTER</span> <span class="o">=</span> <span class="kc">True</span>
+<table class="codehilitetable"><tr><td class="linenos"><div class="linenodiv"><pre>1</pre></div></td><td class="code"><div class="codehilite"><pre><span></span><span class="n">DISABLE_TASK_PRESENTER</span> <span class="o">=</span> <span class="bp">True</span>
 </pre></div>
 </td></tr></table>
 
@@ -4045,7 +4045,7 @@ PYBOSSA to create a leaderboard for you.</p>
 </div>
 <p>Imagine the score is named: foo, then, PYBOSSA will create for you a leaderboard using that key like this: edit the settings_local.py file
 and add the following config variable:</p>
-<table class="codehilitetable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span>1</pre></div></td><td class="code"><div class="codehilite"><pre><span></span><span class="n">LEADERBOARDS</span> <span class="o">=</span> <span class="p">[</span><span class="s1">&#39;foo&#39;</span><span class="p">]</span>
+<table class="codehilitetable"><tr><td class="linenos"><div class="linenodiv"><pre>1</pre></div></td><td class="code"><div class="codehilite"><pre><span></span><span class="n">LEADERBOARDS</span> <span class="o">=</span> <span class="p">[</span><span class="s1">&#39;foo&#39;</span><span class="p">]</span>
 </pre></div>
 </td></tr></table>
 
@@ -4058,13 +4058,13 @@ and add the following config variable:</p>
 </div>
 <h3 id="default-number-of-users-for-the-leaderboard">Default number of users for the leaderboard<a class="headerlink" href="#default-number-of-users-for-the-leaderboard" title="Permanent link">&para;</a></h3>
 <p>You can specify the default number of users shown in the leaderboard. By default we show the top 20 users.</p>
-<table class="codehilitetable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span>1</pre></div></td><td class="code"><div class="codehilite"><pre><span></span><span class="err">LEADERBOARD = 20</span>
+<table class="codehilitetable"><tr><td class="linenos"><div class="linenodiv"><pre>1</pre></div></td><td class="code"><div class="codehilite"><pre><span></span>LEADERBOARD = 20
 </pre></div>
 </td></tr></table>
 
 <h2 id="unpublish-inactive-projects">Unpublish inactive projects<a class="headerlink" href="#unpublish-inactive-projects" title="Permanent link">&para;</a></h2>
 <p>PYBOSSA by default unpublishes projects that have not been active in the last three months. You can disable this feature by changing this config variable in your settings_local.py file:</p>
-<table class="codehilitetable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span>1</pre></div></td><td class="code"><div class="codehilite"><pre><span></span><span class="n">UNPUBLISH_PROJECTS</span> <span class="o">=</span> <span class="kc">False</span>
+<table class="codehilitetable"><tr><td class="linenos"><div class="linenodiv"><pre>1</pre></div></td><td class="code"><div class="codehilite"><pre><span></span><span class="n">UNPUBLISH_PROJECTS</span> <span class="o">=</span> <span class="bp">False</span>
 </pre></div>
 </td></tr></table>
 
@@ -4105,34 +4105,34 @@ images are allowed. </p>
 <h3 id="allowed_extensions">ALLOWED_EXTENSIONS<a class="headerlink" href="#allowed_extensions" title="Permanent link">&para;</a></h3>
 <p>Use this configuration variable, to specify which types of files will you allow in your server to be uploaded via the API. By default, the following extensions
 are enabled:</p>
-<table class="codehilitetable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span>1</pre></div></td><td class="code"><div class="codehilite"><pre><span></span><span class="n">ALLOWED_EXTENSIONS</span> <span class="o">=</span> <span class="p">[</span><span class="s1">&#39;js&#39;</span><span class="p">,</span> <span class="s1">&#39;css&#39;</span><span class="p">,</span> <span class="s1">&#39;png&#39;</span><span class="p">,</span> <span class="s1">&#39;jpg&#39;</span><span class="p">,</span> <span class="s1">&#39;jpeg&#39;</span><span class="p">,</span> <span class="s1">&#39;gif&#39;</span><span class="p">,</span> <span class="s1">&#39;zip&#39;</span><span class="p">]</span>
+<table class="codehilitetable"><tr><td class="linenos"><div class="linenodiv"><pre>1</pre></div></td><td class="code"><div class="codehilite"><pre><span></span><span class="n">ALLOWED_EXTENSIONS</span> <span class="o">=</span> <span class="p">[</span><span class="s1">&#39;js&#39;</span><span class="p">,</span> <span class="s1">&#39;css&#39;</span><span class="p">,</span> <span class="s1">&#39;png&#39;</span><span class="p">,</span> <span class="s1">&#39;jpg&#39;</span><span class="p">,</span> <span class="s1">&#39;jpeg&#39;</span><span class="p">,</span> <span class="s1">&#39;gif&#39;</span><span class="p">,</span> <span class="s1">&#39;zip&#39;</span><span class="p">]</span>
 </pre></div>
 </td></tr></table>
 
 <h2 id="spam-protection">SPAM protection<a class="headerlink" href="#spam-protection" title="Permanent link">&para;</a></h2>
 <p>You can blacklist disposable email accounts by listing them in the SPAM config. Just add them like this:</p>
-<table class="codehilitetable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span>1</pre></div></td><td class="code"><div class="codehilite"><pre><span></span><span class="n">SPAM</span> <span class="o">=</span> <span class="p">[</span><span class="s1">&#39;spam.com&#39;</span><span class="p">,</span> <span class="s1">&#39;fake.es&#39;</span><span class="p">]</span>
+<table class="codehilitetable"><tr><td class="linenos"><div class="linenodiv"><pre>1</pre></div></td><td class="code"><div class="codehilite"><pre><span></span><span class="n">SPAM</span> <span class="o">=</span> <span class="p">[</span><span class="s1">&#39;spam.com&#39;</span><span class="p">,</span> <span class="s1">&#39;fake.es&#39;</span><span class="p">]</span>
 </pre></div>
 </td></tr></table>
 
 <h2 id="failed-jobs">Failed Jobs<a class="headerlink" href="#failed-jobs" title="Permanent link">&para;</a></h2>
 <p>Sometimes background jobs fail. For example, an email is rejected. By default
 PYBOSSA retries 3 times, before marking them as failed. You can customize it.</p>
-<table class="codehilitetable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span>1</pre></div></td><td class="code"><div class="codehilite"><pre><span></span><span class="n">FAILED_JOBS_RETRIES</span> <span class="o">=</span> <span class="mi">3</span>
+<table class="codehilitetable"><tr><td class="linenos"><div class="linenodiv"><pre>1</pre></div></td><td class="code"><div class="codehilite"><pre><span></span><span class="n">FAILED_JOBS_RETRIES</span> <span class="o">=</span> <span class="mi">3</span>
 </pre></div>
 </td></tr></table>
 
 <h2 id="fulltext-search-language">Fulltext search language<a class="headerlink" href="#fulltext-search-language" title="Permanent link">&para;</a></h2>
 <p>PYBOSSA uses PostgreSQL fulltex search support. Thus, you can instruct PYBOSSA
 to use only a given language to do it properly:</p>
-<table class="codehilitetable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span>1</pre></div></td><td class="code"><div class="codehilite"><pre><span></span><span class="n">FULLTEXTSEARCH_LANGUAGE</span> <span class="o">=</span> <span class="s1">&#39;english&#39;</span>
+<table class="codehilitetable"><tr><td class="linenos"><div class="linenodiv"><pre>1</pre></div></td><td class="code"><div class="codehilite"><pre><span></span><span class="n">FULLTEXTSEARCH_LANGUAGE</span> <span class="o">=</span> <span class="s1">&#39;english&#39;</span>
 </pre></div>
 </td></tr></table>
 
 <h2 id="absolute-links-to-avatars">Absolute links to Avatars<a class="headerlink" href="#absolute-links-to-avatars" title="Permanent link">&para;</a></h2>
 <p>If you are building a Single Page Application or a Universal App, you will need to
 get absolute paths to the avatars. Use the following config:</p>
-<table class="codehilitetable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span>1</pre></div></td><td class="code"><div class="codehilite"><pre><span></span><span class="n">AVATAR_ABSOLUTE</span> <span class="o">=</span> <span class="kc">True</span>
+<table class="codehilitetable"><tr><td class="linenos"><div class="linenodiv"><pre>1</pre></div></td><td class="code"><div class="codehilite"><pre><span></span><span class="n">AVATAR_ABSOLUTE</span> <span class="o">=</span> <span class="bp">True</span>
 </pre></div>
 </td></tr></table>
 
@@ -4144,7 +4144,7 @@ action, and another one to delete them.</p>
 bi-monthly basis.</p>
 <p>You can customize the the time period that you consider to warn users as well as
 to delete them. For these purposes you can use the following two variables:</p>
-<table class="codehilitetable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span>1
+<table class="codehilitetable"><tr><td class="linenos"><div class="linenodiv"><pre>1
 2</pre></div></td><td class="code"><div class="codehilite"><pre><span></span><span class="n">USER_INACTIVE_NOTIFICATION</span> <span class="o">=</span> <span class="mi">5</span>
 <span class="n">USER_INACTIVE_DELETE</span> <span class="o">=</span> <span class="mi">6</span>
 </pre></div>

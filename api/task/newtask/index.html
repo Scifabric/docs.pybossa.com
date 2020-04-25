@@ -1652,14 +1652,14 @@
                 
                 <p>You can request a new task for the current user (anonymous or
 authenticated) by:</p>
-<table class="codehilitetable"><tr><td class="linenos"><div class="linenodiv"><pre>1</pre></div></td><td class="code"><div class="codehilite"><pre><span></span><span class="err">GET http://{pybossa-site-url}/api/{project.id}/newtask</span>
+<table class="codehilitetable"><tr><td class="linenos"><div class="linenodiv"><pre>1</pre></div></td><td class="code"><div class="codehilite"><pre><span></span>GET http://{pybossa-site-url}/api/{project.id}/newtask
 </pre></div>
 </td></tr></table>
 
 <p>This will return a domain Task object in JSON format if there is a task available for the user. Otherwise, it will return <strong>None</strong>.</p>
 <p>You can also use <strong>limit</strong> to get more than 1 task for the user like
 this:</p>
-<table class="codehilitetable"><tr><td class="linenos"><div class="linenodiv"><pre>1</pre></div></td><td class="code"><div class="codehilite"><pre><span></span><span class="err">GET http://{pybossa-site-url}/api/{project.id}/newtask?limit=100</span>
+<table class="codehilitetable"><tr><td class="linenos"><div class="linenodiv"><pre>1</pre></div></td><td class="code"><div class="codehilite"><pre><span></span>GET http://{pybossa-site-url}/api/{project.id}/newtask?limit=100
 </pre></div>
 </td></tr></table>
 
@@ -1670,14 +1670,14 @@ this:</p>
 </div>
 <p>You can also, use <strong>offset</strong> to get the next tasks, if you want,
 allowing you to preload:</p>
-<table class="codehilitetable"><tr><td class="linenos"><div class="linenodiv"><pre>1</pre></div></td><td class="code"><div class="codehilite"><pre><span></span><span class="err">GET http://{pybossa-site-url}/api/{project.id}/newtask?offset=1</span>
+<table class="codehilitetable"><tr><td class="linenos"><div class="linenodiv"><pre>1</pre></div></td><td class="code"><div class="codehilite"><pre><span></span>GET http://{pybossa-site-url}/api/{project.id}/newtask?offset=1
 </pre></div>
 </td></tr></table>
 
 <p>That query will return the next task for the user, once it solves the
 previous task.</p>
 <p>Both arguments, limit and offset can be used together:</p>
-<table class="codehilitetable"><tr><td class="linenos"><div class="linenodiv"><pre>1</pre></div></td><td class="code"><div class="codehilite"><pre><span></span><span class="err">GET http://{pybossa-site-url}/api/{project.id}/newtask?limit=2offset=2</span>
+<table class="codehilitetable"><tr><td class="linenos"><div class="linenodiv"><pre>1</pre></div></td><td class="code"><div class="codehilite"><pre><span></span>GET http://{pybossa-site-url}/api/{project.id}/newtask?limit=2offset=2
 </pre></div>
 </td></tr></table>
 
@@ -1685,7 +1685,7 @@ previous task.</p>
 <p>Also, you can request the tasks to be sorted by a Task attribute (like
 ID, created, etc.) using the following arguments: <strong>orderby</strong> and
 <strong>desc</strong> to sort them in descending order:</p>
-<table class="codehilitetable"><tr><td class="linenos"><div class="linenodiv"><pre>1</pre></div></td><td class="code"><div class="codehilite"><pre><span></span><span class="err">GET http://{pybossa-site-url}/api/{project.id}/newtask?orderby=priority_0&amp;desc=true</span>
+<table class="codehilitetable"><tr><td class="linenos"><div class="linenodiv"><pre>1</pre></div></td><td class="code"><div class="codehilite"><pre><span></span>GET http://{pybossa-site-url}/api/{project.id}/newtask?orderby=priority_0&amp;desc=true
 </pre></div>
 </td></tr></table>
 

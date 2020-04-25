@@ -1841,9 +1841,7 @@
                 
                 <h1 id="deploying-pybossa-with-nginx-and-uwsgi">Deploying PYBOSSA with nginx and uwsgi<a class="headerlink" href="#deploying-pybossa-with-nginx-and-uwsgi" title="Permanent link">&para;</a></h1>
 <p>This section describes how to make PYBOSSA run as a service or daemon permanently in the background. This is useful if you want to run a production-ready single PYBOSSA web server. </p>
-<details class="tip"><summary>PYBOSSA hosted servers.</summary><p>Checkout Scifabric&rsquo;s <a href="https://scifabric.com/pricing/">hosted PYBOSSA servers</a>.</p>
-</details>
-<p>Pre-requisites:</p>
+<details class="tip"><summary>PYBOSSA hosted servers.</summary><p>Checkout Scifabric&rsquo;s <a href="https://scifabric.com/pricing/">hosted PYBOSSA servers</a>.</p></details><p>Pre-requisites:</p>
 <ul>
 <li>nginx</li>
 <li>uwsgi</li>
@@ -1858,13 +1856,13 @@
 <p>You have to install nginx and uwsgi on your server machine. In a
 Debian/Ubuntu machine you can install them running the following
 commands:</p>
-<table class="codehilitetable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span>1</pre></div></td><td class="code"><div class="codehilite"><pre><span></span>sudo apt-get install nginx
+<table class="codehilitetable"><tr><td class="linenos"><div class="linenodiv"><pre>1</pre></div></td><td class="code"><div class="codehilite"><pre><span></span>sudo apt-get install nginx
 </pre></div>
 </td></tr></table>
 
 <p>In the (virtualenv-)installation directory of pybossa, you need to
 install uwsgi:</p>
-<table class="codehilitetable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span>1</pre></div></td><td class="code"><div class="codehilite"><pre><span></span>pip install -U uwsgi
+<table class="codehilitetable"><tr><td class="linenos"><div class="linenodiv"><pre>1</pre></div></td><td class="code"><div class="codehilite"><pre><span></span>pip install -U uwsgi
 </pre></div>
 </td></tr></table>
 
@@ -1877,7 +1875,7 @@ install uwsgi:</p>
 </ul>
 <p>The PYBOSSA virtual host file (<strong>contrib/nginx/pybossa</strong>) has the
 following directives:</p>
-<table class="codehilitetable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span> 1
+<table class="codehilitetable"><tr><td class="linenos"><div class="linenodiv"><pre> 1
  2
  3
  4
@@ -1891,43 +1889,43 @@ following directives:</p>
 12
 13
 14
-15</pre></div></td><td class="code"><div class="codehilite"><pre><span></span><span class="n">location</span><span class="w"> </span><span class="o">/</span><span class="w"> </span><span class="err">{</span><span class="w"> </span><span class="n">try_files</span><span class="w"> </span><span class="err">$</span><span class="n">uri</span><span class="w"> </span><span class="nv">@pybossa</span><span class="p">;</span><span class="w"> </span><span class="err">}</span><span class="w"></span>
+15</pre></div></td><td class="code"><div class="codehilite"><pre><span></span><span class="nt">location</span> <span class="o">/</span> <span class="p">{</span> <span class="err">try_files</span> <span class="err">$uri</span> <span class="err">@pybossa</span><span class="p">;</span> <span class="p">}</span>
 
-<span class="n">location</span><span class="w"> </span><span class="nv">@pybossa</span><span class="w"> </span><span class="err">{</span><span class="w"></span>
-<span class="w">    </span><span class="k">include</span><span class="w"> </span><span class="n">uwsgi_params</span><span class="p">;</span><span class="w"></span>
-<span class="w">    </span><span class="n">uwsgi_pass</span><span class="w"> </span><span class="nl">unix</span><span class="p">:</span><span class="o">/</span><span class="n">tmp</span><span class="o">/</span><span class="n">pybossa</span><span class="p">.</span><span class="n">sock</span><span class="p">;</span><span class="w"></span>
-<span class="err">}</span><span class="w"></span>
+<span class="nt">location</span> <span class="p">@</span><span class="k">pybossa</span> <span class="p">{</span>
+    <span class="nt">include</span> <span class="nt">uwsgi_params</span><span class="o">;</span>
+    <span class="nt">uwsgi_pass</span> <span class="nt">unix</span><span class="o">:/</span><span class="nt">tmp</span><span class="o">/</span><span class="nt">pybossa</span><span class="p">.</span><span class="nc">sock</span><span class="o">;</span>
+<span class="p">}</span>
 
-<span class="n">location</span><span class="w">  </span><span class="o">/</span><span class="k">static</span><span class="w"> </span><span class="err">{</span><span class="w"></span>
+<span class="nt">location</span>  <span class="o">/</span><span class="nt">static</span> <span class="p">{</span>
 
-<span class="w">            </span><span class="err">#</span><span class="w"> </span><span class="n">change</span><span class="w"> </span><span class="n">that</span><span class="w"> </span><span class="k">to</span><span class="w"> </span><span class="n">your</span><span class="w"> </span><span class="n">pybossa</span><span class="w"> </span><span class="k">static</span><span class="w"> </span><span class="n">directory</span><span class="w"></span>
-<span class="w">            </span><span class="k">alias</span><span class="w"> </span><span class="o">/</span><span class="n">home</span><span class="o">/</span><span class="n">Scifabric</span><span class="o">/</span><span class="n">pybossa</span><span class="o">/</span><span class="n">pybossa</span><span class="o">/</span><span class="n">themes</span><span class="o">/</span><span class="k">default</span><span class="o">/</span><span class="k">static</span><span class="p">;</span><span class="w"></span>
+            <span class="err">#</span> <span class="err">change</span> <span class="err">that</span> <span class="err">to</span> <span class="err">your</span> <span class="err">pybossa</span> <span class="err">static</span> <span class="err">directory</span>
+            <span class="err">alias</span> <span class="err">/home/Scifabric/pybossa/pybossa/themes/default/static</span><span class="p">;</span>
 
-<span class="w">            </span><span class="n">autoindex</span><span class="w"> </span><span class="k">on</span><span class="p">;</span><span class="w"></span>
-<span class="w">            </span><span class="n">expires</span><span class="w"> </span><span class="nf">max</span><span class="p">;</span><span class="w"></span>
-<span class="w">        </span><span class="err">}</span><span class="w"></span>
+            <span class="err">autoindex</span> <span class="err">on</span><span class="p">;</span>
+            <span class="err">expires</span> <span class="err">max</span><span class="p">;</span>
+        <span class="p">}</span>
 </pre></div>
 </td></tr></table>
 
 <p>You can specify a user and group from your machine with lower privileges to improve the security of the site. You can also use the www-data user and group name.</p>
 <p>Once you have adapted the PATH in the alias in that file, copy it into
 the folder:</p>
-<table class="codehilitetable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span>1</pre></div></td><td class="code"><div class="codehilite"><pre><span></span>sudo cp contrib/nginx/pybossa /etc/nginx/sites-available/.
+<table class="codehilitetable"><tr><td class="linenos"><div class="linenodiv"><pre>1</pre></div></td><td class="code"><div class="codehilite"><pre><span></span>sudo cp contrib/nginx/pybossa /etc/nginx/sites-available/.
 </pre></div>
 </td></tr></table>
 
 <p>Please delete the default config in sites-enabled (do not worry there is a backup):</p>
-<table class="codehilitetable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span>1</pre></div></td><td class="code"><div class="codehilite"><pre><span></span>sudo rm /etc/nginx/sites-enabled/default
+<table class="codehilitetable"><tr><td class="linenos"><div class="linenodiv"><pre>1</pre></div></td><td class="code"><div class="codehilite"><pre><span></span>sudo rm /etc/nginx/sites-enabled/default
 </pre></div>
 </td></tr></table>
 
 <p>Enable the PYBOSSA site:</p>
-<table class="codehilitetable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span>1</pre></div></td><td class="code"><div class="codehilite"><pre><span></span>sudo ln -s /etc/nginx/sites-available/pybossa /etc/nginx/sites-enabled/pybossa
+<table class="codehilitetable"><tr><td class="linenos"><div class="linenodiv"><pre>1</pre></div></td><td class="code"><div class="codehilite"><pre><span></span>sudo ln -s /etc/nginx/sites-available/pybossa /etc/nginx/sites-enabled/pybossa
 </pre></div>
 </td></tr></table>
 
 <p>And restart the server:
-<table class="codehilitetable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span>1</pre></div></td><td class="code"><div class="codehilite"><pre><span></span>sudo service nginx restart
+<table class="codehilitetable"><tr><td class="linenos"><div class="linenodiv"><pre>1</pre></div></td><td class="code"><div class="codehilite"><pre><span></span>sudo service nginx restart
 </pre></div>
 </td></tr></table></p>
 <h2 id="creating-the-pybossaini-file-for-uwsgi">Creating the pybossa.ini file for uwsgi<a class="headerlink" href="#creating-the-pybossaini-file-for-uwsgi" title="Permanent link">&para;</a></h2>
@@ -1935,7 +1933,7 @@ the folder:</p>
 your PYBOSSA installation and adapt the paths to match your
 configuration!</p>
 <p>The content of this file is the following:</p>
-<table class="codehilitetable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span> 1
+<table class="codehilitetable"><tr><td class="linenos"><div class="linenodiv"><pre> 1
  2
  3
  4
@@ -1957,32 +1955,32 @@ configuration!</p>
 <span class="n">processes</span> <span class="o">=</span> <span class="mi">2</span>
 <span class="n">threads</span> <span class="o">=</span> <span class="mi">2</span>
 <span class="n">stats</span> <span class="o">=</span> <span class="o">/</span><span class="n">tmp</span><span class="o">/</span><span class="n">pybossa</span><span class="o">-</span><span class="n">stats</span><span class="o">.</span><span class="n">sock</span>
-<span class="n">buffer</span><span class="o">-</span><span class="n">size</span> <span class="o">=</span> <span class="mi">65535</span>
+<span class="nb">buffer</span><span class="o">-</span><span class="n">size</span> <span class="o">=</span> <span class="mi">65535</span>
 </pre></div>
 </td></tr></table>
 
 <h2 id="install-supervisord">Install supervisord<a class="headerlink" href="#install-supervisord" title="Permanent link">&para;</a></h2>
 <p><a href="http://supervisord.org/">Supervisord</a> is used to let PYBOSSA and its RQ system run as Daemon in the background. It shares some of the same goals of programs like launchd, daemontools, and runit.</p>
 <p>Install it:</p>
-<table class="codehilitetable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span>1</pre></div></td><td class="code"><div class="codehilite"><pre><span></span>sudo apt-get install supervisor
+<table class="codehilitetable"><tr><td class="linenos"><div class="linenodiv"><pre>1</pre></div></td><td class="code"><div class="codehilite"><pre><span></span>sudo apt-get install supervisor
 </pre></div>
 </td></tr></table>
 
 <h2 id="configure-redis-and-sentinel-as-a-service-with-supervisord">Configure Redis and sentinel as a service with supervisord<a class="headerlink" href="#configure-redis-and-sentinel-as-a-service-with-supervisord" title="Permanent link">&para;</a></h2>
 <p>First stop Redis service and all running Redis instances with:</p>
-<table class="codehilitetable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span>1
+<table class="codehilitetable"><tr><td class="linenos"><div class="linenodiv"><pre>1
 2</pre></div></td><td class="code"><div class="codehilite"><pre><span></span>sudo service redis-server stop
 killall redis-server
 </pre></div>
 </td></tr></table>
 
 <p>We want to run redis and sentinel with supervisord because supervisord is more reliable when redis crashes (which can happen when you do not have enough RAM). So we disable redis-server daemon service with:</p>
-<table class="codehilitetable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span>1</pre></div></td><td class="code"><div class="codehilite"><pre><span></span>sudo rm /etc/init.d/redis-server
+<table class="codehilitetable"><tr><td class="linenos"><div class="linenodiv"><pre>1</pre></div></td><td class="code"><div class="codehilite"><pre><span></span>sudo rm /etc/init.d/redis-server
 </pre></div>
 </td></tr></table>
 
 <p>Go to your pybossa installation directory and copy following files:</p>
-<table class="codehilitetable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span>1
+<table class="codehilitetable"><tr><td class="linenos"><div class="linenodiv"><pre>1
 2
 3
 4
@@ -1998,14 +1996,14 @@ sudo chown redis:redis /etc/redis/sentinel.conf
 
 <p>Now we restart supervisord (please do a full stop and start as
 described):</p>
-<table class="codehilitetable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span>1
+<table class="codehilitetable"><tr><td class="linenos"><div class="linenodiv"><pre>1
 2</pre></div></td><td class="code"><div class="codehilite"><pre><span></span>sudo service supervisor stop
 sudo service supervisor start
 </pre></div>
 </td></tr></table>
 
 <p>To verify the installation,  you can list all redis processes, and you should see a <em>redis-server</em> at port 6379 and <em>redis-sentinel</em> at port 26379:</p>
-<table class="codehilitetable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span>1</pre></div></td><td class="code"><div class="codehilite"><pre><span></span>ps aux <span class="p">|</span> grep redis
+<table class="codehilitetable"><tr><td class="linenos"><div class="linenodiv"><pre>1</pre></div></td><td class="code"><div class="codehilite"><pre><span></span>ps aux <span class="p">|</span> grep redis
 </pre></div>
 </td></tr></table>
 
@@ -2013,34 +2011,34 @@ sudo service supervisor start
 <h2 id="configure-rq-scheduler-and-rq-worker-to-run-with-supervisord">Configure RQ-Scheduler and RQ-Worker to run with supervisord<a class="headerlink" href="#configure-rq-scheduler-and-rq-worker-to-run-with-supervisord" title="Permanent link">&para;</a></h2>
 <p>You need to adjust the paths and user account in this two config files according to your installation. Then copy them to supervisor (do not
 forget to edit them):</p>
-<table class="codehilitetable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span>1
+<table class="codehilitetable"><tr><td class="linenos"><div class="linenodiv"><pre>1
 2</pre></div></td><td class="code"><div class="codehilite"><pre><span></span>sudo cp contrib/supervisor/rq-scheduler.conf.template /etc/supervisor/conf.d/rq-scheduler.conf
 sudo cp contrib/supervisor/rq-worker.conf.template /etc/supervisor/conf.d/rq-worker.conf
 </pre></div>
 </td></tr></table>
 
 <p>Restart supervisor:</p>
-<table class="codehilitetable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span>1
+<table class="codehilitetable"><tr><td class="linenos"><div class="linenodiv"><pre>1
 2</pre></div></td><td class="code"><div class="codehilite"><pre><span></span>sudo service supervisor stop
 sudo service supervisor start
 </pre></div>
 </td></tr></table>
 
 <p>Verify that the service is running. You should see a rqworker and rqscheduler instance in the console:</p>
-<table class="codehilitetable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span>1</pre></div></td><td class="code"><div class="codehilite"><pre><span></span>ps aux <span class="p">|</span> grep rq
+<table class="codehilitetable"><tr><td class="linenos"><div class="linenodiv"><pre>1</pre></div></td><td class="code"><div class="codehilite"><pre><span></span>ps aux <span class="p">|</span> grep rq
 </pre></div>
 </td></tr></table>
 
 <h2 id="setup-pybossa-itself">Setup PYBOSSA itself<a class="headerlink" href="#setup-pybossa-itself" title="Permanent link">&para;</a></h2>
 <p>As we are going to run PYBOSSA via nginx, we have to remove from the settings file the HOST and PORT sections. You can also comment them:</p>
-<table class="codehilitetable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span>1
+<table class="codehilitetable"><tr><td class="linenos"><div class="linenodiv"><pre>1
 2</pre></div></td><td class="code"><div class="codehilite"><pre><span></span><span class="c1"># HOST = &#39;0.0.0.0&#39;</span>
 <span class="c1"># PORT = 12000</span>
 </pre></div>
 </td></tr></table>
 
 <p>After modifying the settings file, add the full server URL where your PYBOSSA is reachable:</p>
-<table class="codehilitetable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span>1
+<table class="codehilitetable"><tr><td class="linenos"><div class="linenodiv"><pre>1
 2</pre></div></td><td class="code"><div class="codehilite"><pre><span></span><span class="n">SERVER_NAME</span> <span class="o">=</span> <span class="n">mypybossa</span><span class="o">.</span><span class="n">com</span>
 <span class="n">PORT</span> <span class="o">=</span> <span class="mi">80</span>
 </pre></div>
@@ -2048,23 +2046,23 @@ sudo service supervisor start
 
 <h2 id="let-pybossa-run-as-service">Let PYBOSSA run as service<a class="headerlink" href="#let-pybossa-run-as-service" title="Permanent link">&para;</a></h2>
 <p>Finally, we need to let pybossa run as service. Adjust the paths and username again in this file and copy it to the supervisor config directory:</p>
-<table class="codehilitetable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span>1</pre></div></td><td class="code"><div class="codehilite"><pre><span></span>sudo cp contrib/supervisor/pybossa.conf.template /etc/supervisor/conf.d/pybossa.conf
+<table class="codehilitetable"><tr><td class="linenos"><div class="linenodiv"><pre>1</pre></div></td><td class="code"><div class="codehilite"><pre><span></span>sudo cp contrib/supervisor/pybossa.conf.template /etc/supervisor/conf.d/pybossa.conf
 </pre></div>
 </td></tr></table>
 
 <p>Edit now the file and adjust the paths &amp; username.</p>
 <p>Restart supervisor:</p>
-<table class="codehilitetable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span>1
+<table class="codehilitetable"><tr><td class="linenos"><div class="linenodiv"><pre>1
 2</pre></div></td><td class="code"><div class="codehilite"><pre><span></span>sudo service supervisor stop
 sudo service supervisor start
 </pre></div>
 </td></tr></table>
 
 <p>You should have now a running PYBOSSA production web server on your nginx installation. Open your browser and check your configured domain: <a href="http://example.com">http://example.com</a>.</p>
-<p>Congratulations! <img alt="😄" class="emojione" src="https://cdnjs.cloudflare.com/ajax/libs/emojione/2.2.7/assets/svg/1f604.svg" title=":smile:" /></p>
+<p>Congratulations! <img alt="😄" class="emojione" src="https://cdn.jsdelivr.net/emojione/assets/svg/1f604.svg" title=":smile:" /></p>
 <h2 id="how-to-update-the-pybossa-service">How to update the PYBOSSA service<a class="headerlink" href="#how-to-update-the-pybossa-service" title="Permanent link">&para;</a></h2>
 <p>Upgrading and updating PYBOSSA as service works the same as for the standalone version. Please follow instructions on the <a href="../guide/">installation instructions</a>. Once you have upgraded the code, you will need to restart all supervisor controlled services to get the changes:</p>
-<table class="codehilitetable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span>1
+<table class="codehilitetable"><tr><td class="linenos"><div class="linenodiv"><pre>1
 2
 3</pre></div></td><td class="code"><div class="codehilite"><pre><span></span>sudo supervisorctl restart rq-scheduler
 sudo supervisorctl restart rq-worker
@@ -2074,7 +2072,7 @@ sudo supervisorctl restart pybossa
 
 <h2 id="logs-of-pybossa-services">Logs of PYBOSSA services<a class="headerlink" href="#logs-of-pybossa-services" title="Permanent link">&para;</a></h2>
 <p>You can find logs of all PYBOSSA services in this directory:</p>
-<table class="codehilitetable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span>1</pre></div></td><td class="code"><div class="codehilite"><pre><span></span><span class="nb">cd</span> /var/log/supervisor
+<table class="codehilitetable"><tr><td class="linenos"><div class="linenodiv"><pre>1</pre></div></td><td class="code"><div class="codehilite"><pre><span></span><span class="nb">cd</span> /var/log/supervisor
 </pre></div>
 </td></tr></table>
 
