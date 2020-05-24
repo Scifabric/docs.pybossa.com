@@ -42,7 +42,7 @@ FLASK_PROFILER = {
 }
 ```
 
-Now you can access the profiling page: http://server/flask-profiler/. 
+Now you can access the profiling page: http://server/flask-profiler/.
 
 !!! warning
     Be sure to use a strong password to protect this view as well as HTTPS.
@@ -85,7 +85,7 @@ If you have a master/slave PostgreSQL setup, you can instruct PYBOSSA to use the
 For enabling this mode, all you have to do is adding to the
 settings_local.py config file the following:
 
-``` python 
+``` python
 SQLALCHEMY_BINDS = {
     'slave': 'postgresql://user:password@server/pybossadb'
 }
@@ -108,10 +108,10 @@ You can fine tune the CORS of PYBOSSA:
 
 ```python
 CORS_RESOURCES = {
-    r"/api/*": 
+    r"/api/*":
         {
             "origins": "*",
-            "allow_headers": 
+            "allow_headers":
                 [
                 'Content-Type',
                 'Authorization'
@@ -229,7 +229,7 @@ CONTACT_TWITTER = 'yourtwitterhandle'
 
 ## Terms of Use
 
-You can change and modify the [TERMSOFUSE](https://github.com/Scifabric/pybossa/blob/master/settings_local.py.tmpl#L43) for your server, by overriding the provided URL that we use by default. 
+You can change and modify the [TERMSOFUSE](https://github.com/Scifabric/pybossa/blob/master/settings_local.py.tmpl#L43) for your server, by overriding the provided URL that we use by default.
 You can also modify the license used for the data, just change the
 DATAUSE link to the open license that you want to use.
 
@@ -257,7 +257,7 @@ TWITTER_CONSUMER_SECRET = 'yoursecret'
 
 ### Facebook
 
-If you want to enable Facebook, you will need to create an application on [Facebook](https://developers.facebook.com/apps) and copy and paste the **app ID/API Key and secret** into the next variables and uncomment them: 
+If you want to enable Facebook, you will need to create an application on [Facebook](https://developers.facebook.com/apps) and copy and paste the **app ID/API Key and secret** into the next variables and uncomment them:
 
 ``` python
 FACEBOOK_APP_ID = 'yourappid'
@@ -589,9 +589,9 @@ Data hub](http://datahub.io) service that it is a free CKAN service for hosting 
 
 ## Enforce Privacy mode
 
-Some projects sometimes need a way to protect their contributors due to their nature. In these cases, where privacy is critical, PYBOSSA allows you to **lock** all the public pages related to the users and statistics about the site and projects. Specifically, 
+Some projects sometimes need a way to protect their contributors due to their nature. In these cases, where privacy is critical, PYBOSSA allows you to **lock** all the public pages related to the users and statistics about the site and projects. Specifically,
 by enabling this mode, only administrators will be able to see the
-following pages: 
+following pages:
 
 - http://server/stats
 - http://server/account/
@@ -691,7 +691,7 @@ PYBOSSA allows the owner of a project to set a password so that only people (bot
 
 ``` python
 PASSWD_COOKIE_TIMEOUT = 60 * 30
-``` 
+```
 This variable is configured by default to 30 minutes.
 
 ## Validation of new user accounts
@@ -840,7 +840,7 @@ By choosing "True" on each of them, you are making that specific feature availab
 ## Strict Slashes
 
 By default, PYBOSSA distinguishes between two types of URLs for its
-endpoints: with and without a trailing slash. In other words, if an endpoint is not declared within the code as accepting both options, 
+endpoints: with and without a trailing slash. In other words, if an endpoint is not declared within the code as accepting both options,
 accessing the same endpoint with a trailing slash will return a 404.
 
 For example, the about endpoint:
@@ -865,7 +865,7 @@ PYBOSSA supports Disqus SSO. However, it is disabled by default. You need to reg
 ``` python
 DISQUS_SECRET_KEY = 'secret'
 DISQUS_PUBLIC_KEY = 'publickey'
-``` 
+```
 
 Then, this will enable you to use a new Jinja2 filter for  authenticating PYBOSSA users directly in their Disqus server. The filter is *disqus_sso*. You can use it like this:
 
@@ -936,7 +936,7 @@ variable to your settings_local.py file:
 
 ``` python
 IGNORE_FLAT_KEYS = [ 'geojson', 'key1', ...]
-``` 
+```
 
 ## Specify a new root key instead of info for CSV exporter
 
@@ -946,7 +946,7 @@ Sometimes you need to change the root key for the CSV exporter. This usually hap
 TASK_CSV_EXPORT_INFO_KEY = 'key'
 TASK_RUN_CSV_EXPORT_INFO_KEY = 'key2'
 RESULT_CSV_EXPORT_INFO_KEY = 'key3'
-``` 
+```
 
 In this way, if key, key2 or key3 have an array or list of dictionaries, PYBOSSA will iterate over them, flat them, and then generate the CSV for you.
 
@@ -956,7 +956,7 @@ In this way, if key, key2 or key3 have an array or list of dictionaries, PYBOSSA
 When you are using PYBOSSA native JSON support, you will not be building your project presenter within the PYBOSSA structure, but within the JS framework of your choice.
 
 In such a case, you would like to disable the check for the task_presenter when publishing a project. If you need this, just add
-this flag to your settings_local.py file: 
+this flag to your settings_local.py file:
 
 ``` python
 DISABLE_TASK_PRESENTER = True
@@ -1059,7 +1059,7 @@ need to adapt it to your needs.
 
 ### LDAP_USER_FILTER_FIELD
 
-If you use a different field in the previous configuration, update the 
+If you use a different field in the previous configuration, update the
 LDAP_USER_FILTER_FIELD. It's important to reflect which key are you using within your LDAP server to identify your users uniquely.
 
 ### LDAP_PYBOSSA_FIELDS
@@ -1069,7 +1069,7 @@ Use this configuration variable to match/link PYBOSSA fields to LDAP fields.
 ## Uploading files to PYBOSSA
 
 PYBOSSA has a generic uploader that will check for valid extensions, avoiding for example that a user could upload a video, as only
-images are allowed. 
+images are allowed.
 
 ### ALLOWED_EXTENSIONS
 
@@ -1129,8 +1129,8 @@ to delete them. For these purposes you can use the following two variables:
 
 ```python
 USER_INACTIVE_NOTIFICATION = 5
-USER_INACTIVE_DELETE = 6
-``` 
+USER_DELETE_AFTER_NOTIFICATION = '1 month'
+```
 
 Thus, after 5 months of not contributing a single task run, the user will get an
 email warning her about the deletion. Then, the next month if the user has not
