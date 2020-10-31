@@ -33,6 +33,12 @@ or
 http://server.com/api/project/<short_name>/userprogress
 ```
 
+The user needs to be authenticated to get the value, otherwise it will use the anonymous IP to get the value.
 
-The user needs to be authenticated to get the value. You cannot query another user, just
-the current one that it is authenticated in the system.
+If you are using **external_uid** for sending task runs, you can get the progress using the following parameter:
+
+
+
+```
+http://server.com/api/project/<id>/userprogress?external_uid=EXTERNAL_UID
+```
