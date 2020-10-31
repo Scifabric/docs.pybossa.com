@@ -1723,8 +1723,11 @@ the following endpoint:</p>
 </pre></div>
 </td></tr></table>
 
-<p>The user needs to be authenticated to get the value. You cannot query another user, just
-the current one that it is authenticated in the system.</p>
+<p>The user needs to be authenticated to get the value, otherwise it will use the anonymous IP to get the value.</p>
+<p>If you are using <strong>external_uid</strong> for sending task runs, you can get the progress using the following parameter:</p>
+<table class="codehilitetable"><tr><td class="linenos"><div class="linenodiv"><pre>1</pre></div></td><td class="code"><div class="codehilite"><pre><span></span>http://server.com/api/project/&lt;id&gt;/userprogress?external_uid=EXTERNAL_UID
+</pre></div>
+</td></tr></table>
                 
                   
                 
