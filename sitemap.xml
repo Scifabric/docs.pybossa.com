@@ -116,6 +116,12 @@
     </url>
         
     <url>
+     <loc>/api/jamstack/</loc>
+     <lastmod>2020-11-07</lastmod>
+     <changefreq>daily</changefreq>
+    </url>
+        
+    <url>
      <loc>/api/crud/</loc>
      <lastmod>2020-11-07</lastmod>
      <changefreq>daily</changefreq>
