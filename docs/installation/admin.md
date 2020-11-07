@@ -19,20 +19,20 @@ Administrators have full privileges on the server. They can modify anything with
 4.  Administrators.
 5.  Users.
 
-![image](https://i.imgur.com/cfUF6K2.png%0A%20:width:100%)
+![image](https://i.imgur.com/cfUF6K2.png:width:100%)
 
 Admins can also modify all projects. An admin can hide a project, update its task presenter, add new tasks, delete tasks or results. In other words, it can modify any aspect of any project within the server.
 
 ### Adding new administrators
-In the admin area you will see a specific card for managing the administrators. In this card, you will be able to search by username to add new administrators. Also, you will see the list of current admins. From there, you will be able to remove them by clicking on the remove button below each username. 
+In the admin area you will see a specific card for managing the administrators. In this card, you will be able to search by username to add new administrators. Also, you will see the list of current admins. From there, you will be able to remove them by clicking on the remove button below each username.
 
-![image](https://i.imgur.com/WSwNFxy.png%0A%20:width:100%)
+![image](https://i.imgur.com/WSwNFxy.png:width:100%)
 
 ### Adding pro users
 This feature is not available at the moment.  However, you can add a pro user within your server by modifying the user field **pro** via SQL.
 
 ## Dashboard
-This card provides an overview of the PYBOSSA server within the last seven days. 
+This card provides an overview of the PYBOSSA server within the last seven days.
 
 The dashboard is updated every 24 hours via the background jobs. These jobs are scheduled in the *low* queue.
 
@@ -80,7 +80,7 @@ This section allows you to see if any of your jobs and workers are performing we
 ## Featured Projects
 In this section, admins can add/remove projects to the front page of the site.
 
-![image](https://i.imgur.com/K9deWZo.png%0A%20:width:100%)
+![image](https://i.imgur.com/K9deWZo.png:width:100%)
 
 You will see an "Add to Featured" link to add a project to the featured front page or a "Remove from Featured" to remove it.
 

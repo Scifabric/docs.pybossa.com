@@ -63,8 +63,9 @@ pages:
       - 'Real time data analysis': 'build/webhooks.md'
       - 'Data capturing: image, video or audio': 'build/capture.md'
       - 'Domain model': 'build/model.md'
-  - API: 
+  - API:
       - 'Introduction': 'api/intro.md'
+      - 'Jamstack': 'api/jamstack.md'
       - 'CRUD': 'api/crud.md'
       - 'Full text search': 'api/fulltextsearch.md'
       - 'Disqus Single Sign On': 'api/sso.md'
@@ -99,27 +100,27 @@ pages:
       - 'Blog posts':
           - 'RESTful API':
               - 'Attaching files': 'api/blogpost/intro.md'
-      - 'Leaderboard': 
-         - 'PYBOSSA endpoints': 
+      - 'Leaderboard':
+         - 'PYBOSSA endpoints':
              - 'Methods': 'api/leaderboard.md'
-      - 'Home page': 
-         - 'PYBOSSA endpoints': 
+      - 'Home page':
+         - 'PYBOSSA endpoints':
              - Methods: 'api/home.md'
-      - 'Announcement': 
+      - 'Announcement':
             - 'PYBOSSA endpoints':
                 - Methods: 'api/announcement.md'
-      - 'Categories': 
-            - 'PYBOSSA endpoints': 
+      - 'Categories':
+            - 'PYBOSSA endpoints':
                 - Methods: 'api/categories.md'
       - 'Administration':
-         - 'PYBOSSA endpoints': 
+         - 'PYBOSSA endpoints':
             - 'Dashboard': 'api/admin/dashboard.md'
             - 'Featured projects': 'api/admin/featured.md'
-      - 'Help': 
-         - 'PYBOSSA endpoints': 
+      - 'Help':
+         - 'PYBOSSA endpoints':
             - 'Methods': 'api/help.md'
-      - 'Server stats': 
-         - 'PYBOSSA endpoints': 
+      - 'Server stats':
+         - 'PYBOSSA endpoints':
             - Methods: 'api/stats.md'
   - Testing PYBOSSA with Vagrant: 'installation/vagrant.md'
   - Contributing:
