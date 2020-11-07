@@ -19,7 +19,7 @@ template projects.
 To install the software, all you have to do is:
 
 ``` bash
-sudo apt-get install git-core
+sudo apt-get install git
 ```
 
 ## Installing the PostgreSQL database
@@ -33,7 +33,7 @@ PYBOSSA uses [PostgreSQL](http://www.postgresql.org/) as the main
 database for storing all the data. To install it follow the next steps:
 
 ``` bash
-sudo apt-get install postgresql postgresql-server-dev-all libpq-dev python-psycopg2 libsasl2-dev libldap2-dev libssl-dev
+sudo apt-get install postgresql postgresql-server-dev-all libpq-dev python3-psycopg2 libsasl2-dev libldap2-dev libssl-dev
 ```
 
 ## Installing virtualenv (optional, but recommended)
@@ -55,10 +55,10 @@ Installing [virtualenv](http://pypi.python.org/pypi/virtualenv) in the
 Ubuntu server:
 
 ``` bash
-sudo apt-get install python-virtualenv
+sudo apt-get install python3-venv
 ```
 
-After installing the software you will be able to create independent virtual environments for the PYBOSSA installation as well as for the template projects. 
+After installing the software you will be able to create independent virtual environments for the PYBOSSA installation as well as for the template projects.
 
 ## Installing the PYBOSSA Python requirements
 
@@ -75,6 +75,9 @@ libraries for running PYBOSSA.
 !!! note
     We recommend you to install the required libraries using a **virtual environment** with the command virtualenv (you can install the package python-virtualenv). This will allow having all the libraries for PYBOSSA in one folder of your choice, so cleaning the installation would be as simple as deleting that folder without affecting your system.
 
+!!! note
+    You might need to use pyenv to install a python 3.6 version in order to run the right version. Please check the official documentation of pyenv.
+
 If you decide to use a **virtualenv** then, follow these steps (lines
 starting with **#** are comments):
 
@@ -83,7 +86,7 @@ starting with **#** are comments):
 git clone --recursive https://github.com/Scifabric/pybossa
 # Access the source code folder
 cd pybossa
-virtualenv env
+python3 -mvenv env
 # Activate the virtual environment
 source env/bin/activate
 # Upgrade pip to latest version
@@ -296,7 +299,7 @@ python cli.py db_create
 ```
 
 Run the web server:
-``` bash 
+``` bash
 python run.py
 ```
 
@@ -314,7 +317,7 @@ but be aware that all the materalized views will need to be dropped. This is req
 the info field and we cannot migrate to JSONB without recreating them.
 
 Thus, be sure to take a full backup before upgrading of your database. Then, delete all your materialized views that create a conflict (by default
-PYBOSSA handles the basic ones, but if you have created your own leaderboards, this will not be handled by the script). 
+PYBOSSA handles the basic ones, but if you have created your own leaderboards, this will not be handled by the script).
 
 Run the migration (see next section) and re-create your materialized views. Most of these views are automatically handled by the background
 jobs, so all of them should be recreated by the system without your intervention.
