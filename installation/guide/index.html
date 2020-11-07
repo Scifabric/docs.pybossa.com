@@ -1914,7 +1914,7 @@ system for handling the PYBOSSA server source code as well as the
 template projects.</p>
 <p><a href="http://git-scm.com/">Git</a> is a free and open source distributed version control system designed to handle everything from small to extensive projects with speed and efficiency.</p>
 <p>To install the software, all you have to do is:</p>
-<table class="codehilitetable"><tr><td class="linenos"><div class="linenodiv"><pre>1</pre></div></td><td class="code"><div class="codehilite"><pre><span></span>sudo apt-get install git-core
+<table class="codehilitetable"><tr><td class="linenos"><div class="linenodiv"><pre>1</pre></div></td><td class="code"><div class="codehilite"><pre><span></span>sudo apt-get install git
 </pre></div>
 </td></tr></table>
 
@@ -1925,7 +1925,7 @@ development and a proven architecture that has earned it a strong
 reputation for reliability, data integrity, and correctness.</p>
 <p>PYBOSSA uses <a href="http://www.postgresql.org/">PostgreSQL</a> as the main
 database for storing all the data. To install it follow the next steps:</p>
-<table class="codehilitetable"><tr><td class="linenos"><div class="linenodiv"><pre>1</pre></div></td><td class="code"><div class="codehilite"><pre><span></span>sudo apt-get install postgresql postgresql-server-dev-all libpq-dev python-psycopg2 libsasl2-dev libldap2-dev libssl-dev
+<table class="codehilitetable"><tr><td class="linenos"><div class="linenodiv"><pre>1</pre></div></td><td class="code"><div class="codehilite"><pre><span></span>sudo apt-get install postgresql postgresql-server-dev-all libpq-dev python3-psycopg2 libsasl2-dev libldap2-dev libssl-dev
 </pre></div>
 </td></tr></table>
 
@@ -1942,11 +1942,11 @@ doesn&rsquo;t access the globally installed libraries either).</p>
 <p>You can install the software if you want at the system level if you have root privileges; however, this may lead to broken dependencies in the OS for all your Python packages, so if possible, avoid this solution and use the [virtualenv]<a href="http://pypi.python.org/pypi/virtualenv">http://pypi.python.org/pypi/virtualenv</a>) solution.</p>
 <p>Installing <a href="http://pypi.python.org/pypi/virtualenv">virtualenv</a> in the
 Ubuntu server:</p>
-<table class="codehilitetable"><tr><td class="linenos"><div class="linenodiv"><pre>1</pre></div></td><td class="code"><div class="codehilite"><pre><span></span>sudo apt-get install python-virtualenv
+<table class="codehilitetable"><tr><td class="linenos"><div class="linenodiv"><pre>1</pre></div></td><td class="code"><div class="codehilite"><pre><span></span>sudo apt-get install python3-venv
 </pre></div>
 </td></tr></table>
 
-<p>After installing the software you will be able to create independent virtual environments for the PYBOSSA installation as well as for the template projects. </p>
+<p>After installing the software you will be able to create independent virtual environments for the PYBOSSA installation as well as for the template projects.</p>
 <h2 id="installing-the-pybossa-python-requirements">Installing the PYBOSSA Python requirements<a class="headerlink" href="#installing-the-pybossa-python-requirements" title="Permanent link">&para;</a></h2>
 <p>Installing the required libraries for PYBOSSA is a step that will need to use some compilers and dev libraries to work. Thus, you will need to install the following packages:</p>
 <table class="codehilitetable"><tr><td class="linenos"><div class="linenodiv"><pre>1
@@ -1960,6 +1960,10 @@ libraries for running PYBOSSA.</p>
 <div class="admonition note">
 <p class="admonition-title">Note</p>
 <p>We recommend you to install the required libraries using a <strong>virtual environment</strong> with the command virtualenv (you can install the package python-virtualenv). This will allow having all the libraries for PYBOSSA in one folder of your choice, so cleaning the installation would be as simple as deleting that folder without affecting your system.</p>
+</div>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>You might need to use pyenv to install a python 3.6 version in order to run the right version. Please check the official documentation of pyenv.</p>
 </div>
 <p>If you decide to use a <strong>virtualenv</strong> then, follow these steps (lines
 starting with <strong>#</strong> are comments):</p>
@@ -1977,7 +1981,7 @@ starting with <strong>#</strong> are comments):</p>
 git clone --recursive https://github.com/Scifabric/pybossa
 <span class="c1"># Access the source code folder</span>
 <span class="nb">cd</span> pybossa
-virtualenv env
+python3 -mvenv env
 <span class="c1"># Activate the virtual environment</span>
 <span class="nb">source</span> env/bin/activate
 <span class="c1"># Upgrade pip to latest version</span>
@@ -2191,7 +2195,7 @@ completed:</p>
 but be aware that all the materalized views will need to be dropped. This is required because some of these views use
 the info field and we cannot migrate to JSONB without recreating them.</p>
 <p>Thus, be sure to take a full backup before upgrading of your database. Then, delete all your materialized views that create a conflict (by default
-PYBOSSA handles the basic ones, but if you have created your own leaderboards, this will not be handled by the script). </p>
+PYBOSSA handles the basic ones, but if you have created your own leaderboards, this will not be handled by the script).</p>
 <p>Run the migration (see next section) and re-create your materialized views. Most of these views are automatically handled by the background
 jobs, so all of them should be recreated by the system without your intervention.</p>
 <h3 id="updating-pybossa-core-and-migrating-the-database-table-structure">Updating PYBOSSA core and migrating the database table structure<a class="headerlink" href="#updating-pybossa-core-and-migrating-the-database-table-structure" title="Permanent link">&para;</a></h3>
