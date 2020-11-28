@@ -2,6 +2,7 @@
 
 If you want to use a frontend server like NuxtJS or Next, you will have to configure PYBOSSA properly to run within your frontend framework.
 
+
 ## Authentication
 
 PYBOSSA uses signed cookies to authenticate the users and keep their sessions. As we use cookies, we will have to tell PYBOSSA how to configure them to work with you.
@@ -46,3 +47,13 @@ Thant's all. Be sure to have the domain set it up properly, as any typo will mak
 
 !!! note
     If you want to develop in your own machine, be sure to set up in your /etc/hosts a subdomain from your server so you can run the NuxtJS server from there. This will ensure that you can test the cookis without having to deploy it.
+
+
+## Project publication
+
+As you will not need a task template, you can disable it in the config of PYBOSSA:
+
+```
+DISABLE_TASK_PRESENTER = True
+```
+
