@@ -374,6 +374,9 @@ PYBOSSA_REDIS_CACHE_DISABLED='1'
 ## Redis configuration
 
 You can configure how you connect to Redis via the following config variables.
+If you can't use Redis Sentinel, just set `REDIS_SENTINEL` to `[]` and use
+`REDIS_HOST`, `REDIS_PORT` and `REDIS_PASSWORD` instead to specify the
+connection details for a vanilla Redis server.
 
 ### Redis python prefix
 
@@ -387,6 +390,36 @@ Specify where the Redis sentinel is listening.
 
 ```python
 REDIS_SENTINEL = [('localhost', 26379)]
+```
+
+### Redis host
+
+Specify the host where the non-Sentinel Redis server is listening.
+This option, along with `REDIS_PORT` and `REDIS_PASSWORD`, will be ignored if
+`REDIS_SENTINEL` is set.
+
+```python
+REDIS_HOST = 'localhost'
+```
+
+### Redis port
+
+Specify the port where the non-Sentinel Redis server is listening.
+This option, along with `REDIS_HOST` and `REDIS_PASSWORD`, will be ignored if
+`REDIS_SENTINEL` is set.
+
+```python
+REDIS_PORT = 6379
+```
+
+### Redis password
+
+Specify the password of the non-Sentinel Redis server.
+This option, along with `REDIS_HOST` and `REDIS_PORT`, will be ignored if
+`REDIS_SENTINEL` is set.
+
+```python
+REDIS_PASSWORD = '53cr37'
 ```
 
 ### Redis master
