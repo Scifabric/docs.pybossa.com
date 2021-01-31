@@ -574,6 +574,27 @@
 </li>
         
           <li class="md-nav__item">
+  <a href="#redis-host" title="Redis host" class="md-nav__link">
+    Redis host
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#redis-port" title="Redis port" class="md-nav__link">
+    Redis port
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#redis-password" title="Redis password" class="md-nav__link">
+    Redis password
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
   <a href="#redis-master" title="Redis master" class="md-nav__link">
     Redis master
   </a>
@@ -2690,6 +2711,27 @@
 </li>
         
           <li class="md-nav__item">
+  <a href="#redis-host" title="Redis host" class="md-nav__link">
+    Redis host
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#redis-port" title="Redis port" class="md-nav__link">
+    Redis port
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#redis-password" title="Redis password" class="md-nav__link">
+    Redis password
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
   <a href="#redis-master" title="Redis master" class="md-nav__link">
     Redis master
   </a>
@@ -3506,7 +3548,10 @@ configure a server. Please, check the section <a href="https://github.com/Scifab
 </td></tr></table>
 
 <h2 id="redis-configuration">Redis configuration<a class="headerlink" href="#redis-configuration" title="Permanent link">&para;</a></h2>
-<p>You can configure how you connect to Redis via the following config variables.</p>
+<p>You can configure how you connect to Redis via the following config variables.
+If you can&rsquo;t use Redis Sentinel, just set <code class="codehilite">REDIS_SENTINEL</code> to <code class="codehilite">[]</code> and use
+<code class="codehilite">REDIS_HOST</code>, <code class="codehilite">REDIS_PORT</code> and <code class="codehilite">REDIS_PASSWORD</code> instead to specify the
+connection details for a vanilla Redis server.</p>
 <h3 id="redis-python-prefix">Redis python prefix<a class="headerlink" href="#redis-python-prefix" title="Permanent link">&para;</a></h3>
 <table class="codehilitetable"><tr><td class="linenos"><div class="linenodiv"><pre>1</pre></div></td><td class="code"><div class="codehilite"><pre><span></span><span class="n">REDIS_KEYPREFIX</span> <span class="o">=</span> <span class="s1">&#39;pybossa_cache&#39;</span>
 </pre></div>
@@ -3515,6 +3560,30 @@ configure a server. Please, check the section <a href="https://github.com/Scifab
 <h3 id="redis-sentinel">Redis Sentinel<a class="headerlink" href="#redis-sentinel" title="Permanent link">&para;</a></h3>
 <p>Specify where the Redis sentinel is listening.</p>
 <table class="codehilitetable"><tr><td class="linenos"><div class="linenodiv"><pre>1</pre></div></td><td class="code"><div class="codehilite"><pre><span></span><span class="n">REDIS_SENTINEL</span> <span class="o">=</span> <span class="p">[(</span><span class="s1">&#39;localhost&#39;</span><span class="p">,</span> <span class="mi">26379</span><span class="p">)]</span>
+</pre></div>
+</td></tr></table>
+
+<h3 id="redis-host">Redis host<a class="headerlink" href="#redis-host" title="Permanent link">&para;</a></h3>
+<p>Specify the host where the non-Sentinel Redis server is listening.
+This option, along with <code class="codehilite">REDIS_PORT</code> and <code class="codehilite">REDIS_PASSWORD</code>, will be ignored if
+<code class="codehilite">REDIS_SENTINEL</code> is set.</p>
+<table class="codehilitetable"><tr><td class="linenos"><div class="linenodiv"><pre>1</pre></div></td><td class="code"><div class="codehilite"><pre><span></span><span class="n">REDIS_HOST</span> <span class="o">=</span> <span class="s1">&#39;localhost&#39;</span>
+</pre></div>
+</td></tr></table>
+
+<h3 id="redis-port">Redis port<a class="headerlink" href="#redis-port" title="Permanent link">&para;</a></h3>
+<p>Specify the port where the non-Sentinel Redis server is listening.
+This option, along with <code class="codehilite">REDIS_HOST</code> and <code class="codehilite">REDIS_PASSWORD</code>, will be ignored if
+<code class="codehilite">REDIS_SENTINEL</code> is set.</p>
+<table class="codehilitetable"><tr><td class="linenos"><div class="linenodiv"><pre>1</pre></div></td><td class="code"><div class="codehilite"><pre><span></span><span class="n">REDIS_PORT</span> <span class="o">=</span> <span class="mi">6379</span>
+</pre></div>
+</td></tr></table>
+
+<h3 id="redis-password">Redis password<a class="headerlink" href="#redis-password" title="Permanent link">&para;</a></h3>
+<p>Specify the password of the non-Sentinel Redis server.
+This option, along with <code class="codehilite">REDIS_HOST</code> and <code class="codehilite">REDIS_PORT</code>, will be ignored if
+<code class="codehilite">REDIS_SENTINEL</code> is set.</p>
+<table class="codehilitetable"><tr><td class="linenos"><div class="linenodiv"><pre>1</pre></div></td><td class="code"><div class="codehilite"><pre><span></span><span class="n">REDIS_PASSWORD</span> <span class="o">=</span> <span class="s1">&#39;53cr37&#39;</span>
 </pre></div>
 </td></tr></table>
 
