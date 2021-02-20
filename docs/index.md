@@ -28,6 +28,11 @@ We've finally migrated PYBOSSA to python 3. We're not going to merge into master
 more, so please, help us by testing it. All you have to do is basically, check out the python3 branch (migrate-python3) and run
 it. Then, any bug, issue you find, you just report it and we will be happy to help you.
 
+# Google, Twitter and Facebook accounts
+
+We've officially dropped support for login using social networks. We will only support local based accounts, and you can still use the external_user ID for
+managing those accounts if you want. There's script in the cli.py file that allows you to migrate your social media accounts into local ones.
+
 # Get professional support
 
 You can hire us to help you with your PYBOSSA project. Go to our website, and [contact us](https://scifabric.com/).
