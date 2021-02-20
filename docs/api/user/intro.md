@@ -34,20 +34,3 @@ User IDs. This will be helpful in case that you want to give, for
 example, badges, for users when using our webhooks solution. Each user
 has in the info field a new field named **extra** where that information
 (or anything else) could be stored.
-
-## Requesting the user's OAuth tokens
-
-A user who has registered or signed in with any of the third parties
-supported by PYBOSSA (currently Twitter, Facebook, and Google) can
-request his own OAuth tokens by doing:
-
-    GET http://{pybossa-site-url}/api/token?api_key=API-KEY
-
-Additionally, the user can specify any of the tokens if only its
-retrieval is desired:
-
-    GET http://{pybossa-site-url}/api/token/{provider}?api_key=API-KEY
-
-Where 'provider' will be any of the third parties supported, i.e.
-'twitter', 'facebook' or 'google'.
-

@@ -115,10 +115,8 @@ It returns a JSON object with the following information:
       "confirmation_email_sent": false,
       "created": "date",
       "email_addr": "email",
-      "facebook_user_id": null,
       "flags": null,
       "fullname": "John Doe",
-      "google_user_id": null,
       "id": 1,
       "info": {
         "avatar": "avatar.png",
@@ -131,7 +129,6 @@ It returns a JSON object with the following information:
       "privacy_mode": true,
       "pro": false,
       "subscribed": true,
-      "twitter_user_id": null,
       "valid_email": true
     },
   ]

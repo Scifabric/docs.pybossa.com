@@ -1,7 +1,7 @@
 # Welcome to PYBOSSA's documentation
 
-PYBOSSA is a technology developed by [Scifabric](https://scifabric.com). 
-It is used for the development of platforms and data collection within 
+PYBOSSA is a technology developed by [Scifabric](https://scifabric.com).
+It is used for the development of platforms and data collection within
 collaborative environments, analysis and data enrichment.
 
 PYBOSSA is an extremely flexible and versatile technology with a
@@ -18,7 +18,7 @@ any of the available templates, this way every customer can then adapt
 it to their own needs.
 
 PYBOSSA can import data directly from other products such as Amazon
-S3, Twitter, Youtube, Google Spreadsheets, Flickr, Raspberry Pi, etc.
+S3, Youtube, Google Spreadsheets, Raspberry Pi, etc.
 Through all these integrations PYBOSSA allows data capture for further
 analysis made by users in a transparent and easy way.
 
@@ -27,6 +27,11 @@ analysis made by users in a transparent and easy way.
 We've finally migrated PYBOSSA to python 3. We're not going to merge into master until we test it in production a bit
 more, so please, help us by testing it. All you have to do is basically, check out the python3 branch (migrate-python3) and run
 it. Then, any bug, issue you find, you just report it and we will be happy to help you.
+
+# Google, Twitter and Facebook accounts
+
+We've officially dropped support for login using social networks. We will only support local based accounts, and you can still use the external_user ID for
+managing those accounts if you want. There's script in the cli.py file that allows you to migrate your social media accounts into local ones.
 
 # Get professional support
 
@@ -38,5 +43,5 @@ PYBOSSA is an open source project. Its ongoing development is made
 possible thanks to the support by these awesome [backers](https://github.com/Scifabric/pybossa/blob/master/BACKERS.md) and
 Scifabric's clients.
 
-If you'd like to join the backers, check out [Scifabric's Patreon campaign](https://www.patreon.com/scifabric) or 
+If you'd like to join the backers, check out [Scifabric's Patreon campaign](https://www.patreon.com/scifabric) or
 contact [Scifabric](https://scifabric.com) if you want to become a client.
