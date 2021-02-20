@@ -237,41 +237,10 @@ DATAUSE link to the open license that you want to use.
 
 By default, PYBOSSA provides a help endpoint where you can have your FAQ or similar information for your users. However, it's empty, as each project is unique. For adding that information, create in the theme folder: templates/help/ a file named **index.html** and write your information in there. This will render the information under http://youserver.com/help/
 
-## Enabling Twitter, Facebook and Google authentication
-
-PYBOSSA supports third-party authentication services like Twitter,
-Facebook and Google.
-
-### Twitter
-
-If you want to enable Twitter, you will need to create an application in [Twitter](https://dev.twitter.com/) and copy and paste the **Consumer key, and secret** into the next variables and uncomment them:
-
-``` python
-TWITTER_CONSUMER_KEY = 'yourkey'
-TWITTER_CONSUMER_SECRET = 'yoursecret'
-```
 
 !!! note
-    This will also enable the Twitter task importer.
+    PYBOSSA has dropped support for Social Network logins. If you were using social logins in your project, please, before upgrading double-check that your social login users have added their emails. With their emails you can run the cli.py script to migrate the accounts to local ones. This will delete all their info regarding their social login IDs and make them local accounts. Then the users will be able to request a reset password and log in.
 
-
-### Facebook
-
-If you want to enable Facebook, you will need to create an application on [Facebook](https://developers.facebook.com/apps) and copy and paste the **app ID/API Key and secret** into the next variables and uncomment them:
-
-``` python
-FACEBOOK_APP_ID = 'yourappid'
-FACEBOOK_APP_SECRET = 'yoursecret'
-```
-
-### Google
-
-If you want to enable Google, you will need to create an application in [Google](https://code.google.com/apis/console/) and copy and paste the **Client ID, and secret** into the next variables and uncomment them:
-
-``` python
-GOOGLE_CLIENT_ID = 'clientid'
-GOOGLE_CLIENT_SECRET = 'secret'
-```
 
 ## Receiving e-mails with errors
 
@@ -777,19 +746,6 @@ MAILCHIMP_LIST_ID = "your-list-id"
 
 Restart the server, and you will be done. Now in your MailChimp account, you will be able to create campaigns and communicate with your registered and interested users.
 
-## Enabling the Flickr Task importer
-
-PYBOSSA has several different types of built-in importers. Users can use them to import tasks for their projects directly from the Web interface. However, using the Flickr one requires an API key and shared a secret from Flickr to communicate with the service.
-
-Once you have an API key, you'll have to add it to your settings_local.py file:
-
-``` python
-FLICKR_API_KEY = "your-key"
-FLICKR_SHARED_SECRET = "your-secret"
-```
-
-For more information on how to get a Flickr API key and shared secret, please refer to [Flickr API documentation](https://www.flickr.com/services/api/).
-
 ## Enabling the Dropbox Task importer
 
 PYBOSSA also offers the Dropbox importer, which allows importing all kind of files from a Dropbox account directly. To use it,
@@ -803,17 +759,6 @@ your settings_local.py:
 DROPBOX_APP_KEY = 'your-key'
 ```
 
-## Enabling the Twitter Task importer
-
-If you already have enabled the Twitter authentication, then the Twitter task importer will be enabled too. Otherwise, you will need to create an application in [Twitter](https://dev.twitter.com/) and copy and paste the **Consumer key, and secret** into the next variables and uncomment them:
-
-``` python
-TWITTER_CONSUMER_KEY = 'key'
-TWITTER_CONSUMER_SECRET = 'secret'
-```
-
-!!! note
-    This will also enable PYBOSSA's Twitter login.
 
 ## Enabling the Youtube's Task importer
 

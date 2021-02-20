@@ -170,8 +170,6 @@ email.
 
 It returns a JSON object with the following information:
 
--   **auth**: list of supported authentication methods using different
-    social networks like Google, Facebook and Twitter.
 -   **form**: the form fields that need to be sent for signing a user.
     It contains the csrf token for validating the post, as well as an
     errors field in case that something is wrong.
@@ -181,11 +179,6 @@ It returns a JSON object with the following information:
 
 ```json
 {
-  "auth": {
-    "facebook": true,
-    "google": true,
-    "twitter": true
-  },
   "form": {
     "csrf": "token",
     "email": null,
@@ -304,7 +297,7 @@ It returns a JSON object with the following information:
 ```json
 {
   "flash": [
-    "We don't have this email in our records. You may have signed up with a different email or used Twitter, Facebook, or Google to sign-in"
+    "We don't have this email in our records."
   ],
   "form": {
     "csrf": "1483549683.06##cc1c7ff101b2a14a89cac5462e5028e6235ddb31",

@@ -141,7 +141,7 @@ obtain as soon as possible an answer for all the available tasks.
     number of task runs, returning always first the tasks with less number of task runs for the user.
 
 
-## Lock 
+## Lock
 
 The Lock scheduler has the following features:
 
@@ -227,9 +227,7 @@ from the **Tasks** link in the left local navigation bar:
 
 ![image](https://i.imgur.com/HCuQDLJ.png)
 
-Tasks can be imported using any of the PYBOSSA built-in importers, such as csv-import and epicollect-import. To set up an autoimporter, please refer to the instructions for [CSV importer](overview.md#importing-the-tasks-via-the-built-in-csv-task-importer), [EpiCollect+ importer](overview.md#importing-the-tasks-from-an-epicollect-plus-public-project), [Flickr importer](overview.md#importing-the-tasks-from-a-flickr-photo-set) or [Twitter importer](overview.md#importing-the-tasks-from-a-twitter-account-or-search-result), as the procedure is the same:
-
-![image](https://i.imgur.com/iaJHMtY.png)
+Tasks can be imported using any of the PYBOSSA built-in importers, such as csv-import and epicollect-import. To set up an autoimporter, please refer to the instructions for [CSV importer](overview.md#importing-the-tasks-via-the-built-in-csv-task-importer), [EpiCollect+ importer](overview.md#importing-the-tasks-from-an-epicollect-plus-public-project), as the procedure is the same.
 
 The only difference is that the tasks won't be imported only once, but regularly, as explained. However, the same behavior should be expected, so auto-importing a CSV file that does not change will result in no new tasks being imported.
 

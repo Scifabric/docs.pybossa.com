@@ -39,10 +39,6 @@ You can create an account filling a form.
 
 ![PYBOSSA Register](https://i.imgur.com/MMnUQr7.png)
 
-If PYBOSSA has Twiter, Facebook or Google authentication methods enabled, you will be able to create an account using them. See the [documentation](../installation/configuration.md) for more information about these alternatives.
-
-![PYBOSSA sign-in methods](https://i.imgur.com/GxhfjGL.png)
-
 You can also set preferences for language, location, area of expertise(termed as user type) and set metadata for the account. For this, pybossa server need to be configured with new settings; sample for same can be obtained from pybossa/settings_upref_mdata.py.tmpl. Rename settings_upref_mdata.py.tmpl to settings_upref_mdata.py and copy it under folder containing settings_local.py. With this, contents of settings_upref_mdata.py will be available on account filling form.
 
 ![PYBOSSA Register with preferences and metadata](https://i.imgur.com/81rAu2m.png)
@@ -92,19 +88,9 @@ Tasks can be imported from different services like Dropbox or Amazon S3 via the 
 
 ![Image](https://i.imgur.com/nauht7l.png)
 
-3. And click again on the **Import Tasks** card. After clicking on it, you will see several options. The first ones are for using the different kinds of importers supported by PYBOSSA: Amazon S3, Twitter, Dropbox, Flickr, Youtube, Google Spreadsheet, CSV URL, IIIF, and EpiCollect Plus.
+3. And click again on the **Import Tasks** card. After clicking on it, you will see several options. The first ones are for using the different kinds of importers supported by PYBOSSA: Amazon S3, Dropbox, Youtube, Google Spreadsheet, CSV URL, IIIF, and EpiCollect Plus.
 
-![Image](https://i.imgur.com/eWBxSyS.png)
-
-For example, the Flickr importer will allow importing a Flickr album by typing its ID or if you have an account, by logging into Flickr and
-showing your public (and creative commons licensed) albums:
-
-![Image](https://i.imgur.com/lF9LJVO.jpg)
-
-Select one of the albums, click import and all the pictures will be
-imported as tasks for your PYBOSSA project. As simple as that :ok_hand:.
-
-The other importers are very similar. In most cases, you'll provide a URL to the resource, like for the CSV and Google Spreadsheet importer, while the Dropbox, Amazon S3, Twitter, Youtube, and EpiCollect Plus importers will have a friendly interface to import data automagically for you.
+The other importers are very similar. In most cases, you'll provide a URL to the resource, like for the CSV and Google Spreadsheet importer, while the Dropbox, Amazon S3, Youtube, and EpiCollect Plus importers will have a friendly interface to import data automagically for you.
 
 !!! note
     If you're trying to import from a Google Spreadsheet, ensure the file is accessible to everyone via the Share option, choosing: "Public on the web - Anyone on the Internet can find and view."
@@ -113,8 +99,7 @@ The other importers are very similar. In most cases, you'll provide a URL to the
 !!! note
     Your spreadsheet/CSV file must contain a header row. All the fields in the CSV will be serialized to JSON and stored in the **info** field. If your field name is one of **state**, **quorum**, **calibration**,    **priority_0**, or **n_answers**, it will be saved in the respective     columns. Your spreadsheet must be visible to the public or everyone with an URL.
 
-In the Task Importer section, you'll also find other pre-loaded Google Spreadsheets URLs. Those templates are examples that you can use
-to learn how to create your spreadsheets and import data for image,
+In the Task Importer section, you'll also find other pre-loaded Google Spreadsheets URLs. Those templates are examples that you can use to learn how to create your spreadsheets and import data for image,
 sound, video, pdf mining and mapping projects.
 
 ![Image](https://i.imgur.com/eGwKDpB.png)
@@ -268,61 +253,6 @@ For using this importer, just follow these are the steps:
 
 !!! note
     For enabling the Dropbox importer, check this [section](/installation/configuration/#enabling-the-dropbox-task-importer).
-
-### Importing the tasks from a Twitter account or search result
-
-Another option for importing tasks is using the built-in Twitter
-importer. It allows importing tweets as tasks from either a specified
-Twitter user account, or from the results returned from a search to the Twitter search API.
-
-Tasks imported with it will have the tweet data attached to their info field, and can later be used from within the task presenter. This data
-is a direct transcription of the data returned by the Twitter API, in
-particular a [Tweet](https://dev.twitter.com/overview/api/tweets)
-object.
-
-Please notice that the values returned by the Twitter API may vary.
-However, the following fields are guaranteed to be always included in the info field of the tasks:
-
-- created_at: the date and time the tweet was published.
-- favorite_count: number of times the tweet has been marked as
-  'favorite.'
-- retweet_count: number of times the tweet has been retweeted.
-- coordinates: geographic coordinates of the place the tweet was published.
-  from. Note that this is not always available for every tweet.
-- tweet_id: the internal ID handled by Twitter to identify this
-  tweet.
-- user: an [object](https://dev.twitter.com/overview/api/users) with
-  information about the tweet author, as returned by the Twitter API.
-- text: the actual content of the tweet.
-
-Also, an extra field "user_screen_name" has been added to the
-info field:
-
-- user_screen_name: the screen name (or 'handle') of the author of
-  the tweet.
-
-For more information, please refer to the [Twitter](https://dev.twitter.com) documentation.
-
-!!! warning
-    When importing tweets from a search, retweets will be ignored!
-
-
-So, to import tasks with the Twitter importer, do as follows:
-
-1. Navigate to your project's page and click in the **Tasks** section.
-2. Then click on the **Import Tasks** button, and select the **Twitter importer**:
-3. You can provide your own Twitter credentials and make API requests on behalf of them, or use the credentials provided by us. (The later only allows to import the number of tweets returned by a single Twitter API call, which is 100 for searches and 200 for user
-   timelines.)
-4. Fill in the two fields you will find in the form. The first one is the source of your tweets. If you want them to be imported from a user account, then write it with the "@" symbol, like "@PYBOSSA." If you just want to import tweets containing a word on them (or a #hashtag), then type it there. The second field is for you to specify how many tweets you want to import. You can import as many as you want!
-
-Finally, click on the "Import" button, and you are done:
-
-![Image](https://i.imgur.com/l5PG2WX.png)
-
-
-!!! note
-    For enabling the Twitter importer, check this [section](/installation/configuration/#enabling-the-twitter-task-importer).
-
 
 ## Importing tasks from an Amazon S3 bucket
 

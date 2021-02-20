@@ -153,9 +153,7 @@ current project. This will only happen when the project has an empty template, o
    "confirmation_email_sent": false,
    "created": "2016-09-15T11:30:42.660450",
    "email_addr": "prueba@prueba.com",
-   "facebook_user_id": null,
    "fullname": "prueba de json",
-   "google_user_id": null,
    "id": 12030,
    "info": {
      "avatar": "avatar.png",
@@ -167,7 +165,6 @@ current project. This will only happen when the project has an empty template, o
    "registered_ago": "6 months ago",
    "score": 5,
    "total": 11134,
-   "twitter_user_id": null,
    "valid_email": true
  },
  "presenters": [
@@ -240,9 +237,7 @@ If you want to preload the template from one of the available prenters, you have
    "confirmation_email_sent": false,
    "created": "2016-09-15T11:30:42.660450",
    "email_addr": "prueba@prueba.com",
-   "facebook_user_id": null,
    "fullname": "prueba de json",
-   "google_user_id": null,
    "id": 0,
    "info": {
      "avatar": "avatar.png",
@@ -254,7 +249,6 @@ If you want to preload the template from one of the available prenters, you have
    "registered_ago": "6 months ago",
    "score": 5,
    "total": 11134,
-   "twitter_user_id": null,
    "valid_email": true
  },
  "pro_features": {
@@ -340,9 +334,7 @@ field.
     "confirmation_email_sent": false,
     "created": "2016-09-15T11:30:42.660450",
     "email_addr": "prueba@prueba.com",
-    "facebook_user_id": null,
     "fullname": "prueba de json",
-    "google_user_id": null,
     "id": 0,
     "info": {
       "avatar": "avatar.png",
@@ -354,7 +346,6 @@ field.
     "registered_ago": "6 months ago",
     "score": 5,
     "total": 11134,
-    "twitter_user_id": null,
     "valid_email": true
   },
   "pro_features": {
@@ -448,17 +439,11 @@ It returns a JSON object with the following information:
     "confirmation_email_sent": false,
     "created": "2012-06-06T06:27:18.760254",
     "email_addr": "email.com",
-    "facebook_user_id": null,
     "fullname": "John Doe",
-    "google_user_id": null,
     "id": 0,
     "info": {
       "avatar": "avatar.png",
       "container": "user",
-      "twitter_token": {
-        "oauth_token": "token",
-        "oauth_token_secret": "token"
-      }
     },
     "n_answers": 2414,
     "name": "johndoe",
@@ -466,7 +451,6 @@ It returns a JSON object with the following information:
     "registered_ago": "4 years ago",
     "score": 2414,
     "total": 11134,
-    "twitter_user_id": 12,
     "valid_email": false
   },
   "pro_features": {
@@ -713,11 +697,9 @@ It returns a JSON object with the following information:
     "projects/tasks/epicollect.html",
     "projects/tasks/csv.html",
     "projects/tasks/s3.html",
-    "projects/tasks/twitter.html",
     "projects/tasks/youtube.html",
     "projects/tasks/gdocs.html",
     "projects/tasks/dropbox.html",
-    "projects/tasks/flickr.html",
     "projects/tasks/iiif.html"
   ],
   "form": null,
@@ -732,17 +714,11 @@ It returns a JSON object with the following information:
     "confirmation_email_sent": false,
     "created": "2012-06-06T06:27:18.760254",
     "email_addr": "johndoe@gmail.com",
-    "facebook_user_id": null,
     "fullname": "John Doe",
-    "google_user_id": null,
     "id": 0,
     "info": {
       "avatar": "avatar.png",
       "container": "user",
-      "twitter_token": {
-        "oauth_token": "",
-        "oauth_token_secret": ""
-      }
     },
     "n_answers": 2414,
     "name": "johndoe",
@@ -750,7 +726,6 @@ It returns a JSON object with the following information:
     "registered_ago": "4 years ago",
     "score": 2414,
     "total": 11134,
-    "twitter_user_id": 12,
     "valid_email": false
   },
   "pro_features": {
@@ -924,9 +899,7 @@ for logged in user JohnDoe:
     "confirmation_email_sent": false,
     "created": "2014-08-11T08:59:32.079599",
     "email_addr": "johndoe@johndoe.com",
-    "facebook_user_id": null,
     "fullname": "John Doe",
-    "google_user_id": null,
     "id": 1234,
     "info": {
       "container": "user_1234"
@@ -937,7 +910,6 @@ for logged in user JohnDoe:
     "registered_ago": "2 years ago",
     "score": 56,
     "total": 11093,
-    "twitter_user_id": null,
     "valid_email": true
   },
   "pro_features": {
