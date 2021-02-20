@@ -449,13 +449,6 @@
   
 </li>
         
-          <li class="md-nav__item">
-  <a href="#importing-the-tasks-from-a-twitter-account-or-search-result" title="Importing the tasks from a Twitter account or search result" class="md-nav__link">
-    Importing the tasks from a Twitter account or search result
-  </a>
-  
-</li>
-        
       </ul>
     </nav>
   
@@ -1895,13 +1888,6 @@
   
 </li>
         
-          <li class="md-nav__item">
-  <a href="#importing-the-tasks-from-a-twitter-account-or-search-result" title="Importing the tasks from a Twitter account or search result" class="md-nav__link">
-    Importing the tasks from a Twitter account or search result
-  </a>
-  
-</li>
-        
       </ul>
     </nav>
   
@@ -2042,8 +2028,6 @@ to:</p>
 <h4 id="create-a-pybossa-account">Create a PYBOSSA account<a class="headerlink" href="#create-a-pybossa-account" title="Permanent link">&para;</a></h4>
 <p>You can create an account filling a form.</p>
 <p><img alt="PYBOSSA Register" src="https://i.imgur.com/MMnUQr7.png" /></p>
-<p>If PYBOSSA has Twiter, Facebook or Google authentication methods enabled, you will be able to create an account using them. See the <a href="../../installation/configuration/">documentation</a> for more information about these alternatives.</p>
-<p><img alt="PYBOSSA sign-in methods" src="https://i.imgur.com/GxhfjGL.png" /></p>
 <p>You can also set preferences for language, location, area of expertise(termed as user type) and set metadata for the account. For this, pybossa server need to be configured with new settings; sample for same can be obtained from pybossa/settings_upref_mdata.py.tmpl. Rename settings_upref_mdata.py.tmpl to settings_upref_mdata.py and copy it under folder containing settings_local.py. With this, contents of settings_upref_mdata.py will be available on account filling form.</p>
 <p><img alt="PYBOSSA Register with preferences and metadata" src="https://i.imgur.com/81rAu2m.png" /></p>
 <p>User preference/metedata set for the account can viewed and modified under account profile page.</p>
@@ -2085,15 +2069,9 @@ to:</p>
    menu:</p>
 <p><img alt="Image" src="https://i.imgur.com/nauht7l.png" /></p>
 <ol>
-<li>And click again on the <strong>Import Tasks</strong> card. After clicking on it, you will see several options. The first ones are for using the different kinds of importers supported by PYBOSSA: Amazon S3, Twitter, Dropbox, Flickr, Youtube, Google Spreadsheet, CSV URL, IIIF, and EpiCollect Plus.</li>
+<li>And click again on the <strong>Import Tasks</strong> card. After clicking on it, you will see several options. The first ones are for using the different kinds of importers supported by PYBOSSA: Amazon S3, Dropbox, Youtube, Google Spreadsheet, CSV URL, IIIF, and EpiCollect Plus.</li>
 </ol>
-<p><img alt="Image" src="https://i.imgur.com/eWBxSyS.png" /></p>
-<p>For example, the Flickr importer will allow importing a Flickr album by typing its ID or if you have an account, by logging into Flickr and
-showing your public (and creative commons licensed) albums:</p>
-<p><img alt="Image" src="https://i.imgur.com/lF9LJVO.jpg" /></p>
-<p>Select one of the albums, click import and all the pictures will be
-imported as tasks for your PYBOSSA project. As simple as that <img alt="👌" class="emojione" src="https://cdn.jsdelivr.net/emojione/assets/svg/1f44c.svg" title=":ok_hand:" />.</p>
-<p>The other importers are very similar. In most cases, you&rsquo;ll provide a URL to the resource, like for the CSV and Google Spreadsheet importer, while the Dropbox, Amazon S3, Twitter, Youtube, and EpiCollect Plus importers will have a friendly interface to import data automagically for you.</p>
+<p>The other importers are very similar. In most cases, you&rsquo;ll provide a URL to the resource, like for the CSV and Google Spreadsheet importer, while the Dropbox, Amazon S3, Youtube, and EpiCollect Plus importers will have a friendly interface to import data automagically for you.</p>
 <div class="admonition note">
 <p class="admonition-title">Note</p>
 <p>If you&rsquo;re trying to import from a Google Spreadsheet, ensure the file is accessible to everyone via the Share option, choosing: &ldquo;Public on the web - Anyone on the Internet can find and view.&rdquo;</p>
@@ -2102,8 +2080,7 @@ imported as tasks for your PYBOSSA project. As simple as that <img alt="👌" cl
 <p class="admonition-title">Note</p>
 <p>Your spreadsheet/CSV file must contain a header row. All the fields in the CSV will be serialized to JSON and stored in the <strong>info</strong> field. If your field name is one of <strong>state</strong>, <strong>quorum</strong>, <strong>calibration</strong>,    <strong>priority_0</strong>, or <strong>n_answers</strong>, it will be saved in the respective     columns. Your spreadsheet must be visible to the public or everyone with an URL.</p>
 </div>
-<p>In the Task Importer section, you&rsquo;ll also find other pre-loaded Google Spreadsheets URLs. Those templates are examples that you can use
-to learn how to create your spreadsheets and import data for image,
+<p>In the Task Importer section, you&rsquo;ll also find other pre-loaded Google Spreadsheets URLs. Those templates are examples that you can use to learn how to create your spreadsheets and import data for image,
 sound, video, pdf mining and mapping projects.</p>
 <p><img alt="Image" src="https://i.imgur.com/eGwKDpB.png" /></p>
 <p>By using these templates, you&rsquo;ll be able to learn the structure of the
@@ -2237,54 +2214,6 @@ extensions):</p>
 <div class="admonition note">
 <p class="admonition-title">Note</p>
 <p>For enabling the Dropbox importer, check this <a href="../../installation/configuration/#enabling-the-dropbox-task-importer">section</a>.</p>
-</div>
-<h3 id="importing-the-tasks-from-a-twitter-account-or-search-result">Importing the tasks from a Twitter account or search result<a class="headerlink" href="#importing-the-tasks-from-a-twitter-account-or-search-result" title="Permanent link">&para;</a></h3>
-<p>Another option for importing tasks is using the built-in Twitter
-importer. It allows importing tweets as tasks from either a specified
-Twitter user account, or from the results returned from a search to the Twitter search API.</p>
-<p>Tasks imported with it will have the tweet data attached to their info field, and can later be used from within the task presenter. This data
-is a direct transcription of the data returned by the Twitter API, in
-particular a <a href="https://dev.twitter.com/overview/api/tweets">Tweet</a>
-object.</p>
-<p>Please notice that the values returned by the Twitter API may vary.
-However, the following fields are guaranteed to be always included in the info field of the tasks:</p>
-<ul>
-<li>created_at: the date and time the tweet was published.</li>
-<li>favorite_count: number of times the tweet has been marked as
-  &lsquo;favorite.&rsquo;</li>
-<li>retweet_count: number of times the tweet has been retweeted.</li>
-<li>coordinates: geographic coordinates of the place the tweet was published.
-  from. Note that this is not always available for every tweet.</li>
-<li>tweet_id: the internal ID handled by Twitter to identify this
-  tweet.</li>
-<li>user: an <a href="https://dev.twitter.com/overview/api/users">object</a> with
-  information about the tweet author, as returned by the Twitter API.</li>
-<li>text: the actual content of the tweet.</li>
-</ul>
-<p>Also, an extra field &ldquo;user_screen_name&rdquo; has been added to the
-info field:</p>
-<ul>
-<li>user_screen_name: the screen name (or &lsquo;handle&rsquo;) of the author of
-  the tweet.</li>
-</ul>
-<p>For more information, please refer to the <a href="https://dev.twitter.com">Twitter</a> documentation.</p>
-<div class="admonition warning">
-<p class="admonition-title">Warning</p>
-<p>When importing tweets from a search, retweets will be ignored!</p>
-</div>
-<p>So, to import tasks with the Twitter importer, do as follows:</p>
-<ol>
-<li>Navigate to your project&rsquo;s page and click in the <strong>Tasks</strong> section.</li>
-<li>Then click on the <strong>Import Tasks</strong> button, and select the <strong>Twitter importer</strong>:</li>
-<li>You can provide your own Twitter credentials and make API requests on behalf of them, or use the credentials provided by us. (The later only allows to import the number of tweets returned by a single Twitter API call, which is 100 for searches and 200 for user
-   timelines.)</li>
-<li>Fill in the two fields you will find in the form. The first one is the source of your tweets. If you want them to be imported from a user account, then write it with the &ldquo;@&rdquo; symbol, like &ldquo;@PYBOSSA.&rdquo; If you just want to import tweets containing a word on them (or a #hashtag), then type it there. The second field is for you to specify how many tweets you want to import. You can import as many as you want!</li>
-</ol>
-<p>Finally, click on the &ldquo;Import&rdquo; button, and you are done:</p>
-<p><img alt="Image" src="https://i.imgur.com/l5PG2WX.png" /></p>
-<div class="admonition note">
-<p class="admonition-title">Note</p>
-<p>For enabling the Twitter importer, check this <a href="../../installation/configuration/#enabling-the-twitter-task-importer">section</a>.</p>
 </div>
 <h2 id="importing-tasks-from-an-amazon-s3-bucket">Importing tasks from an Amazon S3 bucket<a class="headerlink" href="#importing-tasks-from-an-amazon-s3-bucket" title="Permanent link">&para;</a></h2>
 <p>Tasks can be imported from data hosted on the Amazon S3 service.

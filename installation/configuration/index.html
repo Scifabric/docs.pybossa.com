@@ -450,40 +450,6 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#enabling-twitter-facebook-and-google-authentication" title="Enabling Twitter, Facebook and Google authentication" class="md-nav__link">
-    Enabling Twitter, Facebook and Google authentication
-  </a>
-  
-    <nav class="md-nav">
-      <ul class="md-nav__list">
-        
-          <li class="md-nav__item">
-  <a href="#twitter" title="Twitter" class="md-nav__link">
-    Twitter
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#facebook" title="Facebook" class="md-nav__link">
-    Facebook
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#google" title="Google" class="md-nav__link">
-    Google
-  </a>
-  
-</li>
-        
-      </ul>
-    </nav>
-  
-</li>
-      
-        <li class="md-nav__item">
   <a href="#receiving-e-mails-with-errors" title="Receiving e-mails with errors" class="md-nav__link">
     Receiving e-mails with errors
   </a>
@@ -774,22 +740,8 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#enabling-the-flickr-task-importer" title="Enabling the Flickr Task importer" class="md-nav__link">
-    Enabling the Flickr Task importer
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
   <a href="#enabling-the-dropbox-task-importer" title="Enabling the Dropbox Task importer" class="md-nav__link">
     Enabling the Dropbox Task importer
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#enabling-the-twitter-task-importer" title="Enabling the Twitter Task importer" class="md-nav__link">
-    Enabling the Twitter Task importer
   </a>
   
 </li>
@@ -2587,40 +2539,6 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#enabling-twitter-facebook-and-google-authentication" title="Enabling Twitter, Facebook and Google authentication" class="md-nav__link">
-    Enabling Twitter, Facebook and Google authentication
-  </a>
-  
-    <nav class="md-nav">
-      <ul class="md-nav__list">
-        
-          <li class="md-nav__item">
-  <a href="#twitter" title="Twitter" class="md-nav__link">
-    Twitter
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#facebook" title="Facebook" class="md-nav__link">
-    Facebook
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#google" title="Google" class="md-nav__link">
-    Google
-  </a>
-  
-</li>
-        
-      </ul>
-    </nav>
-  
-</li>
-      
-        <li class="md-nav__item">
   <a href="#receiving-e-mails-with-errors" title="Receiving e-mails with errors" class="md-nav__link">
     Receiving e-mails with errors
   </a>
@@ -2911,22 +2829,8 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#enabling-the-flickr-task-importer" title="Enabling the Flickr Task importer" class="md-nav__link">
-    Enabling the Flickr Task importer
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
   <a href="#enabling-the-dropbox-task-importer" title="Enabling the Dropbox Task importer" class="md-nav__link">
     Enabling the Dropbox Task importer
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#enabling-the-twitter-task-importer" title="Enabling the Twitter Task importer" class="md-nav__link">
-    Enabling the Twitter Task importer
   </a>
   
 </li>
@@ -3421,37 +3325,10 @@ You can also modify the license used for the data, just change the
 DATAUSE link to the open license that you want to use.</p>
 <h2 id="adding-help-page">Adding Help page<a class="headerlink" href="#adding-help-page" title="Permanent link">&para;</a></h2>
 <p>By default, PYBOSSA provides a help endpoint where you can have your FAQ or similar information for your users. However, it&rsquo;s empty, as each project is unique. For adding that information, create in the theme folder: templates/help/ a file named <strong>index.html</strong> and write your information in there. This will render the information under <a href="http://youserver.com/help/">http://youserver.com/help/</a></p>
-<h2 id="enabling-twitter-facebook-and-google-authentication">Enabling Twitter, Facebook and Google authentication<a class="headerlink" href="#enabling-twitter-facebook-and-google-authentication" title="Permanent link">&para;</a></h2>
-<p>PYBOSSA supports third-party authentication services like Twitter,
-Facebook and Google.</p>
-<h3 id="twitter">Twitter<a class="headerlink" href="#twitter" title="Permanent link">&para;</a></h3>
-<p>If you want to enable Twitter, you will need to create an application in <a href="https://dev.twitter.com/">Twitter</a> and copy and paste the <strong>Consumer key, and secret</strong> into the next variables and uncomment them:</p>
-<table class="codehilitetable"><tr><td class="linenos"><div class="linenodiv"><pre>1
-2</pre></div></td><td class="code"><div class="codehilite"><pre><span></span><span class="n">TWITTER_CONSUMER_KEY</span> <span class="o">=</span> <span class="s1">&#39;yourkey&#39;</span>
-<span class="n">TWITTER_CONSUMER_SECRET</span> <span class="o">=</span> <span class="s1">&#39;yoursecret&#39;</span>
-</pre></div>
-</td></tr></table>
-
 <div class="admonition note">
 <p class="admonition-title">Note</p>
-<p>This will also enable the Twitter task importer.</p>
+<p>PYBOSSA has dropped support for Social Network logins. If you were using social logins in your project, please, before upgrading double-check that your social login users have added their emails. With their emails you can run the cli.py script to migrate the accounts to local ones. This will delete all their info regarding their social login IDs and make them local accounts. Then the users will be able to request a reset password and log in.</p>
 </div>
-<h3 id="facebook">Facebook<a class="headerlink" href="#facebook" title="Permanent link">&para;</a></h3>
-<p>If you want to enable Facebook, you will need to create an application on <a href="https://developers.facebook.com/apps">Facebook</a> and copy and paste the <strong>app ID/API Key and secret</strong> into the next variables and uncomment them:</p>
-<table class="codehilitetable"><tr><td class="linenos"><div class="linenodiv"><pre>1
-2</pre></div></td><td class="code"><div class="codehilite"><pre><span></span><span class="n">FACEBOOK_APP_ID</span> <span class="o">=</span> <span class="s1">&#39;yourappid&#39;</span>
-<span class="n">FACEBOOK_APP_SECRET</span> <span class="o">=</span> <span class="s1">&#39;yoursecret&#39;</span>
-</pre></div>
-</td></tr></table>
-
-<h3 id="google">Google<a class="headerlink" href="#google" title="Permanent link">&para;</a></h3>
-<p>If you want to enable Google, you will need to create an application in <a href="https://code.google.com/apis/console/">Google</a> and copy and paste the <strong>Client ID, and secret</strong> into the next variables and uncomment them:</p>
-<table class="codehilitetable"><tr><td class="linenos"><div class="linenodiv"><pre>1
-2</pre></div></td><td class="code"><div class="codehilite"><pre><span></span><span class="n">GOOGLE_CLIENT_ID</span> <span class="o">=</span> <span class="s1">&#39;clientid&#39;</span>
-<span class="n">GOOGLE_CLIENT_SECRET</span> <span class="o">=</span> <span class="s1">&#39;secret&#39;</span>
-</pre></div>
-</td></tr></table>
-
 <h2 id="receiving-e-mails-with-errors">Receiving e-mails with errors<a class="headerlink" href="#receiving-e-mails-with-errors" title="Permanent link">&para;</a></h2>
 <p>If you want to receive an e-mail when an error occurs in the PYBOSSA server (webhooks, background jobs, etc.), uncomment the
 <a href="https://github.com/Scifabric/pybossa/blob/master/settings_local.py.tmpl#L64">ADMINS</a> config variable and add a list of e-mails.</p>
@@ -3919,16 +3796,6 @@ account. By default is disabled.  You can enable it, revealing a page to recentl
 </td></tr></table>
 
 <p>Restart the server, and you will be done. Now in your MailChimp account, you will be able to create campaigns and communicate with your registered and interested users.</p>
-<h2 id="enabling-the-flickr-task-importer">Enabling the Flickr Task importer<a class="headerlink" href="#enabling-the-flickr-task-importer" title="Permanent link">&para;</a></h2>
-<p>PYBOSSA has several different types of built-in importers. Users can use them to import tasks for their projects directly from the Web interface. However, using the Flickr one requires an API key and shared a secret from Flickr to communicate with the service.</p>
-<p>Once you have an API key, you&rsquo;ll have to add it to your settings_local.py file:</p>
-<table class="codehilitetable"><tr><td class="linenos"><div class="linenodiv"><pre>1
-2</pre></div></td><td class="code"><div class="codehilite"><pre><span></span><span class="n">FLICKR_API_KEY</span> <span class="o">=</span> <span class="s2">&quot;your-key&quot;</span>
-<span class="n">FLICKR_SHARED_SECRET</span> <span class="o">=</span> <span class="s2">&quot;your-secret&quot;</span>
-</pre></div>
-</td></tr></table>
-
-<p>For more information on how to get a Flickr API key and shared secret, please refer to <a href="https://www.flickr.com/services/api/">Flickr API documentation</a>.</p>
 <h2 id="enabling-the-dropbox-task-importer">Enabling the Dropbox Task importer<a class="headerlink" href="#enabling-the-dropbox-task-importer" title="Permanent link">&para;</a></h2>
 <p>PYBOSSA also offers the Dropbox importer, which allows importing all kind of files from a Dropbox account directly. To use it,
 you&rsquo;ll need to register your PYBOSSA server as a Dropbox app, as
@@ -3939,18 +3806,6 @@ your settings_local.py:</p>
 </pre></div>
 </td></tr></table>
 
-<h2 id="enabling-the-twitter-task-importer">Enabling the Twitter Task importer<a class="headerlink" href="#enabling-the-twitter-task-importer" title="Permanent link">&para;</a></h2>
-<p>If you already have enabled the Twitter authentication, then the Twitter task importer will be enabled too. Otherwise, you will need to create an application in <a href="https://dev.twitter.com/">Twitter</a> and copy and paste the <strong>Consumer key, and secret</strong> into the next variables and uncomment them:</p>
-<table class="codehilitetable"><tr><td class="linenos"><div class="linenodiv"><pre>1
-2</pre></div></td><td class="code"><div class="codehilite"><pre><span></span><span class="n">TWITTER_CONSUMER_KEY</span> <span class="o">=</span> <span class="s1">&#39;key&#39;</span>
-<span class="n">TWITTER_CONSUMER_SECRET</span> <span class="o">=</span> <span class="s1">&#39;secret&#39;</span>
-</pre></div>
-</td></tr></table>
-
-<div class="admonition note">
-<p class="admonition-title">Note</p>
-<p>This will also enable PYBOSSA&rsquo;s Twitter login.</p>
-</div>
 <h2 id="enabling-the-youtubes-task-importer">Enabling the Youtube&rsquo;s Task importer<a class="headerlink" href="#enabling-the-youtubes-task-importer" title="Permanent link">&para;</a></h2>
 <p>The Youtube&rsquo;s task importer needs a Youtube server key which you need to create in the <a href="https://console.developers.google.com/">Google API Console</a> in YouTube Data API.</p>
 <p>Once you have an API key, you&rsquo;ll have to add it to your

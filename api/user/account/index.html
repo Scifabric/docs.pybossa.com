@@ -2130,8 +2130,6 @@ email.</p>
 <p><strong>GET</strong></p>
 <p>It returns a JSON object with the following information:</p>
 <ul>
-<li><strong>auth</strong>: list of supported authentication methods using different
-    social networks like Google, Facebook and Twitter.</li>
 <li><strong>form</strong>: the form fields that need to be sent for signing a user.
     It contains the csrf token for validating the post, as well as an
     errors field in case that something is wrong.</li>
@@ -2148,17 +2146,7 @@ email.</p>
  8
  9
 10
-11
-12
-13
-14
-15
-16</pre></div></td><td class="code"><div class="codehilite"><pre><span></span><span class="p">{</span>
-  <span class="nt">&quot;auth&quot;</span><span class="p">:</span> <span class="p">{</span>
-    <span class="nt">&quot;facebook&quot;</span><span class="p">:</span> <span class="kc">true</span><span class="p">,</span>
-    <span class="nt">&quot;google&quot;</span><span class="p">:</span> <span class="kc">true</span><span class="p">,</span>
-    <span class="nt">&quot;twitter&quot;</span><span class="p">:</span> <span class="kc">true</span>
-  <span class="p">},</span>
+11</pre></div></td><td class="code"><div class="codehilite"><pre><span></span><span class="p">{</span>
   <span class="nt">&quot;form&quot;</span><span class="p">:</span> <span class="p">{</span>
     <span class="nt">&quot;csrf&quot;</span><span class="p">:</span> <span class="s2">&quot;token&quot;</span><span class="p">,</span>
     <span class="nt">&quot;email&quot;</span><span class="p">:</span> <span class="kc">null</span><span class="p">,</span>
@@ -2303,7 +2291,7 @@ headers. Use the following header: &ldquo;X-CSRFToken&rdquo;.</p>
 10
 11</pre></div></td><td class="code"><div class="codehilite"><pre><span></span><span class="p">{</span>
   <span class="nt">&quot;flash&quot;</span><span class="p">:</span> <span class="p">[</span>
-    <span class="s2">&quot;We don&#39;t have this email in our records. You may have signed up with a different email or used Twitter, Facebook, or Google to sign-in&quot;</span>
+    <span class="s2">&quot;We don&#39;t have this email in our records.&quot;</span>
   <span class="p">],</span>
   <span class="nt">&quot;form&quot;</span><span class="p">:</span> <span class="p">{</span>
     <span class="nt">&quot;csrf&quot;</span><span class="p">:</span> <span class="s2">&quot;1483549683.06##cc1c7ff101b2a14a89cac5462e5028e6235ddb31&quot;</span><span class="p">,</span>
